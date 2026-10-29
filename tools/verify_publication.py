@@ -44,9 +44,15 @@ def verify_payload(files,base):
 
 
 class Images(HTMLParser):
-    def __init__(self):super().__init__();self.sources=[]
+    def __init__(self):super().__init__();self.sources=[];self.anchors=[];self.linked_sources=[]
     def handle_starttag(self,tag,attrs):
-        if tag=='img':self.sources.append(dict(attrs))
+        attrs=dict(attrs)
+        if tag=='a':self.anchors.append(attrs.get('href',''))
+        if tag=='img':
+            self.sources.append(attrs)
+            if self.anchors:self.linked_sources.append((attrs,self.anchors[-1]))
+    def handle_endtag(self,tag):
+        if tag=='a' and self.anchors:self.anchors.pop()
 
 
 def readme_check(repo,base,preview,final):
@@ -71,10 +77,13 @@ def readme_check(repo,base,preview,final):
         page=fetch('https://api.github.com/repos/'+repo+'/readme',accept='application/vnd.github.html').decode('utf-8')
         parser=Images();parser.feed(page)
         report['rendered_preview_present']=any(Path(preview).name in (im.get('src','')+' '+im.get('data-canonical-src','')) for im in parser.sources)
+        report['rendered_preview_links_to_book']=any(
+            Path(preview).name in (im.get('src','')+' '+im.get('data-canonical-src',''))
+            and href.rstrip('/')==base.rstrip('/') for im,href in parser.linked_sources)
         report['pages_preview_bytes_match']=fetch(base.rstrip('/')+'/'+quote(preview,safe='/'))==path.read_bytes()
         report['repository_preview_bytes_match']=fetch('https://raw.githubusercontent.com/'+repo+'/HEAD/'+quote(preview,safe='/'))==path.read_bytes()
         report['preview']=preview;report['preview_checked']=True
-        if not all(report[k] for k in ('rendered_preview_present','pages_preview_bytes_match','repository_preview_bytes_match')):
+        if not all(report[k] for k in ('rendered_preview_present','rendered_preview_links_to_book','pages_preview_bytes_match','repository_preview_bytes_match')):
             issues.append('README rendered preview or actual preview bytes failed')
     except Exception as exc:issues.append(type(exc).__name__+': '+str(exc))
     report.update(passed=not issues,issues=issues)
