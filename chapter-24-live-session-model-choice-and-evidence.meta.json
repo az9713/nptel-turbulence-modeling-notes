@@ -1,8 +1,8 @@
 {
   "chapter": 24,
   "title": "24. Live session: model choice and evidence",
-  "status": "Accepted in two independent scientific reviews",
-  "authored_body_sha256": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
+  "status": "Revised; fresh independent compliance review pending",
+  "authored_body_sha256": "a5b644fab9cf53dddd9f2f398e9e0691feac2cf2830e14db967c64b5ca82ea2b",
   "recordings": [
     {
       "playlist_position": 75,
@@ -138,51 +138,9 @@
   "executable_listings": 1,
   "source_reading": "Complete local machine ASR read sequentially before drafting; fallible recognition and overlap retained",
   "independent_review": {
-    "status": "accepted",
-    "accepted_body_sha256": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
-    "rounds": [
-      {
-        "round": 1,
-        "report_identifier": "ch24-r1.md",
-        "accepted": true,
-        "reviewer_id": "independent-course-peer",
-        "independent_of_author": true,
-        "blocking": 0,
-        "major": 0,
-        "minor": 0,
-        "kind": "Independent AI scientific review",
-        "body_sha256": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
-        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript"
-      },
-      {
-        "round": 2,
-        "report_identifier": "ch24-r2.md",
-        "accepted": true,
-        "reviewer_id": "lead-coordinator",
-        "independent_of_author": true,
-        "blocking": 0,
-        "major": 0,
-        "minor": 0,
-        "kind": "Independent AI scientific review",
-        "body_sha256": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
-        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript"
-      }
-    ],
-    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance",
-    "repair_history": [
-      {
-        "body_sha256": "4c083d812ce37df361ac0b81ac1ad34bffca904698d397d8d662159434eb0659",
-        "round": 1,
-        "reviewer_id": "independent-course-peer",
-        "blocking": 0,
-        "major": 0,
-        "minor": 1,
-        "finding": "Linear strain term requires explicit incompressible mean/traceS=0",
-        "repair": "Exactly three prose paragraphs; code/output unchanged",
-        "closure_body_sha256": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
-        "closure": "Focused R1 closure appended to original report; full revised R2 also accepts"
-      }
-    ]
+    "status": "pending-compliance-review",
+    "accepted": false,
+    "prior_accepted_body_sha256": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da"
   },
   "limitations": [
     "Complete local small.en machine ASR read including overlaps/outages/tail; not publisher captions or comprehensive audio/board verification",
@@ -241,5 +199,55 @@
       "end": 3851,
       "disposition": "Trailing silence-like periodic ASR you/You fragments and recording tail; no substantive instruction inferred"
     }
-  ]
+  ],
+  "pre_compliance_review": {
+    "body_sha256": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
+    "review": {
+      "status": "accepted",
+      "accepted_body_sha256": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch24-r1.md",
+          "accepted": true,
+          "reviewer_id": "independent-course-peer",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript"
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch24-r2.md",
+          "accepted": true,
+          "reviewer_id": "lead-coordinator",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript"
+        }
+      ],
+      "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance",
+      "repair_history": [
+        {
+          "body_sha256": "4c083d812ce37df361ac0b81ac1ad34bffca904698d397d8d662159434eb0659",
+          "round": 1,
+          "reviewer_id": "independent-course-peer",
+          "blocking": 0,
+          "major": 0,
+          "minor": 1,
+          "finding": "Linear strain term requires explicit incompressible mean/traceS=0",
+          "repair": "Exactly three prose paragraphs; code/output unchanged",
+          "closure_body_sha256": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
+          "closure": "Focused R1 closure appended to original report; full revised R2 also accepts"
+        }
+      ]
+    }
+  }
 }

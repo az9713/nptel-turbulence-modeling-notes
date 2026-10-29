@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="115f5eb6953defa6abd75b866f9cf39b76c61e0941bb154add9a228ee255887e">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="84f8e11fc42a3b9f836cd95a1710e124b2f3e34d287bc93dbf9b5dacb54a88b2">
 <title>6. Stationarity, homogeneity and pressure redistribution · Turbulence Modeling</title><link rel="stylesheet" href="assets/book.css">
 <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{pageReady:()=>MathJax.startup.defaultPageReady().then(()=>{document.documentElement.dataset.mathReady='true';})}};</script>
 <script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Turbulence Modeling · NPTEL IIT Madras</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="book-overview.html">Study route</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
-<div class="layout"><aside class="toc" id="chapter-toc"><h2>On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
-<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>6. Stationarity, homogeneity and pressure redistribution</h1>
+<div class="layout"><aside class="toc" id="chapter-toc"><h2 id="detail-01">On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1 id="detail-02">6. Stationarity, homogeneity and pressure redistribution</h1>
 <p class="lead">A moving plate injects momentum in one direction. Why does the fluid fluctuate in the other two? The answer requires two different kinds of reasoning: statistical symmetries simplify the exact equations, and a component budget identifies which terms supply each velocity variance. Confusing a symmetry of averages with a symmetry of instantaneous motion destroys precisely the correlations we need to understand.</p>
 <div class="learning-map"><strong>The problem to carry.</strong> Consider fluid between two parallel plates. The lower plate is fixed; the upper plate moves steadily. We will determine which production terms survive, explain what pressure redistribution can establish, and build a budget whose every component can be checked. The numerical ledger is an original construction, not the instructor's DNS data.</div>
 <p>Lessons 14–17 first revisit statistical stationarity and homogeneity, then use fully developed turbulent Couette flow to interpret the Reynolds-stress equations. Lesson 16 shows the instructor's own direct numerical simulation (DNS), meaning a calculation intended to resolve the dynamically relevant turbulent scales without a turbulence closure. These notes reconstruct the mathematical argument from the complete captions. They do not reproduce or digitize those plots. Coordinates change during that presentation; we keep \(x_1=x\) streamwise, \(x_2=y\) wall normal, and \(x_3=z\) spanwise throughout.</p>
@@ -23,7 +23,7 @@ R_{ij}=\mathbb E[u_i'u_j'].
 <p>It does not imply \(\partial_t u_i=0\), nor does it make \(u_i'\) vanish. The flow can remain vigorously unsteady while its probability law stays unchanged. A weather-like time trace may repeatedly visit fast and slow states with the same frequencies; those visits need not occur at the same times in different realizations.</p>
 <p>The lecture illustrates a practical issue: a tunnel or simulation starts from rest, passes through a transient, and eventually appears to fluctuate about a persistent statistical state. Including startup data then biases the desired long-time statistics toward a different physical state. A defensible measurement procedure identifies a candidate post-transient interval and compares several subsequent blocks. Compare means, variances, and the particular correlations required by the intended model; matching the mean alone is inadequate.</p>
 <p>Finite block estimates should not be expected to match exactly. If two estimates differ, their difference may reflect sampling noise, slow drift, intermittency, or a genuine change of state. Equal block lengths make a comparison easier to interpret, but equal sample counts are not a mathematical requirement for comparing statistical states. Unequal blocks can be compared with their appropriate uncertainties. Correlated samples make these uncertainties larger than an independent-sample calculation would suggest; chapter 2 derived the finite correlation correction. <a href="https://arxiv.org/abs/1311.0828">Oliver and coauthors, introduction and §II.A</a>, discuss this sampling problem for DNS statistics.</p>
-<div class="worked"><h3>A decision before taking an average</h3>
+<div class="worked"><h3 id="detail-03">A decision before taking an average</h3>
 <p>Suppose four equal-duration post-startup blocks give streamwise means \(10.02,9.98,10.01,9.99\ \mathrm{m\,s^{-1}}\). Those numbers alone support neither a stationarity proof nor a sampling-error estimate. We also need the correlation time or a suitable uncertainty method, and we should inspect the variances and stress correlations. If the same means accompany variances \(1,2,3,4\ \mathrm{m^2\,s^{-2}}\), the changing fluctuation level is a warning that a constant mean has concealed evolution.</p>
 <p>Conversely, a small mean difference between adjacent blocks does not demand discarding one of them. The relevant question is whether the differences are consistent with the uncertainty and whether the physical operating conditions remained the same. A steady imposed plate speed is a boundary condition; it is not itself evidence that the interior statistics have settled.</p></div>
 <p>Stationarity and ergodicity also answer different questions. Stationarity describes invariance under time translation. Ergodicity concerns whether an adequately long record can represent the ensemble statistics of interest. A random variable that is selected once and then remains constant in each realization is stationary, but one realization cannot sample its entire ensemble distribution. Our use of a time average as an estimate of \(\mathbb E\) therefore carries an additional sampling assumption.</p>
@@ -43,7 +43,7 @@ R_{ij}=\mathbb E[u_i'u_j'].
  +\mathbb E[p'\partial_xu_i']=0
 \]</div>
 <p>under the appropriate regularity and homogeneity assumptions. The two terms on the right can be nonzero and cancel. Removing each separately would discard real pressure–velocity-gradient correlations. Likewise, \(\mathbb E[\partial_xu_i']=0\) does not imply \(\mathbb E[p'\partial_xu_i']=0\): the expectation of a product is not generally the product of expectations.</p>
-<div class="worked"><h3>A field with constant statistics and nonzero gradients</h3>
+<div class="worked"><h3 id="detail-04">A field with constant statistics and nonzero gradients</h3>
 <p>Let the scalar field \(f(x,t)=U_0+a\cos(k_xx-\omega t+\Theta)\), where the random phase \(\Theta\) is uniform on \([0,2\pi)\). Here \(U_0\) and \(a\) have velocity units, \(k_x\) is a spatial wavenumber, and \(\omega\) is an angular frequency. A time or spatial shift adds a constant to a uniform phase and hence leaves the joint law unchanged. Direct integration over phase gives</p>
 <div class="equation">\[
 \mathbb E[f]=U_0,\quad
@@ -54,7 +54,7 @@ R_{ij}=\mathbb E[u_i'u_j'].
 <p>Homogeneity is also different from isotropy. Translation invariance does not imply rotational invariance. A homogeneous ensemble may contain a preferred direction and unequal component variances. The Couette example will be homogeneous parallel to the walls while remaining strongly anisotropic because the moving wall, stationary wall, and mean shear distinguish directions.</p>
 
 <h2 id="geometry" data-video="R9-DtHqmMtk" data-start="1112" data-end="1389">6.3 Specify the Couette problem before simplifying it <a class="timestamp" href="https://www.youtube.com/watch?v=R9-DtHqmMtk&amp;t=1112">L14 · 18:32</a></h2>
-<p>Take plates at \(y=0\) and \(y=H\), with \(H>0\) the gap. The lower wall is stationary and the upper wall moves at speed \(V_p>0\) in the \(x\) direction. We use incompressible fluid of constant density \(\rho>0\) and constant kinematic viscosity \(\nu>0\). There is no imposed spanwise pressure gradient, no wall penetration, and no independent fluctuating body force. The idealized apparatus extends indefinitely, or is represented by a periodic computational domain, in directions parallel to the plates. A periodic domain approximates an infinite homogeneous flow only to the extent that its size and sampling support that approximation.</p>
+<p>Take plates at \(y=0\) and \(y=H\), with \(H\gt 0\) the gap. The lower wall is stationary and the upper wall moves at speed \(V_p\gt 0\) in the \(x\) direction. We use incompressible fluid of constant density \(\rho\gt 0\) and constant kinematic viscosity \(\nu\gt 0\). There is no imposed spanwise pressure gradient, no wall penetration, and no independent fluctuating body force. The idealized apparatus extends indefinitely, or is represented by a periodic computational domain, in directions parallel to the plates. A periodic domain approximates an infinite homogeneous flow only to the extent that its size and sampling support that approximation.</p>
 <p>Assume the statistical state is stationary and homogeneous in \(x,z\). Mean continuity then reduces to \(dU_2/dy=0\). No penetration gives \(U_2(0)=U_2(H)=0\), so \(U_2=0\) throughout. Mean continuity does not similarly force \(U_3\) to vanish. For the conventional unforced spanwise state, reflection symmetry \(z\mapsto-z\), \(u_3\mapsto-u_3\) implies \(U_3=0\). A sustained symmetry-broken state or spanwise forcing would require reconsideration. “Fully developed” alone should not hide these additional physical conditions.</p>
 <p>Our mean field is therefore \(\boldsymbol U=(U(y),0,0)\), with \(U(0)=0\), \(U(H)=V_p\). Write \(S(y)=dU/dy\), with units \(\mathrm{s^{-1}}\). The material derivative following the mean is \(D_U=\partial_t+U_j\partial_j\). Acting on any stationary, wall-parallel homogeneous one-point stress, it vanishes:</p>
 <div class="equation">\[
@@ -87,7 +87,7 @@ P_{ij}=-R_{i\ell}\partial_\ell U_j-R_{j\ell}\partial_\ell U_i,
 -R_{23}S&0&0
 \end{pmatrix}.
 \]</div>
-<p>For positive shear and negative \(R_{12}\), \(P_{11}>0\). The mean flow directly feeds streamwise variance; it directly feeds neither wall-normal nor spanwise variance. Nevertheless the exact equations allow both \(R_{22}>0\) and \(R_{33}>0\). Setting their production to zero is not permission to set their stresses to zero.</p>
+<p>For positive shear and negative \(R_{12}\), \(P_{11}\gt 0\). The mean flow directly feeds streamwise variance; it directly feeds neither wall-normal nor spanwise variance. Nevertheless the exact equations allow both \(R_{22}\gt 0\) and \(R_{33}\gt 0\). Setting their production to zero is not permission to set their stresses to zero.</p>
 <p>The three normal balances become</p>
 <div class="equation">\[
 \begin{aligned}
@@ -122,7 +122,7 @@ P_{ij}=-R_{i\ell}\partial_\ell U_j-R_{j\ell}\partial_\ell U_i,
 \]</div>
 <p>Consequently pressure–strain makes no direct contribution to \(k=R_{ii}/2\), the turbulent kinetic energy per unit mass. It can remove variance from one component and supply others without changing their sum through this mechanism. Pressure transport, contained separately in \(D_{ij}\), can still move energy from one location to another. Pressure has not disappeared from the energy budget merely because the redistribution trace is zero.</p>
 <p>The trace identity does not determine the signs of the individual entries. Both diagonal triples \((-10,6,4)\) and \((3,-1,-2)\), in consistent rate units, satisfy it. Nor does it require equal sharing: a loss of 10 may be accompanied by gains of 6 and 4. The instructor's Couette budget example describes the common pattern of streamwise redistribution loss and transverse gain over much of the flow. That pattern uses the actual budget data in addition to continuity. Continuity alone cannot prove it at every wall distance.</p>
-<div class="worked"><h3>A complete local ledger</h3>
+<div class="worked"><h3 id="detail-05">A complete local ledger</h3>
 <p>Prescribe \(S=100\ \mathrm{s^{-1}}\) and</p>
 <div class="equation">\[
 R=\begin{pmatrix}.25&-.08&0\\-.08&.09&0\\0&0&.04\end{pmatrix}
@@ -141,7 +141,7 @@ R=\begin{pmatrix}.25&-.08&0\\-.08&.09&0\\0&0&.04\end{pmatrix}
 <h2 id="budget-audit" data-video="-8ak1-qZgBw" data-start="304" data-end="798">6.7 A budget residual is a diagnostic with several possible causes <a class="timestamp" href="https://www.youtube.com/watch?v=-8ak1-qZgBw&amp;t=304">L17 · 05:04</a></h2>
 <p>Define the local residual \(B_{ij}=P_{ij}+\Pi_{ij}-\epsilon_{ij}+D_{ij}-D_U R_{ij}\). An exact resolved continuum solution, exact differentiation, and exact statistical averaging would give \(B_{ij}=0\). The lecture uses a near-zero DNS budget residual to assess its sampled balance. In a numerical calculation, nonzero residuals can arise from insufficient sampling, unresolved transients, spatial or temporal discretization, inconsistent interpolation, omitted terms, boundary treatment, or sign and normalization errors. Stationarity and sampling are crucial possibilities; they are not an exhaustive diagnosis.</p>
 <p>A small residual is also insufficient to validate a turbulence model. Two incorrect contributions can cancel, and a model can close its own discretized equation while predicting the wrong physical statistics. Compare component budgets, spatial profiles, refinement behavior, and statistical uncertainty as well as the total residual. A residual should be quoted relative to meaningful budget scales; a dimensional number without context can mislead.</p>
-<div class="worked"><h3>Negative transverse redistribution can coexist with steady variance</h3>
+<div class="worked"><h3 id="detail-06">Negative transverse redistribution can coexist with steady variance</h3>
 <p>Keep the production and destruction tensors of the preceding ledger. Change the redistribution diagonal to \((-3,4,-1)\), still trace free, and prescribe transport rates \(D_{11},D_{22},D_{33}=(-7,2,5)\). Then \(16-3-6-7=0\), \(4-6+2=0\), and \(-1-4+5=0\). The third component loses variance through both redistribution and destruction and receives it through transport. The second ledger illustrates a local possibility, not a near-wall asymptotic solution or fitted profile.</p>
 <p>Taking a trace alone would hide another error: a computed residual diagonal \((0.4,-0.4,0)\) has zero trace while two component budgets fail. The maximum component residual remains \(0.4\ \mathrm{m^2\,s^{-3}}\). Componentwise auditing is essential precisely because redistribution cancels in the trace.</p></div>
 <p>At a wall, and in the region approaching it, the hierarchy among molecular transport, pressure redistribution, and destruction changes. The captions explicitly note a sign change in one transverse redistribution term and compensation by viscous transport. Those observations warn against extending an outer-region interpretation unchanged to the wall. They do not supply a universal wall-distance threshold, so none is invented here.</p>
@@ -155,46 +155,76 @@ R=\begin{pmatrix}.25&-.08&0\\-.08&.09&0\\0&0&.04\end{pmatrix}
 <p>The production term is \(-R_{22}S\), not \(-R_{12}S\): one factor comes from the wall-normal component correlated with the wall-normal advecting fluctuation. Expanding the general tensor formula is safer than guessing from the normal-stress result. None of the last three terms has a sign that can be inferred simply by calling it a correlation. In particular, off-diagonal gradient products are not squares.</p>
 <p>The following standard-library program evaluates the local tensors and the random-phase example. Eight equally spaced phases integrate the first and second trigonometric moments exactly; they do not constitute a statistical convergence study. With \(a=2\ \mathrm{m\,s^{-1}}\) and \(k_x=3\ \mathrm{m^{-1}}\), the mean-square gradient is \(18\ \mathrm{s^{-2}}\), although the mean and variance are independent of phase shift. The two stress ledgers are intentionally stipulated checks of tensor arithmetic.</p>
 <pre data-run="code/ch06_redistribution.py"><code>&quot;&quot;&quot;Analytic sampling and constructed local stress budgets, not DNS data.&quot;&quot;&quot;
+
 from math import cos, pi, sin, sqrt
 
-phases = [2*pi*j/8 for j in range(8)]
-mean = lambda values: sum(values)/len(values)
+phases = [2 * pi * j / 8 for j in range(8)]
+
+
+def mean(values):
+    return sum(values) / len(values)
+
+
 for shift in (0.0, 0.37, 1.41):
-    values = [10.0 + 2.0*cos(p+shift) for p in phases]
-    gradients = [-6.0*sin(p+shift) for p in phases]
+    values = [10.0 + 2.0 * cos(p + shift) for p in phases]
+    gradients = [-6.0 * sin(p + shift) for p in phases]
     mu = mean(values)
-    var = mean([(v-mu)**2 for v in values])
-    print(f&quot;phase shift {shift:.2f}: mean={mu:.6f}, variance={var:.6f}, &quot;
-          f&quot;mean gradient-square={mean([g*g for g in gradients]):.6f}&quot;)
+    var = mean([(v - mu) ** 2 for v in values])
+    print(
+        f&quot;phase shift {shift:.2f}: mean={mu:.6f}, variance={var:.6f}, &quot;
+        f&quot;mean gradient-square={mean([g * g for g in gradients]):.6f}&quot;
+    )
 
 # Positive covariance in m^2/s^2; A_ij = partial_j U_i in 1/s.
-R = [[0.25,-0.08,0.0],[-0.08,0.09,0.0],[0.0,0.0,0.04]]
-A = [[0.0,100.0,0.0],[0.0,0.0,0.0],[0.0,0.0,0.0]]
-P = [[-sum(R[i][l]*A[j][l]+R[j][l]*A[i][l]
-           for l in range(3)) for j in range(3)] for i in range(3)]
-eps = [[6.0,-1.0,0.0],[-1.0,6.0,0.0],[0.0,0.0,4.0]]
-Pi = [[-10.0,8.0,0.0],[8.0,6.0,0.0],[0.0,0.0,4.0]]
-trace = lambda M: sum(M[i][i] for i in range(3))
+R = [[0.25, -0.08, 0.0], [-0.08, 0.09, 0.0], [0.0, 0.0, 0.04]]
+A = [[0.0, 100.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+P = [
+    [
+        -sum(R[i][ell] * A[j][ell] + R[j][ell] * A[i][ell] for ell in range(3))
+        for j in range(3)
+    ]
+    for i in range(3)
+]
+eps = [[6.0, -1.0, 0.0], [-1.0, 6.0, 0.0], [0.0, 0.0, 4.0]]
+Pi = [[-10.0, 8.0, 0.0], [8.0, 6.0, 0.0], [0.0, 0.0, 4.0]]
+
+
+def trace(M):
+    return sum((M[i][i] for i in range(3)))
+
+
 print(&quot;production matrix:&quot;, P)
-print(f&quot;k={trace(R)/2:.6f}, production of k={trace(P)/2:.6f}, &quot;
-      f&quot;dissipation of k={trace(eps)/2:.6f}&quot;)
+print(
+    f&quot;k={trace(R) / 2:.6f}, production of k={trace(P) / 2:.6f}, &quot;
+    f&quot;dissipation of k={trace(eps) / 2:.6f}&quot;
+)
 print(f&quot;redistribution trace={trace(Pi):.6f}&quot;)
-print(&quot;zero-transport residual:&quot;,
-      max(abs(P[i][j]+Pi[i][j]-eps[i][j])
-          for i in range(3) for j in range(3)))
+print(
+    &quot;zero-transport residual:&quot;,
+    max(
+        abs(P[i][j] + Pi[i][j] - eps[i][j]) for i in range(3) for j in range(3)
+    ),
+)
 
 # A second bookkeeping state: transport can supply a normal component.
-Pi2 = [[-3.0,8.0,0.0],[8.0,4.0,0.0],[0.0,0.0,-1.0]]
-D2 = [[-7.0,0.0,0.0],[0.0,2.0,0.0],[0.0,0.0,5.0]]
-print(&quot;transport-assisted residual:&quot;,
-      max(abs(P[i][j]+Pi2[i][j]+D2[i][j]-eps[i][j])
-          for i in range(3) for j in range(3)))
-print(f&quot;R12 correlation coefficient={R[0][1]/sqrt(R[0][0]*R[1][1]):.6f}&quot;)
+Pi2 = [[-3.0, 8.0, 0.0], [8.0, 4.0, 0.0], [0.0, 0.0, -1.0]]
+D2 = [[-7.0, 0.0, 0.0], [0.0, 2.0, 0.0], [0.0, 0.0, 5.0]]
+print(
+    &quot;transport-assisted residual:&quot;,
+    max(
+        abs(P[i][j] + Pi2[i][j] + D2[i][j] - eps[i][j])
+        for i in range(3)
+        for j in range(3)
+    ),
+)
+print(f&quot;R12 correlation coefficient={R[0][1] / sqrt(R[0][0] * R[1][1]):.6f}&quot;)
 
 # An intentionally wrong audit can cancel two errors in a total trace.
-wrong_diag = [0.4,-0.4,0.0]
-print(f&quot;cancelling-error trace={sum(wrong_diag):.6f}, &quot;
-      f&quot;largest component error={max(abs(x) for x in wrong_diag):.6f}&quot;)
+wrong_diag = [0.4, -0.4, 0.0]
+print(
+    f&quot;cancelling-error trace={sum(wrong_diag):.6f}, largest component &quot;
+    f&quot;error={max((abs(x) for x in wrong_diag)):.6f}&quot;
+)
 </code></pre>
 <p>The observed output is:</p>
 <pre class="output">phase shift 0.00: mean=10.000000, variance=2.000000, mean gradient-square=18.000000
@@ -211,28 +241,28 @@ cancelling-error trace=0.000000, largest component error=0.400000
 <p>The gradient-square check explains why homogeneity cannot erase gradient correlations. The two zero tensor residuals check the sign convention and all six independent component balances. The final line checks that a zero trace residual does not guarantee correct individual budgets. None of these exact arithmetic successes substitutes for measuring a turbulent state or establishing that a chosen closure predicts one.</p>
 
 <h2 id="exercises">6.9 Exercises with complete solutions</h2>
-<div class="exercise"><h3>1. Stationary but not represented by a single record</h3>
+<div class="exercise"><h3 id="detail-07">1. Stationary but not represented by a single record</h3>
 <p>Choose a random variable \(A\) equal to \(+1\) or \(-1\) with equal probability, and define \(X(t)=A\) for all time. Is it stationary? Does the long-time mean of one realization equal the ensemble mean?</p>
 <details><summary>Solution</summary><p>Every time-shifted set of observations equals the same vector \((A,\ldots,A)\), so its distribution is unchanged: the process is strictly stationary. Its ensemble mean is zero. A single realization has time average \(+1\) or \(-1\), regardless of record length. Thus stationarity does not establish ergodicity for the mean. Taking more samples from one unchanged realization does not fix this discrepancy.</p></details></div>
-<div class="exercise"><h3>2. A vanishing mean derivative</h3>
-<p>For the random-phase scalar field in §6.2, evaluate \(\mathbb E[\partial_x f]\) and \(\mathbb E[(\partial_xf)^2]\). Does the first result justify dropping the second?</p>
+<div class="exercise"><h3 id="detail-08">2. A vanishing mean derivative</h3>
+<p>For the random-phase scalar field in <a class="secref" href="#homogeneity">§6.2</a>, evaluate \(\mathbb E[\partial_x f]\) and \(\mathbb E[(\partial_xf)^2]\). Does the first result justify dropping the second?</p>
 <details><summary>Solution</summary><p>Differentiate to obtain \(\partial_xf=-ak_x\sin(k_xx-\omega t+\Theta)\). Uniform phase gives mean sine zero and mean sine squared \(1/2\). The answers are zero and \(a^2k_x^2/2\). The latter is positive for nonzero amplitude and wavenumber. A zero mean random quantity can have a nonzero variance; dropping its square would confuse a first moment with a second moment.</p></details></div>
-<div class="exercise"><h3>3. Derive the mean transverse velocity</h3>
+<div class="exercise"><h3 id="detail-09">3. Derive the mean transverse velocity</h3>
 <p>Under \(x,z\) homogeneity, prove that no penetration gives \(U_2=0\). Identify what additional argument is needed for \(U_3=0\).</p>
 <details><summary>Solution</summary><p>Mean continuity is \(\partial_xU_1+\partial_yU_2+\partial_zU_3=0\). The first and last derivatives vanish, giving \(dU_2/dy=0\). Hence \(U_2\) is constant across the gap and its wall value zero sets it to zero everywhere. Continuity imposes no condition on a possible \(U_3(y)\). The conventional zero spanwise mean follows from the spanwise reflection symmetry of the statistically selected unforced state; an imposed spanwise pressure gradient or a state that breaks that symmetry changes the problem. The two conclusions have different logical origins.</p></details></div>
-<div class="exercise"><h3>4. Translate the wall-normal label</h3>
+<div class="exercise"><h3 id="detail-10">4. Translate the wall-normal label</h3>
 <p>An alternative notation uses \(x_3\) for the wall normal and \(x_2\) for the span. Write its nonzero normal production and its streamwise/wall-normal shear production.</p>
 <details><summary>Solution</summary><p>Its mean gradient is \(\partial_3\widetilde U_1=\widetilde S\). Substitute directly into the general tensor formula: \(\widetilde P_{11}=-2\widetilde R_{13}\widetilde S\), \(\widetilde P_{33}=0\), \(\widetilde P_{22}=0\), and \(\widetilde P_{13}=-\widetilde R_{33}\widetilde S\). Swapping labels 2 and 3 recovers our \(P_{11}=-2R_{12}S\) and \(P_{12}=-R_{22}S\). In both descriptions the directly produced normal variance is streamwise.</p></details></div>
-<div class="exercise"><h3>5. Trace free does not mean equal sharing</h3>
+<div class="exercise"><h3 id="detail-11">5. Trace free does not mean equal sharing</h3>
 <p>At one location \(\Pi_{11}=-12\ \mathrm{m^2\,s^{-3}}\). Can continuity determine \(\Pi_{22}\) and \(\Pi_{33}\) separately? Can one of them be negative?</p>
 <details><summary>Solution</summary><p>Continuity gives only \(\Pi_{22}+\Pi_{33}=12\). Possibilities include \((6,6)\), \((8,4)\), and \((14,-2)\), all in the same units. Thus neither equal sharing nor positivity of each receiving component follows from the trace. Additional flow information and the remaining component budget terms are needed to decide which allocation occurs. The triple \((-12,14,-2)\) removes variance from both the first and third directions and gives it to the second.</p></details></div>
-<div class="exercise"><h3>6. What does a vanishing transport integral prove?</h3>
+<div class="exercise"><h3 id="detail-12">6. What does a vanishing transport integral prove?</h3>
 <p>For stationary Couette flow with zero wall flux, assume \(P_{22}=0\) and \(\int_0^H\epsilon_{22}\,dy=0.3\ \mathrm{m^3\,s^{-3}}\). Find the integrated pressure–strain contribution. Must it be positive everywhere?</p>
 <details><summary>Solution</summary><p>Integrate \(0=\Pi_{22}-\epsilon_{22}-\partial_yF_{222}\). The flux integral is \(-[F_{222}]_0^H=0\), leaving \(\int_0^H\Pi_{22}\,dy=0.3\ \mathrm{m^3\,s^{-3}}\). The extra length unit comes from integration over \(y\). The integral is positive, but a positive integral permits negative intervals. Local transport can compensate those intervals while canceling in the wall-to-wall integral.</p></details></div>
-<div class="exercise"><h3>7. Audit an apparently perfect total budget</h3>
+<div class="exercise"><h3 id="detail-13">7. Audit an apparently perfect total budget</h3>
 <p>A report gives \(B_{11}=0.2\), \(B_{22}=-0.2\), \(B_{33}=0\), and concludes that all stress equations close because \(B_{ii}/2=0\). Assess the conclusion and state what further checks are useful.</p>
 <details><summary>Solution</summary><p>The trace equation closes, but the first two normal-stress equations do not. The maximum normal residual is \(0.2\), not zero. Report all independent components and their uncertainties, check signs and consistent spatial differentiation, and compare the residuals with the magnitudes of production, destruction, and transport. Refinement and longer statistically stable records help distinguish discretization from sampling error. Even all components closing would establish a budget consistency result, not independent accuracy of a closure against physical data.</p></details></div>
-<div class="exercise"><h3>8. Recover the plate power balance</h3>
+<div class="exercise"><h3 id="detail-14">8. Recover the plate power balance</h3>
 <p>For the ideal stationary Couette system with zero streamwise pressure gradient, integrate the mean momentum relation to connect plate power, mean molecular dissipation, and transfer to turbulent kinetic energy. Use \(\mu=\rho\nu\) and assume smooth no-slip walls.</p>
 <details><summary>Solution</summary><p>Constant total shear gives \(\tau_{\rm tot}=\mu S-\rho R_{12}\). Multiply by \(S\) and integrate over \(0\le y\le H\). Since \(\int_0^H S\,dy=V_p\),</p><div class="equation">\[
 \tau_{\rm tot}V_p

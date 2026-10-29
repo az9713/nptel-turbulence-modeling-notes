@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="4f39e7f497fbcb2e83cb3e9c5f75fecfdc73f542a93e4749e22d8c4ade91a13f">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="418151ea32cbafde0416667b83243be135ff20ed7c4682f92f32e05d70f672ef">
 <title>14. Near-wall corrections and boundary data · Turbulence Modeling</title><link rel="stylesheet" href="assets/book.css">
 <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{pageReady:()=>MathJax.startup.defaultPageReady().then(()=>{document.documentElement.dataset.mathReady='true';})}};</script>
 <script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Turbulence Modeling · NPTEL IIT Madras</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="book-overview.html">Study route</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
-<div class="layout"><aside class="toc" id="chapter-toc"><h2>On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
-<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>14. Near-wall corrections and boundary data</h1>
+<div class="layout"><aside class="toc" id="chapter-toc"><h2 id="detail-01">On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1 id="detail-02">14. Near-wall corrections and boundary data</h1>
 <p class="lead">A correction function must do more than have the right units. It must produce the intended limit with the variables actually solved, enter every affected equation consistently, and work with the specified boundary data. The near-wall comparison exposes a mismatch in a baseline closure, but it does not uniquely determine a replacement. We will test the lecture's proposed correction, derive three related dissipation limits, and track how inlet intensity and length choices change the modeled viscosity.</p>
 <div class="learning-map"><strong>Follow a boundary value through the equations.</strong> The recurring smooth-wall channel provides the local asymptotic constraints. A separate inlet example shows how plausible-looking input choices prescribe different turbulence time scales. Numerical checks keep a finite wall destruction rate distinct from a singular \(\omega\), and a converged numerical solution distinct from a correct constitutive limit.</div>
 <p class="source-note">Lessons 44–47 compare exact and modeled energy terms, introduce damping, and discuss wall, initial and inlet conditions. Several caption statements need qualification: the bounded exponential is not an inverse-distance function; \(2\nu k/y^2\) does not diverge when \(k\sim Ay^2\); a second derivative is not intrinsically unstable; and turbulence length inputs can have physical meaning when defined and measured. These distinctions are developed beside the corresponding construction.</p>
@@ -38,7 +38,7 @@ f_\mu=\exp\left[-\frac{3.4}{(1+Re_T/50)^2}\right],
 \tag{14.1}
 \]</div>
 <p>For \(Re_T\geq0\), \(\exp(-3.4)\leq f_\mu&lt;1\), with the upper limit approached as \(Re_T\to\infty\). If \(k\sim Ay^2\) and \(\epsilon\to\epsilon_w&gt;0\), \(Re_T=O(y^4)\to0\), so \(f_\mu\to\exp(-3.4)=0.03337327\). It is bounded and does not behave as an inverse distance. The displayed formula therefore cannot justify the source's claimed power correction under those same physical variable limits.</p>
-<div class="worked"><h3>Measure the power rather than the name</h3>
+<div class="worked"><h3 id="detail-03">Measure the power rather than the name</h3>
 <p>Take \(A=0.7\ \mathrm{s^{-2}}\), \(\nu=1.5\times10^{-5}\ \mathrm{m^2\,s^{-1}}\), \(C_\mu=0.09\), \(k=Ay^2\), and the fixed physical wall rate \(\epsilon_w=2\nu A\). At \(y=0.002,0.001,0.0005\ \mathrm m\), (14.1) gives \(f_\mu=0.03348634,0.03338033,0.03337371\). The successive viscosity ratios on halving distance are \(16.05081360\) and \(16.00317349\), approaching the quartic factor 16. A cubic law would approach 8. The example tests this proposed substitution, not a complete low-Reynolds-number model.</p></div>
 <p>A named implementation includes more information than this factor. The inspected <a href="https://cpp.openfoam.org/v4/LaunderSharmaKE_8C_source.html">Foundation 4.1 Launder–Sharma implementation</a> uses the bounded exponential, a modified destruction response, and additional terms. In its incompressible \(k\) balance the destruction includes the evolved scalar plus \(D=2\nu|\nabla\sqrt{k}|^2\); its other equation has an additional term based on second mean-velocity gradients. Thus importing only \(f_\mu\) into the unchanged physical-\(\epsilon\) baseline is not that full implementation. We inspected these functions but have not run the solver or reconstructed the original 1974 paper.</p>
 <p>Call a modified evolved scalar \(e\) to avoid silently identifying it with our physical \(\epsilon\). A model using a destruction \(e+D\) and viscosity \(C_\mu f_\mu k^2/e\) has a different denominator and leading balance from the substitution tested above. Its near-wall powers must be derived from its own equations and boundary data. The word “damping” describes an intended effect; it does not prove a universal \(0&lt;f_\mu&lt;1\), a particular distance power, or correct tensor anisotropy for every formulation.</p>
@@ -56,7 +56,7 @@ D_U U_i=-\frac1\rho\partial_iP
  +\nu\nabla^2U_i-\partial_jR_{ij}+f_i.
 \]</div>
 <p>For a regular stationary wall trace, the material acceleration at the wall is zero. Hence \((\partial_nP)_w=\rho n_i(\nu\nabla^2U_i-\partial_jR_{ij}+f_i)_w\). A fully developed flat channel with no normal force gives the familiar zero normal gradient under its particular conditions. That is not an automatic rule for arbitrary geometry, body force, moving boundaries or a modified pressure variable.</p>
-<div class="worked"><h3>A zero-velocity counterexample to a universal zero pressure gradient</h3>
+<div class="worked"><h3 id="detail-04">A zero-velocity counterexample to a universal zero pressure gradient</h3>
 <p>A constant-density fluid at rest under gravity \(f_y=-9.81\ \mathrm{m\,s^{-2}}\) has \(U=0,R=0\) and \(\partial_yP=\rho f_y\). For \(\rho=1.2\), this is \(-11.772\ \mathrm{Pa\,m^{-1}}\), including at a horizontal wall. A solver using a pressure with hydrostatic head subtracted may instead have zero gradient for that transformed variable. Naming the pressure matters. A pressure problem with only Neumann data also needs a pressure reference or gauge to remove its additive constant.</p></div>
 <p>For dissipation, use the smooth-wall expansion \(k=Ay^2+O(y^3)\) from the preceding chapter. In the regular exact energy balance the finite leading molecular diffusion and destruction cancel, giving \(\epsilon_w=\nu k''_w=2\nu A\). This wall identity does not require that dissipation attain the global maximum there. A finite leading limit does not impose zero derivative of the full profile.</p>
 <p>Lesson 46 raises numerical concerns about estimating a second derivative. Such estimates can amplify errors: on a spacing \(h\), a fixed-amplitude perturbation in \(k\) can generate a derivative error proportional to \(h^{-2}\). Boundary coupling and source treatment can affect iteration convergence. But a second derivative by itself is not a proof of instability. Diffusion equations contain second derivatives and can be discretized stably. A numerical claim should state the stencil, time or iteration method, resolution and observed behavior.</p>
@@ -70,7 +70,7 @@ D_U U_i=-\frac1\rho\partial_iP
 \]</div>
 <p>The numerator is not fixed as the point moves toward the wall: \(k(y)\sim Ay^2\). Thus (14.2) is finite, although it is written as a quotient with \(y^2\) in the denominator. Evaluating the literal expression with \(k(0)=0\) and \(y=0\) gives an undefined \(0/0\), not zero or infinity. The limiting relation resolves that indeterminacy.</p>
 <p>At a first point \(P\) with small positive distance \(y_P\), \(2\nu k_P/y_P^2\) can estimate the limiting wall rate, or enter a specific solver's near-wall condition. It is not automatically the exact \(\epsilon\) at that finite point, and it is not a universal instruction that a finite \(\epsilon\) can never be represented on a wall boundary. Distinguish a continuous limiting condition, its finite-distance estimate and the location where a discrete scheme applies that estimate.</p>
-<div class="worked"><h3>Quantify the finite-distance bias</h3>
+<div class="worked"><h3 id="detail-05">Quantify the finite-distance bias</h3>
 <p>Take a manufactured profile \(k=Ay^2+By^3\), \(A=0.7\ \mathrm{s^{-2}}\), \(B=40\ \mathrm{m^{-1}\,s^{-2}}\), over a positive near-wall interval. Then \(2\nu k/y^2=2\nu A+2\nu By\), whereas the wall target is \(2\nu A=2.1\times10^{-5}\ \mathrm{m^2\,s^{-3}}\). At \(y=2,1,0.5\ \mathrm{mm}\), the estimates are \(2.34,2.22,2.16\) times \(10^{-5}\). The error halves with distance for this cubic correction.</p>
 <p>The profile is chosen for an asymptotic test, not as a solved turbulent budget. Its interior \(\nu k''=2\nu A+6\nu By\) is another quantity, although both converge to the same wall limit. Treating every finite-distance expression as identical would conceal these different errors.</p></div>
 
@@ -104,7 +104,7 @@ k_{\rm in}=\frac32(IU_{\rm ref})^2.
 \nu_{t,\rm in}=C_\mu^{1/4}L_{\rm in}\sqrt{k_{\rm in}}.
 \]</div>
 <p>The chosen length may be a measured integral scale, a geometry-related modeling estimate, or a numerical convenience. These are different evidence levels. A turbulent flow contains many scales, but that does not make every representative length physically meaningless. If two conventions use different \(c_L\), preserving the same \(\epsilon\) requires preserving \(c_L/L_{\rm in}\), rather than blindly reusing the same length number.</p>
-<div class="worked"><h3>An input sensitivity ledger</h3>
+<div class="worked"><h3 id="detail-06">An input sensitivity ledger</h3>
 <p>Take \(U_{\rm ref}=20\ \mathrm{m\,s^{-1}}\), \(L_{\rm in}=0.02\ \mathrm m\), \(C_\mu=0.09\), and the \(3/4\)-power convention. For intensities 1%, 5% and 10%, \(k_{\rm in}=0.06,1.5,6\ \mathrm{m^2\,s^{-2}}\). The destruction rates are \(0.12074767,15.09345885,120.74767078\ \mathrm{m^2\,s^{-3}}\), and viscosities \(0.00268328,0.01341641,0.02683282\ \mathrm{m^2\,s^{-1}}\).</p>
 <p>At fixed reference speed and length, \(k\propto I^2\), \(\epsilon\propto I^3\), \(\omega\propto I\), and \(\nu_t\propto I\). At fixed intensity, doubling length halves \(\epsilon,\omega\) and doubles \(\nu_t\). These are input-state sensitivities; the downstream solution also responds through transport and mean-flow feedback. The examples are not measured wind-tunnel conditions or recommended universal intensities.</p></div>
 <p>An initial field and an inlet condition have different roles. A converged unique steady solution may forget an initial numerical guess, although the guess affects convergence and can affect branch selection in nonlinear problems. Persistent inlet data continually enter the domain and may strongly affect development. A physical transient problem needs physically appropriate initial data. In a direct steady algebraic solve, a numerical initial iterate is not itself an extra physical initial condition.</p>
@@ -113,61 +113,82 @@ k_{\rm in}=\frac32(IU_{\rm ref})^2.
 <h2 id="reproduce">14.8 Reproduce the limit and input checks</h2>
 <p>Run <a href="code/ch14_boundary_and_inflow.py">ch14_boundary_and_inflow.py</a> with standard Python 3. The outputs below are observed execution, checked against the listing. They test limits, one manufactured profile and inlet arithmetic. No full wall-resolved solution or empirical model validation is implied.</p>
 <pre data-run="code/ch14_boundary_and_inflow.py"><code>&quot;&quot;&quot;Limit and input-sensitivity checks; no spatial turbulence solution.&quot;&quot;&quot;
+
 from math import exp, sqrt
 
+
 def fmu(rt):
-    return exp(-3.4/(1+rt/50)**2)
+    return exp(-3.4 / (1 + rt / 50) ** 2)
+
 
 print(f&quot;bounded damping limit exp(-3.4): {fmu(0):.8f}&quot;)
-nu,A,Cmu=1.5e-5,.7,.09
-eps_wall=2*nu*A
-previous=None
-for y in (.002,.001,.0005):
-    k=A*y*y
-    rt=k*k/(nu*eps_wall)
-    viscosity=Cmu*fmu(rt)*k*k/eps_wall
-    ratio=0 if previous is None else previous/viscosity
-    print(f&quot;fixed physical epsilon y={y:.4f}: f_mu={fmu(rt):.8f}, &quot;
-          f&quot;nu_t={viscosity:.8e}, previous/current={ratio:.8f}&quot;)
-    previous=viscosity
+nu, A, Cmu = 1.5e-5, 0.7, 0.09
+eps_wall = 2 * nu * A
+previous = None
+for y in (0.002, 0.001, 0.0005):
+    k = A * y * y
+    rt = k * k / (nu * eps_wall)
+    viscosity = Cmu * fmu(rt) * k * k / eps_wall
+    ratio = 0 if previous is None else previous / viscosity
+    print(
+        f&quot;fixed physical epsilon y={y:.4f}: f_mu={fmu(rt):.8f}, &quot;
+        f&quot;nu_t={viscosity:.8e}, previous/current={ratio:.8f}&quot;
+    )
+    previous = viscosity
 
 # Manufactured k with a higher-order term, not a modeled channel solution.
-B=40.
-for y in (.002,.001,.0005):
-    k=A*y*y+B*y**3
-    ratio_estimate=2*nu*k/y**2
-    sqrt_gradient=(2*A*y+3*B*y*y)/(2*sqrt(k))
-    derivative_estimate=2*nu*sqrt_gradient**2
-    print(f&quot;wall estimate y={y:.4f}: ratio={ratio_estimate:.8e}, &quot;
-          f&quot;sqrt-gradient={derivative_estimate:.8e}, target={eps_wall:.8e}&quot;)
+B = 40.0
+for y in (0.002, 0.001, 0.0005):
+    k = A * y * y + B * y**3
+    ratio_estimate = 2 * nu * k / y**2
+    sqrt_gradient = (2 * A * y + 3 * B * y * y) / (2 * sqrt(k))
+    derivative_estimate = 2 * nu * sqrt_gradient**2
+    print(
+        f&quot;wall estimate y={y:.4f}: ratio={ratio_estimate:.8e}, &quot;
+        f&quot;sqrt-gradient={derivative_estimate:.8e}, target={eps_wall:.8e}&quot;
+    )
 
 # The wall derivative identity contains cancellation at finite distance.
-y=.001
-k=A*y*y+B*y**3
-kp=2*A*y+3*B*y*y
-kpp=2*A+6*B*y
-identity=2*nu*((kp/(2*sqrt(k)))**2
-              +sqrt(k)*(kpp/(2*sqrt(k))-kp**2/(4*k**1.5)))
-print(f&quot;finite-distance nu*k_second identity difference: {abs(nu*kpp-identity):.3e}&quot;)
+y = 0.001
+k = A * y * y + B * y**3
+kp = 2 * A * y + 3 * B * y * y
+kpp = 2 * A + 6 * B * y
+identity = (
+    2
+    * nu
+    * (
+        (kp / (2 * sqrt(k))) ** 2
+        + sqrt(k) * (kpp / (2 * sqrt(k)) - kp**2 / (4 * k**1.5))
+    )
+)
+print(
+    f&quot;finite-distance nu*k_second identity difference: &quot;
+    f&quot;{abs(nu * kpp - identity):.3e}&quot;
+)
 
-Uref,length=20.,.02
-factor_rms=(2/3)**1.5
-print(f&quot;inflow coefficients: rms-cube={factor_rms:.8f}, &quot;
-      f&quot;Cmu-quarter={Cmu**.25:.8f}, Cmu-three-quarter={Cmu**.75:.8f}&quot;)
-for intensity in (.01,.05,.1):
-    k=1.5*(intensity*Uref)**2
-    eps=Cmu**.75*k**1.5/length
-    omega=eps/(Cmu*k)
-    viscosity=Cmu*k*k/eps
-    print(f&quot;inflow I={intensity:.2f}: k={k:.8f}, epsilon={eps:.8f}, &quot;
-          f&quot;omega={omega:.8f}, nu_t={viscosity:.8f}, nu_t/nu={viscosity/nu:.8f}&quot;)
+Uref, length = 20.0, 0.02
+factor_rms = (2 / 3) ** 1.5
+print(
+    f&quot;inflow coefficients: rms-cube={factor_rms:.8f}, &quot;
+    f&quot;Cmu-quarter={Cmu ** 0.25:.8f}, Cmu-three-quarter={Cmu ** 0.75:.8f}&quot;
+)
+for intensity in (0.01, 0.05, 0.1):
+    k = 1.5 * (intensity * Uref) ** 2
+    eps = Cmu**0.75 * k**1.5 / length
+    omega = eps / (Cmu * k)
+    viscosity = Cmu * k * k / eps
+    print(
+        f&quot;inflow I={intensity:.2f}: k={k:.8f}, epsilon={eps:.8f}, &quot;
+        f&quot;omega={omega:.8f}, nu_t={viscosity:.8f}, &quot;
+        f&quot;nu_t/nu={viscosity / nu:.8f}&quot;
+    )
 
 # Controlled scalar source integration illustrates numerical initialization.
-k0,eps0=.19,.5
-for dt in (.2,.4):
-    euler=k0-dt*eps0
+k0, eps0 = 0.19, 0.5
+for dt in (0.2, 0.4):
+    euler = k0 - dt * eps0
     print(f&quot;initial frozen-sink Euler dt={dt:.1f}: k_next={euler:.8f}&quot;)
-print(f&quot;hydrostatic normal pressure gradient Pa/m: {1.2*(-9.81):.8f}&quot;)
+print(f&quot;hydrostatic normal pressure gradient Pa/m: {1.2 * -9.81:.8f}&quot;)
 </code></pre>
 <pre class="output">bounded damping limit exp(-3.4): 0.03337327
 fixed physical epsilon y=0.0020: f_mu=0.03348634, nu_t=1.12514108e-09, previous/current=0.00000000

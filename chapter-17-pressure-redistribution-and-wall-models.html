@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="7457dcb0e5b0b5550d9e6cb515a762e8f9cf695f79b8e42963b4baafa7f16bcf">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="5e0043c40296dce23d0ce6b9db9487eec9225ea1bd43df017a9b8aca8467daeb">
 <title>17. Pressure redistribution and wall models · Turbulence Modeling</title><link rel="stylesheet" href="assets/book.css">
 <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{pageReady:()=>MathJax.startup.defaultPageReady().then(()=>{document.documentElement.dataset.mathReady='true';})}};</script>
 <script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Turbulence Modeling · NPTEL IIT Madras</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="book-overview.html">Study route</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
-<div class="layout"><aside class="toc" id="chapter-toc"><h2>On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
-<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>17. Pressure redistribution and wall models</h1>
+<div class="layout"><aside class="toc" id="chapter-toc"><h2 id="detail-01">On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1 id="detail-02">17. Pressure redistribution and wall models</h1>
 <p class="lead">Pressure redistribution is local in the Reynolds-stress equation but depends on a pressure field determined by the surrounding flow and its boundaries. Deriving a pressure-Poisson equation exposes that dependence; it does not close the pressure–strain correlation. The rapid and slow models make additional approximations. We will keep the exact derivation, the nonlocal representation and the local closure decisions separate, then test their trace, relaxation and wall limits.</p>
 <div class="learning-map"><strong>From a nonlocal equation to a usable closure.</strong> Start with incompressible momentum, subtract its mean pressure equation, and identify two fluctuation sources. A Green representation shows why two-point statistics appear. Isotropization of production and return to isotropy then provide explicit local models. Their consequences can be checked in a shear ledger, an analytic pressure ensemble and a homogeneous decay experiment before addressing wall corrections.</div>
 <p class="source-note">Lessons 55–59 form one sustained construction: pressure-Poisson derivation, rapid/slow splitting, Green functions, local IP and Rotta models, wall reflection and an algebraic-stress alternative. Complete captions were read. The rewritten derivation repairs density factors, derivative-coordinate notation, the distinction between a Green kernel and a delta distribution, and a tangential rapid-wall expression that would violate the stated redistribution balance.</p>
@@ -69,7 +69,7 @@ C_{\ell j}(\boldsymbol y,\boldsymbol x).
 <p>The two derivative coordinates, rather than the letters used for component indices, explain the product rule. A field evaluated at \(\boldsymbol x\) has zero derivative with respect to an independently varied \(\boldsymbol y\), while it can have nonzero derivative in any component of \(\boldsymbol x\). Renaming a component index does not make a spatial derivative zero.</p>
 <p>At coincident points, \(C_{\ell j}(\boldsymbol x,\boldsymbol x)=R_{\ell j}(\boldsymbol x)\). But the integral depends on nonzero separations too. Even homogeneous statistics make \(C\) a function of separation, not a matrix known from its single zero-separation value. Different correlation shapes can have the same local covariance. The slow contribution additionally contains correlations of two fluctuating velocities at the source with a gradient at the observation point. The exact pressure model has therefore not been closed by the algebra.</p>
 <p>The lecture's derivation is best read as a motivation for choosing available local tensors, rather than an exact recovery of the nonlocal integral from \(R\) and mean strain alone. Wall geometry, gradients or other transported variables can provide additional modeling information. A local closure discards some of this dependence and should be tested in regimes where that loss matters.</p>
-<div class="worked"><h3>An analytic ensemble with nonzero pressure redistribution</h3>
+<div class="worked"><h3 id="detail-03">An analytic ensemble with nonzero pressure redistribution</h3>
 <p>Use the periodic Taylor–Green family with reference speed \(U_0=1\ \mathrm{m\,s^{-1}}\) and inverse reference length \(\kappa_0=1\ \mathrm{m^{-1}}\). In coordinates scaled by that length, \(u=A(t)\sin x\cos y\), \(v=-A(t)\cos x\sin y\), \(w=0\), \(p/\rho=A(t)^2(\cos2x+\cos2y)/4\), with dimensional amplitude \(A(t)=a e^{-2\nu\kappa_0^2 t}\). The factor \(\nu\kappa_0^2 t\) is dimensionless. Each member solves the unforced incompressible equations as in chapter 7.</p>
 <p>Choose \(a=-1\) with probability \(2/3\) and \(a=2\) with probability \(1/3\). At \(t=0\), \(\mathbb E[a]=0\), \(\mathbb E[a^2]=2\), \(\mathbb E[a^3]=2\). Hence mean velocity is zero, but pressure fluctuations are \(q=(a^2-2)(\cos2x+\cos2y)/4\). They have zero ensemble mean and satisfy \(\nabla^2q=-(a^2-2)(\cos2x+\cos2y)\), the centered quadratic source in (17.2). The rapid source is zero here because the mean gradient is zero.</p>
 <p>At \(x=0.4,y=0.7\), explicit ensemble averaging gives \(\Pi_{11}=0.61054253\), \(\Pi_{22}=-0.61054253\), \(\Pi_{33}=0\), in the corresponding reference rate units. The trace is zero. A periodic five-point Laplacian on 32 and 64 points per direction has maximum source residuals \(0.0511406769\) and \(0.0128345438\), with refinement ratio \(3.98461197\). These are checks of an analytic ensemble and second-order operator, not turbulent DNS data or validation of a local pressure closure.</p></div>
@@ -83,7 +83,7 @@ C_{\ell j}(\boldsymbol y,\boldsymbol x).
 \]</div>
 <p>This is isotropization of production, abbreviated IP. It contains no extra density because our \(\Pi,P\) are per mass; density-weighted equations multiply both sides by \(\rho\). The bracket has trace \(P_{ii}-2\mathcal P=0\). Consequently the model redistributes directional production without directly adding scalar energy.</p>
 <p>Adding (17.4) to production gives \(P+\Pi^R=(1-C_R)P+(2C_R/3)\mathcal P I\). At \(C_R=1\) it removes the trace-free production, leaving an isotropic contribution. If \(\mathcal P=0\) as well, the sum is zero. The sign is important: then \(\Pi^R=-P\), not \(+P\). It does not cancel nonzero scalar production, since its own trace is zero.</p>
-<div class="worked"><h3>Redistribution in the recurring shear state</h3>
+<div class="worked"><h3 id="detail-04">Redistribution in the recurring shear state</h3>
 <p>For \(R_{11}=0.25,R_{22}=0.09,R_{33}=0.04,R_{12}=-0.08\), \(S=100\), production has \(P_{11}=16,P_{12}=-9\), other diagonal production zero, and \(\mathcal P=8\). With the lecture's \(C_R=0.6\), the modeled rapid diagonal is \((-6.4,3.2,3.2)\), while \(\Pi_{12}^R=5.4\), in SI rate units. Production plus rapid redistribution has diagonal \((9.6,3.2,3.2)\); half its trace is still 8.</p>
 <p>The streamwise source is reduced and the other diagonal sources gain energy, consistent with this model's intent. That outcome in this case is not a theorem that exact pressure–strain always reduces every measure of anisotropy in every strained flow. The approximation should be distinguished from the exact trace-free identity.</p></div>
 
@@ -104,7 +104,7 @@ C_{\ell j}(\boldsymbol y,\boldsymbol x).
 \tag{17.6}
 \]</div>
 <p>The subtraction of 1 comes from the changing energy normalization. A positive \(C_S\) relaxes the unnormalized deviator in the isolated law, but normalized anisotropy in this decaying system decreases only when \(C_S&gt;1\). This distinction is consequential when comparing component energies in decaying turbulence.</p>
-<div class="worked"><h3>A closed homogeneous limit with an exact solution</h3>
+<div class="worked"><h3 id="detail-05">A closed homogeneous limit with an exact solution</h3>
 <p>Add the modeled scale equation \(\epsilon'=-C_{\epsilon2}\epsilon^2/k\), with \(C_{\epsilon2}&gt;1\). Let \(\theta=1+(C_{\epsilon2}-1)(\epsilon_0/k_0)t\). The chapter 11 solution gives \(k=k_0\theta^{-1/(C_{\epsilon2}-1)}\), \(\epsilon=\epsilon_0\theta^{-C_{\epsilon2}/(C_{\epsilon2}-1)}\). Integrating (17.6) gives \(b=b_0\alpha\), where \(\alpha=\theta^{-(C_S-1)/(C_{\epsilon2}-1)}\).</p>
 <p>For \(C_S\geq1\) and \(t\geq0\), \(0&lt;\alpha\leq1\), and \(R=2k[(1-\alpha)I/3+\alpha R_0/(2k_0)]\) remains PSD for PSD \(R_0\). At \(k_0=0.19,\epsilon_0=0.5,C_S=1.8,C_{\epsilon2}=1.92,t=0.2\ \mathrm s\), \(\alpha=0.70937107\), \(R_{11}=0.13941889\), \(R_{12}=-0.03694497\). The executed coupled RK4 calculation approaches this exact solution, with maximum errors \(1.82062705\times10^{-8}\) and \(1.11122742\times10^{-9}\) for 20 and 40 steps. The observed ratio is \(16.38392852\).</p>
 <p>This checks a homogeneous closure limit and its normalization. It does not validate a spatial wall model, prove general RK4 positivity, or establish that the exact analytic periodic ensemble above obeys Rotta's local approximation. The two examples test different levels of the construction.</p></div>
@@ -145,103 +145,148 @@ P_{ij}+\Pi_{ij}-E_{ij}
 <h2 id="reproduce">17.9 Reproduce pressure and redistribution checks</h2>
 <p>Run <a href="code/ch17_pressure_and_redistribution.py">ch17_pressure_and_redistribution.py</a> with standard Python 3. It averages an explicit analytic ensemble, checks a periodic pressure operator, integrates a declared homogeneous closure and tests the wall map's trace. The observed output is checked against the listing. The code neither evaluates the unbounded Green integral on a periodic domain nor claims a complete spatial RSM simulation.</p>
 <pre data-run="code/ch17_pressure_and_redistribution.py"><code>&quot;&quot;&quot;Analytic pressure ensemble and restricted redistribution checks.&quot;&quot;&quot;
+
 from math import cos, sin, pi, sqrt
 
 # Taylor-Green family in units U0=1 m/s, inverse length=1/m, at t=0.
 # Random amplitude -1 with probability2/3 and +2 with probability1/3.
 # Mean velocity0, mean amplitude squared2, mean amplitude cubed2.
-states=[(-1.,2/3),(2.,1/3)]
-x,y=.4,.7
-shape=cos(2*x)+cos(2*y)
-qmean=sum(w*a*a*shape/4 for a,w in states)
-pistrain=[0.,0.]
-fluct_mean=0.
-for amplitude,weight in states:
-    qprime=amplitude**2*shape/4-qmean
-    fluct_mean+=weight*qprime
-    g11=amplitude*cos(x)*cos(y)
-    pistrain[0]+=weight*qprime*2*g11
-    pistrain[1]-=weight*qprime*2*g11
+states = [(-1.0, 2 / 3), (2.0, 1 / 3)]
+x, y = 0.4, 0.7
+shape = cos(2 * x) + cos(2 * y)
+qmean = sum(w * a * a * shape / 4 for a, w in states)
+pistrain = [0.0, 0.0]
+fluct_mean = 0.0
+for amplitude, weight in states:
+    qprime = amplitude**2 * shape / 4 - qmean
+    fluct_mean += weight * qprime
+    g11 = amplitude * cos(x) * cos(y)
+    pistrain[0] += weight * qprime * 2 * g11
+    pistrain[1] -= weight * qprime * 2 * g11
 print(f&quot;pressure-fluctuation ensemble mean: {fluct_mean:.3e}&quot;)
-print(f&quot;analytic pressure-strain diagonal: {pistrain[0]:.8f}, {pistrain[1]:.8f}, {0.:.8f}&quot;)
+print(
+    f&quot;analytic pressure-strain diagonal: {pistrain[0]:.8f}, &quot;
+    f&quot;{pistrain[1]:.8f}, {0.0:.8f}&quot;
+)
 print(f&quot;analytic pressure-strain trace: {sum(pistrain):.3e}&quot;)
 
 # Periodic five-point Laplacian convergence, sample amplitude+2.
-errors=[]
-for count in (32,64):
-    h=2*pi/count
-    def q(i,j):
-        return (4-2)*(cos(2*i*h)+cos(2*j*h))/4
-    maximum=0.
-    source_mean=0.
+errors = []
+for count in (32, 64):
+    h = 2 * pi / count
+
+    def q(i, j):
+        return (4 - 2) * (cos(2 * i * h) + cos(2 * j * h)) / 4
+
+    maximum = 0.0
+    source_mean = 0.0
     for i in range(count):
         for j in range(count):
-            source=-(4-2)*(cos(2*i*h)+cos(2*j*h))
-            source_mean+=source/count**2
-            lap=(q(i+1,j)+q(i-1,j)+q(i,j+1)+q(i,j-1)-4*q(i,j))/h**2
-            maximum=max(maximum,abs(lap-source))
+            source = -(4 - 2) * (cos(2 * i * h) + cos(2 * j * h))
+            source_mean += source / count**2
+            lap = (
+                q(i + 1, j)
+                + q(i - 1, j)
+                + q(i, j + 1)
+                + q(i, j - 1)
+                - 4 * q(i, j)
+            ) / h**2
+            maximum = max(maximum, abs(lap - source))
     errors.append(maximum)
-    print(f&quot;periodic pressure N={count}: max Poisson residual={maximum:.8e}, source mean={source_mean:.3e}&quot;)
-print(f&quot;Poisson residual refinement ratio: {errors[0]/errors[1]:.8f}&quot;)
-assert 3.9&lt;errors[0]/errors[1]&lt;4.1
+    print(
+        f&quot;periodic pressure N={count}: max Poisson &quot;
+        f&quot;residual={maximum:.8e}, source mean={source_mean:.3e}&quot;
+    )
+print(f&quot;Poisson residual refinement ratio: {errors[0] / errors[1]:.8f}&quot;)
+assert 3.9 &lt; errors[0] / errors[1] &lt; 4.1
 
-R0=[.25,.09,.04,-.08,0.,0.]
-k0,eps0,CS,CE2=.19,.5,1.8,1.92
+R0 = [0.25, 0.09, 0.04, -0.08, 0.0, 0.0]
+k0, eps0, CS, CE2 = 0.19, 0.5, 1.8, 1.92
+
+
 def rhs(state):
-    r=state[:6]
-    e=state[6]
-    k=sum(r[:3])/2
-    result=[-CS*e/k*(r[i]-(2*k/3 if i&lt;3 else 0.))
-            -(2*e/3 if i&lt;3 else 0.) for i in range(6)]
-    return result+[-CE2*e*e/k]
+    r = state[:6]
+    e = state[6]
+    k = sum(r[:3]) / 2
+    result = [
+        -CS * e / k * (r[i] - (2 * k / 3 if i &lt; 3 else 0.0))
+        - (2 * e / 3 if i &lt; 3 else 0.0)
+        for i in range(6)
+    ]
+    return result + [-CE2 * e * e / k]
+
 
 def exact(t):
-    theta=1+(CE2-1)*eps0/k0*t
-    k=k0*theta**(-1/(CE2-1))
-    e=eps0*theta**(-CE2/(CE2-1))
-    alpha=theta**(-(CS-1)/(CE2-1))
-    r=[2*k*((1-alpha)/3*(i&lt;3)+alpha*R0[i]/(2*k0)) for i in range(6)]
-    return r+[e],alpha
+    theta = 1 + (CE2 - 1) * eps0 / k0 * t
+    k = k0 * theta ** (-1 / (CE2 - 1))
+    e = eps0 * theta ** (-CE2 / (CE2 - 1))
+    alpha = theta ** (-(CS - 1) / (CE2 - 1))
+    r = [
+        2 * k * ((1 - alpha) / 3 * (i &lt; 3) + alpha * R0[i] / (2 * k0))
+        for i in range(6)
+    ]
+    return r + [e], alpha
 
-def rk4(steps,tfinal):
-    state=R0+[eps0]
-    dt=tfinal/steps
+
+def rk4(steps, tfinal):
+    state = R0 + [eps0]
+    dt = tfinal / steps
     for _ in range(steps):
-        f1=rhs(state)
-        f2=rhs([v+dt*f/2 for v,f in zip(state,f1)])
-        f3=rhs([v+dt*f/2 for v,f in zip(state,f2)])
-        f4=rhs([v+dt*f for v,f in zip(state,f3)])
-        state=[v+dt*(a+2*b+2*c+d)/6 for v,a,b,c,d in zip(state,f1,f2,f3,f4)]
+        f1 = rhs(state)
+        f2 = rhs([v + dt * f / 2 for v, f in zip(state, f1)])
+        f3 = rhs([v + dt * f / 2 for v, f in zip(state, f2)])
+        f4 = rhs([v + dt * f for v, f in zip(state, f3)])
+        state = [
+            v + dt * (a + 2 * b + 2 * c + d) / 6
+            for v, a, b, c, d in zip(state, f1, f2, f3, f4)
+        ]
     return state
-target,alpha=exact(.2)
-errors=[]
-for steps in (20,40):
-    result=rk4(steps,.2)
-    error=max(abs(a-b) for a,b in zip(result,target))
+
+
+target, alpha = exact(0.2)
+errors = []
+for steps in (20, 40):
+    result = rk4(steps, 0.2)
+    error = max(abs(a - b) for a, b in zip(result, target))
     errors.append(error)
-    print(f&quot;homogeneous Rotta decay steps={steps}: R11={result[0]:.8f}, R12={result[3]:.8f}, max error={error:.8e}&quot;)
-print(f&quot;Rotta decay refinement ratio: {errors[0]/errors[1]:.8f}&quot;)
+    print(
+        f&quot;homogeneous Rotta decay steps={steps}: R11={result[0]:.8f}, &quot;
+        f&quot;R12={result[3]:.8f}, max error={error:.8e}&quot;
+    )
+print(f&quot;Rotta decay refinement ratio: {errors[0] / errors[1]:.8f}&quot;)
 print(f&quot;normalized anisotropy multiplier t=.2: {alpha:.8f}&quot;)
-assert 0&lt;alpha&lt;1 and errors[1]&lt;errors[0]
+assert 0 &lt; alpha &lt; 1 and errors[1] &lt; errors[0]
+
 
 # Trace-preserving wall map for normal y, on any symmetric tensor.
 def wall_map(T):
-    nn=T[1][1]
-    n=[0.,1.,0.]
-    tn=[T[i][1] for i in range(3)]
-    return [[nn*(i==j)-1.5*(tn[i]*n[j]+n[i]*tn[j]) for j in range(3)] for i in range(3)]
-T=[[1.,.2,.1],[.2,2.,-.3],[.1,-.3,3.]]
-W=wall_map(T)
-print(f&quot;wall-map normal/parallel/shear: {W[1][1]:.8f}, {W[0][0]:.8f}, {W[0][1]:.8f}&quot;)
-print(f&quot;wall-map trace: {sum(W[i][i] for i in range(3)):.3e}&quot;)
-for d in (.002,.001):
-    k=.7*d*d
-    eps=2*1.5e-5*.7
-    f=k**1.5/(2.55*d*eps)
+    nn = T[1][1]
+    n = [0.0, 1.0, 0.0]
+    tn = [T[i][1] for i in range(3)]
+    return [
+        [nn * (i == j) - 1.5 * (tn[i] * n[j] + n[i] * tn[j]) for j in range(3)]
+        for i in range(3)
+    ]
+
+
+T = [[1.0, 0.2, 0.1], [0.2, 2.0, -0.3], [0.1, -0.3, 3.0]]
+W = wall_map(T)
+print(
+    f&quot;wall-map normal/parallel/shear: {W[1][1]:.8f}, {W[0][0]:.8f}, &quot;
+    f&quot;{W[0][1]:.8f}&quot;
+)
+print(f&quot;wall-map trace: {sum((W[i][i] for i in range(3))):.3e}&quot;)
+for d in (0.002, 0.001):
+    k = 0.7 * d * d
+    eps = 2 * 1.5e-5 * 0.7
+    f = k**1.5 / (2.55 * d * eps)
     print(f&quot;physical-wall illustrative factor d={d:.3f}: {f:.8f}&quot;)
-wall_values=[3.67,.83,2.17]
-print(f&quot;lecture wall-function k/u_tau²: {sum(wall_values)/2:.8f}&quot;)
-print(f&quot;lecture wall-function planar covariance determinant/u_tau4: {3.67*.83-1:.8f}&quot;)
+wall_values = [3.67, 0.83, 2.17]
+print(f&quot;lecture wall-function k/u_tau²: {sum(wall_values) / 2:.8f}&quot;)
+print(
+    f&quot;lecture wall-function planar covariance determinant/u_tau4: &quot;
+    f&quot;{3.67 * 0.83 - 1:.8f}&quot;
+)
 </code></pre>
 <pre class="output">pressure-fluctuation ensemble mean: 5.551e-17
 analytic pressure-strain diagonal: 0.61054253, -0.61054253, 0.00000000

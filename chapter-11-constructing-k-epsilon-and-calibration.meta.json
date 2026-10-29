@@ -1,8 +1,8 @@
 {
   "chapter": 11,
   "title": "11. Constructing \\(k\\)–\\(\\epsilon\\) and testing calibration",
-  "status": "Accepted in two independent scientific reviews",
-  "authored_body_sha256": "b82749ed8fcc96a38c14a93458e9e99cc36999c9ba9e95058c32ae58a7440321",
+  "status": "Revised; fresh independent compliance review pending",
+  "authored_body_sha256": "58bea82e9ab7eb91a62ed4d3ccf4ba48799fdd67175fbdb968ca8ef9c5da9f04",
   "recordings": [
     {
       "playlist_position": 11,
@@ -184,37 +184,9 @@
   "executable_listings": 1,
   "source_reading": "Complete normalized caption text read sequentially before drafting",
   "independent_review": {
-    "status": "accepted",
-    "accepted_body_sha256": "b82749ed8fcc96a38c14a93458e9e99cc36999c9ba9e95058c32ae58a7440321",
-    "rounds": [
-      {
-        "round": 1,
-        "report_identifier": "ch11-r1.md",
-        "independent_of_author": true,
-        "blocking": 0,
-        "major": 0,
-        "minor": 0,
-        "kind": "Independent AI scientific review",
-        "body_sha256": "b82749ed8fcc96a38c14a93458e9e99cc36999c9ba9e95058c32ae58a7440321",
-        "reviewer_id": "independent-course-peer",
-        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
-        "accepted": true
-      },
-      {
-        "round": 2,
-        "report_identifier": "ch11-r2.md",
-        "independent_of_author": true,
-        "blocking": 0,
-        "major": 0,
-        "minor": 0,
-        "kind": "Independent AI scientific review",
-        "body_sha256": "b82749ed8fcc96a38c14a93458e9e99cc36999c9ba9e95058c32ae58a7440321",
-        "reviewer_id": "lead-coordinator",
-        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
-        "accepted": true
-      }
-    ],
-    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+    "status": "pending-compliance-review",
+    "accepted": false,
+    "prior_accepted_body_sha256": "b82749ed8fcc96a38c14a93458e9e99cc36999c9ba9e95058c32ae58a7440321"
   },
   "limitations": [
     "Full captions32–35 read; no full audiovisual or instructor-graph digitization",
@@ -233,5 +205,41 @@
       "scope": "Forward correction to the preceding recording decay-coefficient discrepancy; full36 read, its remaining construction belongs to chapter12",
       "read_in_full": true
     }
-  ]
+  ],
+  "pre_compliance_review": {
+    "body_sha256": "b82749ed8fcc96a38c14a93458e9e99cc36999c9ba9e95058c32ae58a7440321",
+    "review": {
+      "status": "accepted",
+      "accepted_body_sha256": "b82749ed8fcc96a38c14a93458e9e99cc36999c9ba9e95058c32ae58a7440321",
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch11-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "b82749ed8fcc96a38c14a93458e9e99cc36999c9ba9e95058c32ae58a7440321",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch11-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "b82749ed8fcc96a38c14a93458e9e99cc36999c9ba9e95058c32ae58a7440321",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+    }
+  }
 }

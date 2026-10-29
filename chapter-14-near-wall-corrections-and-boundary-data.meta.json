@@ -1,8 +1,8 @@
 {
   "chapter": 14,
   "title": "14. Near-wall corrections and boundary data",
-  "status": "Accepted in two independent scientific reviews",
-  "authored_body_sha256": "4f39e7f497fbcb2e83cb3e9c5f75fecfdc73f542a93e4749e22d8c4ade91a13f",
+  "status": "Revised; fresh independent compliance review pending",
+  "authored_body_sha256": "418151ea32cbafde0416667b83243be135ff20ed7c4682f92f32e05d70f672ef",
   "recordings": [
     {
       "playlist_position": 29,
@@ -190,37 +190,9 @@
   "executable_listings": 1,
   "source_reading": "Complete normalized caption text read sequentially before drafting",
   "independent_review": {
-    "status": "accepted",
-    "accepted_body_sha256": "4f39e7f497fbcb2e83cb3e9c5f75fecfdc73f542a93e4749e22d8c4ade91a13f",
-    "rounds": [
-      {
-        "round": 1,
-        "report_identifier": "ch14-r1.md",
-        "independent_of_author": true,
-        "blocking": 0,
-        "major": 0,
-        "minor": 0,
-        "kind": "Independent AI scientific review",
-        "body_sha256": "4f39e7f497fbcb2e83cb3e9c5f75fecfdc73f542a93e4749e22d8c4ade91a13f",
-        "reviewer_id": "independent-course-peer",
-        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
-        "accepted": true
-      },
-      {
-        "round": 2,
-        "report_identifier": "ch14-r2.md",
-        "independent_of_author": true,
-        "blocking": 0,
-        "major": 0,
-        "minor": 0,
-        "kind": "Independent AI scientific review",
-        "body_sha256": "4f39e7f497fbcb2e83cb3e9c5f75fecfdc73f542a93e4749e22d8c4ade91a13f",
-        "reviewer_id": "lead-coordinator",
-        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
-        "accepted": true
-      }
-    ],
-    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+    "status": "pending-compliance-review",
+    "accepted": false,
+    "prior_accepted_body_sha256": "4f39e7f497fbcb2e83cb3e9c5f75fecfdc73f542a93e4749e22d8c4ade91a13f"
   },
   "limitations": [
     "Full captions44–47 read, including instructor correction of isotropic3/2 factor; no comprehensive audiovisual equation audit",
@@ -229,5 +201,41 @@
     "Wall epsilon identities require smooth regular no-slip incompressible limit; estimates are asymptotic and boundary implementation is solver-specific",
     "Pressure normal derivative is derived for a fixed flat wall and physical pressure; other variables/body forces/curved geometry require their own balance",
     "Inflow inputs in examples are sensitivity scenarios rather than measured wind-tunnel or industrial data; no spatial solver validation"
-  ]
+  ],
+  "pre_compliance_review": {
+    "body_sha256": "4f39e7f497fbcb2e83cb3e9c5f75fecfdc73f542a93e4749e22d8c4ade91a13f",
+    "review": {
+      "status": "accepted",
+      "accepted_body_sha256": "4f39e7f497fbcb2e83cb3e9c5f75fecfdc73f542a93e4749e22d8c4ade91a13f",
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch14-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "4f39e7f497fbcb2e83cb3e9c5f75fecfdc73f542a93e4749e22d8c4ade91a13f",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch14-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "4f39e7f497fbcb2e83cb3e9c5f75fecfdc73f542a93e4749e22d8c4ade91a13f",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+    }
+  }
 }

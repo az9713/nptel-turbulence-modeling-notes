@@ -1,8 +1,8 @@
 {
   "chapter": 4,
   "title": "Mean momentum and the turbulence closure problem",
-  "status": "Accepted in two independent scientific reviews",
-  "authored_body_sha256": "00480a9d4c4d9020aaf99674e14f6fbd677e132927c3729f95281befa6d609d5",
+  "status": "Revised; fresh independent compliance review pending",
+  "authored_body_sha256": "72ebabcfbcbdc5020bad52e9138fae21f384f42b5887a0c2a3e8e1c12d751b58",
   "recordings": [
     {
       "playlist_position": 54,
@@ -199,40 +199,9 @@
     "external model specification"
   ],
   "independent_review": {
-    "status": "accepted",
-    "accepted_body_sha256": "00480a9d4c4d9020aaf99674e14f6fbd677e132927c3729f95281befa6d609d5",
-    "rounds": [
-      {
-        "round": 1,
-        "reviewer": "Independent thermodynamics course worker",
-        "blocking": 0,
-        "major": 0,
-        "minor": 0,
-        "report": "pilot-r1.md",
-        "body_sha256": "00480a9d4c4d9020aaf99674e14f6fbd677e132927c3729f95281befa6d609d5",
-        "report_identifier": "pilot-r1.md",
-        "independent_of_author": true,
-        "reviewer_id": "independent-course-peer",
-        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
-        "accepted": true
-      },
-      {
-        "round": 2,
-        "reviewer": "Independent lead coordinator",
-        "blocking": 0,
-        "major": 0,
-        "minor": 0,
-        "report": "pilot-r2.md",
-        "body_sha256": "00480a9d4c4d9020aaf99674e14f6fbd677e132927c3729f95281befa6d609d5",
-        "report_identifier": "pilot-r2.md",
-        "independent_of_author": true,
-        "reviewer_id": "lead-coordinator",
-        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
-        "accepted": true
-      }
-    ],
-    "scope": "This pilot chapter only; not whole-course completion or publication.",
-    "body_changed_between_rounds": false
+    "status": "pending-compliance-review",
+    "accepted": false,
+    "prior_accepted_body_sha256": "00480a9d4c4d9020aaf99674e14f6fbd677e132927c3729f95281befa6d609d5"
   },
   "limitations": [
     "No comprehensive audiovisual or board-equation inspection",
@@ -243,5 +212,44 @@
   "article_words_including_math_code": 4607,
   "worked_solutions": 7,
   "executable_listings": 1,
-  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome"
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "pre_compliance_review": {
+    "body_sha256": "00480a9d4c4d9020aaf99674e14f6fbd677e132927c3729f95281befa6d609d5",
+    "review": {
+      "status": "accepted",
+      "accepted_body_sha256": "00480a9d4c4d9020aaf99674e14f6fbd677e132927c3729f95281befa6d609d5",
+      "rounds": [
+        {
+          "round": 1,
+          "reviewer": "Independent thermodynamics course worker",
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "report": "pilot-r1.md",
+          "body_sha256": "00480a9d4c4d9020aaf99674e14f6fbd677e132927c3729f95281befa6d609d5",
+          "report_identifier": "pilot-r1.md",
+          "independent_of_author": true,
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "reviewer": "Independent lead coordinator",
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "report": "pilot-r2.md",
+          "body_sha256": "00480a9d4c4d9020aaf99674e14f6fbd677e132927c3729f95281befa6d609d5",
+          "report_identifier": "pilot-r2.md",
+          "independent_of_author": true,
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "scope": "This pilot chapter only; not whole-course completion or publication.",
+      "body_changed_between_rounds": false
+    }
+  }
 }

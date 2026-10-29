@@ -1,8 +1,8 @@
 {
   "chapter": 6,
   "title": "6. Stationarity, homogeneity and pressure redistribution",
-  "status": "Accepted in two independent scientific reviews",
-  "authored_body_sha256": "115f5eb6953defa6abd75b866f9cf39b76c61e0941bb154add9a228ee255887e",
+  "status": "Revised; fresh independent compliance review pending",
+  "authored_body_sha256": "84f8e11fc42a3b9f836cd95a1710e124b2f3e34d287bc93dbf9b5dacb54a88b2",
   "recordings": [
     {
       "playlist_position": 65,
@@ -187,37 +187,9 @@
   "executable_listings": 1,
   "source_reading": "Complete normalized caption text read sequentially before drafting",
   "independent_review": {
-    "status": "accepted",
-    "accepted_body_sha256": "115f5eb6953defa6abd75b866f9cf39b76c61e0941bb154add9a228ee255887e",
-    "rounds": [
-      {
-        "round": 1,
-        "report_identifier": "ch06-r1.md",
-        "independent_of_author": true,
-        "blocking": 0,
-        "major": 0,
-        "minor": 0,
-        "kind": "Independent AI scientific review",
-        "body_sha256": "115f5eb6953defa6abd75b866f9cf39b76c61e0941bb154add9a228ee255887e",
-        "reviewer_id": "independent-course-peer",
-        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
-        "accepted": true
-      },
-      {
-        "round": 2,
-        "report_identifier": "ch06-r2.md",
-        "independent_of_author": true,
-        "blocking": 0,
-        "major": 0,
-        "minor": 0,
-        "kind": "Independent AI scientific review",
-        "body_sha256": "115f5eb6953defa6abd75b866f9cf39b76c61e0941bb154add9a228ee255887e",
-        "reviewer_id": "lead-coordinator",
-        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
-        "accepted": true
-      }
-    ],
-    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+    "status": "pending-compliance-review",
+    "accepted": false,
+    "prior_accepted_body_sha256": "115f5eb6953defa6abd75b866f9cf39b76c61e0941bb154add9a228ee255887e"
   },
   "limitations": [
     "Full captions read; no full audiovisual or board verification",
@@ -225,5 +197,41 @@
     "Constructed local budgets are bookkeeping checks, not a realizable DNS trajectory or measured Couette dataset",
     "Finite block agreement is evidence, not proof of stationarity",
     "No calibrated pressure-strain closure or empirical model validation"
-  ]
+  ],
+  "pre_compliance_review": {
+    "body_sha256": "115f5eb6953defa6abd75b866f9cf39b76c61e0941bb154add9a228ee255887e",
+    "review": {
+      "status": "accepted",
+      "accepted_body_sha256": "115f5eb6953defa6abd75b866f9cf39b76c61e0941bb154add9a228ee255887e",
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch06-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "115f5eb6953defa6abd75b866f9cf39b76c61e0941bb154add9a228ee255887e",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch06-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "115f5eb6953defa6abd75b866f9cf39b76c61e0941bb154add9a228ee255887e",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+    }
+  }
 }

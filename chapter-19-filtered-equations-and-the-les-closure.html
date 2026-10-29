@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="ea22bd6488c53c6a5798ff012f436700ca1d381779fa259ac6aaa40642477d44">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="f19c557f569c80e92314b3ac11208f741ce4a57ac0db5c0bfd42748781c909e5">
 <title>19. Filtered equations and the LES closure · Turbulence Modeling</title><link rel="stylesheet" href="assets/book.css">
 <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{pageReady:()=>MathJax.startup.defaultPageReady().then(()=>{document.documentElement.dataset.mathReady='true';})}};</script>
 <script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Turbulence Modeling · NPTEL IIT Madras</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="book-overview.html">Study route</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
-<div class="layout"><aside class="toc" id="chapter-toc"><h2>On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
-<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>19. Filtered equations and the LES closure</h1>
+<div class="layout"><aside class="toc" id="chapter-toc"><h2 id="detail-01">On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1 id="detail-02">19. Filtered equations and the LES closure</h1>
 <p class="lead">Large eddy simulation changes the field being computed. Instead of asking directly for an ensemble mean, it seeks an unsteady spatially filtered velocity and models the influence of the motions removed by that filter. The filtered velocity remains a fluctuating field. Deriving its equation shows exactly which product is unknown and why the rules used for Reynolds means cannot simply be copied.</p>
 <div class="learning-map"><strong>One operator, four consequential distinctions.</strong> Define filtering before using a bar; distinguish an exactly filtered reference from a numerical LES result; check when filtering and differentiation commute; then derive the stress and its resolved-energy exchange. Exact polynomial and Fourier examples make repeated filtering and mesh sensitivity calculable. This supplies the equation that the following filter and subgrid-model chapters will close.</div>
 <p class="source-note">Complete captions64–67 were read. Lessons65–66 contain apparent editorial-response artifacts, including repeated grammar-correction statements, in the official caption text. Those are retained in private raw sources and are not treated as scientific instruction. The equation construction below is independently derived and checked against the stated primary passages. No full audiovisual audit or quantitative reproduction of the source's filtered-DNS pictures is claimed.</p>
@@ -93,64 +93,112 @@ F_\Delta f(x,t)=\frac1\Delta\int_{x-\Delta/2}^{x+\Delta/2}f(s,t)\,ds
 <p>The recording illustrates a second filtering pass by interpolating filtered values to two intermediate locations and averaging. The resulting three-point stencil is \((F_h q)_i=q_{i-1}/8+3q_i/4+q_{i+1}/8\). Its weights sum to one. This is a discrete smoothing operator under the stated interpolation assumptions, not an exact quadrature formula for every continuum top hat. Applying it to an isolated unit impulse gives center0.75 after one pass and \(0.75^2+2(0.125)^2=0.59375\) after two, while preserving the global sum on a periodic array.</p>
 <p>The general claim needs only one explicit counterexample to idempotence; it does not require every field to change. A constant array remains unchanged. For a discrete mode \(e^{i\theta i}\), the stencil gain is \(3/4+\cos\theta/4\), so a second pass squares that gain. This provides an exact discrete explanation of the lecture's numerical illustration and avoids using an approximate interpolation as a universal proof about all filters.</p>
 <pre data-run="code/ch19_filtering.py"><code>&quot;&quot;&quot;Analytic and discrete filter identities; not a spatial LES solver.&quot;&quot;&quot;
+
 from math import pi, sin
 
+
 def sinc(z):
-    return sin(z)/z if z else 1.0
+    return sin(z) / z if z else 1.0
 
-x, delta = .4, .6
-once = x*x + delta**2/12
-twice = x*x + delta**2/6
-residual = -delta**2/12
-variance = x*x*delta**2/3 + delta**4/180
-print(f&quot;quadratic field: original={x*x:.8f}, filtered={once:.8f}, double filtered={twice:.8f}&quot;)
+
+x, delta = 0.4, 0.6
+once = x * x + delta**2 / 12
+twice = x * x + delta**2 / 6
+residual = -(delta**2) / 12
+variance = x * x * delta**2 / 3 + delta**4 / 180
+print(
+    f&quot;quadratic field: original={x * x:.8f}, filtered={once:.8f}, &quot;
+    f&quot;double filtered={twice:.8f}&quot;
+)
 print(f&quot;filtered residual (not zero): {residual:.8f}&quot;)
-print(f&quot;quadratic exact stress and residual-square average: {variance:.8f}, {residual**2:.8f}&quot;)
-assert abs(once-twice-residual) &lt; 1e-15
+print(
+    f&quot;quadratic exact stress and residual-square average: &quot;
+    f&quot;{variance:.8f}, {residual ** 2:.8f}&quot;
+)
+assert abs(once - twice - residual) &lt; 1e-15
 
-for small in (.2, .1):
-    width = small*(1+x)
-    commutator = -width*small/6
-    print(f&quot;variable-width quadratic commutator delta0={small}: {commutator:.10f}&quot;)
+for small in (0.2, 0.1):
+    width = small * (1 + x)
+    commutator = -width * small / 6
+    print(
+        f&quot;variable-width quadratic commutator delta0={small}: &quot;
+        f&quot;{commutator:.10f}&quot;
+    )
 
 wave = 3
-gain = sinc(wave*delta/2)
-print(f&quot;top-hat mode gain once and twice: {gain:.8f}, {gain*gain:.8f}&quot;)
+gain = sinc(wave * delta / 2)
+print(f&quot;top-hat mode gain once and twice: {gain:.8f}, {gain * gain:.8f}&quot;)
 
-# The lecture&#x27;s illustrative discrete averaging stencil, not an exact continuum box.
-data = [0., 0., 1., 0., 0., 0., 0., 0.]
+# The lecture&#x27;s illustrative discrete averaging stencil, not an exact
+# continuum box.
+data = [0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+
 def smooth(values):
     n = len(values)
-    return [values[(i-1)%n]/8 + .75*values[i] + values[(i+1)%n]/8 for i in range(n)]
+    return [
+        values[(i - 1) % n] / 8 + 0.75 * values[i] + values[(i + 1) % n] / 8
+        for i in range(n)
+    ]
+
 
 first, second = smooth(data), smooth(smooth(data))
-print(f&quot;discrete impulse center after one and two passes: {first[2]:.8f}, {second[2]:.8f}&quot;)
+print(
+    f&quot;discrete impulse center after one and two passes: {first[2]:.8f}, &quot;
+    f&quot;{second[2]:.8f}&quot;
+)
 print(f&quot;discrete filter sums: {sum(first):.8f}, {sum(second):.8f}&quot;)
 
-shear, dy = 100., .002
-tau11 = shear**2*dy**2/12
+shear, dy = 100.0, 0.002
+tau11 = shear**2 * dy**2 / 12
 print(f&quot;linear-shear exact box stress tau11: {tau11:.10f}&quot;)
 print(&quot;linear-shear residual velocity: zero; exact stress divergence: zero&quot;)
 
-# Positive box quadrature: trace/stress PSD and resolved+subfilter energy identity.
-vectors = [(1., 2., 0.), (3., -1., 1.), (-2., .5, 2.), (.5, -3., -1.)]
+# Positive box quadrature: trace/stress PSD and resolved+subfilter energy
+# identity.
+vectors = [
+    (1.0, 2.0, 0.0),
+    (3.0, -1.0, 1.0),
+    (-2.0, 0.5, 2.0),
+    (0.5, -3.0, -1.0),
+]
 n = len(vectors)
-mean = [sum(v[i] for v in vectors)/n for i in range(3)]
-tau = [[sum(v[i]*v[j] for v in vectors)/n-mean[i]*mean[j] for j in range(3)] for i in range(3)]
-resolved = sum(v*v for v in mean)/2
-subfilter = sum(tau[i][i] for i in range(3))/2
-total = sum(sum(c*c for c in v) for v in vectors)/(2*n)
-print(f&quot;box energy total, resolved, subfilter: {total:.8f}, {resolved:.8f}, {subfilter:.8f}&quot;)
-print(f&quot;energy partition residual: {total-resolved-subfilter:.3e}&quot;)
-for a in ((1,0,0),(0,1,0),(0,0,1),(1,-2,3),(-3,1,2)):
-    quadratic = sum(a[i]*tau[i][j]*a[j] for i in range(3) for j in range(3))
-    centered = sum(sum(a[i]*(v[i]-mean[i]) for i in range(3))**2 for v in vectors)/n
-    assert quadratic &gt;= -1e-12 and abs(quadratic-centered) &lt; 1e-12
+mean = [sum(v[i] for v in vectors) / n for i in range(3)]
+tau = [
+    [
+        sum(v[i] * v[j] for v in vectors) / n - mean[i] * mean[j]
+        for j in range(3)
+    ]
+    for i in range(3)
+]
+resolved = sum(v * v for v in mean) / 2
+subfilter = sum(tau[i][i] for i in range(3)) / 2
+total = sum(sum(c * c for c in v) for v in vectors) / (2 * n)
+print(
+    f&quot;box energy total, resolved, subfilter: {total:.8f}, &quot;
+    f&quot;{resolved:.8f}, {subfilter:.8f}&quot;
+)
+print(f&quot;energy partition residual: {total - resolved - subfilter:.3e}&quot;)
+for a in ((1, 0, 0), (0, 1, 0), (0, 0, 1), (1, -2, 3), (-3, 1, 2)):
+    quadratic = sum(
+        a[i] * tau[i][j] * a[j] for i in range(3) for j in range(3)
+    )
+    centered = (
+        sum(
+            sum(a[i] * (v[i] - mean[i]) for i in range(3)) ** 2
+            for v in vectors
+        )
+        / n
+    )
+    assert quadratic &gt;= -1e-12 and abs(quadratic - centered) &lt; 1e-12
 
 # Filter width is held fixed while the representation grid changes.
-print(f&quot;fixed-filter continuum gain (independent of representation grid): {gain:.8f}&quot;)
-for h in (.2,.1,.05):
-    print(f&quot;grid-tied width={h}: continuum mode gain={sinc(wave*h/2):.8f}&quot;)
+print(
+    f&quot;fixed-filter continuum gain (independent of representation grid): &quot;
+    f&quot;{gain:.8f}&quot;
+)
+for h in (0.2, 0.1, 0.05):
+    print(f&quot;grid-tied width={h}: continuum mode gain={sinc(wave * h / 2):.8f}&quot;)
 </code></pre>
 <pre class="output">quadratic field: original=0.16000000, filtered=0.19000000, double filtered=0.22000000
 filtered residual (not zero): -0.03000000

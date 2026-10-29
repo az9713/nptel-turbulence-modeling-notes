@@ -1,8 +1,8 @@
 {
   "chapter": 17,
   "title": "17. Pressure redistribution and wall models",
-  "status": "Accepted in two independent scientific reviews",
-  "authored_body_sha256": "7457dcb0e5b0b5550d9e6cb515a762e8f9cf695f79b8e42963b4baafa7f16bcf",
+  "status": "Revised; fresh independent compliance review pending",
+  "authored_body_sha256": "5e0043c40296dce23d0ce6b9db9487eec9225ea1bd43df017a9b8aca8467daeb",
   "recordings": [
     {
       "playlist_position": 35,
@@ -221,37 +221,9 @@
   "executable_listings": 1,
   "source_reading": "Complete normalized caption text read sequentially before drafting",
   "independent_review": {
-    "status": "accepted",
-    "accepted_body_sha256": "7457dcb0e5b0b5550d9e6cb515a762e8f9cf695f79b8e42963b4baafa7f16bcf",
-    "rounds": [
-      {
-        "round": 1,
-        "report_identifier": "ch17-r1.md",
-        "independent_of_author": true,
-        "blocking": 0,
-        "major": 0,
-        "minor": 0,
-        "kind": "Independent AI scientific review",
-        "body_sha256": "7457dcb0e5b0b5550d9e6cb515a762e8f9cf695f79b8e42963b4baafa7f16bcf",
-        "reviewer_id": "independent-course-peer",
-        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
-        "accepted": true
-      },
-      {
-        "round": 2,
-        "report_identifier": "ch17-r2.md",
-        "independent_of_author": true,
-        "blocking": 0,
-        "major": 0,
-        "minor": 0,
-        "kind": "Independent AI scientific review",
-        "body_sha256": "7457dcb0e5b0b5550d9e6cb515a762e8f9cf695f79b8e42963b4baafa7f16bcf",
-        "reviewer_id": "lead-coordinator",
-        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
-        "accepted": true
-      }
-    ],
-    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+    "status": "pending-compliance-review",
+    "accepted": false,
+    "prior_accepted_body_sha256": "7457dcb0e5b0b5550d9e6cb515a762e8f9cf695f79b8e42963b4baafa7f16bcf"
   },
   "limitations": [
     "All captions55–59 read in full; no complete audiovisual audit or digitization of hidden board formulas",
@@ -261,5 +233,41 @@
     "Wall factor2.55 retained as lecture-specific; actual Foundation4.1 LRR wall normalization differs and is not silently mixed",
     "Trace-free wall correction and PSD wall-function input do not prove full viscous-wall asymptotic consistency or global solution accuracy",
     "Analytic periodic ensemble and homogeneous closure ODE are restricted executed tests, not new turbulent DNS, full spatial RSM or empirical validation"
-  ]
+  ],
+  "pre_compliance_review": {
+    "body_sha256": "7457dcb0e5b0b5550d9e6cb515a762e8f9cf695f79b8e42963b4baafa7f16bcf",
+    "review": {
+      "status": "accepted",
+      "accepted_body_sha256": "7457dcb0e5b0b5550d9e6cb515a762e8f9cf695f79b8e42963b4baafa7f16bcf",
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch17-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "7457dcb0e5b0b5550d9e6cb515a762e8f9cf695f79b8e42963b4baafa7f16bcf",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch17-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "7457dcb0e5b0b5550d9e6cb515a762e8f9cf695f79b8e42963b4baafa7f16bcf",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+    }
+  }
 }

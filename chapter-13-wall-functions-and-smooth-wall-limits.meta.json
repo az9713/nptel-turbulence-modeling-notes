@@ -1,8 +1,8 @@
 {
   "chapter": 13,
   "title": "13. Wall functions and smooth-wall limits",
-  "status": "Accepted in two independent scientific reviews",
-  "authored_body_sha256": "acd18ac235ad0243f67fd8df4ed09085c77d2e91c8dc8578ef32988eb8e5e365",
+  "status": "Revised; fresh independent compliance review pending",
+  "authored_body_sha256": "95896a84f70cd1895b2f808f594efbb03e4b107bf03d86112d69b6c4cf76c1de",
   "recordings": [
     {
       "playlist_position": 15,
@@ -175,37 +175,9 @@
   "executable_listings": 1,
   "source_reading": "Complete normalized caption text read sequentially before drafting",
   "independent_review": {
-    "status": "accepted",
-    "accepted_body_sha256": "acd18ac235ad0243f67fd8df4ed09085c77d2e91c8dc8578ef32988eb8e5e365",
-    "rounds": [
-      {
-        "round": 1,
-        "report_identifier": "ch13-r1.md",
-        "independent_of_author": true,
-        "blocking": 0,
-        "major": 0,
-        "minor": 0,
-        "kind": "Independent AI scientific review",
-        "body_sha256": "acd18ac235ad0243f67fd8df4ed09085c77d2e91c8dc8578ef32988eb8e5e365",
-        "reviewer_id": "independent-course-peer",
-        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
-        "accepted": true
-      },
-      {
-        "round": 2,
-        "report_identifier": "ch13-r2.md",
-        "independent_of_author": true,
-        "blocking": 0,
-        "major": 0,
-        "minor": 0,
-        "kind": "Independent AI scientific review",
-        "body_sha256": "acd18ac235ad0243f67fd8df4ed09085c77d2e91c8dc8578ef32988eb8e5e365",
-        "reviewer_id": "lead-coordinator",
-        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
-        "accepted": true
-      }
-    ],
-    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+    "status": "pending-compliance-review",
+    "accepted": false,
+    "prior_accepted_body_sha256": "acd18ac235ad0243f67fd8df4ed09085c77d2e91c8dc8578ef32988eb8e5e365"
   },
   "limitations": [
     "Full captions40–43 read; no numerical values digitized from instructor DNS graphs and no comprehensive board/video audit",
@@ -214,5 +186,41 @@
     "Near-wall expansions require a smooth impermeable no-slip wall, incompressibility and suitable derivative/moment regularity; degenerate leading coefficients can vanish",
     "Manufactured random field is a kinematic check, not an unforced Navier–Stokes solution or turbulent DNS",
     "No spatial RANS solver or accuracy benchmark performed; numerical tests cover declared restricted relations"
-  ]
+  ],
+  "pre_compliance_review": {
+    "body_sha256": "acd18ac235ad0243f67fd8df4ed09085c77d2e91c8dc8578ef32988eb8e5e365",
+    "review": {
+      "status": "accepted",
+      "accepted_body_sha256": "acd18ac235ad0243f67fd8df4ed09085c77d2e91c8dc8578ef32988eb8e5e365",
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch13-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "acd18ac235ad0243f67fd8df4ed09085c77d2e91c8dc8578ef32988eb8e5e365",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch13-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "acd18ac235ad0243f67fd8df4ed09085c77d2e91c8dc8578ef32988eb8e5e365",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+    }
+  }
 }

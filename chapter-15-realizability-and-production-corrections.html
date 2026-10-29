@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="0bac19cf7521c8ddcd4d9f785dea766c855c4a88122072448ee25d345975f27a">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="8d444ae9b0a4cece1531af43dea540b3b07262089b0dd034273a555b05477ef5">
 <title>15. Realizability and production corrections · Turbulence Modeling</title><link rel="stylesheet" href="assets/book.css">
 <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{pageReady:()=>MathJax.startup.defaultPageReady().then(()=>{document.documentElement.dataset.mathReady='true';})}};</script>
 <script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Turbulence Modeling · NPTEL IIT Madras</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="book-overview.html">Study route</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
-<div class="layout"><aside class="toc" id="chapter-toc"><h2>On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
-<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>15. Realizability and production corrections</h1>
+<div class="layout"><aside class="toc" id="chapter-toc"><h2 id="detail-01">On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1 id="detail-02">15. Realizability and production corrections</h1>
 <p class="lead">A turbulence covariance must assign a nonnegative variance to every direction. Positive turbulent kinetic energy is necessary but does not ensure that condition. A production limiter can control a large scalar source while leaving an impossible covariance untouched. These distinctions matter in strongly strained flow, where a linear stress closure can fail even with positive viscosity and well-behaved scalar transport equations. We will derive a pointwise covariance bound and compare its effect with corrections aimed directly at energy production.</p>
 <div class="learning-map"><strong>A local strain experiment with two separate questions.</strong> Given a mean velocity gradient and positive \(k,\epsilon\), first ask whether the modeled stress is a possible covariance. Then ask whether its energy transfer is an adequate approximation. The recurring channel remains a useful shear check, but an ideal planar stagnation field will expose the limits that a channel calibration can miss.</div>
 <p class="source-note">Lessons 48–51 discuss input scales, realizability, stagnation anomalies and practical model limitations. The source's row-wise interpretation of a strain bound is replaced below by a derived principal-eigenvalue or invariant condition, checked against a primary Durbin report. Stagnation-point isotropy is treated as an assumption for a test, rather than a universal flow property. Named SST limiter variants are kept distinct.</p>
@@ -30,7 +30,7 @@ a_iR_{ij}a_j=\mathbb E[(a_i u_i')^2]\geq0.
 \]</div>
 <p>A symmetric matrix satisfying (15.1) is positive semidefinite, abbreviated PSD. Its eigenvalues are nonnegative and its trace is \(2k\geq0\). Zero eigenvalues are allowed, including a two-component state or a fluctuation-free direction. “Must remain positive” in the source should therefore be read as nonnegative, unless a separate nonsingularity assumption is made.</p>
 <p>Choosing coordinate directions gives \(R_{ii}\geq0\), without summation on a selected \(i\). Applying nonnegativity to \(u_i'+\alpha u_j'\) for every real \(\alpha\) yields the quadratic \(R_{ii}+2\alpha R_{ij}+\alpha^2R_{jj}\geq0\), so \(R_{ij}^2\leq R_{ii}R_{jj}\). If both variances are positive, the component correlation \(r_{ij}=R_{ij}/\sqrt{R_{ii}R_{jj}}\) lies in \([-1,1]\). If one variance is zero, PSD requires its covariance with every other component to vanish; the normalized coefficient is then undefined, not a number to divide by zero.</p>
-<div class="worked"><h3>All pairwise correlations can pass while the full covariance fails</h3>
+<div class="worked"><h3 id="detail-03">All pairwise correlations can pass while the full covariance fails</h3>
 <p>Consider the dimensionless matrix with every diagonal equal to 1 and every off-diagonal equal to \(-0.75\). All variances are positive and every pairwise correlation has magnitude \(0.75&lt;1\). Nevertheless the unit vector \((1,1,1)/\sqrt3\) has variance \(1+2(-0.75)=-0.5\). Its eigenvalues are \(-0.5,1.75,1.75\), and its determinant is \(-1.53125\).</p>
 <p>For a symmetric \(3\times3\) covariance, all principal minors must be nonnegative, including the determinant, not just the three \(2\times2\) conditions. Positive trace is still weaker. This counterexample needs no turbulence simulation; it rules out any ensemble with the proposed second moments.</p></div>
 <p>Conversely, a symmetric PSD matrix is a realizable second-moment matrix in the elementary probabilistic sense. If \(R=Q\,\mathrm{diag}(r_1,r_2,r_3)Q^T\), choose independent random signs \(\xi_\alpha=\pm1\), each of mean zero and variance one, and define \(\boldsymbol u'=Q\,\mathrm{diag}(\sqrt{r_1},\sqrt{r_2},\sqrt{r_3})\boldsymbol\xi\). Its covariance is \(R\). This construction proves moment admissibility at one point; it does not supply a spatially divergence-free Navier–Stokes field or an accurate turbulence history.</p>
@@ -44,7 +44,7 @@ R^m=\mathrm{diag}\left(\frac{2k}{3}-2\nu_ta,\
 \frac{2k}{3}+2\nu_ta,\ \frac{2k}{3}\right).
 \]</div>
 <p>The extensional variance fails when \(\nu_ta&gt;k/3\). If the incoming coordinate instead compresses strongly, incompressibility forces compensating extension elsewhere. The source's summed transverse argument captures this: \(R_{22}^m+R_{33}^m=4k/3+2\nu_t\partial_1U_1\). A sufficiently negative \(\partial_1U_1\) makes the sum negative, requiring at least one negative term. It does not prove both are negative.</p>
-<div class="worked"><h3>Positive energy and production coexist with an impossible stress</h3>
+<div class="worked"><h3 id="detail-04">Positive energy and production coexist with an impossible stress</h3>
 <p>Use our recurring state \(k=0.19\ \mathrm{m^2\,s^{-2}}\), \(\epsilon=0.5\ \mathrm{m^2\,s^{-3}}\), \(C_\mu=0.09\). It gives \(\nu_t=0.006498\ \mathrm{m^2\,s^{-1}}\). At \(a=100\ \mathrm{s^{-1}}\), the smallest modeled variance is \(-1.17293333\ \mathrm{m^2\,s^{-2}}\), although the trace remains \(0.38\). Modeled production is \(2\nu_tS:S=4\nu_ta^2=259.92\ \mathrm{m^2\,s^{-3}}\), also positive.</p>
 <p>The field is a local gradient experiment, not a no-slip wall solution: a complete impingement flow has additional spatial structure. Its purpose is to exhibit a constitutive failure. A negative modeled variance need not make the separately transported scalar \(k\) negative or cause an immediate numerical crash. A solver can converge while carrying this local inconsistency.</p></div>
 
@@ -59,7 +59,7 @@ R^m=\mathrm{diag}\left(\frac{2k}{3}-2\nu_ta,\
 <p>An eigenvalue-free sufficient bound follows from incompressibility. Let \(m=\lambda_{\max}&gt;0\). The other eigenvalues sum to \(-m\); their squared sum is at least \(m^2/2\). Thus \(S:S\geq3m^2/2\), so \(m\leq\Lambda=\sqrt{(2/3)S:S}\). Replacing \(m\) by the larger \(\Lambda\) gives the conservative cap \(\nu_t\leq k/(3\Lambda)\). This contraction sums over both indices. It is a rotational invariant.</p>
 <p>Lesson 50 attributes the constraint to Durbin's 1996 work. We inspected the earlier primary <a href="https://web.stanford.edu/group/ctr/ResBriefs/1994/08_DURBIN.pdf">Durbin 1994 report, §2.4, printed pp. 102–104</a>, including a visual check of p. 103's eigenvalue derivation. It treats principal strain eigenvalues and bounds the turbulent time. Our derivation above makes the same mathematical distinction. No reading of the separately mentioned 1996 paper is claimed.</p>
 <p>The caption's row-wise expression \(\sqrt{(2/3)\sum_jS_{ij}^2}\) for each \(i\) is neither the principal eigenvalue nor the invariant \(\Lambda\). It cannot be substituted as an exact expression for \(S_{ii}\), and a row-wise cap is not a general PSD guarantee. For a rotated planar strain with \(S_{12}=S_{21}=a\) and zero diagonals, its nonzero row estimate is \(\sqrt{2/3}\,a&lt;\lambda_{\max}=a\). Capping at \(k/(3\sqrt{2/3}\,a)\) still leaves a negative principal covariance. Coordinate diagonal checks miss it because all those modeled diagonals equal \(2k/3\).</p>
-<div class="worked"><h3>Exact and conservative caps, with their scope</h3>
+<div class="worked"><h3 id="detail-05">Exact and conservative caps, with their scope</h3>
 <p>At the state and strain above, (15.2) caps viscosity at \(0.00063333\ \mathrm{m^2\,s^{-1}}\), giving zero minimum variance and production \(25.33333333\). The invariant cap is \(0.00054848\), giving minimum variance \(0.01697012\) and production \(21.93931023\). The incorrect row cap in the rotated example is \(0.00077567\), leaving eigenvalue \(-0.02846768\).</p>
 <p>For \(\nu_t=C_\mu k t_t\), implement the invariant condition as \(t_t=\min(k/\epsilon,1/(3C_\mu\Lambda))\). For \(\nu_t=k t_\omega\), it is \(t_\omega=\min(1/\omega,1/(3\Lambda))\). The example gives \(0.03207501\ \mathrm s\) and \(0.00288675\ \mathrm s\), respectively. These use different viscosity normalizations and are not supposed to be the same number.</p></div>
 <p>Use the chosen viscosity consistently in momentum, production and modeled diffusion if that is the declared modified model. The bound establishes pointwise PSD for this linear covariance under its sign and incompressibility assumptions. It does not establish correct wall anisotropy, transport, temporal positivity of every scalar update or accurate mean flow. A more general compressible or nonlinear stress closure needs its own constraint.</p>
@@ -87,60 +87,94 @@ R^m=\mathrm{diag}\left(\frac{2k}{3}-2\nu_ta,\
 <h2 id="reproduce">15.8 Reproduce the covariance and production diagnostics</h2>
 <p>Run <a href="code/ch15_realizability.py">ch15_realizability.py</a> with standard Python 3. It uses known analytic eigenvalues and explicit local gradients. The listing and observed output are validated together. The negative examples deliberately fail covariance admissibility; they are not generated samples of physically possible turbulence.</p>
 <pre data-run="code/ch15_realizability.py"><code>&quot;&quot;&quot;Covariance and production diagnostics; no spatial RANS solution.&quot;&quot;&quot;
+
 from math import sqrt
 
-k,epsilon,Cmu=.19,.5,.09
-base=Cmu*k*k/epsilon
+k, epsilon, Cmu = 0.19, 0.5, 0.09
+base = Cmu * k * k / epsilon
 print(f&quot;baseline viscosity m2/s: {base:.8f}&quot;)
-print(f&quot;pairwise-bound counterexample eigenvalues: {-0.5:.8f}, {1.75:.8f}, {1.75:.8f}&quot;)
-det=(1-(-.75))**2*(1+2*(-.75))
+print(
+    f&quot;pairwise-bound counterexample eigenvalues: {-0.5:.8f}, &quot;
+    f&quot;{1.75:.8f}, {1.75:.8f}&quot;
+)
+det = (1 - (-0.75)) ** 2 * (1 + 2 * (-0.75))
 print(f&quot;pairwise-bound counterexample determinant: {det:.8f}&quot;)
 
-a=100.
-strain_norm=sqrt(2*a*a)
-lambda_bound=sqrt(2/3)*strain_norm
-exact_cap=k/(3*a)
-safe_cap=k/(3*lambda_bound)
-for label,viscosity in ((&quot;baseline&quot;,base),(&quot;eigenvalue cap&quot;,min(base,exact_cap)),
-                        (&quot;invariant cap&quot;,min(base,safe_cap))):
-    variances=[2*k/3-2*viscosity*a,2*k/3+2*viscosity*a,2*k/3]
-    production=4*viscosity*a*a
-    print(f&quot;planar strain {label}: nu_t={viscosity:.8f}, &quot;
-          f&quot;min variance={min(variances):.8f}, production={production:.8f}&quot;)
-    if label!=&quot;baseline&quot;:
-        assert min(variances)&gt;=-1e-14
+a = 100.0
+strain_norm = sqrt(2 * a * a)
+lambda_bound = sqrt(2 / 3) * strain_norm
+exact_cap = k / (3 * a)
+safe_cap = k / (3 * lambda_bound)
+for label, viscosity in (
+    (&quot;baseline&quot;, base),
+    (&quot;eigenvalue cap&quot;, min(base, exact_cap)),
+    (&quot;invariant cap&quot;, min(base, safe_cap)),
+):
+    variances = [
+        2 * k / 3 - 2 * viscosity * a,
+        2 * k / 3 + 2 * viscosity * a,
+        2 * k / 3,
+    ]
+    production = 4 * viscosity * a * a
+    print(
+        f&quot;planar strain {label}: nu_t={viscosity:.8f}, min &quot;
+        f&quot;variance={min(variances):.8f}, production={production:.8f}&quot;
+    )
+    if label != &quot;baseline&quot;:
+        assert min(variances) &gt;= -1e-14
 
 # Rotate planar strain 45 degrees so positive eigenstrain is off diagonal.
-row_estimate=sqrt(2/3)*a
-row_cap=k/(3*row_estimate)
-bad_eigenvalue=2*k/3-2*row_cap*a
-print(f&quot;rotated row-norm cap: nu_t={row_cap:.8f}, min covariance eigenvalue={bad_eigenvalue:.8f}&quot;)
-assert bad_eigenvalue&lt;0
+row_estimate = sqrt(2 / 3) * a
+row_cap = k / (3 * row_estimate)
+bad_eigenvalue = 2 * k / 3 - 2 * row_cap * a
+print(
+    f&quot;rotated row-norm cap: nu_t={row_cap:.8f}, min covariance &quot;
+    f&quot;eigenvalue={bad_eigenvalue:.8f}&quot;
+)
+assert bad_eigenvalue &lt; 0
 
-production=4*base*a*a
-limited=min(production,10*epsilon)
-print(f&quot;production-only cap: original={production:.8f}, capped={limited:.8f}, &quot;
-      f&quot;unchanged min variance={2*k/3-2*base*a:.8f}&quot;)
-print(f&quot;mean-plus-turbulent transfer imbalance with unchanged stress: {limited-production:.8f}&quot;)
-print(f&quot;isotropic instantaneous exact production: {0.:.8f}&quot;)
-print(f&quot;Kato-Launder pure strain production: {0.:.8f}&quot;)
+production = 4 * base * a * a
+limited = min(production, 10 * epsilon)
+print(
+    f&quot;production-only cap: original={production:.8f}, &quot;
+    f&quot;capped={limited:.8f}, unchanged min &quot;
+    f&quot;variance={2 * k / 3 - 2 * base * a:.8f}&quot;
+)
+print(
+    f&quot;mean-plus-turbulent transfer imbalance with unchanged stress: &quot;
+    f&quot;{limited - production:.8f}&quot;
+)
+print(f&quot;isotropic instantaneous exact production: {0.0:.8f}&quot;)
+print(f&quot;Kato-Launder pure strain production: {0.0:.8f}&quot;)
 
-shear=100.
-S=shear
-Omega=shear
-print(f&quot;simple shear baseline and Kato-Launder: {base*S*S:.8f}, {base*S*Omega:.8f}&quot;)
-print(f&quot;invariant limited k-epsilon time s: {min(k/epsilon,1/(3*Cmu*lambda_bound)):.8f}&quot;)
-omega=epsilon/(Cmu*k)
-print(f&quot;invariant limited k-omega time s: {min(1/omega,1/(3*lambda_bound)):.8f}&quot;)
+shear = 100.0
+S = shear
+Omega = shear
+print(
+    f&quot;simple shear baseline and Kato-Launder: {base * S * S:.8f}, &quot;
+    f&quot;{base * S * Omega:.8f}&quot;
+)
+print(
+    f&quot;invariant limited k-epsilon time s: &quot;
+    f&quot;{min(k / epsilon, 1 / (3 * Cmu * lambda_bound)):.8f}&quot;
+)
+omega = epsilon / (Cmu * k)
+print(
+    f&quot;invariant limited k-omega time s: &quot;
+    f&quot;{min(1 / omega, 1 / (3 * lambda_bound)):.8f}&quot;
+)
 
-print(f&quot;10% k high/epsilon low length ratio: {1.1**1.5/.9:.8f}&quot;)
-print(f&quot;10% k high/epsilon low viscosity ratio: {1.1**2/.9:.8f}&quot;)
-kappa,y=.41,.002
-ut=.4
-gradient=ut/(kappa*y)
-curvature=ut/(kappa*y*y)
-print(f&quot;log-profile von Karman length m: {kappa*gradient/curvature:.8f}&quot;)
-print(&quot;uniform shear and nonzero linear strain: Laplacian=0; raw von Karman ratio undefined&quot;)
+print(f&quot;10% k high/epsilon low length ratio: {1.1 ** 1.5 / 0.9:.8f}&quot;)
+print(f&quot;10% k high/epsilon low viscosity ratio: {1.1 ** 2 / 0.9:.8f}&quot;)
+kappa, y = 0.41, 0.002
+ut = 0.4
+gradient = ut / (kappa * y)
+curvature = ut / (kappa * y * y)
+print(f&quot;log-profile von Karman length m: {kappa * gradient / curvature:.8f}&quot;)
+print(
+    &quot;uniform shear and nonzero linear strain: Laplacian=0; raw von &quot;
+    &quot;Karman ratio undefined&quot;
+)
 </code></pre>
 <pre class="output">baseline viscosity m2/s: 0.00649800
 pairwise-bound counterexample eigenvalues: -0.50000000, 1.75000000, 1.75000000

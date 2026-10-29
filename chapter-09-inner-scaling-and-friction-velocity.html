@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="1b30386fdb984eac569460c14a4f95baa62cd43c84c919ba41f19e213d620377">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="6218183fe3def853bb4ff8683fc66698136194d772873fb52201a871ba0f6101">
 <title>9. Inner scaling and friction velocity · Turbulence Modeling</title><link rel="stylesheet" href="assets/book.css">
 <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{pageReady:()=>MathJax.startup.defaultPageReady().then(()=>{document.documentElement.dataset.mathReady='true';})}};</script>
 <script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Turbulence Modeling · NPTEL IIT Madras</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="book-overview.html">Study route</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
-<div class="layout"><aside class="toc" id="chapter-toc"><h2>On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
-<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>9. Inner scaling and friction velocity</h1>
+<div class="layout"><aside class="toc" id="chapter-toc"><h2 id="detail-01">On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1 id="detail-02">9. Inner scaling and friction velocity</h1>
 <p class="lead">The outer boundary-layer estimate made molecular momentum transport small. The wall requires it to matter. Resolving that apparent conflict introduces a viscous length, a velocity built from wall shear, and a region where molecular and fluctuating momentum fluxes exchange their shares of an almost constant total stress. The usefulness of this region depends on how small the omitted momentum terms actually are.</p>
 <div class="learning-map"><strong>Two checks to carry.</strong> First, convert a prescribed wall shear into a physical distance for a chosen wall coordinate. Second, decide whether a measured covariance away from the wall can estimate that shear. The first is a unit conversion once wall shear is known; the second is a physical approximation that needs a residual bound.</div>
 <p class="source-note">Lessons 24–27 motivate an inner layer, derive its order estimates, integrate a leading stress balance, define friction velocity and wall coordinates, and describe linear, buffer and overlap regions. We follow that sequence while keeping the finite-Reynolds-number remainder. The instructor's Couette graphs are discussed through the full captions; numerical examples here are separately stipulated and are not digitized DNS.</p>
@@ -19,8 +19,8 @@ U U_x+V U_y
 +\nu(U_{xx}+U_{yy})
 -\partial_xR_{11}-\partial_yR_{12}.
 \]</div>
-<p>Subscripts on \(U,V,P\) denote derivatives in this chapter; subscripts on \(R_{ij}\) remain tensor components. Density \(\rho>0\) and kinematic viscosity \(\nu>0\) are constant. Chapter 8 showed that an outer scale \(\delta\ll L\) can make \(\nu U_{yy}\) small relative to the chosen outer acceleration, provided the combination \(\mathrm{Re}_L(\delta/L)^2\) is large. That regional estimate cannot make viscosity irrelevant at the wall, where no slip requires a full velocity transition.</p>
-<p>Introduce an inner wall-normal length \(\ell\ll\delta\), an inner velocity \(u_w>0\), and the same streamwise development length \(L\). The lecture writes the length as \(\eta_w\); we use \(\ell\) until its relation to wall shear is fixed. The label “inner” describes its position relative to the outer thickness, not a separate fluid or a sharp material surface.</p>
+<p>Subscripts on \(U,V,P\) denote derivatives in this chapter; subscripts on \(R_{ij}\) remain tensor components. Density \(\rho\gt 0\) and kinematic viscosity \(\nu\gt 0\) are constant. Chapter 8 showed that an outer scale \(\delta\ll L\) can make \(\nu U_{yy}\) small relative to the chosen outer acceleration, provided the combination \(\mathrm{Re}_L(\delta/L)^2\) is large. That regional estimate cannot make viscosity irrelevant at the wall, where no slip requires a full velocity transition.</p>
+<p>Introduce an inner wall-normal length \(\ell\ll\delta\), an inner velocity \(u_w\gt 0\), and the same streamwise development length \(L\). The lecture writes the length as \(\eta_w\); we use \(\ell\) until its relation to wall shear is fixed. The label “inner” describes its position relative to the outer thickness, not a separate fluid or a sharp material surface.</p>
 <p>The source compares mean and rms velocities in an inner region to motivate a common characteristic velocity scale. This can be useful for a finite near-wall region, but it is not a statement that every component is equal, or that all component rms values vanish with the same power as \(y\to0\). The exact smooth-wall expansion below gives a stronger and more anisotropic constraint at the wall itself.</p>
 <p>We also retain pressure as a separate possible participant. The fact that a flow is turbulent does not require the pressure gradient to be smaller than the Reynolds-stress divergence. Pressure, inertia, molecular stress and turbulent transport can form different balances in different regions. The following common inner balance assumes a sufficiently small pressure contribution at the selected scale; a strong imposed gradient or separation can invalidate it.</p>
 
@@ -57,14 +57,14 @@ V U_y\sim
 \mathcal A=U U_x+V U_y+\frac{P_x}{\rho}
 -\nu U_{xx}+\partial_xR_{11}.
 \]</div>
-<p>The remainder \(\mathcal A\) collects the terms omitted in the leading inner balance and has acceleration units. Smooth no-slip fluctuations satisfy \(R_{12}(0)=0\). Define the positive wall shear for the attached flow considered here by \(\tau_w=\rho\nu U_y(0)>0\). Integration from the wall to any height where these smooth equations hold yields the exact identity</p>
+<p>The remainder \(\mathcal A\) collects the terms omitted in the leading inner balance and has acceleration units. Smooth no-slip fluctuations satisfy \(R_{12}(0)=0\). Define the positive wall shear for the attached flow considered here by \(\tau_w=\rho\nu U_y(0)\gt 0\). Integration from the wall to any height where these smooth equations hold yields the exact identity</p>
 <div class="equation">\[
 T(y)=\frac{\tau_w}{\rho}+\int_0^y\mathcal A(s)\,ds.
 \]</div>
 <p>An approximate differential equation can be integrated; its remainder must be integrated too. No infinite-Reynolds-number limit is needed to write this identity. The constant-stress approximation is justified when \(\left|\int_0^y\mathcal A\,ds\right|\ll\tau_w/\rho\) over the height range of interest. If \(|\mathcal A|\le A_{\max}\) there, the absolute kinematic stress error is at most \(A_{\max}y\). A leading asymptotic limit may make such a relative error tend to zero under its assumptions, but increasing an outer Reynolds number alone does not prove all the required terms remain small.</p>
-<div class="worked"><h3>Couette and channel flow provide two exact tests</h3>
+<div class="worked"><h3 id="detail-03">Couette and channel flow provide two exact tests</h3>
 <p>For ideal statistically stationary fully developed plane Couette flow with no streamwise pressure gradient, \(U=U(y)\), \(V=0\), and all one-point statistics are independent of \(x\). Thus \(\mathcal A=0\) and \(T=\tau_w/\rho\) exactly across the gap at every finite Reynolds number for which the assumed state exists. A slightly nonconstant sum in sampled Couette data can reflect sampling, discretization or imperfect realization of the ideal conditions; it is not an inevitable finite-Reynolds-number correction to this exact momentum identity.</p>
-<p>For the pressure-driven channel from chapter 4, let \(G=-P_x>0\) and \(h\) be the half-height measured from the lower wall to the centerline. Then \(\mathcal A=-G/\rho\), so \(\rho T(y)=\tau_w-Gy\), with \(\tau_w=Gh\). Total shear is approximately constant only when \(y/h\ll1\). The relative departure is exactly \(y/h\), independent of any guessed stress partition. These two cases prevent confusing a general inner approximation with a particular fully developed exact result.</p></div>
+<p>For the pressure-driven channel from chapter 4, let \(G=-P_x\gt 0\) and \(h\) be the half-height measured from the lower wall to the centerline. Then \(\mathcal A=-G/\rho\), so \(\rho T(y)=\tau_w-Gy\), with \(\tau_w=Gh\). Total shear is approximately constant only when \(y/h\ll1\). The relative departure is exactly \(y/h\), independent of any guessed stress partition. These two cases prevent confusing a general inner approximation with a particular fully developed exact result.</p></div>
 <p>The lecture's discussion of integrating only within the boundary layer correctly warns against extending an inner approximation beyond its region. The underlying exact momentum equation can be integrated farther if its assumptions and boundary data remain valid. The restriction concerns the reduced balance and the smallness of its remainder, not a mathematical prohibition on integrating through a turbulent/non-turbulent transition.</p>
 
 <h2 id="measurement" data-video="wpKCHT2OH5w" data-start="1019" data-end="1514">9.4 Inferring wall shear from a covariance requires two small errors <a class="timestamp" href="https://www.youtube.com/watch?v=wpKCHT2OH5w&amp;t=1019">L26 · 16:59</a></h2>
@@ -75,7 +75,7 @@ T(y)=\frac{\tau_w}{\rho}+\int_0^y\mathcal A(s)\,ds.
 =\rho\nu U_y(y)-\rho\int_0^y\mathcal A(s)\,ds.
 \]</div>
 <p>The first contribution is the omitted molecular share. The second is total-stress variation. The terms can add or partly cancel, depending on the flow. An uncertainty estimate also needs errors in the measured covariance, wall location, viscosity, density and averaging. The relation is a useful physical inference, not a universal calibration of a velocity instrument.</p>
-<div class="worked"><h3>The recurring channel exposes the bias</h3>
+<div class="worked"><h3 id="detail-04">The recurring channel exposes the bias</h3>
 <p>Take \(G=10\ \mathrm{Pa\,m^{-1}}\), \(h=0.02\ \mathrm m\), \(\rho=1.2\ \mathrm{kg\,m^{-3}}\), and \(\nu=1.5\times10^{-5}\ \mathrm{m^2\,s^{-1}}\). Then \(\tau_w=0.2\ \mathrm{Pa}\). At \(y=0.001\ \mathrm m\), exact total shear is \(0.19\ \mathrm{Pa}\). Stipulate a local mean gradient \(U_y=100\ \mathrm{s^{-1}}\), so molecular shear is \(0.0018\ \mathrm{Pa}\). The required turbulent shear is \(0.1882\ \mathrm{Pa}\).</p>
 <p>Using this covariance alone would underestimate wall shear by \(0.0118\ \mathrm{Pa}\), or \(5.9\) percent. Only \(0.9\) percentage points come from the omitted molecular share; \(5\) points come from pressure-driven variation in total stress. These inputs specify a local budget, not a solved turbulent mean profile. Moving arbitrarily far from the wall to improve probe access would increase the second error in this channel.</p></div>
 <p>The same idea motivates wall modeling: if the near-wall degrees of freedom are not resolved, a relation is supplied between resolved flow and wall traction. A constant-stress balance alone does not specify the velocity distribution or recover a heat-transfer law. The closure needed for those tasks must be stated and validated for its intended conditions.</p>
@@ -92,7 +92,7 @@ R_{ij}^+=\frac{R_{ij}}{u_\tau^2},\qquad
 <p>Distance \(y\) is measured from the wall. In a moving-wall problem the mean velocity for this purpose is taken relative to the local wall motion, with coordinate orientation declared. Unlike the fixed reference-length Reynolds number, \(y^+\) varies with distance: it is a Reynolds number built from \(u_\tau\) and the actual distance \(y\). Using \(\ell_\nu\) instead of \(y\) in that interpretation would give the constant one and lose the coordinate.</p>
 <p>There is no conflict between specifying a global \(\mathrm{Re}_L=U_sL/\nu\) and additional Reynolds numbers for other scales. Each number states its own velocity and length choices. In particular \(y^+=\mathrm{Re}_\tau(y/\delta)\), which connects inner and outer coordinates. A value of \(y/\delta\) does not correspond to the same \(y^+\) at different friction Reynolds numbers.</p>
 <p>If signed wall traction reverses, one can define a nonnegative magnitude \(u_\tau=\sqrt{|\tau_w|/\rho}\) and separately retain the traction direction. The simple positive-shear formulas then need the corresponding sign in the stress balance. At separation where \(\tau_w=0\), this friction scaling degenerates: it cannot be used as a finite universal coordinate system by dividing by zero. Roughness, transpiration and variable properties also require additional care beyond our smooth attached-wall scope.</p>
-<div class="worked"><h3>Resolve what “one wall unit” means in metres</h3>
+<div class="worked"><h3 id="detail-05">Resolve what “one wall unit” means in metres</h3>
 <p>Prescribe \(\tau_w=0.2\ \mathrm{Pa}\), \(\rho=1.2\ \mathrm{kg\,m^{-3}}\), \(\nu=1.5\times10^{-5}\ \mathrm{m^2\,s^{-1}}\). Then \(u_\tau=0.40824829\ \mathrm{m\,s^{-1}}\), \(\ell_\nu=36.74235\ \mathrm{\mu m}\). The distances for \(y^+=1,5,30\) are approximately \(0.036742,\ 0.183712,\ 1.102270\ \mathrm{mm}\). These are conversions for the prescribed shear, not universal mesh spacings.</p>
 <p>If an external layer thickness is separately prescribed as \(\delta=0.05\ \mathrm m\), \(\mathrm{Re}_\tau=1360.8276\). We have not obtained this shear from the outer scaling of chapter 8; it is additional stipulated information. A numerical method's actual resolution requirements depend on its turbulence treatment, wall model, spatial accuracy and purpose, not only on this conversion.</p></div>
 
@@ -100,7 +100,7 @@ R_{ij}^+=\frac{R_{ij}}{u_\tau^2},\qquad
 <p>The outer layer belongs to the boundary layer; the outer flow lies outside it. In an external shear flow with relatively quiet surrounding fluid, a turbulent/non-turbulent interface can separate a vortical turbulent region from adjacent less vortical fluid. The source calls attention to its thin and irregular character. <a href="https://ntrs.nasa.gov/api/citations/19930092246/downloads/19930092246.pdf">Corrsin and Kistler's opening summary in NACA Report 1244</a> describes an irregular front and a thin viscous superlayer associated with vorticity transmission. Only that opening discussion is used here, not the report's detailed model or numerical results.</p>
 <p>A sharp interface description does not require a literal velocity or vorticity discontinuity in a smooth finite-viscosity solution. A rapidly varying thin region can appear sharp relative to the outer thickness, and an asymptotic idealization or threshold can identify an interface. Its thickness, threshold dependence and entrainment dynamics require additional scales and evidence. Also, the surrounding flow need not be non-turbulent in every boundary-layer experiment. Freestream turbulence changes that picture.</p>
 <p>The inner and outer descriptions are likewise not separated by an exact material surface. The lecture uses rough guides: a viscous linear region below about \(y^+=3\)–\(5\), a buffer region extending toward \(y^+\approx30\), and a possible overlap region below an outer fraction around \(y/\delta\approx0.1\). These are familiar heuristic ranges for appropriate smooth-wall flows, not definitions or exact thresholds. Their extent depends on Reynolds number, pressure gradient and other conditions. We will not convert them directly into universal mesh recommendations.</p>
-<p>Combining the overlap guides gives \(30\lesssim y^+\lesssim0.1\mathrm{Re}_\tau\). This interval is empty when \(\mathrm{Re}_\tau<300\), even as a heuristic. At \(\mathrm{Re}_\tau=120\), its proposed upper bound is only 12. At the stipulated 1360.8276 it lies near 136, leaving a possible interval but not proving a clean asymptotic logarithmic region. An overlap argument needs substantial separation of scales, not merely two curves intersecting on a plot.</p>
+<p>Combining the overlap guides gives \(30\lesssim y^+\lesssim0.1\mathrm{Re}_\tau\). This interval is empty when \(\mathrm{Re}_\tau\lt 300\), even as a heuristic. At \(\mathrm{Re}_\tau=120\), its proposed upper bound is only 12. At the stipulated 1360.8276 it lies near 136, leaving a possible interval but not proving a clean asymptotic logarithmic region. An overlap argument needs substantial separation of scales, not merely two curves intersecting on a plot.</p>
 
 <h2 id="sublayer-buffer" data-video="LP-lhdKIsFw" data-start="823" data-end="1159">9.7 Derive the linear limit and interpret the buffer <a class="timestamp" href="https://www.youtube.com/watch?v=LP-lhdKIsFw&amp;t=823">L27 · 13:43</a></h2>
 <p>At a smooth stationary no-slip wall, expand the fluctuations locally in \(y\). Tangential components have leading forms \(u'=a_1(x,z,t)y+O(y^2)\) and \(w'=a_3(x,z,t)y+O(y^2)\). The normal component initially could have \(v'=b_1y+\cdots\), but continuity at the wall gives \(b_1=0\): tangential derivatives of the identically zero wall velocities vanish. Thus \(v'=b_2y^2+O(y^3)\). With adequate regularity of moments,</p>
@@ -115,53 +115,71 @@ R_{22}=O(y^4),\qquad R_{12}=O(y^3).
 \]</div>
 <p>Close enough to the wall, smooth \(T^+\to1\) and \(R_{12}^+\to0\). Hence \(dU^+/dy^+\to1\), and no slip gives \(U^+=y^++o(y^+)\). This is an asymptotic linear law. It does not assert exact linearity throughout a finite interval bounded by the number five. A pressure gradient or the other remainder terms can produce higher-order corrections.</p>
 <p>In an approximately constant-stress region, write the molecular fraction as \(m=dU^+/dy^+\) and the turbulent fraction as \(r=-R_{12}^+\). Then \(m+r\approx1\). Very close to the wall, \(m\) approaches one. Farther out, \(r\) can dominate while \(m\) becomes small. In a buffer region both are significant. “Significant” does not require them to be exactly equal at every point.</p>
-<div class="worked"><h3>A stress partition connects directly to production</h3>
+<div class="worked"><h3 id="detail-06">A stress partition connects directly to production</h3>
 <p>For locally parallel shear and constant \(T^+=1\), scalar production is \(\mathcal P=-R_{12}U_y\). Its normalized form is \(\mathcal P^+=\mathcal P\nu/u_\tau^4=r m=m(1-m)\). If \(0\le m\le1\), then \(\mathcal P^+\le1/4\), with equality when both shares are one half. This conditional identity explains why substantial production can occur where both molecular shear and turbulent stress remain appreciable. It does not locate the peak in wall units without a stress profile, and additional production terms or varying total stress change the result.</p>
 <p>For an original illustrative partition choose \(m(s)=1/[1+(s/10)^3]\), \(r(s)=1-m(s)\), and \(U^+(s)=\int_0^s m(\xi)\,d\xi\), where \(s=y^+\). It has \(r=O(s^3)\) at the wall, keeps total stress one, and puts the production maximum at \(s=10\) by construction. The number ten is a chosen teaching parameter. This function is not a fitted wall law: at large \(s\) its gradient decays like \(s^{-3}\), so it does not supply the usual logarithmic overlap. We use it only to inspect a smooth local transfer of stress shares.</p></div>
 <figure><img src="assets/ch09-stress-partition.svg" alt="Manufactured molecular share decreases from one and turbulent share increases from zero, crossing at wall coordinate ten. Their product has its chosen maximum one quarter at the crossing." width="660" height="500"><figcaption>Original illustration of the declared \(m(s)\), not measured stress data. The shares sum to one; the production peak follows their product and the chosen crossing. Its location is prescribed by the teaching function, with no empirical buffer-layer claim. <a href="code/plot_ch09.py">Regenerate the standalone SVG and PNG.</a></figcaption></figure>
 <p>The program below computes this integral by Simpson quadrature, checks the stress sum and conditional production bound, converts the prescribed shear to physical distances, and evaluates the separate channel measurement bias. The local partition does not solve a Reynolds-stress closure or the complete streamwise-developing boundary-layer equations.</p>
 <pre data-run="code/ch09_wall_units.py"><code>&quot;&quot;&quot;Wall-unit conversions and manufactured stress partition, not fitted DNS.&quot;&quot;&quot;
+
 from math import sqrt
 
 rho, nu, tau_wall, outer_delta = 1.2, 1.5e-5, 0.2, 0.05
-u_tau = sqrt(tau_wall/rho)
-length = nu/u_tau
-Re_tau = outer_delta/length
+u_tau = sqrt(tau_wall / rho)
+length = nu / u_tau
+Re_tau = outer_delta / length
 print(f&quot;friction velocity m/s: {u_tau:.8f}&quot;)
-print(f&quot;viscous length micrometres: {length*1e6:.8f}&quot;)
+print(f&quot;viscous length micrometres: {length * 1000000.0:.8f}&quot;)
 print(f&quot;Re_tau based on stipulated outer thickness: {Re_tau:.6f}&quot;)
 for y_plus in (1.0, 5.0, 30.0):
-    print(f&quot;y+={y_plus:.0f}: distance mm={y_plus*length*1000:.8f}&quot;)
-print(f&quot;linear wall gradient 1/s: {u_tau**2/nu:.6f}&quot;)
+    print(f&quot;y+={y_plus:.0f}: distance mm={y_plus * length * 1000:.8f}&quot;)
+print(f&quot;linear wall gradient 1/s: {u_tau ** 2 / nu:.6f}&quot;)
+
 
 def molecular_fraction(s):
-    return 1/(1+(s/10)**3)
+    return 1 / (1 + (s / 10) ** 3)
+
 
 def integrate(s, n=4000):
-    step=s/n
-    return step/3*(molecular_fraction(0)+molecular_fraction(s)
-        +4*sum(molecular_fraction(step*i) for i in range(1,n,2))
-        +2*sum(molecular_fraction(step*i) for i in range(2,n,2)))
+    step = s / n
+    return (
+        step
+        / 3
+        * (
+            molecular_fraction(0)
+            + molecular_fraction(s)
+            + 4 * sum(molecular_fraction(step * i) for i in range(1, n, 2))
+            + 2 * sum(molecular_fraction(step * i) for i in range(2, n, 2))
+        )
+    )
+
 
 for s in (1.0, 5.0, 10.0, 30.0):
-    m=molecular_fraction(s)
-    r=1-m
-    print(f&quot;constructed y+={s:.0f}: U+={integrate(s):.8f}, &quot;
-          f&quot;molecular={m:.8f}, turbulent={r:.8f}, P+={r*m:.8f}&quot;)
-    assert abs(m+r-1)&lt;1e-14 and r*m&lt;=.25+1e-14
+    m = molecular_fraction(s)
+    r = 1 - m
+    print(
+        f&quot;constructed y+={s:.0f}: U+={integrate(s):.8f}, &quot;
+        f&quot;molecular={m:.8f}, turbulent={r:.8f}, P+={r * m:.8f}&quot;
+    )
+    assert abs(m + r - 1) &lt; 1e-14 and r * m &lt;= 0.25 + 1e-14
 
 # Pressure-driven channel: exact total shear, stipulated local gradient.
-gradient, channel_half_height, pressure_gradient, y = 100.0, .02, 10.0, .001
-assert abs(pressure_gradient*channel_half_height-tau_wall)&lt;1e-14
-total=tau_wall-pressure_gradient*y
-molecular=rho*nu*gradient
-turbulent=total-molecular
+gradient, channel_half_height, pressure_gradient, y = 100.0, 0.02, 10.0, 0.001
+assert abs(pressure_gradient * channel_half_height - tau_wall) &lt; 1e-14
+total = tau_wall - pressure_gradient * y
+molecular = rho * nu * gradient
+turbulent = total - molecular
 print(f&quot;channel local total Pa: {total:.8f}&quot;)
 print(f&quot;channel turbulent-only wall estimate Pa: {turbulent:.8f}&quot;)
-print(f&quot;channel wall estimate relative error: {(turbulent-tau_wall)/tau_wall:.8f}&quot;)
+print(
+    f&quot;channel wall estimate relative error: &quot;
+    f&quot;{(turbulent - tau_wall) / tau_wall:.8f}&quot;
+)
 for rt in (120.0, Re_tau):
-    print(f&quot;heuristic overlap at Re_tau={rt:.3f}: &quot;
-          f&quot;30 &lt; y+ &lt; {0.1*rt:.3f}; nonempty={0.1*rt&gt;30}&quot;)
+    print(
+        f&quot;heuristic overlap at Re_tau={rt:.3f}: 30 &lt; y+ &lt; &quot;
+        f&quot;{0.1 * rt:.3f}; nonempty={0.1 * rt &gt; 30}&quot;
+    )
 </code></pre>
 <p>Observed output:</p>
 <pre class="output">friction velocity m/s: 0.40824829
@@ -184,28 +202,28 @@ heuristic overlap at Re_tau=1360.828: 30 &lt; y+ &lt; 136.083; nonempty=True
 <p>The code's exact scale conversions and stipulated momentum ledger can be reproduced without a turbulence package. The quadrature evaluates our chosen smooth function; its output is not an observation of an experimental buffer layer. The next step toward a predictive wall law is to connect the stress partition to a justified closure and its range of validity.</p>
 
 <h2 id="exercises">9.8 Exercises with complete solutions</h2>
-<div class="exercise"><h3>1. Convert a wall coordinate</h3>
+<div class="exercise"><h3 id="detail-07">1. Convert a wall coordinate</h3>
 <p>Using the worked \(\rho,\nu,\tau_w\), find the physical distance for \(y^+=2\). What happens to this distance at fixed \(y^+\) if wall shear increases by a factor of four with the properties fixed?</p>
 <details><summary>Solution</summary><p>The distance is \(y=2\nu/u_\tau=73.48469\ \mathrm{\mu m}\). Increasing \(\tau_w\) fourfold doubles \(u_\tau=\sqrt{\tau_w/\rho}\), halves \(\ell_\nu\), and halves the physical distance for any fixed \(y^+\). The coordinate is dimensionless, but its physical resolution scale depends on the wall shear, which may itself be an output of a calculation.</p></details></div>
-<div class="exercise"><h3>2. Integrate a bounded remainder</h3>
+<div class="exercise"><h3 id="detail-08">2. Integrate a bounded remainder</h3>
 <p>Suppose \(|\mathcal A|\le2\ \mathrm{m\,s^{-2}}\) for \(0\le y\le0.5\ \mathrm{mm}\), and \(u_\tau^2=0.1\ \mathrm{m^2\,s^{-2}}\). Bound the relative error in treating total shear as its wall value.</p>
 <details><summary>Solution</summary><p>The exact integral gives \(|T-u_\tau^2|\le A_{\max}y=2(0.0005)=0.001\ \mathrm{m^2\,s^{-2}}\). Dividing by the wall value \(0.1\) gives a bound of one percent. This bound concerns total-stress variation; it does not bound the error in replacing total stress by the turbulent share alone. The molecular share must be separately assessed.</p></details></div>
-<div class="exercise"><h3>3. Exact Couette or approximate inner layer?</h3>
+<div class="exercise"><h3 id="detail-09">3. Exact Couette or approximate inner layer?</h3>
 <p>A stationary fully developed ideal plane Couette calculation has no imposed pressure gradient. Must its total shear become slightly nonconstant merely because its Reynolds number is finite?</p>
 <details><summary>Solution</summary><p>No. The ideal mean geometry gives \(U_x=V=U_{xx}=\partial_xR_{11}=P_x=0\), so \(\mathcal A=0\) exactly. Hence \(T\) is constant across the gap at finite Reynolds number. A numerical or sampled departure warrants checking its uncertainty, discretization, forcing and actual geometry. This does not imply every spatially developing external boundary layer has exactly constant stress.</p></details></div>
-<div class="exercise"><h3>4. A pressure correction to constant stress</h3>
+<div class="exercise"><h3 id="detail-10">4. A pressure correction to constant stress</h3>
 <p>In the channel example, at what wall distance is the total shear five percent below the wall value? Does a small viscous share remove this correction?</p>
 <details><summary>Solution</summary><p>Since total shear is \(\tau_w(1-y/h)\), a five-percent departure occurs at \(y/h=0.05\), or \(y=0.001\ \mathrm m\) for \(h=0.02\ \mathrm m\). A small molecular share only says the turbulent stress nearly equals the local total stress. It does not make that local total equal the wall value. The pressure correction remains \(Gy=0.01\ \mathrm{Pa}\).</p></details></div>
-<div class="exercise"><h3>5. Prove the cubic shear-covariance order</h3>
+<div class="exercise"><h3 id="detail-11">5. Prove the cubic shear-covariance order</h3>
 <p>Given smooth no-slip fluctuations at a stationary wall and instantaneous incompressibility, derive \(R_{12}=O(y^3)\). State the moment regularity needed to average the expansion.</p>
 <details><summary>Solution</summary><p>No slip gives \(u'=a_1y+O(y^2)\), \(w'=a_3y+O(y^2)\), and no penetration gives \(v'=b_1y+b_2y^2+\cdots\). At the wall \(\partial_xu'=\partial_zw'=0\), because those wall fields are identically zero along the surface. Continuity therefore yields \(\partial_yv'(0)=b_1=0\). Thus \(u'v'=a_1b_2y^3+O(y^4)\). Finite moments of the coefficients and a remainder bound permitting expectation to pass through the asymptotic estimate give \(R_{12}=O(y^3)\). Without such regularity, a realization-level expansion cannot be averaged without justification.</p></details></div>
-<div class="exercise"><h3>6. Find the conditional production maximum</h3>
+<div class="exercise"><h3 id="detail-12">6. Find the conditional production maximum</h3>
 <p>Assume locally parallel shear, exactly constant total stress in wall units, and \(0\le m\le1\). Maximize the normalized production. What changes if total stress is \(T^+\ne1\)?</p>
 <details><summary>Solution</summary><p>With \(r=1-m\), production is \(m(1-m)=1/4-(m-1/2)^2\), at most \(1/4\). If the local total is positive \(T^+\), then \(r=T^+-m\) and \(\mathcal P^+=m(T^+-m)\). Under \(0\le m\le T^+\), its maximum is \((T^+)^2/4\) at \(m=T^+/2\). If \(T^+\) varies with \(y\), this local algebraic upper envelope does not determine the spatial maximum or its location.</p></details></div>
-<div class="exercise"><h3>7. Is an overlap interval available?</h3>
+<div class="exercise"><h3 id="detail-13">7. Is an overlap interval available?</h3>
 <p>Use the rough source guides \(y^+\gtrsim30\), \(y/\delta\lesssim0.1\). Compare \(\mathrm{Re}_\tau=200\) and \(2000\). Does a nonempty interval prove a logarithmic law?</p>
 <details><summary>Solution</summary><p>The proposed upper bounds are \(20\) and \(200\). The first cannot exceed the lower bound 30, so the proposed interval is empty. The second allows roughly \(30\lesssim y^+\lesssim200\). That is a possible range under the guides, but does not prove logarithmic similarity, universal constants, small pressure effects or adequate experimental resolution. Clean asymptotic overlap requires scale separation and dynamical assumptions in addition to interval arithmetic.</p></details></div>
-<div class="exercise"><h3>8. Can friction velocity predict itself?</h3>
+<div class="exercise"><h3 id="detail-14">8. Can friction velocity predict itself?</h3>
 <p>A simulation specification supplies \(\rho,\nu,U_s,L\) and asks for the physical first-cell distance corresponding to a chosen \(y^+\). Is the information sufficient?</p>
 <details><summary>Solution</summary><p>Not generally. The conversion \(y=y^+\nu/u_\tau\) requires \(u_\tau=\sqrt{|\tau_w|/\rho}\), and the wall stress is not determined by the supplied scales alone. It depends on the flow state, pressure gradient, geometry, boundary data and turbulence treatment. An initial estimate can use an explicitly stated friction relation or previous solution, then be checked against the computed wall shear. The conversion itself is exact once that shear is specified; the initial estimate is the uncertain part.</p></details></div>
 <p class="conclusion">Wall units make the molecular reference scale explicit, while the total-stress remainder states when that scale supports a nearly constant-stress interpretation. The linear limit follows from no slip and smoothness; finite buffer and overlap behavior requires more information than a change of units. A predictive wall treatment must supply that information through a stated model and appropriate evidence.</p>

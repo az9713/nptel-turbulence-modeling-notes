@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="8e6544cde15544af235e04d8a06c4efe799e7eee294b442a805e6e8ea0ecfbe6">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="852058183f29898ef2e3728f7b2c3da34550beb71018732076f3fb16f462e4e0">
 <title>10. Eddy viscosity and mixing length · Turbulence Modeling</title><link rel="stylesheet" href="assets/book.css">
 <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{pageReady:()=>MathJax.startup.defaultPageReady().then(()=>{document.documentElement.dataset.mathReady='true';})}};</script>
 <script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Turbulence Modeling · NPTEL IIT Madras</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="book-overview.html">Study route</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
-<div class="layout"><aside class="toc" id="chapter-toc"><h2>On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
-<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>10. Eddy viscosity and mixing length</h1>
+<div class="layout"><aside class="toc" id="chapter-toc"><h2 id="detail-01">On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1 id="detail-02">10. Eddy viscosity and mixing length</h1>
 <p class="lead">The exact mean equation asks for six covariance components. A scalar eddy viscosity replaces their unrestricted directional response with a particular tensor relation to the mean strain. This is a strong modeling choice, even when the resulting mean flow is useful. We will test the relation by its trace, eigenvalues, derivative terms and wall limits before using dimensional analysis to introduce a two-equation alternative.</p>
 <div class="learning-map"><strong>The recurring Couette test.</strong> Suppose a mean shear and a covariance are known at one location. A scalar coefficient can fit their shear stress exactly. Does that fit also recover the normal stresses, preserve a nonnegative variance in every direction, and give the correct momentum force when the coefficient varies in space? These are separate tests; passing one does not establish the others.</div>
 <p class="source-note">Lessons 28–31 move from wall-layer descriptions to the Boussinesq hypothesis, the reason for its isotropic energy term, algebraic mixing length, and the dimensional basis of \(k\)–\(\epsilon\) viscosity. The development below retains the lecture's sequence while supplying the symmetric-gradient factors, variable-coefficient product rules and explicit restrictions needed for a consistent implementation.</p>
@@ -17,7 +17,7 @@
 <div class="equation">\[
 U^+=\frac1\kappa\log y^++B,
 \]</div>
-<p>where \(\log\) means natural logarithm, \(\kappa>0\) is the von Kármán coefficient, and \(B\) is an additive constant. The lecture uses \(\kappa=0.41\) and \(B=5.2\), while noting other fitted values. These are example values for appropriate smooth-wall data, not exact universal constants or a license to apply the formula at the wall. It diverges as \(y^+\to0\), whereas the actual smooth-wall velocity tends to zero linearly. A rough wall, pressure gradient, insufficient scale separation or other departures from the intended regime require reconsideration.</p>
+<p>where \(\log\) means natural logarithm, \(\kappa\gt 0\) is the von Kármán coefficient, and \(B\) is an additive constant. The lecture uses \(\kappa=0.41\) and \(B=5.2\), while noting other fitted values. These are example values for appropriate smooth-wall data, not exact universal constants or a license to apply the formula at the wall. It diverges as \(y^+\to0\), whereas the actual smooth-wall velocity tends to zero linearly. A rough wall, pressure gradient, insufficient scale separation or other departures from the intended regime require reconsideration.</p>
 <p>Differentiation gives \(dU^+/dy^+=1/(\kappa y^+)\), or \(U_y=u_\tau/(\kappa y)\). This gradient can be consistent with a turbulent-stress-dominated overlap region. It cannot determine the near-wall dissipation by itself. The lecture emphasizes that inferring wall shear away from the wall does not recover the complete gradient statistics or the destruction budget near it. A successful friction estimate is therefore a narrower result than an accurate wall-resolved energy budget.</p>
 <p>The asymptotic linear limit \(U^+\sim y^+\) follows from smooth no slip, finite wall shear and vanishing turbulent covariance. The finite extent of that approximation, and a useful finite logarithmic interval with particular constants, require additional evidence. One should distinguish an asymptotic consequence of the boundary conditions from an empirical fit over a finite range.</p>
 
@@ -48,7 +48,7 @@ D_U U_i
 +(\partial_j\nu_t)\partial_iU_j.
 \]</div>
 <p>The second contribution vanishes for a constant coefficient, or under additional special geometry, but not for a general eddy-viscosity field. Replacing the full tensor divergence by a componentwise variable diffusion operator without this term changes the modeled momentum equation.</p>
-<div class="worked"><h3>A missing force that cannot be hidden entirely in pressure</h3>
+<div class="worked"><h3 id="detail-03">A missing force that cannot be hidden entirely in pressure</h3>
 <p>Take an incompressible test mean \(\boldsymbol U=(S y,0,0)\) and prescribe \(\nu_t=\nu_0(1+x^2/L^2)\), with \(S,\nu_0,L\) constant and positive. This is an operator test, not a complete modeled-flow solution. Componentwise diffusion \(\partial_j(\nu_t\partial_jU_i)\) vanishes because \(U\) changes only in \(y\) while \(\nu_t\) changes only in \(x\). But the symmetric-stress divergence has a normal component \((\partial_x\nu_t)S=2\nu_0 Sx/L^2\).</p>
 <p>For \(S=100\ \mathrm{s^{-1}}\), \(\nu_0=0.001\ \mathrm{m^2\,s^{-1}}\), \(L=1\ \mathrm m\), \(x=0.5\ \mathrm m\), the omitted acceleration is \(0.1\ \mathrm{m\,s^{-2}}\). The curl of the omitted vector has component \(2\nu_0S/L^2=0.2\ \mathrm{s^{-2}}\), so that missing force is not generally a pure pressure gradient. The error persists despite exactly zero mean divergence.</p></div>
 
@@ -61,7 +61,7 @@ R_{11}=R_{22}=R_{33}=\frac23k,\qquad
 R_{12}=-\nu_tU_y.
 \]</div>
 <p>Omitting the isotropic term would predict zero normal variances in this shear, inconsistent with nonzero turbulent energy. Keeping it preserves the trace but forces equal normal variances, unlike the unequal normal rms components described in the instructor's DNS. Thus correcting a zero-variance failure is not the same as recovering the actual component physics.</p>
-<div class="worked"><h3>Fit the shear and inspect what remains wrong</h3>
+<div class="worked"><h3 id="detail-04">Fit the shear and inspect what remains wrong</h3>
 <p>Use the stipulated local covariance from chapter 6, with normal entries \(0.25,0.09,0.04\), shear covariance \(-0.08\), and \(U_y=100\), in consistent SI units. Its \(k\) is \(0.19\ \mathrm{m^2\,s^{-2}}\). The viscosity fitting the shear is \(\nu_t=-R_{12}/U_y=0.0008\ \mathrm{m^2\,s^{-1}}\). All three modeled normal variances are \(2k/3=0.1266667\), although the fitted shear remains exact.</p>
 <p>Neither choosing a different positive scalar coefficient nor refining the mesh can make this same linear relation recover all three unequal diagonal entries for this mean strain. That is a constitutive limitation, distinct from numerical error. A more suitable closure may require additional tensor dependence, stress transport or another representation of the missing dynamics.</p></div>
 <p>The source notes possible compressible applications. In that setting the relevant covariance is density weighted, the trace-subtracted strain matters, and energy/temperature correlations can require further closures. A numerical Mach value alone is not a universal guarantee that every incompressible assumption remains adequate. This chapter develops no compressible model correction; it keeps the constant-property scope explicit.</p>
@@ -75,7 +75,7 @@ R_{12}=-\nu_tU_y.
 =2\nu_tS_{ij}S_{ij}\ge0.
 \]</div>
 <p>Symmetric covariance contracts only with symmetric strain, and the isotropic contribution contracts with its zero trace. Thus this closure cannot produce the negative mean-to-fluctuation exchange allowed by the exact equation while retaining \(\nu_t\ge0\). The nonnegative production is a model property, not a general theorem about turbulence.</p>
-<p>Even \(k\ge0\) and \(\nu_t\ge0\) do not guarantee a positive semidefinite covariance. If \(\lambda_\alpha\) are the eigenvalues of \(S\), the modeled covariance eigenvalues are \(2k/3-2\nu_t\lambda_\alpha\). Every one must be nonnegative to represent nonnegative variance in every direction. For \(\nu_t>0\), this requires \(\lambda_{\max}\le k/(3\nu_t)\). Trace preservation alone does not enforce that bound.</p>
+<p>Even \(k\ge0\) and \(\nu_t\ge0\) do not guarantee a positive semidefinite covariance. If \(\lambda_\alpha\) are the eigenvalues of \(S\), the modeled covariance eigenvalues are \(2k/3-2\nu_t\lambda_\alpha\). Every one must be nonnegative to represent nonnegative variance in every direction. For \(\nu_t\gt 0\), this requires \(\lambda_{\max}\le k/(3\nu_t)\). Trace preservation alone does not enforce that bound.</p>
 <p>For simple positive shear \(S=U_y\), strain eigenvalues are \(S/2,-S/2,0\); covariance eigenvalues are \(2k/3-\nu_tS,\ 2k/3+\nu_tS,\ 2k/3\). With \(k=0.19\) and \(\nu_t=0.002\), the smallest is \(-0.0733333\ \mathrm{m^2\,s^{-2}}\). The predicted coordinate variances are still positive and the production is positive, yet a rotated direction has a negative variance. This is a realizability failure detectable without running a full CFD calculation.</p>
 <figure><img src="assets/ch10-covariance-diagnostics.svg" alt="Left panel compares unequal stipulated normal variances with three equal modeled variances after fitting shear. Right panel shows one negative covariance eigenvalue when a larger positive viscosity is used." width="800" height="370"><figcaption>Original local constitutive diagnostics with \(k=0.19\) and mean shear \(100\ \mathrm{s^{-1}}\). The left model uses shear-fitted \(\nu_t=0.0008\); the right uses \(\nu_t=0.002\ \mathrm{m^2\,s^{-1}}\). All input covariances are stipulated examples, not experimental data. <a href="code/plot_ch10.py">Regenerate the standalone figure.</a></figcaption></figure>
 <p>A related near-wall pressure clarification is useful before closing the model. In a fully developed pressure-driven channel, sufficiently near the wall the turbulent-stress derivative becomes small, giving \(\nu U_{yy}\approx P_x/\rho\). Pressure acceleration balances molecular curvature, with acceleration units on both sides. It does not directly balance the stress \(\nu U_y\), which has different units. In Couette flow with \(P_x=0\), leading linear velocity has \(U_{yy}=0\), so no nonzero pressure acceleration is required for that linear sublayer.</p>
@@ -95,7 +95,7 @@ R_{12}=-\nu_tU_y.
 <p>This formula is local and geometric. It does not transport a separately evolving turbulence time or length, so upstream history and nonequilibrium response are absent except through the current mean field and supplied geometry. It also does not define \(k\). For an incompressible mean-flow computation, an isotropic \(k\) gradient may be absorbed into modified pressure, but normal stresses, physical pressure and turbulent-energy outputs still need appropriate information. A formula for \(\nu_t\) alone has not supplied every statistical quantity.</p>
 <p>At a smooth wall with finite \(U_y\), this bare \(\nu_t\) tends to zero like \(y^2\). That gives a zero turbulent shear at the wall, but its near-wall power is not the exact smooth-wall \(R_{12}=O(y^3)\) established in chapter 9. Vanishing at the boundary is a weaker condition than having the correct asymptotic behavior. Damping and other modifications can change the near-wall response, but each is a further model choice.</p>
 <p>For a zero-turbulence freestream, the product \(y^2|U_y|\) tends to zero only if the mean gradient decays sufficiently rapidly; a vanishing gradient alone does not specify the limit of that product as \(y\to\infty\). Moreover, nonzero freestream turbulence need not be represented by a local mean shear at all. A wall-normal coordinate is useful for a wall layer, but the same \(\ell_m=\kappa y\) cannot simply be carried into a jet or mixing layer without choosing a different relevant length. These are restrictions of this particular formula, not a theorem forbidding other algebraic closures in free shear flows.</p>
-<div class="worked"><h3>Derive the mean profile predicted by the bare formula</h3>
+<div class="worked"><h3 id="detail-05">Derive the mean profile predicted by the bare formula</h3>
 <p>Assume positive shear, exactly constant kinematic total stress \(u_\tau^2\), and the bare mixing length. In wall units let \(s=y^+\) and \(g(s)=dU^+/ds\). Total stress becomes</p>
 <div class="equation">\[
 1=g+(\kappa s)^2g^2,\qquad
@@ -112,7 +112,7 @@ U^+(s)=\frac1\kappa\left[
 <p>This calculation is conditional on its constant-stress and local shear assumptions. It is not a solved developing boundary layer, and the limiting large-\(s\) expression should not be extended outside a region where those assumptions hold. Its value is diagnostic: a simple, reproducible model can satisfy wall value and logarithmic slope tests while failing the intercept and near-wall order.</p>
 
 <h2 id="two-equation-scales" data-video="yaMG1ifG6XI" data-start="896" data-end="1387">10.7 Replace a prescribed geometric scale with transported statistical scales <a class="timestamp" href="https://www.youtube.com/watch?v=yaMG1ifG6XI&amp;t=896">L31 · 14:56</a></h2>
-<p>Lesson 31 next introduces \(\sqrt{k}\) as a turbulent velocity scale and \(k/\epsilon\) as a time scale, where \(\epsilon>0\) is the destruction rate of \(k\) in the chosen convention. Their associated length is \(k^{3/2}/\epsilon\). These are statistical scales: dimensional analysis does not establish that they equal the speed, lifetime and size of a particular eddy.</p>
+<p>Lesson 31 next introduces \(\sqrt{k}\) as a turbulent velocity scale and \(k/\epsilon\) as a time scale, where \(\epsilon\gt 0\) is the destruction rate of \(k\) in the chosen convention. Their associated length is \(k^{3/2}/\epsilon\). These are statistical scales: dimensional analysis does not establish that they equal the speed, lifetime and size of a particular eddy.</p>
 <p>Suppose the only dimensional inputs to \(\nu_t\) are \(k\), in \(\mathrm{m^2\,s^{-2}}\), and \(\epsilon\), in \(\mathrm{m^2\,s^{-3}}\), and write \(\nu_t=C_\mu k^a\epsilon^b\). Matching length and time exponents gives</p>
 <div class="equation">\[
 2=2a+2b,\qquad -1=-2a-3b,
@@ -123,42 +123,49 @@ U^+(s)=\frac1\kappa\left[
 <p>For \(k=0.19\ \mathrm{m^2\,s^{-2}}\) and a stipulated \(\epsilon=0.5\ \mathrm{m^2\,s^{-3}}\), the time scale is \(0.38\ \mathrm s\), the length is \(k^{3/2}/\epsilon\), and \(\nu_t/C_\mu=0.0722\ \mathrm{m^2\,s^{-1}}\). Leaving \(C_\mu\) symbolic keeps this dimensional construction separate from selecting and validating a named \(k\)–\(\epsilon\) variant.</p>
 <p>The following standard-library program executes the covariance, variable-coefficient and mixing-length checks. The tensor eigenvalues are analytic for the selected simple shear. The mixing-length profile is evaluated from its closed form, with its local quadratic balance checked directly. None of the inputs labeled stipulated are experimental measurements.</p>
 <pre data-run="code/ch10_eddy_viscosity.py"><code>&quot;&quot;&quot;Tensor closure and bare mixing-length checks, not a fitted RANS solver.&quot;&quot;&quot;
+
 from math import asinh, log, sqrt
 
 S, k = 100.0, 0.19
 measured_diag = [0.25, 0.09, 0.04]
 measured_shear = -0.08  # Stipulated covariance, not experimental data.
-fitted_nu = -measured_shear/S
+fitted_nu = -measured_shear / S
 print(f&quot;eddy viscosity fitting stipulated shear m2/s: {fitted_nu:.8f}&quot;)
 print(&quot;stipulated normal variances:&quot;, measured_diag)
 for nu_t in (fitted_nu, 0.002):
-    d=2*k/3
-    eig=[d-nu_t*S,d,d+nu_t*S]
-    print(f&quot;nu_t={nu_t:.6f}: predicted diagonal={d:.8f}, &quot;
-          f&quot;eigenvalues={&#x27;,&#x27;.join(f&#x27;{x:.8f}&#x27; for x in eig)}, &quot;
-          f&quot;production={nu_t*S*S:.6f}&quot;)
+    d = 2 * k / 3
+    eig = [d - nu_t * S, d, d + nu_t * S]
+    print(
+        f&quot;nu_t={nu_t:.6f}: predicted diagonal={d:.8f}, &quot;
+        f&quot;eigenvalues={&#x27;,&#x27;.join((f&#x27;{x:.8f}&#x27; for x in eig))}, &quot;
+        f&quot;production={nu_t * S * S:.6f}&quot;
+    )
 
 # U=(S*y,0,0), nu_t=nu0*(1+x*x/L**2).
-nu0, x, L = 0.001, .5, 1.0
-missing_normal_force = 2*nu0*x*S/L**2
-print(f&quot;variable-viscosity missing normal acceleration m/s2: &quot;
-      f&quot;{missing_normal_force:.8f}&quot;)
-print(f&quot;curl of missing acceleration 1/s2: {2*nu0*S/L**2:.8f}&quot;)
+nu0, x, L = 0.001, 0.5, 1.0
+missing_normal_force = 2 * nu0 * x * S / L**2
+print(
+    f&quot;variable-viscosity missing normal acceleration m/s2: &quot;
+    f&quot;{missing_normal_force:.8f}&quot;
+)
+print(f&quot;curl of missing acceleration 1/s2: {2 * nu0 * S / L ** 2:.8f}&quot;)
 
-kappa, B = .41, 5.2
+kappa, B = 0.41, 5.2
 for s in (1.0, 5.0, 30.0, 100.0):
-    z=2*kappa*s
-    g=2/(1+sqrt(1+z*z))
-    velocity=(asinh(z)-z/(1+sqrt(1+z*z)))/kappa
-    residual=g+(kappa*s)**2*g*g-1
-    assert abs(residual)&lt;1e-12
-    print(f&quot;bare mixing y+={s:.0f}: gradient={g:.8f}, U+={velocity:.8f}, &quot;
-          f&quot;illustrative log U+={log(s)/kappa+B:.8f}&quot;)
-print(f&quot;bare mixing asymptotic intercept: {(log(4*kappa)-1)/kappa:.8f}&quot;)
-epsilon=.5
-print(f&quot;k/epsilon time s: {k/epsilon:.8f}&quot;)
-print(f&quot;k^(3/2)/epsilon length m: {k**1.5/epsilon:.8f}&quot;)
-print(f&quot;eddy viscosity divided by C_mu m2/s: {k*k/epsilon:.8f}&quot;)
+    z = 2 * kappa * s
+    g = 2 / (1 + sqrt(1 + z * z))
+    velocity = (asinh(z) - z / (1 + sqrt(1 + z * z))) / kappa
+    residual = g + (kappa * s) ** 2 * g * g - 1
+    assert abs(residual) &lt; 1e-12
+    print(
+        f&quot;bare mixing y+={s:.0f}: gradient={g:.8f}, U+={velocity:.8f}, &quot;
+        f&quot;illustrative log U+={log(s) / kappa + B:.8f}&quot;
+    )
+print(f&quot;bare mixing asymptotic intercept: {(log(4 * kappa) - 1) / kappa:.8f}&quot;)
+epsilon = 0.5
+print(f&quot;k/epsilon time s: {k / epsilon:.8f}&quot;)
+print(f&quot;k^(3/2)/epsilon length m: {k ** 1.5 / epsilon:.8f}&quot;)
+print(f&quot;eddy viscosity divided by C_mu m2/s: {k * k / epsilon:.8f}&quot;)
 </code></pre>
 <p>Observed output:</p>
 <pre class="output">eddy viscosity fitting stipulated shear m2/s: 0.00080000
@@ -178,28 +185,28 @@ eddy viscosity divided by C_mu m2/s: 0.07220000
 </pre>
 
 <h2 id="exercises">10.8 Exercises with complete solutions</h2>
-<div class="exercise"><h3>1. Recover the isotropic coefficient</h3>
+<div class="exercise"><h3 id="detail-06">1. Recover the isotropic coefficient</h3>
 <p>In three dimensions take \(R_{ij}=a k\delta_{ij}-2\nu_tS_{ij}\) with incompressibility. Derive \(a\). What changes in a genuinely two-component energy definition?</p>
 <details><summary>Solution</summary><p>The trace is \(R_{ii}=3ak\) because \(S_{ii}=0\). By \(k=R_{ii}/2\), \(3a=2\), giving \(a=2/3\). If one instead defines a two-dimensional, two-component covariance and \(k=(R_{11}+R_{22})/2\), its isotropic coefficient is \(a=1\), since the identity trace is two. A planar mean in three-dimensional turbulence still has three fluctuating velocity components and uses \(2/3\); it does not justify changing the dimension of the covariance.</p></details></div>
-<div class="exercise"><h3>2. Fit shear without fitting normal stresses</h3>
+<div class="exercise"><h3 id="detail-07">2. Fit shear without fitting normal stresses</h3>
 <p>Using the stipulated Couette covariance and \(U_y=100\), determine the shear-fitting \(\nu_t\) and explain why no scalar choice recovers its three unequal normal variances.</p>
 <details><summary>Solution</summary><p>The model gives \(\nu_t=-R_{12}/U_y=0.08/100=0.0008\ \mathrm{m^2\,s^{-1}}\). Since all diagonal mean strains vanish, every modeled diagonal is \(2k/3=0.1266667\), independent of this scalar choice. The stipulated \(0.25,0.09,0.04\) therefore cannot all be recovered. This failure remains even if the numerical mean shear is computed exactly; it follows from the constitutive relation.</p></details></div>
-<div class="exercise"><h3>3. Check variance in a rotated direction</h3>
+<div class="exercise"><h3 id="detail-08">3. Check variance in a rotated direction</h3>
 <p>For \(k=0.19\), \(U_y=100\), and \(\nu_t=0.002\), find the variance along \((1,1,0)/\sqrt2\). Why do positive diagonal entries not suffice?</p>
 <details><summary>Solution</summary><p>The modeled \(1,2\) block has diagonal \(d=2k/3=0.1266667\) and off-diagonal \(-\nu_tU_y=-0.2\). The stated direction has quadratic form \(d-0.2=-0.0733333\ \mathrm{m^2\,s^{-2}}\), which cannot be a variance. Diagonal entries test only coordinate directions. Positive semidefiniteness requires a nonnegative quadratic form in every direction, equivalently nonnegative eigenvalues for this symmetric matrix.</p></details></div>
-<div class="exercise"><h3>4. Differentiate the variable-coefficient stress</h3>
+<div class="exercise"><h3 id="detail-09">4. Differentiate the variable-coefficient stress</h3>
 <p>Expand \(\partial_j[\nu_t(\partial_jU_i+\partial_iU_j)]\) under incompressibility. State precisely when the transpose-gradient contribution vanishes.</p>
 <details><summary>Solution</summary><p>The expansion is \(\partial_j(\nu_t\partial_jU_i)+(\partial_j\nu_t)\partial_iU_j+\nu_t\partial_i(\partial_jU_j)\). The last term is zero. The middle term remains unless its contraction vanishes, for example when \(\nu_t\) is spatially constant, or under additional special geometry and coefficient dependence. Incompressibility alone cannot remove it. The operator example in the chapter gives a nonzero normal force with nonzero curl.</p></details></div>
-<div class="exercise"><h3>5. Dimensional analysis is not coefficient calibration</h3>
+<div class="exercise"><h3 id="detail-10">5. Dimensional analysis is not coefficient calibration</h3>
 <p>Find the exponents in \(\nu_t=C_\mu k^a\epsilon^b\). Can dimensions determine \(C_\mu\) or forbid dependence on a nondimensional strain measure?</p>
 <details><summary>Solution</summary><p>Length exponents give \(2a+2b=2\), and time exponents give \(-2a-3b=-1\). Subtracting the appropriate equations yields \(b=-1\), then \(a=2\). Any dimensionless \(C_\mu\) preserves these units. A dimensionless function of, for example, \(k|S|/\epsilon\), with \(|S|\) an inverse-time strain magnitude, also preserves units. Choosing a constant instead of such a function is a modeling assumption requiring further reasoning and evidence.</p></details></div>
-<div class="exercise"><h3>6. Reverse the shear</h3>
+<div class="exercise"><h3 id="detail-11">6. Reverse the shear</h3>
 <p>Why is \(\nu_t=\ell_m^2|U_y|\) preferable to \(\ell_m^2U_y\) for the positive-viscosity mixing-length hypothesis? Derive the production for either sign of \(U_y\).</p>
 <details><summary>Solution</summary><p>Without the absolute value a negative mean shear would give negative viscosity, reversing the intended dissipative transfer. With it, \(R_{12}=-\ell_m^2|U_y|U_y\), and \(\mathcal P=-R_{12}U_y=\ell_m^2|U_y|(U_y)^2=\ell_m^2|U_y|^3\ge0\). The covariance reverses sign while production remains nonnegative. This is the hypothesis's imposed exchange property, rather than a proof that exact production is always positive.</p></details></div>
-<div class="exercise"><h3>7. Inspect the near-wall power</h3>
+<div class="exercise"><h3 id="detail-12">7. Inspect the near-wall power</h3>
 <p>For finite nonzero wall gradient, compare the bare mixing-length shear covariance with the exact smooth-wall order \(R_{12}=O(y^3)\).</p>
 <details><summary>Solution</summary><p>The bare model gives \(\nu_t=(\kappa y)^2|U_y|=O(y^2)\), hence \(R_{12}=-\nu_tU_y=O(y^2)\). It vanishes at the wall but generally has the wrong leading power relative to the smooth incompressible fluctuation expansion. Correcting only the value at \(y=0\) is insufficient. A damping or modified closure must be assessed through its own asymptotic order as well as its finite-distance behavior.</p></details></div>
-<div class="exercise"><h3>8. Why the logarithmic slope does not fix the intercept</h3>
+<div class="exercise"><h3 id="detail-13">8. Why the logarithmic slope does not fix the intercept</h3>
 <p>Use the bare profile formula to obtain its large-\(s\) intercept. Explain why it differs from inserting an empirical \(B\) by hand.</p>
 <details><summary>Solution</summary><p>As \(s\to\infty\), \(\operatorname{arsinh}(2\kappa s)=\log(4\kappa s)+o(1)\), and \(2\kappa s/[1+\sqrt{1+4\kappa^2s^2}]\to1\). Thus \(U^+=(\log s)/\kappa+[\log(4\kappa)-1]/\kappa+o(1)\). The wall condition and the entire bare stress partition fixed that intercept. Replacing it with an empirical \(B\) produces a different finite-range relation; it is not a consequence of integrating this unchanged bare model. The example illustrates why near-wall treatment affects an outer logarithmic offset.</p></details></div>
 <p class="conclusion">A scalar viscosity is a manageable constitutive reduction with identifiable restrictions: stress–strain alignment, a constrained production sign, limited normal-stress response and a realizability condition. Mixing length supplies a simple coefficient but exposes wall-order and profile-offset failures. Transporting turbulence scales can add information, while leaving the responsibility to specify and test the resulting closure.</p>

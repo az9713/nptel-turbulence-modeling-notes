@@ -1,18 +1,18 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="66aaaada380347ea5b0f54d471ad261900af0b5f5f1513b17c4d67551bfa5a3d">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="ad696630641db92a9c6858cf2abd54a825db0c767feeeb8ff0a6eac3dbd7d6f3">
 <title>7. Turbulent and mean energy budgets · Turbulence Modeling</title><link rel="stylesheet" href="assets/book.css">
 <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{pageReady:()=>MathJax.startup.defaultPageReady().then(()=>{document.documentElement.dataset.mathReady='true';})}};</script>
 <script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Turbulence Modeling · NPTEL IIT Madras</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="book-overview.html">Study route</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
-<div class="layout"><aside class="toc" id="chapter-toc"><h2>On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
-<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>7. Turbulent and mean energy budgets</h1>
+<div class="layout"><aside class="toc" id="chapter-toc"><h2 id="detail-01">On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1 id="detail-02">7. Turbulent and mean energy budgets</h1>
 <p class="lead">The Reynolds stresses retain directional information. Their half-trace retains the kinetic energy of the fluctuations. That contraction removes pressure redistribution from the scalar equation, but it does not close the problem. The decisive next step is to derive the energy equation for the mean motion beside it: the same stress–gradient contraction appears with opposite signs, revealing an exchange of mechanical energy between mean and fluctuating motion.</p>
 <div class="learning-map"><strong>Carry the wall-flow question forward.</strong> A plate or pressure gradient supplies mechanical power. Some is dissipated by the mean shear; some passes to fluctuations and is eventually dissipated. We will follow that transfer through the equations without assuming that production and destruction balance at every point. An exact periodic decay solution will provide a separate executable check.</div>
 <p class="source-note">Lessons 18–20 finish the governing-equation development: an alternative viscous grouping, the turbulent kinetic-energy equation, the meaning of transport and destruction, and the mean-motion energy equation. Lesson 21 starts the boundary-layer discussion and belongs to the next chapter. We retain the lecture's logical construction while making the contractions, flux signs, and limits of its general claims explicit.</p>
 
 <h2 id="two-viscous-groupings" data-video="VZfgkXgBUwY" data-start="15" data-end="489">7.1 Equivalent viscous groupings must describe the same balance <a class="timestamp" href="https://www.youtube.com/watch?v=VZfgkXgBUwY&amp;t=15">L18 · 00:15</a></h2>
-<p>Use an incompressible Newtonian fluid with constant density \(\rho>0\) and kinematic viscosity \(\nu>0\). Instantaneous velocity is \(u_i\), its ensemble mean is \(U_i=\mathbb E[u_i]\), and \(u_i'=u_i-U_i\). Both instantaneous and mean velocities have zero divergence. Assume enough smoothness, finite moments, and interchange of differentiation and expectation for the following identities. Set \(R_{ij}=\mathbb E[u_i'u_j']\), the positive velocity covariance, and \(k=R_{ii}/2\). The index \(i\) in the trace is summed over all three components.</p>
+<p>Use an incompressible Newtonian fluid with constant density \(\rho\gt 0\) and kinematic viscosity \(\nu\gt 0\). Instantaneous velocity is \(u_i\), its ensemble mean is \(U_i=\mathbb E[u_i]\), and \(u_i'=u_i-U_i\). Both instantaneous and mean velocities have zero divergence. Assume enough smoothness, finite moments, and interchange of differentiation and expectation for the following identities. Set \(R_{ij}=\mathbb E[u_i'u_j']\), the positive velocity covariance, and \(k=R_{ii}/2\). The index \(i\) in the trace is summed over all three components.</p>
 <p>The preceding stress derivation used the simplified molecular acceleration \(\nu\partial_j\partial_j u_i'\). One can instead retain the divergence of the kinematic viscous stress \(t_{ij}'=2\nu s_{ij}'\), where \(s_{ij}'=(\partial_j u_i'+\partial_i u_j')/2\). The word “kinematic” here means stress divided by density: \(t_{ij}'\) has units \(\mathrm{m^2\,s^{-2}}\). Incompressibility and constant \(\nu\) make \(\partial_j t_{ij}'=\nu\nabla^2u_i'\). These are the same acceleration written differently.</p>
 <p>Multiply the full-stress expression by \(u_i'\), average, and use the product rule:</p>
 <div class="equation">\[
@@ -56,14 +56,14 @@ J_j=T_j+q_j-\nu\partial_jk,\qquad
 \]</div>
 <p>Each \(J_j\) has units \(\mathrm{m^3\,s^{-3}}\). The minus divergence means that a net outward flux removes energy from a volume. Written as a positive divergence on the right, the bracket is \(-T_j-q_j+\nu\partial_jk\). These are equivalent sign conventions; mixing their definitions would reverse transport. The factor \(1/2\) belongs in \(T_j\). It cannot be discarded when rewriting the final equation.</p>
 <p>Pressure redistribution has disappeared from this scalar equation because its trace is zero, not because pressure no longer interacts with fluctuations. Pressure transport \(q_j\) survives. Moreover, redistribution still influences the individual stresses that determine \(\mathcal P\). Contracting a tensor equation loses direct access to directional information, even when some of that information remains influential through an unclosed term.</p>
-<div class="worked"><h3>What a value of \(k\) cannot tell us</h3>
+<div class="worked"><h3 id="detail-03">What a value of \(k\) cannot tell us</h3>
 <p>The covariance matrices \(\operatorname{diag}(0.30,0.15,0.15)\) and \(\operatorname{diag}(0.20,0.20,0.20)\), in \(\mathrm{m^2\,s^{-2}}\), both give \(k=0.30\ \mathrm{m^2\,s^{-2}}\). Only the second is isotropic at second order. Even fixing all three diagonal entries does not fix the off-diagonal entries: the matrices in our code have identical \(k=0.19\) but \(R_{12}=-0.08,0,+0.08\). All are positive definite, yet in \(S=100\ \mathrm{s^{-1}}\) shear their productions are \(+8,0,-8\ \mathrm{m^2\,s^{-3}}\). A scalar energy cannot recover its own mean-shear transfer without additional information about the covariance.</p></div>
 
 <h2 id="closure-and-destruction" data-video="gtTLEvvnO10" data-start="15" data-end="501">7.3 A simpler exact equation is still unclosed <a class="timestamp" href="https://www.youtube.com/watch?v=gtTLEvvnO10&amp;t=15">L19 · 00:15</a></h2>
 <p>Even with \(U_i\) given, the \(k\) equation contains pressure–velocity correlations \(q_j\), third moments \(T_j\), a stress contraction \(\mathcal P\), and a gradient statistic \(\epsilon\). The molecular term \(\nu\nabla^2k\) is computable from \(k\) itself when \(\nu\) is known, which is one attraction of the chosen grouping. The other terms are not generally functions of the local value of \(k\).</p>
 <p>Counting independent mathematical objects requires respecting contractions. Each transport flux is a vector with three components. \(R_{ij}\) is symmetric with six independent entries before its known trace is used. But \(\epsilon\) in this scalar equation is one fully contracted unknown scalar; its two repeated indices do not make it a second-order tensor with six or nine independent entries. The captions' component-counting discussion illustrates the closure difficulty, but the quoted total is not the independent count for the contracted equation. With the known trace, the covariance has at most five additional independent components; production uses only a particular contraction of them.</p>
 <p>No such bookkeeping count is a general proof of solvability or nonsolvability. A relationship between the remaining statistics could close a restricted problem. The substantive difficulty is that their evolution and spatial organization depend on information that has been removed by averaging and contraction. A model introduces assumptions for that dependence. The <a href="https://tmbwg.github.io/turbmodels/rsm-ssglrr.html">NASA/TMBWG stress-model equations</a> make this separation visible: exact production is retained while several other terms are modeled. A \(k\)-based model uses a different reduction, but it faces the same need to supply missing information.</p>
-<p>The nonnegativity of \(\epsilon\) follows directly from its sum of squares when \(\nu>0\). It is nonnegative, not necessarily strictly positive: a spatially uniform fluctuating translation has no velocity gradients and therefore zero \(\epsilon\). The contribution to the equation is \(-\epsilon\), so it cannot create \(k\) in this grouping. Molecular action converts mechanical energy to internal energy; it does not violate total-energy conservation. An isothermal or constant-property mechanical model may omit that internal-energy response while still accounting correctly for the mechanical loss.</p>
+<p>The nonnegativity of \(\epsilon\) follows directly from its sum of squares when \(\nu\gt 0\). It is nonnegative, not necessarily strictly positive: a spatially uniform fluctuating translation has no velocity gradients and therefore zero \(\epsilon\). The contribution to the equation is \(-\epsilon\), so it cannot create \(k\) in this grouping. Molecular action converts mechanical energy to internal energy; it does not violate total-energy conservation. An isothermal or constant-property mechanical model may omit that internal-energy response while still accounting correctly for the mechanical loss.</p>
 <p>In an unforced, homogeneous, zero-mean-shear system, the volume or ensemble energy can decay according to \(dk/dt=-\epsilon\). This is an evolution law, not a solution until \(\epsilon(t)\) is known. Assuming \(\epsilon=k/T\) with constant positive time \(T\) gives exponential decay, but that assumption is a closure, not an identity of turbulent flow. The analytic example below obtains its decay from a specified exact velocity field instead.</p>
 
 <h2 id="transport-integral" data-video="gtTLEvvnO10" data-start="501" data-end="1161">7.4 Transport changes location; boundary flux determines the integral <a class="timestamp" href="https://www.youtube.com/watch?v=gtTLEvvnO10&amp;t=501">L19 · 08:21</a></h2>
@@ -75,7 +75,7 @@ J_j=T_j+q_j-\nu\partial_jk,\qquad
 \]</div>
 <p>The volume integral of a divergence is a boundary flux by the divergence theorem. Nothing in that theorem makes the flux automatically zero. In a closed box with deterministic no-slip impermeable walls, fluctuations vanish at every wall. Hence \(T_jn_j=0\), \(q_jn_j=0\), and \(U_jn_j=0\). For the molecular term we also need smooth finite gradients: \(\partial_nk=\mathbb E[u_i'\partial_nu_i']=0\) because \(u_i'=0\) there. Stating only \(k=0\) at the boundary would not prove that its normal derivative vanishes for an arbitrary scalar field.</p>
 <p>Under these wall conditions the total transport integral vanishes. Local transport can still be large and can have either sign. One region can receive the energy another loses, as in the Couette ledgers. Periodic boundaries also give zero net transport over the complete periodic domain because opposite faces have equal fields and opposite normals. An open subvolume of either flow need not have zero net flux.</p>
-<div class="worked"><h3>A subvolume can lose energy without molecular destruction</h3>
+<div class="worked"><h3 id="detail-04">A subvolume can lose energy without molecular destruction</h3>
 <p>Consider a rectangular control volume with face area \(A_f=0.02\ \mathrm{m^2}\), no mean normal advection, and outward-direction \(x\)-flux \(J_x=0.3\ \mathrm{m^3\,s^{-3}}\) at the right face and \(J_x=0.1\) at the left. Other faces have zero normal flux. The outward flux difference is \(A_f(0.3-0.1)=0.004\ \mathrm{m^5\,s^{-3}}\). If production and destruction are absent inside the volume, \(d\int_Vk\,dV/dt=-0.004\ \mathrm{m^5\,s^{-3}}\). Multiplying by \(\rho=1.2\ \mathrm{kg\,m^{-3}}\) gives an energy loss rate \(0.0048\ \mathrm W\). Energy has crossed the boundary; it has not been converted to heat by this transport term.</p></div>
 <p>The interpretation “transport neither creates nor destroys energy” concerns the divergence term's bookkeeping. In an open control volume it can increase or decrease the energy held inside. In a full closed or periodic domain its integral vanishes under the stated conditions. A gradient-diffusion closure is an additional hypothesis about the flux direction and magnitude; the fact that a term is a divergence does not establish such a constitutive law.</p>
 
@@ -125,12 +125,12 @@ D_U(K+k)
 
 <h2 id="exchange-and-forcing" data-video="qzu9QxbONn0" data-start="1469" data-end="1978">7.7 Production is an exchange, and its sign is not prescribed <a class="timestamp" href="https://www.youtube.com/watch?v=qzu9QxbONn0&amp;t=1469">L20 · 24:29</a></h2>
 <p>Write the mean gradient as \(\partial_jU_i=S_{ij}+\Omega_{ij}\), where \(S\) is symmetric and \(\Omega\) antisymmetric. Since \(R_{ij}=R_{ji}\), \(R_{ij}\Omega_{ij}=0\), so \(\mathcal P=-R_{ij}S_{ij}\). A rigid-body rotation of the mean gives no production through this mechanism. An incompressible isotropic covariance \(R_{ij}=(2k/3)\delta_{ij}\) also gives zero contraction with a trace-free mean strain; an anisotropic response is needed to exchange energy with that strain.</p>
-<p>For a positive-shear wall flow, negative \(R_{12}\) gives \(\mathcal P=-R_{12}S>0\). Then \(k\) gains and \(K\) loses through this term. Positive \(R_{12}\) would reverse the exchange. Positive semidefiniteness permits either sign of \(R_{12}\) within \(|R_{12}|\le\sqrt{R_{11}R_{22}}\); it does not by itself force positive production. Many equilibrium shear closures impose a preferred positive transfer, but the exact equation does not.</p>
+<p>For a positive-shear wall flow, negative \(R_{12}\) gives \(\mathcal P=-R_{12}S\gt 0\). Then \(k\) gains and \(K\) loses through this term. Positive \(R_{12}\) would reverse the exchange. Positive semidefiniteness permits either sign of \(R_{12}\) within \(|R_{12}|\le\sqrt{R_{11}R_{22}}\); it does not by itself force positive production. Many equilibrium shear closures impose a preferred positive transfer, but the exact equation does not.</p>
 <p>The source discussion emphasizes mean shear as the supply in the wall-driven flows under study. That scope matters: zero mean strain does not prohibit turbulence. Turbulence can decay from an existing initial state, or be maintained by forcing that acts on the fluctuations. With a body acceleration \(f_i=F_i+f_i'\), where \(F_i=\mathbb E[f_i]\), mean momentum gains \(F_i\), the mean-energy equation gains \(U_iF_i\), and the fluctuation-energy equation gains \(\mathbb E[u_i'f_i']\). These have power-per-mass units. A deterministic force common to all realizations has \(f_i'=0\), but a velocity-dependent fluctuating forcing need not.</p>
 <p>As a concrete documented counterexample to a universal wall/shear requirement, the <a href="https://flow.pha.jhu.edu/docs/README-isotropic.pdf">Johns Hopkins forced isotropic dataset description, p. 1</a>, specifies a periodic computational domain with energy supplied to low-wavenumber modes. It reports a statistically stationary turbulent state. Its maintenance mechanism is forcing rather than wall work or a nonzero mean shear. We use only that documented setup here; we have not downloaded or evaluated the dataset. The source's shear-based energy narrative is useful for boundary layers, but cannot be elevated to a definition covering all turbulence.</p>
 
 <h2 id="executed-energy" data-video="VZfgkXgBUwY" data-start="489" data-end="1468">7.8 Execute an exact decay balance without pretending it is turbulent DNS <a class="timestamp" href="https://www.youtube.com/watch?v=VZfgkXgBUwY&amp;t=489">L18 · 08:09</a></h2>
-<p>An exact two-dimensional periodic incompressible solution provides a sharp check of the energy factors. Let \(\kappa>0\) be a spatial wavenumber, \(A(t)=a e^{-2\nu\kappa^2t}\), and</p>
+<p>An exact two-dimensional periodic incompressible solution provides a sharp check of the energy factors. Let \(\kappa\gt 0\) be a spatial wavenumber, \(A(t)=a e^{-2\nu\kappa^2t}\), and</p>
 <div class="equation">\[
 u=A\sin(\kappa x)\cos(\kappa y),\qquad
 v=-A\cos(\kappa x)\sin(\kappa y),\qquad w=0,
@@ -150,50 +150,59 @@ k=\frac{A^2}{4}=\frac{a^2}{4}e^{-4\nu\kappa^2t},
 <figure><img src="assets/ch07-energy-decay.svg" alt="Exact normalized velocity amplitude decays as exp minus one half the dimensionless time; energy decays as exp minus the dimensionless time, reaching each fixed fraction earlier." width="660" height="380"><figcaption>Original analytic figure: energy is quadratic in amplitude, so its exponential rate is twice the amplitude rate. The horizontal guide marks one half. Regenerate the SVG and PNG with <a href="code/plot_ch07.py">the Matplotlib figure script</a>; these curves are formulas, not experimental or DNS measurements.</figcaption></figure>
 <p>The program directly evaluates analytic velocity gradients and pressure gradients on a periodic quadrature, checks both momentum components and continuity, and compares the averaged energy loss with the sum of squared gradients. It evaluates a known solution; it does not integrate a CFD solver or establish a numerical convergence rate. It also checks that three positive covariances with the same \(k\) can have different signs of exchange.</p>
 <pre data-run="code/ch07_energy.py"><code>&quot;&quot;&quot;Closed-form periodic Navier-Stokes checks; no turbulence simulation.&quot;&quot;&quot;
+
 from math import cos, exp, pi, sin
 
 nu, rho, amplitude, wave = 0.01, 1.2, 2.0, 2.0
 n = 32
 for time in (0.0, 5.0):
-    A = amplitude*exp(-2*nu*wave**2*time)
+    A = amplitude * exp(-2 * nu * wave**2 * time)
     energy, dissipation, div_error, momentum_error = 0.0, 0.0, 0.0, 0.0
     for i in range(n):
         for j in range(n):
-            X, Y = 2*pi*i/n, 2*pi*j/n
-            u, v = A*sin(X)*cos(Y), -A*cos(X)*sin(Y)
-            ux, uy = A*wave*cos(X)*cos(Y), -A*wave*sin(X)*sin(Y)
-            vx, vy = A*wave*sin(X)*sin(Y), -A*wave*cos(X)*cos(Y)
-            pressure_x = -rho*A*A*wave*sin(2*X)/2
-            pressure_y = -rho*A*A*wave*sin(2*Y)/2
-            rate_u, rate_v = -2*nu*wave**2*u, -2*nu*wave**2*v
-            lap_u, lap_v = -2*wave**2*u, -2*wave**2*v
-            energy += (u*u+v*v)/2
-            dissipation += nu*(ux*ux+uy*uy+vx*vx+vy*vy)
-            div_error = max(div_error, abs(ux+vy))
-            momentum_error = max(momentum_error,
-                abs(rate_u+u*ux+v*uy+pressure_x/rho-nu*lap_u),
-                abs(rate_v+u*vx+v*vy+pressure_y/rho-nu*lap_v))
-    energy /= n*n
-    dissipation /= n*n
-    exact_energy = amplitude**2*exp(-4*nu*wave**2*time)/4
-    energy_rate = -4*nu*wave**2*exact_energy
-    assert abs(energy-exact_energy) &lt; 1e-12
-    assert abs(energy_rate+dissipation) &lt; 1e-12
+            X, Y = 2 * pi * i / n, 2 * pi * j / n
+            u, v = A * sin(X) * cos(Y), -A * cos(X) * sin(Y)
+            ux, uy = A * wave * cos(X) * cos(Y), -A * wave * sin(X) * sin(Y)
+            vx, vy = A * wave * sin(X) * sin(Y), -A * wave * cos(X) * cos(Y)
+            pressure_x = -rho * A * A * wave * sin(2 * X) / 2
+            pressure_y = -rho * A * A * wave * sin(2 * Y) / 2
+            rate_u, rate_v = -2 * nu * wave**2 * u, -2 * nu * wave**2 * v
+            lap_u, lap_v = -2 * wave**2 * u, -2 * wave**2 * v
+            energy += (u * u + v * v) / 2
+            dissipation += nu * (ux * ux + uy * uy + vx * vx + vy * vy)
+            div_error = max(div_error, abs(ux + vy))
+            momentum_error = max(
+                momentum_error,
+                abs(rate_u + u * ux + v * uy + pressure_x / rho - nu * lap_u),
+                abs(rate_v + u * vx + v * vy + pressure_y / rho - nu * lap_v),
+            )
+    energy /= n * n
+    dissipation /= n * n
+    exact_energy = amplitude**2 * exp(-4 * nu * wave**2 * time) / 4
+    energy_rate = -4 * nu * wave**2 * exact_energy
+    assert abs(energy - exact_energy) &lt; 1e-12
+    assert abs(energy_rate + dissipation) &lt; 1e-12
     assert div_error &lt; 1e-12 and momentum_error &lt; 1e-12
-    print(f&quot;t={time:.1f}: k={energy:.8f}, epsilon={dissipation:.8f}, &quot;
-          f&quot;dk/dt+epsilon={energy_rate+dissipation:.3e}&quot;)
-    print(f&quot;  max divergence={div_error:.3e}, &quot;
-          f&quot;max momentum residual={momentum_error:.3e}&quot;)
+    print(
+        f&quot;t={time:.1f}: k={energy:.8f}, epsilon={dissipation:.8f}, &quot;
+        f&quot;dk/dt+epsilon={energy_rate + dissipation:.3e}&quot;
+    )
+    print(
+        f&quot;  max divergence={div_error:.3e}, max momentum &quot;
+        f&quot;residual={momentum_error:.3e}&quot;
+    )
 
 # Two positive-definite covariances with identical k and different transfer.
 S = 100.0
 for shear_cov in (-0.08, 0.0, 0.08):
     R11, R22, R33 = 0.25, 0.09, 0.04
-    assert R11*R22-shear_cov**2 &gt; 0
-    k = (R11+R22+R33)/2
-    transfer = -shear_cov*S
-    print(f&quot;R12={shear_cov:+.2f}: k={k:.6f}, &quot;
-          f&quot;TKE exchange={transfer:+.6f}, mean exchange={-transfer:+.6f}&quot;)
+    assert R11 * R22 - shear_cov**2 &gt; 0
+    k = (R11 + R22 + R33) / 2
+    transfer = -shear_cov * S
+    print(
+        f&quot;R12={shear_cov:+.2f}: k={k:.6f}, TKE &quot;
+        f&quot;exchange={transfer:+.6f}, mean exchange={-transfer:+.6f}&quot;
+    )
 </code></pre>
 <p>Observed output:</p>
 <pre class="output">t=0.0: k=1.00000000, epsilon=0.16000000, dk/dt+epsilon=0.000e+00
@@ -207,28 +216,28 @@ R12=+0.08: k=0.190000, TKE exchange=-8.000000, mean exchange=+8.000000
 <p>Residuals of order machine roundoff are shown rather than relabeled as exact numerical zeros. The analytical identities are exact under the stated assumptions. Their successful execution tests this finite construction and its implementation, not a closure model's accuracy in a turbulent boundary layer.</p>
 
 <h2 id="exercises">7.9 Exercises with full solutions</h2>
-<div class="exercise"><h3>1. Recover the turbulent flux factor</h3>
+<div class="exercise"><h3 id="detail-05">1. Recover the turbulent flux factor</h3>
 <p>The stress flux includes \(\mathbb E[u_i'u_j'u_\ell']\). Show which vector appears after taking the half-trace, and give its units.</p>
 <details><summary>Solution</summary><p>Set \(j=i\), sum over \(i\), and divide by two. The free transport index is \(\ell\), giving \(T_\ell=\mathbb E[u_i'u_i'u_\ell']/2\). Each velocity contributes \(\mathrm{m\,s^{-1}}\), so the vector has units \(\mathrm{m^3\,s^{-3}}\). Its divergence has units \(\mathrm{m^2\,s^{-3}}\), matching \(D_U k\). A missing half would double this part of the energy transport without changing the definition of \(k\).</p></details></div>
-<div class="exercise"><h3>2. Equal energy, different exchange</h3>
+<div class="exercise"><h3 id="detail-06">2. Equal energy, different exchange</h3>
 <p>For the code's three covariance matrices, prove positivity and find \(\mathcal P\) when \(S=100\ \mathrm{s^{-1}}\).</p>
-<details><summary>Solution</summary><p>The diagonal entries are positive. For \(R_{12}=\pm0.08\), the leading two-dimensional determinant is \(0.0225-0.0064=0.0161>0\); for zero shear covariance it is \(0.0225>0\). Multiplying either by the remaining positive variance \(0.04\) gives positive full determinant, so the symmetric block matrices are positive definite. Their traces are all \(0.38\), hence \(k=0.19\). In parallel shear, \(\mathcal P=-R_{12}S\), giving \(+8,0,-8\ \mathrm{m^2\,s^{-3}}\). Positivity of covariance does not fix the exchange sign.</p></details></div>
-<div class="exercise"><h3>3. Check a surface assumption</h3>
+<details><summary>Solution</summary><p>The diagonal entries are positive. For \(R_{12}=\pm0.08\), the leading two-dimensional determinant is \(0.0225-0.0064=0.0161\gt 0\); for zero shear covariance it is \(0.0225\gt 0\). Multiplying either by the remaining positive variance \(0.04\) gives positive full determinant, so the symmetric block matrices are positive definite. Their traces are all \(0.38\), hence \(k=0.19\). In parallel shear, \(\mathcal P=-R_{12}S\), giving \(+8,0,-8\ \mathrm{m^2\,s^{-3}}\). Positivity of covariance does not fix the exchange sign.</p></details></div>
+<div class="exercise"><h3 id="detail-07">3. Check a surface assumption</h3>
 <p>A scalar \(g(y)=y(H-y)\) vanishes at both plates. Does that fact alone establish zero diffusive flux there? Explain why the turbulent-energy wall argument is stronger.</p>
 <details><summary>Solution</summary><p>No. Its derivative is \(H-2y\), nonzero at both walls, so a molecular flux proportional to \(-g'\) is nonzero there. For turbulent energy, \(k=\mathbb E[u_i'u_i']/2\) and \(\partial_yk=\mathbb E[u_i'\partial_yu_i']\). Smooth no-slip fluctuations vanish at the wall and have finite gradients, making this product zero. The derivative conclusion follows from the velocity-level structure and regularity, not simply a zero scalar boundary value.</p></details></div>
-<div class="exercise"><h3>4. Derive the exchange cancellation</h3>
+<div class="exercise"><h3 id="detail-08">4. Derive the exchange cancellation</h3>
 <p>Starting from the RANS term \(-\partial_jR_{ij}\), show the two different roles it plays in the mean-motion energy equation.</p>
 <details><summary>Solution</summary><p>Multiply by \(U_i\): \(-U_i\partial_jR_{ij}=-\partial_j(U_iR_{ij})+R_{ij}\partial_jU_i\). The first contribution is a spatial energy flux and can move mean-motion energy through a boundary. The second equals \(-\mathcal P\), a local exchange contribution. The \(k\) equation contains \(+\mathcal P\), so the nondivergence terms cancel on addition. The flux generally survives and must remain in the total energy equation.</p></details></div>
-<div class="exercise"><h3>5. A forcing term without mean power</h3>
-<p>Suppose the fluctuating acceleration is \(f_i'=\alpha u_i'\) with constant \(\alpha>0\), while \(F_i=0\). Find its contribution to the \(k\) equation and the condition for homogeneous stationary energy balance with zero mean strain.</p>
+<div class="exercise"><h3 id="detail-09">5. A forcing term without mean power</h3>
+<p>Suppose the fluctuating acceleration is \(f_i'=\alpha u_i'\) with constant \(\alpha\gt 0\), while \(F_i=0\). Find its contribution to the \(k\) equation and the condition for homogeneous stationary energy balance with zero mean strain.</p>
 <details><summary>Solution</summary><p>The added energy input is \(\mathbb E[u_i'f_i']=\alpha\mathbb E[u_i'u_i']=2\alpha k\). Since acceleration divided by velocity has units \(\mathrm{s^{-1}}\), \(\alpha\) is an inverse time. With no net transport and no mean-strain production, the balance is \(dk/dt=2\alpha k-\epsilon\), giving \(\epsilon=2\alpha k\) at statistical stationarity. This necessary energy balance does not prove existence, stability, isotropy, or a particular value of \(k\); those require the actual dynamics and forcing implementation.</p></details></div>
-<div class="exercise"><h3>6. Exact periodic decay</h3>
+<div class="exercise"><h3 id="detail-10">6. Exact periodic decay</h3>
 <p>For the analytic solution, calculate the energy half-life and the ratio of \(k(5)\) to \(k(0)\) with the stated parameters.</p>
 <details><summary>Solution</summary><p>The decay rate is \(r=4\nu\kappa^2=4(0.01)(4)=0.16\ \mathrm{s^{-1}}\). Solve \(e^{-rt_{1/2}}=1/2\), giving \(t_{1/2}=\log 2/0.16=4.33217\ \mathrm s\). At \(5\ \mathrm s\), the ratio is \(e^{-0.8}=0.449328964\). The velocity amplitude decays at half the energy rate; using its exponent directly for energy would give the wrong half-life by a factor of two.</p></details></div>
-<div class="exercise"><h3>7. What survives a rigid rotation?</h3>
+<div class="exercise"><h3 id="detail-11">7. What survives a rigid rotation?</h3>
 <p>For mean motion \(\boldsymbol U=(-\Omega y,\Omega x,0)\), show that mean strain and production vanish, although the mean-gradient pseudo-dissipation is nonzero. How is this compatible with zero physical viscous dissipation?</p>
 <details><summary>Solution</summary><p>The gradient has entries \(\partial_yU_1=-\Omega\), \(\partial_xU_2=\Omega\), so its symmetric part is zero. Thus \(2\nu S:S=0\) and \(\mathcal P=-R:S=0\). The squared-gradient quantity is \(\epsilon_M=2\nu\Omega^2\). Meanwhile \(K=\Omega^2(x^2+y^2)/2\) has \(\nu\nabla^2K=2\nu\Omega^2\), exactly canceling that grouped loss in the mean equation. The physical stress is zero. The nonzero pseudo term and its compensating flux cannot be interpreted separately as actual heating in this case.</p></details></div>
-<div class="exercise"><h3>8. Integrate a non-equilibrium energy balance</h3>
+<div class="exercise"><h3 id="detail-12">8. Integrate a non-equilibrium energy balance</h3>
 <p>A closed smooth box has zero mean advection through its walls and zero turbulent-energy flux. Its integrated production is \(0.8\ \mathrm{m^5\,s^{-3}}\), and integrated destruction is \(1.1\) in the same units. What happens to its integrated \(k\)? Does the answer imply negative local production?</p>
 <details><summary>Solution</summary><p>The volume-integrated balance gives \(d\int_Vk\,dV/dt=0.8-1.1=-0.3\ \mathrm{m^5\,s^{-3}}\). Its fluctuation energy decreases. This requires only a global production deficit relative to destruction; production could be positive everywhere and still insufficient. Neither stationarity nor local production–destruction equality was assumed, and neither can be inferred. Multiplication by the constant density converts the result to the rate of change of total fluctuation energy in watts.</p></details></div>
 <p class="conclusion">The scalar energy equation makes the transfer mechanism legible: covariance acting against mean strain supplies or removes fluctuation energy, with the opposite contribution in the mean-motion equation. Contraction simplifies the exact equation while discarding directional information, so the next modeling question is how to recover the missing stresses, transport, and destruction from a manageable set of fields.</p>

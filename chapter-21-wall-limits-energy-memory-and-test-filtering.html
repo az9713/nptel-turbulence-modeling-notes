@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="dc16ad13bbd91b78fd1518f10cc2ea3494acf4e6ab23b0aa41cb6f9210282003">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="eb554d6d32aa83d8091a2dbc5ee1d97b3d9740f27dd76c1adda20c5a6628013c">
 <title>21. Wall limits, energy memory and test filtering · Turbulence Modeling</title><link rel="stylesheet" href="assets/book.css">
 <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{pageReady:()=>MathJax.startup.defaultPageReady().then(()=>{document.documentElement.dataset.mathReady='true';})}};</script>
 <script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Turbulence Modeling · NPTEL IIT Madras</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="book-overview.html">Study route</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
-<div class="layout"><aside class="toc" id="chapter-toc"><h2>On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
-<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>21. Wall limits, energy memory and test filtering</h1>
+<div class="layout"><aside class="toc" id="chapter-toc"><h2 id="detail-01">On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1 id="detail-02">21. Wall limits, energy memory and test filtering</h1>
 <p class="lead">A static strain-based viscosity reacts immediately to the resolved gradient, including a laminar wall gradient. An energy-transport model adds memory of unresolved motion, while a second filtering level supplies information about scale-dependent stress. These are distinct extensions: wall damping changes a local length or coefficient, an SGS energy equation evolves a new variable, and the Germano identity relates stresses exactly before any dynamic coefficient is inferred.</p>
 <div class="learning-map"><strong>Three repairs with different assumptions.</strong> First locate the wall difficulty in the static model and compare two explicit corrections. Next derive the dimensions, energy exchange and homogeneous dynamics of a one-equation SGS closure. Finally introduce a test filter and derive an identity whose computable stress will determine a coefficient in the following chapter. The numerical work separates exact operator algebra from a modeled energy ODE.</div>
 <p class="source-note">Complete captions70–71 were read. Lesson70 covers near-wall modifications and SGS-energy transport; despite its playlist title, lesson71 begins the dynamic model and derives its two-level stress identity. This grouping follows the actual teaching. The rewrite distinguishes filter length from cell volume, damping viscosity from damping its length, SGS transfer from molecular loss, and a calculated dynamic coefficient from a universal fixed-constant replacement.</p>
@@ -87,67 +87,120 @@ L_{ij}=T_{ij}-H\tau_{ij}
 <p>The program constructs32periodic three-component velocity samples, applies two specified normalized three-point filters componentwise, and forms all nine stress entries. The maximum residual of \(T-H\tau-L\) is \(4.718\times10^{-16}\), consistent with floating-point roundoff. This validates an exact finite-array identity under those operators. It supplies no evidence that an SGS viscosity has the correct value, that these samples are a Navier–Stokes solution, or that the chosen filters correspond to a particular commercial solver.</p>
 <p>To infer a dynamic coefficient, one next inserts model forms for tau and Tinto(21.3), makes assumptions about variation of the coefficient under H, and chooses a way to fit the generally overdetermined tensor relation. Those are closure choices added after the identity. The next chapter develops the least-squares contraction, vanishing-denominator cases and the implications of negative coefficients. The exact cancellation here is the reason that procedure can use resolved data.</p>
 <pre data-run="code/ch21_energy_and_test_filter.py"><code>&quot;&quot;&quot;Wall variants, homogeneous SGS energy and exact two-filter identity.&quot;&quot;&quot;
+
 from math import atanh, exp, sin, cos, pi, sqrt, tanh
 
-nu, ut, y, delta, cs, shear, kappa = 1.5e-5, .5, .0001, .002, .1, 100., .41
-yp = ut*y/nu
-f = 1-exp(-yp/26)
-base = (cs*delta)**2*shear
+nu, ut, y, delta, cs, shear, kappa = (
+    1.5e-5,
+    0.5,
+    0.0001,
+    0.002,
+    0.1,
+    100.0,
+    0.41,
+)
+yp = ut * y / nu
+f = 1 - exp(-yp / 26)
+base = (cs * delta) ** 2 * shear
 print(f&quot;wall coordinate and damping factor: {yp:.8f}, {f:.8f}&quot;)
-print(f&quot;nu_s variants direct damping, length damping: {f*base:.10e}, {f*f*base:.10e}&quot;)
-lecture_l = cs*min(delta,kappa*y)
-mixing_l = min(cs*delta,kappa*y)
-print(f&quot;wall-limited lengths lecture-Delta and mixing-length m: {lecture_l:.10e}, {mixing_l:.10e}&quot;)
-print(f&quot;corresponding nu_s: {lecture_l**2*shear:.10e}, {mixing_l**2*shear:.10e}&quot;)
+print(
+    f&quot;nu_s variants direct damping, length damping: {f * base:.10e}, &quot;
+    f&quot;{f * f * base:.10e}&quot;
+)
+lecture_l = cs * min(delta, kappa * y)
+mixing_l = min(cs * delta, kappa * y)
+print(
+    f&quot;wall-limited lengths lecture-Delta and mixing-length m: &quot;
+    f&quot;{lecture_l:.10e}, {mixing_l:.10e}&quot;
+)
+print(
+    f&quot;corresponding nu_s: {lecture_l ** 2 * shear:.10e}, &quot;
+    f&quot;{mixing_l ** 2 * shear:.10e}&quot;
+)
 
-ck, ce, q0, end = .094, 1., .0001, .1
-qeq = ck/ce*delta**2*shear**2
+ck, ce, q0, end = 0.094, 1.0, 0.0001, 0.1
+qeq = ck / ce * delta**2 * shear**2
 req = sqrt(qeq)
-rate = sqrt(ck*ce)*abs(shear)/2
-exact = (req*tanh(rate*end+atanh(sqrt(q0)/req)))**2
+rate = sqrt(ck * ce) * abs(shear) / 2
+exact = (req * tanh(rate * end + atanh(sqrt(q0) / req))) ** 2
 print(f&quot;fixed-shear SGS energy equilibrium: {qeq:.10f}&quot;)
-print(f&quot;equivalent equilibrium Cs: {ck**.75/ce**.25:.8f}&quot;)
-def rhs(q):
-    return ck*delta*sqrt(q)*shear**2-ce*q**1.5/delta
-errors=[]
-for steps in (20,40):
-    q, h = q0,end/steps
-    for _ in range(steps):
-        a=rhs(q); b=rhs(q+h*a/2); c=rhs(q+h*b/2); d=rhs(q+h*c)
-        q+=h*(a+2*b+2*c+d)/6
-    errors.append(abs(q-exact))
-    print(f&quot;SGS energy RK4 steps={steps}: q={q:.10f}, error={errors[-1]:.8e}&quot;)
-print(f&quot;SGS energy RK4 refinement ratio: {errors[0]/errors[1]:.8f}&quot;)
-assert errors[0]/errors[1] &gt; 12
+print(f&quot;equivalent equilibrium Cs: {ck ** 0.75 / ce ** 0.25:.8f}&quot;)
 
-tdecay=.05
-qdecay = (qeq**-.5+ce*tdecay/(2*delta))**-2
-print(f&quot;energy after shear-off .05s: {qdecay:.10f}; retained nu_s={ck*delta*sqrt(qdecay):.10e}&quot;)
-production=ck*delta*sqrt(q0)*shear**2
-destruction=ce*q0**1.5/delta
-print(f&quot;instantaneous Pi, modeled destruction, sum-of-budgets sink: {production:.8f}, {destruction:.8f}, {-destruction:.8f}&quot;)
+
+def rhs(q):
+    return ck * delta * sqrt(q) * shear**2 - ce * q**1.5 / delta
+
+
+errors = []
+for steps in (20, 40):
+    q, h = q0, end / steps
+    for _ in range(steps):
+        a = rhs(q)
+        b = rhs(q + h * a / 2)
+        c = rhs(q + h * b / 2)
+        d = rhs(q + h * c)
+        q += h * (a + 2 * b + 2 * c + d) / 6
+    errors.append(abs(q - exact))
+    print(f&quot;SGS energy RK4 steps={steps}: q={q:.10f}, error={errors[-1]:.8e}&quot;)
+print(f&quot;SGS energy RK4 refinement ratio: {errors[0] / errors[1]:.8f}&quot;)
+assert errors[0] / errors[1] &gt; 12
+
+tdecay = 0.05
+qdecay = (qeq**-0.5 + ce * tdecay / (2 * delta)) ** -2
+print(
+    f&quot;energy after shear-off .05s: {qdecay:.10f}; retained &quot;
+    f&quot;nu_s={ck * delta * sqrt(qdecay):.10e}&quot;
+)
+production = ck * delta * sqrt(q0) * shear**2
+destruction = ce * q0**1.5 / delta
+print(
+    f&quot;instantaneous Pi, modeled destruction, sum-of-budgets sink: &quot;
+    f&quot;{production:.8f}, {destruction:.8f}, {-destruction:.8f}&quot;
+)
 
 # Component-wise periodic linear filters with normalized positive weights.
-n=32
-u=[[sin(2*pi*j/n)+.2*cos(6*pi*j/n), cos(4*pi*j/n), .3*sin(8*pi*j/n)] for j in range(n)]
+n = 32
+u = [
+    [
+        sin(2 * pi * j / n) + 0.2 * cos(6 * pi * j / n),
+        cos(4 * pi * j / n),
+        0.3 * sin(8 * pi * j / n),
+    ]
+    for j in range(n)
+]
+
+
 def filt(values, weights):
-    return [weights[0]*values[(j-1)%n]+weights[1]*values[j]+weights[2]*values[(j+1)%n] for j in range(n)]
-F=lambda a:filt(a,(.25,.5,.25))
-H=lambda a:filt(a,(.125,.75,.125))
-v=[F([row[i] for row in u]) for i in range(3)]
-hv=[H(v[i]) for i in range(3)]
-maximum=0.
+    return [
+        weights[0] * values[(j - 1) % n]
+        + weights[1] * values[j]
+        + weights[2] * values[(j + 1) % n]
+        for j in range(n)
+    ]
+
+
+def F(a):
+    return filt(a, (0.25, 0.5, 0.25))
+
+
+def H(a):
+    return filt(a, (0.125, 0.75, 0.125))
+
+
+v = [F([row[i] for row in u]) for i in range(3)]
+hv = [H(v[i]) for i in range(3)]
+maximum = 0.0
 for i in range(3):
     for j in range(3):
-        fprod=F([row[i]*row[j] for row in u])
-        tau=[fprod[m]-v[i][m]*v[j][m] for m in range(n)]
-        htau=H(tau)
-        hprod=H(fprod)
-        hvprod=H([v[i][m]*v[j][m] for m in range(n)])
+        fprod = F([row[i] * row[j] for row in u])
+        tau = [fprod[m] - v[i][m] * v[j][m] for m in range(n)]
+        htau = H(tau)
+        hprod = H(fprod)
+        hvprod = H([v[i][m] * v[j][m] for m in range(n)])
         for m in range(n):
-            total=hprod[m]-hv[i][m]*hv[j][m]
-            leonard=hvprod[m]-hv[i][m]*hv[j][m]
-            maximum=max(maximum,abs(total-htau[m]-leonard))
+            total = hprod[m] - hv[i][m] * hv[j][m]
+            leonard = hvprod[m] - hv[i][m] * hv[j][m]
+            maximum = max(maximum, abs(total - htau[m] - leonard))
 print(f&quot;all-component Germano identity maximum residual: {maximum:.3e}&quot;)
 assert maximum &lt; 1e-12
 </code></pre>

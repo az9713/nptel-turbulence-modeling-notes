@@ -89,6 +89,17 @@ def browser_checks(root,base=None,executable=None):
     root=Path(root).resolve();state=root/'work/browser-checks';state.mkdir(parents=True,exist_ok=True)
     os.environ.update(environment(root))
     names=sorted(p.name for p in public_files(root) if p.suffix=='.html')
+    from validate_book import math_inventory
+    from build_book import body_of, read
+    expected_math = {}
+    for name in names:
+        if not name.startswith('chapter-'):
+            continue
+        inventory = math_inventory(body_of(read(root / name)))
+        if (not inventory['payload_sequence_matches']
+                or inventory['unmatched_delimiters']):
+            raise ValueError('Invalid raw/parsed source mathematics: ' + name)
+        expected_math[name] = inventory['raw_count']
     issues=[];records=[]
     with sync_playwright() as p:
         launch={'headless':True,'args':['--disable-background-networking','--disable-breakpad','--disable-crash-reporter','--no-first-run']}
@@ -109,13 +120,15 @@ def browser_checks(root,base=None,executable=None):
                     page.evaluate('async()=>{await MathJax.startup.promise;return true}')
                     math_errors=page.locator('[data-mml-node="merror"],mjx-merror').count()
                     count=page.locator('mjx-container').count()
+                    authored_count=page.locator('#chapter-content mjx-container').count()
                     broken=page.locator('img').evaluate_all('(images)=>images.filter(i=>!i.complete||i.naturalWidth===0).map(i=>i.getAttribute("src"))')
                     overflow=page.evaluate('document.documentElement.scrollWidth>innerWidth+2')
                     if math_errors:issues.append(name+': MathJax errors')
                     if broken:issues.append(name+': broken images '+str(broken))
                     if overflow:issues.append(name+': page overflow '+str(width))
                     if name.startswith('chapter-'):
-                        if count==0:issues.append(name+': no rendered mathematics')
+                        if authored_count==0:issues.append(name+': no rendered authored mathematics')
+                        if authored_count!=expected_math[name]:issues.append(name+': authored math count differs from source')
                         page.locator('#solutions-toggle').click()
                         if page.locator('article details:not([open])').count():issues.append(name+': solution expansion')
                         page.locator('#solutions-toggle').click()
@@ -136,7 +149,7 @@ def browser_checks(root,base=None,executable=None):
                         if page.locator('article details:not([open])').count():issues.append(name+': print expansion')
                         page.evaluate('dispatchEvent(new Event("afterprint"))')
                         if page.locator('article details').evaluate_all('(d)=>d.map(e=>e.open)')!=prior:issues.append(name+': print state restoration')
-                    records.append({'page':name,'width':width,'rendered_math':count,'math_errors':math_errors,'broken_images':broken,'overflow':overflow})
+                    records.append({'page':name,'width':width,'rendered_math':count,'authored_math':authored_count,'expected_authored_math':expected_math.get(name),'math_errors':math_errors,'broken_images':broken,'overflow':overflow})
                 issues.extend(errors);context.close()
         finally:browser.close()
     return {'passed':not issues,'issues':issues,'pages_checked':names,'widths':[390,1440],

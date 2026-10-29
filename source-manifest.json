@@ -10,157 +10,157 @@
     "item_count": 77,
     "ordering": "Original positions retained; teaching order follows numbered lessons"
   },
-  "production_status": "All25 chapter bodies accepted in two independent scientific rounds; current package/publication stage is recorded in completion.json",
+  "production_status": "Fresh explicitly authorized compliance audit and repairs in progress; prior publication is historical and new payload gates remain pending.",
   "chapters": [
     {
       "order": 1,
       "file": "chapter-01-prediction-and-turbulent-motion.html",
       "title": "1. Prediction, uncertainty, and turbulent motion",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 2,
       "file": "chapter-02-statistics-sampling-and-tensors.html",
       "title": "2. Statistics, sampling, and Cartesian tensors",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 3,
       "file": "chapter-03-conservation-and-newtonian-closure.html",
       "title": "3. Conservation laws and Newtonian closure",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 4,
       "file": "chapter-04-mean-momentum-and-closure.html",
       "title": "Mean momentum and the turbulence closure problem",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 5,
       "file": "chapter-05-exact-reynolds-stress-transport.html",
       "title": "5. Exact Reynolds-stress transport",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 6,
       "file": "chapter-06-stationarity-homogeneity-and-redistribution.html",
       "title": "6. Stationarity, homogeneity and pressure redistribution",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 7,
       "file": "chapter-07-turbulent-and-mean-energy-budgets.html",
       "title": "7. Turbulent and mean energy budgets",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 8,
       "file": "chapter-08-thin-boundary-layers-and-outer-scaling.html",
       "title": "8. Thin boundary layers and outer scaling",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 9,
       "file": "chapter-09-inner-scaling-and-friction-velocity.html",
       "title": "9. Inner scaling and friction velocity",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 10,
       "file": "chapter-10-eddy-viscosity-and-mixing-length.html",
       "title": "10. Eddy viscosity and mixing length",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 11,
       "file": "chapter-11-constructing-k-epsilon-and-calibration.html",
       "title": "11. Constructing \\(k\\)–\\(\\epsilon\\) and testing calibration",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 12,
       "file": "chapter-12-calibration-and-alternative-time-scales.html",
       "title": "12. Calibration and alternative turbulence time scales",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 13,
       "file": "chapter-13-wall-functions-and-smooth-wall-limits.html",
       "title": "13. Wall functions and smooth-wall limits",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 14,
       "file": "chapter-14-near-wall-corrections-and-boundary-data.html",
       "title": "14. Near-wall corrections and boundary data",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 15,
       "file": "chapter-15-realizability-and-production-corrections.html",
       "title": "15. Realizability and production corrections",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 16,
       "file": "chapter-16-reynolds-stress-transport-closure.html",
       "title": "16. Closing the Reynolds-stress transport system",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 17,
       "file": "chapter-17-pressure-redistribution-and-wall-models.html",
       "title": "17. Pressure redistribution and wall models",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 18,
       "file": "chapter-18-scales-cascades-and-direct-simulation.html",
       "title": "18. Scales, cascades and direct numerical simulation",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 19,
       "file": "chapter-19-filtered-equations-and-the-les-closure.html",
       "title": "19. Filtered equations and the LES closure",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 20,
       "file": "chapter-20-filter-families-and-subgrid-viscosity.html",
       "title": "20. Filter families and subgrid viscosity",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 21,
       "file": "chapter-21-wall-limits-energy-memory-and-test-filtering.html",
       "title": "21. Wall limits, energy memory and test filtering",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 22,
       "file": "chapter-22-dynamic-fitting-and-scale-similarity.html",
       "title": "22. Dynamic fitting and scale similarity",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 23,
       "file": "chapter-23-les-numerics-and-hybrid-interfaces.html",
       "title": "23. LES numerics and hybrid interfaces",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 24,
       "file": "chapter-24-live-session-model-choice-and-evidence.html",
       "title": "24. Live session: model choice and evidence",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     },
     {
       "order": 25,
       "file": "chapter-25-live-session-from-equation-to-evidence.html",
       "title": "25. Live session: from an equation to trustworthy evidence",
-      "status": "Accepted in two independent scientific reviews"
+      "status": "Revised; fresh independent compliance review pending"
     }
   ],
   "recordings": [

@@ -1,5 +1,7 @@
 """Static public source, body-integrity, navigation and timestamp checks."""
 import json
+import hashlib
+from html import unescape
 import argparse
 from pathlib import Path
 import re
@@ -8,6 +10,69 @@ from urllib.parse import parse_qs, unquote, urlsplit
 
 from bs4 import BeautifulSoup
 from build_book import ROOT, body_of, digest, public_path, read
+
+
+_MATH = re.compile(
+    r'(?<!\\)\\\[(?P<bracket_display>[\s\S]*?)(?<!\\)\\\]'
+    r'|(?<!\\)\\\((?P<bracket_inline>[\s\S]*?)(?<!\\)\\\)'
+    r'|(?<![\\$])\$\$(?P<dollar_display>[\s\S]*?)(?<!\\)\$\$'
+    r'|(?<![\\$])\$(?!\$)(?P<dollar_inline>[\s\S]*?)'
+    r'(?<![\\$])\$(?!\$)'
+)
+
+
+def math_spans(text):
+    """Recognize whole outer math spans without editing their TeX payload."""
+    return [
+        {'start': m.start(), 'end': m.end(), 'kind': m.lastgroup,
+         'payload': m.group(m.lastgroup)}
+        for m in _MATH.finditer(text)
+    ]
+
+
+def math_inventory(body):
+    """Compare raw and parsed visible math; code and SVG labels are excluded."""
+    excluded = ('pre', 'code', 'script', 'style', 'noscript', 'textarea', 'svg')
+    protected = body
+    for tag in excluded:
+        protected = re.sub(
+            r'<' + tag + r'\b[^>]*>[\s\S]*?</' + tag + r'\s*>',
+            '', protected, flags=re.I,
+        )
+    protected = re.sub(r'<!--[\s\S]*?-->', '', protected)
+    raw = math_spans(protected)
+    soup = BeautifulSoup(body, 'html.parser')
+    for element in soup.select(','.join(excluded)):
+        element.decompose()
+    visible = math_spans(soup.get_text())
+    residual = protected
+    for span in reversed(raw):
+        residual = (
+            residual[:span['start']] + ' ' * (span['end'] - span['start'])
+            + residual[span['end']:]
+        )
+    unmatched = [
+        {'offset': m.start(), 'token': m.group()}
+        for m in re.finditer(r'(?<!\\)\\[()\[\]]|(?<![\\$])\$', residual)
+    ]
+    raw_payload = [unescape(r['payload']) for r in raw]
+    visible_payload = [r['payload'] for r in visible]
+
+    def encode(values):
+        return json.dumps(values, ensure_ascii=False).encode()
+
+    return {
+        'raw_count': len(raw), 'visible_count': len(visible),
+        'raw_payload_sha256': hashlib.sha256(encode(raw_payload)).hexdigest(),
+        'visible_payload_sha256': hashlib.sha256(
+            encode(visible_payload)
+        ).hexdigest(),
+        'payload_sequence_matches': raw_payload == visible_payload,
+        'unmatched_delimiters': unmatched,
+        'raw_literal_comparison_spans': [
+            r['payload'] for r in raw if '<' in r['payload'] or '>' in r['payload']
+        ],
+    }
 
 
 def main():
@@ -25,6 +90,8 @@ def main():
         issues.append('Duplicate recording identity')
     for path in sorted(ROOT.glob('*.html')):
         document = read(path)
+        if "\r" in document:
+            issues.append(path.name + ": HTML must use canonical LF newlines")
         body = body_of(document)
         soup = BeautifulSoup(document, 'html.parser')
         ids = [tag['id'] for tag in soup.select('[id]')]
@@ -55,8 +122,9 @@ def main():
                 issues.append(path.name + ': unsafe local path')
         if re.search(r'(?<![A-Za-z])[A-Za-z]:[\\/]|file://|Users[/\\]', body):
             issues.append(path.name + ': private absolute path in authored body')
-        if body.count(r'\(') != body.count(r'\)') or body.count(r'\[') != body.count(r'\]'):
-            issues.append(path.name + ': unbalanced math delimiters')
+        all_math = math_inventory(body)
+        if all_math['unmatched_delimiters']:
+            issues.append(path.name + ': unmatched mixed math delimiters')
         if path.name.startswith('chapter-'):
             meta = json.loads(read(path.with_suffix('.meta.json')))
             if digest(body) != meta['authored_body_sha256']:
@@ -79,10 +147,16 @@ def main():
                     or not 0 <= note['start'] < note['end'] <= source['duration_seconds']):
                     issues.append(path.name + ': cross-recording note out of bounds')
             article = BeautifulSoup(body, 'html.parser')
+            inventory = math_inventory(body)
+            if not inventory['payload_sequence_matches']:
+                issues.append(path.name + ': raw/parsed math payload mismatch')
+            if inventory['raw_literal_comparison_spans']:
+                issues.append(path.name + ': escape raw math comparison signs')
             records.append({'file': path.name, 'body_sha256': digest(body),
                             'article_words_including_math_code': len(article.get_text(' ', strip=True).split()),
                             'worked_solutions': len(article.select('details')),
                             'display_equations': body.count(r'\['),
+                            'math_inventory': inventory,
                             'source_spans': len(meta['sections'])})
     if args.release:
         from audit_public import inspect

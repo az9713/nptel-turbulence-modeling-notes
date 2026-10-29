@@ -10,7 +10,36 @@ import tempfile
 import sys
 
 from bs4 import BeautifulSoup
+import pycodestyle
 from build_book import ROOT, body_of, digest, public_path, read
+
+
+class StyleReport(pycodestyle.BaseReport):
+    """Collect source-relative diagnostics without exposing local paths."""
+
+    def __init__(self, options):
+        super().__init__(options)
+        self.issues = []
+
+    def error(self, line_number, offset, text, check):
+        code = super().error(line_number, offset, text, check)
+        if code:
+            self.issues.append({
+                'line': line_number, 'column': offset + 1,
+                'code': code, 'message': text[5:],
+            })
+        return code
+
+
+def source_style(source_bytes):
+    """Full default PEP8 checks, including the 79-character line limit."""
+    options = pycodestyle.StyleGuide(quiet=True, max_line_length=79).options
+    report = StyleReport(options)
+    source = source_bytes.decode('utf-8')
+    pycodestyle.Checker(
+        lines=source.splitlines(True), options=options, report=report,
+    ).check_all()
+    return report.issues
 
 
 def main():
@@ -46,6 +75,7 @@ def main():
             if not program.is_relative_to(ROOT / 'code'):
                 raise ValueError('Listing must be in code/')
             source_bytes=program.read_bytes()
+            style_issues=source_style(source_bytes)
             same_source=bool(listing.code) and listing.code.get_text().encode('utf-8')==source_bytes
             relative=program.relative_to(ROOT).as_posix()
             expected_programs.append(relative)
@@ -62,9 +92,10 @@ def main():
                 'chapter': chapter.name, 'body_sha256': hashes[name], 'listing_index':i,
                 'program': relative,
                 'source_sha256': hashlib.sha256(source_bytes).hexdigest(), 'embedded_source_matches': same_source,
+                'pep8_issues': style_issues, 'style_passed': not style_issues,
                 'displayed_output_matches': same_output, 'exit_code': process.returncode,
                 'stdout': process.stdout, 'stderr': process.stderr,
-                'passed': same_source and same_output and process.returncode == 0})
+                'passed': same_source and same_output and process.returncode == 0 and not style_issues})
     if len(expected_programs)!=len(set(expected_programs)):
         issues.append('Each code download requires one declared listing owner')
     inventory=ROOT/'content-inventory.json'
@@ -100,9 +131,11 @@ def main():
             cwd=sandbox,env=env,capture_output=True,text=True,timeout=120)
         generated={p.relative_to(sandbox).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()
             for p in (sandbox/'assets').iterdir() if p.is_file()}
-        passed=process.returncode==0 and bool(generated)
+        style_issues=source_style(source.read_bytes())
+        passed=process.returncode==0 and bool(generated) and not style_issues
         auxiliary_results.append({'program':name,'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),
             'exit_code':process.returncode,'stdout':process.stdout,'stderr':process.stderr,
+            'pep8_issues':style_issues,'style_passed':not style_issues,
             'generated_artifact_sha256':generated,'passed':passed,
             'scope':'Executed figure generator in isolated public-code copy; no claim byte-identical images across Matplotlib versions'})
         if not passed:issues.append('Auxiliary figure execution failed: '+name)

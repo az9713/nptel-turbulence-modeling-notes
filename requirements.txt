@@ -3,3 +3,6 @@ beautifulsoup4==4.15.0
 playwright==1.57.0
 # Optional regeneration of scientific plot assets:
 matplotlib==3.11.2
+
+# Full Python listing style validation, including the 79-character limit.
+pycodestyle==2.14.0

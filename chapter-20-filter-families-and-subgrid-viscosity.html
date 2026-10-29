@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="e4aa1c157ea0ebb996d40f763da61e6c85ac171b6dbb46ad01c2e9be17de2b50">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="cb14a682175d1e247008df756539f5991ed2ab4c8d7346aa5ae33011b2b211d4">
 <title>20. Filter families and subgrid viscosity · Turbulence Modeling</title><link rel="stylesheet" href="assets/book.css">
 <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{pageReady:()=>MathJax.startup.defaultPageReady().then(()=>{document.documentElement.dataset.mathReady='true';})}};</script>
 <script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Turbulence Modeling · NPTEL IIT Madras</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="book-overview.html">Study route</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
-<div class="layout"><aside class="toc" id="chapter-toc"><h2>On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
-<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>20. Filter families and subgrid viscosity</h1>
+<div class="layout"><aside class="toc" id="chapter-toc"><h2 id="detail-01">On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1 id="detail-02">20. Filter families and subgrid viscosity</h1>
 <p class="lead">A filter length does not specify a filter. A box of width Delta, a Gaussian with a declared width convention, and a sharp spectral cutoff act differently on the same velocity field. Their normalization, repeated action and relation to numerical resolution determine what an SGS stress means. Once these choices are explicit, the Smagorinsky model supplies a simple approximation to the deviatoric stress and a testable direction of energy transfer.</p>
 <div class="learning-map"><strong>Designing the resolved/model interface.</strong> Derive physical and Fourier kernels, test idempotence and positivity, and distinguish explicit averaging from a discretization's implicit action. Then build subgrid viscosity from a filter length and resolved strain, retain its missing trace information, and test it in shear, extension and rigid rotation. The next chapter addresses its wall behavior, energy transport and a second filtering level.</div>
 <p class="source-note">This chapter follows complete captions68–69. The latter recording begins SGS closure and the Smagorinsky model after its filter discussion; those substantive nineteen minutes are included here. The repeated-filter argument is rebuilt with independent integration variables and Fourier multiplication. A box filter is not a sharp spectral cutoff, finite-volume discretization does not uniquely identify every filtering error, and the SGS trace is not automatically known from resolved velocity.</p>
@@ -84,46 +84,70 @@ G_c(r)=\frac1{2\pi}\int_{-\kappa_c}^{\kappa_c}e^{i\kappa r}d\kappa
 <p>Two limiting fields expose further behavior. Rigid rotation \(\bar{\boldsymbol u}=(-\Omega y,\Omega x,0)\) has zero symmetric strain, so this model gives zero viscosity and transfer despite nonzero vorticity. Planar extension \((ax,-ay,0)\) has \(|\bar S|=2|a|\); at a100/s, Cs0.1and the same Delta, \(\nu_s=8\times10^{-6}\) and \(\Pi_m=0.32\). The model responds to laminar strain too. Nonzero strain does not establish actual unresolved turbulence. This motivates the wall corrections and dynamically inferred coefficients in the following chapters.</p>
 <p>For a nominal three-dimensional grid scale one often chooses \(\Delta=(\Delta_x\Delta_y\Delta_z)^{1/3}\). Its units are length: a volume alone cannot be compared with a wall distance or inserted as the length in(20.4). Equal cell volumes can have radically different aspect ratios and directional resolution. Reducing Delta at fixed strain makes viscosity scale as Delta², but in a coupled refinement the strain and resolved field change too. Budget consistency, adequate resolved scales and statistical comparison remain necessary.</p>
 <pre data-run="code/ch20_filters_and_smagorinsky.py"><code>&quot;&quot;&quot;Exact filter symbols, projection counterexample and local closure checks.&quot;&quot;&quot;
+
 from math import exp, pi, sin, sqrt
 
+
 def sinc(z):
-    return sin(z)/z if z else 1.
+    return sin(z) / z if z else 1.0
 
-for q in (.5, 1., pi, 2*pi, 3*pi):
-    box = sinc(q/2)
-    gaussian = exp(-q*q/24)
-    cutoff = 1. if q &lt;= pi else 0.
-    print(f&quot;kDelta={q:.8f}: box={box:.8f}, Gaussian={gaussian:.8f}, cutoff={cutoff:.0f}&quot;)
 
-print(f&quot;same-width box variance after one/two passes: {1/12:.8f}, {1/6:.8f}&quot;)
+for q in (0.5, 1.0, pi, 2 * pi, 3 * pi):
+    box = sinc(q / 2)
+    gaussian = exp(-q * q / 24)
+    cutoff = 1.0 if q &lt;= pi else 0.0
+    print(
+        f&quot;kDelta={q:.8f}: box={box:.8f}, Gaussian={gaussian:.8f}, &quot;
+        f&quot;cutoff={cutoff:.0f}&quot;
+    )
+
+print(
+    f&quot;same-width box variance after one/two passes: {1 / 12:.8f}, {1 / 6:.8f}&quot;
+)
 print(f&quot;same-width Gaussian effective-width multiplier: {sqrt(2):.8f}&quot;)
-print(f&quot;grid Delta and test width2Delta Gaussian composite width/Delta: {sqrt(5):.8f}&quot;)
+print(
+    f&quot;grid Delta and test width2Delta Gaussian composite width/Delta: &quot;
+    f&quot;{sqrt(5):.8f}&quot;
+)
 
 # Positive scalar field (1+cos x)^2 projected to retain only modes0,+/-1.
-positive_original = (1+(-1))**2
-projected = 1.5+2*(-1)
-print(f&quot;nonnegative field at pi and its sharp projection: {positive_original:.8f}, {projected:.8f}&quot;)
+positive_original = (1 + (-1)) ** 2
+projected = 1.5 + 2 * (-1)
+print(
+    f&quot;nonnegative field at pi and its sharp projection: &quot;
+    f&quot;{positive_original:.8f}, {projected:.8f}&quot;
+)
 assert projected &lt; 0
 # Velocity cos(x), sharp cutoff retains modes0,+/-1: F(u)=u, F(u^2)=1/2.
-print(f&quot;signed-kernel scalar stress at x0: {.5-1:.8f}&quot;)
+print(f&quot;signed-kernel scalar stress at x0: {0.5 - 1:.8f}&quot;)
 
-delta, shear, nu = .002, 100., 1.5e-5
-for cs in (.065, .1, .25):
-    nut = (cs*delta)**2*abs(shear)
-    stress12 = -nut*shear
-    transfer = nut*shear**2
-    print(f&quot;Cs={cs}: nu_sgs={nut:.10f}, tau12={stress12:.8f}, Pi={transfer:.8f}, nu_sgs/nu={nut/nu:.8f}&quot;)
-print(f&quot;viscosity ratio Cs .25/.065: {(.25/.065)**2:.8f}&quot;)
+delta, shear, nu = 0.002, 100.0, 1.5e-5
+for cs in (0.065, 0.1, 0.25):
+    nut = (cs * delta) ** 2 * abs(shear)
+    stress12 = -nut * shear
+    transfer = nut * shear**2
+    print(
+        f&quot;Cs={cs}: nu_sgs={nut:.10f}, tau12={stress12:.8f}, &quot;
+        f&quot;Pi={transfer:.8f}, nu_sgs/nu={nut / nu:.8f}&quot;
+    )
+print(f&quot;viscosity ratio Cs .25/.065: {(0.25 / 0.065) ** 2:.8f}&quot;)
 # Rigid rotation has zero symmetric strain; pure extension does not.
-a, cs = 100., .1
-extension_norm = 2*abs(a)
-extension_nut = (cs*delta)**2*extension_norm
-print(f&quot;pure extension strain norm and modeled transfer: {extension_norm:.8f}, {extension_nut*4*a*a:.8f}&quot;)
-print(&quot;rigid rotation strain norm and modeled transfer: 0.00000000, 0.00000000&quot;)
-for n in (16,32,64):
-    h = 2*pi/n
+a, cs = 100.0, 0.1
+extension_norm = 2 * abs(a)
+extension_nut = (cs * delta) ** 2 * extension_norm
+print(
+    f&quot;pure extension strain norm and modeled transfer: &quot;
+    f&quot;{extension_norm:.8f}, {extension_nut * 4 * a * a:.8f}&quot;
+)
+print(
+    &quot;rigid rotation strain norm and modeled transfer: 0.00000000, 0.00000000&quot;
+)
+for n in (16, 32, 64):
+    h = 2 * pi / n
     # Samples of a mode differing by n are identical on n equispaced nodes.
-    alias_error = max(abs(sin((n+3)*j*h)-sin(3*j*h)) for j in range(n))
+    alias_error = max(
+        abs(sin((n + 3) * j * h) - sin(3 * j * h)) for j in range(n)
+    )
     print(f&quot;alias identity N={n}: maximum sample difference={alias_error:.3e}&quot;)
 </code></pre>
 <pre class="output">kDelta=0.50000000: box=0.98961584, Gaussian=0.98963740, cutoff=1

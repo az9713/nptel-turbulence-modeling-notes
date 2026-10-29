@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="a6113c2262ec8b81db1080982a82850502221917f0d85396748ed3ea4d6054c3">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="c56f7ae047d68e771e6e4985daf8e9ce1e7432ddca2baee76609563b26463af9">
 <title>16. Closing the Reynolds-stress transport system · Turbulence Modeling</title><link rel="stylesheet" href="assets/book.css">
 <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{pageReady:()=>MathJax.startup.defaultPageReady().then(()=>{document.documentElement.dataset.mathReady='true';})}};</script>
 <script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Turbulence Modeling · NPTEL IIT Madras</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="book-overview.html">Study route</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
-<div class="layout"><aside class="toc" id="chapter-toc"><h2>On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
-<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>16. Closing the Reynolds-stress transport system</h1>
+<div class="layout"><aside class="toc" id="chapter-toc"><h2 id="detail-01">On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1 id="detail-02">16. Closing the Reynolds-stress transport system</h1>
 <p class="lead">A Reynolds-stress model transports directional second moments instead of reconstructing all of them from one scalar viscosity. This removes the Boussinesq assumption from the momentum-stress relation, but creates new closure obligations. Production can be evaluated directly from transported covariances and mean gradients; pressure correlations, third moments and destruction still need models. We will assemble that inventory, examine anisotropic diffusion and derive the factor in an isotropic destruction tensor.</p>
 <div class="learning-map"><strong>Retain the covariance as a matrix.</strong> The recurring shear case now evolves \(R_{11}\), \(R_{12}\) and the other components together. A reduced production-only problem has an exact solution that preserves covariance positivity. A matrix diffusion example then shows why a cross-direction flux need not be unphysical, while a destruction example shows why a plausible isolated source is not a full realizability guarantee.</div>
 <p class="source-note">Lessons 52–54 introduce stress-transport modeling, compare scalar and tensor diffusion, and construct isotropic small-scale destruction with a seventh scale equation. Lesson 55 starts the pressure-Poisson derivation and is grouped with its continuation in chapter 17. Complete captions were read before this grouping. Numerical stability statements below are limited to the specified operators and updates.</p>
@@ -40,7 +40,7 @@ P_{11}=-2(A_{11}R_{11}+A_{12}R_{12}+A_{13}R_{13}),
 \]</div>
 <p>and \(P_{12}=-(A_{11}+A_{22})R_{12}-A_{12}R_{22}-A_{13}R_{23}-A_{21}R_{11}-A_{23}R_{13}\). Thus the \(R_{12}\) production can involve five distinct covariances. A term appearing twice in an expansion is not an additional independent unknown. The mean gradients themselves depend on the coupled momentum solution.</p>
 <p>In parallel shear \(U=(S y,0,0)\), with constant shear rate \(S\), these formulas simplify to \(P_{11}=-2S R_{12}\), \(P_{12}=-S R_{22}\), \(P_{13}=-S R_{23}\), and \(P_{22}=P_{23}=P_{33}=0\). This is a sparse special case of the general coupling. A negative shear covariance feeds positive streamwise production for \(S&gt;0\); its own source depends on the wall-normal variance. Pressure–strain will later redistribute component energies.</p>
-<div class="worked"><h3>The same shear ledger, now with a directional evolution</h3>
+<div class="worked"><h3 id="detail-03">The same shear ledger, now with a directional evolution</h3>
 <p>Use \(R_{11}=0.25,R_{22}=0.09,R_{33}=0.04,R_{12}=-0.08\), with remaining off-diagonals zero, in \(\mathrm{m^2\,s^{-2}}\), and \(S=100\ \mathrm{s^{-1}}\). Then \(P_{11}=16\), \(P_{12}=-9\), and scalar production \(\mathcal P=P_{ii}/2=-R_{12}S=8\ \mathrm{m^2\,s^{-3}}\). The diagonal production is twice the corresponding contribution to scalar energy because \(k=R_{ii}/2\).</p>
 <p>Temporarily retain production alone: \(dR/dt=-AR-RA^T\). This is a deliberately incomplete homogeneous moment equation, not a full turbulent shear-flow model. For constant \(A\), \(R(t)=F(t)R(0)F(t)^T\), where \(F=\exp(-At)\). Since \(a^TR(t)a=(F^Ta)^TR(0)(F^Ta)\geq0\), the exact reduced evolution preserves PSD for any initially PSD covariance.</p>
 <p>Here \(A^2=0\), so \(F=I-At\). With \(b=St\), \(R_{22}(t)=R_{22}(0)\), \(R_{12}(t)=R_{12}(0)-bR_{22}(0)\), \(R_{11}(t)=R_{11}(0)-2bR_{12}(0)+b^2R_{22}(0)\). At \(t=0.01\ \mathrm s\), these give \(R_{11}=0.5\), \(R_{12}=-0.17\). The planar determinant remains \(0.0161\), an exact algebraic check of this shear transformation.</p></div>
@@ -69,7 +69,7 @@ D_{\ell m}=C_D\frac{k}{\epsilon}R_{\ell m},
 
 <h2 id="cross-direction-flux" data-video="GfpVSUCwfcc" data-start="858" data-end="1524">16.4 A cross-direction flux is different from an up-gradient total flux <a class="timestamp" href="https://www.youtube.com/watch?v=GfpVSUCwfcc&amp;t=858">L53 · 14:18</a></h2>
 <p>Half the trace of (16.2) gives an energy flux \(J_\ell=-D_{\ell m}\partial_m k\), because \(R_{ii}/2=k\). Its first component is \(J_1=-D_{11}\partial_1k-D_{12}\partial_2k-D_{13}\partial_3k\). A zero \(\partial_1k\) therefore does not force \(J_1=0\) if an off-diagonal coefficient and another gradient are nonzero. It may still vanish if those coefficients are zero or the contributions cancel; anisotropy does not guarantee a nonzero flux.</p>
-<div class="worked"><h3>Transport across a surface with zero normal energy gradient</h3>
+<div class="worked"><h3 id="detail-04">Transport across a surface with zero normal energy gradient</h3>
 <p>For the shear covariance above, \(k=0.19\), \(\epsilon=0.5\), \(C_D=0.2\), (16.2) gives \(D_{11}=0.019\), \(D_{12}=-0.00608\), \(D_{22}=0.00684\), \(D_{33}=0.00304\), in \(\mathrm{m^2\,s^{-1}}\). Let \(\nabla k=(0,10,0)\ \mathrm{m\,s^{-2}}\) at the point. Then \(\boldsymbol J=(0.0608,-0.0684,0)\ \mathrm{m^3\,s^{-3}}\). A scalar \(d_t=0.006498\) instead gives \((0,-0.06498,0)\).</p>
 <p>The generalized flux has a nonzero \(x\) component despite zero \(x\) gradient. Its full dot product \(\nabla k\cdot\boldsymbol J=-0.684\leq0\), consistent with PSD diffusion. A cross-direction component is not evidence of an up-gradient flux relative to the full gradient. The actual third moment can have behaviors beyond this model, including countergradient transport; the PSD gradient model still imposes a restriction.</p></div>
 <p>Flux and diffusion rate must again be separated. Even in a scalar model, a zero gradient at one point only makes that point's corresponding flux zero; its derivative may be nonzero. For \(f(x)=f_0+x^2\) and constant diffusivity \(d&gt;0\), the flux \(-df'\) is zero at \(x=0\), but the diffusion contribution \(df''=2d\) is nonzero. If a gradient vanishes throughout a neighborhood, its associated scalar directional divergence vanishes there. This is the qualified version of the source's zero-gradient argument.</p>
@@ -89,7 +89,7 @@ E_{ij}^{m}=\frac23\epsilon\,\delta_{ij}.
 \]</div>
 <p>The factor \(2/3\) follows from the chosen pseudo-dissipation definition and the stress-equation factor 2; replacing it by \(1/3\) would halve the scalar energy destruction after taking half the trace. Small-scale gradient isotropy is a modeling premise, not a conclusion from anisotropic large-scale covariances. It does not require all three full velocity variances to be equal. Conversely equality of three variances alone would not prove isotropy of the derivative correlations.</p>
 <p>Near a smooth wall the exact leading tensor instead retains \(E_{11}=2\nu\mathbb E[a_1^2]\), \(E_{33}=2\nu\mathbb E[c_1^2]\), while \(E_{22}\to0\); an \(E_{13}\) term may also survive. Thus (16.3) does not automatically have the correct physical wall component structure. Strong strain, insufficient scale separation, rotation or other effects also require examining the gradient-isotropy premise rather than using a universal assertion that all small scales are exactly isotropic.</p>
-<div class="worked"><h3>A nonnegative destruction tensor need not preserve a covariance by itself</h3>
+<div class="worked"><h3 id="detail-05">A nonnegative destruction tensor need not preserve a covariance by itself</h3>
 <p>Suppose \(R=\mathrm{diag}(0,0.5,0.5)\) at an instant, with positive scalar \(\epsilon=0.5\) in consistent units. Retaining only \(dR/dt=-(2/3)\epsilon I\) makes the initially zero first variance negative immediately; a \(0.01\)-second step gives \(-0.00333333\). The exact reduced source itself points out of the PSD set.</p>
 <p>This is not a claimed physically admissible isolated turbulent evolution. It shows that a source's own PSD is not the same as preservation of PSD after subtracting it from another matrix. Pressure–strain, production, transport and model constraints must act consistently at the boundary of the realizable set. Adding six transport equations is not enough to guarantee that result.</p></div>
 
@@ -113,72 +113,104 @@ k=\frac12R_{ii},\quad
 <h2 id="reproduce">16.7 Reproduce the reduced stress checks</h2>
 <p>Run <a href="code/ch16_stress_transport.py">ch16_stress_transport.py</a> with standard Python 3. The program evaluates exact-form production, an analytically solved production-only covariance evolution, a cross-direction flux and a conservative two-cell matrix update. Observed outputs below are checked against the listing. Their deliberately limited scope is part of the experiment.</p>
 <pre data-run="code/ch16_stress_transport.py"><code>&quot;&quot;&quot;Restricted second-moment evolution, diffusion and trace checks.&quot;&quot;&quot;
+
 from math import sqrt
 
-R=[[.25,-.08,0.],[-.08,.09,0.],[0.,0.,.04]]
-shear=100.
-A=[[0.,shear,0.],[0.,0.,0.],[0.,0.,0.]]
-P=[[-sum(A[i][l]*R[l][j]+R[i][l]*A[j][l] for l in range(3))
-    for j in range(3)] for i in range(3)]
-k=sum(R[i][i] for i in range(3))/2
-scalar=-sum(R[i][j]*A[i][j] for i in range(3) for j in range(3))
-print(&quot;production matrix:&quot;,P)
-print(f&quot;half production trace and scalar contraction: &quot;
-      f&quot;{sum(P[i][i] for i in range(3))/2:.8f}, {scalar:.8f}&quot;)
+R = [[0.25, -0.08, 0.0], [-0.08, 0.09, 0.0], [0.0, 0.0, 0.04]]
+shear = 100.0
+A = [[0.0, shear, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+P = [
+    [
+        -sum(A[i][ell] * R[ell][j] + R[i][ell] * A[j][ell] for ell in range(3))
+        for j in range(3)
+    ]
+    for i in range(3)
+]
+k = sum(R[i][i] for i in range(3)) / 2
+scalar = -sum(R[i][j] * A[i][j] for i in range(3) for j in range(3))
+print(&quot;production matrix:&quot;, P)
+print(
+    f&quot;half production trace and scalar contraction: &quot;
+    f&quot;{sum((P[i][i] for i in range(3))) / 2:.8f}, {scalar:.8f}&quot;
+)
 
 # Exact production-only evolution R(t)=F R(0) F^T for nilpotent A.
-t=.01
-b=shear*t
-R11=R[0][0]-2*b*R[0][1]+b*b*R[1][1]
-R12=R[0][1]-b*R[1][1]
-det0=R[0][0]*R[1][1]-R[0][1]**2
-det1=R11*R[1][1]-R12**2
+t = 0.01
+b = shear * t
+R11 = R[0][0] - 2 * b * R[0][1] + b * b * R[1][1]
+R12 = R[0][1] - b * R[1][1]
+det0 = R[0][0] * R[1][1] - R[0][1] ** 2
+det1 = R11 * R[1][1] - R12**2
 print(f&quot;exact shear production t=.01: R11={R11:.8f}, R12={R12:.8f}&quot;)
-print(f&quot;planar covariance determinant initial and final: {det0:.8f}, {det1:.8f}&quot;)
-assert abs(det0-det1)&lt;1e-14
+print(
+    f&quot;planar covariance determinant initial and final: {det0:.8f}, {det1:.8f}&quot;
+)
+assert abs(det0 - det1) &lt; 1e-14
 
 # A large single Euler step can violate PSD even for this PSD-preserving ODE.
-b=2.
-exact_min=(2+b*b-sqrt((b*b)**2+4*b*b))/2
-euler_min=1-b
-print(f&quot;unit-covariance shear-step minimum eigenvalues: exact={exact_min:.8f}, Euler={euler_min:.8f}&quot;)
-assert exact_min&gt;0&gt;euler_min
+b = 2.0
+exact_min = (2 + b * b - sqrt((b * b) ** 2 + 4 * b * b)) / 2
+euler_min = 1 - b
+print(
+    f&quot;unit-covariance shear-step minimum eigenvalues: &quot;
+    f&quot;exact={exact_min:.8f}, Euler={euler_min:.8f}&quot;
+)
+assert exact_min &gt; 0 &gt; euler_min
 
-epsilon,CD,Cmu,sigma=.5,.2,.09,1.
-D=[[CD*k/epsilon*entry for entry in row] for row in R]
-gradient=[0.,10.,0.]
-flux=[-sum(D[i][j]*gradient[j] for j in range(3)) for i in range(3)]
-dot=sum(gradient[i]*flux[i] for i in range(3))
-isotropic=Cmu*k*k/epsilon/sigma
-print(&quot;anisotropic diffusivity matrix:&quot;,D)
-print(&quot;energy flux with zero x-gradient:&quot;,flux)
+epsilon, CD, Cmu, sigma = 0.5, 0.2, 0.09, 1.0
+D = [[CD * k / epsilon * entry for entry in row] for row in R]
+gradient = [0.0, 10.0, 0.0]
+flux = [-sum(D[i][j] * gradient[j] for j in range(3)) for i in range(3)]
+dot = sum(gradient[i] * flux[i] for i in range(3))
+isotropic = Cmu * k * k / epsilon / sigma
+print(&quot;anisotropic diffusivity matrix:&quot;, D)
+print(&quot;energy flux with zero x-gradient:&quot;, flux)
 print(f&quot;gradient dot anisotropic flux: {dot:.8f}&quot;)
-print(f&quot;isotropic x and y flux: {0.:.8f}, {-isotropic*gradient[1]:.8f}&quot;)
-assert dot&lt;=0 and flux[0]!=0
+print(f&quot;isotropic x and y flux: {0.0:.8f}, {-isotropic * gradient[1]:.8f}&quot;)
+assert dot &lt;= 0 and flux[0] != 0
 
-# Freeze one common positive face diffusivity and diffuse all matrix components.
-left=R
-right=[[.16,.02,0.],[.02,.08,0.],[0.,0.,.06]]
-face_diff=.003
-dx,dt=.1,.5
-theta=dt*face_diff/dx**2
-updated=[[[(1-theta)*left[i][j]+theta*right[i][j] for j in range(3)]
-          for i in range(3)],
-         [[theta*left[i][j]+(1-theta)*right[i][j] for j in range(3)]
-          for i in range(3)]]
-error=max(abs(updated[0][i][j]+updated[1][i][j]-left[i][j]-right[i][j])
-          for i in range(3) for j in range(3))
-print(f&quot;two-cell common diffusion weight: {theta:.8f}; conservation error: {error:.3e}&quot;)
-print(f&quot;initial and final total trace: &quot;
-      f&quot;{sum(left[i][i]+right[i][i] for i in range(3)):.8f}, &quot;
-      f&quot;{sum(updated[0][i][i]+updated[1][i][i] for i in range(3)):.8f}&quot;)
-assert 0&lt;=theta&lt;=1 and error&lt;1e-14
+# Freeze one common positive face diffusivity and diffuse all matrix
+# components.
+left = R
+right = [[0.16, 0.02, 0.0], [0.02, 0.08, 0.0], [0.0, 0.0, 0.06]]
+face_diff = 0.003
+dx, dt = 0.1, 0.5
+theta = dt * face_diff / dx**2
+updated = [
+    [
+        [(1 - theta) * left[i][j] + theta * right[i][j] for j in range(3)]
+        for i in range(3)
+    ],
+    [
+        [theta * left[i][j] + (1 - theta) * right[i][j] for j in range(3)]
+        for i in range(3)
+    ],
+]
+error = max(
+    abs(updated[0][i][j] + updated[1][i][j] - left[i][j] - right[i][j])
+    for i in range(3)
+    for j in range(3)
+)
+print(
+    f&quot;two-cell common diffusion weight: {theta:.8f}; conservation &quot;
+    f&quot;error: {error:.3e}&quot;
+)
+print(
+    f&quot;initial and final total trace: &quot;
+    f&quot;{sum((left[i][i] + right[i][i] for i in range(3))):.8f}, &quot;
+    f&quot;{sum((updated[0][i][i] + updated[1][i][i] for i in range(3))):.8f}&quot;
+)
+assert 0 &lt;= theta &lt;= 1 and error &lt; 1e-14
 
-# Tensor destruction trace convention and a deliberately incomplete reduced source.
-e_tensor=[2*epsilon/3]*3
-print(f&quot;isotropic destruction half trace: {sum(e_tensor)/2:.8f}&quot;)
-dt=.01
-print(f&quot;zero initial directional variance under isolated isotropic sink: {-dt*e_tensor[0]:.8f}&quot;)
+# Tensor destruction trace convention and a deliberately incomplete reduced
+# source.
+e_tensor = [2 * epsilon / 3] * 3
+print(f&quot;isotropic destruction half trace: {sum(e_tensor) / 2:.8f}&quot;)
+dt = 0.01
+print(
+    f&quot;zero initial directional variance under isolated isotropic sink: &quot;
+    f&quot;{-dt * e_tensor[0]:.8f}&quot;
+)
 </code></pre>
 <pre class="output">production matrix: [[16.0, -9.0, -0.0], [-9.0, -0.0, -0.0], [-0.0, -0.0, -0.0]]
 half production trace and scalar contraction: 8.00000000, 8.00000000

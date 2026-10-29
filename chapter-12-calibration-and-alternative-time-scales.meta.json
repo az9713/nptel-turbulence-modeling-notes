@@ -1,8 +1,8 @@
 {
   "chapter": 12,
   "title": "12. Calibration and alternative turbulence time scales",
-  "status": "Accepted in two independent scientific reviews",
-  "authored_body_sha256": "852ad756c402e55984ca8caf772c8ba6419e9699d4f89505de43c844621e69bb",
+  "status": "Revised; fresh independent compliance review pending",
+  "authored_body_sha256": "a6c4825a6c8e3295ff5a869173930fdaa39bef6e9e2b92f35526f5f98c1e3e14",
   "recordings": [
     {
       "playlist_position": 16,
@@ -175,57 +175,9 @@
   "executable_listings": 1,
   "source_reading": "Complete normalized caption text read sequentially before drafting",
   "independent_review": {
-    "status": "accepted",
-    "accepted_body_sha256": "852ad756c402e55984ca8caf772c8ba6419e9699d4f89505de43c844621e69bb",
-    "rounds": [
-      {
-        "round": 1,
-        "report_identifier": "ch12-r1.md",
-        "independent_of_author": true,
-        "blocking": 0,
-        "major": 0,
-        "minor": 0,
-        "kind": "Independent AI scientific review",
-        "body_sha256": "852ad756c402e55984ca8caf772c8ba6419e9699d4f89505de43c844621e69bb",
-        "reviewer_id": "independent-course-peer",
-        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
-        "accepted": true
-      },
-      {
-        "round": 2,
-        "report_identifier": "ch12-r2.md",
-        "independent_of_author": true,
-        "blocking": 0,
-        "major": 0,
-        "minor": 0,
-        "kind": "Independent AI scientific review",
-        "body_sha256": "852ad756c402e55984ca8caf772c8ba6419e9699d4f89505de43c844621e69bb",
-        "reviewer_id": "lead-coordinator",
-        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
-        "accepted": true
-      }
-    ],
-    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance",
-    "repair_history": [
-      {
-        "body_sha256": "c9fc0636ccaf93c01121beb535852fb30c3fab6f00f722008417959c53886d4e",
-        "round": 1,
-        "reviewer_id": "independent-course-peer",
-        "major": 1,
-        "blocking": 0,
-        "finding": "Incorrect large-eta RNG asymptote",
-        "closure": "Two exact prose repairs; original report contains focused acceptance of current digest"
-      },
-      {
-        "body_sha256": "c9fc0636ccaf93c01121beb535852fb30c3fab6f00f722008417959c53886d4e",
-        "round": 2,
-        "reviewer_id": "lead-coordinator",
-        "minor": 1,
-        "blocking": 0,
-        "finding": "Same large-eta RNG asymptote",
-        "closure": "Exact-diff/current-digest closure appended to original report"
-      }
-    ]
+    "status": "pending-compliance-review",
+    "accepted": false,
+    "prior_accepted_body_sha256": "852ad756c402e55984ca8caf772c8ba6419e9699d4f89505de43c844621e69bb"
   },
   "limitations": [
     "Complete captions36–39 read; no full audiovisual or instructor-data digitization",
@@ -234,5 +186,61 @@
     "One-equation length sensitivity is a prescribed-shear model problem, not arbitrary-flow monotonicity or empirical prediction",
     "Quotient transformation derived where k and epsilon are positive; singular wall handled by separate limiting/model considerations",
     "Wilcox1988 kept separate from1998/2006/SST and LRN variants; no full wall-resolved turbulent simulation performed"
-  ]
+  ],
+  "pre_compliance_review": {
+    "body_sha256": "852ad756c402e55984ca8caf772c8ba6419e9699d4f89505de43c844621e69bb",
+    "review": {
+      "status": "accepted",
+      "accepted_body_sha256": "852ad756c402e55984ca8caf772c8ba6419e9699d4f89505de43c844621e69bb",
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch12-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "852ad756c402e55984ca8caf772c8ba6419e9699d4f89505de43c844621e69bb",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch12-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "852ad756c402e55984ca8caf772c8ba6419e9699d4f89505de43c844621e69bb",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance",
+      "repair_history": [
+        {
+          "body_sha256": "c9fc0636ccaf93c01121beb535852fb30c3fab6f00f722008417959c53886d4e",
+          "round": 1,
+          "reviewer_id": "independent-course-peer",
+          "major": 1,
+          "blocking": 0,
+          "finding": "Incorrect large-eta RNG asymptote",
+          "closure": "Two exact prose repairs; original report contains focused acceptance of current digest"
+        },
+        {
+          "body_sha256": "c9fc0636ccaf93c01121beb535852fb30c3fab6f00f722008417959c53886d4e",
+          "round": 2,
+          "reviewer_id": "lead-coordinator",
+          "minor": 1,
+          "blocking": 0,
+          "finding": "Same large-eta RNG asymptote",
+          "closure": "Exact-diff/current-digest closure appended to original report"
+        }
+      ]
+    }
+  }
 }

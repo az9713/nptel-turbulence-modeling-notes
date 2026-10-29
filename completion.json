@@ -1,17 +1,17 @@
 {
-  "passed": true,
-  "complete": true,
-  "stage": "Complete reviewed textbook published; final release records checked against actual evidence",
-  "scope": "Completed original textbook and publication: all77 complete source texts read and mapped; all25 exact chapter bodies accepted in two independent AI scientific reviews; code and figure generators executed; full offline/live reader and strict public inventory checked; isolated committed source-free reproduction and served-byte/HEAD verification performed. Stated limitations apply.",
-  "publication": true,
-  "local_release_checks": true,
+  "passed": false,
+  "complete": false,
+  "stage": "Fresh compliance audit and independent repair reviews in progress",
+  "scope": "New compliance pass preserves prior evidence, audits complete text and first-use definitions, repairs code and pedagogy, runs fresh skill helpers and requires new independent focused closure and a fresh installed committed source-free reproduction before publication.",
+  "publication": false,
+  "local_release_checks": false,
   "source_reading_complete": true,
   "chapter_drafting_complete": true,
   "limitations": [
     "Independent AI reviews do not constitute human expert certification",
     "No comprehensive audiovisual, formal proof or experimental turbulence-model validation"
   ],
-  "scientific_review_complete": true,
+  "scientific_review_complete": false,
   "chapter_count": 25,
   "recording_count": 77,
   "target_repository": "https://github.com/az9713/nptel-turbulence-modeling-notes",
@@ -43,5 +43,11 @@
       "finding": "Independent coordinator found an obsolete passed:false and bootstrap scope retained beside final complete/publication flags",
       "repair": "Set passed:true from actual completed checks and replace obsolete scope; preserve every core byte; rebind and reverify final served payload"
     }
-  ]
+  ],
+  "previous_release": {
+    "commit": "34db682e33c92a27191502746229ed246b8b2ab6",
+    "complete": true,
+    "publication": true,
+    "scope": "Historical prior publication; does not certify the fresh compliance repair payload."
+  }
 }

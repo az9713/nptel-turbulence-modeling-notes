@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="90c6376ae2fdff85566c9f640f65de6efd3adc8a94d76ce810b58aecf406cdf0">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="113e45ab13cecb065017abc4d952d59f9068934910fe8b90fdd545e6409a457d">
 <title>18. Scales, cascades and direct numerical simulation · Turbulence Modeling</title><link rel="stylesheet" href="assets/book.css">
 <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{pageReady:()=>MathJax.startup.defaultPageReady().then(()=>{document.documentElement.dataset.mathReady='true';})}};</script>
 <script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Turbulence Modeling · NPTEL IIT Madras</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="book-overview.html">Study route</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
-<div class="layout"><aside class="toc" id="chapter-toc"><h2>On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
-<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>18. Scales, cascades and direct numerical simulation</h1>
+<div class="layout"><aside class="toc" id="chapter-toc"><h2 id="detail-01">On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1 id="detail-02">18. Scales, cascades and direct numerical simulation</h1>
 <p class="lead">Removing a turbulence model does not remove the need to justify a calculation. Direct numerical simulation replaces closure assumptions by a demanding resolution problem: the domain must admit the large structures, the discretization must represent the dissipative motions, and the observation interval must support the requested statistics. Scale estimates help design that calculation. They are conditional physical arguments, not certificates that a particular mesh or sampled mean is accurate.</p>
 <div class="learning-map"><strong>From an energy budget to a simulation design.</strong> We derive three microscales from viscosity and dissipation, retain the coefficient hidden in integral-scale estimates, and connect spectral energy to viscous loss. Then we test what the DNS label requires through a grid-cost calculation, an exactly diffusing mode, a periodic-domain correlation and a correlated-sample calculation. Our recurring wall-flow case now needs a domain and a statistical experiment as well as a constitutive choice.</div>
 <p class="source-note">Complete captions60–63 were read in numbered order. They move from Kolmogorov hypotheses to DNS resolution, numerics, domain size, startup and statistical sampling. The rewrite explicitly corrects the identification of an inertial range with irrotational flow, the identification of the Kolmogorov length with continuum breakdown, and a grid-count arithmetic slip. Numerical instability is distinguished from a prescribed physical perturbation. Unavailable source plots are discussed qualitatively without invented data.</p>
@@ -89,58 +89,86 @@ u_\eta=(\nu\epsilon)^{1/4}.
 
 <h2 id="laboratory">18.8 Executed design checks</h2>
 <p>The standard-library program below reproduces the scale, arithmetic, anisotropic-grid, spatial-error, periodic-covariance and sampling values above. It includes no turbulence solver, external data download or model calibration. Its exact Fourier-mode time evolution isolates the spatial Laplacian error; it is not a demonstration that a three-dimensional DNS has passed resolution tests.</p>
-<pre data-run="code/ch18_scales_and_dns.py"><code>&quot;&quot;&quot;Restricted scale, mode-resolution, domain and sampling checks; no turbulent DNS.&quot;&quot;&quot;
+<pre data-run="code/ch18_scales_and_dns.py"><code>&quot;&quot;&quot;Restricted scale, mode-resolution, domain and sampling checks; no \
+turbulent DNS.&quot;&quot;&quot;
+
 from math import cos, exp, log, pi, sin, sqrt
 
 nu, eps, speed, length = 1.5e-5, 0.5, 1.0, 0.2
-eta = (nu**3 / eps)**0.25
+eta = (nu**3 / eps) ** 0.25
 tau = sqrt(nu / eps)
-ueta = (nu * eps)**0.25
+ueta = (nu * eps) ** 0.25
 re = speed * length / nu
 ce = eps * length / speed**3
-print(f&quot;Kolmogorov length m, time s, speed m/s: {eta:.9f}, {tau:.9f}, {ueta:.9f}&quot;)
+print(
+    f&quot;Kolmogorov length m, time s, speed m/s: {eta:.9f}, {tau:.9f}, {ueta:.9f}&quot;
+)
 print(f&quot;microscale Reynolds number: {ueta * eta / nu:.8f}&quot;)
-print(f&quot;integral Reynolds number and dissipation coefficient: {re:.8f}, {ce:.8f}&quot;)
-assert abs(eta / length - ce**(-0.25) * re**(-0.75)) &lt; 1e-15
+print(
+    f&quot;integral Reynolds number and dissipation coefficient: {re:.8f}, {ce:.8f}&quot;
+)
+assert abs(eta / length - ce ** (-0.25) * re ** (-0.75)) &lt; 1e-15
 for reynolds in (1e4, 1e6):
     n = reynolds**0.75
-    print(f&quot;Re={reynolds:.0f}: points per direction={n:.4f}, total={n**3:.8e}, four-field bytes={32*n**3:.8e}&quot;)
-print(f&quot;unit speed/unit length with stipulated air viscosity: Re={1/nu:.8f}&quot;)
-dx, dy, dz = 8*eta, .5*eta, .5*eta
-print(f&quot;anisotropic grid geometric criterion and maximum ratio: {(dx*dy*dz)**(1/3)/(pi*eta):.8f}, {max(dx,dy,dz)/eta:.8f}&quot;)
-print(f&quot;eta inflation if epsilon is underestimated by factor16: {16**0.25:.8f}&quot;)
+    print(
+        f&quot;Re={reynolds:.0f}: points per direction={n:.4f}, &quot;
+        f&quot;total={n ** 3:.8e}, four-field bytes={32 * n ** 3:.8e}&quot;
+    )
+print(f&quot;unit speed/unit length with stipulated air viscosity: Re={1 / nu:.8f}&quot;)
+dx, dy, dz = 8 * eta, 0.5 * eta, 0.5 * eta
+print(
+    f&quot;anisotropic grid geometric criterion and maximum ratio: &quot;
+    f&quot;{(dx * dy * dz) ** (1 / 3) / (pi * eta):.8f}, &quot;
+    f&quot;{max(dx, dy, dz) / eta:.8f}&quot;
+)
+print(
+    f&quot;eta inflation if epsilon is underestimated by factor16: {16 ** 0.25:.8f}&quot;
+)
 
 # Exact heat-equation Fourier mode versus a centered spatial Laplacian.
-viscosity, wave, time = .01, 6, 1.0
+viscosity, wave, time = 0.01, 6, 1.0
 exact = exp(-viscosity * wave**2 * time)
 errors = []
 for n in (32, 64, 128):
-    h = 2*pi/n
-    discrete_wave_squared = 4*sin(wave*h/2)**2/h**2
-    semi_discrete = exp(-viscosity*discrete_wave_squared*time)
-    errors.append(abs(semi_discrete-exact))
-    print(f&quot;diffusing mode N={n}: amplitude={semi_discrete:.8f}, error={errors[-1]:.8e}&quot;)
-print(f&quot;last spatial refinement ratio: {errors[-2]/errors[-1]:.8f}&quot;)
-assert 3.9 &lt; errors[-2]/errors[-1] &lt; 4.1
+    h = 2 * pi / n
+    discrete_wave_squared = 4 * sin(wave * h / 2) ** 2 / h**2
+    semi_discrete = exp(-viscosity * discrete_wave_squared * time)
+    errors.append(abs(semi_discrete - exact))
+    print(
+        f&quot;diffusing mode N={n}: amplitude={semi_discrete:.8f}, &quot;
+        f&quot;error={errors[-1]:.8e}&quot;
+    )
+print(f&quot;last spatial refinement ratio: {errors[-2] / errors[-1]:.8f}&quot;)
+assert 3.9 &lt; errors[-2] / errors[-1] &lt; 4.1
+
 
 # Periodized exponential covariance: normalized and positive definite.
 def periodic_corr(separation, box, corr_length):
-    return (exp(-separation/corr_length) + exp(-(box-separation)/corr_length))/(1+exp(-box/corr_length))
+    return (
+        exp(-separation / corr_length) + exp(-(box - separation) / corr_length)
+    ) / (1 + exp(-box / corr_length))
+
 
 for box in (4.0, 12.0):
-    print(f&quot;periodic covariance box/correlation length={box:.0f}: half-box correlation={periodic_corr(box/2,box,1):.8f}&quot;)
+    print(
+        f&quot;periodic covariance box/correlation length={box:.0f}: &quot;
+        f&quot;half-box correlation={periodic_corr(box / 2, box, 1):.8f}&quot;
+    )
 
 # Exact variance of the average for stationary unit-variance AR(1) samples.
-n, rho = 1000, .99
-factor = 1 + 2*sum((1-j/n)*rho**j for j in range(1,n))
-print(f&quot;1000 correlated samples: effective count={n/factor:.8f}, mean standard deviation={sqrt(factor/n):.8f}&quot;)
-print(f&quot;exponential correlation below .05 requires lag/tc={-log(.05):.8f}&quot;)
+n, rho = 1000, 0.99
+factor = 1 + 2 * sum((1 - j / n) * rho**j for j in range(1, n))
+print(
+    f&quot;1000 correlated samples: effective count={n / factor:.8f}, mean &quot;
+    f&quot;standard deviation={sqrt(factor / n):.8f}&quot;
+)
+print(f&quot;exponential correlation below .05 requires lag/tc={-log(0.05):.8f}&quot;)
 
 # A prescribed divergence-free periodic perturbation, not grid noise.
-x, y, amplitude = .4, .7, .1
-du_dx = amplitude*cos(x)*cos(y)
-dv_dy = -amplitude*cos(x)*cos(y)
-print(f&quot;analytic startup perturbation divergence: {du_dx+dv_dy:.3e}&quot;)
+x, y, amplitude = 0.4, 0.7, 0.1
+du_dx = amplitude * cos(x) * cos(y)
+dv_dy = -amplitude * cos(x) * cos(y)
+print(f&quot;analytic startup perturbation divergence: {du_dx + dv_dy:.3e}&quot;)
 </code></pre>
 <pre class="output">Kolmogorov length m, time s, speed m/s: 0.000286633, 0.005477226, 0.052331757
 microscale Reynolds number: 1.00000000

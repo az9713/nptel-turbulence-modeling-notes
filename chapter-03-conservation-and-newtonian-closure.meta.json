@@ -1,8 +1,8 @@
 {
   "chapter": 3,
   "title": "3. Conservation laws and Newtonian closure",
-  "status": "Accepted in two independent scientific reviews",
-  "authored_body_sha256": "8d3788c61e44eeb4f9c2415a9e596897687cf5719cc36f20ea01371240647138",
+  "status": "Revised; fresh independent compliance review pending",
+  "authored_body_sha256": "491585bb53116a93e737da1ce876770c9b186b33175bda061a90d957d5ead43c",
   "recordings": [
     {
       "playlist_position": 57,
@@ -134,55 +134,9 @@
   "executable_listings": 1,
   "source_reading": "Complete normalized caption text read sequentially before drafting",
   "independent_review": {
-    "status": "accepted",
-    "accepted_body_sha256": "8d3788c61e44eeb4f9c2415a9e596897687cf5719cc36f20ea01371240647138",
-    "rounds": [
-      {
-        "round": 1,
-        "report_identifier": "ch03-r1.md",
-        "independent_of_author": true,
-        "kind": "Independent AI scientific review",
-        "reviewer_role": "Coordinating reviewer",
-        "body_sha256": "7846a344fe7e0bbe28fbcc58c71f364a717912b3bc421eb40b2fbfeb96057440",
-        "blocking": 0,
-        "major": 0,
-        "minor": 1,
-        "verdict": "Notation repair required",
-        "repair": "M1: preserve V_p consistently in three expressions",
-        "reviewer_id": "lead-coordinator",
-        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
-        "accepted": false
-      },
-      {
-        "round": 1,
-        "report_identifier": "ch03-r1-closure.md",
-        "independent_of_author": true,
-        "kind": "Original R1 reviewer repair closure",
-        "body_sha256": "8d3788c61e44eeb4f9c2415a9e596897687cf5719cc36f20ea01371240647138",
-        "blocking": 0,
-        "major": 0,
-        "minor": 0,
-        "verdict": "R1 repair closed at current digest",
-        "reviewer_id": "lead-coordinator",
-        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
-        "accepted": true
-      },
-      {
-        "round": 2,
-        "report_identifier": "ch03-r2.md",
-        "independent_of_author": true,
-        "kind": "Independent AI scientific review",
-        "body_sha256": "8d3788c61e44eeb4f9c2415a9e596897687cf5719cc36f20ea01371240647138",
-        "blocking": 0,
-        "major": 0,
-        "minor": 0,
-        "verdict": "Accepted current digest",
-        "reviewer_id": "independent-course-peer",
-        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
-        "accepted": true
-      }
-    ],
-    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+    "status": "pending-compliance-review",
+    "accepted": false,
+    "prior_accepted_body_sha256": "8d3788c61e44eeb4f9c2415a9e596897687cf5719cc36f20ea01371240647138"
   },
   "limitations": [
     "Complete caption reading but no full audiovisual/board inspection",
@@ -190,5 +144,59 @@
     "Exact parallel solutions are not transition or turbulence predictions",
     "Pressure Poisson topic is introduced in source order, with its formal derivation deferred until the required closure is available",
     "Thermal closure, independent couple stresses and non-Newtonian memory are outside this chapter"
-  ]
+  ],
+  "pre_compliance_review": {
+    "body_sha256": "8d3788c61e44eeb4f9c2415a9e596897687cf5719cc36f20ea01371240647138",
+    "review": {
+      "status": "accepted",
+      "accepted_body_sha256": "8d3788c61e44eeb4f9c2415a9e596897687cf5719cc36f20ea01371240647138",
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch03-r1.md",
+          "independent_of_author": true,
+          "kind": "Independent AI scientific review",
+          "reviewer_role": "Coordinating reviewer",
+          "body_sha256": "7846a344fe7e0bbe28fbcc58c71f364a717912b3bc421eb40b2fbfeb96057440",
+          "blocking": 0,
+          "major": 0,
+          "minor": 1,
+          "verdict": "Notation repair required",
+          "repair": "M1: preserve V_p consistently in three expressions",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": false
+        },
+        {
+          "round": 1,
+          "report_identifier": "ch03-r1-closure.md",
+          "independent_of_author": true,
+          "kind": "Original R1 reviewer repair closure",
+          "body_sha256": "8d3788c61e44eeb4f9c2415a9e596897687cf5719cc36f20ea01371240647138",
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "verdict": "R1 repair closed at current digest",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch03-r2.md",
+          "independent_of_author": true,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "8d3788c61e44eeb4f9c2415a9e596897687cf5719cc36f20ea01371240647138",
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "verdict": "Accepted current digest",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+    }
+  }
 }

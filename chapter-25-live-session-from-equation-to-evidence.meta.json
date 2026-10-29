@@ -1,8 +1,8 @@
 {
   "chapter": 25,
   "title": "25. Live session: from an equation to trustworthy evidence",
-  "status": "Accepted in two independent scientific reviews",
-  "authored_body_sha256": "d68729670d0967b50f516c94a3d7726ff2044e71118082335d2a014e3740b188",
+  "status": "Revised; fresh independent compliance review pending",
+  "authored_body_sha256": "f9d72cda3baca34e2d537e8694e6d1b782830bbcd0e886f2246a7294d2617980",
   "recordings": [
     {
       "playlist_position": 76,
@@ -134,37 +134,9 @@
   "executable_listings": 1,
   "source_reading": "Complete local machine ASR read sequentially before drafting; fallible recognition and overlap retained",
   "independent_review": {
-    "status": "accepted",
-    "accepted_body_sha256": "d68729670d0967b50f516c94a3d7726ff2044e71118082335d2a014e3740b188",
-    "rounds": [
-      {
-        "round": 1,
-        "report_identifier": "ch25-r1.md",
-        "accepted": true,
-        "reviewer_id": "independent-course-peer",
-        "independent_of_author": true,
-        "blocking": 0,
-        "major": 0,
-        "minor": 0,
-        "kind": "Independent AI scientific review",
-        "body_sha256": "d68729670d0967b50f516c94a3d7726ff2044e71118082335d2a014e3740b188",
-        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript"
-      },
-      {
-        "round": 2,
-        "report_identifier": "ch25-r2.md",
-        "accepted": true,
-        "reviewer_id": "lead-coordinator",
-        "independent_of_author": true,
-        "blocking": 0,
-        "major": 0,
-        "minor": 0,
-        "kind": "Independent AI scientific review",
-        "body_sha256": "d68729670d0967b50f516c94a3d7726ff2044e71118082335d2a014e3740b188",
-        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript"
-      }
-    ],
-    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+    "status": "pending-compliance-review",
+    "accepted": false,
+    "prior_accepted_body_sha256": "d68729670d0967b50f516c94a3d7726ff2044e71118082335d2a014e3740b188"
   },
   "limitations": [
     "Complete local small.en machine ASR read, including overlapping chunks; not publisher captions or full audio/board verification",
@@ -211,5 +183,41 @@
       "end": 2991,
       "disposition": "Closing pauses, thanks and recording tail; no substantive instruction inferred"
     }
-  ]
+  ],
+  "pre_compliance_review": {
+    "body_sha256": "d68729670d0967b50f516c94a3d7726ff2044e71118082335d2a014e3740b188",
+    "review": {
+      "status": "accepted",
+      "accepted_body_sha256": "d68729670d0967b50f516c94a3d7726ff2044e71118082335d2a014e3740b188",
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch25-r1.md",
+          "accepted": true,
+          "reviewer_id": "independent-course-peer",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "d68729670d0967b50f516c94a3d7726ff2044e71118082335d2a014e3740b188",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript"
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch25-r2.md",
+          "accepted": true,
+          "reviewer_id": "lead-coordinator",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "d68729670d0967b50f516c94a3d7726ff2044e71118082335d2a014e3740b188",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript"
+        }
+      ],
+      "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+    }
+  }
 }

@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="593c5b9deda629c0f558bcd40136785be4b065527ffed20a0ce475a13fa48287">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="2e0f33d847fe7d3419d0a5163302860d7bf9114928e884b62aa85a64e1f99173">
 <title>5. Exact Reynolds-stress transport · Turbulence Modeling</title><link rel="stylesheet" href="assets/book.css">
 <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{pageReady:()=>MathJax.startup.defaultPageReady().then(()=>{document.documentElement.dataset.mathReady='true';})}};</script>
 <script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Turbulence Modeling · NPTEL IIT Madras</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="book-overview.html">Study route</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
-<div class="layout"><aside class="toc" id="chapter-toc"><h2>On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
-<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>5. Exact Reynolds-stress transport</h1>
+<div class="layout"><aside class="toc" id="chapter-toc"><h2 id="detail-01">On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1 id="detail-02">5. Exact Reynolds-stress transport</h1>
 <p class="lead">The mean channel equation requires a fluctuating momentum flux. Deriving six equations for its six covariance components seems a natural way to avoid an assumed viscosity. The equations do reveal more physics, but they also introduce pressure correlations, velocity-gradient correlations, and third moments. Understanding their structure is essential: a divergence transports a quantity through space, a pressure-strain term redistributes component energy, and molecular action removes mechanical energy. Treating all three as one “diffusion” mechanism would hide the very information a stress model is meant to retain.</p>
 <p class="source-note">Lessons 12–13 rearrange the raw second-moment equation, identify its budget terms, and expose the next closure problem. The derivations below make all product-rule steps explicit. Symmetry reduces the independent component counts relative to raw array sizes. A separate analytic phase field distinguishes the commonly used pseudo-dissipation from local strain-based physical dissipation; it is a kinematic construction rather than a complete turbulent-flow solution.</p>
 
@@ -142,52 +142,70 @@ u'_ju'_\ell\partial_\ell u'_i
 <h2 id="implementation">5.9 Execute production, trace, and dissipation checks</h2>
 <p>The standard-library program constructs production by its indexed definition, verifies its energy trace, and checks trace-free redistribution bookkeeping. It then evaluates gradients of the four-phase field and computes both dissipation definitions directly. The double-divergence correction is computed independently from the analytic covariance. A periodic average checks cancellation of that correction. It prints results and has no file or network effects. See <a href="code/ch05_stress_budget.py">code/ch05_stress_budget.py</a>.</p>
 <pre data-run="code/ch05_stress_budget.py"><code>&quot;&quot;&quot;Exact algebraic and kinematic budget checks, not a complete flow solver.&quot;&quot;&quot;
+
 from math import cos, isclose, pi, sin
 
-cov = [[4., -1., 0.], [-1., 1., 0.], [0., 0., .25]]
-mean_gradient = [[0., 2., 0.], [0., 0., 0.], [0., 0., 0.]]
-production = [[-sum(cov[j][l] * mean_gradient[i][l]
-                    + cov[i][l] * mean_gradient[j][l]
-                    for l in range(3)) for j in range(3)] for i in range(3)]
+cov = [[4.0, -1.0, 0.0], [-1.0, 1.0, 0.0], [0.0, 0.0, 0.25]]
+mean_gradient = [[0.0, 2.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+production = [
+    [
+        -sum(
+            cov[j][ell] * mean_gradient[i][ell]
+            + cov[i][ell] * mean_gradient[j][ell]
+            for ell in range(3)
+        )
+        for j in range(3)
+    ]
+    for i in range(3)
+]
 tke_production = sum(production[i][i] for i in range(3)) / 2
-assert tke_production == 2.
-redistribution = [-2., 1., 1.]
-assert sum(redistribution) == 0.
-after = [value + .5 * rate for value, rate
-         in zip([4., 1., 1.], redistribution)]
-assert sum(after) == 6.
-nu, amp, wave, x = .01, 1., 1., .2
+assert tke_production == 2.0
+redistribution = [-2.0, 1.0, 1.0]
+assert sum(redistribution) == 0.0
+after = [
+    value + 0.5 * rate for value, rate in zip([4.0, 1.0, 1.0], redistribution)
+]
+assert sum(after) == 6.0
+nu, amp, wave, x = 0.01, 1.0, 1.0, 0.2
 
 
 def dissipation(y):
-    pseudo, physical = 0., 0.
-    for phase in [0., pi / 2, pi, 3 * pi / 2]:
+    pseudo, physical = 0.0, 0.0
+    for phase in [0.0, pi / 2, pi, 3 * pi / 2]:
         xx, yy = wave * x + phase, wave * y
-        gradient = [[amp * wave * cos(xx) * cos(yy),
-                     -amp * wave * sin(xx) * sin(yy)],
-                    [amp * wave * sin(xx) * sin(yy),
-                     -amp * wave * cos(xx) * cos(yy)]]
-        assert isclose(gradient[0][0] + gradient[1][1], 0., abs_tol=1e-14)
+        gradient = [
+            [amp * wave * cos(xx) * cos(yy), -amp * wave * sin(xx) * sin(yy)],
+            [amp * wave * sin(xx) * sin(yy), -amp * wave * cos(xx) * cos(yy)],
+        ]
+        assert isclose(gradient[0][0] + gradient[1][1], 0.0, abs_tol=1e-14)
         pseudo += nu * sum(value**2 for row in gradient for value in row) / 4
-        physical += 2 * nu * sum(
-            ((gradient[i][j] + gradient[j][i]) / 2)**2
-            for i in range(2) for j in range(2)) / 4
+        physical += (
+            2
+            * nu
+            * sum(
+                ((gradient[i][j] + gradient[j][i]) / 2) ** 2
+                for i in range(2)
+                for j in range(2)
+            )
+            / 4
+        )
     correction = nu * amp**2 * wave**2 * cos(2 * wave * y)
     assert isclose(physical, pseudo + correction, abs_tol=1e-14)
     return pseudo, physical, correction
 
 
-print(&#x27;production tensor:&#x27;, production)
-print(f&#x27;TKE production m2/s3: {tke_production:.6f}&#x27;)
-print(&#x27;redistribution-only diagonal after 0.5 s:&#x27;, after)
-for y in [0., pi / 2]:
+print(&quot;production tensor:&quot;, production)
+print(f&quot;TKE production m2/s3: {tke_production:.6f}&quot;)
+print(&quot;redistribution-only diagonal after 0.5 s:&quot;, after)
+for y in [0.0, pi / 2]:
     pseudo, physical, correction = dissipation(y)
-    print(f&#x27;y={y:.6f}: pseudo={pseudo:.6f}, physical={physical:.6f}, &#x27;
-          f&#x27;correction={correction:.6f}&#x27;)
-period_mean = sum(dissipation(2 * pi * i / 400)[1]
-                  for i in range(400)) / 400
+    print(
+        f&quot;y={y:.6f}: pseudo={pseudo:.6f}, physical={physical:.6f}, &quot;
+        f&quot;correction={correction:.6f}&quot;
+    )
+period_mean = sum(dissipation(2 * pi * i / 400)[1] for i in range(400)) / 400
 assert isclose(period_mean, nu * amp**2 * wave**2, abs_tol=1e-14)
-print(f&#x27;period-mean physical dissipation m2/s3: {period_mean:.6f}&#x27;)
+print(f&quot;period-mean physical dissipation m2/s3: {period_mean:.6f}&quot;)
 </code></pre>
 <pre class="output">production tensor: [[4.0, -2.0, -0.0], [-2.0, -0.0, -0.0], [-0.0, -0.0, -0.0]]
 TKE production m2/s3: 2.000000
@@ -205,13 +223,13 @@ period-mean physical dissipation m2/s3: 0.010000
 <details><summary>Solution</summary><p>Write mean advection conservatively using zero mean divergence. Opposite periodic faces cancel both advective and transport flux integrals. Half the pressure-strain trace vanishes pointwise. The remaining energy relation is \(d\int k\,dV/dt=\int(P_k-\varepsilon)\,dV\). Production and pseudo-dissipation need not vanish. Stationarity would set the left side to zero, but periodicity alone does not. The corresponding strain-based physical dissipation has the same volume integral because the correction in (5.8) is a periodic divergence.</p></details>
 <p><strong>3. A signed destruction entry.</strong> Let the only nonzero gradient column be the \(x_3\) derivative, taking vectors \(g=(1,-2,0)\) s⁻¹ and \(-g\) with equal probability. Calculate \(2\nu\mathbb E[gg^{\mathsf T}]\). Can a negative off-diagonal entry coexist with positive semidefiniteness?</p>
 <details><summary>Solution</summary><p>The tensor is \(2\nu\begin{bmatrix}1&-2&0\\-2&4&0\\0&0&0\end{bmatrix}\), because changing every sign leaves the outer product unchanged. Its 12 entry is negative. For any \(\mathbf a\), the quadratic form is \(2\nu(a_1-2a_2)^2\ge0\), so it is positive semidefinite. The opposite signed linear fields \(\mathbf u'=\pm(z,-2z,0)\), with the implied coefficient 1 s⁻¹ and \(z\) in metres, realize these zero-mean gradients and are divergence free. This local construction does not establish turbulent dynamics or boundary data. Componentwise negativity of \(-\varepsilon_{ij}\) is not its defining constraint.</p></details>
-<p><strong>4. Redistribution and positivity.</strong> Continue the constant redistribution-only rate in §5.6 for time \(t\). Find when the diagonal covariance first ceases to be positive semidefinite.</p>
+<p><strong>4. Redistribution and positivity.</strong> Continue the constant redistribution-only rate in <a class="secref" href="#redistribution">§5.6</a> for time \(t\). Find when the diagonal covariance first ceases to be positive semidefinite.</p>
 <details><summary>Solution</summary><p>The covariance is \(\operatorname{diag}(4-2t,1+t,1+t)\) in the corresponding units. For \(t\ge0\), the last two entries stay positive, while the first reaches zero at two seconds and becomes negative after that. The tensor remains positive semidefinite through \(t=2\), then fails. Its trace stays six throughout, so trace preservation alone does not guarantee realizability. A dynamic closure must respect more than total energy.</p></details>
-<p><strong>5. Equal second moments, unequal third moments.</strong> Verify distribution B in §5.8 and compare it with A. What does this demonstrate about a proposed universal local function \(M_{111}=f(U_1,R_{11})\)?</p>
+<p><strong>5. Equal second moments, unequal third moments.</strong> Verify distribution B in <a class="secref" href="#closure">§5.8</a> and compare it with A. What does this demonstrate about a proposed universal local function \(M_{111}=f(U_1,R_{11})\)?</p>
 <details><summary>Solution</summary><p>B has mean \(-2/(3\sqrt2)+\sqrt2/3=0\), second moment \((2/3)(1/2)+(1/3)2=1\), and third moment \(-(2/3)(1/(2\sqrt2))+(1/3)2\sqrt2=1/\sqrt2\). A has the same first two moments and third moment zero. A single function of those two identical inputs cannot return both third moments. This disproves an unrestricted distribution-level local rule, not the usefulness of a fitted rule on a restricted class of flows with additional assumptions.</p></details>
 <p><strong>6. Move the dissipation correction into flux.</strong> Let \(B_i=\nu\partial_jR_{ij}\). Rewrite (5.7) using \(\varepsilon_{\rm phys}\) instead of \(\varepsilon\). Determine the modified energy flux and check its sign.</p>
 <details><summary>Solution</summary><p>Equation (5.8) gives \(\varepsilon_{\rm phys}=\varepsilon+\partial_iB_i\), so \(-\varepsilon=-\varepsilon_{\rm phys}+\partial_iB_i\). Substitute into \(D_Uk=P_k-\varepsilon-\partial_iF_i\): \(D_Uk=P_k-\varepsilon_{\rm phys}-\partial_i(F_i-B_i)\). Thus the modified flux is \(F_i-B_i\). Replacing the dissipation without changing this flux would alter the local budget. The two decompositions can agree globally while differing in their local transport/destruction split.</p></details>
-<p><strong>7. Direct production is directional.</strong> For the channel covariance and shear used in §5.7, calculate the rate of wall-normal variance from production alone. Why can a nonzero wall-normal variance still be present?</p>
+<p><strong>7. Direct production is directional.</strong> For the channel covariance and shear used in <a class="secref" href="#production">§5.7</a>, calculate the rate of wall-normal variance from production alone. Why can a nonzero wall-normal variance still be present?</p>
 <details><summary>Solution</summary><p>Only the streamwise mean component has a gradient, so \(P_{22}=0\), while \(P_{11}=4\) and \(P_{12}=-2\) m²/s³. Wall-normal variance can be carried by transport, redistributed through \(\Pi_{22}\), inherited from initial data, or supplied by an additional fluctuating forcing if included. Its complete evolution follows all terms of (5.4), not production alone. This is the motivation for examining component budgets in the following channel and Couette examples.</p></details>
 
 <h2 id="limits">5.11 Exact structure and the remaining model</h2>

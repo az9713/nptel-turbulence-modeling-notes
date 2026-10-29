@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="7803dbdf62c22f242e34e1ee2919c47f727d32c81b62a24cca9efbc772ce30ef">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="bc57201d0772ce4002abb35a15c61a3370d3f428013a46a40c55a1765e95dadc">
 <title>23. LES numerics and hybrid interfaces · Turbulence Modeling</title><link rel="stylesheet" href="assets/book.css">
 <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{pageReady:()=>MathJax.startup.defaultPageReady().then(()=>{document.documentElement.dataset.mathReady='true';})}};</script>
 <script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Turbulence Modeling · NPTEL IIT Madras</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="book-overview.html">Study route</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
-<div class="layout"><aside class="toc" id="chapter-toc"><h2>On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
-<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>23. LES numerics and hybrid interfaces</h1>
+<div class="layout"><aside class="toc" id="chapter-toc"><h2 id="detail-01">On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1 id="detail-02">23. LES numerics and hybrid interfaces</h1>
 <p class="lead">A hybrid calculation must do more than change the name of a viscosity. It must preserve momentum and energy exchanges while changing which fluctuations are represented, provide compatible information at an interface, and maintain adequate spatial and temporal resolution. The final numbered recording brings these decisions together: LES statistics, numerical dissipation, wall cost, zonal coupling and detached-eddy simulation.</p>
 <div class="learning-map"><strong>Following information across representations.</strong> Begin with statistics of a filtered field and a correction to the familiar resolved-plus-modeled energy statement. Test central and upwind numerical amplification before judging their role in LES. Then derive conditional wall-cost scalings, construct an exact one-point inflow covariance, and inspect a versioned DES/DDES length switch. These checks expose the assumptions behind an otherwise simple hybrid diagram.</div>
 <p class="source-note">The entire lesson74caption was read, including its final hybrid discussion. The rewrite retains its broad introduction while qualifying universal mesh rules, boundary conditions, fixed cost ratios and taxonomy. No DECIDER project report or benchmark data were inspected; the recording's favorable project report is not converted into independent validation. The runnable examples are deliberately restricted algebra and linear numerical analysis, not a new hybrid CFD computation.</p>
@@ -66,50 +66,85 @@ All eight sign triples have zero exact ensemble mean and produce the target R. T
 \(\widetilde d=d-f_d\max(0,d-C_{\rm DES}\Delta_D)\), with0≤fd≤1. At fd0it retains d; at fd1it recovers the unshielded minimum. The <a href="https://cpp.openfoam.org/v4/SpalartAllmarasDDES_8C_source.html">inspected Foundation4.1 DDES functions</a> compute a dimensionless ratio from effective viscosity, gradient magnitude and squared kappad, use \(f_d=1-\tanh[(8r_d)^3]\), and apply a positive length floor. This is a specific version, not every later DDESor IDDESmodel.</p>
 <p>For nonnegative effective viscosity and dpositive, the ratio is nonnegative; large rdpushes fdtoward0and small rdtoward1. Our code checks fdfor rd0.01,0.1,1and prescribed protected/unprotected lengths. It does not diagnose a boundary layer from actual velocity data or reproduce the whole SAtransport model. A computed switch and positive length do not demonstrate resolved turbulent content. Shielding can also delay the appearance of resolved structures; model variants address different compromises.</p>
 <p>The completed numbered course therefore leaves a practical research task, not an automatic best-model rule: define the prediction, select equations/variant and boundary treatment, verify implementation and discrete balances, study spatial/time/domain/statistical sensitivity, then compare against independent physical evidence with uncertainty. The live-session chapters revisit such choices through the questions actually raised by the audience.</p>
-<pre data-run="code/ch23_numerics_and_hybrid.py"><code>&quot;&quot;&quot;Advection amplification, statistical partition and hybrid-interface algebra.&quot;&quot;&quot;
+<pre data-run="code/ch23_numerics_and_hybrid.py"><code>&quot;&quot;&quot;Advection amplification, statistical partition and hybrid-interface \
+algebra.&quot;&quot;&quot;
+
 from itertools import product
 from math import cos, pi, sin, sqrt, tanh
 
-n,m,cfl=64,3,.5
-h=2*pi/n
-theta=2*pi*m/n
-steps=int(n/cfl)
-central_gain=sqrt(1+(cfl*sin(theta))**2)
-upwind_gain=sqrt((1-cfl+cfl*cos(theta))**2+(cfl*sin(theta))**2)
-print(f&quot;forward Euler centered/upwind amplitude after one crossing: {central_gain**steps:.8f}, {upwind_gain**steps:.8f}&quot;)
-print(f&quot;leading forward-Euler upwind numerical viscosity at unit speed: {h*(1-cfl)/2:.8f}&quot;)
+n, m, cfl = 64, 3, 0.5
+h = 2 * pi / n
+theta = 2 * pi * m / n
+steps = int(n / cfl)
+central_gain = sqrt(1 + (cfl * sin(theta)) ** 2)
+upwind_gain = sqrt((1 - cfl + cfl * cos(theta)) ** 2 + (cfl * sin(theta)) ** 2)
+print(
+    f&quot;forward Euler centered/upwind amplitude after one crossing: &quot;
+    f&quot;{central_gain ** steps:.8f}, {upwind_gain ** steps:.8f}&quot;
+)
+print(
+    f&quot;leading forward-Euler upwind numerical viscosity at unit speed: &quot;
+    f&quot;{h * (1 - cfl) / 2:.8f}&quot;
+)
 print(&quot;centered-space Crank-Nicolson linear-advection amplitude: 1.00000000&quot;)
 
-shear,dy,fluct_variance=100.,.002,.04
-mean_filter_stress=shear**2*dy**2/12
-resolved_k=fluct_variance/2
-mean_q=mean_filter_stress/2
-true_filtered_k=resolved_k
-corrected=resolved_k+mean_q-mean_filter_stress/2
-print(f&quot;filtered turbulence energy, naive resolved+SGS, corrected: {true_filtered_k:.10f}, {resolved_k+mean_q:.10f}, {corrected:.10f}&quot;)
+shear, dy, fluct_variance = 100.0, 0.002, 0.04
+mean_filter_stress = shear**2 * dy**2 / 12
+resolved_k = fluct_variance / 2
+mean_q = mean_filter_stress / 2
+true_filtered_k = resolved_k
+corrected = resolved_k + mean_q - mean_filter_stress / 2
+print(
+    f&quot;filtered turbulence energy, naive resolved+SGS, corrected: &quot;
+    f&quot;{true_filtered_k:.10f}, {resolved_k + mean_q:.10f}, &quot;
+    f&quot;{corrected:.10f}&quot;
+)
 
 # Eight equiprobable signs exactly realize this one-point target covariance.
-rows=[]
-for a,b,c in product((-1.,1.),repeat=3):
-    rows.append((.5*a,-.16*a+sqrt(.09-.16**2)*b,.2*c))
-means=[sum(row[i] for row in rows)/len(rows) for i in range(3)]
-cov=[[sum(row[i]*row[j] for row in rows)/len(rows) for j in range(3)] for i in range(3)]
+rows = []
+for a, b, c in product((-1.0, 1.0), repeat=3):
+    rows.append((0.5 * a, -0.16 * a + sqrt(0.09 - 0.16**2) * b, 0.2 * c))
+means = [sum(row[i] for row in rows) / len(rows) for i in range(3)]
+cov = [
+    [sum(row[i] * row[j] for row in rows) / len(rows) for j in range(3)]
+    for i in range(3)
+]
 print(f&quot;synthetic one-point fluctuation mean: {means}&quot;)
 print(f&quot;synthetic one-point covariance: {cov}&quot;)
-print(f&quot;synthetic one-point energy: {sum(cov[i][i] for i in range(3))/2:.8f}&quot;)
-assert abs(cov[0][1]+.08)&lt;1e-14 and abs(cov[1][1]-.09)&lt;1e-14
-print(f&quot;energy-feedback multiplier for one illustrative partition .12+.07: {(.12+.07)/.12:.8f}&quot;)
+print(
+    f&quot;synthetic one-point energy: {sum((cov[i][i] for i in range(3))) / 2:.8f}&quot;
+)
+assert abs(cov[0][1] + 0.08) &lt; 1e-14 and abs(cov[1][1] - 0.09) &lt; 1e-14
+print(
+    f&quot;energy-feedback multiplier for one illustrative partition &quot;
+    f&quot;.12+.07: {(0.12 + 0.07) / 0.12:.8f}&quot;
+)
 
-cd=.65
-for d,grid,fd in ((.01,.02,1.),(.01,.005,1.),(.01,.005,0.),(.05,.005,1.)):
-    des=min(d,cd*grid)
-    delayed=d-fd*max(0.,d-cd*grid)
-    print(f&quot;wall distance={d}, grid length={grid}, fd={fd}: DES length={des:.8f}, shielded length={delayed:.8f}&quot;)
-for rd in (.01,.1,1.):
-    fd=1-tanh((8*rd)**3)
+cd = 0.65
+for d, grid, fd in (
+    (0.01, 0.02, 1.0),
+    (0.01, 0.005, 1.0),
+    (0.01, 0.005, 0.0),
+    (0.05, 0.005, 1.0),
+):
+    des = min(d, cd * grid)
+    delayed = d - fd * max(0.0, d - cd * grid)
+    print(
+        f&quot;wall distance={d}, grid length={grid}, fd={fd}: DES &quot;
+        f&quot;length={des:.8f}, shielded length={delayed:.8f}&quot;
+    )
+for rd in (0.01, 0.1, 1.0):
+    fd = 1 - tanh((8 * rd) ** 3)
     print(f&quot;shielding rd={rd}: fd={fd:.10f}&quot;)
-for label,power in ((&quot;WM illustrative&quot;,1.),(&quot;WR high-Re plate&quot;,13/7),(&quot;homogeneous DNS&quot;,9/4),(&quot;uniform-cross-plane plate DNS&quot;,37/14)):
-    print(f&quot;tenfold Reynolds ratio, {label}: point multiplier={10**power:.8f}&quot;)
+for label, power in (
+    (&quot;WM illustrative&quot;, 1.0),
+    (&quot;WR high-Re plate&quot;, 13 / 7),
+    (&quot;homogeneous DNS&quot;, 9 / 4),
+    (&quot;uniform-cross-plane plate DNS&quot;, 37 / 14),
+):
+    print(
+        f&quot;tenfold Reynolds ratio, {label}: point multiplier={10 ** power:.8f}&quot;
+    )
 </code></pre>
 <pre class="output">forward Euler centered/upwind amplitude after one crossing: 3.79710222, 0.24833945
 leading forward-Euler upwind numerical viscosity at unit speed: 0.02454369
