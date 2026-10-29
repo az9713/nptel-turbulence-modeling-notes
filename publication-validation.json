@@ -1,6 +1,10 @@
 {
   "passed": false,
-  "complete": false,
-  "stage": "Pending actual final checks",
-  "scope": "Truthful bootstrap placeholder; presence is not acceptance"
+  "final": false,
+  "status": "pending",
+  "base_url": "https://az9713.github.io/nptel-turbulence-modeling-notes/",
+  "repository": "az9713/nptel-turbulence-modeling-notes",
+  "scope": "Bootstrap placeholder; no deployed files or reader behavior verified",
+  "payload_sha256": {},
+  "self_hash_exclusion": "publication-validation.json only; served presence still required"
 }
