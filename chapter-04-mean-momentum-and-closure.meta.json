@@ -1,0 +1,247 @@
+{
+  "chapter": 4,
+  "title": "Mean momentum and the turbulence closure problem",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "00480a9d4c4d9020aaf99674e14f6fbd677e132927c3729f95281befa6d609d5",
+  "recordings": [
+    {
+      "playlist_position": 54,
+      "video_id": "TRdmk-IIzSE",
+      "title": "10. RANS equations II (I)",
+      "lesson": 10,
+      "duration_seconds": 1157,
+      "url": "https://www.youtube.com/watch?v=TRdmk-IIzSE",
+      "chapter": 4,
+      "disposition": "Included in chapter 04; exact body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 10,
+        "video_id": "TRdmk-IIzSE",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec10.vtt",
+        "path": "lecture-10.vtt",
+        "sha256": "e472efc9cdeb31a05542a5c7bc1655f1f1894ae2bf618e0cc11fcba763270d35",
+        "segments": 118,
+        "last_cue_seconds": 1156.8,
+        "recording_duration": 1157,
+        "coverage_ratio": 0.9998271391529818,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 55,
+      "video_id": "Hm9Kcbvm2I8",
+      "title": "9. RANS equations I (II)",
+      "lesson": 9,
+      "duration_seconds": 1226,
+      "url": "https://www.youtube.com/watch?v=Hm9Kcbvm2I8",
+      "chapter": 4,
+      "disposition": "Included in chapter 04; exact body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 9,
+        "video_id": "Hm9Kcbvm2I8",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec09.vtt",
+        "path": "lecture-09.vtt",
+        "sha256": "a60744d75f3a5536ea68a305e71a1b681eae34c8b41d95054f52696e5c747679",
+        "segments": 127,
+        "last_cue_seconds": 1225.56,
+        "recording_duration": 1226,
+        "coverage_ratio": 0.9996411092985318,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 56,
+      "video_id": "xxaoOg9I9Lw",
+      "title": "8. RANS equations I (I)",
+      "lesson": 8,
+      "duration_seconds": 1384,
+      "url": "https://www.youtube.com/watch?v=xxaoOg9I9Lw",
+      "chapter": 4,
+      "disposition": "Included in chapter 04; exact body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 8,
+        "video_id": "xxaoOg9I9Lw",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec08.vtt",
+        "path": "lecture-08.vtt",
+        "sha256": "a9caee4eea9c84aa6d91ac5315ffe5de4ba6c3bfdd45e468783db0d7740e0035",
+        "segments": 139,
+        "last_cue_seconds": 1378.44,
+        "recording_duration": 1384,
+        "coverage_ratio": 0.9959826589595376,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 64,
+      "video_id": "Vd0nUc48P3E",
+      "title": "11. RANS equations II (II)",
+      "lesson": 11,
+      "duration_seconds": 1645,
+      "url": "https://www.youtube.com/watch?v=Vd0nUc48P3E",
+      "chapter": 4,
+      "disposition": "Included in chapter 04; exact body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 11,
+        "video_id": "Vd0nUc48P3E",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec11.vtt",
+        "path": "lecture-11.vtt",
+        "sha256": "83c46385c7022ed9f65ddf10c9d21399e4d8bd8d5164bbd1538183ebdbf393c3",
+        "segments": 170,
+        "last_cue_seconds": 1644.32,
+        "recording_duration": 1645,
+        "coverage_ratio": 0.9995866261398176,
+        "status": "acquired"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "averaging",
+      "lesson": 8,
+      "start": 14,
+      "end": 158,
+      "lecture_material": "Instantaneous, mean and fluctuating incompressible continuity",
+      "extension": "Explicit ensemble operator and regularity conditions",
+      "construction": "Channel coordinates and model assumptions"
+    },
+    {
+      "anchor": "momentum",
+      "lesson": 8,
+      "start": 158,
+      "end": 1204,
+      "lecture_material": "Newtonian viscous simplification; decomposition; four advective products; two mixed averages vanish; residual covariance",
+      "extension": "Constant viscosity qualification and correction of absolute instability claims",
+      "construction": "Dimension and deterministic-limit checks"
+    },
+    {
+      "anchor": "flux",
+      "lesson": 8,
+      "start": 1204,
+      "end": 1379,
+      "lecture_material": "Multiply fluctuating continuity by another fluctuation",
+      "extension": "Explicit conservative momentum flux",
+      "construction": "Channel cross-plane exchange interpretation"
+    },
+    {
+      "anchor": "covariance",
+      "lesson": 9,
+      "start": 16,
+      "end": 349,
+      "lecture_material": "Product rule, symmetric second-order tensor, variances and signed covariances",
+      "extension": "Positive semidefinite proof and zero-variance boundary",
+      "construction": "Four-state covariance and anticorrelation example"
+    },
+    {
+      "anchor": "closure",
+      "lesson": 9,
+      "start": 349,
+      "end": 782,
+      "lecture_material": "Four equations/ten mean-level unknowns; fluid versus flow property; limitations of viscosity analogy",
+      "extension": "Pressure Poisson equation not independent closure",
+      "construction": "Two equal-mean ensembles with distinct fluxes"
+    },
+    {
+      "anchor": "stress",
+      "lesson": 9,
+      "start": 782,
+      "end": 1226,
+      "lecture_material": "Correlation origin, stress dimensions after multiplication by density",
+      "extension": "NASA TMR sign/density convention translation",
+      "construction": "Local channel stress budget and no-slip wall limits"
+    },
+    {
+      "anchor": "fluctuation",
+      "lesson": 10,
+      "start": 16,
+      "end": 1157,
+      "lecture_material": "Model-versus-transport choices; instantaneous-minus-mean derivation; average-zero test",
+      "extension": "Do not count nonlinear functions of resolved velocity as independent unknowns",
+      "construction": "Missing-centering-term diagnostic"
+    },
+    {
+      "anchor": "linearization",
+      "lesson": 11,
+      "start": 16,
+      "end": 778,
+      "lecture_material": "Infinitesimal fluctuations; student gradient question; laminar base; transition/intermittency and bypass distinction; correction to unknown counting",
+      "extension": "Controlled-gradient scaling and neutral-versus-transition distinction",
+      "construction": "High-frequency counterexample and lift-up ODE"
+    },
+    {
+      "anchor": "hierarchy",
+      "lesson": 11,
+      "start": 778,
+      "end": 1645,
+      "lecture_material": "Multiply fluctuation equation, exchange free indices, add, recover material derivative of covariance; pressure and triple correlations appear",
+      "extension": "Compact raw second-moment equation; NASA modeled-versus-exact distinction",
+      "construction": "Index audit and production check"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://tmbwg.github.io/turbmodels/implementrans.html",
+      "title": "NASA/TMBWG: Implementing Turbulence Models into the Compressible RANS Equations",
+      "supports": "Explicit stress sign/density convention and constant-density reduction",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://tmbwg.github.io/turbmodels/rsm-ssglrr.html",
+      "title": "NASA/TMBWG: SSG/LRR Full Reynolds Stress Model",
+      "supports": "Six stress equations, exact production and explicitly modeled terms",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "source_reading": "Complete normalized caption text for lessons 8–11 read sequentially",
+  "evidence_classes": [
+    "definition",
+    "derivation under stated assumptions",
+    "original teaching construction",
+    "finite executed check",
+    "external model specification"
+  ],
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "00480a9d4c4d9020aaf99674e14f6fbd677e132927c3729f95281befa6d609d5",
+    "rounds": [
+      {
+        "round": 1,
+        "reviewer": "Independent thermodynamics course worker",
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "report": "pilot-r1.md",
+        "body_sha256": "00480a9d4c4d9020aaf99674e14f6fbd677e132927c3729f95281befa6d609d5",
+        "report_identifier": "pilot-r1.md",
+        "independent_of_author": true,
+        "reviewer_id": "independent-course-peer",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      },
+      {
+        "round": 2,
+        "reviewer": "Independent lead coordinator",
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "report": "pilot-r2.md",
+        "body_sha256": "00480a9d4c4d9020aaf99674e14f6fbd677e132927c3729f95281befa6d609d5",
+        "report_identifier": "pilot-r2.md",
+        "independent_of_author": true,
+        "reviewer_id": "lead-coordinator",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      }
+    ],
+    "scope": "This pilot chapter only; not whole-course completion or publication.",
+    "body_changed_between_rounds": false
+  },
+  "limitations": [
+    "No comprehensive audiovisual or board-equation inspection",
+    "Official hosted captions are not assumed human-authored",
+    "Equations are independently derived under stated incompressible constant-property assumptions",
+    "Full Reynolds-stress budget rearrangement belongs to subsequent lessons 12–13"
+  ],
+  "article_words_including_math_code": 4607,
+  "worked_solutions": 7,
+  "executable_listings": 1,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome"
+}

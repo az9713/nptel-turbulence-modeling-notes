@@ -1,0 +1,215 @@
+{
+  "chapter": 25,
+  "title": "25. Live session: from an equation to trustworthy evidence",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "d68729670d0967b50f516c94a3d7726ff2044e71118082335d2a014e3740b188",
+  "recordings": [
+    {
+      "playlist_position": 76,
+      "video_id": "fZe2bxvPeh0",
+      "title": "Turbulence Modeling   Prof  Vagesh D Narasimhamurthy 1",
+      "lesson": null,
+      "duration_seconds": 2991,
+      "url": "https://www.youtube.com/watch?v=fZe2bxvPeh0",
+      "chapter": 25,
+      "disposition": "Included in chapter 25; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": null,
+      "machine_asr": {
+        "model": "faster-whisper small.en",
+        "source_type": "local machine ASR, not publisher captions",
+        "audio_sha256": "14df431c163f2fc00a0adb4897bfea59aae613897d50e9570fcd8aaba44f276e",
+        "decoded_duration_seconds": 2990.0335625,
+        "transcript_sha256": "49dd354c3a8cb3491a41aa0c1ba29157a694cbbc7607a5206c7fcbd20b4101cf",
+        "segments": 652,
+        "chunks": 34,
+        "chunk_seconds": 90,
+        "overlap_seconds": 2,
+        "first_start": 0,
+        "last_end": 2979.96,
+        "limitations": "Machine ASR, 90-second cores with two-second overlap; boundary repetitions and recognition errors remain. Full decoded coverage is not comprehensive visual/board verification."
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "failed-case",
+      "lesson": null,
+      "video_id": "fZe2bxvPeh0",
+      "start": 174,
+      "end": 395,
+      "lecture_material": "Rich reacting case, convergence, underrelaxation and time-step questions; instructor bounds diagnosis",
+      "extension": "Separate possible failure mechanisms and physical versus algebraic time",
+      "construction": "Define relaxed fixed-point update and local linearization"
+    },
+    {
+      "anchor": "iteration",
+      "lesson": null,
+      "video_id": "fZe2bxvPeh0",
+      "start": 174,
+      "end": 395,
+      "lecture_material": "Same convergence discussion",
+      "extension": "Original scalar contraction and fully converged implicit-step example; no diagnosis of actual case",
+      "construction": "Exact error factors, residual versus update, continuous versus discrete solution"
+    },
+    {
+      "anchor": "learning-ladder",
+      "lesson": null,
+      "video_id": "fZe2bxvPeh0",
+      "start": 395,
+      "end": 950,
+      "lecture_material": "Existing OpenFOAM versus own code, projects and canonical flows",
+      "extension": "Correct broad DNS impossibility claim with actually inspected version4.1 dnsFoam source",
+      "construction": "Bounded solver capability versus adequate computation and reduced mean equation"
+    },
+    {
+      "anchor": "channel",
+      "lesson": null,
+      "video_id": "fZe2bxvPeh0",
+      "start": 950,
+      "end": 1429,
+      "lecture_material": "Start laminar fully developed channel, advance to closures and transport equations",
+      "extension": "Original complete conservative diffusion discretization and executed solution",
+      "construction": "Analytic channel, shared face fluxes, Thomas elimination and boundary half-cell balance"
+    },
+    {
+      "anchor": "verification",
+      "lesson": null,
+      "video_id": "fZe2bxvPeh0",
+      "start": 2633,
+      "end": 2905,
+      "lecture_material": "Final airfoil project, verification versus validation discussion",
+      "extension": "Correct overly broad exclusions of investigator-collected measurement and distinguish model sensitivity",
+      "construction": "Manufactured sine solution, actual second-order refinement and algebraic error separation"
+    },
+    {
+      "anchor": "coupling",
+      "lesson": null,
+      "video_id": "fZe2bxvPeh0",
+      "start": 950,
+      "end": 1429,
+      "lecture_material": "Mixing length to two-equation to stress models, shared transport structure and coupling",
+      "extension": "Conservative variable face coefficient and new source/admissibility obligations",
+      "construction": "Explicit hierarchy, no claim code implements full RANS"
+    },
+    {
+      "anchor": "guards",
+      "lesson": null,
+      "video_id": "fZe2bxvPeh0",
+      "start": 1819,
+      "end": 2007,
+      "lecture_material": "Negative-property anecdote and AI-assisted input checking question; later validation discussion",
+      "extension": "Molecular versus modeled viscosity and deterministic checks versus physical evidence",
+      "construction": "Input/error/provenance boundaries and own measurement versus own simulated reference"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://www.grc.nasa.gov/www/wind/valid/tutorial/verassess.html",
+      "title": "NASA NPARC verification assessment",
+      "supports": "Actual page read on code versus solution verification and iterative, spatial and temporal numerical error",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://www.grc.nasa.gov/www/wind/valid/tutorial/iterconv.html",
+      "title": "NASA NPARC iterative convergence",
+      "supports": "Actual page read on residuals, normalization and monitored engineering quantities",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://www.grc.nasa.gov/www/wind/valid/tutorial/valassess.html",
+      "title": "NASA NPARC validation assessment",
+      "supports": "Actual page read on physical evidence and uncertainty; calibration and validation distinction",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v4/dnsFoam_8C_source.html",
+      "title": "OpenFOAM Foundation4.1 dnsFoam actual source",
+      "supports": "Actual description and main function read: isotropic-box DNS purpose, molecular-diffusion forced momentum and pressure coupling; not executed solver or resolution certification",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "article_words_including_math_code": 2962,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "worked_solutions": 8,
+  "executable_listings": 1,
+  "source_reading": "Complete local machine ASR read sequentially before drafting; fallible recognition and overlap retained",
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "d68729670d0967b50f516c94a3d7726ff2044e71118082335d2a014e3740b188",
+    "rounds": [
+      {
+        "round": 1,
+        "report_identifier": "ch25-r1.md",
+        "accepted": true,
+        "reviewer_id": "independent-course-peer",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "d68729670d0967b50f516c94a3d7726ff2044e71118082335d2a014e3740b188",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript"
+      },
+      {
+        "round": 2,
+        "report_identifier": "ch25-r2.md",
+        "accepted": true,
+        "reviewer_id": "lead-coordinator",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "d68729670d0967b50f516c94a3d7726ff2044e71118082335d2a014e3740b188",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript"
+      }
+    ],
+    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+  },
+  "limitations": [
+    "Complete local small.en machine ASR read, including overlapping chunks; not publisher captions or full audio/board verification",
+    "Original numerical examples illustrate source questions without reconstructing unavailable reacting cases or diagnosing commercial solvers",
+    "Executed scalar diffusion code is not a full turbulence, reacting-flow or OpenFOAM simulation",
+    "Actual Foundation4.1 dnsFoam source inspected as a bounded historical counterexample, not current universal software recommendation or executed DNS",
+    "No experimental physical validation performed; analytic and manufactured verification plus synthetic iteration checks only",
+    "Historical administration, personal details, future plans and uncertain ASR names excluded or explicitly contextualized"
+  ],
+  "source_dispositions": [
+    {
+      "video_id": "fZe2bxvPeh0",
+      "start": 0,
+      "end": 174,
+      "disposition": "Welcome, connection/feedback and discussion context; no technical coverage claimed"
+    },
+    {
+      "video_id": "fZe2bxvPeh0",
+      "start": 655,
+      "end": 950,
+      "disposition": "Substantive canonical-project advice included; historical evaluation/future-course administration contextualized only"
+    },
+    {
+      "video_id": "fZe2bxvPeh0",
+      "start": 1429,
+      "end": 1819,
+      "disposition": "Historical hands-on curriculum, software licensing, visits, board/classroom format and personal coding history; contextualized learning route, no current institutional or software recommendation"
+    },
+    {
+      "video_id": "fZe2bxvPeh0",
+      "start": 2007,
+      "end": 2633,
+      "disposition": "Historical future-course, workshop, email, examination and grade discussion; explicit administrative exclusion, no current policy or contact details published"
+    },
+    {
+      "video_id": "fZe2bxvPeh0",
+      "start": 2633,
+      "end": 2905,
+      "disposition": "Full final technical verification/validation discussion developed in sections25.5 and25.7"
+    },
+    {
+      "video_id": "fZe2bxvPeh0",
+      "start": 2905,
+      "end": 2991,
+      "disposition": "Closing pauses, thanks and recording tail; no substantive instruction inferred"
+    }
+  ]
+}

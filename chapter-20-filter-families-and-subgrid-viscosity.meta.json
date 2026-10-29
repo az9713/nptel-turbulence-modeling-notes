@@ -1,0 +1,171 @@
+{
+  "chapter": 20,
+  "title": "20. Filter families and subgrid viscosity",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "e4aa1c157ea0ebb996d40f763da61e6c85ac171b6dbb46ad01c2e9be17de2b50",
+  "recordings": [
+    {
+      "playlist_position": 51,
+      "video_id": "rUowvkj7SVc",
+      "title": "69. Large Eddy Simulations: Filters and its types - II",
+      "lesson": 69,
+      "duration_seconds": 1932,
+      "url": "https://www.youtube.com/watch?v=rUowvkj7SVc",
+      "chapter": 20,
+      "disposition": "Included in chapter 20; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 69,
+        "video_id": "rUowvkj7SVc",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec69.vtt",
+        "path": "lecture-69.vtt",
+        "sha256": "d69ba3f03a5da2e3d11f1a5b94f839d92b736c910dd29bbc9052ac57be6a775f",
+        "segments": 192,
+        "last_cue_seconds": 1931.68,
+        "recording_duration": 1932,
+        "coverage_ratio": 0.9998343685300207,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 53,
+      "video_id": "e5p-14epW4Y",
+      "title": "68. Large Eddy Simulations: Filters and its types - I",
+      "lesson": 68,
+      "duration_seconds": 1129,
+      "url": "https://www.youtube.com/watch?v=e5p-14epW4Y",
+      "chapter": 20,
+      "disposition": "Included in chapter 20; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 68,
+        "video_id": "e5p-14epW4Y",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec68.vtt",
+        "path": "lecture-68.vtt",
+        "sha256": "99d58c2e975ce3b6c092283f7192de7d9da5839c56c3e62bdebc6396760a8095",
+        "segments": 116,
+        "last_cue_seconds": 1128.68,
+        "recording_duration": 1129,
+        "coverage_ratio": 0.999716563330381,
+        "status": "acquired"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "kernel",
+      "lesson": 68,
+      "start": 15,
+      "end": 300,
+      "lecture_material": "Filter type, size and SGS choice; generic Leonard convolution definition",
+      "extension": "Fourier convention and units explicit, normalization and signed weights; original Leonard1974 paper not inspected",
+      "construction": "Convolution theorem with independent source/observation variables"
+    },
+    {
+      "anchor": "box-filter",
+      "lesson": 68,
+      "start": 300,
+      "end": 625,
+      "lecture_material": "Box kernel and support, filter width versus grid size, physical versus spectral localization",
+      "extension": "Absolute support, sinc transfer and amplitude/energy distinction, no disjoint spectral bands",
+      "construction": "Exact top-hat Fourier transform and triangular repeated convolution"
+    },
+    {
+      "anchor": "spectral",
+      "lesson": 68,
+      "start": 625,
+      "end": 1129,
+      "lecture_material": "Spectral cutoff, wavenumber/length interpretation, cascade and SGS-energy transfer motivation",
+      "extension": "Cutoff inverse kernel, signed tails, global orthogonality differs from pointwise positivity; transfer versus final dissipation",
+      "construction": "Projection proof and exact positive-field/stress counterexamples"
+    },
+    {
+      "anchor": "gaussian",
+      "lesson": 69,
+      "start": 14,
+      "end": 448,
+      "lecture_material": "Mathematical revisit of repeated box versus spectral filtering",
+      "extension": "Rebuild incomplete nested-integral proof with correct shifted convolution/multiplication; Gaussian named in68 developed as comparative extension",
+      "construction": "Kernel moments, Gaussian composition and property comparison"
+    },
+    {
+      "anchor": "implicit",
+      "lesson": 69,
+      "start": 448,
+      "end": 675,
+      "lecture_material": "Finite-volume implicit filtering and nominal mesh/filter identity",
+      "extension": "Cell average differs from complete discrete operator, other methods can implicit-filter; no universal scheme/closure/alias guarantee",
+      "construction": "Exact discrete alias identity and explicit versus implicit choices"
+    },
+    {
+      "anchor": "sgs-model",
+      "lesson": 69,
+      "start": 675,
+      "end": 1410,
+      "lecture_material": "SGS purpose, Boussinesq analogy, positive stress sign, trace/ksgs and nu_sgs unknowns",
+      "extension": "Trace not known from resolved data; factor2/3 retained; static dissipation strategy not every SGS definition",
+      "construction": "Deviatoric closure, pressure-trace role and Pi sign"
+    },
+    {
+      "anchor": "coefficients",
+      "lesson": 69,
+      "start": 1410,
+      "end": 1932,
+      "lecture_material": "Mixing-length Smagorinsky viscosity, cube-root grid volume, constant selection examples and dependence",
+      "extension": "Cs versus Cs², no theoretical universal below-one bound or flow-specific prescriptions; no current solver/historical priority claims",
+      "construction": "Executed shear, extension, rotation and coefficient-sensitivity tests"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://www.ams.jhu.edu/~eyink/Turbulence/classics/Germano92.pdf",
+      "title": "Germano1992 filter operators, composition and static Smagorinsky architecture",
+      "supports": "Actual printed325–333 read: explicit/implicit filtering, generalized stress, two-level identity, Gaussian/cutoff composition and bounded static strain-viscosity limitations; original1963/1974papers not substituted",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "article_words_including_math_code": 3040,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "worked_solutions": 8,
+  "executable_listings": 1,
+  "source_reading": "Complete normalized caption text read sequentially before drafting",
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "e4aa1c157ea0ebb996d40f763da61e6c85ac171b6dbb46ad01c2e9be17de2b50",
+    "rounds": [
+      {
+        "round": 1,
+        "report_identifier": "ch20-r1.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "e4aa1c157ea0ebb996d40f763da61e6c85ac171b6dbb46ad01c2e9be17de2b50",
+        "reviewer_id": "independent-course-peer",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      },
+      {
+        "round": 2,
+        "report_identifier": "ch20-r2.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "e4aa1c157ea0ebb996d40f763da61e6c85ac171b6dbb46ad01c2e9be17de2b50",
+        "reviewer_id": "lead-coordinator",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      }
+    ],
+    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+  },
+  "limitations": [
+    "Complete68–69 captions read; no comprehensive audiovisual or source-spectrum digitization",
+    "Generic Leonard1974 and original Smagorinsky1963 papers not inspected; bounded Germano1992 passages support operator/model architecture",
+    "Gaussian family and positivity/alias counterexamples are explicit original pedagogical extensions, not falsely attributed lecture derivations",
+    "Static Cs examples0.065/0.25 are attributed lecture examples, not universal calibrated recommendations",
+    "Exact infinite-line versus periodic cutoff kernels distinguished; width conventions and moment matching do not identify every discrete filter",
+    "Executed local algebra/filter examples and original analytic figure are not a turbulent LES or empirical calibration"
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "chapter": 12,
+  "title": "12. Calibration and alternative turbulence time scales",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "852ad756c402e55984ca8caf772c8ba6419e9699d4f89505de43c844621e69bb",
+  "recordings": [
+    {
+      "playlist_position": 16,
+      "video_id": "VOP1Q02qJhw",
+      "title": "36. Standard k-ε model, RNG k-ε model, and Prandlt’s one equation model - I",
+      "lesson": 36,
+      "duration_seconds": 1153,
+      "url": "https://www.youtube.com/watch?v=VOP1Q02qJhw",
+      "chapter": 12,
+      "disposition": "Included in chapter 12; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 36,
+        "video_id": "VOP1Q02qJhw",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec36.vtt",
+        "path": "lecture-36.vtt",
+        "sha256": "180ce1c5dc9abf7086c779bcda686ea1533ebd4b8f9307a63623dcadaff5a584",
+        "segments": 108,
+        "last_cue_seconds": 1146.32,
+        "recording_duration": 1153,
+        "coverage_ratio": 0.9942064180398958,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 20,
+      "video_id": "aomx9FDFxZ4",
+      "title": "39. New model k- ε and model constants - II",
+      "lesson": 39,
+      "duration_seconds": 1032,
+      "url": "https://www.youtube.com/watch?v=aomx9FDFxZ4",
+      "chapter": 12,
+      "disposition": "Included in chapter 12; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 39,
+        "video_id": "aomx9FDFxZ4",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec39.vtt",
+        "path": "lecture-39.vtt",
+        "sha256": "5be28ae0dbf48079eaa30c3b6e529cd5a451187130c004de8b87b572e4ef30a3",
+        "segments": 101,
+        "last_cue_seconds": 1031.755,
+        "recording_duration": 1032,
+        "coverage_ratio": 0.9997625968992249,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 21,
+      "video_id": "7pG4d3958xI",
+      "title": "38. New model k- ε and model constants - I",
+      "lesson": 38,
+      "duration_seconds": 1879,
+      "url": "https://www.youtube.com/watch?v=7pG4d3958xI",
+      "chapter": 12,
+      "disposition": "Included in chapter 12; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 38,
+        "video_id": "7pG4d3958xI",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec38.vtt",
+        "path": "lecture-38.vtt",
+        "sha256": "b248a3f069b37b58d2af5ee695978de48277a34b69e608dd74e3f7eeff760421",
+        "segments": 201,
+        "last_cue_seconds": 1871.36,
+        "recording_duration": 1879,
+        "coverage_ratio": 0.9959340074507717,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 22,
+      "video_id": "pT5HYliyue4",
+      "title": "37. Standard k-ε model, RNG k-ε model, and Prandlt’s one equation model - II",
+      "lesson": 37,
+      "duration_seconds": 1652,
+      "url": "https://www.youtube.com/watch?v=pT5HYliyue4",
+      "chapter": 12,
+      "disposition": "Included in chapter 12; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 37,
+        "video_id": "pT5HYliyue4",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec37.vtt",
+        "path": "lecture-37.vtt",
+        "sha256": "50d47d4aad9e5211b082a639df8276d8a2351c57b8b686007df9179b3a1c9f97",
+        "segments": 172,
+        "last_cue_seconds": 1648.16,
+        "recording_duration": 1652,
+        "coverage_ratio": 0.997675544794189,
+        "status": "acquired"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "finish-calibration",
+      "lesson": 36,
+      "start": 17,
+      "end": 1147,
+      "lecture_material": "Explicit decay-coefficient correction, broader calibration, diffusion coefficients and log-zone epsilon balance setup",
+      "extension": "Differentiate assumed profiles rather than treat dimensional equality as exact; derive full coefficient compatibility",
+      "construction": "Baseline coefficients imply a different kappa from0.41"
+    },
+    {
+      "anchor": "rng",
+      "lesson": 37,
+      "start": 17,
+      "end": 1300,
+      "lecture_material": "Finish C_epsilon1 derivation and broader-fit caveat, RNG variable source coefficient based on strain/turbulent time ratio",
+      "extension": "Separate multiplier/divisor conventions and lecture/example versus versioned RNG coefficients",
+      "construction": "Source-correction sweep and algebraic equivalence to extra destruction term"
+    },
+    {
+      "anchor": "one-equation",
+      "lesson": 37,
+      "start": 1300,
+      "end": 1649,
+      "lecture_material": "Prandtl one-equation example with algebraic epsilon and supplied turbulent length; length sensitivity",
+      "extension": "Use separate C_D and C_nu, identify notation-dependent absorption of coefficient",
+      "construction": "Prescribed-shear equilibrium energy quadratic in length"
+    },
+    {
+      "anchor": "near-wall-ratios",
+      "lesson": 38,
+      "start": 15,
+      "end": 1111,
+      "lecture_material": "Near-wall k–epsilon term inspection, cancellation in epsilon production and singular destruction; motivation for omega",
+      "extension": "Finite source limit not a numerical stability proof; derivatives can be stiff; epsilon wall value not universal maximum",
+      "construction": "Explicit diffusion/sink stability scales"
+    },
+    {
+      "anchor": "quotient",
+      "lesson": 38,
+      "start": 1111,
+      "end": 1872,
+      "lecture_material": "Define omega=epsilon/(beta_star*k), warn that naive division through derivatives is not valid; introduce modeled omega and k/omega viscosity",
+      "extension": "Actual quotient/product derivation with cross diffusion and coefficient changes",
+      "construction": "Pointwise source transformation execution"
+    },
+    {
+      "anchor": "wilcox1988",
+      "lesson": 39,
+      "start": 15,
+      "end": 1032,
+      "lecture_material": "k sink beta_star*k*omega, Wilcox-type coefficients and source cancellation/partial decoupling discussion",
+      "extension": "Specify exact1988 variant and reciprocal diffusion convention; full system remains coupled; omega singular wall asymptote",
+      "construction": "Named-model comparison and deliberately unstable isolated Euler step"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://cpp.openfoam.org/v4/RNGkEpsilon_8C_source.html",
+      "title": "OpenFOAM Foundation4.1 RNGkEpsilon implementation",
+      "supports": "Constructor coefficients and correct() strain ratio/source correction lines260–287; original Python is not copied implementation code and OpenFOAM not run",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v4/classFoam_1_1RASModels_1_1RNGkEpsilon.html",
+      "title": "OpenFOAM Foundation4.1 RNG model description",
+      "supports": "Named1992 reference and versioned coefficient/diffusion set; no uninspected original-paper derivation asserted",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://tmbwg.github.io/turbmodels/wilcox.html",
+      "title": "TMBWG: Wilcox k-omega model variants",
+      "supports": "Wilcox1988 section equations/constants, multiplier convention, wall asymptote and distinct later model changes; relevant sections read",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "article_words_including_math_code": 3775,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "worked_solutions": 8,
+  "executable_listings": 1,
+  "source_reading": "Complete normalized caption text read sequentially before drafting",
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "852ad756c402e55984ca8caf772c8ba6419e9699d4f89505de43c844621e69bb",
+    "rounds": [
+      {
+        "round": 1,
+        "report_identifier": "ch12-r1.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "852ad756c402e55984ca8caf772c8ba6419e9699d4f89505de43c844621e69bb",
+        "reviewer_id": "independent-course-peer",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      },
+      {
+        "round": 2,
+        "report_identifier": "ch12-r2.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "852ad756c402e55984ca8caf772c8ba6419e9699d4f89505de43c844621e69bb",
+        "reviewer_id": "lead-coordinator",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      }
+    ],
+    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance",
+    "repair_history": [
+      {
+        "body_sha256": "c9fc0636ccaf93c01121beb535852fb30c3fab6f00f722008417959c53886d4e",
+        "round": 1,
+        "reviewer_id": "independent-course-peer",
+        "major": 1,
+        "blocking": 0,
+        "finding": "Incorrect large-eta RNG asymptote",
+        "closure": "Two exact prose repairs; original report contains focused acceptance of current digest"
+      },
+      {
+        "body_sha256": "c9fc0636ccaf93c01121beb535852fb30c3fab6f00f722008417959c53886d4e",
+        "round": 2,
+        "reviewer_id": "lead-coordinator",
+        "minor": 1,
+        "blocking": 0,
+        "finding": "Same large-eta RNG asymptote",
+        "closure": "Exact-diff/current-digest closure appended to original report"
+      }
+    ]
+  },
+  "limitations": [
+    "Complete captions36–39 read; no full audiovisual or instructor-data digitization",
+    "Calibration relations depend on declared log/constant-stress/local-equilibrium assumptions, not universal coefficient proofs",
+    "Versioned RNG implementation and lecture illustrative coefficients distinguished; no RNG derivation or solver execution claimed",
+    "One-equation length sensitivity is a prescribed-shear model problem, not arbitrary-flow monotonicity or empirical prediction",
+    "Quotient transformation derived where k and epsilon are positive; singular wall handled by separate limiting/model considerations",
+    "Wilcox1988 kept separate from1998/2006/SST and LRN variants; no full wall-resolved turbulent simulation performed"
+  ]
+}

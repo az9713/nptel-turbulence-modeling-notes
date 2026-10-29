@@ -1,0 +1,191 @@
+{
+  "chapter": 16,
+  "title": "16. Closing the Reynolds-stress transport system",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "a6113c2262ec8b81db1080982a82850502221917f0d85396748ed3ea4d6054c3",
+  "recordings": [
+    {
+      "playlist_position": 23,
+      "video_id": "GfpVSUCwfcc",
+      "title": "53. Reynold’s Stress Modelling (RSM): governing equations - II",
+      "lesson": 53,
+      "duration_seconds": 1524,
+      "url": "https://www.youtube.com/watch?v=GfpVSUCwfcc",
+      "chapter": 16,
+      "disposition": "Included in chapter 16; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 53,
+        "video_id": "GfpVSUCwfcc",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec53.vtt",
+        "path": "lecture-53.vtt",
+        "sha256": "34bee542486e34d806636b172f36e7c62536521e1ad6314f7a5cd2291d0cc295",
+        "segments": 142,
+        "last_cue_seconds": 1523.04,
+        "recording_duration": 1524,
+        "coverage_ratio": 0.9993700787401575,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 24,
+      "video_id": "8-P7fKRl7gw",
+      "title": "52. Reynold’s Stress Modelling (RSM): governing equations - I",
+      "lesson": 52,
+      "duration_seconds": 1366,
+      "url": "https://www.youtube.com/watch?v=8-P7fKRl7gw",
+      "chapter": 16,
+      "disposition": "Included in chapter 16; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 52,
+        "video_id": "8-P7fKRl7gw",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec52.vtt",
+        "path": "lecture-52.vtt",
+        "sha256": "fa7db1e790066c7ca0f838edcc5977fdf36dc6eae957e3c727eb35add123a84c",
+        "segments": 120,
+        "last_cue_seconds": 1365.16,
+        "recording_duration": 1366,
+        "coverage_ratio": 0.999385065885798,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 40,
+      "video_id": "dUKbHiTyJUo",
+      "title": "54. Dissipation rate and Pressure-Strain rate modelling for RSM - I",
+      "lesson": 54,
+      "duration_seconds": 1923,
+      "url": "https://www.youtube.com/watch?v=dUKbHiTyJUo",
+      "chapter": 16,
+      "disposition": "Included in chapter 16; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 54,
+        "video_id": "dUKbHiTyJUo",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec54.vtt",
+        "path": "lecture-54.vtt",
+        "sha256": "b3ffddd3e87d09ebcbb3e9ca0a1f5883d578a0dd89b32685c78f03adbc0ddd16",
+        "segments": 185,
+        "last_cue_seconds": 1917.84,
+        "recording_duration": 1923,
+        "coverage_ratio": 0.9973166926677066,
+        "status": "acquired"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "second-moment-system",
+      "lesson": 52,
+      "start": 14,
+      "end": 631,
+      "lecture_material": "RSM terminology, six covariance equations, exact pressure/turbulent/molecular diffusion, pressure strain, production and destruction",
+      "extension": "Third moment27ordered entries but10independent; ktrace; pressure convention and exact form not exact numerical result",
+      "construction": "Complete unclosed system and closure inventory"
+    },
+    {
+      "anchor": "production-coupling",
+      "lesson": 52,
+      "start": 631,
+      "end": 1366,
+      "lecture_material": "Production directly from transported R and mean gradients, R11/R12 couplings and under-relaxation guidance",
+      "extension": "Generic coupling versus simple shear and exact congruence evolution; numerical relaxation not universal guarantee",
+      "construction": "PSD-preserving continuous production-only shear with Euler counterexample"
+    },
+    {
+      "anchor": "diffusion-choices",
+      "lesson": 53,
+      "start": 15,
+      "end": 858,
+      "lecture_material": "Pressure diffusion omitted, molecular diffusion direct, scalar gradient flux versus Daly–Harlow tensor diffusion with time factor",
+      "extension": "Pressure measurement difficulty not impossibility or smallness proof; derived diffusivity positive for PSD R, not inherently unstable",
+      "construction": "Primary named anisotropic and simple variants"
+    },
+    {
+      "anchor": "cross-direction-flux",
+      "lesson": 53,
+      "start": 858,
+      "end": 1524,
+      "lecture_material": "Expansion of tensor diffusion indices, nonzero directional flux from other gradients, simpler scalar diffusion option",
+      "extension": "Zero gradient at a point does not imply zero divergence; nonzero cross coefficient needed; kcomputed but scalar diffusivity still a closure",
+      "construction": "Explicit gradient/flux ledger and conservative matrix diffusion"
+    },
+    {
+      "anchor": "destruction-tensor",
+      "lesson": 54,
+      "start": 15,
+      "end": 1660,
+      "lecture_material": "Clarify diffusion expansion and small-scale local isotropy leading to epsilon_ij=2epsilon/3delta_ij",
+      "extension": "Dissipative-scale gradient isotropy does not impose large-scale covariance isotropy; tensor PSD and wall mismatch",
+      "construction": "Trace derivation and singular covariance sink counterexample"
+    },
+    {
+      "anchor": "seventh-equation",
+      "lesson": 54,
+      "start": 1660,
+      "end": 1918,
+      "lecture_material": "Additional epsilon equation, direct production/k from transported stresses, seven-equation count and pressure-strain transition",
+      "extension": "Epsilon transport remains modeled; no automatic accuracy claim, complete pressure closure follows next chapter",
+      "construction": "Trace-consistent partially assembled model"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://tmbwg.github.io/turbmodels/rsm-ssglrr.html",
+      "title": "TMBWG SSG/LRR stress-transport definitions and diffusion variants",
+      "supports": "Actual positive covariance convention, exact production form, isotropic destruction, generalized versus simple diffusion and seventh omega variable; no full coefficient set adopted",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://ntrs.nasa.gov/api/citations/19880005792/downloads/19880005792.pdf",
+      "title": "Mansour, Kim and Moin, NASA TM89451, section2.1",
+      "supports": "Previously read exact component budget context and dissipation convention; no whole40-page report audit claimed",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "article_words_including_math_code": 3192,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "worked_solutions": 8,
+  "executable_listings": 1,
+  "source_reading": "Complete normalized caption text read sequentially before drafting",
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "a6113c2262ec8b81db1080982a82850502221917f0d85396748ed3ea4d6054c3",
+    "rounds": [
+      {
+        "round": 1,
+        "report_identifier": "ch16-r1.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "a6113c2262ec8b81db1080982a82850502221917f0d85396748ed3ea4d6054c3",
+        "reviewer_id": "independent-course-peer",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      },
+      {
+        "round": 2,
+        "report_identifier": "ch16-r2.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "a6113c2262ec8b81db1080982a82850502221917f0d85396748ed3ea4d6054c3",
+        "reviewer_id": "lead-coordinator",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      }
+    ],
+    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+  },
+  "limitations": [
+    "Complete captions52–54 read; mathematical caption slips repaired with consistent indices, not a full board/video audit",
+    "Chapter16group refined to52–54 because55begins pressure-Poisson derivation;55will be covered with56–59in chapter17",
+    "Pressure diffusion omission is a declared closure assumption; no claim that pressure–velocity measurements are universally impossible",
+    "Generic anisotropic diffusion example CD0.2 is illustrative, not an adopted SSG/LRR coefficient set or empirical fit",
+    "Production-only and two-cell frozen-diffusivity examples are reduced mathematical checks, not complete RSM turbulence simulations",
+    "Isotropic destruction is a model approximation away from strong small-scale anisotropy; it alone does not preserve covariance PSD at singular states",
+    "No fully closed RSM or spatial validation claimed before pressure-strain modeling is specified"
+  ]
+}

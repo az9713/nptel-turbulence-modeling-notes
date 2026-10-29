@@ -1,0 +1,186 @@
+{
+  "chapter": 22,
+  "title": "22. Dynamic fitting and scale similarity",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "65986a55be6795f9a03641429209fc2648f492ba79e7dfbfc14a1e95041ee704",
+  "recordings": [
+    {
+      "playlist_position": 48,
+      "video_id": "RsyYpKwXq74",
+      "title": "73.LES: Dynamic Smagorinsky model and Scale similarity models - II",
+      "lesson": 73,
+      "duration_seconds": 1217,
+      "url": "https://www.youtube.com/watch?v=RsyYpKwXq74",
+      "chapter": 22,
+      "disposition": "Included in chapter 22; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 73,
+        "video_id": "RsyYpKwXq74",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec73.vtt",
+        "path": "lecture-73.vtt",
+        "sha256": "fac41a0c2aba69e370ab591eb45e7aa97be41a3a2dd1e26263b0b8dc1c50db87",
+        "segments": 109,
+        "last_cue_seconds": 1216.84,
+        "recording_duration": 1217,
+        "coverage_ratio": 0.9998685291700903,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 49,
+      "video_id": "O_ev3ObrSYw",
+      "title": "72. LES: Dynamic Smagorinsky model and Scale similarity models - I",
+      "lesson": 72,
+      "duration_seconds": 1711,
+      "url": "https://www.youtube.com/watch?v=O_ev3ObrSYw",
+      "chapter": 22,
+      "disposition": "Included in chapter 22; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 72,
+        "video_id": "O_ev3ObrSYw",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec72.vtt",
+        "path": "lecture-72.vtt",
+        "sha256": "53f5a2058c52269a405cc43adb67daa4027595843ec3aa034a9593e4a6009025",
+        "segments": 166,
+        "last_cue_seconds": 1708.12,
+        "recording_duration": 1711,
+        "coverage_ratio": 0.9983167738164815,
+        "status": "acquired"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "two-level-model",
+      "lesson": 72,
+      "start": 15,
+      "end": 470,
+      "lecture_material": "Dynamic coefficient motivation and resolved/test scale comparison",
+      "extension": "Scale-invariance and movement of coefficient through test filter are explicit modeling assumptions",
+      "construction": "Two-level deviatoric model and signed C convention"
+    },
+    {
+      "anchor": "M-tensor",
+      "lesson": 72,
+      "start": 470,
+      "end": 1200,
+      "lecture_material": "Smagorinsky model at both levels, M tensor and trace subtraction",
+      "extension": "Composite width, nonlinearity, trace and five-equations/one-scalar distinction; no componentwise tensor division",
+      "construction": "Correctly signed Ld=-2CM and model-error geometry"
+    },
+    {
+      "anchor": "least-squares",
+      "lesson": 72,
+      "start": 1200,
+      "end": 1330,
+      "lecture_material": "Lilly modification via contraction and disappearance of isotropic term",
+      "extension": "Derive minimization rather than unexplained multiplication/division; explicit zero and cancellation cases",
+      "construction": "Frobenius objective, exact fitted coefficient and nonzero orthogonal residual"
+    },
+    {
+      "anchor": "averaging",
+      "lesson": 72,
+      "start": 1330,
+      "end": 1600,
+      "lecture_material": "Fluctuating coefficient, homogeneous-direction and local smoothing",
+      "extension": "Average contractions differs from average coefficient; regularization/constraint choices change estimator",
+      "construction": "Weighted joint fit counterexample and dimensional penalty"
+    },
+    {
+      "anchor": "backscatter",
+      "lesson": 72,
+      "start": 1600,
+      "end": 1711,
+      "lecture_material": "Viscosity positivity limiter and broad resolution/SGS sensitivity comments",
+      "extension": "Negative C is signed transfer, not negative geometric length; positive total diffusivity only restricted stability evidence; no universal resolved-fraction sufficiency",
+      "construction": "Numerical signed viscosity/transfer and frozen-strain lower bound"
+    },
+    {
+      "anchor": "decomposition",
+      "lesson": 73,
+      "start": 16,
+      "end": 650,
+      "lecture_material": "Scale similarity motivation and Leonard/cross/Reynolds-SGS decomposition",
+      "extension": "Computable expression versus closure hypothesis, naming/symbol distinctions and no full original-model equivalence assertion",
+      "construction": "Exact expanded total stress and lecture-specific cross ansatz"
+    },
+    {
+      "anchor": "invariance",
+      "lesson": 73,
+      "start": 650,
+      "end": 920,
+      "lecture_material": "Bardina-labeled Cr1.1 omission and Speziale-labeled Cr1 mixed construction",
+      "extension": "Original boost derivation shows coefficient-one cancellation; modeled cross stress not exact simply because computable",
+      "construction": "Galilean central-moment proof and finite boost counterexample"
+    },
+    {
+      "anchor": "mixed-energy",
+      "lesson": 73,
+      "start": 920,
+      "end": 1217,
+      "lecture_material": "Mixed viscosity contribution, cancellation and similarity/Smagorinsky comparison",
+      "extension": "PSD does not enforce forward transfer; mixed transfer may remain negative; no universal omission-only instability cause",
+      "construction": "Affine incompressible strain with signed similarity transfer and code"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://gibbs.science/teaching/les/handouts/lilly_1992.pdf",
+      "title": "Lilly1992 proposed modification of Germano closure",
+      "supports": "Actual full printed633–635 text read: five-component overdetermination, least-squares fit, denominator/averaging/negative coefficient issues; stress convention explicitly converted",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://www.ams.jhu.edu/~eyink/Turbulence/classics/Germano92.pdf",
+      "title": "Germano1992 two-level and generalized-moment construction",
+      "supports": "Actual printed329–334 read: identity, composite scales, dynamic assumptions and beginning of consistent decomposition/Galilean central moments",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "article_words_including_math_code": 2749,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "worked_solutions": 8,
+  "executable_listings": 1,
+  "source_reading": "Complete normalized caption text read sequentially before drafting",
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "65986a55be6795f9a03641429209fc2648f492ba79e7dfbfc14a1e95041ee704",
+    "rounds": [
+      {
+        "round": 1,
+        "report_identifier": "ch22-r1.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "65986a55be6795f9a03641429209fc2648f492ba79e7dfbfc14a1e95041ee704",
+        "reviewer_id": "independent-course-peer",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      },
+      {
+        "round": 2,
+        "report_identifier": "ch22-r2.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "65986a55be6795f9a03641429209fc2648f492ba79e7dfbfc14a1e95041ee704",
+        "reviewer_id": "lead-coordinator",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      }
+    ],
+    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+  },
+  "limitations": [
+    "Complete72–73 captions read; no comprehensive audiovisual or source flow/spectrum digitization",
+    "Lilly1992 complete3-page text read; own derivation converts its opposite stress convention; no comprehensive image-equation audit claimed",
+    "Bardina/Speziale formulas retained as lecture-specific variants; original full papers not inspected, Speziale download attempt timed out",
+    "Exact identity does not make scalar dynamic fit, coefficient filtering or similarity cross closure exact",
+    "Constructed tensor fit, scalar boost and local affine filter examples are original restricted checks, not turbulent LES or empirical calibration",
+    "Clipping/averaging/regularization and positive frozen total diffusivity do not imply unconditional full numerical stability or complete wall accuracy"
+  ]
+}

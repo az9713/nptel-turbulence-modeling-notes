@@ -1,0 +1,51 @@
+{
+  "page": "book-overview.html",
+  "body_sha256": "2e7e8d450e7ac8df847bc71fd2a0f1f1d8f665fbfa3548ef039f85e31ff8e870",
+  "recording_id": "Zhi8CJfB_sU",
+  "playlist_position": 77,
+  "status": "Full introduction read and orientation included; exact body separately checked by package validator",
+  "source_reading": "Complete local machine transcript read sequentially",
+  "sections": [
+    {
+      "anchor": "applications",
+      "video_id": "Zhi8CJfB_sU",
+      "start": 0,
+      "end": 220,
+      "lecture_material": "Applications, theory/modeling and complementary role of experiments",
+      "extension": "Application-specific physical scope",
+      "construction": "Independent orientation prose"
+    },
+    {
+      "anchor": "prerequisites",
+      "video_id": "Zhi8CJfB_sU",
+      "start": 220,
+      "end": 401,
+      "lecture_material": "Audience, prerequisites, statistical models, walls, resolved eddies and hybrids",
+      "extension": "Book dependency links",
+      "construction": "Study route"
+    },
+    {
+      "anchor": "outcomes",
+      "video_id": "Zhi8CJfB_sU",
+      "start": 401,
+      "end": 489,
+      "lecture_material": "Reference families and three intended outcomes",
+      "extension": "Verification/statistical/physical evidence distinctions",
+      "construction": "Independent learning guidance"
+    },
+    {
+      "anchor": "source-scope",
+      "video_id": "Zhi8CJfB_sU",
+      "start": 489,
+      "end": 535,
+      "lecture_material": "Closing teacher acknowledgment and welcome",
+      "extension": "Honest ASR and attribution limits",
+      "construction": "Nontechnical names/verse not quoted without verification"
+    }
+  ],
+  "limitations": [
+    "Machine ASR with boundary repetitions",
+    "No full audiovisual inspection",
+    "Not a separate substantive mathematical lecture"
+  ]
+}

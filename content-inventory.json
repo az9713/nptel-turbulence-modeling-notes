@@ -1,0 +1,437 @@
+{
+  "scope": "Exact intentionally public payload; source material and internal records excluded",
+  "public_files": [
+    ".gitattributes",
+    ".gitignore",
+    ".nojekyll",
+    "LICENSE",
+    "README.md",
+    "THIRD-PARTY.md",
+    "WORKFLOW.md",
+    "assets/book.css",
+    "assets/book.js",
+    "assets/ch05-dissipation.svg",
+    "assets/ch07-energy-decay.svg",
+    "assets/ch08-viscous-crossover.svg",
+    "assets/ch09-stress-partition.svg",
+    "assets/ch10-covariance-diagnostics.svg",
+    "assets/ch11-decay-calibration.svg",
+    "assets/ch12-response-and-wall-time.svg",
+    "assets/ch15-covariance-and-source.svg",
+    "assets/ch17-pressure-and-return.svg",
+    "assets/ch18-scales-and-domain.svg",
+    "assets/ch20-filter-families.svg",
+    "assets/input/tex/extensions/boldsymbol.js",
+    "assets/input/tex/extensions/cancel.js",
+    "assets/input/tex/extensions/mathtools.js",
+    "assets/lab.js",
+    "assets/mathjax-LICENSE",
+    "assets/mathjax-tex-svg.js",
+    "assets/reader-preview.png",
+    "book-overview.html",
+    "book-overview.meta.json",
+    "chapter-01-prediction-and-turbulent-motion.html",
+    "chapter-01-prediction-and-turbulent-motion.meta.json",
+    "chapter-02-statistics-sampling-and-tensors.html",
+    "chapter-02-statistics-sampling-and-tensors.meta.json",
+    "chapter-03-conservation-and-newtonian-closure.html",
+    "chapter-03-conservation-and-newtonian-closure.meta.json",
+    "chapter-04-mean-momentum-and-closure.html",
+    "chapter-04-mean-momentum-and-closure.meta.json",
+    "chapter-05-exact-reynolds-stress-transport.html",
+    "chapter-05-exact-reynolds-stress-transport.meta.json",
+    "chapter-06-stationarity-homogeneity-and-redistribution.html",
+    "chapter-06-stationarity-homogeneity-and-redistribution.meta.json",
+    "chapter-07-turbulent-and-mean-energy-budgets.html",
+    "chapter-07-turbulent-and-mean-energy-budgets.meta.json",
+    "chapter-08-thin-boundary-layers-and-outer-scaling.html",
+    "chapter-08-thin-boundary-layers-and-outer-scaling.meta.json",
+    "chapter-09-inner-scaling-and-friction-velocity.html",
+    "chapter-09-inner-scaling-and-friction-velocity.meta.json",
+    "chapter-10-eddy-viscosity-and-mixing-length.html",
+    "chapter-10-eddy-viscosity-and-mixing-length.meta.json",
+    "chapter-11-constructing-k-epsilon-and-calibration.html",
+    "chapter-11-constructing-k-epsilon-and-calibration.meta.json",
+    "chapter-12-calibration-and-alternative-time-scales.html",
+    "chapter-12-calibration-and-alternative-time-scales.meta.json",
+    "chapter-13-wall-functions-and-smooth-wall-limits.html",
+    "chapter-13-wall-functions-and-smooth-wall-limits.meta.json",
+    "chapter-14-near-wall-corrections-and-boundary-data.html",
+    "chapter-14-near-wall-corrections-and-boundary-data.meta.json",
+    "chapter-15-realizability-and-production-corrections.html",
+    "chapter-15-realizability-and-production-corrections.meta.json",
+    "chapter-16-reynolds-stress-transport-closure.html",
+    "chapter-16-reynolds-stress-transport-closure.meta.json",
+    "chapter-17-pressure-redistribution-and-wall-models.html",
+    "chapter-17-pressure-redistribution-and-wall-models.meta.json",
+    "chapter-18-scales-cascades-and-direct-simulation.html",
+    "chapter-18-scales-cascades-and-direct-simulation.meta.json",
+    "chapter-19-filtered-equations-and-the-les-closure.html",
+    "chapter-19-filtered-equations-and-the-les-closure.meta.json",
+    "chapter-20-filter-families-and-subgrid-viscosity.html",
+    "chapter-20-filter-families-and-subgrid-viscosity.meta.json",
+    "chapter-21-wall-limits-energy-memory-and-test-filtering.html",
+    "chapter-21-wall-limits-energy-memory-and-test-filtering.meta.json",
+    "chapter-22-dynamic-fitting-and-scale-similarity.html",
+    "chapter-22-dynamic-fitting-and-scale-similarity.meta.json",
+    "chapter-23-les-numerics-and-hybrid-interfaces.html",
+    "chapter-23-les-numerics-and-hybrid-interfaces.meta.json",
+    "chapter-24-live-session-model-choice-and-evidence.html",
+    "chapter-24-live-session-model-choice-and-evidence.meta.json",
+    "chapter-25-live-session-from-equation-to-evidence.html",
+    "chapter-25-live-session-from-equation-to-evidence.meta.json",
+    "chapter-code-validation.json",
+    "code/ch01_prediction.py",
+    "code/ch02_statistics.py",
+    "code/ch03_conservation.py",
+    "code/ch04_closure.py",
+    "code/ch05_stress_budget.py",
+    "code/ch06_redistribution.py",
+    "code/ch07_energy.py",
+    "code/ch08_scaling.py",
+    "code/ch09_wall_units.py",
+    "code/ch10_eddy_viscosity.py",
+    "code/ch11_kepsilon.py",
+    "code/ch12_alternative_scales.py",
+    "code/ch13_wall_treatment.py",
+    "code/ch14_boundary_and_inflow.py",
+    "code/ch15_realizability.py",
+    "code/ch16_stress_transport.py",
+    "code/ch17_pressure_and_redistribution.py",
+    "code/ch18_scales_and_dns.py",
+    "code/ch19_filtering.py",
+    "code/ch20_filters_and_smagorinsky.py",
+    "code/ch21_energy_and_test_filter.py",
+    "code/ch22_dynamic_and_similarity.py",
+    "code/ch23_numerics_and_hybrid.py",
+    "code/ch24_model_choice.py",
+    "code/ch25_from_equation_to_solver.py",
+    "code/plot_ch05.py",
+    "code/plot_ch07.py",
+    "code/plot_ch08.py",
+    "code/plot_ch09.py",
+    "code/plot_ch10.py",
+    "code/plot_ch11.py",
+    "code/plot_ch12.py",
+    "code/plot_ch15.py",
+    "code/plot_ch17.py",
+    "completion.json",
+    "content-inventory.json",
+    "course-review.json",
+    "editorial-review-summary.json",
+    "external-link-validation.json",
+    "index.html",
+    "numerical-lab.html",
+    "package-validation.json",
+    "public-package-validation.json",
+    "publication-validation.json",
+    "reader-validation.json",
+    "references.html",
+    "requirements.txt",
+    "source-free-validation.json",
+    "source-manifest.json",
+    "source-map.html",
+    "source-map.json",
+    "source-validation-summary.json",
+    "tools/audit_public.py",
+    "tools/browser_check.py",
+    "tools/build_book.py",
+    "tools/check_code.py",
+    "tools/check_package.py",
+    "tools/inspect_sources.py",
+    "tools/public_files.py",
+    "tools/validate_book.py",
+    "tools/verify_publication.py",
+    "tools/verify_source_free.py"
+  ],
+  "chapters": [
+    {
+      "chapter": 1,
+      "file": "chapter-01-prediction-and-turbulent-motion.html",
+      "sidecar": "chapter-01-prediction-and-turbulent-motion.meta.json",
+      "body_sha256": "3d50593553155bf87cd9a9ce79128c469aed2b2fd8fb34790907f1ede582861d",
+      "programs": [
+        "code/ch01_prediction.py"
+      ],
+      "worked_solutions": 5,
+      "article_words_including_math_code": 3420
+    },
+    {
+      "chapter": 2,
+      "file": "chapter-02-statistics-sampling-and-tensors.html",
+      "sidecar": "chapter-02-statistics-sampling-and-tensors.meta.json",
+      "body_sha256": "96af444952a4cab3ad4d12eed4487df800ef5f97a5f7dee8615ae4286a7b63ba",
+      "programs": [
+        "code/ch02_statistics.py"
+      ],
+      "worked_solutions": 8,
+      "article_words_including_math_code": 4780
+    },
+    {
+      "chapter": 3,
+      "file": "chapter-03-conservation-and-newtonian-closure.html",
+      "sidecar": "chapter-03-conservation-and-newtonian-closure.meta.json",
+      "body_sha256": "8d3788c61e44eeb4f9c2415a9e596897687cf5719cc36f20ea01371240647138",
+      "programs": [
+        "code/ch03_conservation.py"
+      ],
+      "worked_solutions": 5,
+      "article_words_including_math_code": 3286
+    },
+    {
+      "chapter": 4,
+      "file": "chapter-04-mean-momentum-and-closure.html",
+      "sidecar": "chapter-04-mean-momentum-and-closure.meta.json",
+      "body_sha256": "00480a9d4c4d9020aaf99674e14f6fbd677e132927c3729f95281befa6d609d5",
+      "programs": [
+        "code/ch04_closure.py"
+      ],
+      "worked_solutions": 7,
+      "article_words_including_math_code": 4607
+    },
+    {
+      "chapter": 5,
+      "file": "chapter-05-exact-reynolds-stress-transport.html",
+      "sidecar": "chapter-05-exact-reynolds-stress-transport.meta.json",
+      "body_sha256": "593c5b9deda629c0f558bcd40136785be4b065527ffed20a0ce475a13fa48287",
+      "programs": [
+        "code/ch05_stress_budget.py"
+      ],
+      "worked_solutions": 7,
+      "article_words_including_math_code": 3375
+    },
+    {
+      "chapter": 6,
+      "file": "chapter-06-stationarity-homogeneity-and-redistribution.html",
+      "sidecar": "chapter-06-stationarity-homogeneity-and-redistribution.meta.json",
+      "body_sha256": "115f5eb6953defa6abd75b866f9cf39b76c61e0941bb154add9a228ee255887e",
+      "programs": [
+        "code/ch06_redistribution.py"
+      ],
+      "worked_solutions": 8,
+      "article_words_including_math_code": 4316
+    },
+    {
+      "chapter": 7,
+      "file": "chapter-07-turbulent-and-mean-energy-budgets.html",
+      "sidecar": "chapter-07-turbulent-and-mean-energy-budgets.meta.json",
+      "body_sha256": "66aaaada380347ea5b0f54d471ad261900af0b5f5f1513b17c4d67551bfa5a3d",
+      "programs": [
+        "code/ch07_energy.py"
+      ],
+      "worked_solutions": 8,
+      "article_words_including_math_code": 3746
+    },
+    {
+      "chapter": 8,
+      "file": "chapter-08-thin-boundary-layers-and-outer-scaling.html",
+      "sidecar": "chapter-08-thin-boundary-layers-and-outer-scaling.meta.json",
+      "body_sha256": "6cb5e3ec8eb3be86de075ff24d44a6c8c8fc54f6400f42041f5d676cef5a8a65",
+      "programs": [
+        "code/ch08_scaling.py"
+      ],
+      "worked_solutions": 8,
+      "article_words_including_math_code": 3672
+    },
+    {
+      "chapter": 9,
+      "file": "chapter-09-inner-scaling-and-friction-velocity.html",
+      "sidecar": "chapter-09-inner-scaling-and-friction-velocity.meta.json",
+      "body_sha256": "1b30386fdb984eac569460c14a4f95baa62cd43c84c919ba41f19e213d620377",
+      "programs": [
+        "code/ch09_wall_units.py"
+      ],
+      "worked_solutions": 8,
+      "article_words_including_math_code": 3709
+    },
+    {
+      "chapter": 10,
+      "file": "chapter-10-eddy-viscosity-and-mixing-length.html",
+      "sidecar": "chapter-10-eddy-viscosity-and-mixing-length.meta.json",
+      "body_sha256": "8e6544cde15544af235e04d8a06c4efe799e7eee294b442a805e6e8ea0ecfbe6",
+      "programs": [
+        "code/ch10_eddy_viscosity.py"
+      ],
+      "worked_solutions": 8,
+      "article_words_including_math_code": 3756
+    },
+    {
+      "chapter": 11,
+      "file": "chapter-11-constructing-k-epsilon-and-calibration.html",
+      "sidecar": "chapter-11-constructing-k-epsilon-and-calibration.meta.json",
+      "body_sha256": "b82749ed8fcc96a38c14a93458e9e99cc36999c9ba9e95058c32ae58a7440321",
+      "programs": [
+        "code/ch11_kepsilon.py"
+      ],
+      "worked_solutions": 8,
+      "article_words_including_math_code": 3402
+    },
+    {
+      "chapter": 12,
+      "file": "chapter-12-calibration-and-alternative-time-scales.html",
+      "sidecar": "chapter-12-calibration-and-alternative-time-scales.meta.json",
+      "body_sha256": "852ad756c402e55984ca8caf772c8ba6419e9699d4f89505de43c844621e69bb",
+      "programs": [
+        "code/ch12_alternative_scales.py"
+      ],
+      "worked_solutions": 8,
+      "article_words_including_math_code": 3775
+    },
+    {
+      "chapter": 13,
+      "file": "chapter-13-wall-functions-and-smooth-wall-limits.html",
+      "sidecar": "chapter-13-wall-functions-and-smooth-wall-limits.meta.json",
+      "body_sha256": "acd18ac235ad0243f67fd8df4ed09085c77d2e91c8dc8578ef32988eb8e5e365",
+      "programs": [
+        "code/ch13_wall_treatment.py"
+      ],
+      "worked_solutions": 8,
+      "article_words_including_math_code": 3582
+    },
+    {
+      "chapter": 14,
+      "file": "chapter-14-near-wall-corrections-and-boundary-data.html",
+      "sidecar": "chapter-14-near-wall-corrections-and-boundary-data.meta.json",
+      "body_sha256": "4f39e7f497fbcb2e83cb3e9c5f75fecfdc73f542a93e4749e22d8c4ade91a13f",
+      "programs": [
+        "code/ch14_boundary_and_inflow.py"
+      ],
+      "worked_solutions": 8,
+      "article_words_including_math_code": 3392
+    },
+    {
+      "chapter": 15,
+      "file": "chapter-15-realizability-and-production-corrections.html",
+      "sidecar": "chapter-15-realizability-and-production-corrections.meta.json",
+      "body_sha256": "0bac19cf7521c8ddcd4d9f785dea766c855c4a88122072448ee25d345975f27a",
+      "programs": [
+        "code/ch15_realizability.py"
+      ],
+      "worked_solutions": 8,
+      "article_words_including_math_code": 3372
+    },
+    {
+      "chapter": 16,
+      "file": "chapter-16-reynolds-stress-transport-closure.html",
+      "sidecar": "chapter-16-reynolds-stress-transport-closure.meta.json",
+      "body_sha256": "a6113c2262ec8b81db1080982a82850502221917f0d85396748ed3ea4d6054c3",
+      "programs": [
+        "code/ch16_stress_transport.py"
+      ],
+      "worked_solutions": 8,
+      "article_words_including_math_code": 3192
+    },
+    {
+      "chapter": 17,
+      "file": "chapter-17-pressure-redistribution-and-wall-models.html",
+      "sidecar": "chapter-17-pressure-redistribution-and-wall-models.meta.json",
+      "body_sha256": "7457dcb0e5b0b5550d9e6cb515a762e8f9cf695f79b8e42963b4baafa7f16bcf",
+      "programs": [
+        "code/ch17_pressure_and_redistribution.py"
+      ],
+      "worked_solutions": 8,
+      "article_words_including_math_code": 3890
+    },
+    {
+      "chapter": 18,
+      "file": "chapter-18-scales-cascades-and-direct-simulation.html",
+      "sidecar": "chapter-18-scales-cascades-and-direct-simulation.meta.json",
+      "body_sha256": "90c6376ae2fdff85566c9f640f65de6efd3adc8a94d76ce810b58aecf406cdf0",
+      "programs": [
+        "code/ch18_scales_and_dns.py"
+      ],
+      "worked_solutions": 8,
+      "article_words_including_math_code": 4060
+    },
+    {
+      "chapter": 19,
+      "file": "chapter-19-filtered-equations-and-the-les-closure.html",
+      "sidecar": "chapter-19-filtered-equations-and-the-les-closure.meta.json",
+      "body_sha256": "ea22bd6488c53c6a5798ff012f436700ca1d381779fa259ac6aaa40642477d44",
+      "programs": [
+        "code/ch19_filtering.py"
+      ],
+      "worked_solutions": 8,
+      "article_words_including_math_code": 3512
+    },
+    {
+      "chapter": 20,
+      "file": "chapter-20-filter-families-and-subgrid-viscosity.html",
+      "sidecar": "chapter-20-filter-families-and-subgrid-viscosity.meta.json",
+      "body_sha256": "e4aa1c157ea0ebb996d40f763da61e6c85ac171b6dbb46ad01c2e9be17de2b50",
+      "programs": [
+        "code/ch20_filters_and_smagorinsky.py"
+      ],
+      "worked_solutions": 8,
+      "article_words_including_math_code": 3040
+    },
+    {
+      "chapter": 21,
+      "file": "chapter-21-wall-limits-energy-memory-and-test-filtering.html",
+      "sidecar": "chapter-21-wall-limits-energy-memory-and-test-filtering.meta.json",
+      "body_sha256": "dc16ad13bbd91b78fd1518f10cc2ea3494acf4e6ab23b0aa41cb6f9210282003",
+      "programs": [
+        "code/ch21_energy_and_test_filter.py"
+      ],
+      "worked_solutions": 8,
+      "article_words_including_math_code": 2946
+    },
+    {
+      "chapter": 22,
+      "file": "chapter-22-dynamic-fitting-and-scale-similarity.html",
+      "sidecar": "chapter-22-dynamic-fitting-and-scale-similarity.meta.json",
+      "body_sha256": "65986a55be6795f9a03641429209fc2648f492ba79e7dfbfc14a1e95041ee704",
+      "programs": [
+        "code/ch22_dynamic_and_similarity.py"
+      ],
+      "worked_solutions": 8,
+      "article_words_including_math_code": 2749
+    },
+    {
+      "chapter": 23,
+      "file": "chapter-23-les-numerics-and-hybrid-interfaces.html",
+      "sidecar": "chapter-23-les-numerics-and-hybrid-interfaces.meta.json",
+      "body_sha256": "7803dbdf62c22f242e34e1ee2919c47f727d32c81b62a24cca9efbc772ce30ef",
+      "programs": [
+        "code/ch23_numerics_and_hybrid.py"
+      ],
+      "worked_solutions": 8,
+      "article_words_including_math_code": 3029
+    },
+    {
+      "chapter": 24,
+      "file": "chapter-24-live-session-model-choice-and-evidence.html",
+      "sidecar": "chapter-24-live-session-model-choice-and-evidence.meta.json",
+      "body_sha256": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
+      "programs": [
+        "code/ch24_model_choice.py"
+      ],
+      "worked_solutions": 8,
+      "article_words_including_math_code": 3001
+    },
+    {
+      "chapter": 25,
+      "file": "chapter-25-live-session-from-equation-to-evidence.html",
+      "sidecar": "chapter-25-live-session-from-equation-to-evidence.meta.json",
+      "body_sha256": "d68729670d0967b50f516c94a3d7726ff2044e71118082335d2a014e3740b188",
+      "programs": [
+        "code/ch25_from_equation_to_solver.py"
+      ],
+      "worked_solutions": 8,
+      "article_words_including_math_code": 2962
+    }
+  ],
+  "recording_count": 77,
+  "auxiliary_programs": [
+    "code/plot_ch05.py",
+    "code/plot_ch07.py",
+    "code/plot_ch08.py",
+    "code/plot_ch09.py",
+    "code/plot_ch10.py",
+    "code/plot_ch11.py",
+    "code/plot_ch12.py",
+    "code/plot_ch15.py",
+    "code/plot_ch17.py"
+  ],
+  "counting_method": "Whitespace article tokens including math/code and complete solutions; depth diagnostic rather than acceptance quota"
+}

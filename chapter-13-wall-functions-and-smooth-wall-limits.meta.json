@@ -1,0 +1,218 @@
+{
+  "chapter": 13,
+  "title": "13. Wall functions and smooth-wall limits",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "acd18ac235ad0243f67fd8df4ed09085c77d2e91c8dc8578ef32988eb8e5e365",
+  "recordings": [
+    {
+      "playlist_position": 15,
+      "video_id": "MY0s2GPlPbM",
+      "title": "40. Introduciton to wall-functions - I",
+      "lesson": 40,
+      "duration_seconds": 1037,
+      "url": "https://www.youtube.com/watch?v=MY0s2GPlPbM",
+      "chapter": 13,
+      "disposition": "Included in chapter 13; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 40,
+        "video_id": "MY0s2GPlPbM",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec40.vtt",
+        "path": "lecture-40.vtt",
+        "sha256": "95a1be35d5cf77b6024b8f0a0f56781c00301a2046d7b95ad53464cb80a68c46",
+        "segments": 113,
+        "last_cue_seconds": 1036.76,
+        "recording_duration": 1037,
+        "coverage_ratio": 0.9997685631629701,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 17,
+      "video_id": "-Zjqp29rD_k",
+      "title": "41. Introduciton to wall-functions -II",
+      "lesson": 41,
+      "duration_seconds": 1110,
+      "url": "https://www.youtube.com/watch?v=-Zjqp29rD_k",
+      "chapter": 13,
+      "disposition": "Included in chapter 13; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 41,
+        "video_id": "-Zjqp29rD_k",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec41.vtt",
+        "path": "lecture-41.vtt",
+        "sha256": "0809c48888704cfbe427da3836348c3015c5a5828708a1747e00d06d4129d5e2",
+        "segments": 110,
+        "last_cue_seconds": 1108.76,
+        "recording_duration": 1110,
+        "coverage_ratio": 0.9988828828828828,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 18,
+      "video_id": "TP3OSk-Jb3Y",
+      "title": "42. Introduction to wall-resolved simulations - I",
+      "lesson": 42,
+      "duration_seconds": 1307,
+      "url": "https://www.youtube.com/watch?v=TP3OSk-Jb3Y",
+      "chapter": 13,
+      "disposition": "Included in chapter 13; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 42,
+        "video_id": "TP3OSk-Jb3Y",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec42.vtt",
+        "path": "lecture-42.vtt",
+        "sha256": "a4a85cd291778dc5da01e2a4d025fc66cf42a48866c984c8a30e916006d31915",
+        "segments": 137,
+        "last_cue_seconds": 1298.96,
+        "recording_duration": 1307,
+        "coverage_ratio": 0.9938485080336649,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 19,
+      "video_id": "v4kmgnHYXNE",
+      "title": "43. Introduction to wall-resolved simulations - II",
+      "lesson": 43,
+      "duration_seconds": 1447,
+      "url": "https://www.youtube.com/watch?v=v4kmgnHYXNE",
+      "chapter": 13,
+      "disposition": "Included in chapter 13; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 43,
+        "video_id": "v4kmgnHYXNE",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec43.vtt",
+        "path": "lecture-43.vtt",
+        "sha256": "8281ee0845ba4b9b1e5319cebc8dcd881157b7eb74efe0936d48ac833541c38d",
+        "segments": 152,
+        "last_cue_seconds": 1439.24,
+        "recording_duration": 1447,
+        "coverage_ratio": 0.9946371803731859,
+        "status": "acquired"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "two-wall-problems",
+      "lesson": 40,
+      "start": 14,
+      "end": 1037,
+      "lecture_material": "Smooth-wall linear/log profiles, local versus global Reynolds number, wall-function motivation, cell position and scope",
+      "extension": "Distinguish cell-centre location from cell thickness and mathematical wall from numerical wall flux",
+      "construction": "Fixed physical mesh y-plus depends on unknown traction"
+    },
+    {
+      "anchor": "wall-law-inference",
+      "lesson": 41,
+      "start": 15,
+      "end": 779,
+      "lecture_material": "Log law, iterative friction velocity and equilibrium k at first point",
+      "extension": "E=exp(kappa B) exact relation; wall law is one relation not independent prescriptions of U and traction",
+      "construction": "Bracketed monotone root and deliberately invalid viscous-region inference"
+    },
+    {
+      "anchor": "turbulence-wall-data",
+      "lesson": 41,
+      "start": 779,
+      "end": 1109,
+      "lecture_material": "Equilibrium epsilon and omega wall-function formulas, coefficient convention cautions",
+      "extension": "Retain beta_star and distinguish epsilon/k variable from rescaled omega with corresponding equations",
+      "construction": "Full numerical closure-state and effective wall-face viscosity ledger"
+    },
+    {
+      "anchor": "two-component",
+      "lesson": 42,
+      "start": 15,
+      "end": 1299,
+      "lecture_material": "Preferential suppression of normal fluctuations, two-component limit, pressure/viscous effects and RANS alternatives",
+      "extension": "Normalized covariance limit rather than nonzero wall energy; kinematic limit persists under regular no-slip incompressible assumptions even with rotation/stratification; elliptic f equation distinction",
+      "construction": "Explicit divergence-free random near-wall field"
+    },
+    {
+      "anchor": "taylor",
+      "lesson": 43,
+      "start": 15,
+      "end": 1120,
+      "lecture_material": "LRN mesh guidance, term consistency and Taylor expansions, boundary/continuity coefficient constraints and stress orders",
+      "extension": "Factorials absorbed into coefficients; leading coefficient may vanish; rms versus covariance orders",
+      "construction": "Covariance order table and model normal-stress obstruction"
+    },
+    {
+      "anchor": "budget-limits",
+      "lesson": 43,
+      "start": 1120,
+      "end": 1440,
+      "lecture_material": "Gradient, epsilon, k flux and triple-product near-wall orders leading to next lecture comparisons",
+      "extension": "Include both tangential normal derivatives in finite dissipation; pressure flux not discarded as an identity",
+      "construction": "Wall epsilon=nu*k_second_derivative and bare-viscosity quartic versus generic cubic shear"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://cpp.openfoam.org/v4/nutUWallFunctionFvPatchScalarField_8C_source.html",
+      "title": "OpenFOAM Foundation4.1 velocity-based wall function",
+      "supports": "Actual calcNut and calcYPlus functions inspected: wall-adjacent velocity inference and effective patch turbulent viscosity, not all cell-centre values independently prescribed",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v5/v2f_8H_source.html",
+      "title": "OpenFOAM Foundation5 v2-f declaration",
+      "supports": "Model description identifies elliptic damping field f; equation-count language distinguished from four evolution/transport equations",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://tmbwg.github.io/turbmodels/ke-chien.html",
+      "title": "TMBWG Chien model definition",
+      "supports": "Named low-Reynolds-number closure uses additional terms and variant-specific wall data; not baseline epsilon equal to physical wall dissipation",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "article_words_including_math_code": 3582,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "worked_solutions": 8,
+  "executable_listings": 1,
+  "source_reading": "Complete normalized caption text read sequentially before drafting",
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "acd18ac235ad0243f67fd8df4ed09085c77d2e91c8dc8578ef32988eb8e5e365",
+    "rounds": [
+      {
+        "round": 1,
+        "report_identifier": "ch13-r1.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "acd18ac235ad0243f67fd8df4ed09085c77d2e91c8dc8578ef32988eb8e5e365",
+        "reviewer_id": "independent-course-peer",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      },
+      {
+        "round": 2,
+        "report_identifier": "ch13-r2.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "acd18ac235ad0243f67fd8df4ed09085c77d2e91c8dc8578ef32988eb8e5e365",
+        "reviewer_id": "lead-coordinator",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      }
+    ],
+    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+  },
+  "limitations": [
+    "Full captions40–43 read; no numerical values digitized from instructor DNS graphs and no comprehensive board/video audit",
+    "Wall law calculations assume positive shear, smooth attached equilibrium layer and a declared fit; no generic roughness or separated-flow guarantee",
+    "Illustrative mesh ranges are guidance to check against actual model/flow, not sufficient convergence criteria",
+    "Near-wall expansions require a smooth impermeable no-slip wall, incompressibility and suitable derivative/moment regularity; degenerate leading coefficients can vanish",
+    "Manufactured random field is a kinematic check, not an unforced Navier–Stokes solution or turbulent DNS",
+    "No spatial RANS solver or accuracy benchmark performed; numerical tests cover declared restricted relations"
+  ]
+}

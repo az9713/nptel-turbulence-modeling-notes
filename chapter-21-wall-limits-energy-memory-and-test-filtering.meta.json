@@ -1,0 +1,198 @@
+{
+  "chapter": 21,
+  "title": "21. Wall limits, energy memory and test filtering",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "dc16ad13bbd91b78fd1518f10cc2ea3494acf4e6ab23b0aa41cb6f9210282003",
+  "recordings": [
+    {
+      "playlist_position": 50,
+      "video_id": "d4OENIPqf08",
+      "title": "70. Large Eddy Simulations: Smagorinsky model - I",
+      "lesson": 70,
+      "duration_seconds": 1101,
+      "url": "https://www.youtube.com/watch?v=d4OENIPqf08",
+      "chapter": 21,
+      "disposition": "Included in chapter 21; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 70,
+        "video_id": "d4OENIPqf08",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec70.vtt",
+        "path": "lecture-70.vtt",
+        "sha256": "4910a397e3bd804690fde66b31cc301e96cb9fcb62f8b6a0c1bcd8e5394ef8a2",
+        "segments": 110,
+        "last_cue_seconds": 1100.04,
+        "recording_duration": 1101,
+        "coverage_ratio": 0.9991280653950954,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 52,
+      "video_id": "ofYq3-Ls_-o",
+      "title": "71. Large Eddy Simulations: Smagorinsky model - II",
+      "lesson": 71,
+      "duration_seconds": 1363,
+      "url": "https://www.youtube.com/watch?v=ofYq3-Ls_-o",
+      "chapter": 21,
+      "disposition": "Included in chapter 21; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 71,
+        "video_id": "ofYq3-Ls_-o",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec71.vtt",
+        "path": "lecture-71.vtt",
+        "sha256": "c1f74d0812f6d0f72e7d96eeb0c7257377e029f75bef40cd3de1980e2e280ca5",
+        "segments": 125,
+        "last_cue_seconds": 1362.6,
+        "recording_duration": 1363,
+        "coverage_ratio": 0.9997065297138664,
+        "status": "acquired"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "wall",
+      "lesson": 70,
+      "start": 15,
+      "end": 270,
+      "lecture_material": "Near-wall static SGS viscosity and large resolved strain",
+      "extension": "Finite smooth gradients need not diverge; wall filter definitions and resolved versus modeled wall regions",
+      "construction": "Grid scale, wall distance and physical kinematic distinction"
+    },
+    {
+      "anchor": "damping",
+      "lesson": 70,
+      "start": 270,
+      "end": 502,
+      "lecture_material": "Van-Driest-type damping and minimum grid/wall length option",
+      "extension": "Viscosity versus length placement and Cs versus Delta cap conventions distinct; dimensional volume correction",
+      "construction": "Executed numerical values, small-y powers and no full wall-asymptotic guarantee"
+    },
+    {
+      "anchor": "energy-model",
+      "lesson": 70,
+      "start": 502,
+      "end": 750,
+      "lecture_material": "One-equation SGS-energy advection/diffusion and Ck Delta sqrtq viscosity",
+      "extension": "Alternative transported viscosity, explicit coefficients/boundary variables; actual versioned architecture comparison",
+      "construction": "Complete modeled q equation and dimensions"
+    },
+    {
+      "anchor": "transfer",
+      "lesson": 70,
+      "start": 750,
+      "end": 1101,
+      "lecture_material": "Resolved-to-SGS production, destruction estimate Ce q^1.5/Delta and dynamic coefficient motivation",
+      "extension": "Transfer matching requires consistent stress, not equilibrium; final molecular loss and resolved viscosity remain distinct",
+      "construction": "Two-budget cancellation and equilibrium Cs conversion"
+    },
+    {
+      "anchor": "ode-check",
+      "lesson": 70,
+      "start": 502,
+      "end": 1101,
+      "lecture_material": "Energy transport supplies a state rather than purely instantaneous algebraic viscosity",
+      "extension": "Original analytic fixed-strain and shear-off reductions; positive initial state and explicit-step restrictions",
+      "construction": "Riccati exact solution, RK4 refinement and memory decay"
+    },
+    {
+      "anchor": "test-filter",
+      "lesson": 71,
+      "start": 14,
+      "end": 370,
+      "lecture_material": "Dynamic coefficient, additional test filter and nominal twice-grid scale",
+      "extension": "Additional/composite widths differ; WALE/VMS names do not imply dynamic coefficient; user design choices remain",
+      "construction": "Two operator notation, scale-composition and bounded actual WALE source check"
+    },
+    {
+      "anchor": "identity",
+      "lesson": 71,
+      "start": 370,
+      "end": 990,
+      "lecture_material": "Grid then test filtered equations and total stress substitution",
+      "extension": "Ordered operators suffice for algebra; standard PDEs need derivative conditions; no automatic spectral band interpretation",
+      "construction": "Exact cancellation T-Htau=L"
+    },
+    {
+      "anchor": "identity-check",
+      "lesson": 71,
+      "start": 990,
+      "end": 1363,
+      "lecture_material": "Dynamic Leonard stress computable from resolved data and route to coefficient estimation",
+      "extension": "Identity alone not unique closure or guaranteed tensor fit",
+      "construction": "All-component finite-array identity execution and next coefficient assumptions"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://cpp.openfoam.org/v4/kEqn_8C_source.html",
+      "title": "OpenFOAM Foundation4.1 kEqn implementation",
+      "supports": "Actual correctNut, constructor Ck.094, epsilon and correct equation/source functions read; transported SGS energy architecture, not all inherited constants or solver execution",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://www.ams.jhu.edu/~eyink/Turbulence/classics/Germano92.pdf",
+      "title": "Germano1992 two-level stress identity",
+      "supports": "Actual printed329–333 read: linear-filter central moments, identity and composite Gaussian/cutoff width distinction, dynamic-model additional assumptions",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v4/WALE_8H_source.html",
+      "title": "OpenFOAM Foundation4.1 WALE declaration",
+      "supports": "Actual description and fixed default coefficient block, gradient-squared architecture, not proof of dynamic coefficient computation",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v4/WALE_8C_source.html",
+      "title": "OpenFOAM Foundation4.1 WALE implementation",
+      "supports": "Actual Sd, algebraic k, correctNut and constructor blocks read; local gradient construction and fixed Cw distinguish this variant from dynamically fitted Cs",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "article_words_including_math_code": 2946,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "worked_solutions": 8,
+  "executable_listings": 1,
+  "source_reading": "Complete normalized caption text read sequentially before drafting",
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "dc16ad13bbd91b78fd1518f10cc2ea3494acf4e6ab23b0aa41cb6f9210282003",
+    "rounds": [
+      {
+        "round": 1,
+        "report_identifier": "ch21-r1.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "dc16ad13bbd91b78fd1518f10cc2ea3494acf4e6ab23b0aa41cb6f9210282003",
+        "reviewer_id": "independent-course-peer",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      },
+      {
+        "round": 2,
+        "report_identifier": "ch21-r2.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "dc16ad13bbd91b78fd1518f10cc2ea3494acf4e6ab23b0aa41cb6f9210282003",
+        "reviewer_id": "lead-coordinator",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      }
+    ],
+    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+  },
+  "limitations": [
+    "Complete70–71 captions read, no comprehensive audiovisual audit or reproduction of source flow images",
+    "Wall damping placement and length-limit variants explicitly specified; none claimed full physical-wall asymptotic or empirical validation",
+    "One-equation incompressible illustrative coefficient set distinguished from all actual Foundation4.1 inherited defaults/source options",
+    "Fixed-strain and shear-off ODE are restricted positive-initial-state checks, not coupled channel LES or general discrete positivity proof",
+    "Germano identity exact for declared ordered linear filters; model coefficient fit remains additional closure work",
+    "WALE declaration/local gradient implementation inspected only for fixed-coefficient architecture distinction; no full WALE/VMS derivation claimed"
+  ]
+}

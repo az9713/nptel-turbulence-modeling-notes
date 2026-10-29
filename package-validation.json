@@ -1,0 +1,235 @@
+{
+  "scope": "Static structure, links, source bounds and digest integrity; not scientific or independent source-fidelity review",
+  "passed": true,
+  "issues": [],
+  "chapters": [
+    {
+      "file": "chapter-01-prediction-and-turbulent-motion.html",
+      "body_sha256": "3d50593553155bf87cd9a9ce79128c469aed2b2fd8fb34790907f1ede582861d",
+      "article_words_including_math_code": 3420,
+      "worked_solutions": 5,
+      "display_equations": 2,
+      "source_spans": 6
+    },
+    {
+      "file": "chapter-02-statistics-sampling-and-tensors.html",
+      "body_sha256": "96af444952a4cab3ad4d12eed4487df800ef5f97a5f7dee8615ae4286a7b63ba",
+      "article_words_including_math_code": 4780,
+      "worked_solutions": 8,
+      "display_equations": 4,
+      "source_spans": 10
+    },
+    {
+      "file": "chapter-03-conservation-and-newtonian-closure.html",
+      "body_sha256": "8d3788c61e44eeb4f9c2415a9e596897687cf5719cc36f20ea01371240647138",
+      "article_words_including_math_code": 3286,
+      "worked_solutions": 5,
+      "display_equations": 12,
+      "source_spans": 7
+    },
+    {
+      "file": "chapter-04-mean-momentum-and-closure.html",
+      "body_sha256": "00480a9d4c4d9020aaf99674e14f6fbd677e132927c3729f95281befa6d609d5",
+      "article_words_including_math_code": 4607,
+      "worked_solutions": 7,
+      "display_equations": 16,
+      "source_spans": 9
+    },
+    {
+      "file": "chapter-05-exact-reynolds-stress-transport.html",
+      "body_sha256": "593c5b9deda629c0f558bcd40136785be4b065527ffed20a0ce475a13fa48287",
+      "article_words_including_math_code": 3375,
+      "worked_solutions": 7,
+      "display_equations": 14,
+      "source_spans": 8
+    },
+    {
+      "file": "chapter-06-stationarity-homogeneity-and-redistribution.html",
+      "body_sha256": "115f5eb6953defa6abd75b866f9cf39b76c61e0941bb154add9a228ee255887e",
+      "article_words_including_math_code": 4316,
+      "worked_solutions": 8,
+      "display_equations": 15,
+      "source_spans": 8
+    },
+    {
+      "file": "chapter-07-turbulent-and-mean-energy-budgets.html",
+      "body_sha256": "66aaaada380347ea5b0f54d471ad261900af0b5f5f1513b17c4d67551bfa5a3d",
+      "article_words_including_math_code": 3746,
+      "worked_solutions": 8,
+      "display_equations": 13,
+      "source_spans": 8
+    },
+    {
+      "file": "chapter-08-thin-boundary-layers-and-outer-scaling.html",
+      "body_sha256": "6cb5e3ec8eb3be86de075ff24d44a6c8c8fc54f6400f42041f5d676cef5a8a65",
+      "article_words_including_math_code": 3672,
+      "worked_solutions": 8,
+      "display_equations": 6,
+      "source_spans": 7
+    },
+    {
+      "file": "chapter-09-inner-scaling-and-friction-velocity.html",
+      "body_sha256": "1b30386fdb984eac569460c14a4f95baa62cd43c84c919ba41f19e213d620377",
+      "article_words_including_math_code": 3709,
+      "worked_solutions": 8,
+      "display_equations": 9,
+      "source_spans": 7
+    },
+    {
+      "file": "chapter-10-eddy-viscosity-and-mixing-length.html",
+      "body_sha256": "8e6544cde15544af235e04d8a06c4efe799e7eee294b442a805e6e8ea0ecfbe6",
+      "article_words_including_math_code": 3756,
+      "worked_solutions": 8,
+      "display_equations": 10,
+      "source_spans": 7
+    },
+    {
+      "file": "chapter-11-constructing-k-epsilon-and-calibration.html",
+      "body_sha256": "b82749ed8fcc96a38c14a93458e9e99cc36999c9ba9e95058c32ae58a7440321",
+      "article_words_including_math_code": 3402,
+      "worked_solutions": 8,
+      "display_equations": 11,
+      "source_spans": 7
+    },
+    {
+      "file": "chapter-12-calibration-and-alternative-time-scales.html",
+      "body_sha256": "852ad756c402e55984ca8caf772c8ba6419e9699d4f89505de43c844621e69bb",
+      "article_words_including_math_code": 3775,
+      "worked_solutions": 8,
+      "display_equations": 11,
+      "source_spans": 6
+    },
+    {
+      "file": "chapter-13-wall-functions-and-smooth-wall-limits.html",
+      "body_sha256": "acd18ac235ad0243f67fd8df4ed09085c77d2e91c8dc8578ef32988eb8e5e365",
+      "article_words_including_math_code": 3582,
+      "worked_solutions": 8,
+      "display_equations": 5,
+      "source_spans": 6
+    },
+    {
+      "file": "chapter-14-near-wall-corrections-and-boundary-data.html",
+      "body_sha256": "4f39e7f497fbcb2e83cb3e9c5f75fecfdc73f542a93e4749e22d8c4ade91a13f",
+      "article_words_including_math_code": 3392,
+      "worked_solutions": 8,
+      "display_equations": 8,
+      "source_spans": 7
+    },
+    {
+      "file": "chapter-15-realizability-and-production-corrections.html",
+      "body_sha256": "0bac19cf7521c8ddcd4d9f785dea766c855c4a88122072448ee25d345975f27a",
+      "article_words_including_math_code": 3372,
+      "worked_solutions": 8,
+      "display_equations": 4,
+      "source_spans": 7
+    },
+    {
+      "file": "chapter-16-reynolds-stress-transport-closure.html",
+      "body_sha256": "a6113c2262ec8b81db1080982a82850502221917f0d85396748ed3ea4d6054c3",
+      "article_words_including_math_code": 3192,
+      "worked_solutions": 8,
+      "display_equations": 7,
+      "source_spans": 6
+    },
+    {
+      "file": "chapter-17-pressure-redistribution-and-wall-models.html",
+      "body_sha256": "7457dcb0e5b0b5550d9e6cb515a762e8f9cf695f79b8e42963b4baafa7f16bcf",
+      "article_words_including_math_code": 3890,
+      "worked_solutions": 8,
+      "display_equations": 11,
+      "source_spans": 8
+    },
+    {
+      "file": "chapter-18-scales-cascades-and-direct-simulation.html",
+      "body_sha256": "90c6376ae2fdff85566c9f640f65de6efd3adc8a94d76ce810b58aecf406cdf0",
+      "article_words_including_math_code": 4060,
+      "worked_solutions": 8,
+      "display_equations": 4,
+      "source_spans": 7
+    },
+    {
+      "file": "chapter-19-filtered-equations-and-the-les-closure.html",
+      "body_sha256": "ea22bd6488c53c6a5798ff012f436700ca1d381779fa259ac6aaa40642477d44",
+      "article_words_including_math_code": 3512,
+      "worked_solutions": 8,
+      "display_equations": 5,
+      "source_spans": 8
+    },
+    {
+      "file": "chapter-20-filter-families-and-subgrid-viscosity.html",
+      "body_sha256": "e4aa1c157ea0ebb996d40f763da61e6c85ac171b6dbb46ad01c2e9be17de2b50",
+      "article_words_including_math_code": 3040,
+      "worked_solutions": 8,
+      "display_equations": 4,
+      "source_spans": 7
+    },
+    {
+      "file": "chapter-21-wall-limits-energy-memory-and-test-filtering.html",
+      "body_sha256": "dc16ad13bbd91b78fd1518f10cc2ea3494acf4e6ab23b0aa41cb6f9210282003",
+      "article_words_including_math_code": 2946,
+      "worked_solutions": 8,
+      "display_equations": 3,
+      "source_spans": 8
+    },
+    {
+      "file": "chapter-22-dynamic-fitting-and-scale-similarity.html",
+      "body_sha256": "65986a55be6795f9a03641429209fc2648f492ba79e7dfbfc14a1e95041ee704",
+      "article_words_including_math_code": 2749,
+      "worked_solutions": 8,
+      "display_equations": 4,
+      "source_spans": 8
+    },
+    {
+      "file": "chapter-23-les-numerics-and-hybrid-interfaces.html",
+      "body_sha256": "7803dbdf62c22f242e34e1ee2919c47f727d32c81b62a24cca9efbc772ce30ef",
+      "article_words_including_math_code": 3029,
+      "worked_solutions": 8,
+      "display_equations": 1,
+      "source_spans": 8
+    },
+    {
+      "file": "chapter-24-live-session-model-choice-and-evidence.html",
+      "body_sha256": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
+      "article_words_including_math_code": 3001,
+      "worked_solutions": 8,
+      "display_equations": 2,
+      "source_spans": 8
+    },
+    {
+      "file": "chapter-25-live-session-from-equation-to-evidence.html",
+      "body_sha256": "d68729670d0967b50f516c94a3d7726ff2044e71118082335d2a014e3740b188",
+      "article_words_including_math_code": 2962,
+      "worked_solutions": 8,
+      "display_equations": 4,
+      "source_spans": 7
+    }
+  ],
+  "chapter_hashes": {
+    "chapter-01-prediction-and-turbulent-motion.html": "3d50593553155bf87cd9a9ce79128c469aed2b2fd8fb34790907f1ede582861d",
+    "chapter-02-statistics-sampling-and-tensors.html": "96af444952a4cab3ad4d12eed4487df800ef5f97a5f7dee8615ae4286a7b63ba",
+    "chapter-03-conservation-and-newtonian-closure.html": "8d3788c61e44eeb4f9c2415a9e596897687cf5719cc36f20ea01371240647138",
+    "chapter-04-mean-momentum-and-closure.html": "00480a9d4c4d9020aaf99674e14f6fbd677e132927c3729f95281befa6d609d5",
+    "chapter-05-exact-reynolds-stress-transport.html": "593c5b9deda629c0f558bcd40136785be4b065527ffed20a0ce475a13fa48287",
+    "chapter-06-stationarity-homogeneity-and-redistribution.html": "115f5eb6953defa6abd75b866f9cf39b76c61e0941bb154add9a228ee255887e",
+    "chapter-07-turbulent-and-mean-energy-budgets.html": "66aaaada380347ea5b0f54d471ad261900af0b5f5f1513b17c4d67551bfa5a3d",
+    "chapter-08-thin-boundary-layers-and-outer-scaling.html": "6cb5e3ec8eb3be86de075ff24d44a6c8c8fc54f6400f42041f5d676cef5a8a65",
+    "chapter-09-inner-scaling-and-friction-velocity.html": "1b30386fdb984eac569460c14a4f95baa62cd43c84c919ba41f19e213d620377",
+    "chapter-10-eddy-viscosity-and-mixing-length.html": "8e6544cde15544af235e04d8a06c4efe799e7eee294b442a805e6e8ea0ecfbe6",
+    "chapter-11-constructing-k-epsilon-and-calibration.html": "b82749ed8fcc96a38c14a93458e9e99cc36999c9ba9e95058c32ae58a7440321",
+    "chapter-12-calibration-and-alternative-time-scales.html": "852ad756c402e55984ca8caf772c8ba6419e9699d4f89505de43c844621e69bb",
+    "chapter-13-wall-functions-and-smooth-wall-limits.html": "acd18ac235ad0243f67fd8df4ed09085c77d2e91c8dc8578ef32988eb8e5e365",
+    "chapter-14-near-wall-corrections-and-boundary-data.html": "4f39e7f497fbcb2e83cb3e9c5f75fecfdc73f542a93e4749e22d8c4ade91a13f",
+    "chapter-15-realizability-and-production-corrections.html": "0bac19cf7521c8ddcd4d9f785dea766c855c4a88122072448ee25d345975f27a",
+    "chapter-16-reynolds-stress-transport-closure.html": "a6113c2262ec8b81db1080982a82850502221917f0d85396748ed3ea4d6054c3",
+    "chapter-17-pressure-redistribution-and-wall-models.html": "7457dcb0e5b0b5550d9e6cb515a762e8f9cf695f79b8e42963b4baafa7f16bcf",
+    "chapter-18-scales-cascades-and-direct-simulation.html": "90c6376ae2fdff85566c9f640f65de6efd3adc8a94d76ce810b58aecf406cdf0",
+    "chapter-19-filtered-equations-and-the-les-closure.html": "ea22bd6488c53c6a5798ff012f436700ca1d381779fa259ac6aaa40642477d44",
+    "chapter-20-filter-families-and-subgrid-viscosity.html": "e4aa1c157ea0ebb996d40f763da61e6c85ac171b6dbb46ad01c2e9be17de2b50",
+    "chapter-21-wall-limits-energy-memory-and-test-filtering.html": "dc16ad13bbd91b78fd1518f10cc2ea3494acf4e6ab23b0aa41cb6f9210282003",
+    "chapter-22-dynamic-fitting-and-scale-similarity.html": "65986a55be6795f9a03641429209fc2648f492ba79e7dfbfc14a1e95041ee704",
+    "chapter-23-les-numerics-and-hybrid-interfaces.html": "7803dbdf62c22f242e34e1ee2919c47f727d32c81b62a24cca9efbc772ce30ef",
+    "chapter-24-live-session-model-choice-and-evidence.html": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
+    "chapter-25-live-session-from-equation-to-evidence.html": "d68729670d0967b50f516c94a3d7726ff2044e71118082335d2a014e3740b188"
+  },
+  "release_content_gate_requested": true
+}

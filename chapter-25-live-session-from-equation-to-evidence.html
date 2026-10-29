@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="d68729670d0967b50f516c94a3d7726ff2044e71118082335d2a014e3740b188">
+<title>25. Live session: from an equation to trustworthy evidence · Turbulence Modeling</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{pageReady:()=>MathJax.startup.defaultPageReady().then(()=>{document.documentElement.dataset.mathReady='true';})}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Turbulence Modeling · NPTEL IIT Madras</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="book-overview.html">Study route</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc"><h2>On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>25. Live session: from an equation to trustworthy evidence</h1>
+<p class="lead">The final live session asks how to move from understanding a turbulence equation to using a solver responsibly. The most useful answer is a sequence of increasingly demanding checks: solve a small problem whose answer is known, verify its discrete balances, separate iteration error from grid error, and only then ask what physical evidence supports the model. A converged calculation answers its implemented equations; the validity of those equations remains a separate question.</p>
+<div class="learning-map"><strong>Build one complete rung of the ladder.</strong> Derive and run a conservative one-dimensional channel solver. Use an intentionally nonquadratic manufactured solution to expose spatial error. Analyze underrelaxation rather than prescribing a magic factor, and distinguish physical time steps from inner algebraic iterations. Finish by separating verification, calibration, sensitivity and physical validation.</div>
+<p class="source-note">The complete local machine transcript of live recording fZe2bxvPeh0 was read, including overlapping ASR chunks, historical administration and closing repetitions. It is fallible recognition rather than publisher captions; no full audiovisual audit is claimed. The substantive source questions guide the construction below. The program, manufactured solution and iteration examples are original explanatory work. Course dates, future plans, examination details and contact arrangements in the recording are historical context, explicitly disposed in the source map rather than presented as current advice.</p>
+
+<h2 id="failed-case" data-video="fZe2bxvPeh0" data-start="174" data-end="395">25.1 A failed calculation does not identify its cause <a class="timestamp" href="https://www.youtube.com/watch?v=fZe2bxvPeh0&amp;t=174">Live · 02:54</a></h2>
+<p>The first technical exchange returns to a reacting-flow calculation with an SST-type closure. The participant reports difficulty at a richer mixture, and the discussion considers underrelaxation and time-step changes. The instructor acknowledges the difficulty of diagnosing a complex calculation without its complete setup. That qualification matters: divergence can arise from physical-model mismatch, boundary conditions, source stiffness, discretization, linear solves, nonlinear coupling or an implementation error. An observed failure does not uniquely identify one of them.</p>
+<p>State the evidence before selecting a remedy. Which equation residual grows first? Are pressure, density, temperature, species and turbulence variables within their declared admissible ranges? Is the residual dimensional, normalized against a changing scale, or only a solver's internal linear residual? Does reducing the time step change a transient physical answer or merely improve the convergence of an inner solve? These questions turn an anecdote into a reproducible problem. No particular rich-mixture instability or combustion mechanism can be established from the live description alone.</p>
+<p>Underrelaxation is a numerical operation on an iteration. If an unrelaxed update proposes \(x^\star=g(x^{(m)})\), a relaxed update is</p>
+<div class="equation">\[
+x^{(m+1)}=(1-\alpha)x^{(m)}+\alpha g(x^{(m)}),\qquad 0&lt;\alpha\leq1.
+\tag{25.1}
+\]</div>
+<p>For nonzero \(\alpha\), the fixed points still satisfy \(x=g(x)\). Their numerical attraction can change dramatically. For a scalar differentiable map, perturbation error near a fixed point is multiplied to first order by \(1-\alpha+\alpha g'(x_\ast)\). For a coupled vector system the corresponding iteration matrix, its eigenvalues and possible transient amplification matter; a scalar example cannot certify a reacting solver.</p>
+
+<h2 id="iteration" data-video="fZe2bxvPeh0" data-start="174" data-end="395">25.2 Derive a relaxation interval and test the actual residual <a class="timestamp" href="https://www.youtube.com/watch?v=fZe2bxvPeh0&amp;t=174">Live · 02:54</a></h2>
+<p>Consider \(g(x)=3-2x\). Its fixed point is \(x_\ast=1\). Subtract one from (25.1) to obtain the exact error recurrence \(e^{(m+1)}=(1-3\alpha)e^{(m)}\). Convergence requires \(|1-3\alpha|&lt;1\), hence \(0&lt;\alpha&lt;2/3\). Taking \(\alpha=1/2\) gives alternating errors of half the previous magnitude; \(\alpha=0.8\) still diverges. “A smaller factor” is not a proof without the iteration being analyzed.</p>
+<p>Starting from zero, eight iterations give \(x=0.99609375\) at \(\alpha=0.5\), whereas \(\alpha=1\) gives \(-255\). The unrelaxed fixed-point residual \(r(x)=g(x)-x=3-3x\) is \(0.01171875\) and \(768\), respectively. A small update alone can be misleading: at \(x=0\), setting \(\alpha=10^{-6}\) makes the update only \(3\times10^{-6}\), while the original residual is still 3. Monitor residuals of the equations being solved, relevant balances and observable changes, with stated scales.</p>
+<p>Physical time and iteration count must also be distinguished. For \(du/dt=-\lambda u\), with \(\lambda&gt;0\), implicit Euler gives \((1+\lambda\Delta t)u^{n+1}=u^n\). If \(\lambda\Delta t=4\) and \(u^n=1\), its exact discrete answer is 0.2. Solving it through \(q^\star=1-4q\) and \(\alpha=0.1\) yields \(q^{(m+1)}=0.5q^{(m)}+0.1\). One inner iteration from \(q=1\) gives 0.6; forty give 0.2 to the displayed precision. Fully converged inner relaxation preserves this discrete root, but prematurely stopping changes the computed time history. Even the exact discrete value 0.2 differs from the continuous value \(e^{-4}\); inner convergence does not remove time-discretization error.</p>
+
+<h2 id="learning-ladder" data-video="fZe2bxvPeh0" data-start="395" data-end="950">25.3 Learn a solver through a problem you can independently check <a class="timestamp" href="https://www.youtube.com/watch?v=fZe2bxvPeh0&amp;t=395">Live · 06:35</a></h2>
+<p>The next discussion contrasts learning an existing large code with writing a small one. Existing applications provide mature infrastructure, while small programs expose every coefficient and boundary contribution. Neither route excuses understanding the equations. A useful progression is laminar channel or Couette flow, then a prescribed mixing-length viscosity, then coupled scale equations, and finally stress transport. At each transition retain the preceding limit as a regression check and introduce only the new mathematical obligations.</p>
+<p>One broad conversational claim needs correction. The <a href="https://cpp.openfoam.org/v4/dnsFoam_8C_source.html">actual Foundation version 4.1 dnsFoam source</a> declares a solver for boxes of isotropic turbulence, and its shown momentum equation uses molecular diffusion, forcing and pressure coupling. Thus a blanket statement that the software cannot perform DNS is too strong. A solver name or availability is not evidence that a particular calculation resolves all relevant scales. DNS also requires adequate spatial/temporal resolution, domain, forcing and statistics, as chapter 18 explained. This versioned source inspection is not an executed OpenFOAM benchmark or a statement about every current distribution.</p>
+<p>A one-dimensional channel mean solver is a different object: it solves a reduced balance and cannot resolve three-dimensional turbulent eddies. Adding a modeled viscosity can produce a RANS-type mean calculation; it does not transform the same one-dimensional mesh into DNS. The purpose of the small solver below is to establish an inspectable discrete conservation and verification example before extra closures obscure that foundation.</p>
+
+<h2 id="channel" data-video="fZe2bxvPeh0" data-start="950" data-end="1429">25.4 Derive the channel problem and its conservative discrete system <a class="timestamp" href="https://www.youtube.com/watch?v=fZe2bxvPeh0&amp;t=950">Live · 15:50</a></h2>
+<p>Take steady, fully developed, incompressible laminar flow between stationary planes at \(y=0,H\). Let \(U(y)\) be streamwise velocity, \(\nu&gt;0\) constant molecular kinematic viscosity, and \(G=-(1/\rho)\,dp/dx&gt;0\) a constant streamwise acceleration supplied by the pressure gradient. The assumptions eliminate streamwise development, mean transverse flow and time dependence. The momentum equation and no-slip data become</p>
+<div class="equation">\[
+-\nu U''=G,\qquad U(0)=U(H)=0,\qquad
+U(y)=\frac{G}{2\nu}y(H-y).
+\tag{25.2}
+\]</div>
+<p>Integrating twice gives the quadratic profile; the two boundary values determine its integration constants. Its maximum is \(GH^2/(8\nu)\) at \(H/2\). With \(H=0.02\) m, \(\nu=1.5\times10^{-5}\) m²/s and \(G=0.05\) m/s², this maximum is \(1/6\) m/s. This is a stipulated laminar equation test, not a claim that every flow with those bulk parameters is necessarily stable to all disturbances.</p>
+<p>Place \(N+1\) nodes at \(y_i=ih\), with \(h=H/N\). Integrate the equation over the interior nodal control volume \([y_i-h/2,y_i+h/2]\). Approximate each face gradient by the difference between its adjacent nodes and the source integral by midpoint quadrature. A general specified acceleration \(f(y)\) gives</p>
+<div class="equation">\[
+F_{i+1/2}-F_{i-1/2}=h f_i,\quad
+F_{i+1/2}=-\nu\frac{U_{i+1}-U_i}{h},
+\qquad
+\frac{\nu}{h^2}(-U_{i-1}+2U_i-U_{i+1})=f_i.
+\tag{25.3}
+\]</div>
+<p>A shared face flux cancels when adjacent control-volume balances are added. This discrete conservation statement survives approximation of the individual fluxes; their accuracy is a separate issue. Dirichlet values are imposed at the two boundary nodes, leaving a symmetric positive-definite tridiagonal system for \(N-1\) unknowns. For constant positive viscosity, elimination and back substitution solve that system without nonlinear iteration. The code's Thomas algorithm stores its lower, main and upper diagonals and eliminates each successive lower entry.</p>
+<p>The boundary half volumes must be included when checking wall balance. Write \(L=\nu(U_1-U_0)/h\) and \(R=\nu(U_N-U_{N-1})/h\). For constant \(G\), the wall values of \(\nu U'\) reconstructed through the half-cell balances are \(L_w=L+Gh/2\) and \(R_w=R-Gh/2\). Therefore \(L_w-R_w=GH\). Merely using the two secants as exact wall derivatives misses both half-cell source contributions. Our 32-interval run gives 0.001 m²/s² on both sides of this integrated stress-per-density balance.</p>
+
+<h2 id="verification" data-video="fZe2bxvPeh0" data-start="2633" data-end="2905">25.5 A second verification problem must expose the error the first hides <a class="timestamp" href="https://www.youtube.com/watch?v=fZe2bxvPeh0&amp;t=2633">Live · 43:53</a></h2>
+<p>The centered second difference reproduces a quadratic second derivative exactly. The channel test therefore produces nodal errors near roundoff and a tiny algebraic residual, but cannot demonstrate a general second-order convergence rate. Choose instead the manufactured velocity \(U_{\rm ex}(y)=U_{\rm ref}\sin(\pi y/H)\), with \(U_{\rm ref}=1\) m/s, and define its source by substitution:</p>
+<div class="equation">\[
+f(y)=\nu U_{\rm ref}\left(\frac{\pi}{H}\right)^2
+\sin\left(\frac{\pi y}{H}\right).
+\tag{25.4}
+\]</div>
+<p>This is a deliberately imposed nonuniform streamwise body acceleration, not the same constant-pressure-gradient problem. It tests the same diffusion operator and homogeneous endpoint data. Taylor expansion gives the centered second difference \(U''+(h^2/12)U''''+O(h^4)\), so a smooth solution has a leading spatial error of order \(h^2\), provided other errors are smaller. The measured maximum nodal errors at \(N=16,32,64\) are approximately 0.00321896444, 0.000803577679 and 0.000200821810 m/s. The final refinement ratio is 4.00144626, consistent with that expectation for this test.</p>
+<p>The equation residual remains around \(10^{-14}\) m/s² while spatial error is around \(10^{-4}\) m/s on the finest mesh. These measure different failures: the algebraic solver accurately solves a discrete equation that approximates the continuous equation. Passing this smooth scalar test does not verify every turbulence source, boundary treatment, pressure coupling or multidimensional transport term. It supplies actual evidence for the implemented operator and a pattern to extend.</p>
+<p>The <a href="https://www.grc.nasa.gov/www/wind/valid/tutorial/verassess.html">NASA NPARC verification discussion</a> distinguishes implementation accuracy from numerical solution accuracy and identifies iterative, spatial and temporal error. Its <a href="https://www.grc.nasa.gov/www/wind/valid/tutorial/iterconv.html">iterative-convergence page</a> also emphasizes residual and engineering-quantity monitoring. The present two problems operationalize part of that distinction; neither is a physical validation experiment.</p>
+
+<h2 id="coupling" data-video="fZe2bxvPeh0" data-start="950" data-end="1429">25.6 What changes when a turbulence closure is added? <a class="timestamp" href="https://www.youtube.com/watch?v=fZe2bxvPeh0&amp;t=950">Live · 15:50</a></h2>
+<p>For a simple scalar eddy-viscosity channel model, the mean equation becomes \(-d[(\nu+\nu_t)U']/dy=G\). A prescribed nonnegative \(\nu_t(y)\) can use one shared face coefficient in the same conservative flux. If mixing length determines \(\nu_t=\ell_m^2|U'|\), the equation becomes nonlinear and requires a consistent evaluation/iteration strategy. If a two-equation closure determines it from \(k,\epsilon\) or \(k,\omega\), those fields need their own differential equations, boundary conditions, production, destruction and diffusion treatment. A stress model adds covariance transport and its different closure obligations.</p>
+<p>Each of these steps creates new opportunities for both modeling and coding error. Retain the molecular-only limit; check units, stress signs and vanishing-shear limits; test source terms separately; monitor coupled residuals and integrated balances. A solution update that makes \(k\) negative may violate that model's domain even when a normalized momentum residual decreases. The final live session recommends starting with a channel partly because this hierarchy can be inspected without immediately confronting a complex geometry.</p>
+<p>The general transport form discussed in the session—unsteady storage, advection, diffusion and source—helps organize a code, but common syntax does not make every equation numerically identical. A stiff destruction source, pressure constraint and passive diffusion problem have different couplings and admissibility conditions. The executable here intentionally completes the scalar diffusion rung and its verification; it does not pretend that a few extra variable names implement a full turbulence solver.</p>
+
+<h2 id="guards" data-video="fZe2bxvPeh0" data-start="1819" data-end="2007">25.7 Input checks and physical validation answer different questions <a class="timestamp" href="https://www.youtube.com/watch?v=fZe2bxvPeh0&amp;t=1819">Live · 30:19</a></h2>
+<p>A participant asks about wrong physical-property inputs, recalling a negative-viscosity example, and about AI assistance. Molecular viscosity in this Newtonian dissipative model is positive. Rejecting an inadmissible value with a clear message is different from silently replacing it with an arbitrary value and continuing. Record units, constitutive regime and the actual value used. The anecdote is not evidence that every named commercial code performs a particular hidden correction. Negative modeled subgrid viscosity associated with backscatter in chapter 22 is also a different quantity from a negative molecular material property.</p>
+<p>Deterministic checks can establish dimensions, ranges, array sizes, boundary consistency and reproducible residual calculations. Automated or language-model suggestions can help identify candidates for inspection, but cannot turn a plausible-looking field into physical evidence. Before interpreting any result, inspect the governing model, implementation and numerical adequacy for the observable. A warning-free program can still solve the wrong physical problem.</p>
+<p>The final technical question concerns a proposed airfoil or wind-turbine study. Comparing turbulence models changes modeling assumptions and establishes model sensitivity; it is not by itself numerical verification. The <a href="https://www.grc.nasa.gov/www/wind/valid/tutorial/valassess.html">NASA NPARC validation discussion</a> requires comparison with appropriate physical evidence and attention to experimental and simulation uncertainty. A carefully documented experiment collected by the investigator can support validation: ownership does not disqualify a measurement. Reusing one's own computed output as the sole reference does not supply independent physical evidence. Calibration reuse must be disclosed, and genuinely predictive assessment should test conditions or observables beyond the fit.</p>
+<p>An accurately resolved DNS can be a valuable numerical reference for a defined idealized problem, with its own resolution and sampling limits. It is not automatically a physical experiment or proof that every engineering regime is represented. Likewise, agreement between two implementations may uncover an error when they disagree, but shared assumptions can make both wrong. Conclude only what the actual comparison, uncertainty and scope justify.</p>
+
+<h2 id="program">25.8 Run the complete verification and iteration example</h2>
+<p>The standard-library program implements (25.3), observes its balances and refinement behavior, then reproduces the relaxation and implicit-step examples. The displayed output was obtained by executing the downloadable file. Its physical parameters are stipulated; no external CFD package, turbulence computation or experimental validation is performed.</p>
+<pre data-run="code/ch25_from_equation_to_solver.py"><code>&quot;&quot;&quot;A conservative 1D diffusion solver and iteration checks, not a turbulence solver.&quot;&quot;&quot;
+from math import pi, sin
+
+def solve_diffusion(intervals, height, viscosity, source):
+    &quot;&quot;&quot;-nu U&#x27;&#x27;=source, homogeneous Dirichlet data, nodal control volumes.&quot;&quot;&quot;
+    spacing=height/intervals
+    count=intervals-1
+    lower=[-viscosity/spacing**2]*count
+    diag=[2*viscosity/spacing**2]*count
+    upper=[-viscosity/spacing**2]*count
+    rhs=[source((i+1)*spacing) for i in range(count)]
+    original_rhs=rhs[:]
+    # Thomas elimination; positive diffusion gives a nonsingular SPD system.
+    for i in range(1,count):
+        factor=lower[i]/diag[i-1]
+        diag[i]-=factor*upper[i-1]
+        rhs[i]-=factor*rhs[i-1]
+    interior=[0.]*count
+    interior[-1]=rhs[-1]/diag[-1]
+    for i in range(count-2,-1,-1):
+        interior[i]=(rhs[i]-upper[i]*interior[i+1])/diag[i]
+    values=[0.]+interior+[0.]
+    residual=max(abs(viscosity*(2*values[i]-values[i-1]-values[i+1])/spacing**2-original_rhs[i-1]) for i in range(1,intervals))
+    return spacing,values,residual
+
+height,nu,G=.02,1.5e-5,.05
+h,u,res=solve_diffusion(32,height,nu,lambda y:G)
+error=max(abs(value-G*y*(height-y)/(2*nu)) for y,value in ((i*h,v) for i,v in enumerate(u)))
+left=nu*(u[1]-u[0])/h
+right=nu*(u[-1]-u[-2])/h
+# Boundary half control volumes contain half-cell forcing.
+left_wall=left+G*h/2
+right_wall=right-G*h/2
+print(f&quot;laminar channel maximum speed m/s: {max(u):.10f}&quot;)
+print(f&quot;laminar nodal error and equation residual: {error:.3e}, {res:.3e}&quot;)
+print(f&quot;wall stress-per-density difference and integrated forcing: {left_wall-right_wall:.10f}, {G*height:.10f}&quot;)
+assert error&lt;1e-12 and abs(left_wall-right_wall-G*height)&lt;1e-12
+
+errors=[]
+for n in (16,32,64):
+    source=lambda y:nu*(pi/height)**2*sin(pi*y/height)
+    h,u,res=solve_diffusion(n,height,nu,source)
+    errors.append(max(abs(v-sin(pi*i/n)) for i,v in enumerate(u)))
+    print(f&quot;manufactured sine N={n}: maximum error={errors[-1]:.8e}, equation residual={res:.3e}&quot;)
+print(f&quot;manufactured last spatial refinement ratio: {errors[-2]/errors[-1]:.8f}&quot;)
+assert 3.9&lt;errors[-2]/errors[-1]&lt;4.1
+
+# x=g(x)=3-2x has exact root1. Relaxed error factor1-3alpha.
+for alpha in (1.,.5,.8):
+    x=0.
+    for _ in range(8):
+        x=(1-alpha)*x+alpha*(3-2*x)
+    print(f&quot;fixed-point alpha={alpha}: x after8={x:.8f}, root residual={3-3*x:.8f}&quot;)
+alpha=1e-6
+x=0.
+new=(1-alpha)*x+alpha*(3-2*x)
+print(f&quot;tiny relaxation: update={new-x:.8e}, unrelaxed fixed-point residual={3-3*x:.8f}&quot;)
+
+# Inner convergence for one implicit Euler step, lambda*dt=4.
+old=1.
+target=old/(1+4)
+q=old
+for count in range(1,41):
+    q=.9*q+.1*(old-4*q)
+    if count in (1,40):
+        print(f&quot;implicit-step inner iterations={count}: q={q:.10f}, exact discrete target={target:.10f}&quot;)
+assert abs(q-target)&lt;1e-10
+</code></pre>
+<pre class="output">laminar channel maximum speed m/s: 0.1666666667
+laminar nodal error and equation residual: 1.110e-16, 1.416e-15
+wall stress-per-density difference and integrated forcing: 0.0010000000, 0.0010000000
+manufactured sine N=16: maximum error=3.21896444e-03, equation residual=1.610e-15
+manufactured sine N=32: maximum error=8.03577679e-04, equation residual=1.188e-14
+manufactured sine N=64: maximum error=2.00821810e-04, equation residual=3.331e-14
+manufactured last spatial refinement ratio: 4.00144626
+fixed-point alpha=1.0: x after8=-255.00000000, root residual=768.00000000
+fixed-point alpha=0.5: x after8=0.99609375, root residual=0.01171875
+fixed-point alpha=0.8: x after8=-13.75789056, root residual=44.27367168
+tiny relaxation: update=3.00000000e-06, unrelaxed fixed-point residual=3.00000000
+implicit-step inner iterations=1: q=0.6000000000, exact discrete target=0.2000000000
+implicit-step inner iterations=40: q=0.2000000000, exact discrete target=0.2000000000
+</pre>
+
+<h2 id="exercises">25.9 Exercises with complete solutions</h2>
+<details><summary>1. Derive the exact relaxation range for the example.</summary><p>Its root is \(x=3-2x\), hence \(x=1\). Substituting \(x=1+e\) into the relaxed map gives \(e_{\rm new}=(1-3\alpha)e\). Strict contraction requires \(-1&lt;1-3\alpha&lt;1\), or \(0&lt;\alpha&lt;2/3\). At the upper endpoint the factor is −1 and errors do not decay. At zero no update occurs. This range concerns this scalar iteration, not all coupled CFD systems.</p></details>
+<details><summary>2. Why is a tiny relaxed update insufficient?</summary><p>The update is \(\alpha[g(x)-x]\). At \(x=0\), the original residual is 3; multiplying by \(10^{-6}\) gives a small update while leaving a large residual. Use the residual of the original algebraic equations, balances and observable stability. State normalization so a residual cannot appear improved merely because its denominator grows.</p></details>
+<details><summary>3. Separate three errors in the implicit-Euler example.</summary><p>With initial value 1 and \(\lambda\Delta t=4\), the continuous answer is \(e^{-4}\), the exact implicit-Euler answer is \(1/5\), and one relaxed inner iterate gives \(3/5\). The discrepancy \(3/5-1/5\) is algebraic iteration error. The discrepancy \(1/5-e^{-4}\) is time-discretization error. Model error would be a further difference between the decay equation and the physical system. Fully converging the inner iteration addresses only the first.</p></details>
+<details><summary>4. Derive the laminar maximum and integrated wall balance.</summary><p>Twice integrating \(U''=-G/\nu\) with zero endpoint velocities gives (25.2). Its derivative vanishes at \(H/2\), where \(U_{\max}=GH^2/(8\nu)=1/6\) m/s. Wall derivatives give \(\nu U'(0)=GH/2\), \(\nu U'(H)=-GH/2\), whose difference is \(GH=0.001\) m²/s². The discrete half-cell source corrections reproduce the same balance; raw boundary secants alone omit the two forcing contributions.</p></details>
+<details><summary>5. Why does the quadratic test not establish second-order accuracy?</summary><p>The centered second difference of a quadratic equals its exact second derivative. Its nodal residual and solution error are therefore roundoff-limited even on a coarse grid. The sine has nonzero fourth derivative, exposing the leading \(h^2\) truncation term. Halving spacing should reduce a sufficiently asymptotic second-order error by four; the observed final ratio 4.00144626 supports this operator on this smooth problem, without proving every code path correct.</p></details>
+<details><summary>6. Explain how a shared face flux gives conservation.</summary><p>Sum \(F_{i+1/2}-F_{i-1/2}=hf_i\) over adjacent cells. Each internal face appears once positive and once negative, so only exterior fluxes remain. This cancellation requires the same numerical face flux on both sides. It does not imply that the flux equals the exact continuum flux, and an incompletely solved algebraic system retains its residual imbalance. Conservation, accuracy and iterative convergence are distinct properties.</p></details>
+<details><summary>7. Can a one-dimensional channel model become DNS by reducing spacing?</summary><p>No. Refinement improves the solution of the reduced one-dimensional equation. DNS of turbulent channel motion requires time-dependent, three-dimensional velocity and pressure dynamics with adequate scales resolved and appropriate domain/statistical assessment. A one-dimensional RANS mean profile with a modeled viscosity retains its closure assumptions however fine its wall-normal mesh. The versioned dnsFoam example demonstrates that a suitable solver can exist, not that any chosen mesh or reduced calculation is DNS.</p></details>
+<details><summary>8. Classify four comparisons and state the evidence limit.</summary><p>Comparing the diffusion solver with (25.2) checks an implemented equation against an exact solution. Sine-grid refinement estimates spatial solution error. Comparing several closures on one airfoil measures model sensitivity. Comparing their predicted pressure or forces with appropriate independent physical measurements, including boundary conditions and uncertainty, contributes to validation. Measurements collected by the author can qualify; computed values reused as their own physical truth cannot. Agreement on fitted data demonstrates a fit, while transfer to withheld conditions tests a stronger predictive claim.</p></details>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn"><a rel="prev" href="chapter-24-live-session-model-choice-and-evidence.html">Previous chapter</a><a href="index.html">Index</a><span>Last available chapter</span></nav></main></div><footer class="site-footer">Independent study edition. Original exposition follows Prof. Vagesh D. Narasimhamurthy's course. Source and review limitations are recorded separately.</footer></body></html>

@@ -1,0 +1,245 @@
+{
+  "chapter": 24,
+  "title": "24. Live session: model choice and evidence",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
+  "recordings": [
+    {
+      "playlist_position": 75,
+      "video_id": "pm9YvDBLZaA",
+      "title": "Turbulence Modeling   Prof.  Vagesh D Narasimhamurthy",
+      "lesson": null,
+      "duration_seconds": 3851,
+      "url": "https://www.youtube.com/watch?v=pm9YvDBLZaA",
+      "chapter": 24,
+      "disposition": "Included in chapter 24; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": null,
+      "machine_asr": {
+        "model": "faster-whisper small.en",
+        "source_type": "local machine ASR, not publisher captions",
+        "audio_sha256": "ce516b10b1d95d5fcb6d6bed1c3a594cb593acd1aa0cc383f6d158d821c1a7d8",
+        "decoded_duration_seconds": 3850.0078125,
+        "transcript_sha256": "8a47ad6372f917f7d66de8507088d13ec813723093e388a57e2712432959cd7f",
+        "segments": 730,
+        "chunks": 43,
+        "chunk_seconds": 90,
+        "overlap_seconds": 2,
+        "first_start": 0,
+        "last_end": 3840.06,
+        "limitations": "Machine ASR, 90-second cores with two-second overlap; boundary repetitions and recognition errors remain. Full decoded coverage is not comprehensive visual/board verification."
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "case",
+      "lesson": null,
+      "video_id": "pm9YvDBLZaA",
+      "start": 179,
+      "end": 439,
+      "lecture_material": "Bluff-body/cavity reacting and nonreacting wake question, flow regime and hybrid alternative",
+      "extension": "Observable-specific choices, no case-specific accuracy/cost verdict; correct illustrative Mach arithmetic",
+      "construction": "Separate prediction target and physical regime"
+    },
+    {
+      "anchor": "density",
+      "lesson": null,
+      "video_id": "pm9YvDBLZaA",
+      "start": 268,
+      "end": 326,
+      "lecture_material": "Instructor bounds course incompressible scope and comments on subsonic versus higher-speed applications",
+      "extension": "Original correction: low Mach need not mean constant density under heat/composition change; Favre and thermal closure distinctions",
+      "construction": "Perfect-gas continuity identity and executed density-weighted two-state statistics"
+    },
+    {
+      "anchor": "sensitivity",
+      "lesson": null,
+      "video_id": "pm9YvDBLZaA",
+      "start": 590,
+      "end": 666,
+      "lecture_material": "After interruption, compare models without validation data and avoid arbitrary constant changes",
+      "extension": "Model spread does not bound common bias; nonreacting evidence not full reacting validation; hybrid suggestion conditional",
+      "construction": "Constructed shared-bias example and calibration/assessment separation"
+    },
+    {
+      "anchor": "calibration",
+      "lesson": null,
+      "video_id": "pm9YvDBLZaA",
+      "start": 847,
+      "end": 1438,
+      "lecture_material": "How experimental data calibrate constants, course purpose, machine-learning suggestion and broad robustness comments",
+      "extension": "No universal robustness/prevalence claims or confidence interpretation from recalled exponent spread",
+      "construction": "Full homogeneous decay coefficient relation and interval/sensitivity check"
+    },
+    {
+      "anchor": "transition",
+      "lesson": null,
+      "video_id": "pm9YvDBLZaA",
+      "start": 1438,
+      "end": 1960,
+      "lecture_material": "SST blending, transition versus impingement, shear-layer regimes and eddy-resolved cost discussion",
+      "extension": "Realizability cap not transition model; shear not guaranteed turbulent; no universal workstation/weather-model endorsement",
+      "construction": "Separate blending, physical regime and covariance-admissibility questions"
+    },
+    {
+      "anchor": "tensor-limit",
+      "lesson": null,
+      "video_id": "pm9YvDBLZaA",
+      "start": 2396,
+      "end": 2740,
+      "lecture_material": "Injector model choice cannot be answered from broad application name; steady/unsteady RANS terminology",
+      "extension": "Scalar stress structural limitation quantified and unsteady mean distinct from filtered realization",
+      "construction": "Shear-matched covariance irreducible normal-stress error"
+    },
+    {
+      "anchor": "nonlinear",
+      "lesson": null,
+      "video_id": "pm9YvDBLZaA",
+      "start": 2916,
+      "end": 3234,
+      "lecture_material": "Audience asks why no higher powers of strain, dimensional/numerical concerns and nonlinear-model mention",
+      "extension": "Constitutive linearity differs from PDE nonlinearity; original invariant tensor basis, no claim nonlinear models abandoned",
+      "construction": "Dimensionally consistent symmetric traceless quadratic basis and exact one-point fit"
+    },
+    {
+      "anchor": "implementation",
+      "lesson": null,
+      "video_id": "pm9YvDBLZaA",
+      "start": 2740,
+      "end": 2916,
+      "lecture_material": "Discretization method/conservation question, later implementation anecdote and tensor-reading pointer",
+      "extension": "Conservative differences/elements possible; incomplete shared plot not diagnosed; Panton only attributed pointer not read",
+      "construction": "Shared-flux and exact baseline epsilon-production cancellation with variant limits"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://tmbwg.github.io/turbmodels/implementrans.html",
+      "title": "TMBWG compressible RANS and Favre implementation",
+      "supports": "Actual density-weighted definitions, consistent stress convention, energy/heat-flux closures and turbulent Prandtl distinction read; no complete combustion model claimed",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://tmbwg.github.io/turbmodels/sst.html",
+      "title": "TMBWG versioned SST definitions",
+      "supports": "Actual linear-stress identity, coefficient blending, viscosity limiter and variant-specific production definitions read; not universal best-of-both accuracy",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://tmbwg.github.io/turbmodels/easmko.html",
+      "title": "TMBWG nonlinear algebraic stress models",
+      "supports": "Actual introduction, nonlinear tensor contributions and retained scale equations read; local illustrative fitted basis not mislabeled complete named implementation",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "article_words_including_math_code": 3001,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "worked_solutions": 8,
+  "executable_listings": 1,
+  "source_reading": "Complete local machine ASR read sequentially before drafting; fallible recognition and overlap retained",
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
+    "rounds": [
+      {
+        "round": 1,
+        "report_identifier": "ch24-r1.md",
+        "accepted": true,
+        "reviewer_id": "independent-course-peer",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript"
+      },
+      {
+        "round": 2,
+        "report_identifier": "ch24-r2.md",
+        "accepted": true,
+        "reviewer_id": "lead-coordinator",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript"
+      }
+    ],
+    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance",
+    "repair_history": [
+      {
+        "body_sha256": "4c083d812ce37df361ac0b81ac1ad34bffca904698d397d8d662159434eb0659",
+        "round": 1,
+        "reviewer_id": "independent-course-peer",
+        "blocking": 0,
+        "major": 0,
+        "minor": 1,
+        "finding": "Linear strain term requires explicit incompressible mean/traceS=0",
+        "repair": "Exactly three prose paragraphs; code/output unchanged",
+        "closure_body_sha256": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
+        "closure": "Focused R1 closure appended to original report; full revised R2 also accepts"
+      }
+    ]
+  },
+  "limitations": [
+    "Complete local small.en machine ASR read including overlaps/outages/tail; not publisher captions or comprehensive audio/board verification",
+    "Names, uncertain commercial-product wording and numeric conversational estimates not treated as exact quotations or validated inputs",
+    "Density/Favre and nonlinear-basis developments are original explanatory extensions of live questions, not claimed board derivations",
+    "Local nonlinear tensor fit is not a calibrated EASM, global realizability guarantee, reacting-flow simulation or clinical recommendation",
+    "Shared implementation plots/source code unavailable for direct audit; anecdote retained without inventing diagnosis or reproduced data",
+    "No full Panton, original nonlinear-model or combustion validation paper audit; historical popularity, cost, exam and future-course comments not current factual recommendations"
+  ],
+  "source_dispositions": [
+    {
+      "video_id": "pm9YvDBLZaA",
+      "start": 0,
+      "end": 179,
+      "disposition": "Connection checks, welcome and course feedback; contextualized, no mathematical chapter claimed"
+    },
+    {
+      "video_id": "pm9YvDBLZaA",
+      "start": 439,
+      "end": 590,
+      "disposition": "Connection outage and reconnection; explicit noninstructional exclusion"
+    },
+    {
+      "video_id": "pm9YvDBLZaA",
+      "start": 666,
+      "end": 847,
+      "disposition": "Pauses, connection tests and historical exam-format discussion; administrative context only"
+    },
+    {
+      "video_id": "pm9YvDBLZaA",
+      "start": 1960,
+      "end": 2200,
+      "disposition": "Connection loss and repeated ASR silence-like fragments; explicit noninstructional exclusion"
+    },
+    {
+      "video_id": "pm9YvDBLZaA",
+      "start": 2200,
+      "end": 2396,
+      "disposition": "Realizability and wall-model questions mainly deferred to future numbered lessons; contextualized in transition section and cross references"
+    },
+    {
+      "video_id": "pm9YvDBLZaA",
+      "start": 3234,
+      "end": 3418,
+      "disposition": "Implementation anecdote discussed in section24.8; personal/admission and screen-sharing logistics excluded, underlying plot not audited"
+    },
+    {
+      "video_id": "pm9YvDBLZaA",
+      "start": 3418,
+      "end": 3548,
+      "disposition": "Closing schedule, attributed Panton tensor-reading pointer and thanks; contextualized without current administrative-policy claim"
+    },
+    {
+      "video_id": "pm9YvDBLZaA",
+      "start": 3548,
+      "end": 3851,
+      "disposition": "Trailing silence-like periodic ASR you/You fragments and recording tail; no substantive instruction inferred"
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="0bac19cf7521c8ddcd4d9f785dea766c855c4a88122072448ee25d345975f27a">
+<title>15. Realizability and production corrections · Turbulence Modeling</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{pageReady:()=>MathJax.startup.defaultPageReady().then(()=>{document.documentElement.dataset.mathReady='true';})}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Turbulence Modeling · NPTEL IIT Madras</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="book-overview.html">Study route</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc"><h2>On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>15. Realizability and production corrections</h1>
+<p class="lead">A turbulence covariance must assign a nonnegative variance to every direction. Positive turbulent kinetic energy is necessary but does not ensure that condition. A production limiter can control a large scalar source while leaving an impossible covariance untouched. These distinctions matter in strongly strained flow, where a linear stress closure can fail even with positive viscosity and well-behaved scalar transport equations. We will derive a pointwise covariance bound and compare its effect with corrections aimed directly at energy production.</p>
+<div class="learning-map"><strong>A local strain experiment with two separate questions.</strong> Given a mean velocity gradient and positive \(k,\epsilon\), first ask whether the modeled stress is a possible covariance. Then ask whether its energy transfer is an adequate approximation. The recurring channel remains a useful shear check, but an ideal planar stagnation field will expose the limits that a channel calibration can miss.</div>
+<p class="source-note">Lessons 48–51 discuss input scales, realizability, stagnation anomalies and practical model limitations. The source's row-wise interpretation of a strain bound is replaced below by a derived principal-eigenvalue or invariant condition, checked against a primary Durbin report. Stagnation-point isotropy is treated as an assumption for a test, rather than a universal flow property. Named SST limiter variants are kept distinct.</p>
+
+<h2 id="scale-meaning" data-video="Fff1PE0-JI8" data-start="15" data-end="813">15.1 Closure scales describe a model state, not every eddy <a class="timestamp" href="https://www.youtube.com/watch?v=Fff1PE0-JI8&amp;t=15">L48 · 00:15</a></h2>
+<p>Let \(k&gt;0\) be turbulent kinetic energy per mass, \(\epsilon&gt;0\) its pseudo-dissipation rate, and \(C_\mu&gt;0\) a dimensionless viscosity coefficient. The combinations \(t_t=k/\epsilon\), \(L_t=k^{3/2}/\epsilon\), and \(\nu_t=C_\mu k^2/\epsilon\) have units of time, length and kinematic viscosity. Each can be evaluated from exact statistical fields or modeled fields, but this does not make a closure length identical to every correlation length or the size of a visually identifiable eddy.</p>
+<p>Lesson 48 uses rough-channel examples to show that individually plausible \(k\) and \(\epsilon\) trends need not imply a reliable ratio. For small relative perturbations, \(\delta L_t/L_t\approx(3/2)\delta k/k-\delta\epsilon/\epsilon\), while \(\delta\nu_t/\nu_t\approx2\delta k/k-\delta\epsilon/\epsilon\). A 10% high \(k\) and 10% low \(\epsilon\) produce exact factors \(1.28187748\) in length and \(1.34444444\) in viscosity. Independent errors can reinforce each other. The source's plotted values are not digitized here.</p>
+<p>A length increasing toward a channel centre is not, by itself, physically meaningless merely because the near-wall energy peak lies elsewhere. Energy amplitude, correlation extent and energy-to-destruction ratio describe different properties. What needs qualification is interpreting one chosen ratio as a universal eddy size. Similarly, a stress-response coefficient can have a useful physical interpretation while failing as a universal material viscosity.</p>
+<p>The source introduces a mean-field alternative associated with scale-adaptive simulation, or SAS. With mean strain \(S_{ij}=(\partial_jU_i+\partial_iU_j)/2\), define \(\mathcal S=\sqrt{2S_{ij}S_{ij}}\) and the raw von Kármán length</p>
+<div class="equation">\[
+L_{\rm vK}=\frac{\kappa\mathcal S}{|\nabla^2\boldsymbol U|}.
+\]</div>
+<p>The Laplacian magnitude has units \(\mathrm{m^{-1}\,s^{-1}}\), so the ratio is a length. In a one-dimensional log profile, \(\mathcal S=|U'|=u_\tau/(\kappa y)\), \(|U''|=u_\tau/(\kappa y^2)\), and \(L_{\rm vK}=\kappa y\). In uniform simple shear or a nonzero linear stagnation field, the Laplacian is zero despite nonzero strain; the raw ratio is undefined and formally diverges as its denominator tends to zero. It is not automatically a finite geometric length.</p>
+<p>The inspected <a href="https://cpp.openfoam.org/v4/kOmegaSSTSAS_8C_source.html">Foundation 4.1 SST-SAS source function</a> includes a regularized derivative ratio, a grid-related lower bound and a source limiter. That context matters: one ratio is not the entire SAS model. Using a computed mean gradient also does not make a RANS calculation resolve turbulent eddies. Here the raw length is a diagnostic of local variation; no SAS simulation or full derivation is claimed.</p>
+
+<h2 id="covariance" data-video="Fff1PE0-JI8" data-start="813" data-end="1212">15.2 Nonnegative coordinate variances are only the first test <a class="timestamp" href="https://www.youtube.com/watch?v=Fff1PE0-JI8&amp;t=813">L48 · 13:33</a></h2>
+<p>For zero-mean velocity fluctuations \(u_i'\), define \(R_{ij}=\mathbb E[u_i'u_j']\). This is a symmetric covariance per mass, not the negative density-weighted stress sometimes used in the mean momentum equation. For any real fixed vector \(a_i\),</p>
+<div class="equation">\[
+a_iR_{ij}a_j=\mathbb E[(a_i u_i')^2]\geq0.
+\tag{15.1}
+\]</div>
+<p>A symmetric matrix satisfying (15.1) is positive semidefinite, abbreviated PSD. Its eigenvalues are nonnegative and its trace is \(2k\geq0\). Zero eigenvalues are allowed, including a two-component state or a fluctuation-free direction. “Must remain positive” in the source should therefore be read as nonnegative, unless a separate nonsingularity assumption is made.</p>
+<p>Choosing coordinate directions gives \(R_{ii}\geq0\), without summation on a selected \(i\). Applying nonnegativity to \(u_i'+\alpha u_j'\) for every real \(\alpha\) yields the quadratic \(R_{ii}+2\alpha R_{ij}+\alpha^2R_{jj}\geq0\), so \(R_{ij}^2\leq R_{ii}R_{jj}\). If both variances are positive, the component correlation \(r_{ij}=R_{ij}/\sqrt{R_{ii}R_{jj}}\) lies in \([-1,1]\). If one variance is zero, PSD requires its covariance with every other component to vanish; the normalized coefficient is then undefined, not a number to divide by zero.</p>
+<div class="worked"><h3>All pairwise correlations can pass while the full covariance fails</h3>
+<p>Consider the dimensionless matrix with every diagonal equal to 1 and every off-diagonal equal to \(-0.75\). All variances are positive and every pairwise correlation has magnitude \(0.75&lt;1\). Nevertheless the unit vector \((1,1,1)/\sqrt3\) has variance \(1+2(-0.75)=-0.5\). Its eigenvalues are \(-0.5,1.75,1.75\), and its determinant is \(-1.53125\).</p>
+<p>For a symmetric \(3\times3\) covariance, all principal minors must be nonnegative, including the determinant, not just the three \(2\times2\) conditions. Positive trace is still weaker. This counterexample needs no turbulence simulation; it rules out any ensemble with the proposed second moments.</p></div>
+<p>Conversely, a symmetric PSD matrix is a realizable second-moment matrix in the elementary probabilistic sense. If \(R=Q\,\mathrm{diag}(r_1,r_2,r_3)Q^T\), choose independent random signs \(\xi_\alpha=\pm1\), each of mean zero and variance one, and define \(\boldsymbol u'=Q\,\mathrm{diag}(\sqrt{r_1},\sqrt{r_2},\sqrt{r_3})\boldsymbol\xi\). Its covariance is \(R\). This construction proves moment admissibility at one point; it does not supply a spatially divergence-free Navier–Stokes field or an accurate turbulence history.</p>
+
+<h2 id="stagnation" data-video="8vA99S_QbJ8" data-start="16" data-end="1009">15.3 Incompressible strain can produce a negative modeled variance <a class="timestamp" href="https://www.youtube.com/watch?v=8vA99S_QbJ8&amp;t=16">L49 · 00:16</a></h2>
+<p>The linear incompressible Boussinesq closure is \(R^m=(2k/3)I-2\nu_tS\), where \(I\) is the identity matrix. Its trace is \(2k\) because \(\mathrm{tr}\,S=\nabla\cdot\boldsymbol U=0\). The coordinate normal variance is \(R_{11}^m=2k/3-2\nu_t\partial_1U_1\). A sufficiently strong positive extension can make it negative even when \(k,\nu_t\) are positive.</p>
+<p>“Normal extension” should not be confused with volumetric strain. The latter is the trace of strain and is zero here. Also, individual off-diagonal velocity gradients are not rotation tensors: their symmetric sum contributes shear strain and their antisymmetric difference contributes rotation. A gradient can be large in one coordinate frame and appear off-diagonal after rotating that frame. A realizability test must survive such a coordinate change.</p>
+<p>Take an ideal local planar stagnation field \(\boldsymbol U=(a x,-a y,0)\), \(a&gt;0\). Its strain is \(\mathrm{diag}(a,-a,0)\), its divergence and vorticity are zero, and</p>
+<div class="equation">\[
+R^m=\mathrm{diag}\left(\frac{2k}{3}-2\nu_ta,\
+\frac{2k}{3}+2\nu_ta,\ \frac{2k}{3}\right).
+\]</div>
+<p>The extensional variance fails when \(\nu_ta&gt;k/3\). If the incoming coordinate instead compresses strongly, incompressibility forces compensating extension elsewhere. The source's summed transverse argument captures this: \(R_{22}^m+R_{33}^m=4k/3+2\nu_t\partial_1U_1\). A sufficiently negative \(\partial_1U_1\) makes the sum negative, requiring at least one negative term. It does not prove both are negative.</p>
+<div class="worked"><h3>Positive energy and production coexist with an impossible stress</h3>
+<p>Use our recurring state \(k=0.19\ \mathrm{m^2\,s^{-2}}\), \(\epsilon=0.5\ \mathrm{m^2\,s^{-3}}\), \(C_\mu=0.09\). It gives \(\nu_t=0.006498\ \mathrm{m^2\,s^{-1}}\). At \(a=100\ \mathrm{s^{-1}}\), the smallest modeled variance is \(-1.17293333\ \mathrm{m^2\,s^{-2}}\), although the trace remains \(0.38\). Modeled production is \(2\nu_tS:S=4\nu_ta^2=259.92\ \mathrm{m^2\,s^{-3}}\), also positive.</p>
+<p>The field is a local gradient experiment, not a no-slip wall solution: a complete impingement flow has additional spatial structure. Its purpose is to exhibit a constitutive failure. A negative modeled variance need not make the separately transported scalar \(k\) negative or cause an immediate numerical crash. A solver can converge while carrying this local inconsistency.</p></div>
+
+<h2 id="viscosity-cap" data-video="4jo90Pil6jY" data-start="15" data-end="691">15.4 Derive an invariant viscosity or time-scale bound <a class="timestamp" href="https://www.youtube.com/watch?v=4jo90Pil6jY&amp;t=15">L50 · 00:15</a></h2>
+<p>Because \(S\) is symmetric, it has orthonormal principal axes with real eigenvalues \(\lambda_\alpha\), \(\alpha=1,2,3\). In those axes \(R^m\) is diagonal with eigenvalues \(2k/3-2\nu_t\lambda_\alpha\). For \(k\geq0,\nu_t\geq0\), the condition is therefore</p>
+<div class="equation">\[
+\nu_t\leq\frac{k}{3\lambda_{\max}}
+\quad\hbox{when }\lambda_{\max}&gt;0.
+\tag{15.2}
+\]</div>
+<p>If \(S=0\), no finite strain bound is needed: \(R^m=2kI/3\). A nonzero trace-free \(S\) always has a positive largest eigenvalue. For \(k=0\) and nonzero strain, the admissible nonnegative viscosity under this model is zero. Numerical division by a zero strain invariant should be handled by this limiting branch, not an unexplained dimensionless tiny constant.</p>
+<p>An eigenvalue-free sufficient bound follows from incompressibility. Let \(m=\lambda_{\max}&gt;0\). The other eigenvalues sum to \(-m\); their squared sum is at least \(m^2/2\). Thus \(S:S\geq3m^2/2\), so \(m\leq\Lambda=\sqrt{(2/3)S:S}\). Replacing \(m\) by the larger \(\Lambda\) gives the conservative cap \(\nu_t\leq k/(3\Lambda)\). This contraction sums over both indices. It is a rotational invariant.</p>
+<p>Lesson 50 attributes the constraint to Durbin's 1996 work. We inspected the earlier primary <a href="https://web.stanford.edu/group/ctr/ResBriefs/1994/08_DURBIN.pdf">Durbin 1994 report, §2.4, printed pp. 102–104</a>, including a visual check of p. 103's eigenvalue derivation. It treats principal strain eigenvalues and bounds the turbulent time. Our derivation above makes the same mathematical distinction. No reading of the separately mentioned 1996 paper is claimed.</p>
+<p>The caption's row-wise expression \(\sqrt{(2/3)\sum_jS_{ij}^2}\) for each \(i\) is neither the principal eigenvalue nor the invariant \(\Lambda\). It cannot be substituted as an exact expression for \(S_{ii}\), and a row-wise cap is not a general PSD guarantee. For a rotated planar strain with \(S_{12}=S_{21}=a\) and zero diagonals, its nonzero row estimate is \(\sqrt{2/3}\,a&lt;\lambda_{\max}=a\). Capping at \(k/(3\sqrt{2/3}\,a)\) still leaves a negative principal covariance. Coordinate diagonal checks miss it because all those modeled diagonals equal \(2k/3\).</p>
+<div class="worked"><h3>Exact and conservative caps, with their scope</h3>
+<p>At the state and strain above, (15.2) caps viscosity at \(0.00063333\ \mathrm{m^2\,s^{-1}}\), giving zero minimum variance and production \(25.33333333\). The invariant cap is \(0.00054848\), giving minimum variance \(0.01697012\) and production \(21.93931023\). The incorrect row cap in the rotated example is \(0.00077567\), leaving eigenvalue \(-0.02846768\).</p>
+<p>For \(\nu_t=C_\mu k t_t\), implement the invariant condition as \(t_t=\min(k/\epsilon,1/(3C_\mu\Lambda))\). For \(\nu_t=k t_\omega\), it is \(t_\omega=\min(1/\omega,1/(3\Lambda))\). The example gives \(0.03207501\ \mathrm s\) and \(0.00288675\ \mathrm s\), respectively. These use different viscosity normalizations and are not supposed to be the same number.</p></div>
+<p>Use the chosen viscosity consistently in momentum, production and modeled diffusion if that is the declared modified model. The bound establishes pointwise PSD for this linear covariance under its sign and incompressibility assumptions. It does not establish correct wall anisotropy, transport, temporal positivity of every scalar update or accurate mean flow. A more general compressible or nonlinear stress closure needs its own constraint.</p>
+
+<h2 id="isotropic-production" data-video="4jo90Pil6jY" data-start="691" data-end="1315">15.5 Zero isotropic production is a conditional comparison <a class="timestamp" href="https://www.youtube.com/watch?v=4jo90Pil6jY&amp;t=691">L50 · 11:31</a></h2>
+<p>Suppose the actual covariance at a point and instant is isotropic: \(R_{ij}=2k\delta_{ij}/3\). Then incompressibility gives exactly \(\mathcal P=-R_{ij}\partial_jU_i=-(2k/3)\partial_iU_i=0\), for any local incompressible mean gradient. No approximation of individual off-diagonal gradients is needed for this result. The Boussinesq model in nonzero strain instead supplies \(\mathcal P_m=2\nu_tS:S&gt;0\) when \(\nu_t&gt;0\).</p>
+<p>This is the source's useful stagnation comparison, with its premise exposed. A stagnation region is not guaranteed to have isotropic turbulence. Strain can distort an initially isotropic state: its exact Reynolds-stress production tensor at that state is \(P_{ij}=-(4k/3)S_{ij}\), whose trace is zero but whose individual components differ. Pressure redistribution, transport and destruction also enter the subsequent covariance evolution. An initially zero scalar production does not imply zero \(k\), zero turbulent fluctuations or permanent isotropy.</p>
+<p>The closure's instantaneous stress–strain response has therefore replaced information about the evolving covariance. A limiter can restrain that response, but a claim that true production must vanish throughout every impingement flow would be another unsupported closure. The primary report's stagnation anomaly motivates a bounded response, rather than that universal assertion.</p>
+
+<h2 id="source-corrections" data-video="P_mIo20_rnA" data-start="15" data-end="1130">15.6 A scalar production correction answers another question <a class="timestamp" href="https://www.youtube.com/watch?v=P_mIo20_rnA&amp;t=15">L51 · 00:15</a></h2>
+<p>A direct scalar cap uses \(\widehat{\mathcal P}=\min(\mathcal P_m,C_P\epsilon)\), \(C_P&gt;0\). Both arguments have units \(\mathrm{m^2\,s^{-3}}\). Calling this an “explicit” correction describes changing the source directly; it does not specify an explicit numerical time integrator. A time-scale or viscosity change acts indirectly on production and other terms. It also does not, by itself, specify an implicit time discretization.</p>
+<p>A \(k\)–\(\omega\) cap may use destruction \(\beta_*k\omega\) in place of \(\epsilon\). The <a href="https://tmbwg.github.io/turbmodels/sst.html">official SST variant definitions</a> distinguish the original recommended factor 20 in the \(k\) production from SST-2003's factor 10 used in both equations. They also distinguish the corrected production source in the \(\omega\) equation. The lecture's factor 10 should not be identified as the exact original 1993/1994 specification. A source cap, viscosity limiter and model version must be reported together.</p>
+<p>For our planar-strain example, choosing \(C_P=10\) limits the scalar source from \(259.92\) to \(5\ \mathrm{m^2\,s^{-3}}\). If the momentum stress is unchanged, its negative covariance eigenvalue \(-1.17293333\) is unchanged too. A production cap alone is not a realizability proof. Conversely the invariant viscosity cap guarantees PSD here but still leaves production \(21.93931023\), which is not zero for the stipulated instantaneous isotropic comparison.</p>
+<p>Energy consistency also needs attention. In the mean kinetic-energy equation the modeled stress transfers \(-\mathcal P_m\); in a \(k\) equation using a different capped source it supplies \(+\widehat{\mathcal P}\). Their sum contains \(\widehat{\mathcal P}-\mathcal P_m\), rather than exact cancellation. Here that is \(-254.92\ \mathrm{m^2\,s^{-3}}\). A model may deliberately introduce an additional effective sink or approximation, but it should not claim that unchanged mean stress and separately capped turbulent production preserve the original exact transfer identity. Changing the common stress consistently preserves the algebraic cancellation of its own transfer.</p>
+<p>The source also introduces Kato–Launder production. Define mean rotation \(W_{ij}=(\partial_jU_i-\partial_iU_j)/2\) and \(\Omega=\sqrt{2W_{ij}W_{ij}}\). The incompressible correction is \(\mathcal P_{\rm KL}=\nu_t\mathcal S\Omega\). The SST resource documents this product separately from a vorticity-squared variant. It is not merely substituting one derivative component for another.</p>
+<p>Three local checks clarify its response. In pure planar strain, \(\mathcal S=2a,\Omega=0\), so it gives zero. In simple shear \(U=Gy\), \(\mathcal S=\Omega=|G|\), so it equals the baseline \(\nu_tG^2\). In rigid rotation, \(\mathcal S=0\), so it again gives zero despite nonzero \(\Omega\). The comparisons test formula behavior, not universal accuracy. This changed scalar source is not automatically the contraction of the unchanged modeled momentum stress.</p>
+<figure><img src="assets/ch15-covariance-and-source.svg" alt="Left: the baseline minimum covariance eigenvalue falls below zero as planar strain increases, while an invariant viscosity cap keeps it nonnegative. Right: a separate production cap limits the scalar source but does not alter the covariance in the left baseline."><figcaption>Original local diagnostics at fixed \(k=0.19\), \(\epsilon=0.5\), \(C_\mu=0.09\), in SI units. The left correction changes viscosity; the right correction only changes the scalar source. The panels intentionally test different constraints. Generated by <a href="code/plot_ch15.py">plot_ch15.py</a>; no flow simulation or fitted data are plotted.</figcaption></figure>
+
+<h2 id="accuracy" data-video="P_mIo20_rnA" data-start="1130" data-end="1509">15.7 Admissibility does not establish prediction accuracy <a class="timestamp" href="https://www.youtube.com/watch?v=P_mIo20_rnA&amp;t=1130">L51 · 18:50</a></h2>
+<p>Lesson 51 reports a wake in which a time-scale constraint allowed an unsteady mean-flow computation to develop oscillations that an unconstrained calculation did not show. That is a consequential change in modeled dynamics; reproducing it would require the geometry, boundary data, model details, disturbance, mesh and time study. The caption alone does not establish that every constrained wake has the correct shedding frequency or force statistics. We retain the example qualitatively.</p>
+<p>The source next compares several eddy-viscosity models with measurements of dense-gas dispersion, including a complex terrain case. The reported discrepancy motivates checking the target observable rather than judging a model only from smooth-wall velocity agreement. We have not digitized those plots or reconstructed their experiments, and do not repeat exposure or health thresholds from the lecture. This discussion concerns mechanics-model evidence and does not provide exposure guidance.</p>
+<p>When several models sharing the same stress or scalar-flux assumptions agree with each other, their small spread need not bound their common error. A realizable stress is still compatible with a poorly represented scalar flux, buoyancy response, inflow state or terrain effect. A more elaborate model adds capabilities and costs; it does not receive automatic validation by having more equations. A defensible comparison checks the actual quantity of interest against independent observations with uncertainties and a declared numerical study.</p>
+<p>These limits lead naturally to Reynolds-stress transport. Its six covariance equations can represent directional evolution that a scalar viscosity suppresses. They still require modeled pressure correlations, transport and destruction. Realizability and near-wall structure will remain constraints on those new models, rather than problems that disappear when the equation count grows.</p>
+
+<h2 id="reproduce">15.8 Reproduce the covariance and production diagnostics</h2>
+<p>Run <a href="code/ch15_realizability.py">ch15_realizability.py</a> with standard Python 3. It uses known analytic eigenvalues and explicit local gradients. The listing and observed output are validated together. The negative examples deliberately fail covariance admissibility; they are not generated samples of physically possible turbulence.</p>
+<pre data-run="code/ch15_realizability.py"><code>&quot;&quot;&quot;Covariance and production diagnostics; no spatial RANS solution.&quot;&quot;&quot;
+from math import sqrt
+
+k,epsilon,Cmu=.19,.5,.09
+base=Cmu*k*k/epsilon
+print(f&quot;baseline viscosity m2/s: {base:.8f}&quot;)
+print(f&quot;pairwise-bound counterexample eigenvalues: {-0.5:.8f}, {1.75:.8f}, {1.75:.8f}&quot;)
+det=(1-(-.75))**2*(1+2*(-.75))
+print(f&quot;pairwise-bound counterexample determinant: {det:.8f}&quot;)
+
+a=100.
+strain_norm=sqrt(2*a*a)
+lambda_bound=sqrt(2/3)*strain_norm
+exact_cap=k/(3*a)
+safe_cap=k/(3*lambda_bound)
+for label,viscosity in ((&quot;baseline&quot;,base),(&quot;eigenvalue cap&quot;,min(base,exact_cap)),
+                        (&quot;invariant cap&quot;,min(base,safe_cap))):
+    variances=[2*k/3-2*viscosity*a,2*k/3+2*viscosity*a,2*k/3]
+    production=4*viscosity*a*a
+    print(f&quot;planar strain {label}: nu_t={viscosity:.8f}, &quot;
+          f&quot;min variance={min(variances):.8f}, production={production:.8f}&quot;)
+    if label!=&quot;baseline&quot;:
+        assert min(variances)&gt;=-1e-14
+
+# Rotate planar strain 45 degrees so positive eigenstrain is off diagonal.
+row_estimate=sqrt(2/3)*a
+row_cap=k/(3*row_estimate)
+bad_eigenvalue=2*k/3-2*row_cap*a
+print(f&quot;rotated row-norm cap: nu_t={row_cap:.8f}, min covariance eigenvalue={bad_eigenvalue:.8f}&quot;)
+assert bad_eigenvalue&lt;0
+
+production=4*base*a*a
+limited=min(production,10*epsilon)
+print(f&quot;production-only cap: original={production:.8f}, capped={limited:.8f}, &quot;
+      f&quot;unchanged min variance={2*k/3-2*base*a:.8f}&quot;)
+print(f&quot;mean-plus-turbulent transfer imbalance with unchanged stress: {limited-production:.8f}&quot;)
+print(f&quot;isotropic instantaneous exact production: {0.:.8f}&quot;)
+print(f&quot;Kato-Launder pure strain production: {0.:.8f}&quot;)
+
+shear=100.
+S=shear
+Omega=shear
+print(f&quot;simple shear baseline and Kato-Launder: {base*S*S:.8f}, {base*S*Omega:.8f}&quot;)
+print(f&quot;invariant limited k-epsilon time s: {min(k/epsilon,1/(3*Cmu*lambda_bound)):.8f}&quot;)
+omega=epsilon/(Cmu*k)
+print(f&quot;invariant limited k-omega time s: {min(1/omega,1/(3*lambda_bound)):.8f}&quot;)
+
+print(f&quot;10% k high/epsilon low length ratio: {1.1**1.5/.9:.8f}&quot;)
+print(f&quot;10% k high/epsilon low viscosity ratio: {1.1**2/.9:.8f}&quot;)
+kappa,y=.41,.002
+ut=.4
+gradient=ut/(kappa*y)
+curvature=ut/(kappa*y*y)
+print(f&quot;log-profile von Karman length m: {kappa*gradient/curvature:.8f}&quot;)
+print(&quot;uniform shear and nonzero linear strain: Laplacian=0; raw von Karman ratio undefined&quot;)
+</code></pre>
+<pre class="output">baseline viscosity m2/s: 0.00649800
+pairwise-bound counterexample eigenvalues: -0.50000000, 1.75000000, 1.75000000
+pairwise-bound counterexample determinant: -1.53125000
+planar strain baseline: nu_t=0.00649800, min variance=-1.17293333, production=259.92000000
+planar strain eigenvalue cap: nu_t=0.00063333, min variance=0.00000000, production=25.33333333
+planar strain invariant cap: nu_t=0.00054848, min variance=0.01697012, production=21.93931023
+rotated row-norm cap: nu_t=0.00077567, min covariance eigenvalue=-0.02846768
+production-only cap: original=259.92000000, capped=5.00000000, unchanged min variance=-1.17293333
+mean-plus-turbulent transfer imbalance with unchanged stress: -254.92000000
+isotropic instantaneous exact production: 0.00000000
+Kato-Launder pure strain production: 0.00000000
+simple shear baseline and Kato-Launder: 64.98000000, 64.98000000
+invariant limited k-epsilon time s: 0.03207501
+invariant limited k-omega time s: 0.00288675
+10% k high/epsilon low length ratio: 1.28187748
+10% k high/epsilon low viscosity ratio: 1.34444444
+log-profile von Karman length m: 0.00082000
+uniform shear and nonzero linear strain: Laplacian=0; raw von Karman ratio undefined
+</pre>
+
+<h2 id="exercises">15.9 Exercises with complete solutions</h2>
+<details><summary>1. Prove the pairwise covariance bound and handle zero variance.</summary>
+<p>For arbitrary real \(\alpha\), \(\mathbb E[(u_i'+\alpha u_j')^2]=R_{ii}+2\alpha R_{ij}+\alpha^2R_{jj}\geq0\). If \(R_{jj}&gt;0\), minimizing at \(\alpha=-R_{ij}/R_{jj}\) gives \(R_{ii}-R_{ij}^2/R_{jj}\geq0\). If \(R_{jj}=0\), a nonzero linear coefficient \(R_{ij}\) would make the expression negative for some \(\alpha\); hence \(R_{ij}=0\). The normalized correlation is defined only when both variances are positive.</p></details>
+<details><summary>2. Explain why three pairwise tests do not prove PSD.</summary>
+<p>For diagonal 1 and off-diagonal \(-3/4\), each pair has determinant \(1-9/16=7/16&gt;0\). But the all-ones direction is an eigenvector with eigenvalue \(1-3/2=-1/2\), while orthogonal directions have eigenvalue \(1+3/4=7/4\). The full determinant is \((-1/2)(7/4)^2=-49/32\). Thus the matrix is not PSD. Trace \(3\) and positive coordinate variances do not remove the negative directional variance.</p></details>
+<details><summary>3. Derive the exact Boussinesq viscosity bound and its invariant sufficient version.</summary>
+<p>In principal strain axes, covariance eigenvalues are \(2k/3-2\nu_t\lambda_\alpha\). For nonnegative viscosity, the smallest is associated with \(\lambda_{\max}&gt;0\), giving \(\nu_t\leq k/(3\lambda_{\max})\). Trace-free strain implies the other two eigenvalues sum to \(-\lambda_{\max}\), and their squared sum is at least half its square. Thus \(\lambda_{\max}\leq\sqrt{2S:S/3}\). The invariant cap substitutes that upper bound in the denominator and is sufficient, possibly more restrictive. For zero strain no division is required.</p></details>
+<details><summary>4. Why does the row-wise expression fail after a rotation?</summary>
+<p>For \(S_{12}=S_{21}=a&gt;0\) and all other entries zero, strain eigenvalues are \(a,-a,0\). The two nonzero row estimates \(\sqrt{(2/3)\sum_jS_{ij}^2}\) equal \(\sqrt{2/3}\,a\), smaller than \(a\). Their cap permits \(\nu_t=k/(3\sqrt{2/3}\,a)\), so the minimum modeled covariance is \((2k/3)[1-\sqrt{3/2}]&lt;0\). All coordinate diagonals remain \(2k/3\). A principal-axis or invariant criterion is required to test every direction.</p></details>
+<details><summary>5. Derive the two time-limit formulas from their respective viscosities.</summary>
+<p>For \(\nu_t=C_\mu k t_t\), the sufficient condition \(C_\mu k t_t\leq k/(3\Lambda)\) gives \(t_t\leq1/(3C_\mu\Lambda)\) for \(k&gt;0\). For \(\nu_t=k t_\omega\), the result is \(t_\omega\leq1/(3\Lambda)\). Apply the minimum with the original positive time \(k/\epsilon\) or \(1/\omega\). The different constants reflect different time definitions; dropping \(C_\mu\) from only the first formula changes the cap.</p></details>
+<details><summary>6. Does isotropic zero production mean low turbulent energy?</summary>
+<p>No. At any positive \(k\), isotropic \(R=2kI/3\) gives \(\mathcal P=-(2k/3)\nabla\cdot U=0\) in incompressible motion. This is zero instantaneous exchange with mean energy through that contraction, not zero stored fluctuation energy. Its production tensor is \(-(4k/3)S\), which can change component energies with zero trace. Other exact terms also affect their evolution, so isotropy need not persist under strain.</p></details>
+<details><summary>7. Compare a scalar source cap with a stress cap and test energy transfer.</summary>
+<p>A scalar cap alters \(\widehat{\mathcal P}\) while leaving \(R^m\) unchanged unless another equation explicitly changes it. It cannot directly repair a negative covariance eigenvalue. Summing modeled mean and turbulent energy equations leaves \(\widehat{\mathcal P}-\mathcal P_m\) when the stress transfer remains \(-\mathcal P_m\). Here \(5-259.92=-254.92\). A common viscosity change modifies both contractions consistently and preserves cancellation of that modeled transfer, though it does not prove empirical accuracy.</p></details>
+<details><summary>8. Recover the log-profile von Kármán scale and identify a singular counterexample.</summary>
+<p>For \(U'=u_\tau/(\kappa y)\), \(U''=-u_\tau/(\kappa y^2)\), so \(\kappa|U'|/|U''|=\kappa y\). At \(\kappa=0.41,y=0.002\), it is \(0.00082\ \mathrm m\). For a linear mean field, second derivatives vanish while strain can be nonzero; the raw ratio is undefined. A numerical regularization must have the correct denominator units and a stated model role. It cannot be silently interpreted as evidence for a finite measured eddy size.</p></details>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn"><a rel="prev" href="chapter-14-near-wall-corrections-and-boundary-data.html">Previous chapter</a><a href="index.html">Index</a><a rel="next" href="chapter-16-reynolds-stress-transport-closure.html">Next chapter</a></nav></main></div><footer class="site-footer">Independent study edition. Original exposition follows Prof. Vagesh D. Narasimhamurthy's course. Source and review limitations are recorded separately.</footer></body></html>

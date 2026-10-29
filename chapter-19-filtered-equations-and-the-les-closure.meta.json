@@ -1,0 +1,230 @@
+{
+  "chapter": 19,
+  "title": "19. Filtered equations and the LES closure",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "ea22bd6488c53c6a5798ff012f436700ca1d381779fa259ac6aaa40642477d44",
+  "recordings": [
+    {
+      "playlist_position": 41,
+      "video_id": "doZF5y4vmkk",
+      "title": "67. Large Eddy Simulations: Filtered Navier-Stokes Equations - II",
+      "lesson": 67,
+      "duration_seconds": 1177,
+      "url": "https://www.youtube.com/watch?v=doZF5y4vmkk",
+      "chapter": 19,
+      "disposition": "Included in chapter 19; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 67,
+        "video_id": "doZF5y4vmkk",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec67.vtt",
+        "path": "lecture-67.vtt",
+        "sha256": "cbfa8860e94e4e81f94e8032d7238112c3f26989089027e5fbc0bdc22cdde4d0",
+        "segments": 111,
+        "last_cue_seconds": 1168.72,
+        "recording_duration": 1177,
+        "coverage_ratio": 0.9929651656754461,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 42,
+      "video_id": "dbX_2K8Hh44",
+      "title": "66. Large Eddy Simulations: Filtered Navier-Stokes Equations - I",
+      "lesson": 66,
+      "duration_seconds": 1505,
+      "url": "https://www.youtube.com/watch?v=dbX_2K8Hh44",
+      "chapter": 19,
+      "disposition": "Included in chapter 19; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 66,
+        "video_id": "dbX_2K8Hh44",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec66.vtt",
+        "path": "lecture-66.vtt",
+        "sha256": "eb02f72fbdeb234f663cadf3b9ec0ab650549fa560ddd0fa7b1e45c262b54fc5",
+        "segments": 149,
+        "last_cue_seconds": 1497.56,
+        "recording_duration": 1505,
+        "coverage_ratio": 0.9950564784053155,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 43,
+      "video_id": "jcqo4BTsONU",
+      "title": "65. Introduction to Large Eddy Simulations (LES) Filtering operation and SGS stresses - II",
+      "lesson": 65,
+      "duration_seconds": 1205,
+      "url": "https://www.youtube.com/watch?v=jcqo4BTsONU",
+      "chapter": 19,
+      "disposition": "Included in chapter 19; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 65,
+        "video_id": "jcqo4BTsONU",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec65.vtt",
+        "path": "lecture-65.vtt",
+        "sha256": "d90cca2b2f986b3308cc0a513c8dfead45c7760204a44ed3f999254496eca942",
+        "segments": 157,
+        "last_cue_seconds": 1199.392,
+        "recording_duration": 1205,
+        "coverage_ratio": 0.9953460580912864,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 44,
+      "video_id": "eFuUWqgqxHg",
+      "title": "64. Introduction to Large Eddy Simulations (LES) Filtering operation and SGS stresses - I",
+      "lesson": 64,
+      "duration_seconds": 1250,
+      "url": "https://www.youtube.com/watch?v=eFuUWqgqxHg",
+      "chapter": 19,
+      "disposition": "Included in chapter 19; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 64,
+        "video_id": "eFuUWqgqxHg",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec64.vtt",
+        "path": "lecture-64.vtt",
+        "sha256": "0d6e9fea0abe644d7f3e15f485d2a9975ee9926b5779f8f58db72cca9b8f65ac",
+        "segments": 128,
+        "last_cue_seconds": 1248.92,
+        "recording_duration": 1250,
+        "coverage_ratio": 0.999136,
+        "status": "acquired"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "resolved",
+      "lesson": 64,
+      "start": 14,
+      "end": 510,
+      "lecture_material": "LES cascade motivation and distinction from DNS/RANS",
+      "extension": "Filtering defined without requiring universal local isotropy; subfilter cutoff can lie in inertial range; spatial scale not automatically temporal frequency",
+      "construction": "Separate ensemble mean, exact spatial filter and residual"
+    },
+    {
+      "anchor": "reference",
+      "lesson": 64,
+      "start": 510,
+      "end": 1250,
+      "lecture_material": "Exact filtering of DNS versus LES-resolved field and modeled SGS influence",
+      "extension": "Model predicts stress influence not full unique fine velocity; no visual smoothing attribution to one isolated error",
+      "construction": "A priori reference-filter comparison and numerical approximation distinction"
+    },
+    {
+      "anchor": "box",
+      "lesson": 65,
+      "start": 14,
+      "end": 630,
+      "lecture_material": "Filtered DNS illustrations,1D volume averaging and mean/fluctuation filtering",
+      "extension": "Exact normalized top-hat operator; Fourier gains, reference uncertainty and no invented picture data",
+      "construction": "Polynomial and Fourier non-idempotence examples"
+    },
+    {
+      "anchor": "residual-products",
+      "lesson": 65,
+      "start": 630,
+      "end": 1205,
+      "lecture_material": "Filtered residual generally nonzero, filtering differs from ensemble averaging and LES statistics require postprocessing",
+      "extension": "Explicit central moment versus residual covariance with cross/resolved-product terms; filtered mean need not equal original mean",
+      "construction": "Exact quadratic central moment0.01992 versus residual-square0.0009"
+    },
+    {
+      "anchor": "commutation",
+      "lesson": 66,
+      "start": 14,
+      "end": 890,
+      "lecture_material": "Time and spatial derivative commutation, homogeneous filter exception, nonuniform commutation error and Ghosal/Moin result",
+      "extension": "Operator rather than grid definition; variable/time-dependent widths and conditional second-order family",
+      "construction": "Exact variable-width identity, asymptotic derivation and quadratic commutator refinement"
+    },
+    {
+      "anchor": "momentum",
+      "lesson": 66,
+      "start": 890,
+      "end": 1505,
+      "lecture_material": "Filtered flux, add/subtract resolved convection, six SGS unknowns and stress units",
+      "extension": "Original filtered convection exists, resolved decomposition not new physics; sign/density/trace absorbed pressure; positive-kernel PSD scope",
+      "construction": "Full commuting-filter continuity/momentum equations and unknown product"
+    },
+    {
+      "anchor": "energy-grid",
+      "lesson": 67,
+      "start": 14,
+      "end": 560,
+      "lecture_material": "Mesh changes resolved versus modeled partition, LES grid-convergence and finite modeled contribution on DNS-like mesh",
+      "extension": "Fixed physical filter separates discretization refinement; no theorem forbids convergence or guarantees RANS monotonicity/laptop cost",
+      "construction": "Resolved-energy transfer budget, affine shear stress example and numerical filter/gain comparisons"
+    },
+    {
+      "anchor": "repeat-discrete",
+      "lesson": 67,
+      "start": 560,
+      "end": 1177,
+      "lecture_material": "Repeated filtering numerical illustration via trapezoidal/interpolation approximation",
+      "extension": "Discrete stencil exact under its definition but not universal continuum proof; special fixed fields retained",
+      "construction": "Impulse, sum preservation and Fourier-symbol proof"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://www.ams.jhu.edu/~eyink/Turbulence/classics/Germano92.pdf",
+      "title": "Germano1992 Turbulence: the filtering approach",
+      "supports": "Actual opening printed325–328: loss of Reynolds averaging rules, linear commuting filters, generalized central moment and filtered momentum architecture",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://ntrs.nasa.gov/api/citations/19940019675/downloads/19940019675.pdf",
+      "title": "Ghosal1993 CTR report on LES in complex geometry",
+      "supports": "Actual introduction and nonuniform filter/second-order commutation construction read, with mapped symmetric-filter assumptions; report distinguished from1995 journal work",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "article_words_including_math_code": 3512,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "worked_solutions": 8,
+  "executable_listings": 1,
+  "source_reading": "Complete normalized caption text read sequentially before drafting",
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "ea22bd6488c53c6a5798ff012f436700ca1d381779fa259ac6aaa40642477d44",
+    "rounds": [
+      {
+        "round": 1,
+        "report_identifier": "ch19-r1.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "ea22bd6488c53c6a5798ff012f436700ca1d381779fa259ac6aaa40642477d44",
+        "reviewer_id": "independent-course-peer",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      },
+      {
+        "round": 2,
+        "report_identifier": "ch19-r2.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "ea22bd6488c53c6a5798ff012f436700ca1d381779fa259ac6aaa40642477d44",
+        "reviewer_id": "lead-coordinator",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      }
+    ],
+    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+  },
+  "limitations": [
+    "Complete64–67 captions read; official65–66 include apparent editorial-response contamination; raw captions preserved and no full audiovisual audit claimed",
+    "Derivations are exact under smooth constant-property incompressible commuting-filter assumptions; nonzero commutators are additional terms",
+    "Ghosal1993 report introduction and nonuniform/commutation construction inspected, not a silent claim to have read the separately cited1995 journal paper",
+    "Germano1992 opening printed325–328 generalized-moment construction inspected; later full dynamic modeling not yet cited as inspected here",
+    "Polynomial, affine shear, Fourier and discrete quadrature examples are restricted original checks, not a spatial LES or reproduced filtered-DNS dataset",
+    "No universal grid independence, local isotropy, positivity of signed filters, complete residual reconstruction or monotone RANS refinement claimed"
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "chapter": 18,
+  "title": "18. Scales, cascades and direct numerical simulation",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "90c6376ae2fdff85566c9f640f65de6efd3adc8a94d76ce810b58aecf406cdf0",
+  "recordings": [
+    {
+      "playlist_position": 33,
+      "video_id": "1m1MPVYo9WI",
+      "title": "61. Introduction to Eddy Resolved Models - II",
+      "lesson": 61,
+      "duration_seconds": 1239,
+      "url": "https://www.youtube.com/watch?v=1m1MPVYo9WI",
+      "chapter": 18,
+      "disposition": "Included in chapter 18; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 61,
+        "video_id": "1m1MPVYo9WI",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec61.vtt",
+        "path": "lecture-61.vtt",
+        "sha256": "3c0ca6eceaf2b533ebcb4ae0d1330553a973c119826d196a2816747e10aa107f",
+        "segments": 166,
+        "last_cue_seconds": 1237.92,
+        "recording_duration": 1239,
+        "coverage_ratio": 0.9991283292978209,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 34,
+      "video_id": "uQAfzoov-dQ",
+      "title": "60. Introduction to Eddy Resolved Models - I",
+      "lesson": 60,
+      "duration_seconds": 1423,
+      "url": "https://www.youtube.com/watch?v=uQAfzoov-dQ",
+      "chapter": 18,
+      "disposition": "Included in chapter 18; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 60,
+        "video_id": "uQAfzoov-dQ",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec60.vtt",
+        "path": "lecture-60.vtt",
+        "sha256": "fd545f558571f1b11ade1a9ab3f2d5f33cd1ad93935ab6bd7fbb853ee83015f7",
+        "segments": 199,
+        "last_cue_seconds": 1422.08,
+        "recording_duration": 1423,
+        "coverage_ratio": 0.999353478566409,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 45,
+      "video_id": "KcEhq28Gdmc",
+      "title": "63. Introduction to Direct Numerical Simulations (DNS) - II",
+      "lesson": 63,
+      "duration_seconds": 1512,
+      "url": "https://www.youtube.com/watch?v=KcEhq28Gdmc",
+      "chapter": 18,
+      "disposition": "Included in chapter 18; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 63,
+        "video_id": "KcEhq28Gdmc",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec63.vtt",
+        "path": "lecture-63.vtt",
+        "sha256": "11eb73c84395ff6d5e61a922e3b7de882863f595f83168c386cec7d74ed360c6",
+        "segments": 206,
+        "last_cue_seconds": 1511.76,
+        "recording_duration": 1512,
+        "coverage_ratio": 0.9998412698412699,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 46,
+      "video_id": "SR342U2LDpc",
+      "title": "62. Introduction to Direct Numerical Simulations (DNS) - I",
+      "lesson": 62,
+      "duration_seconds": 2008,
+      "url": "https://www.youtube.com/watch?v=SR342U2LDpc",
+      "chapter": 18,
+      "disposition": "Included in chapter 18; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 62,
+        "video_id": "SR342U2LDpc",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec62.vtt",
+        "path": "lecture-62.vtt",
+        "sha256": "1a0f7295fac2458027e6ade2872f3a6ecac7aa8c4b17884d25c401945e66871a",
+        "segments": 286,
+        "last_cue_seconds": 2007.16,
+        "recording_duration": 2008,
+        "coverage_ratio": 0.9995816733067729,
+        "status": "acquired"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "similarity",
+      "lesson": 60,
+      "start": 14,
+      "end": 900,
+      "lecture_material": "K41 local isotropy, wall component budgets and energy-cascade interpretation",
+      "extension": "Spatial component budgets are not scale-resolved evidence; increment statistics and hypothesis scope",
+      "construction": "Precise variables, conditional universality and physical-space versus scale-space distinctions"
+    },
+    {
+      "anchor": "microscales",
+      "lesson": 60,
+      "start": 900,
+      "end": 1423,
+      "lecture_material": "Viscosity/dissipation scales and intermediate-range second similarity hypothesis",
+      "extension": "Dimensional exponent derivation, molecular continuum limit is a distinct scale, retain Cepsilon in integral ratios",
+      "construction": "Three microscale identities and executed dimensional/ratio check"
+    },
+    {
+      "anchor": "cascade",
+      "lesson": 61,
+      "start": 14,
+      "end": 1239,
+      "lecture_material": "Integral ratios, intermittency, inverse transfer, -5/3 spectrum, viscous weighting and resolution use",
+      "extension": "K62 date1962; external intermittency distinct; transfer budget and non-equilibrium qualifications; no universal conservative estimate",
+      "construction": "Spectrum normalization, integrated flux balance and original spectral-weight illustration"
+    },
+    {
+      "anchor": "dns",
+      "lesson": 62,
+      "start": 15,
+      "end": 800,
+      "lecture_material": "DNS definition, no turbulence closure, instantaneous three-dimensional resolution, scale separation and expense",
+      "extension": "Physical constitutive assumptions remain; multiphysics requires further equations; repair 10^6 grid arithmetic and distinguish air viscosity",
+      "construction": "Grid and two alternative temporal cost scalings, explicit minimum field storage"
+    },
+    {
+      "anchor": "resolution",
+      "lesson": 62,
+      "start": 800,
+      "end": 2008,
+      "lecture_material": "Discrete methods/central schemes, pressure/parallel resources, grid/eta and wall units, geometric criterion",
+      "extension": "Numerical instability is not a desired perturbation source, schemes and time integrators matter, geometric criterion not universal sufficiency",
+      "construction": "Exact diffusing Fourier-mode spatial refinement, anisotropic-grid and biased-epsilon counterexamples"
+    },
+    {
+      "anchor": "domain-startup",
+      "lesson": 63,
+      "start": 15,
+      "end": 1169,
+      "lecture_material": "Streamwise/spanwise correlations and box size, startup perturbations, reduced-viscosity initialization, synthetic and precursor alternatives",
+      "extension": "Periodic half-box warning not universal two-eddy rule; controlled continuation not near-crash validation; initial conditions can change attractor",
+      "construction": "Positive-definite periodized covariance and divergence-free explicit perturbation"
+    },
+    {
+      "anchor": "sampling",
+      "lesson": 63,
+      "start": 1169,
+      "end": 1512,
+      "lecture_material": "Statistical stationarity, sample/time correlation, long regime changes and DNS reference for PIV",
+      "extension": "Dense correlated sampling usable with uncertainty; nested means insufficient; unconditional mean can differ from individual states",
+      "construction": "Exact finite sample covariance sum and effective count"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://rainbow.ldeo.columbia.edu/~alexeyk/Papers/Kolmogorov1941.pdf",
+      "title": "Kolmogorov1941 local structure paper,1991 English translation",
+      "supports": "Full printed9–13 read: local increment isotropy, scope away from boundaries, two similarity hypotheses and dimensional scales; equations reconstructed independently",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://courses.physics.ucsd.edu/2019/Spring/physics235/Kolmogorov%2062-Enter%20Intermittency.pdf",
+      "title": "Kolmogorov1962 refinement of previous similarity hypotheses",
+      "supports": "Full printed82–85 read: coarse-grained fluctuating dissipation, refined hypotheses and additional lognormal proposal; date and internal intermittency distinction",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://pure.nitech.ac.jp/en/publications/fully-conservative-higher-order-finite-difference-schemes-for-inc/",
+      "title": "Morinishi et al.1998, institutional abstract and publication record",
+      "supports": "Actual abstract read, simultaneous discrete mass/momentum/kinetic-energy conservation requires compatible operators; full35-page paper not inspected or claimed",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "article_words_including_math_code": 4060,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "worked_solutions": 8,
+  "executable_listings": 1,
+  "source_reading": "Complete normalized caption text read sequentially before drafting",
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "90c6376ae2fdff85566c9f640f65de6efd3adc8a94d76ce810b58aecf406cdf0",
+    "rounds": [
+      {
+        "round": 1,
+        "report_identifier": "ch18-r1.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "90c6376ae2fdff85566c9f640f65de6efd3adc8a94d76ce810b58aecf406cdf0",
+        "reviewer_id": "independent-course-peer",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      },
+      {
+        "round": 2,
+        "report_identifier": "ch18-r2.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "90c6376ae2fdff85566c9f640f65de6efd3adc8a94d76ce810b58aecf406cdf0",
+        "reviewer_id": "lead-coordinator",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      }
+    ],
+    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+  },
+  "limitations": [
+    "Complete60–63 captions read; no comprehensive audiovisual or numerical digitization of source Couette/domain/startup plots",
+    "K41 translation and K62 paper read as primary scope; no proof of universal isotropy or full inverse-cascade theory is asserted",
+    "Grötzbach expression retained explicitly as lecture diagnostic; original criterion paper not inspected and no universal sufficiency claimed",
+    "Grid cost estimates are conditional homogeneous-cube scalings, not current hardware benchmarks or general wall-DNS cost laws",
+    "Executed diffusion, scale, constructed covariance and exact sampling checks are not a turbulent DNS or analyzed JHTDB dataset",
+    "No actual DNS/measurement pipeline is run; reference data still require independent numerical, sampling and physical uncertainty assessment"
+  ]
+}

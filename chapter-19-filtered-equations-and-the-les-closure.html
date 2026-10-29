@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="ea22bd6488c53c6a5798ff012f436700ca1d381779fa259ac6aaa40642477d44">
+<title>19. Filtered equations and the LES closure · Turbulence Modeling</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{pageReady:()=>MathJax.startup.defaultPageReady().then(()=>{document.documentElement.dataset.mathReady='true';})}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Turbulence Modeling · NPTEL IIT Madras</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="book-overview.html">Study route</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc"><h2>On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>19. Filtered equations and the LES closure</h1>
+<p class="lead">Large eddy simulation changes the field being computed. Instead of asking directly for an ensemble mean, it seeks an unsteady spatially filtered velocity and models the influence of the motions removed by that filter. The filtered velocity remains a fluctuating field. Deriving its equation shows exactly which product is unknown and why the rules used for Reynolds means cannot simply be copied.</p>
+<div class="learning-map"><strong>One operator, four consequential distinctions.</strong> Define filtering before using a bar; distinguish an exactly filtered reference from a numerical LES result; check when filtering and differentiation commute; then derive the stress and its resolved-energy exchange. Exact polynomial and Fourier examples make repeated filtering and mesh sensitivity calculable. This supplies the equation that the following filter and subgrid-model chapters will close.</div>
+<p class="source-note">Complete captions64–67 were read. Lessons65–66 contain apparent editorial-response artifacts, including repeated grammar-correction statements, in the official caption text. Those are retained in private raw sources and are not treated as scientific instruction. The equation construction below is independently derived and checked against the stated primary passages. No full audiovisual audit or quantitative reproduction of the source's filtered-DNS pictures is claimed.</p>
+
+<h2 id="resolved" data-video="eFuUWqgqxHg" data-start="14" data-end="510">19.1 Which part of the turbulent flow is computed? <a class="timestamp" href="https://www.youtube.com/watch?v=eFuUWqgqxHg&amp;t=14">L64 · 00:14</a></h2>
+<p>For this chapter, write \(F\) for a specified linear spatial filter and \(\bar f=Ff\). The bar means filtering, never ensemble expectation; use \(\mathbb E[f]\) for an ensemble mean. Define the residual \(f^{r}=f-\bar f\). This is an exact decomposition once both the original field and the operator are supplied. If the original field is random, all three terms can be random. A time-dependent filtered velocity is not a RANS mean with an extra perturbation attached.</p>
+<p>The LES motivation is that some large turbulent motions depend strongly on geometry and energy input, whereas smaller-scale behavior may be less directly dependent on those details under suitable high-Reynolds-number conditions. Resolving the former and modeling the latter can cost much less than DNS. Local isotropy is a motivation for some subfilter approximations, not a prerequisite for writing a filtered equation and not a proof of a universal model. Near walls or under strong strain, unresolved motions may remain anisotropic. A practical LES cutoff may lie in an inertial range and its model must represent transfer across that cutoff; it is too restrictive to say that every SGS model is intended only for the final molecular dissipation eddies.</p>
+<p>A conceptual low-pass spatial filter suppresses high spatial wavenumbers. It does not generally remove all wavelengths below one exact length, and spatial wavenumber is not temporal frequency without further dynamical assumptions. Large structures must be represented by enough degrees of freedom for their shapes, gradients and evolution, rather than merely being larger than a single cell. Discrete accuracy and aliasing still matter. The coffee-filter analogy in the recording is a memory aid; the mathematical operator determines which field passes, irrespective of which material remains in a household mesh.</p>
+
+<h2 id="reference" data-video="eFuUWqgqxHg" data-start="510" data-end="1250">19.2 Filtering a reference is different from solving a closure <a class="timestamp" href="https://www.youtube.com/watch?v=eFuUWqgqxHg&amp;t=510">L64 · 08:30</a></h2>
+<p>Suppose an adequately resolved reference supplies instantaneous \(u_i(\boldsymbol x,t)\). Applying an explicit filter gives \(Fu_i\), and subtracting gives its residual exactly relative to that reference and filter. This is useful for an a priori examination of a closure: compare a modeled filtered product with the actual product formed from the available reference. “Exact” here means exact operator identity or accurate numerical filtering of that reference, not removal of the reference's discretization, domain or statistical errors.</p>
+<p>In an actual LES, let \(v_i\) denote the numerical velocity intended to approximate \(\bar u_i\). It is produced by a closed, discretized initial-boundary-value problem; the full \(u_i\) is unavailable. An SGS stress model usually predicts the influence of unresolved motion on momentum, not the full instantaneous residual velocity everywhere. Thus a good SGS model is not defined by reconstructing one unique fine-scale field. Many fine fields can share the same filtered velocity. Different chaotic trajectories can also have similar statistics without agreeing point by point.</p>
+<p>The source contrasts a filtered DNS picture with an LES picture at a comparable nominal scale. That illustrates the conceptual distinction, but a visible difference can combine closure error, discretization, initial data, filtering choices and trajectory divergence. Extra visual smoothing alone does not isolate a numerical value for model error. A useful comparison specifies the same filter, relevant statistics or paired short-time fields, numerical accuracy and uncertainty. This distinction will matter when mesh refinement changes both the numerical representation and the nominal model scale.</p>
+
+<h2 id="box" data-video="jcqo4BTsONU" data-start="14" data-end="630">19.3 A filter is not an ensemble average <a class="timestamp" href="https://www.youtube.com/watch?v=jcqo4BTsONU&amp;t=14">L65 · 00:14</a></h2>
+<p>For a one-dimensional field on the whole line, define a centered top-hat filter of constant width \(\Delta&gt;0\) by</p>
+<div class="equation">\[
+F_\Delta f(x,t)=\frac1\Delta\int_{x-\Delta/2}^{x+\Delta/2}f(s,t)\,ds
+=\int_{-1/2}^{1/2} f(x+\Delta r,t)\,dr.
+\tag{19.1}
+\]</div>
+<p>The dummy coordinate \(s\) or \(r\) is integrated out; \(x\) remains the observation coordinate. The factor \(1/\Delta\) gives the original field's units. Constants pass unchanged and linearity holds. A three-dimensional rectangular box filter averages over the product of three such intervals, with normalization \(1/(\Delta_x\Delta_y\Delta_z)\). This is a chosen continuum operation; a numerical grid can approximate it but does not uniquely specify every property of an implicit filter.</p>
+<p>Let \(f(x)=x^2\) in reference length and field units. Averaging \(x^2+2x\Delta r+\Delta^2r^2\), using the zero odd moment and \(\int_{-1/2}^{1/2}r^2dr=1/12\), gives \(Ff=x^2+\Delta^2/12\). Filtering again gives \(F^2f=x^2+\Delta^2/6\). Hence \(F^2f\ne Ff\), and \(F(f-Ff)=-\Delta^2/12\ne0\). At \(x=0.4,\Delta=0.6\), original, filtered and double-filtered values are0.16,0.19,0.22. The filtered residual is−0.03.</p>
+<p>A Reynolds mean \(A=\mathbb E\), under its usual integrability assumptions, is idempotent: \(A^2f=Af\), so \(A(f-Af)=0\). A general spatial filter need not share either property. A Fourier projection onto a specified set of modes is an important idempotent exception; constants and some special fields can also be unchanged by other filters. Thus the precise statement is non-idempotence in general, not that every field changes under every non-spectral filter. <a href="https://www.ams.jhu.edu/~eyink/Turbulence/classics/Germano92.pdf">Germano's1992 paper, opening and generalized-moment construction</a>, makes the loss of Reynolds averaging rules explicit and formulates stresses without requiring those rules.</p>
+<p>For a Fourier mode \(f=e^{i\kappa x}\), direct integration in(19.1) gives gain \(g=\sin(\kappa\Delta/2)/(\kappa\Delta/2)\). One application multiplies its amplitude by g; two multiply by \(g^2\). For \(\kappa=3,\Delta=0.6\), these are0.87036323 and0.75753216. The second operation uses the same width: it still changes the field because convolving two top hats produces a triangular weighting, rather than the original top hat. Frequency-space filter families will be developed in the next chapter.</p>
+
+<h2 id="residual-products" data-video="jcqo4BTsONU" data-start="630" data-end="1205">19.4 Why residual covariances are insufficient <a class="timestamp" href="https://www.youtube.com/watch?v=jcqo4BTsONU&amp;t=630">L65 · 10:30</a></h2>
+<p>Because \(F(f^r)\) need not vanish, a filtered product cannot be simplified with all the Reynolds rules. Expand \(u_i=\bar u_i+u_i^r\) before filtering the product. Subtracting \(\bar u_i\bar u_j\) yields</p>
+<div class="equation">\[
+\begin{aligned}
+\tau_{ij}&=F(u_i u_j)-\bar u_i\bar u_j\\
+&=\underbrace{F(\bar u_i\bar u_j)-\bar u_i\bar u_j}_{\text{resolved-product difference}}
++F(\bar u_i u_j^r+u_i^r\bar u_j)+F(u_i^r u_j^r).
+\end{aligned}
+\tag{19.2}
+\]</div>
+<p>None of the first two contributions is generally zero. The chosen decomposition is sometimes organized into Leonard, cross and residual terms, but their individual interpretation depends on the filter convention. The total central moment in the first line is the quantity entering the momentum equation. It is not generally just \(F(u_i^ru_j^r)\). We will retain its explicit definition to avoid confusing a local spatial average with a statistical covariance of Reynolds fluctuations.</p>
+<p>The polynomial example makes this quantitative. For \(f=x^2\), \(F(f^2)=x^4+x^2\Delta^2/2+\Delta^4/80\), whereas \((Ff)^2=x^4+x^2\Delta^2/6+\Delta^4/144\). Their difference is \(x^2\Delta^2/3+\Delta^4/180\). At the values above it is0.01992. But \(f^r=-\Delta^2/12\) is constant, so \(F[(f^r)^2]=\Delta^4/144=0.0009\). Equating them would omit most of the exact central moment.</p>
+<p>Filtering and ensemble expectation can commute when a deterministic linear filter is suitably integrable. Then \(\mathbb E[\bar f]=F(\mathbb E[f])\), which is a spatially smoothed mean; it equals the unsmoothed mean only if the mean is invariant under that filter. A RANS fluctuation \(f'=f-\mathbb E[f]\) has \(Ff'\) as a filtered fluctuation, distinct from the spatial residual \(f-Ff\). LES postprocessing needs this statistical decomposition if the desired output is a mean or a resolved Reynolds stress. A spatial bar by itself has performed no ensemble averaging.</p>
+
+<h2 id="commutation" data-video="dbX_2K8Hh44" data-start="14" data-end="890">19.5 When derivatives can pass through the filter <a class="timestamp" href="https://www.youtube.com/watch?v=dbX_2K8Hh44&amp;t=14">L66 · 00:14</a></h2>
+<p>Assume enough smoothness and integrability to differentiate under an integral. For a time-independent kernel and domain, \(F(\partial_t f)=\partial_t Ff\). If the filter width, kernel or domain moves in time, additional terms appear; this statement is not automatic merely because the operation is called spatial filtering.</p>
+<p>For a translation-invariant constant-width convolution on the whole space, change variables to a fixed integration interval as in(19.1). Then differentiating \(f(x+\Delta r)\) directly shows \(\partial_x Ff=F(\partial_xf)\). Appropriate periodic extensions give the analogous periodic result. This is a continuum operator property; uniform mesh spacing is a possible numerical realization, not its logical definition. Boundaries, truncation and variable widths require their own treatment.</p>
+<p>Now let \(\Delta=\Delta(x)&gt;0\) in the same centered definition. Differentiating its fixed-r form gives the exact identity</p>
+<div class="equation">\[
+\partial_x F_{\Delta(x)} f
+= F_{\Delta(x)}(\partial_x f)
++\Delta'(x)\int_{-1/2}^{1/2}r f'(x+\Delta(x)r)\,dr.
+\tag{19.3}
+\]</div>
+<p>The second term records the changing points and weights sampled as x changes. Taylor expansion of the final integrand, using symmetry, gives
+\(\partial_xFf-Ff'=\Delta\Delta' f''/12+O(\Delta^3\Delta')\) for smooth f with appropriately bounded derivatives. If \(\Delta(x)=\delta d(x)\), with smooth fixed d and small parameter \(\delta\), its leading order is \(\delta^2\). If \(\Delta'\) is order one during an abrupt width transition, that scaling does not follow. A statement of second order therefore includes assumptions about how the filter family varies.</p>
+<p>For \(f=x^2\), the relation is exact: \(Ff'=2x\) and \(\partial_xFf=2x+\Delta\Delta'/6\). Define the commutator as \(C[f]=Ff'-\partial_xFf\); for \(\Delta=\delta(1+x)\) it is \(-\delta^2(1+x)/6\). At x0.4, delta0.2 it equals−0.00933333; halving delta quarters it. This restricted example is a derivation, not a generic estimate for every mesh near a wall.</p>
+<p>The recording cites Ghosal and Moin's work on commutation. The inspected primary here is <a href="https://ntrs.nasa.gov/api/citations/19940019675/downloads/19940019675.pdf">Ghosal's1993 CTR report, nonuniform filtering and commutation sections</a>. It constructs a particular mapped symmetric filter and derives a second-order commutation error, with a comparison to second-order discretization. That is a qualified result, not permission to assume every nonuniform filter commutes. Retaining commutators gives additional terms, including a possible nonzero filtered-velocity divergence. The standard equations below are exact for commuting filters; dropping nonzero commutators is an additional approximation.</p>
+
+<h2 id="momentum" data-video="dbX_2K8Hh44" data-start="890" data-end="1505">19.6 Deriving the filtered momentum equation <a class="timestamp" href="https://www.youtube.com/watch?v=dbX_2K8Hh44&amp;t=890">L66 · 14:50</a></h2>
+<p>Assume smooth constant-density incompressible flow, constant \(\nu\), and a linear constant-preserving spatial filter commuting with the required time and spatial derivatives. The unfiltered equations are \(\partial_i u_i=0\) and \(\partial_tu_i+\partial_j(u_i u_j)=-\partial_i(p/\rho)+\nu\partial_{jj}u_i\). Filtering continuity gives \(\partial_i\bar u_i=0\). Filtering momentum gives \(\partial_t\bar u_i+\partial_jF(u_i u_j)=-\partial_i(\bar p/\rho)+\nu\partial_{jj}\bar u_i\).</p>
+<p>The filtered convective flux has not disappeared; it is not expressible solely as a product of the known filtered velocities. Add and subtract \(\partial_j(\bar u_i\bar u_j)\), define tau by(19.2), and rearrange:</p>
+<div class="equation">\[
+\partial_t\bar u_i+\partial_j(\bar u_i\bar u_j)
+=-\partial_i(\bar p/\rho)+\nu\partial_{jj}\bar u_i-\partial_j\tau_{ij},
+\qquad \partial_i\bar u_i=0.
+\tag{19.4}
+\]</div>
+<p>No physical convection has been inserted by hand. This algebra isolates convection by the resolved velocity from the remaining nonlinear flux. The closure problem is that \(\bar u_i\) does not determine \(F(u_iu_j)\). The symmetric tau tensor has six independent components before accounting for its isotropic contribution. With this positive central-moment convention, tau has units \(\mathrm{m^2/s^2}\), and \(-\rho\tau_{ij}\) contributes the corresponding stress convention in momentum. Its divergence has acceleration units. The lecture's phrase “not really a stress” refers to the missing density factor, not an absence of momentum transport.</p>
+<p>Write \(k_s=\tau_{kk}/2\) and \(\tau^d_{ij}=\tau_{ij}-(2k_s/3)\delta_{ij}\). Then the isotropic part can be absorbed into the kinematic pressure \(\pi=\bar p/\rho+2k_s/3\), giving the same velocity equation with \(-\partial_i\pi-\partial_j\tau^d_{ij}\). The trace is not proved zero; its gradient is represented in the modified pressure. Recovering physical filtered pressure requires knowing that trace. This distinction becomes essential when an eddy-viscosity model specifies only the deviatoric stress.</p>
+<p>A nonnegative normalized averaging kernel gives pointwise \(\tau\succeq0\): for any fixed vector a, \(a_i\tau_{ij}a_j=F[(a_i u_i)^2]-[F(a_i u_i)]^2\ge0\). This is variance under the kernel's weights. A filter with signed spatial weights need not satisfy it. We will not impose covariance positivity on every conceivable spectral filter merely by analogy with ensemble stress.</p>
+
+<h2 id="energy-grid" data-video="doZF5y4vmkk" data-start="14" data-end="560">19.7 Energy exchange and two kinds of refinement <a class="timestamp" href="https://www.youtube.com/watch?v=doZF5y4vmkk&amp;t=14">L67 · 00:14</a></h2>
+<p>Define resolved kinetic energy \(K_r=\bar u_i\bar u_i/2\). Multiply(19.4) by \(\bar u_i\), use incompressibility, and apply \(-\bar u_i\partial_j\tau_{ij}=-\partial_j(\bar u_i\tau_{ij})+\tau_{ij}\partial_j\bar u_i\). Since tau is symmetric, its contraction with antisymmetric rotation is zero. With \(\bar S_{ij}=(\partial_j\bar u_i+\partial_i\bar u_j)/2\), the resulting budget is</p>
+<div class="equation">\[
+\partial_tK_r+\partial_j\left[
+\bar u_j(K_r+\bar p/\rho)+\bar u_i\tau_{ij}-\nu\partial_jK_r\right]
+=-\nu(\partial_j\bar u_i)^2-\Pi,\qquad
+\Pi=-\tau_{ij}\bar S_{ij}.
+\tag{19.5}
+\]</div>
+<p>Positive Pi drains resolved kinetic energy toward the subfilter part; negative Pi denotes backscatter in this convention. It is an interscale transfer, distinct from the molecular loss term. For a positive averaging filter, \(F(u_i u_i/2)=K_r+k_s\) pointwise. The quadrature example below gives total4.3125, resolved0.390625 and subfilter3.921875 in squared reference-speed units. It verifies the partition, not that this deliberately coarse average would be adequate LES.</p>
+<p>A simple divergence-free shear \(u_1=Sy,u_2=u_3=0\), filtered by a centered box, has \(\bar u=u\) and zero residual velocity, yet \(\tau_{11}=S^2\Delta_y^2/12\ne0\). All its stress components are spatially constant, so their divergence is zero. Its contraction with shear strain is also zero. Thus a nonzero central moment need not force momentum locally or supply energy transfer. This is a local analytic field, not a turbulent channel solution. With S100/s and width0.002m, tau11 is0.00333333square meters per square second.</p>
+<p>In grid-tied LES, refining the mesh often changes the nominal filter width and the model itself. One should compare converging target observables with awareness of that changing resolved/model partition. In explicitly filtered LES one can instead hold a physical filter fixed while refining the numerical grid, separating discretization convergence for that filtered problem from changing the filter. The exact top-hat gain0.87036323 at fixed width0.6 does not depend on how finely it is represented. If width equals h0.2,0.1,0.05, the continuum gains become0.98506736,0.99625422,0.99906276: now the target itself changes.</p>
+<p>Accordingly, the source's warning against an unqualified “grid-independent LES” is useful, but no theorem forbids convergence. A consistent family can approach a direct calculation as width tends to zero and model effects vanish, subject to accuracy, stability and regularity. At a finite fine mesh a nonzero modeled viscosity can still change the equations. Chaotic pointwise trajectories are poor long-time convergence targets; statistical quantities, spectra and budgets need uncertainty-aware comparison. RANS convergence likewise need not be monotone. Computational economy depends on the actual case, rather than a promise that LES always fits a laptop.</p>
+
+<h2 id="repeat-discrete" data-video="doZF5y4vmkk" data-start="560" data-end="1177">19.8 A discrete repeated-filter check <a class="timestamp" href="https://www.youtube.com/watch?v=doZF5y4vmkk&amp;t=560">L67 · 09:20</a></h2>
+<p>The recording illustrates a second filtering pass by interpolating filtered values to two intermediate locations and averaging. The resulting three-point stencil is \((F_h q)_i=q_{i-1}/8+3q_i/4+q_{i+1}/8\). Its weights sum to one. This is a discrete smoothing operator under the stated interpolation assumptions, not an exact quadrature formula for every continuum top hat. Applying it to an isolated unit impulse gives center0.75 after one pass and \(0.75^2+2(0.125)^2=0.59375\) after two, while preserving the global sum on a periodic array.</p>
+<p>The general claim needs only one explicit counterexample to idempotence; it does not require every field to change. A constant array remains unchanged. For a discrete mode \(e^{i\theta i}\), the stencil gain is \(3/4+\cos\theta/4\), so a second pass squares that gain. This provides an exact discrete explanation of the lecture's numerical illustration and avoids using an approximate interpolation as a universal proof about all filters.</p>
+<pre data-run="code/ch19_filtering.py"><code>&quot;&quot;&quot;Analytic and discrete filter identities; not a spatial LES solver.&quot;&quot;&quot;
+from math import pi, sin
+
+def sinc(z):
+    return sin(z)/z if z else 1.0
+
+x, delta = .4, .6
+once = x*x + delta**2/12
+twice = x*x + delta**2/6
+residual = -delta**2/12
+variance = x*x*delta**2/3 + delta**4/180
+print(f&quot;quadratic field: original={x*x:.8f}, filtered={once:.8f}, double filtered={twice:.8f}&quot;)
+print(f&quot;filtered residual (not zero): {residual:.8f}&quot;)
+print(f&quot;quadratic exact stress and residual-square average: {variance:.8f}, {residual**2:.8f}&quot;)
+assert abs(once-twice-residual) &lt; 1e-15
+
+for small in (.2, .1):
+    width = small*(1+x)
+    commutator = -width*small/6
+    print(f&quot;variable-width quadratic commutator delta0={small}: {commutator:.10f}&quot;)
+
+wave = 3
+gain = sinc(wave*delta/2)
+print(f&quot;top-hat mode gain once and twice: {gain:.8f}, {gain*gain:.8f}&quot;)
+
+# The lecture&#x27;s illustrative discrete averaging stencil, not an exact continuum box.
+data = [0., 0., 1., 0., 0., 0., 0., 0.]
+def smooth(values):
+    n = len(values)
+    return [values[(i-1)%n]/8 + .75*values[i] + values[(i+1)%n]/8 for i in range(n)]
+
+first, second = smooth(data), smooth(smooth(data))
+print(f&quot;discrete impulse center after one and two passes: {first[2]:.8f}, {second[2]:.8f}&quot;)
+print(f&quot;discrete filter sums: {sum(first):.8f}, {sum(second):.8f}&quot;)
+
+shear, dy = 100., .002
+tau11 = shear**2*dy**2/12
+print(f&quot;linear-shear exact box stress tau11: {tau11:.10f}&quot;)
+print(&quot;linear-shear residual velocity: zero; exact stress divergence: zero&quot;)
+
+# Positive box quadrature: trace/stress PSD and resolved+subfilter energy identity.
+vectors = [(1., 2., 0.), (3., -1., 1.), (-2., .5, 2.), (.5, -3., -1.)]
+n = len(vectors)
+mean = [sum(v[i] for v in vectors)/n for i in range(3)]
+tau = [[sum(v[i]*v[j] for v in vectors)/n-mean[i]*mean[j] for j in range(3)] for i in range(3)]
+resolved = sum(v*v for v in mean)/2
+subfilter = sum(tau[i][i] for i in range(3))/2
+total = sum(sum(c*c for c in v) for v in vectors)/(2*n)
+print(f&quot;box energy total, resolved, subfilter: {total:.8f}, {resolved:.8f}, {subfilter:.8f}&quot;)
+print(f&quot;energy partition residual: {total-resolved-subfilter:.3e}&quot;)
+for a in ((1,0,0),(0,1,0),(0,0,1),(1,-2,3),(-3,1,2)):
+    quadratic = sum(a[i]*tau[i][j]*a[j] for i in range(3) for j in range(3))
+    centered = sum(sum(a[i]*(v[i]-mean[i]) for i in range(3))**2 for v in vectors)/n
+    assert quadratic &gt;= -1e-12 and abs(quadratic-centered) &lt; 1e-12
+
+# Filter width is held fixed while the representation grid changes.
+print(f&quot;fixed-filter continuum gain (independent of representation grid): {gain:.8f}&quot;)
+for h in (.2,.1,.05):
+    print(f&quot;grid-tied width={h}: continuum mode gain={sinc(wave*h/2):.8f}&quot;)
+</code></pre>
+<pre class="output">quadratic field: original=0.16000000, filtered=0.19000000, double filtered=0.22000000
+filtered residual (not zero): -0.03000000
+quadratic exact stress and residual-square average: 0.01992000, 0.00090000
+variable-width quadratic commutator delta0=0.2: -0.0093333333
+variable-width quadratic commutator delta0=0.1: -0.0023333333
+top-hat mode gain once and twice: 0.87036323, 0.75753216
+discrete impulse center after one and two passes: 0.75000000, 0.59375000
+discrete filter sums: 1.00000000, 1.00000000
+linear-shear exact box stress tau11: 0.0033333333
+linear-shear residual velocity: zero; exact stress divergence: zero
+box energy total, resolved, subfilter: 4.31250000, 0.39062500, 3.92187500
+energy partition residual: 0.000e+00
+fixed-filter continuum gain (independent of representation grid): 0.87036323
+grid-tied width=0.2: continuum mode gain=0.98506736
+grid-tied width=0.1: continuum mode gain=0.99625422
+grid-tied width=0.05: continuum mode gain=0.99906276
+</pre>
+
+<h2 id="exercises">19.9 Exercises with complete solutions</h2>
+<details><summary>1. Identify which averaging rules hold for the top hat.</summary><p>Linearity follows by distributing the integral. A constant c gives \(F c=c\) by normalization. For constant width on the line and smooth f, a derivative can pass under the fixed-r integral, so differentiation commutes. Idempotence fails on x² because \(F^2x^2-Fx^2=\Delta^2/12\). Thus \(F(f-Ff)=Ff-F^2f\) is not generally zero. Constants and affine functions are special fixed fields, so the counterexample does not say every input changes.</p></details>
+<details><summary>2. Derive the exact quadratic central moment.</summary><p>Expand \((x+\Delta r)^4\) and integrate symmetric moments: \(F(x^4)=x^4+6x^2\Delta^2/12+\Delta^4/80\). Subtract \((x²+\Delta²/12)^2=x^4+x²\Delta²/6+\Delta^4/144\). The result is \(x²\Delta²/3+\Delta^4/180\), nonnegative. At x0.4,Delta0.6 this is0.01992, versus residual-square average0.0009. Their difference is the contribution of the other terms in(19.2); no Reynolds simplification removes them.</p></details>
+<details><summary>3. Derive the variable-width commutator without a Taylor approximation.</summary><p>For f=x² the exact filtered field is x²+Delta(x)²/12. Its derivative is2x+Delta Delta'/6, while filtering f'=2x gives2x. Hence \(C[f]=-\Delta\Delta'/6\). With Delta=delta(1+x), x0.4, delta0.2, C=−0.0093333333. Halving delta gives−0.0023333333, a factor4 decrease. If a family instead retains order-one Delta' while decreasing Delta, this second-order inference does not follow. If Delta varies in time, the analogous temporal extra derivative is Delta Delta_t/6.</p></details>
+<details><summary>4. Derive the stress sign and modified pressure.</summary><p>Use \(F(u_i u_j)=\bar u_i\bar u_j+\tau_{ij}\) in filtered conservative momentum. Moving the tau divergence to the right gives its minus sign. Splitting tau into deviatoric and trace parts gives \(-\partial_j\tau_{ij}=-\partial_j\tau^d_{ij}-\partial_i(\tau_{kk}/3)\). Combining with filtered kinematic pressure defines \(\pi=\bar p/\rho+\tau_{kk}/3\). This is the same as \(2k_s/3\). The trace has been absorbed, not set to zero, and physical pressure recovery needs that distinction.</p></details>
+<details><summary>5. Prove the positive-kernel energy partition and explain its limit.</summary><p>Under nonnegative normalized weights, set m=F(a.u). Expanding \(F[(a.u-m)^2]\) gives \(F[(a.u)^2]-m²=a^T\tau a\ge0\), since m is a constant with respect to the source integration at this observation point. Therefore tau is PSD and its half trace nonnegative. Independently, summing the definition gives \(F(|u|²/2)=|\bar u|²/2+\tau_{kk}/2\). The identity is algebraic even for signed kernels, but nonnegativity is not guaranteed then. It is not the generally different statement tau=F(residual outer product), where the residual is defined at each source point by its own local filter.</p></details>
+<details><summary>6. Derive the resolved-energy transfer sign.</summary><p>Multiply momentum by filtered velocity. The SGS term becomes a divergence plus \(\tau_{ij}\partial_j\bar u_i\). Decompose the gradient into symmetric strain and antisymmetric rotation; symmetry of tau makes the latter contraction zero. Define \(\Pi=-\tau:\bar S\), leaving −Pi on the resolved-energy right side. Positive Pi therefore removes resolved energy; the subfilter budget receives the corresponding transfer. Molecular loss is the separate negative term \(-\nu|\nabla\bar u|²\). A dissipative closure's transfer should not be mislabeled an exact molecular dissipation identity.</p></details>
+<details><summary>7. Why does zero residual shear not imply zero stress?</summary><p>A centered normalized box preserves the affine velocity Sy, hence u−Fu=0. But it averages the quadratic product S²y² to \(S²(y²+\Delta_y²/12)\). Subtracting the product of the filtered velocities leaves tau11=S²Delta_y²/12. It is spatially constant for constant width and shear, so its divergence vanishes. The shear strain has nonzero12and21components but zero11, while tau has only11, so Pi0. Product filtering probes variation within the kernel even when the linear velocity itself is reproduced exactly.</p></details>
+<details><summary>8. Show that the discrete stencil conserves sums but is not a projection.</summary><p>On a periodic array, summing over i gives \(\sum F_hq=(1/8+3/4+1/8)\sum q=\sum q\), since index shifts preserve the sum. For an impulse, the second center receives \(3/4\) times its first center plus two \(1/8\) times first neighbor values, giving19/32=0.59375, different from3/4. Its Fourier gain is \(3/4+(e^{i\theta}+e^{-i\theta})/8=3/4+\cos\theta/4\), generally neither0nor1, so squaring changes it. Conserving a global sum and being idempotent are independent properties.</p></details>
+<p class="closing">The closure problem has reappeared as a filtered nonlinear product, with a precisely defined sign, trace and energy exchange. Choosing a filter determines what that product means; choosing a subgrid model determines how it will be approximated. The two choices should remain visible in every resolution study.</p>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn"><a rel="prev" href="chapter-18-scales-cascades-and-direct-simulation.html">Previous chapter</a><a href="index.html">Index</a><a rel="next" href="chapter-20-filter-families-and-subgrid-viscosity.html">Next chapter</a></nav></main></div><footer class="site-footer">Independent study edition. Original exposition follows Prof. Vagesh D. Narasimhamurthy's course. Source and review limitations are recorded separately.</footer></body></html>

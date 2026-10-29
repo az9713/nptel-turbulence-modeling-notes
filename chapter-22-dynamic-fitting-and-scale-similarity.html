@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="65986a55be6795f9a03641429209fc2648f492ba79e7dfbfc14a1e95041ee704">
+<title>22. Dynamic fitting and scale similarity · Turbulence Modeling</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{pageReady:()=>MathJax.startup.defaultPageReady().then(()=>{document.documentElement.dataset.mathReady='true';})}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Turbulence Modeling · NPTEL IIT Madras</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="book-overview.html">Study route</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc"><h2>On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>22. Dynamic fitting and scale similarity</h1>
+<p class="lead">The Germano identity is exact, but a dynamic eddy viscosity is a fitted closure. The fit assumes a model shape and a relation between coefficients at two filter levels. It can be inconsistent across tensor components, ill-conditioned, or negative. Scale-similarity models use resolved products differently: they seek stress structure from nearby scales, with additional assumptions about cross and residual terms. Both approaches gain information from filtering without removing the need to test their energy behavior and invariance.</p>
+<div class="learning-map"><strong>From an exact identity to a controlled approximation.</strong> Derive the model tensor M, fit one coefficient to the full traceless stress, and examine averaging, small denominators and backscatter. Then reconstruct the lecture's Leonard/cross/residual decomposition and combine it into a central similarity stress. A constant-velocity boost and an affine-strain example expose what cancellation and dissipation do—and do not—guarantee.</div>
+<p class="source-note">Complete captions72–73 were read. They complete the dynamic coefficient calculation, smoothing/limiting, and scale-similarity/mixed models. The rewrite replaces componentwise tensor division with a least-squares problem, identifies the assumptions needed to move a coefficient through a test filter, and keeps modeled cross terms distinct from exact data. The source's named coefficient variants are treated as lecture formulas; the original Bardina and Speziale papers were not obtained for a historical equivalence audit.</p>
+
+<h2 id="two-level-model" data-video="O_ev3ObrSYw" data-start="15" data-end="470">22.1 What changes when the identity is modeled? <a class="timestamp" href="https://www.youtube.com/watch?v=O_ev3ObrSYw&amp;t=15">L72 · 00:15</a></h2>
+<p>Let \(v_i=Fu_i\) be grid-filtered velocity and \(\widehat v_i=Hv_i\) its test-filtered value. Define grid stress tau, composite stress T, and computable \(L=T-H\tau=H(v_i v_j)-\widehat v_i\widehat v_j\), as in chapter21. For a tensor Awrite \(A^d=A-(\operatorname{tr}A)I/3\). With commuting derivatives, the grid and test strains are \(S=(\nabla v+\nabla v^T)/2\) and \(\widehat S=(\nabla\widehat v+\nabla\widehat v^T)/2\); magnitudes mean \(|S|=\sqrt{2S:S}\).</p>
+<p>Choose the static model shape at both levels, with grid length Delta and composite effective length \(\Delta_T\):
+\(\tau^d_m=-2C\Delta^2|S|S\) and \(T^d_m=-2C_T\Delta_T^2|\widehat S|\widehat S\).
+Here Cequals Cs²in a nonnegative static model. In a dynamic procedure it is convenient to solve for the signed multiplier Cdirectly, rather than assume in advance that its fit must be the square of a real positive length coefficient.</p>
+<p>Two assumptions now enter. First, take \(C_T\approx C\), a scale-invariance approximation across the chosen levels. Second, approximate \(H(C\Delta^2|S|S)\approx C\,H(\Delta^2|S|S)\), justified only if the coefficient is sufficiently uniform over the test support or by a prescribed averaged model. If Delta varies within that support, it should remain inside Hunless another approximation is stated. These operations are not consequences of the exact Germano identity.</p>
+
+<h2 id="M-tensor" data-video="O_ev3ObrSYw" data-start="470" data-end="1200">22.2 Build the tensor that one coefficient must fit <a class="timestamp" href="https://www.youtube.com/watch?v=O_ev3ObrSYw&amp;t=470">L72 · 07:50</a></h2>
+<p>Substitution into the traceless identity gives</p>
+<div class="equation">\[
+L^d\approx-2CM,\qquad
+M=\Delta_T^2|\widehat S|\widehat S-H(\Delta^2|S|S).
+\tag{22.1}
+\]</div>
+<p>Mhas units \(\mathrm{m^2/s^2}\), the same as L. For exactly incompressible strains and componentwise linear H, Mhas zero trace. If discrete divergence is nonzero, use a consistent deviatoric construction rather than silently assuming that trace. The norm of the test strain is computed after filtering velocity and differentiating consistently; \(H(|S|S)\) is generally not \(|HS|(HS)\).</p>
+<p>A symmetric traceless3by3tensor has five independent components. One scalar cannot generally make all five equations in(22.1) exact. Dividing Lijby Mijcomponent by component can give incompatible answers or divide by a zero component despite useful information in the others. The source's componentwise quotient is therefore an intermediate schematic relation, not a complete algorithm.</p>
+<p>The <a href="https://gibbs.science/teaching/les/handouts/lilly_1992.pdf">full three-page Lilly1992 paper</a> formulates a least-squares modification and discusses small denominators, averaging and negative coefficients. Its stress convention is the negative of the positive central moment used here, so signs must be converted consistently. We derive our formula from(22.1) rather than copy a quotient with a different convention. The earlier <a href="https://www.ams.jhu.edu/~eyink/Turbulence/classics/Germano92.pdf">Germano two-level construction</a> supplies the exact identity, not a guarantee of an exact scalar fit.</p>
+
+<h2 id="least-squares" data-video="O_ev3ObrSYw" data-start="1200" data-end="1330">22.3 Derive the least-squares coefficient <a class="timestamp" href="https://www.youtube.com/watch?v=O_ev3ObrSYw&amp;t=1200">L72 · 20:00</a></h2>
+<p>Use the Frobenius inner product \(A:B=\sum_{i,j}A_{ij}B_{ij}\), which counts both symmetric off-diagonal entries. Minimize \(Q(C)=(L^d+2CM):(L^d+2CM)\). Differentiating the scalar quadratic gives \(dQ/dC=4M:L^d+8C M:M\), hence</p>
+<div class="equation">\[
+C_*=-\frac{L^d:M}{2M:M}
+=-\frac{L:M}{2M:M}\quad\hbox{if }\operatorname{tr}M=0.
+\tag{22.2}
+\]</div>
+<p>The second equality follows because \(I:M=\operatorname{tr}M=0\); the isotropic term vanishes under contraction, rather than being arbitrarily discarded. If Mnonzero, \(d^2Q/dC^2=8M:M&gt;0\), so this is the unique minimum. It is not merely multiplying and dividing a tensor equation by another tensor component. The fitted residual is orthogonal to M, while any part of Ldperpendicular to Mremains unmodeled by this shape.</p>
+<p>The code constructs traceless symmetric M, a second tensor N, and subtracts N's projection onto Mto make \(N_\perp:M=0\). It sets \(L^d=-2(0.04)M+0.03N_\perp\). The fit returns C0.04while retaining residual norm0.06668627, whose contraction with Mis approximately−1.388e−17. Thus recovering the intended coefficient does not mean fitting all of L. The residual measures a structural discrepancy the scalar model cannot remove.</p>
+<p>If M0, the denominator and contraction numerator are zero and Qis independent of C. The coefficient is unidentifiable from this test, not automatically zero by division. If Lis nonzero at the same point, no value of Ccan fit it. When Msmall, small errors in Lor Mcan produce a large coefficient. This issue can occur through cancellation of two terms in M; it need not imply that each local strain is exactly zero.</p>
+
+<h2 id="averaging" data-video="O_ev3ObrSYw" data-start="1330" data-end="1600">22.4 Averaging and regularization change the estimation problem <a class="timestamp" href="https://www.youtube.com/watch?v=O_ev3ObrSYw&amp;t=1330">L72 · 22:10</a></h2>
+<p>For a common coefficient over an averaging region or ensemble, minimize the averaged Qwith positive weights A. The result is \(C_A=-A(L^d:M)/[2A(M:M)]\), provided the denominator is positive. This is generally different from \(A(C_*)\). For two tensor samples with Mnorms in ratio1to10and local exact-fit coefficients0.01and0.09, the arithmetic average is0.05, while the joint least-squares fit is \((0.01+100(0.09))/101=0.08920792\). The stronger Msample carries more information in that objective.</p>
+<p>A statistically homogeneous channel direction can justify sharing an averaged coefficient over that direction; averaging both streamwise and spanwise directions yields a wall-normal/time dependence. This is a modeling/statistical decision, not a declaration that every instantaneous coefficient is spatially constant. In complex geometry, local spatial or time/path averaging can reduce noise but introduces a scale or memory and can mix physically different regions. Averaging Cafter fitting is a different smoothing algorithm from fitting averaged contractions. State which one is implemented.</p>
+<p>For example, adding a quadratic penalty \(4\lambda C^2\), \(\lambda&gt;0\) with the same units as M:M, gives
+\(C_\lambda=-(L^d:M)/[2(M:M+\lambda)]\).
+It prevents the bare denominator from vanishing but biases C, and its scale must be chosen meaningfully. A fallback coefficient or a threshold also changes the estimator. Positivity clipping \(C\leftarrow\max(C,0)\) is the local constrained minimum of this simple convex quadratic over Cnonnegative, but it removes all negative-viscosity backscatter in that version. None of these choices is determined by the exact identity.</p>
+
+<h2 id="backscatter" data-video="O_ev3ObrSYw" data-start="1600" data-end="1711">22.5 A negative fitted coefficient is a signed transfer <a class="timestamp" href="https://www.youtube.com/watch?v=O_ev3ObrSYw&amp;t=1600">L72 · 26:40</a></h2>
+<p>With \(\nu_s=C\Delta^2|S|\), negative Cgives negative modeled viscosity and \(\Pi_m=\nu_s|S|^2&lt;0\): energy enters the resolved field. This is modeled backscatter, not a literal negative eddy length. At Delta0.002m, |S|100/sand molecular nu1.5e−5m²/s, C−0.01gives nu_s−4e−6and total nu1.1e−5, with Pi−0.04m²/s³. C−0.05gives nu_s−2e−5and negative total nu−5e−6, with Pi−0.2.</p>
+<p>For a frozen scalar-viscosity diffusion operator with fixed strain magnitude Gpositive, \(\nu+\nu_s&gt;0\) requires \(C&gt;-\nu/(\Delta^2G)\), here−0.0375. This retains ellipticity of that restricted operator. It is not a sufficient general stability criterion for an explicit time integrator, nonuniform mesh or nonlinear coupled closure. At G0the division is inapplicable and nu_s0under this formula. If a model intentionally represents local backscatter, its global energy control and numerical treatment need analysis beyond the sign of one coefficient.</p>
+<p>The source's suggestion of a viscosity limiter is therefore a practical choice with a changed transfer budget. Clipping all negative C, clipping only below a total-viscosity threshold, and averaging before clipping give different models. Resolution that captures most of the kinetic energy may reduce some SGS sensitivity, but a claimed70–80percent resolved fraction does not guarantee accurate wall stress, gradients, scalar mixing or every model. The unresolved part can have a disproportionate effect on the observable of interest.</p>
+
+<h2 id="decomposition" data-video="RsyYpKwXq74" data-start="16" data-end="650">22.6 Scale similarity is a different stress hypothesis <a class="timestamp" href="https://www.youtube.com/watch?v=RsyYpKwXq74&amp;t=16">L73 · 00:16</a></h2>
+<p>The lecture next proposes that motions near either side of a chosen cutoff may have related structure. This motivates using resolved products to estimate subfilter stresses; it is not an exact theorem that all adjacent scales are identical. Keep the spatial residual \(r_i=u_i-v_i\) and the same grid filter F. Direct expansion gives</p>
+<div class="equation">\[
+\begin{aligned}
+\tau_{ij}&=L^{(0)}_{ij}+X_{ij}+R^{(s)}_{ij},\\
+L^{(0)}_{ij}&=F(v_i v_j)-v_i v_j,\\
+X_{ij}&=F(v_i r_j+r_i v_j),\qquad
+R^{(s)}_{ij}=F(r_i r_j).
+\end{aligned}
+\tag{22.3}
+\]</div>
+<p>The superscripts and Xavoid confusing the single-grid Leonard term with the two-level Land the cross stress with dynamic coefficient C. \(L^{(0)}\) is computable from v; Xand \(R^{(s)}\) still involve the unavailable residual. That Xcan be replaced by a computable expression does not make the replacement exact. The three-term expansion itself is exact only for the supplied original field and operator.</p>
+<p>The source presents a Bardina-labeled choice
+\(X^m_{ij}=C_r[v_i v_j-(Fv_i)(Fv_j)]\), \(R^{(s),m}=0\), with \(C_r=1.1\), then a Speziale-labeled mixed choice using Cr1and an additional Smagorinsky-type term. We retain these as the source's particular decomposition formulas and coefficient choices. They are not asserted to be every formulation in the original named papers. A download attempt for the original Speziale PDF failed; its full reading and historical equivalence are not claimed.</p>
+
+<h2 id="invariance" data-video="RsyYpKwXq74" data-start="650" data-end="920">22.7 The coefficient-one cancellation has a physical consequence <a class="timestamp" href="https://www.youtube.com/watch?v=RsyYpKwXq74&amp;t=650">L73 · 10:50</a></h2>
+<p>With Cr1the first two modeled terms combine:
+\(L^{(0)}+X^m=F(v_i v_j)-(Fv_i)(Fv_j)=B_{ij}\).
+This central similarity stress is calculated from resolved data and another application of F. It is an approximation to tau, although B's evaluation is exact relative to v. With the added viscosity contribution, the mixed deviatoric form is</p>
+<div class="equation">\[
+\tau^{d,m}_{ij}=B^d_{ij}-2(C_s\Delta)^2|S|S_{ij}.
+\tag{22.4}
+\]</div>
+<p>The coefficient-one cancellation saves an intermediate product and restores a useful invariance. Add a spatially constant velocity Vto every resolved velocity, with Fpreserving constants. The central moment Bsatisfies
+\(F[(v_i+V_i)(v_j+V_j)]-(Fv_i+V_i)(Fv_j+V_j)=B_{ij}\).
+All boost terms cancel. This is the local stress part of Galilean invariance under a constant inertial-frame velocity shift, with the coordinate transformation understood. Velocity gradients and the added static viscosity term are also unchanged.</p>
+<p>The individual \(L^{(0)}\) changes by
+\(D_{ij}=V_i(Fv_j-v_j)+V_j(Fv_i-v_i)\).
+The proposed Xmodel changes by \(-C_rD_{ij}\), so their sum changes by \((1-C_r)D_{ij}\). Unless Cr1or a special field makes Dzero, it retains frame dependence. For the code's scalar analog vcosxat x0.4, box width0.6and boost2, Cr1leaves the combined model unchanged to roundoff; Cr1.1changes it by0.0055015505in squared reference-speed units. A slight coefficient adjustment in a separated term can therefore have a structural consequence beyond empirical calibration.</p>
+<p>Germano's <a href="https://www.ams.jhu.edu/~eyink/Turbulence/classics/Germano92.pdf">generalized-moment and consistent-decomposition discussion, printed333–334</a>, treats invariance of central moments. The boost calculation here is an original direct check of the actual lecture formula. It does not establish full invariance of every boundary condition or moving-grid discretization, nor replace a historical audit of all similarity-model variants.</p>
+
+<h2 id="mixed-energy" data-video="RsyYpKwXq74" data-start="920" data-end="1217">22.8 Structural similarity need not supply enough forward transfer <a class="timestamp" href="https://www.youtube.com/watch?v=RsyYpKwXq74&amp;t=920">L73 · 15:20</a></h2>
+<p>With a nonnegative Fkernel, Bis PSDas a covariance of vunder that kernel. Nevertheless \(-B:S\) can have either sign because incompressible strain has positive and negative principal values. Consider the local affine divergence-free field \(v=(ax,by,cz)\), \(a+b+c=0\), with an isotropic box widthDelta. Filtering reproduces v, while \(B=(\Delta^2/12)\operatorname{diag}(a^2,b^2,c^2)\). Thus
+\(\Pi_B=-(\Delta^2/12)(a^3+b^3+c^3)\).
+At Delta0.2m and rates(20,−10,−10)/s, Bhas diagonal(4/3,1/3,1/3)m²/s²and Pi−20m²/s³; reversing all rates gives Pi+20with the same PSDtensor.</p>
+<p>This exact local operator example is not a full turbulent LES. The stress is constant, so its momentum divergence vanishes; the local transfer is balanced by energy-flux terms and is not evidence of an unforced whole-domain energy source. It nevertheless disproves the idea that PSDstress ensures a forward SGS transfer. A similarity model can capture stress structure without guaranteeing a sufficient net drain at the grid cutoff.</p>
+<p>The added eddy-viscosity term in(22.4) contributes \(2\nu_sS:S\ge0\) when its coefficient is nonnegative. It can provide a dissipative part, but the total mixed transfer need not be nonnegative if the similarity part is sufficiently negative. The lecture's concern about insufficient dissipation motivates such mixing; it does not prove that omission of one named residual term is the sole cause of every observed accumulation. Spectral resolution, numerical dissipation and model transport also enter. Neither a computed similarity tensor nor a dynamically inferred scalar is by itself a validated turbulence prediction.</p>
+<pre data-run="code/ch22_dynamic_and_similarity.py"><code>&quot;&quot;&quot;Tensor least-squares, signed transfer and Galilean-invariance checks.&quot;&quot;&quot;
+from math import cos, sin, sqrt
+
+def dot(a,b):
+    return sum(a[i][j]*b[i][j] for i in range(3) for j in range(3))
+
+M=[[2.,1.,0.],[1.,-1.,.5],[0.,.5,-1.]]
+N=[[1.,0.,0.],[0.,1.,0.],[0.,0.,-2.]]
+projection=dot(N,M)/dot(M,M)
+Nperp=[[N[i][j]-projection*M[i][j] for j in range(3)] for i in range(3)]
+true=.04
+L=[[-2*true*M[i][j]+.03*Nperp[i][j] for j in range(3)] for i in range(3)]
+fit=-dot(L,M)/(2*dot(M,M))
+residual=[[L[i][j]+2*fit*M[i][j] for j in range(3)] for i in range(3)]
+print(f&quot;least-squares C: {fit:.10f}; residual Frobenius norm={sqrt(dot(residual,residual)):.10f}&quot;)
+print(f&quot;residual dot M: {dot(residual,M):.3e}&quot;)
+assert abs(fit-true)&lt;1e-14 and abs(dot(residual,M))&lt;1e-14
+
+# One-direction tensor examples: weight by M:M, not arithmetic mean of C.
+magnitudes=(1.,10.)
+coefficients=(.01,.09)
+weighted=sum(m*m*c for m,c in zip(magnitudes,coefficients))/sum(m*m for m in magnitudes)
+print(f&quot;mean of local C and joint least-squares C: {sum(coefficients)/2:.8f}, {weighted:.8f}&quot;)
+print(&quot;zero M: least-squares coefficient unidentifiable, not divided by zero&quot;)
+nu,delta,G=1.5e-5,.002,100.
+for C in (-.01,-.05):
+    nus=C*delta**2*G
+    print(f&quot;signed C={C}: nu_s={nus:.10f}, total nu={nu+nus:.10f}, Pi={nus*G*G:.8f}&quot;)
+print(f&quot;frozen-strain strict lower C bound: {-nu/(delta**2*G):.8f}&quot;)
+
+# Scalar analog of the source Leonard/cross ansatz, with an exact top-hat.
+x,width,boost=.4,.6,2.
+gain=sin(width/2)/(width/2)
+gain2=sin(width)/width
+v=cos(x)
+fv=gain*v
+fvv=.5*(1+gain2*cos(2*x))
+def decomposition_model(V,cr):
+    vp=v+V
+    fvp=fv+V
+    fvp2=fvv+2*V*fv+V*V
+    leonard=fvp2-vp*vp
+    cross_model=cr*(vp*vp-fvp*fvp)
+    return leonard+cross_model
+for cr in (1.,1.1):
+    change=decomposition_model(boost,cr)-decomposition_model(0,cr)
+    print(f&quot;source cross coefficient Cr={cr}: model change under constant boost={change:.10f}&quot;)
+    if cr==1.: assert abs(change)&lt;1e-14
+similarity=fvv-fv*fv
+print(f&quot;central similarity stress scalar: {similarity:.10f}&quot;)
+
+# Local divergence-free affine extension, positive box filter.
+width=.2
+for rates in ((20.,-10.,-10.),(-20.,10.,10.)):
+    diagonal=[width**2*a*a/12 for a in rates]
+    transfer=-sum(diagonal[i]*rates[i] for i in range(3))
+    print(f&quot;affine similarity diagonal={diagonal}; transfer={transfer:.8f}&quot;)
+</code></pre>
+<pre class="output">least-squares C: 0.0400000000; residual Frobenius norm=0.0666862716
+residual dot M: -1.388e-17
+mean of local C and joint least-squares C: 0.05000000, 0.08920792
+zero M: least-squares coefficient unidentifiable, not divided by zero
+signed C=-0.01: nu_s=-0.0000040000, total nu=0.0000110000, Pi=-0.04000000
+signed C=-0.05: nu_s=-0.0000200000, total nu=-0.0000050000, Pi=-0.20000000
+frozen-strain strict lower C bound: -0.03750000
+source cross coefficient Cr=1.0: model change under constant boost=-0.0000000000
+source cross coefficient Cr=1.1: model change under constant boost=0.0055015505
+central similarity stress scalar: 0.0046189606
+affine similarity diagonal=[1.3333333333333337, 0.3333333333333334, 0.3333333333333334]; transfer=-20.00000000
+affine similarity diagonal=[1.3333333333333337, 0.3333333333333334, 0.3333333333333334]; transfer=20.00000000
+</pre>
+
+<h2 id="exercises">22.9 Exercises with complete solutions</h2>
+<details><summary>1. Derive the model M and list the added assumptions.</summary><p>Insert taud=−2CDelta²|S|Sand Td=−2CTDeltaT²|Shat|Shatinto Ld=Td−Htaud. Set CTapproximatelyC and move Cthrough Hto get−2C[DeltaT²|Shat|Shat−H(Delta²|S|S)]. Those are scale-invariance and support-uniformity/averaged-coefficient assumptions. Commuting filters with derivatives is a separate PDE/strain issue; the exact algebraic identity did not require them. Variable Delta stays inside Hunless further approximated.</p></details>
+<details><summary>2. Minimize the full tensor error and explain the trace cancellation.</summary><p>Expand Q=Ld:Ld+4CLd:M+4C²M:M. Setting its derivative zero gives C=−Ld:M/(2M:M). The positive second derivative8M:Mproves uniqueness for nonzero M. If traceM0then(L−trL I/3):M=L:M, so the trace disappears under contraction exactly. The residual Ld+2CMhas zero contraction with M, not necessarily zero norm. Counting only one copy of symmetric off-diagonals changes the chosen metric unless appropriate factor-two weights are restored.</p></details>
+<details><summary>3. Why do averaging coefficients and averaging contractions differ?</summary><p>For sample pwith local exact relation Lp=−2CpMp, the common least-squares coefficient is \(\sum w_pCp(Mp:Mp)/\sum w_p(Mp:Mp)\). With equal sample weights and norms1and10, this is(0.01+100times0.09)/101=0.08920792, unlike arithmetic0.05. It weights information according to the objective. If all Mzero the fit is unidentifiable; an arbitrary0/0value is not a derived coefficient.</p></details>
+<details><summary>4. Derive a signed-coefficient total-viscosity bound and its scope.</summary><p>For G&gt;0, nu+C Delta²G&gt;0implies C&gt;−nu/(Delta²G). The stipulated numbers give−0.0375. C−0.01allows backscatter while total frozen scalar diffusivity remains positive; C−0.05violates that restricted condition. Neither retaining positive total diffusivity nor clipping Cnonnegative proves full coupled numerical stability. If G0then nu_s0and the divided bound is unnecessary.</p></details>
+<details><summary>5. Reconstruct the similarity cancellation.</summary><p>Add F(vivj)−vivjto vivj−FviFvjwith Cr1. The vivjterms cancel, leaving B=F(vivj)−FviFvj. This Bis computable, but substituting it for the unavailable exact tauis a similarity hypothesis. Adding a Smagorinsky deviatoric term creates a mixed closure. Its trace may be separately retained or absorbed into modified pressure; writing a traceless viscosity term does not determine all trace physics.</p></details>
+<details><summary>6. Test the lecture cross ansatz under a constant boost.</summary><p>Expand the boosted Leonard expression: its increment is D=Vi(Fvj−vj)+Vj(Fvi−vi). Expanding the proposed cross expression gives increment−CrD. Their sum changes by(1−Cr)D. Cr1cancels every constant boost under a constant-preserving F. Cr1.1generically fails this check. Exact cross stress itself has the compensating transformation; replacing it by an independently adjusted form is a constitutive decision, not exact resolved information.</p></details>
+<details><summary>7. Does a PSD similarity stress guarantee dissipativity?</summary><p>No. For affine diagonal incompressible strain A, B=Delta²A²/12is PSD, but Pi=−Delta²tr(A³)/12. The rates20,−10,−10sum to zero, yet cubes sum6000/s³. At Delta0.2, Pi−20. Reversing rates preserves Bbut reverses Pi. Local energy flux balances matter because constant Bhas zero momentum divergence. The example tests a contraction's sign, not global energy creation.</p></details>
+<details><summary>8. What does a positive added viscosity guarantee for a mixed model?</summary><p>It adds the nonnegative transfer2nu_sS:S. The total is−B:S+2nu_sS:S, which can still be negative. To guarantee local nonnegative total transfer would require this added part to exceed the negative structural contribution, a new limiting choice. Such limiting changes stress and possibly accuracy. Likewise, a good stress correlation or resolved-energy fraction does not prove every gradient or wall observable accurate; evaluate the full declared model and numerics with independent reference uncertainty.</p></details>
+<p class="closing">Dynamic fitting extracts a coefficient from a tensor relation; similarity extracts a structural stress from resolved products. Their exact ingredients are valuable precisely because the remaining approximations can be identified and tested. Completing an LES still requires numerical and interface decisions, which the final numbered chapter addresses.</p>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn"><a rel="prev" href="chapter-21-wall-limits-energy-memory-and-test-filtering.html">Previous chapter</a><a href="index.html">Index</a><a rel="next" href="chapter-23-les-numerics-and-hybrid-interfaces.html">Next chapter</a></nav></main></div><footer class="site-footer">Independent study edition. Original exposition follows Prof. Vagesh D. Narasimhamurthy's course. Source and review limitations are recorded separately.</footer></body></html>

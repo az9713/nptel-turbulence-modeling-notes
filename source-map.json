@@ -1,0 +1,1909 @@
+{
+  "sections": [
+    {
+      "anchor": "prediction",
+      "lesson": 1,
+      "start": 15,
+      "end": 268,
+      "lecture_material": "Instructor, applications, prerequisites, reference families and course scope",
+      "extension": "Engineering quantity and mechanical power contract",
+      "construction": "Pressure-driven air-channel design target",
+      "chapter": "chapter-01-prediction-and-turbulent-motion.html"
+    },
+    {
+      "anchor": "uncertainty",
+      "lesson": 1,
+      "start": 270,
+      "end": 602,
+      "lecture_material": "Prediction uncertainty, model disagreement and solver disagreement",
+      "extension": "NASA verification-versus-validation distinction",
+      "construction": "Synthetic mesh-error and closure-error separation",
+      "chapter": "chapter-01-prediction-and-turbulent-motion.html"
+    },
+    {
+      "anchor": "resolution",
+      "lesson": 1,
+      "start": 602,
+      "end": 738,
+      "lecture_material": "DNS, LES, hybrid and RANS cost/accuracy discussion; no universal model",
+      "extension": "Separate resolved degrees of freedom, statistical estimation and modeling assumptions",
+      "construction": "Task-based comparison table and limits",
+      "chapter": "chapter-01-prediction-and-turbulent-motion.html"
+    },
+    {
+      "anchor": "wellposedness",
+      "lesson": 1,
+      "start": 738,
+      "end": 1138,
+      "lecture_material": "Historical perspectives, scale cascade, computation and Clay problem",
+      "extension": "Fefferman pp.1\u20133: global smoothness problem and distinction from sensitivity",
+      "construction": "Deterministic sensitivity example; historical humor omitted without claiming quotation verification",
+      "chapter": "chapter-01-prediction-and-turbulent-motion.html"
+    },
+    {
+      "anchor": "characteristics",
+      "lesson": 1,
+      "start": 1138,
+      "end": 1501,
+      "lecture_material": "Irregular signals versus physical turbulence, eddies, diffusion, dissipation, anisotropy and vorticity",
+      "extension": "Local definitions and restrictions; isotropy not excluded, vorticity not sufficient",
+      "construction": "Covariance-direction and scalar-mixing examples",
+      "chapter": "chapter-01-prediction-and-turbulent-motion.html"
+    },
+    {
+      "anchor": "repetition",
+      "lesson": 1,
+      "start": 1501,
+      "end": 1869,
+      "lecture_material": "Two dye drops, differing preparations, repeated simulations with distinct initial conditions",
+      "extension": "Distinguish same-data uniqueness from preparation variation and ensemble reproducibility",
+      "construction": "Energy-decay toy model, sensitivity and sampling checks",
+      "chapter": "chapter-01-prediction-and-turbulent-motion.html"
+    },
+    {
+      "anchor": "samples",
+      "lesson": 2,
+      "start": 15,
+      "end": 846,
+      "lecture_material": "Engineering means, finite sample count and classroom dice rows",
+      "extension": "Probability-law expectation and variance of independent sample mean",
+      "construction": "Fair-die uncertainty, using one arithmetically recoverable caption row",
+      "chapter": "chapter-02-statistics-sampling-and-tensors.html"
+    },
+    {
+      "anchor": "expectation",
+      "lesson": 2,
+      "start": 846,
+      "end": 1240,
+      "lecture_material": "True mean, sample dependence and infinite-sample idealization",
+      "extension": "Correct finite-sample residual identity and Chebyshev convergence under explicit assumptions",
+      "construction": "Quantitative conservative sample requirement",
+      "chapter": "chapter-02-statistics-sampling-and-tensors.html"
+    },
+    {
+      "anchor": "time",
+      "lesson": 3,
+      "start": 15,
+      "end": 489,
+      "lecture_material": "Ensemble space/time dependence; time average; stationary and periodic examples",
+      "extension": "Stationarity separated from ergodicity",
+      "construction": "Fixed random sign and phase-dependent cosine counterexamples",
+      "chapter": "chapter-02-statistics-sampling-and-tensors.html"
+    },
+    {
+      "anchor": "fluctuations",
+      "lesson": 3,
+      "start": 489,
+      "end": 1055,
+      "lecture_material": "Notation, mean/fluctuation split and zero ensemble mean",
+      "extension": "Full RMS versus fluctuation RMS",
+      "construction": "Periodic-mean contamination of variance",
+      "chapter": "chapter-02-statistics-sampling-and-tensors.html"
+    },
+    {
+      "anchor": "moments",
+      "lesson": 3,
+      "start": 1055,
+      "end": 1316,
+      "lecture_material": "Variance, RMS, higher moments, skewness and flatness",
+      "extension": "Normalized dimensionless definitions and integrability requirements",
+      "construction": "Equal-mean/equal-variance distributions with distinct tails",
+      "chapter": "chapter-02-statistics-sampling-and-tensors.html"
+    },
+    {
+      "anchor": "practice",
+      "lesson": 4,
+      "start": 15,
+      "end": 856,
+      "lecture_material": "Practical convergence, sampling and eddy passage",
+      "extension": "Exact centering versus unbiased population variance; retaining correlated records",
+      "construction": "Finite-sample variance bias derivation",
+      "chapter": "chapter-02-statistics-sampling-and-tensors.html"
+    },
+    {
+      "anchor": "covariance",
+      "lesson": 4,
+      "start": 856,
+      "end": 1344,
+      "lecture_material": "Single-point covariance, signed correlation and coefficient",
+      "extension": "PSD, covariance bound, zero-variance domain and dependence distinction",
+      "construction": "Channel correlation ensemble and X versus X squared example",
+      "chapter": "chapter-02-statistics-sampling-and-tensors.html"
+    },
+    {
+      "anchor": "correlations",
+      "lesson": 5,
+      "start": 15,
+      "end": 570,
+      "lecture_material": "Temporal and spatial two-point statistics; sample separation and computational box size",
+      "extension": "Finite-N mean variance with lag weights; NIST estimator; Oliver et al. sampling scope",
+      "construction": "Prescribed geometric correlation, mixed normalization counterexample and exponential box criterion",
+      "chapter": "chapter-02-statistics-sampling-and-tensors.html"
+    },
+    {
+      "anchor": "tensors",
+      "lesson": 5,
+      "start": 570,
+      "end": 1363,
+      "lecture_material": "Tensor orders, component counts, free and summed indices, delta and Levi-Civita",
+      "extension": "Transformation laws, order versus matrix rank, orientation and symmetric counts",
+      "construction": "Rotated channel covariance",
+      "chapter": "chapter-02-statistics-sampling-and-tensors.html"
+    },
+    {
+      "anchor": "operators",
+      "lesson": 5,
+      "start": 1363,
+      "end": 1778,
+      "lecture_material": "Gradient, divergence, curl and Laplacian",
+      "extension": "Unit and contraction checks",
+      "construction": "Linear velocity-gradient matrix and exact curl",
+      "chapter": "chapter-02-statistics-sampling-and-tensors.html"
+    },
+    {
+      "anchor": "kinematics",
+      "lesson": 6,
+      "start": 15,
+      "end": 666,
+      "lecture_material": "Expanded curl/index practice; governing-equation orientation and mass/momentum/energy system",
+      "extension": "Particle chain rule and material acceleration",
+      "construction": "Linear shear and rigid-rotation comparison",
+      "chapter": "chapter-03-conservation-and-newtonian-closure.html"
+    },
+    {
+      "anchor": "mass",
+      "lesson": 6,
+      "start": 666,
+      "end": 903,
+      "lecture_material": "Mass conservation, product expansion, constant density and incompressibility",
+      "extension": "Control-volume localization and material versus globally constant density",
+      "construction": "Translating density pattern and divergence-free deformation",
+      "chapter": "chapter-03-conservation-and-newtonian-closure.html"
+    },
+    {
+      "anchor": "momentum",
+      "lesson": 6,
+      "start": 903,
+      "end": 1210,
+      "lecture_material": "Conservative momentum, product expansion and continuity cancellation",
+      "extension": "Current-area traction convention and control-volume derivation",
+      "construction": "Units and conservative/material-form identity",
+      "chapter": "chapter-03-conservation-and-newtonian-closure.html"
+    },
+    {
+      "anchor": "symmetry",
+      "lesson": 7,
+      "start": 15,
+      "end": 420,
+      "lecture_material": "Three component equations, symmetric stress and equation counting",
+      "extension": "Nonpolar angular momentum supplies symmetry; count independent total stress rather than double-counting an isotropic split",
+      "construction": "Explicit epsilon/product-rule torque cancellation",
+      "chapter": "chapter-03-conservation-and-newtonian-closure.html"
+    },
+    {
+      "anchor": "pressure",
+      "lesson": 7,
+      "start": 420,
+      "end": 488,
+      "lecture_material": "Pressure coupling through continuity/momentum and Poisson equation",
+      "extension": "Formal derivation placed after Newtonian closure because it needs that specified operator",
+      "construction": "Rigid rotation pressure and variable-viscosity limitation",
+      "chapter": "chapter-03-conservation-and-newtonian-closure.html"
+    },
+    {
+      "anchor": "newtonian",
+      "lesson": 7,
+      "start": 488,
+      "end": 859,
+      "lecture_material": "Closure problem, Newtonian viscosity, strain rate and incompressible reduction",
+      "extension": "Constitutive versus balance assumptions; Stokes hypothesis separated from incompressible law",
+      "construction": "Exact Couette force/power and Poiseuille branch; kinetic-energy identity",
+      "chapter": "chapter-03-conservation-and-newtonian-closure.html"
+    },
+    {
+      "anchor": "averaging",
+      "lesson": 7,
+      "start": 859,
+      "end": 1450,
+      "lecture_material": "Reynolds decomposition, ensemble average and fluctuating continuity",
+      "extension": "Explicit derivative interchange and exact finite-sample qualification inherited from chapter2",
+      "construction": "Bridge from molecular closure to statistical closure",
+      "chapter": "chapter-03-conservation-and-newtonian-closure.html"
+    },
+    {
+      "anchor": "averaging",
+      "lesson": 8,
+      "start": 14,
+      "end": 158,
+      "lecture_material": "Instantaneous, mean and fluctuating incompressible continuity",
+      "extension": "Explicit ensemble operator and regularity conditions",
+      "construction": "Channel coordinates and model assumptions",
+      "chapter": "chapter-04-mean-momentum-and-closure.html"
+    },
+    {
+      "anchor": "momentum",
+      "lesson": 8,
+      "start": 158,
+      "end": 1204,
+      "lecture_material": "Newtonian viscous simplification; decomposition; four advective products; two mixed averages vanish; residual covariance",
+      "extension": "Constant viscosity qualification and correction of absolute instability claims",
+      "construction": "Dimension and deterministic-limit checks",
+      "chapter": "chapter-04-mean-momentum-and-closure.html"
+    },
+    {
+      "anchor": "flux",
+      "lesson": 8,
+      "start": 1204,
+      "end": 1379,
+      "lecture_material": "Multiply fluctuating continuity by another fluctuation",
+      "extension": "Explicit conservative momentum flux",
+      "construction": "Channel cross-plane exchange interpretation",
+      "chapter": "chapter-04-mean-momentum-and-closure.html"
+    },
+    {
+      "anchor": "covariance",
+      "lesson": 9,
+      "start": 16,
+      "end": 349,
+      "lecture_material": "Product rule, symmetric second-order tensor, variances and signed covariances",
+      "extension": "Positive semidefinite proof and zero-variance boundary",
+      "construction": "Four-state covariance and anticorrelation example",
+      "chapter": "chapter-04-mean-momentum-and-closure.html"
+    },
+    {
+      "anchor": "closure",
+      "lesson": 9,
+      "start": 349,
+      "end": 782,
+      "lecture_material": "Four equations/ten mean-level unknowns; fluid versus flow property; limitations of viscosity analogy",
+      "extension": "Pressure Poisson equation not independent closure",
+      "construction": "Two equal-mean ensembles with distinct fluxes",
+      "chapter": "chapter-04-mean-momentum-and-closure.html"
+    },
+    {
+      "anchor": "stress",
+      "lesson": 9,
+      "start": 782,
+      "end": 1226,
+      "lecture_material": "Correlation origin, stress dimensions after multiplication by density",
+      "extension": "NASA TMR sign/density convention translation",
+      "construction": "Local channel stress budget and no-slip wall limits",
+      "chapter": "chapter-04-mean-momentum-and-closure.html"
+    },
+    {
+      "anchor": "fluctuation",
+      "lesson": 10,
+      "start": 16,
+      "end": 1157,
+      "lecture_material": "Model-versus-transport choices; instantaneous-minus-mean derivation; average-zero test",
+      "extension": "Do not count nonlinear functions of resolved velocity as independent unknowns",
+      "construction": "Missing-centering-term diagnostic",
+      "chapter": "chapter-04-mean-momentum-and-closure.html"
+    },
+    {
+      "anchor": "linearization",
+      "lesson": 11,
+      "start": 16,
+      "end": 778,
+      "lecture_material": "Infinitesimal fluctuations; student gradient question; laminar base; transition/intermittency and bypass distinction; correction to unknown counting",
+      "extension": "Controlled-gradient scaling and neutral-versus-transition distinction",
+      "construction": "High-frequency counterexample and lift-up ODE",
+      "chapter": "chapter-04-mean-momentum-and-closure.html"
+    },
+    {
+      "anchor": "hierarchy",
+      "lesson": 11,
+      "start": 778,
+      "end": 1645,
+      "lecture_material": "Multiply fluctuation equation, exchange free indices, add, recover material derivative of covariance; pressure and triple correlations appear",
+      "extension": "Compact raw second-moment equation; NASA modeled-versus-exact distinction",
+      "construction": "Index audit and production check",
+      "chapter": "chapter-04-mean-momentum-and-closure.html"
+    },
+    {
+      "anchor": "starting",
+      "lesson": 12,
+      "start": 15,
+      "end": 124,
+      "lecture_material": "Recap of raw second-moment equation and product-rule transport left side",
+      "extension": "Consistent renaming of free and dummy indices; explicit constant-property assumptions",
+      "construction": "Local formal budget spine",
+      "chapter": "chapter-05-exact-reynolds-stress-transport.html"
+    },
+    {
+      "anchor": "pressure",
+      "lesson": 12,
+      "start": 124,
+      "end": 228,
+      "lecture_material": "Pressure product expansion into pressure transport and pressure-strain",
+      "extension": "Units, delta contraction and explicit sign/density convention",
+      "construction": "Boundary-flux interpretation",
+      "chapter": "chapter-05-exact-reynolds-stress-transport.html"
+    },
+    {
+      "anchor": "viscous",
+      "lesson": 12,
+      "start": 228,
+      "end": 426,
+      "lecture_material": "Viscous product expansion, covariance diffusion and gradient correlation",
+      "extension": "Positive semidefinite gradient-covariance proof",
+      "construction": "Signed off-diagonal dissipation exercise",
+      "chapter": "chapter-05-exact-reynolds-stress-transport.html"
+    },
+    {
+      "anchor": "triple",
+      "lesson": 12,
+      "start": 426,
+      "end": 1490,
+      "lecture_material": "Unchanged production, third-moment product rule using zero continuity term; collect divergence terms with deltas",
+      "extension": "Full conservative flux with all units",
+      "construction": "Exact budget presentation",
+      "chapter": "chapter-05-exact-reynolds-stress-transport.html"
+    },
+    {
+      "anchor": "transport",
+      "lesson": 13,
+      "start": 15,
+      "end": 225,
+      "lecture_material": "Turbulent, viscous and pressure transport terminology",
+      "extension": "Divergence is not automatically gradient diffusion",
+      "construction": "Integrated periodic/control-volume check",
+      "chapter": "chapter-05-exact-reynolds-stress-transport.html"
+    },
+    {
+      "anchor": "redistribution",
+      "lesson": 13,
+      "start": 225,
+      "end": 313,
+      "lecture_material": "Pressure-strain as redistribution",
+      "extension": "Trace-free proof under instantaneous incompressibility",
+      "construction": "Finite-time trace/realizability bookkeeping example",
+      "chapter": "chapter-05-exact-reynolds-stress-transport.html"
+    },
+    {
+      "anchor": "production",
+      "lesson": 13,
+      "start": 313,
+      "end": 500,
+      "lecture_material": "Production, dissipation and mean-gradient dependence",
+      "extension": "Half-trace energy budget, strain contraction, forcing/decay qualification",
+      "construction": "Channel production tensor",
+      "chapter": "chapter-05-exact-reynolds-stress-transport.html"
+    },
+    {
+      "anchor": "closure",
+      "lesson": 13,
+      "start": 500,
+      "end": 1266,
+      "lecture_material": "Unknown fields in pressure transport, triple moments, pressure-strain and dissipation; alternate viscous grouping and RSM closure",
+      "extension": "Independent component counts; physical versus pseudo-dissipation identity",
+      "construction": "Equal second moments/different third moments; analytic four-phase dissipation contrast",
+      "chapter": "chapter-05-exact-reynolds-stress-transport.html"
+    },
+    {
+      "anchor": "stationarity",
+      "lesson": 14,
+      "start": 15,
+      "end": 634,
+      "lecture_material": "Why stationarity must be checked before sampling; two time blocks in Couette flow; exclude startup",
+      "extension": "Distributional definition, finite-block uncertainty and stationarity versus ergodicity",
+      "construction": "Repeated manufactured phase ensemble and sampling decision",
+      "chapter": "chapter-06-stationarity-homogeneity-and-redistribution.html"
+    },
+    {
+      "anchor": "homogeneity",
+      "lesson": 14,
+      "start": 634,
+      "end": 1112,
+      "lecture_material": "Statistical homogeneity in selected directions; derivatives apply to averages, not instantaneous fields",
+      "extension": "Joint-law definition and explicit random-phase counterexample",
+      "construction": "Nonzero mean-square instantaneous gradient with constant statistics",
+      "chapter": "chapter-06-stationarity-homogeneity-and-redistribution.html"
+    },
+    {
+      "anchor": "geometry",
+      "lesson": 14,
+      "start": 1112,
+      "end": 1389,
+      "lecture_material": "Fully developed plane turbulent Couette setup and unidirectional mean",
+      "extension": "Continuity proof of zero mean normal velocity and symmetry condition for zero spanwise velocity",
+      "construction": "One fixed coordinate dictionary throughout",
+      "chapter": "chapter-06-stationarity-homogeneity-and-redistribution.html"
+    },
+    {
+      "anchor": "normal-budgets",
+      "lesson": 15,
+      "start": 15,
+      "end": 1235,
+      "lecture_material": "Expand three normal stress equations; only streamwise direct production survives; pressure-gradient correlations do not vanish",
+      "extension": "All six production components, exact stationary component balances, signed off-diagonal dissipation",
+      "construction": "Positive covariance and a closed numerical budget ledger",
+      "chapter": "chapter-06-stationarity-homogeneity-and-redistribution.html"
+    },
+    {
+      "anchor": "data-and-anisotropy",
+      "lesson": 16,
+      "start": 15,
+      "end": 1256,
+      "lecture_material": "Instructor DNS views, means and fluctuations, streaks, nonzero unequal rms components, pressure-strain definitions",
+      "extension": "Explicit coordinate permutation and corrected sample-centering distinction; no extraction of unread numerical graph values",
+      "construction": "RMS versus variance and tensor transformation check",
+      "chapter": "chapter-06-stationarity-homogeneity-and-redistribution.html"
+    },
+    {
+      "anchor": "redistribution",
+      "lesson": 17,
+      "start": 15,
+      "end": 304,
+      "lecture_material": "Continuity gives phi11=-phi22-phi33; redistribution interpretation",
+      "extension": "Trace identity alone gives no sign or equal-sharing theorem",
+      "construction": "Trace-free matrices with different allocations and integrated component argument",
+      "chapter": "chapter-06-stationarity-homogeneity-and-redistribution.html"
+    },
+    {
+      "anchor": "budget-audit",
+      "lesson": 17,
+      "start": 304,
+      "end": 798,
+      "lecture_material": "DNS budget residual, typical pressure redistribution signs and near-wall change balanced by diffusion",
+      "extension": "Residual error taxonomy; local versus wall-integrated transport; pressure term sign exceptions",
+      "construction": "Transport-assisted negative redistribution case and cancelling-error diagnostic",
+      "chapter": "chapter-06-stationarity-homogeneity-and-redistribution.html"
+    },
+    {
+      "anchor": "shear-and-code",
+      "lesson": 17,
+      "start": 798,
+      "end": 1202,
+      "lecture_material": "Off-diagonal equation expansion and signed pressure/gradient correlations; coordinate correction in lecture",
+      "extension": "Explicit fixed-convention P12=-R22 S and matrix execution",
+      "construction": "Runnable analytic phase ensemble and complete local tensor ledger",
+      "chapter": "chapter-06-stationarity-homogeneity-and-redistribution.html"
+    },
+    {
+      "anchor": "two-viscous-groupings",
+      "lesson": 18,
+      "start": 15,
+      "end": 489,
+      "lecture_material": "Alternative derivation retaining the full viscous stress, producing extra displayed diffusion/destruction correlations",
+      "extension": "Exact flux identity shows equivalent groupings rather than additional independent physics",
+      "construction": "Physical versus pseudo-dissipation cancellation",
+      "chapter": "chapter-07-turbulent-and-mean-energy-budgets.html"
+    },
+    {
+      "anchor": "energy-and-contraction",
+      "lesson": 18,
+      "start": 489,
+      "end": 1468,
+      "lecture_material": "Define k as half-trace, derive its exact transport equation by contraction and factor one-half; pressure-strain disappears from trace",
+      "extension": "All index contractions, units and explicit flux convention",
+      "construction": "Trace-free information loss check",
+      "chapter": "chapter-07-turbulent-and-mean-energy-budgets.html"
+    },
+    {
+      "anchor": "closure-and-destruction",
+      "lesson": 19,
+      "start": 15,
+      "end": 501,
+      "lecture_material": "Closure persists for k, identify pressure and turbulent transport, stresses and destruction; nonnegative destruction",
+      "extension": "Correct fully contracted scalar destruction count and distinguish equation counting from closure proof",
+      "construction": "Same k/different shear covariance",
+      "chapter": "chapter-07-turbulent-and-mean-energy-budgets.html"
+    },
+    {
+      "anchor": "transport-integral",
+      "lesson": 19,
+      "start": 501,
+      "end": 1161,
+      "lecture_material": "Bounded-box divergence theorem, no-slip/no-penetration and zero net transport; transport versus creation/destruction",
+      "extension": "Explicit smoothness condition for normal derivative of k, open-volume and periodic qualifications",
+      "construction": "Flux-through-volume audit",
+      "chapter": "chapter-07-turbulent-and-mean-energy-budgets.html"
+    },
+    {
+      "anchor": "mean-total-split",
+      "lesson": 20,
+      "start": 15,
+      "end": 537,
+      "lecture_material": "Total mean instantaneous kinetic energy decomposes into mean-motion and fluctuating parts",
+      "extension": "Expectation/derivative and frame conventions",
+      "construction": "Anisotropy not recoverable from scalar k",
+      "chapter": "chapter-07-turbulent-and-mean-energy-budgets.html"
+    },
+    {
+      "anchor": "mean-energy-derivation",
+      "lesson": 20,
+      "start": 537,
+      "end": 1469,
+      "lecture_material": "Multiply RANS by mean velocity, product-rule pressure/viscous/Reynolds terms, derive K equation",
+      "extension": "Explicit exchange sign and total kinetic-energy flux",
+      "construction": "Derivative-by-derivative derivation",
+      "chapter": "chapter-07-turbulent-and-mean-energy-budgets.html"
+    },
+    {
+      "anchor": "exchange-and-forcing",
+      "lesson": 20,
+      "start": 1469,
+      "end": 1978,
+      "lecture_material": "Opposite production signs in K and k equations; sustaining supply and governing-equation recap",
+      "extension": "Production need not be positive; zero mean strain does not prohibit decaying or forced turbulence; body forcing term",
+      "construction": "Positive covariances with reversed transfer and primary-source periodic counterexample",
+      "chapter": "chapter-07-turbulent-and-mean-energy-budgets.html"
+    },
+    {
+      "anchor": "executed-energy",
+      "lesson": 18,
+      "start": 489,
+      "end": 1468,
+      "lecture_material": "Scalar kinetic-energy balance from contracted stress equation",
+      "extension": "Closed-form periodic unforced Navier-Stokes solution and independently evaluated gradients/pressure",
+      "construction": "Original exact two-dimensional decay check, explicitly not turbulent DNS",
+      "chapter": "chapter-07-turbulent-and-mean-energy-budgets.html"
+    },
+    {
+      "anchor": "wall-and-vorticity",
+      "lesson": 21,
+      "start": 19,
+      "end": 610,
+      "lecture_material": "Wall vorticity and free-shear examples; distinguish turbulence from arbitrary random signals",
+      "extension": "Walls/stratification and nonzero 3D vorticity are not universal necessary/sufficient turbulence tests; periodic forced counterexample",
+      "construction": "Vorticity equation and scope correction",
+      "chapter": "chapter-08-thin-boundary-layers-and-outer-scaling.html"
+    },
+    {
+      "anchor": "singular-limit",
+      "lesson": 21,
+      "start": 610,
+      "end": 1251,
+      "lecture_material": "No-slip/no-penetration, nondimensional Navier\u2013Stokes, small viscosity and Prandtl's thin region",
+      "extension": "Complete pressure/time scales; distinguish gradient and curvature; derive laminar thickness order",
+      "construction": "Large derivative compensates small coefficient",
+      "chapter": "chapter-08-thin-boundary-layers-and-outer-scaling.html"
+    },
+    {
+      "anchor": "planar-rans",
+      "lesson": 22,
+      "start": 15,
+      "end": 707,
+      "lecture_material": "Thin layer geometry, stationary/spanwise homogeneous RANS expansion and mean continuity",
+      "extension": "Constant density does not imply isothermal; retain both normal and shear stress gradients",
+      "construction": "Full two-component equation pair with declared scope",
+      "chapter": "chapter-08-thin-boundary-layers-and-outer-scaling.html"
+    },
+    {
+      "anchor": "choose-scales",
+      "lesson": 22,
+      "start": 707,
+      "end": 1559,
+      "lecture_material": "Separate U_s and velocity-change delta U_s, streamwise/wall-normal lengths, turbulent scale and continuity normal velocity",
+      "extension": "Distinguish dimensional increments from derivatives; small-deficit regime versus whole no-slip layer; correlation assumption",
+      "construction": "Dimensionless aspect/deficit/intensity parameters",
+      "chapter": "chapter-08-thin-boundary-layers-and-outer-scaling.html"
+    },
+    {
+      "anchor": "term-ledger",
+      "lesson": 23,
+      "start": 15,
+      "end": 766,
+      "lecture_material": "Normalize both advective, viscous and stress-gradient terms by U_s delta U_s/L; dominant normal derivatives",
+      "extension": "Explicit six ratios and independent thin/high-Re conditions",
+      "construction": "Computed scale table for beta0.1 and1",
+      "chapter": "chapter-08-thin-boundary-layers-and-outer-scaling.html"
+    },
+    {
+      "anchor": "conditional-balance",
+      "lesson": 23,
+      "start": 766,
+      "end": 1173,
+      "lecture_material": "Conditional shear-stress balance and delta/L versus u\u00b2/(U_s delta U_s); turbulence intensity interpretation",
+      "extension": "Aspect ratio is not general growth derivative; q/Us versus squared intensity/deficit; pressure and correlation caveats",
+      "construction": "Correlation sensitivity and manufactured thickness derivative",
+      "chapter": "chapter-08-thin-boundary-layers-and-outer-scaling.html"
+    },
+    {
+      "anchor": "code",
+      "lesson": 23,
+      "start": 15,
+      "end": 1173,
+      "lecture_material": "Order estimates assembled from assumed scales",
+      "extension": "Actual executable ledger and laminar-versus-outer viscous crossover",
+      "construction": "Standard-library arithmetic checks and original regime figure",
+      "chapter": "chapter-08-thin-boundary-layers-and-outer-scaling.html"
+    },
+    {
+      "anchor": "inner-need",
+      "lesson": 24,
+      "start": 17,
+      "end": 1521,
+      "lecture_material": "Outer molecular terms fail near no-slip; introduce eta_w and u_w; shared inner velocity scale supported by described mean/rms data",
+      "extension": "Pressure can coexist with turbulence at leading order; common scale not uniform instantaneous wall asymptotics",
+      "construction": "Match inner region purpose to boundary conditions",
+      "chapter": "chapter-09-inner-scaling-and-friction-velocity.html"
+    },
+    {
+      "anchor": "inner-ledger",
+      "lesson": 25,
+      "start": 14,
+      "end": 1259,
+      "lecture_material": "Continuity normal velocity, two equal-order advective terms, normalize by normal viscosity, inner Reynolds order1",
+      "extension": "Retain inner Reynolds factor before selecting balance; equality1 is unit convention, not exact flow theorem",
+      "construction": "Complete normalized inner term table",
+      "chapter": "chapter-09-inner-scaling-and-friction-velocity.html"
+    },
+    {
+      "anchor": "total-stress",
+      "lesson": 26,
+      "start": 15,
+      "end": 1019,
+      "lecture_material": "Integrate leading inner equation from wall to y; total molecular plus turbulent stress; approximate finite-Re interpretation",
+      "extension": "Exact residual integral at finite Re; approximate equations can be integrated; Couette exact finite-Re contrast and channel correction",
+      "construction": "General remainder bound and recurring pressure-driven channel",
+      "chapter": "chapter-09-inner-scaling-and-friction-velocity.html"
+    },
+    {
+      "anchor": "measurement",
+      "lesson": 26,
+      "start": 1019,
+      "end": 1514,
+      "lecture_material": "Constant-stress layer and wall-shear inference away from wall, measurement/grid motivation",
+      "extension": "Inference error from molecular share and total-stress variation; near-wall information not recoverable without closure",
+      "construction": "Numerical wall-stress bias calculation",
+      "chapter": "chapter-09-inner-scaling-and-friction-velocity.html"
+    },
+    {
+      "anchor": "friction-units",
+      "lesson": 27,
+      "start": 16,
+      "end": 495,
+      "lecture_material": "Define friction velocity, viscous length, U+ and y+, multiple Reynolds definitions",
+      "extension": "Positive shear convention, absolute magnitude for signed wall traction, separation degeneracy, y+ based on actual distance not viscous length fixed1",
+      "construction": "Air wall-unit conversion and resolution sensitivity",
+      "chapter": "chapter-09-inner-scaling-and-friction-velocity.html"
+    },
+    {
+      "anchor": "layers-interface",
+      "lesson": 27,
+      "start": 495,
+      "end": 823,
+      "lecture_material": "Outer flow versus outer layer, turbulent/non-turbulent interface, inner/outer overlap and rough boundaries",
+      "extension": "Finite-thickness smooth viscous interface versus discontinuity idealization; defined heuristic overlap requires adequate Re_tau",
+      "construction": "Primary opening-summary comparison and empty-overlap test",
+      "chapter": "chapter-09-inner-scaling-and-friction-velocity.html"
+    },
+    {
+      "anchor": "sublayer-buffer",
+      "lesson": 27,
+      "start": 823,
+      "end": 1159,
+      "lecture_material": "Linear sublayer, buffer, approximate3\u20135/30 wall-unit bounds and production in buffer; stress partition",
+      "extension": "Taylor expansion with R12 of order y\u00b3, derive linear law and conditional quarter-production bound",
+      "construction": "Original smooth stress-partition function with explicit validity limits",
+      "chapter": "chapter-09-inner-scaling-and-friction-velocity.html"
+    },
+    {
+      "anchor": "wall-law-transition",
+      "lesson": 28,
+      "start": 17,
+      "end": 749,
+      "lecture_material": "Near-wall dissipation matters even if wall shear inferred outside; empirical logarithmic profile, constants0.41/5.2 and roughness caveats",
+      "extension": "Constant-stress correction from prior chapter retained; log law not universal at every smooth wall or wall distance",
+      "construction": "Velocity-gradient implication and fit versus derivation",
+      "chapter": "chapter-10-eddy-viscosity-and-mixing-length.html"
+    },
+    {
+      "anchor": "boussinesq",
+      "lesson": 28,
+      "start": 749,
+      "end": 1601,
+      "lecture_material": "RANS versus eddy-resolved approach; eddy viscosity and Boussinesq stress model; isotropic k term question",
+      "extension": "Correct symmetric-gradient factor, variable viscosity derivatives and modified pressure",
+      "construction": "Nonzero curl of omitted transverse force",
+      "chapter": "chapter-10-eddy-viscosity-and-mixing-length.html"
+    },
+    {
+      "anchor": "trace-and-couette",
+      "lesson": 29,
+      "start": 16,
+      "end": 1079,
+      "lecture_material": "Couette normal-stress failure without k term, trace consistency, statistical isotropic relation and compressible extension remarks",
+      "extension": "Trace determines2/3 without assuming actual isotropy; correct Kronecker trace; compressible/Favre limit distinct",
+      "construction": "Fit shear while missing normal anisotropy",
+      "chapter": "chapter-10-eddy-viscosity-and-mixing-length.html"
+    },
+    {
+      "anchor": "anisotropy-realizability",
+      "lesson": 30,
+      "start": 14,
+      "end": 570,
+      "lecture_material": "Pressure relevance in sublayer and correction of misconception that EVM is fully isotropic",
+      "extension": "Pressure balances curvature not shear; tensor alignment, nonnegative production and PSD eigenvalue restriction",
+      "construction": "Positive viscosity with negative predicted covariance eigenvalue",
+      "chapter": "chapter-10-eddy-viscosity-and-mixing-length.html"
+    },
+    {
+      "anchor": "scales-and-equation-count",
+      "lesson": 30,
+      "start": 570,
+      "end": 1031,
+      "lecture_material": "Viscosity dimensions, velocity/length/time scales, multi-scale statistical interpretation and zero-equation introduction",
+      "extension": "RANS mean structure not automatically largest turbulent eddy; dimensional consistency not closure validation",
+      "construction": "Equation count refers to added turbulence transport",
+      "chapter": "chapter-10-eddy-viscosity-and-mixing-length.html"
+    },
+    {
+      "anchor": "mixing-length",
+      "lesson": 31,
+      "start": 25,
+      "end": 896,
+      "lecture_material": "Algebraic Prandtl mixing length kappa*y, mean gradient, uses/limitations, near-wall/freestream behavior",
+      "extension": "Absolute shear and inverse-time units; exact composite integration, wrong wall power and log intercept; geometry limitations are model-specific",
+      "construction": "Stable quadratic gradient and analytical velocity",
+      "chapter": "chapter-10-eddy-viscosity-and-mixing-length.html"
+    },
+    {
+      "anchor": "two-equation-scales",
+      "lesson": 31,
+      "start": 896,
+      "end": 1387,
+      "lecture_material": "Turbulent velocity sqrt(k), time k/epsilon and dimensional exponents yielding C_mu*k\u00b2/epsilon",
+      "extension": "Positive domain, missing closure equations/coefficient, not an eddy identity",
+      "construction": "Executed scale conversion with coefficient left symbolic",
+      "chapter": "chapter-10-eddy-viscosity-and-mixing-length.html"
+    },
+    {
+      "anchor": "modeled-energy",
+      "lesson": 32,
+      "start": 15,
+      "end": 517,
+      "lecture_material": "Exact k equation, Boussinesq modeled production and its consequences",
+      "extension": "Consistent per-mass convention and positive production restriction",
+      "construction": "Exact/model term ledger",
+      "chapter": "chapter-11-constructing-k-epsilon-and-calibration.html"
+    },
+    {
+      "anchor": "modeled-transport",
+      "lesson": 32,
+      "start": 517,
+      "end": 1589,
+      "lecture_material": "Pressure transport omission in selected smooth-wall examples, rough-rib counterexample, gradient diffusion and k coupling",
+      "extension": "Omission versus lumping, countergradient possibility, conservative variable diffusivity",
+      "construction": "Two-cell flux and local versus integrated error",
+      "chapter": "chapter-11-constructing-k-epsilon-and-calibration.html"
+    },
+    {
+      "anchor": "exact-epsilon",
+      "lesson": 33,
+      "start": 14,
+      "end": 249,
+      "lecture_material": "Exact epsilon budget reference and four production terms; complexity motivating model",
+      "extension": "Compact independent gradient-equation derivation, primary NASA related-report equation23 checked visually, scalar epsilon count",
+      "construction": "Four contractions, transport and nonnegative high-gradient destruction",
+      "chapter": "chapter-11-constructing-k-epsilon-and-calibration.html"
+    },
+    {
+      "anchor": "epsilon-model",
+      "lesson": 33,
+      "start": 249,
+      "end": 1093,
+      "lecture_material": "Construct epsilon equation by analogy, gradient diffusion, epsilon/k time factor and two source coefficients; numerical ratios",
+      "extension": "Model equation not exact-termwise reduction or imposed local equilibrium; scale-aware positive regularization",
+      "construction": "Coupled baseline system with coefficient set identified",
+      "chapter": "chapter-11-constructing-k-epsilon-and-calibration.html"
+    },
+    {
+      "anchor": "cmu",
+      "lesson": 34,
+      "start": 14,
+      "end": 1581,
+      "lecture_material": "Local equilibrium example, log-region reduction and shear/energy ratio giving C_mu0.09",
+      "extension": "Retain P/epsilon correction when not equilibrium; calibration not proof of universality",
+      "construction": "Explicit conditional algebra and error sensitivity",
+      "chapter": "chapter-11-constructing-k-epsilon-and-calibration.html"
+    },
+    {
+      "anchor": "decay-calibration",
+      "lesson": 35,
+      "start": 14,
+      "end": 1068,
+      "lecture_material": "Far-downstream grid decay, constant mean convection, neglect diffusion and production, power-law energy and C_epsilon2 relation",
+      "extension": "Virtual origin, distinguish stationary downstream decay from blower-off temporal decay; correct m1.25 implies1.8, not1.92",
+      "construction": "Analytic homogeneous model solution and quantified caption arithmetic discrepancy",
+      "chapter": "chapter-11-constructing-k-epsilon-and-calibration.html"
+    },
+    {
+      "anchor": "execution",
+      "lesson": 35,
+      "start": 553,
+      "end": 1068,
+      "lecture_material": "Reduced k and epsilon decay equations and power matching",
+      "extension": "Actually integrated RK4 subproblem against exact solution with refinement and conserved two-cell flux",
+      "construction": "Original standard-library numerical execution",
+      "chapter": "chapter-11-constructing-k-epsilon-and-calibration.html"
+    },
+    {
+      "anchor": "finish-calibration",
+      "lesson": 36,
+      "start": 17,
+      "end": 1147,
+      "lecture_material": "Explicit decay-coefficient correction, broader calibration, diffusion coefficients and log-zone epsilon balance setup",
+      "extension": "Differentiate assumed profiles rather than treat dimensional equality as exact; derive full coefficient compatibility",
+      "construction": "Baseline coefficients imply a different kappa from0.41",
+      "chapter": "chapter-12-calibration-and-alternative-time-scales.html"
+    },
+    {
+      "anchor": "rng",
+      "lesson": 37,
+      "start": 17,
+      "end": 1300,
+      "lecture_material": "Finish C_epsilon1 derivation and broader-fit caveat, RNG variable source coefficient based on strain/turbulent time ratio",
+      "extension": "Separate multiplier/divisor conventions and lecture/example versus versioned RNG coefficients",
+      "construction": "Source-correction sweep and algebraic equivalence to extra destruction term",
+      "chapter": "chapter-12-calibration-and-alternative-time-scales.html"
+    },
+    {
+      "anchor": "one-equation",
+      "lesson": 37,
+      "start": 1300,
+      "end": 1649,
+      "lecture_material": "Prandtl one-equation example with algebraic epsilon and supplied turbulent length; length sensitivity",
+      "extension": "Use separate C_D and C_nu, identify notation-dependent absorption of coefficient",
+      "construction": "Prescribed-shear equilibrium energy quadratic in length",
+      "chapter": "chapter-12-calibration-and-alternative-time-scales.html"
+    },
+    {
+      "anchor": "near-wall-ratios",
+      "lesson": 38,
+      "start": 15,
+      "end": 1111,
+      "lecture_material": "Near-wall k\u2013epsilon term inspection, cancellation in epsilon production and singular destruction; motivation for omega",
+      "extension": "Finite source limit not a numerical stability proof; derivatives can be stiff; epsilon wall value not universal maximum",
+      "construction": "Explicit diffusion/sink stability scales",
+      "chapter": "chapter-12-calibration-and-alternative-time-scales.html"
+    },
+    {
+      "anchor": "quotient",
+      "lesson": 38,
+      "start": 1111,
+      "end": 1872,
+      "lecture_material": "Define omega=epsilon/(beta_star*k), warn that naive division through derivatives is not valid; introduce modeled omega and k/omega viscosity",
+      "extension": "Actual quotient/product derivation with cross diffusion and coefficient changes",
+      "construction": "Pointwise source transformation execution",
+      "chapter": "chapter-12-calibration-and-alternative-time-scales.html"
+    },
+    {
+      "anchor": "wilcox1988",
+      "lesson": 39,
+      "start": 15,
+      "end": 1032,
+      "lecture_material": "k sink beta_star*k*omega, Wilcox-type coefficients and source cancellation/partial decoupling discussion",
+      "extension": "Specify exact1988 variant and reciprocal diffusion convention; full system remains coupled; omega singular wall asymptote",
+      "construction": "Named-model comparison and deliberately unstable isolated Euler step",
+      "chapter": "chapter-12-calibration-and-alternative-time-scales.html"
+    },
+    {
+      "anchor": "two-wall-problems",
+      "lesson": 40,
+      "start": 14,
+      "end": 1037,
+      "lecture_material": "Smooth-wall linear/log profiles, local versus global Reynolds number, wall-function motivation, cell position and scope",
+      "extension": "Distinguish cell-centre location from cell thickness and mathematical wall from numerical wall flux",
+      "construction": "Fixed physical mesh y-plus depends on unknown traction",
+      "chapter": "chapter-13-wall-functions-and-smooth-wall-limits.html"
+    },
+    {
+      "anchor": "wall-law-inference",
+      "lesson": 41,
+      "start": 15,
+      "end": 779,
+      "lecture_material": "Log law, iterative friction velocity and equilibrium k at first point",
+      "extension": "E=exp(kappa B) exact relation; wall law is one relation not independent prescriptions of U and traction",
+      "construction": "Bracketed monotone root and deliberately invalid viscous-region inference",
+      "chapter": "chapter-13-wall-functions-and-smooth-wall-limits.html"
+    },
+    {
+      "anchor": "turbulence-wall-data",
+      "lesson": 41,
+      "start": 779,
+      "end": 1109,
+      "lecture_material": "Equilibrium epsilon and omega wall-function formulas, coefficient convention cautions",
+      "extension": "Retain beta_star and distinguish epsilon/k variable from rescaled omega with corresponding equations",
+      "construction": "Full numerical closure-state and effective wall-face viscosity ledger",
+      "chapter": "chapter-13-wall-functions-and-smooth-wall-limits.html"
+    },
+    {
+      "anchor": "two-component",
+      "lesson": 42,
+      "start": 15,
+      "end": 1299,
+      "lecture_material": "Preferential suppression of normal fluctuations, two-component limit, pressure/viscous effects and RANS alternatives",
+      "extension": "Normalized covariance limit rather than nonzero wall energy; kinematic limit persists under regular no-slip incompressible assumptions even with rotation/stratification; elliptic f equation distinction",
+      "construction": "Explicit divergence-free random near-wall field",
+      "chapter": "chapter-13-wall-functions-and-smooth-wall-limits.html"
+    },
+    {
+      "anchor": "taylor",
+      "lesson": 43,
+      "start": 15,
+      "end": 1120,
+      "lecture_material": "LRN mesh guidance, term consistency and Taylor expansions, boundary/continuity coefficient constraints and stress orders",
+      "extension": "Factorials absorbed into coefficients; leading coefficient may vanish; rms versus covariance orders",
+      "construction": "Covariance order table and model normal-stress obstruction",
+      "chapter": "chapter-13-wall-functions-and-smooth-wall-limits.html"
+    },
+    {
+      "anchor": "budget-limits",
+      "lesson": 43,
+      "start": 1120,
+      "end": 1440,
+      "lecture_material": "Gradient, epsilon, k flux and triple-product near-wall orders leading to next lecture comparisons",
+      "extension": "Include both tangential normal derivatives in finite dissipation; pressure flux not discarded as an identity",
+      "construction": "Wall epsilon=nu*k_second_derivative and bare-viscosity quartic versus generic cubic shear",
+      "chapter": "chapter-13-wall-functions-and-smooth-wall-limits.html"
+    },
+    {
+      "anchor": "compare-like-terms",
+      "lesson": 44,
+      "start": 15,
+      "end": 1288,
+      "lecture_material": "Exact/model energy equations, homogeneous stationary parallel reduction, triple flux quartic versus baseline modeled quintic",
+      "extension": "Distinguish flux order from divergence order; epsilon exact definition versus modeled evolution",
+      "construction": "Term-order table with pressure omission and leading balance",
+      "chapter": "chapter-14-near-wall-corrections-and-boundary-data.html"
+    },
+    {
+      "anchor": "damping-test",
+      "lesson": 45,
+      "start": 15,
+      "end": 450,
+      "lecture_material": "Proposed inverse-distance correction and Launder\u2013Sharma exponential example based on turbulent Reynolds number",
+      "extension": "Exponential bounded limit cannot have inverse-distance power; named implementation contains additional model terms",
+      "construction": "Actual f_mu limit and halving-distance quartic test",
+      "chapter": "chapter-14-near-wall-corrections-and-boundary-data.html"
+    },
+    {
+      "anchor": "production-order",
+      "lesson": 45,
+      "start": 450,
+      "end": 1140,
+      "lecture_material": "Exact production cubic and modeled quartic, grid refinement does not correct constitutive mismatch",
+      "extension": "Scalar near-wall correction not tensor anisotropy repair and no guarantee from dimension alone",
+      "construction": "Order matching necessary not sufficient",
+      "chapter": "chapter-14-near-wall-corrections-and-boundary-data.html"
+    },
+    {
+      "anchor": "wall-boundaries",
+      "lesson": 46,
+      "start": 14,
+      "end": 1020,
+      "lecture_material": "No-slip, pressure Neumann, k zero, wall epsilon from molecular k diffusion; numerical concern about second derivative",
+      "extension": "Zero pressure gradient conditional; second derivative alone not instability proof; finite epsilon not universal maximum",
+      "construction": "Normal momentum boundary relation and hydrostatic counterexample",
+      "chapter": "chapter-14-near-wall-corrections-and-boundary-data.html"
+    },
+    {
+      "anchor": "epsilon-limits",
+      "lesson": 46,
+      "start": 1020,
+      "end": 1773,
+      "lecture_material": "Two surviving tangential fluctuation gradients and epsilon approximation2nu*k/y\u00b2 at first near-wall point",
+      "extension": "Numerator k vanishes quadratically so no inverse-square epsilon divergence; limiting boundary relation versus implementation",
+      "construction": "Manufactured finite-distance convergence with cubic k correction",
+      "chapter": "chapter-14-near-wall-corrections-and-boundary-data.html"
+    },
+    {
+      "anchor": "sqrt-boundary",
+      "lesson": 47,
+      "start": 14,
+      "end": 555,
+      "lecture_material": "Derivative-of-square-root epsilon option, omega inverse-square near-wall expression and model qualification",
+      "extension": "Full identity includes sqrt(k)*second derivative; finite wall one-sided derivative can exist; k\u2013omega variant not universal exact asymptote",
+      "construction": "Compare three finite-distance estimates and distinguish epsilon from omega singularity",
+      "chapter": "chapter-14-near-wall-corrections-and-boundary-data.html"
+    },
+    {
+      "anchor": "inflow",
+      "lesson": 47,
+      "start": 555,
+      "end": 1273,
+      "lecture_material": "Initial/inlet k from isotropy and turbulence intensity; supplied length for epsilon and coefficient variations",
+      "extension": "Input uncertainty not arbitrary physical truth; coefficient arithmetic not equality; length can represent measured integral or closure scale; initial guesses versus persistent inlet data",
+      "construction": "Executed I and length sensitivity ledger",
+      "chapter": "chapter-14-near-wall-corrections-and-boundary-data.html"
+    },
+    {
+      "anchor": "scale-meaning",
+      "lesson": 48,
+      "start": 15,
+      "end": 813,
+      "lecture_material": "Initial-condition sensitivity, geometry length guesses, rib-channel k/epsilon length and viscosity comparisons, von Karman/SAS length",
+      "extension": "Closure scales can have interpreted physical meaning without resolving all eddies; zero Laplacian singularity and full SAS regularization",
+      "construction": "Error propagation and log-profile versus linear-flow scale checks",
+      "chapter": "chapter-15-realizability-and-production-corrections.html"
+    },
+    {
+      "anchor": "covariance",
+      "lesson": 48,
+      "start": 813,
+      "end": 1212,
+      "lecture_material": "Normal variance positivity, energy positivity and shear correlation Schwarz condition",
+      "extension": "Nonnegative not strictly positive; all-direction PSD and pairwise constraints insufficient in3D",
+      "construction": "Three-variable correlation counterexample and constructive eigen decomposition",
+      "chapter": "chapter-15-realizability-and-production-corrections.html"
+    },
+    {
+      "anchor": "stagnation",
+      "lesson": 49,
+      "start": 16,
+      "end": 1009,
+      "lecture_material": "Boussinesq negative normal stress for extension and transverse-sum violation under compression, stagnation/impingement motivation",
+      "extension": "Incompressible normal extension not volumetric strain; off-diagonal gradients not synonymous with rotation",
+      "construction": "Trace-free irrotational planar strain exact threshold and rotated failure",
+      "chapter": "chapter-15-realizability-and-production-corrections.html"
+    },
+    {
+      "anchor": "viscosity-cap",
+      "lesson": 50,
+      "start": 15,
+      "end": 691,
+      "lecture_material": "Durbin attributed viscosity cap min(model,k/(3lambda)), time-scale restriction",
+      "extension": "Principal eigenvalue versus incorrect component row norm; derive invariant bound and scope of covariance guarantee",
+      "construction": "Independent primary1994report comparison and rotated row-norm counterexample",
+      "chapter": "chapter-15-realizability-and-production-corrections.html"
+    },
+    {
+      "anchor": "isotropic-production",
+      "lesson": 50,
+      "start": 691,
+      "end": 1315,
+      "lecture_material": "Exact production in assumed locally isotropic stagnation zone approximately zero",
+      "extension": "Isotropy an explicit conditional state, not universal stagnation property; P zero not proof of low k",
+      "construction": "Isotropic covariance contraction and rapid-distortion normal-stress onset",
+      "chapter": "chapter-15-realizability-and-production-corrections.html"
+    },
+    {
+      "anchor": "source-corrections",
+      "lesson": 51,
+      "start": 15,
+      "end": 1130,
+      "lecture_material": "Large modeled strain production; scalar cap, SST10beta_star*k*omega, Kato\u2013Launder strain-rotation product and time limiter",
+      "extension": "Distinguish SST1993/94 factor20 from2003 factor10/both-equation version; source caps do not enforce PSD or conserve mean/turbulent transfer automatically",
+      "construction": "Pure strain/simple shear/rotation checks and transfer imbalance",
+      "chapter": "chapter-15-realizability-and-production-corrections.html"
+    },
+    {
+      "anchor": "accuracy",
+      "lesson": 51,
+      "start": 1130,
+      "end": 1509,
+      "lecture_material": "Wake unsteadiness example and dense CO2/chlorine dispersion errors motivate higher closures/cost tradeoff",
+      "extension": "Qualitative reported examples not digitized benchmarks; no exposure thresholds or clinical recommendations; admissibility versus accuracy and model ensemble spread",
+      "construction": "Decision logic for independent physical validation",
+      "chapter": "chapter-15-realizability-and-production-corrections.html"
+    },
+    {
+      "anchor": "second-moment-system",
+      "lesson": 52,
+      "start": 14,
+      "end": 631,
+      "lecture_material": "RSM terminology, six covariance equations, exact pressure/turbulent/molecular diffusion, pressure strain, production and destruction",
+      "extension": "Third moment27ordered entries but10independent; ktrace; pressure convention and exact form not exact numerical result",
+      "construction": "Complete unclosed system and closure inventory",
+      "chapter": "chapter-16-reynolds-stress-transport-closure.html"
+    },
+    {
+      "anchor": "production-coupling",
+      "lesson": 52,
+      "start": 631,
+      "end": 1366,
+      "lecture_material": "Production directly from transported R and mean gradients, R11/R12 couplings and under-relaxation guidance",
+      "extension": "Generic coupling versus simple shear and exact congruence evolution; numerical relaxation not universal guarantee",
+      "construction": "PSD-preserving continuous production-only shear with Euler counterexample",
+      "chapter": "chapter-16-reynolds-stress-transport-closure.html"
+    },
+    {
+      "anchor": "diffusion-choices",
+      "lesson": 53,
+      "start": 15,
+      "end": 858,
+      "lecture_material": "Pressure diffusion omitted, molecular diffusion direct, scalar gradient flux versus Daly\u2013Harlow tensor diffusion with time factor",
+      "extension": "Pressure measurement difficulty not impossibility or smallness proof; derived diffusivity positive for PSD R, not inherently unstable",
+      "construction": "Primary named anisotropic and simple variants",
+      "chapter": "chapter-16-reynolds-stress-transport-closure.html"
+    },
+    {
+      "anchor": "cross-direction-flux",
+      "lesson": 53,
+      "start": 858,
+      "end": 1524,
+      "lecture_material": "Expansion of tensor diffusion indices, nonzero directional flux from other gradients, simpler scalar diffusion option",
+      "extension": "Zero gradient at a point does not imply zero divergence; nonzero cross coefficient needed; kcomputed but scalar diffusivity still a closure",
+      "construction": "Explicit gradient/flux ledger and conservative matrix diffusion",
+      "chapter": "chapter-16-reynolds-stress-transport-closure.html"
+    },
+    {
+      "anchor": "destruction-tensor",
+      "lesson": 54,
+      "start": 15,
+      "end": 1660,
+      "lecture_material": "Clarify diffusion expansion and small-scale local isotropy leading to epsilon_ij=2epsilon/3delta_ij",
+      "extension": "Dissipative-scale gradient isotropy does not impose large-scale covariance isotropy; tensor PSD and wall mismatch",
+      "construction": "Trace derivation and singular covariance sink counterexample",
+      "chapter": "chapter-16-reynolds-stress-transport-closure.html"
+    },
+    {
+      "anchor": "seventh-equation",
+      "lesson": 54,
+      "start": 1660,
+      "end": 1918,
+      "lecture_material": "Additional epsilon equation, direct production/k from transported stresses, seven-equation count and pressure-strain transition",
+      "extension": "Epsilon transport remains modeled; no automatic accuracy claim, complete pressure closure follows next chapter",
+      "construction": "Trace-consistent partially assembled model",
+      "chapter": "chapter-16-reynolds-stress-transport-closure.html"
+    },
+    {
+      "anchor": "poisson",
+      "lesson": 55,
+      "start": 14,
+      "end": 982,
+      "lecture_material": "Pressure-strain unknown, instantaneous and mean pressure-Poisson derivation by divergence and continuity",
+      "extension": "Pressure equation linear for supplied velocity source, no universal iteration-cost ratio; density and sign conventions explicit",
+      "construction": "Both Poisson equations and centered fluctuation source",
+      "chapter": "chapter-17-pressure-redistribution-and-wall-models.html"
+    },
+    {
+      "anchor": "rapid-slow",
+      "lesson": 56,
+      "start": 15,
+      "end": 1198,
+      "lecture_material": "Subtract mean Poisson, product rules give factor2 mean-gradient interaction and centered quadratic slow source",
+      "extension": "Dummy indices not free; full gradient not automatically symmetric strain; rapid/slow not propagation-speed statement",
+      "construction": "Ensemble mean-zero source and rapid-distortion scaling",
+      "chapter": "chapter-17-pressure-redistribution-and-wall-models.html"
+    },
+    {
+      "anchor": "green",
+      "lesson": 56,
+      "start": 1198,
+      "end": 1574,
+      "lecture_material": "Green function point observation/source representation for pressure fluctuations",
+      "extension": "Fundamental kernel not Dirac delta; whole-space assumption and bounded-domain surface contribution/Neumann compatibility",
+      "construction": "Units, sign and boundary representation",
+      "chapter": "chapter-17-pressure-redistribution-and-wall-models.html"
+    },
+    {
+      "anchor": "nonlocal-to-local",
+      "lesson": 57,
+      "start": 23,
+      "end": 1685,
+      "lecture_material": "Pressure integral, statistical homogeneity and slowly varying mean-gradient approximations, two-point derivative correlation and route toward IP model",
+      "extension": "Two-point covariance not determined by one-point R; distinguish derivative coordinate from component index; approximation not exact closure",
+      "construction": "Exact analytic periodic random-amplitude solution and pressure-strain trace check",
+      "chapter": "chapter-17-pressure-redistribution-and-wall-models.html"
+    },
+    {
+      "anchor": "ip",
+      "lesson": 57,
+      "start": 1685,
+      "end": 2008,
+      "lecture_material": "Isotropization-of-production model and partial counteraction of production tensor",
+      "extension": "Per-mass versus density-weighted form, trace-free part, CR1 cancellation only traceless production",
+      "construction": "Channel component ledger and exact trace tests",
+      "chapter": "chapter-17-pressure-redistribution-and-wall-models.html"
+    },
+    {
+      "anchor": "rotta",
+      "lesson": 58,
+      "start": 14,
+      "end": 1255,
+      "lecture_material": "Physical return-to-isotropy argument, component differences, epsilon/k time, Rotta slow model and wall correction motivation",
+      "extension": "Collision image heuristic; continuity only constrains sum of other normal strains; pressure-strain not always a universal isotropizer",
+      "construction": "Isolated convex relaxation and full homogeneous normalized-anisotropy decay plus executed RK4",
+      "chapter": "chapter-17-pressure-redistribution-and-wall-models.html"
+    },
+    {
+      "anchor": "wall-reflection",
+      "lesson": 59,
+      "start": 14,
+      "end": 1084,
+      "lecture_material": "Slow/rapid normal, parallel and shear wall corrections, distance factor, coefficient set and resolved/wall-function boundary data",
+      "extension": "Trace-preserving tensor completion repairs rapid tangential transcription; factor includes k/epsilon so no unconditional inverse-distance growth; model-specific normalization",
+      "construction": "Wall map, physical-wall factor limit and realizable log-region covariance",
+      "chapter": "chapter-17-pressure-redistribution-and-wall-models.html"
+    },
+    {
+      "anchor": "algebraic-stress",
+      "lesson": 59,
+      "start": 1084,
+      "end": 1493,
+      "lecture_material": "Algebraic stress approximation relates stress transport to energy transport; complete statistical-modeling transition to eddy-resolved methods",
+      "extension": "Normalized stress slow-variation hypothesis and diffusion assumption distinguished; algebraic stress still may need scale transport; no unverified prevalence claims",
+      "construction": "Trace-consistent algebraic relation and limitations",
+      "chapter": "chapter-17-pressure-redistribution-and-wall-models.html"
+    },
+    {
+      "anchor": "similarity",
+      "lesson": 60,
+      "start": 14,
+      "end": 900,
+      "lecture_material": "K41 local isotropy, wall component budgets and energy-cascade interpretation",
+      "extension": "Spatial component budgets are not scale-resolved evidence; increment statistics and hypothesis scope",
+      "construction": "Precise variables, conditional universality and physical-space versus scale-space distinctions",
+      "chapter": "chapter-18-scales-cascades-and-direct-simulation.html"
+    },
+    {
+      "anchor": "microscales",
+      "lesson": 60,
+      "start": 900,
+      "end": 1423,
+      "lecture_material": "Viscosity/dissipation scales and intermediate-range second similarity hypothesis",
+      "extension": "Dimensional exponent derivation, molecular continuum limit is a distinct scale, retain Cepsilon in integral ratios",
+      "construction": "Three microscale identities and executed dimensional/ratio check",
+      "chapter": "chapter-18-scales-cascades-and-direct-simulation.html"
+    },
+    {
+      "anchor": "cascade",
+      "lesson": 61,
+      "start": 14,
+      "end": 1239,
+      "lecture_material": "Integral ratios, intermittency, inverse transfer, -5/3 spectrum, viscous weighting and resolution use",
+      "extension": "K62 date1962; external intermittency distinct; transfer budget and non-equilibrium qualifications; no universal conservative estimate",
+      "construction": "Spectrum normalization, integrated flux balance and original spectral-weight illustration",
+      "chapter": "chapter-18-scales-cascades-and-direct-simulation.html"
+    },
+    {
+      "anchor": "dns",
+      "lesson": 62,
+      "start": 15,
+      "end": 800,
+      "lecture_material": "DNS definition, no turbulence closure, instantaneous three-dimensional resolution, scale separation and expense",
+      "extension": "Physical constitutive assumptions remain; multiphysics requires further equations; repair 10^6 grid arithmetic and distinguish air viscosity",
+      "construction": "Grid and two alternative temporal cost scalings, explicit minimum field storage",
+      "chapter": "chapter-18-scales-cascades-and-direct-simulation.html"
+    },
+    {
+      "anchor": "resolution",
+      "lesson": 62,
+      "start": 800,
+      "end": 2008,
+      "lecture_material": "Discrete methods/central schemes, pressure/parallel resources, grid/eta and wall units, geometric criterion",
+      "extension": "Numerical instability is not a desired perturbation source, schemes and time integrators matter, geometric criterion not universal sufficiency",
+      "construction": "Exact diffusing Fourier-mode spatial refinement, anisotropic-grid and biased-epsilon counterexamples",
+      "chapter": "chapter-18-scales-cascades-and-direct-simulation.html"
+    },
+    {
+      "anchor": "domain-startup",
+      "lesson": 63,
+      "start": 15,
+      "end": 1169,
+      "lecture_material": "Streamwise/spanwise correlations and box size, startup perturbations, reduced-viscosity initialization, synthetic and precursor alternatives",
+      "extension": "Periodic half-box warning not universal two-eddy rule; controlled continuation not near-crash validation; initial conditions can change attractor",
+      "construction": "Positive-definite periodized covariance and divergence-free explicit perturbation",
+      "chapter": "chapter-18-scales-cascades-and-direct-simulation.html"
+    },
+    {
+      "anchor": "sampling",
+      "lesson": 63,
+      "start": 1169,
+      "end": 1512,
+      "lecture_material": "Statistical stationarity, sample/time correlation, long regime changes and DNS reference for PIV",
+      "extension": "Dense correlated sampling usable with uncertainty; nested means insufficient; unconditional mean can differ from individual states",
+      "construction": "Exact finite sample covariance sum and effective count",
+      "chapter": "chapter-18-scales-cascades-and-direct-simulation.html"
+    },
+    {
+      "anchor": "resolved",
+      "lesson": 64,
+      "start": 14,
+      "end": 510,
+      "lecture_material": "LES cascade motivation and distinction from DNS/RANS",
+      "extension": "Filtering defined without requiring universal local isotropy; subfilter cutoff can lie in inertial range; spatial scale not automatically temporal frequency",
+      "construction": "Separate ensemble mean, exact spatial filter and residual",
+      "chapter": "chapter-19-filtered-equations-and-the-les-closure.html"
+    },
+    {
+      "anchor": "reference",
+      "lesson": 64,
+      "start": 510,
+      "end": 1250,
+      "lecture_material": "Exact filtering of DNS versus LES-resolved field and modeled SGS influence",
+      "extension": "Model predicts stress influence not full unique fine velocity; no visual smoothing attribution to one isolated error",
+      "construction": "A priori reference-filter comparison and numerical approximation distinction",
+      "chapter": "chapter-19-filtered-equations-and-the-les-closure.html"
+    },
+    {
+      "anchor": "box",
+      "lesson": 65,
+      "start": 14,
+      "end": 630,
+      "lecture_material": "Filtered DNS illustrations,1D volume averaging and mean/fluctuation filtering",
+      "extension": "Exact normalized top-hat operator; Fourier gains, reference uncertainty and no invented picture data",
+      "construction": "Polynomial and Fourier non-idempotence examples",
+      "chapter": "chapter-19-filtered-equations-and-the-les-closure.html"
+    },
+    {
+      "anchor": "residual-products",
+      "lesson": 65,
+      "start": 630,
+      "end": 1205,
+      "lecture_material": "Filtered residual generally nonzero, filtering differs from ensemble averaging and LES statistics require postprocessing",
+      "extension": "Explicit central moment versus residual covariance with cross/resolved-product terms; filtered mean need not equal original mean",
+      "construction": "Exact quadratic central moment0.01992 versus residual-square0.0009",
+      "chapter": "chapter-19-filtered-equations-and-the-les-closure.html"
+    },
+    {
+      "anchor": "commutation",
+      "lesson": 66,
+      "start": 14,
+      "end": 890,
+      "lecture_material": "Time and spatial derivative commutation, homogeneous filter exception, nonuniform commutation error and Ghosal/Moin result",
+      "extension": "Operator rather than grid definition; variable/time-dependent widths and conditional second-order family",
+      "construction": "Exact variable-width identity, asymptotic derivation and quadratic commutator refinement",
+      "chapter": "chapter-19-filtered-equations-and-the-les-closure.html"
+    },
+    {
+      "anchor": "momentum",
+      "lesson": 66,
+      "start": 890,
+      "end": 1505,
+      "lecture_material": "Filtered flux, add/subtract resolved convection, six SGS unknowns and stress units",
+      "extension": "Original filtered convection exists, resolved decomposition not new physics; sign/density/trace absorbed pressure; positive-kernel PSD scope",
+      "construction": "Full commuting-filter continuity/momentum equations and unknown product",
+      "chapter": "chapter-19-filtered-equations-and-the-les-closure.html"
+    },
+    {
+      "anchor": "energy-grid",
+      "lesson": 67,
+      "start": 14,
+      "end": 560,
+      "lecture_material": "Mesh changes resolved versus modeled partition, LES grid-convergence and finite modeled contribution on DNS-like mesh",
+      "extension": "Fixed physical filter separates discretization refinement; no theorem forbids convergence or guarantees RANS monotonicity/laptop cost",
+      "construction": "Resolved-energy transfer budget, affine shear stress example and numerical filter/gain comparisons",
+      "chapter": "chapter-19-filtered-equations-and-the-les-closure.html"
+    },
+    {
+      "anchor": "repeat-discrete",
+      "lesson": 67,
+      "start": 560,
+      "end": 1177,
+      "lecture_material": "Repeated filtering numerical illustration via trapezoidal/interpolation approximation",
+      "extension": "Discrete stencil exact under its definition but not universal continuum proof; special fixed fields retained",
+      "construction": "Impulse, sum preservation and Fourier-symbol proof",
+      "chapter": "chapter-19-filtered-equations-and-the-les-closure.html"
+    },
+    {
+      "anchor": "kernel",
+      "lesson": 68,
+      "start": 15,
+      "end": 300,
+      "lecture_material": "Filter type, size and SGS choice; generic Leonard convolution definition",
+      "extension": "Fourier convention and units explicit, normalization and signed weights; original Leonard1974 paper not inspected",
+      "construction": "Convolution theorem with independent source/observation variables",
+      "chapter": "chapter-20-filter-families-and-subgrid-viscosity.html"
+    },
+    {
+      "anchor": "box-filter",
+      "lesson": 68,
+      "start": 300,
+      "end": 625,
+      "lecture_material": "Box kernel and support, filter width versus grid size, physical versus spectral localization",
+      "extension": "Absolute support, sinc transfer and amplitude/energy distinction, no disjoint spectral bands",
+      "construction": "Exact top-hat Fourier transform and triangular repeated convolution",
+      "chapter": "chapter-20-filter-families-and-subgrid-viscosity.html"
+    },
+    {
+      "anchor": "spectral",
+      "lesson": 68,
+      "start": 625,
+      "end": 1129,
+      "lecture_material": "Spectral cutoff, wavenumber/length interpretation, cascade and SGS-energy transfer motivation",
+      "extension": "Cutoff inverse kernel, signed tails, global orthogonality differs from pointwise positivity; transfer versus final dissipation",
+      "construction": "Projection proof and exact positive-field/stress counterexamples",
+      "chapter": "chapter-20-filter-families-and-subgrid-viscosity.html"
+    },
+    {
+      "anchor": "gaussian",
+      "lesson": 69,
+      "start": 14,
+      "end": 448,
+      "lecture_material": "Mathematical revisit of repeated box versus spectral filtering",
+      "extension": "Rebuild incomplete nested-integral proof with correct shifted convolution/multiplication; Gaussian named in68 developed as comparative extension",
+      "construction": "Kernel moments, Gaussian composition and property comparison",
+      "chapter": "chapter-20-filter-families-and-subgrid-viscosity.html"
+    },
+    {
+      "anchor": "implicit",
+      "lesson": 69,
+      "start": 448,
+      "end": 675,
+      "lecture_material": "Finite-volume implicit filtering and nominal mesh/filter identity",
+      "extension": "Cell average differs from complete discrete operator, other methods can implicit-filter; no universal scheme/closure/alias guarantee",
+      "construction": "Exact discrete alias identity and explicit versus implicit choices",
+      "chapter": "chapter-20-filter-families-and-subgrid-viscosity.html"
+    },
+    {
+      "anchor": "sgs-model",
+      "lesson": 69,
+      "start": 675,
+      "end": 1410,
+      "lecture_material": "SGS purpose, Boussinesq analogy, positive stress sign, trace/ksgs and nu_sgs unknowns",
+      "extension": "Trace not known from resolved data; factor2/3 retained; static dissipation strategy not every SGS definition",
+      "construction": "Deviatoric closure, pressure-trace role and Pi sign",
+      "chapter": "chapter-20-filter-families-and-subgrid-viscosity.html"
+    },
+    {
+      "anchor": "coefficients",
+      "lesson": 69,
+      "start": 1410,
+      "end": 1932,
+      "lecture_material": "Mixing-length Smagorinsky viscosity, cube-root grid volume, constant selection examples and dependence",
+      "extension": "Cs versus Cs\u00b2, no theoretical universal below-one bound or flow-specific prescriptions; no current solver/historical priority claims",
+      "construction": "Executed shear, extension, rotation and coefficient-sensitivity tests",
+      "chapter": "chapter-20-filter-families-and-subgrid-viscosity.html"
+    },
+    {
+      "anchor": "wall",
+      "lesson": 70,
+      "start": 15,
+      "end": 270,
+      "lecture_material": "Near-wall static SGS viscosity and large resolved strain",
+      "extension": "Finite smooth gradients need not diverge; wall filter definitions and resolved versus modeled wall regions",
+      "construction": "Grid scale, wall distance and physical kinematic distinction",
+      "chapter": "chapter-21-wall-limits-energy-memory-and-test-filtering.html"
+    },
+    {
+      "anchor": "damping",
+      "lesson": 70,
+      "start": 270,
+      "end": 502,
+      "lecture_material": "Van-Driest-type damping and minimum grid/wall length option",
+      "extension": "Viscosity versus length placement and Cs versus Delta cap conventions distinct; dimensional volume correction",
+      "construction": "Executed numerical values, small-y powers and no full wall-asymptotic guarantee",
+      "chapter": "chapter-21-wall-limits-energy-memory-and-test-filtering.html"
+    },
+    {
+      "anchor": "energy-model",
+      "lesson": 70,
+      "start": 502,
+      "end": 750,
+      "lecture_material": "One-equation SGS-energy advection/diffusion and Ck Delta sqrtq viscosity",
+      "extension": "Alternative transported viscosity, explicit coefficients/boundary variables; actual versioned architecture comparison",
+      "construction": "Complete modeled q equation and dimensions",
+      "chapter": "chapter-21-wall-limits-energy-memory-and-test-filtering.html"
+    },
+    {
+      "anchor": "transfer",
+      "lesson": 70,
+      "start": 750,
+      "end": 1101,
+      "lecture_material": "Resolved-to-SGS production, destruction estimate Ce q^1.5/Delta and dynamic coefficient motivation",
+      "extension": "Transfer matching requires consistent stress, not equilibrium; final molecular loss and resolved viscosity remain distinct",
+      "construction": "Two-budget cancellation and equilibrium Cs conversion",
+      "chapter": "chapter-21-wall-limits-energy-memory-and-test-filtering.html"
+    },
+    {
+      "anchor": "ode-check",
+      "lesson": 70,
+      "start": 502,
+      "end": 1101,
+      "lecture_material": "Energy transport supplies a state rather than purely instantaneous algebraic viscosity",
+      "extension": "Original analytic fixed-strain and shear-off reductions; positive initial state and explicit-step restrictions",
+      "construction": "Riccati exact solution, RK4 refinement and memory decay",
+      "chapter": "chapter-21-wall-limits-energy-memory-and-test-filtering.html"
+    },
+    {
+      "anchor": "test-filter",
+      "lesson": 71,
+      "start": 14,
+      "end": 370,
+      "lecture_material": "Dynamic coefficient, additional test filter and nominal twice-grid scale",
+      "extension": "Additional/composite widths differ; WALE/VMS names do not imply dynamic coefficient; user design choices remain",
+      "construction": "Two operator notation, scale-composition and bounded actual WALE source check",
+      "chapter": "chapter-21-wall-limits-energy-memory-and-test-filtering.html"
+    },
+    {
+      "anchor": "identity",
+      "lesson": 71,
+      "start": 370,
+      "end": 990,
+      "lecture_material": "Grid then test filtered equations and total stress substitution",
+      "extension": "Ordered operators suffice for algebra; standard PDEs need derivative conditions; no automatic spectral band interpretation",
+      "construction": "Exact cancellation T-Htau=L",
+      "chapter": "chapter-21-wall-limits-energy-memory-and-test-filtering.html"
+    },
+    {
+      "anchor": "identity-check",
+      "lesson": 71,
+      "start": 990,
+      "end": 1363,
+      "lecture_material": "Dynamic Leonard stress computable from resolved data and route to coefficient estimation",
+      "extension": "Identity alone not unique closure or guaranteed tensor fit",
+      "construction": "All-component finite-array identity execution and next coefficient assumptions",
+      "chapter": "chapter-21-wall-limits-energy-memory-and-test-filtering.html"
+    },
+    {
+      "anchor": "two-level-model",
+      "lesson": 72,
+      "start": 15,
+      "end": 470,
+      "lecture_material": "Dynamic coefficient motivation and resolved/test scale comparison",
+      "extension": "Scale-invariance and movement of coefficient through test filter are explicit modeling assumptions",
+      "construction": "Two-level deviatoric model and signed C convention",
+      "chapter": "chapter-22-dynamic-fitting-and-scale-similarity.html"
+    },
+    {
+      "anchor": "M-tensor",
+      "lesson": 72,
+      "start": 470,
+      "end": 1200,
+      "lecture_material": "Smagorinsky model at both levels, M tensor and trace subtraction",
+      "extension": "Composite width, nonlinearity, trace and five-equations/one-scalar distinction; no componentwise tensor division",
+      "construction": "Correctly signed Ld=-2CM and model-error geometry",
+      "chapter": "chapter-22-dynamic-fitting-and-scale-similarity.html"
+    },
+    {
+      "anchor": "least-squares",
+      "lesson": 72,
+      "start": 1200,
+      "end": 1330,
+      "lecture_material": "Lilly modification via contraction and disappearance of isotropic term",
+      "extension": "Derive minimization rather than unexplained multiplication/division; explicit zero and cancellation cases",
+      "construction": "Frobenius objective, exact fitted coefficient and nonzero orthogonal residual",
+      "chapter": "chapter-22-dynamic-fitting-and-scale-similarity.html"
+    },
+    {
+      "anchor": "averaging",
+      "lesson": 72,
+      "start": 1330,
+      "end": 1600,
+      "lecture_material": "Fluctuating coefficient, homogeneous-direction and local smoothing",
+      "extension": "Average contractions differs from average coefficient; regularization/constraint choices change estimator",
+      "construction": "Weighted joint fit counterexample and dimensional penalty",
+      "chapter": "chapter-22-dynamic-fitting-and-scale-similarity.html"
+    },
+    {
+      "anchor": "backscatter",
+      "lesson": 72,
+      "start": 1600,
+      "end": 1711,
+      "lecture_material": "Viscosity positivity limiter and broad resolution/SGS sensitivity comments",
+      "extension": "Negative C is signed transfer, not negative geometric length; positive total diffusivity only restricted stability evidence; no universal resolved-fraction sufficiency",
+      "construction": "Numerical signed viscosity/transfer and frozen-strain lower bound",
+      "chapter": "chapter-22-dynamic-fitting-and-scale-similarity.html"
+    },
+    {
+      "anchor": "decomposition",
+      "lesson": 73,
+      "start": 16,
+      "end": 650,
+      "lecture_material": "Scale similarity motivation and Leonard/cross/Reynolds-SGS decomposition",
+      "extension": "Computable expression versus closure hypothesis, naming/symbol distinctions and no full original-model equivalence assertion",
+      "construction": "Exact expanded total stress and lecture-specific cross ansatz",
+      "chapter": "chapter-22-dynamic-fitting-and-scale-similarity.html"
+    },
+    {
+      "anchor": "invariance",
+      "lesson": 73,
+      "start": 650,
+      "end": 920,
+      "lecture_material": "Bardina-labeled Cr1.1 omission and Speziale-labeled Cr1 mixed construction",
+      "extension": "Original boost derivation shows coefficient-one cancellation; modeled cross stress not exact simply because computable",
+      "construction": "Galilean central-moment proof and finite boost counterexample",
+      "chapter": "chapter-22-dynamic-fitting-and-scale-similarity.html"
+    },
+    {
+      "anchor": "mixed-energy",
+      "lesson": 73,
+      "start": 920,
+      "end": 1217,
+      "lecture_material": "Mixed viscosity contribution, cancellation and similarity/Smagorinsky comparison",
+      "extension": "PSD does not enforce forward transfer; mixed transfer may remain negative; no universal omission-only instability cause",
+      "construction": "Affine incompressible strain with signed similarity transfer and code",
+      "chapter": "chapter-22-dynamic-fitting-and-scale-similarity.html"
+    },
+    {
+      "anchor": "statistics",
+      "lesson": 74,
+      "start": 14,
+      "end": 210,
+      "lecture_material": "Resolved LES fluctuations, ensemble means, stresses and resolved/model energy postprocessing",
+      "extension": "General filter covariance partition retains mean-filter correction and filtered target; modeled equality is additional approximation",
+      "construction": "Exact derivation and linear-mean/random-constant counterexample",
+      "chapter": "chapter-23-les-numerics-and-hybrid-interfaces.html"
+    },
+    {
+      "anchor": "numerics",
+      "lesson": 74,
+      "start": 210,
+      "end": 420,
+      "lecture_material": "Central schemes, numerical diffusion and MILES idea",
+      "extension": "Time stability/dispersion matters, no universal scheme rule or all-upwind SGS equivalence; MILES caption contradiction resolved contextually",
+      "construction": "Exact Euler-centered/upwind and Crank-Nicolson mode gains, modified-equation viscosity",
+      "chapter": "chapter-23-les-numerics-and-hybrid-interfaces.html"
+    },
+    {
+      "anchor": "wall-resolution",
+      "lesson": 74,
+      "start": 420,
+      "end": 820,
+      "lecture_material": "Domain/startup/resolution, eta comparison, wall units, wall-resolved and wall-modeled choices",
+      "extension": "No universal two-eddy, eta multiplier, first-yplus sufficiency or obligatory wall resolution for every drag/thermal prediction",
+      "construction": "Observable/closure/mesh distinctions and boundary compatibility",
+      "chapter": "chapter-23-les-numerics-and-hybrid-interfaces.html"
+    },
+    {
+      "anchor": "cost",
+      "lesson": 74,
+      "start": 820,
+      "end": 990,
+      "lecture_material": "WM approximate Re and WR1.85point scaling versus DNS expense",
+      "extension": "Primary Reynolds definition, inlet scaling and nested-grid hypotheses retained; later revision bounded to abstract/introduction, no current hardware/performance guarantee",
+      "construction": "Wall point-density and delta^-2 integral exponents with alternative inlet families",
+      "chapter": "chapter-23-les-numerics-and-hybrid-interfaces.html"
+    },
+    {
+      "anchor": "hybrid",
+      "lesson": 74,
+      "start": 990,
+      "end": 1415,
+      "lecture_material": "RANS/LES equation similarities, zonal/embedded versus unified approaches, URANS and interface challenge",
+      "extension": "Separate grids not universal taxonomy, changing viscosity alone insufficient, unsteady mean differs from filtered realization",
+      "construction": "Represented-field and coupling inventory",
+      "chapter": "chapter-23-les-numerics-and-hybrid-interfaces.html"
+    },
+    {
+      "anchor": "interfaces",
+      "lesson": 74,
+      "start": 1415,
+      "end": 1605,
+      "lecture_material": "Synthetic RANS-to-LES fluctuations and LES-to-RANS energy feedback",
+      "extension": "One-point covariance not full divergence-free inflow or spectrum; scalar feedback factor not universal",
+      "construction": "Exact eight-sign covariance and conditional1.58333energy multiplier",
+      "chapter": "chapter-23-les-numerics-and-hybrid-interfaces.html"
+    },
+    {
+      "anchor": "des",
+      "lesson": 74,
+      "start": 1605,
+      "end": 1770,
+      "lecture_material": "DESintended attached-RANS/separated-LES role, common mesh and illustrative economy",
+      "extension": "Actual length mechanism as bounded primary extension, not all-above-layer LES or fixed cost ratio; no DECIDER validation claim",
+      "construction": "Grid-dependent minimum and premature stress-depletion mechanism",
+      "chapter": "chapter-23-les-numerics-and-hybrid-interfaces.html"
+    },
+    {
+      "anchor": "shielding",
+      "lesson": 74,
+      "start": 1770,
+      "end": 1896,
+      "lecture_material": "Undesired boundary-layer switching and delayed DES introduction/course close",
+      "extension": "Version-specific actual shielding functions and positive floor, no full SA/DDES solver or universal successful shielding",
+      "construction": "Limiting lengths, rd/fd values and required total-stress validation",
+      "chapter": "chapter-23-les-numerics-and-hybrid-interfaces.html"
+    },
+    {
+      "anchor": "case",
+      "lesson": null,
+      "video_id": "pm9YvDBLZaA",
+      "start": 179,
+      "end": 439,
+      "lecture_material": "Bluff-body/cavity reacting and nonreacting wake question, flow regime and hybrid alternative",
+      "extension": "Observable-specific choices, no case-specific accuracy/cost verdict; correct illustrative Mach arithmetic",
+      "construction": "Separate prediction target and physical regime",
+      "chapter": "chapter-24-live-session-model-choice-and-evidence.html"
+    },
+    {
+      "anchor": "density",
+      "lesson": null,
+      "video_id": "pm9YvDBLZaA",
+      "start": 268,
+      "end": 326,
+      "lecture_material": "Instructor bounds course incompressible scope and comments on subsonic versus higher-speed applications",
+      "extension": "Original correction: low Mach need not mean constant density under heat/composition change; Favre and thermal closure distinctions",
+      "construction": "Perfect-gas continuity identity and executed density-weighted two-state statistics",
+      "chapter": "chapter-24-live-session-model-choice-and-evidence.html"
+    },
+    {
+      "anchor": "sensitivity",
+      "lesson": null,
+      "video_id": "pm9YvDBLZaA",
+      "start": 590,
+      "end": 666,
+      "lecture_material": "After interruption, compare models without validation data and avoid arbitrary constant changes",
+      "extension": "Model spread does not bound common bias; nonreacting evidence not full reacting validation; hybrid suggestion conditional",
+      "construction": "Constructed shared-bias example and calibration/assessment separation",
+      "chapter": "chapter-24-live-session-model-choice-and-evidence.html"
+    },
+    {
+      "anchor": "calibration",
+      "lesson": null,
+      "video_id": "pm9YvDBLZaA",
+      "start": 847,
+      "end": 1438,
+      "lecture_material": "How experimental data calibrate constants, course purpose, machine-learning suggestion and broad robustness comments",
+      "extension": "No universal robustness/prevalence claims or confidence interpretation from recalled exponent spread",
+      "construction": "Full homogeneous decay coefficient relation and interval/sensitivity check",
+      "chapter": "chapter-24-live-session-model-choice-and-evidence.html"
+    },
+    {
+      "anchor": "transition",
+      "lesson": null,
+      "video_id": "pm9YvDBLZaA",
+      "start": 1438,
+      "end": 1960,
+      "lecture_material": "SST blending, transition versus impingement, shear-layer regimes and eddy-resolved cost discussion",
+      "extension": "Realizability cap not transition model; shear not guaranteed turbulent; no universal workstation/weather-model endorsement",
+      "construction": "Separate blending, physical regime and covariance-admissibility questions",
+      "chapter": "chapter-24-live-session-model-choice-and-evidence.html"
+    },
+    {
+      "anchor": "tensor-limit",
+      "lesson": null,
+      "video_id": "pm9YvDBLZaA",
+      "start": 2396,
+      "end": 2740,
+      "lecture_material": "Injector model choice cannot be answered from broad application name; steady/unsteady RANS terminology",
+      "extension": "Scalar stress structural limitation quantified and unsteady mean distinct from filtered realization",
+      "construction": "Shear-matched covariance irreducible normal-stress error",
+      "chapter": "chapter-24-live-session-model-choice-and-evidence.html"
+    },
+    {
+      "anchor": "nonlinear",
+      "lesson": null,
+      "video_id": "pm9YvDBLZaA",
+      "start": 2916,
+      "end": 3234,
+      "lecture_material": "Audience asks why no higher powers of strain, dimensional/numerical concerns and nonlinear-model mention",
+      "extension": "Constitutive linearity differs from PDE nonlinearity; original invariant tensor basis, no claim nonlinear models abandoned",
+      "construction": "Dimensionally consistent symmetric traceless quadratic basis and exact one-point fit",
+      "chapter": "chapter-24-live-session-model-choice-and-evidence.html"
+    },
+    {
+      "anchor": "implementation",
+      "lesson": null,
+      "video_id": "pm9YvDBLZaA",
+      "start": 2740,
+      "end": 2916,
+      "lecture_material": "Discretization method/conservation question, later implementation anecdote and tensor-reading pointer",
+      "extension": "Conservative differences/elements possible; incomplete shared plot not diagnosed; Panton only attributed pointer not read",
+      "construction": "Shared-flux and exact baseline epsilon-production cancellation with variant limits",
+      "chapter": "chapter-24-live-session-model-choice-and-evidence.html"
+    },
+    {
+      "anchor": "failed-case",
+      "lesson": null,
+      "video_id": "fZe2bxvPeh0",
+      "start": 174,
+      "end": 395,
+      "lecture_material": "Rich reacting case, convergence, underrelaxation and time-step questions; instructor bounds diagnosis",
+      "extension": "Separate possible failure mechanisms and physical versus algebraic time",
+      "construction": "Define relaxed fixed-point update and local linearization",
+      "chapter": "chapter-25-live-session-from-equation-to-evidence.html"
+    },
+    {
+      "anchor": "iteration",
+      "lesson": null,
+      "video_id": "fZe2bxvPeh0",
+      "start": 174,
+      "end": 395,
+      "lecture_material": "Same convergence discussion",
+      "extension": "Original scalar contraction and fully converged implicit-step example; no diagnosis of actual case",
+      "construction": "Exact error factors, residual versus update, continuous versus discrete solution",
+      "chapter": "chapter-25-live-session-from-equation-to-evidence.html"
+    },
+    {
+      "anchor": "learning-ladder",
+      "lesson": null,
+      "video_id": "fZe2bxvPeh0",
+      "start": 395,
+      "end": 950,
+      "lecture_material": "Existing OpenFOAM versus own code, projects and canonical flows",
+      "extension": "Correct broad DNS impossibility claim with actually inspected version4.1 dnsFoam source",
+      "construction": "Bounded solver capability versus adequate computation and reduced mean equation",
+      "chapter": "chapter-25-live-session-from-equation-to-evidence.html"
+    },
+    {
+      "anchor": "channel",
+      "lesson": null,
+      "video_id": "fZe2bxvPeh0",
+      "start": 950,
+      "end": 1429,
+      "lecture_material": "Start laminar fully developed channel, advance to closures and transport equations",
+      "extension": "Original complete conservative diffusion discretization and executed solution",
+      "construction": "Analytic channel, shared face fluxes, Thomas elimination and boundary half-cell balance",
+      "chapter": "chapter-25-live-session-from-equation-to-evidence.html"
+    },
+    {
+      "anchor": "verification",
+      "lesson": null,
+      "video_id": "fZe2bxvPeh0",
+      "start": 2633,
+      "end": 2905,
+      "lecture_material": "Final airfoil project, verification versus validation discussion",
+      "extension": "Correct overly broad exclusions of investigator-collected measurement and distinguish model sensitivity",
+      "construction": "Manufactured sine solution, actual second-order refinement and algebraic error separation",
+      "chapter": "chapter-25-live-session-from-equation-to-evidence.html"
+    },
+    {
+      "anchor": "coupling",
+      "lesson": null,
+      "video_id": "fZe2bxvPeh0",
+      "start": 950,
+      "end": 1429,
+      "lecture_material": "Mixing length to two-equation to stress models, shared transport structure and coupling",
+      "extension": "Conservative variable face coefficient and new source/admissibility obligations",
+      "construction": "Explicit hierarchy, no claim code implements full RANS",
+      "chapter": "chapter-25-live-session-from-equation-to-evidence.html"
+    },
+    {
+      "anchor": "guards",
+      "lesson": null,
+      "video_id": "fZe2bxvPeh0",
+      "start": 1819,
+      "end": 2007,
+      "lecture_material": "Negative-property anecdote and AI-assisted input checking question; later validation discussion",
+      "extension": "Molecular versus modeled viscosity and deterministic checks versus physical evidence",
+      "construction": "Input/error/provenance boundaries and own measurement versus own simulated reference",
+      "chapter": "chapter-25-live-session-from-equation-to-evidence.html"
+    },
+    {
+      "anchor": "applications",
+      "video_id": "Zhi8CJfB_sU",
+      "start": 0,
+      "end": 220,
+      "lecture_material": "Applications, theory/modeling and complementary role of experiments",
+      "extension": "Application-specific physical scope",
+      "construction": "Independent orientation prose",
+      "chapter": "book-overview.html"
+    },
+    {
+      "anchor": "prerequisites",
+      "video_id": "Zhi8CJfB_sU",
+      "start": 220,
+      "end": 401,
+      "lecture_material": "Audience, prerequisites, statistical models, walls, resolved eddies and hybrids",
+      "extension": "Book dependency links",
+      "construction": "Study route",
+      "chapter": "book-overview.html"
+    },
+    {
+      "anchor": "outcomes",
+      "video_id": "Zhi8CJfB_sU",
+      "start": 401,
+      "end": 489,
+      "lecture_material": "Reference families and three intended outcomes",
+      "extension": "Verification/statistical/physical evidence distinctions",
+      "construction": "Independent learning guidance",
+      "chapter": "book-overview.html"
+    },
+    {
+      "anchor": "source-scope",
+      "video_id": "Zhi8CJfB_sU",
+      "start": 489,
+      "end": 535,
+      "lecture_material": "Closing teacher acknowledgment and welcome",
+      "extension": "Honest ASR and attribution limits",
+      "construction": "Nontechnical names/verse not quoted without verification",
+      "chapter": "book-overview.html"
+    }
+  ]
+}

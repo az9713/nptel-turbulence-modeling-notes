@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="dc16ad13bbd91b78fd1518f10cc2ea3494acf4e6ab23b0aa41cb6f9210282003">
+<title>21. Wall limits, energy memory and test filtering · Turbulence Modeling</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{pageReady:()=>MathJax.startup.defaultPageReady().then(()=>{document.documentElement.dataset.mathReady='true';})}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Turbulence Modeling · NPTEL IIT Madras</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="book-overview.html">Study route</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc"><h2>On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>21. Wall limits, energy memory and test filtering</h1>
+<p class="lead">A static strain-based viscosity reacts immediately to the resolved gradient, including a laminar wall gradient. An energy-transport model adds memory of unresolved motion, while a second filtering level supplies information about scale-dependent stress. These are distinct extensions: wall damping changes a local length or coefficient, an SGS energy equation evolves a new variable, and the Germano identity relates stresses exactly before any dynamic coefficient is inferred.</p>
+<div class="learning-map"><strong>Three repairs with different assumptions.</strong> First locate the wall difficulty in the static model and compare two explicit corrections. Next derive the dimensions, energy exchange and homogeneous dynamics of a one-equation SGS closure. Finally introduce a test filter and derive an identity whose computable stress will determine a coefficient in the following chapter. The numerical work separates exact operator algebra from a modeled energy ODE.</div>
+<p class="source-note">Complete captions70–71 were read. Lesson70 covers near-wall modifications and SGS-energy transport; despite its playlist title, lesson71 begins the dynamic model and derives its two-level stress identity. This grouping follows the actual teaching. The rewrite distinguishes filter length from cell volume, damping viscosity from damping its length, SGS transfer from molecular loss, and a calculated dynamic coefficient from a universal fixed-constant replacement.</p>
+
+<h2 id="wall" data-video="d4OENIPqf08" data-start="15" data-end="270">21.1 A large wall gradient is not unresolved turbulence <a class="timestamp" href="https://www.youtube.com/watch?v=d4OENIPqf08&amp;t=15">L70 · 00:15</a></h2>
+<p>Retain constant-density incompressible flow and the spatial filtering conventions of chapters19–20. Let \(\bar S_{ij}\) be resolved symmetric strain, \(|\bar S|=\sqrt{2\bar S : \bar S}\), \(\Delta_g&gt;0\) a nominal grid-filter length, and \(\nu_s=(C_s\Delta_g)^2|\bar S|\) the static Smagorinsky viscosity. Near a regular no-slip wall the tangential gradient can be large, even when turbulent fluctuations are strongly constrained. The problem is not that a smooth gradient must diverge at the wall; it is that a finite large gradient combined with a finite model length can retain a substantial subgrid viscosity where the intended unresolved fluctuations should be restricted.</p>
+<p>The actual wall limit of a filtered field also depends on whether its kernel shrinks toward the wall, is truncated and renormalized, or is replaced by a wall model. One should not impose the physical unfiltered Taylor series on every finite-width filtered variable without checking that definition. In wall-resolved practice, local corrections attempt to reduce excessive modeled transport as distance y decreases. Wall-modeled LES instead delegates an unresolved near-wall region to a boundary model; damping alone does not derive that wall model.</p>
+<p>For the recurring channel, define friction velocity \(u_\tau=\sqrt{|\tau_w|/\rho}\), molecular viscosity \(\nu\), and \(y^+=u_\tau y/\nu\). The length \(\Delta_g=(\Delta_x\Delta_y\Delta_z)^{1/3}\) can remain relatively large when the wall-normal cell is thin but its two tangential dimensions are long. It is not equivalent to the wall distance, and the cell volume \(\Delta_x\Delta_y\Delta_z\) has the wrong dimensions to be compared directly with y.</p>
+
+<h2 id="damping" data-video="d4OENIPqf08" data-start="270" data-end="502">21.2 State exactly which quantity is damped <a class="timestamp" href="https://www.youtube.com/watch?v=d4OENIPqf08&amp;t=270">L70 · 04:30</a></h2>
+<p>The lecture proposes a van-Driest-type factor \(f(y^+)=1-\exp(-y^+/26)\). This is a dimensionless function with f0at the wall and fapproaching1farther away. But writing the factor alone does not specify a complete model. Two distinct prescriptions are
+\(\nu_s^{(a)}=f(C_s\Delta_g)^2|\bar S|\) and
+\(\nu_s^{(b)}=(fC_s\Delta_g)^2|\bar S|\).
+The first damps viscosity; the second damps its length. Their factors are f and f². For small yplus, \(f=y^+/26+O((y^+)^2)\), so under fixed finite grid length and finite nonzero wall strain their leading viscosity powers differ.</p>
+<p>A length limiter likewise needs an unambiguous location. The source's stated replacement of Delta corresponds to
+\(\ell_a=C_s\min(\Delta_g,\kappa y)\), whereas a mixing-length cap can instead be
+\(\ell_b=\min(C_s\Delta_g,\kappa y)\), with \(\kappa=0.41\). Both vanish linearly in y in their wall-limited branch, but their limiting viscosities \(\ell^2|\bar S|\) differ by Cs². Neither should be silently substituted for the other. A scalar cutoff with a correct vanishing limit is not a proof of correct component stresses, cubic wall asymptotics or transition prediction.</p>
+<p>At \(\nu=1.5\times10^{-5}\,\mathrm{m^2/s}\), \(u_\tau=0.5\,\mathrm{m/s}\), \(y=0.1\,\mathrm{mm}\), \(\Delta_g=2\,\mathrm{mm}\), \(C_s=0.1\), and \(|\bar S|=100\,\mathrm{s^{-1}}\), \(y^+=3.333333\) and f0.12032709. The direct-viscosity and length-damped versions give \(4.81308\times10^{-7}\) and \(5.79144\times10^{-8}\,\mathrm{m^2/s}\). The two limited lengths are4.1and41micrometers, giving viscosities \(1.681\times10^{-9}\) and \(1.681\times10^{-7}\). These differences arise solely from formulas at one state, before feedback on the resolved flow. They show why a code's actual convention matters.</p>
+
+<h2 id="energy-model" data-video="d4OENIPqf08" data-start="502" data-end="750">21.3 Evolving a subgrid energy adds a different variable <a class="timestamp" href="https://www.youtube.com/watch?v=d4OENIPqf08&amp;t=502">L70 · 08:22</a></h2>
+<p>Let \(q=k_s\ge0\) denote modeled SGS kinetic energy per mass, with units \(\mathrm{m^2/s^2}\). A representative incompressible one-equation family is</p>
+<div class="equation">\[
+\partial_tq+\bar u_j\partial_jq
+=\partial_j\left[\left(\nu+\frac{\nu_s}{\sigma_q}\right)\partial_jq\right]
++P_s-D_s,\qquad
+\nu_s=C_k\Delta_g\sqrt q,\qquad
+D_s=C_e\frac{q^{3/2}}{\Delta_g}.
+\tag{21.1}
+\]</div>
+<p>Here \(\sigma_q&gt;0,C_k&gt;0,C_e&gt;0\) are specified closure coefficients. The lecture uses unit diffusion divisor and \(C_e=1\), with an indicative Ckrange0.05–0.1. We use \(C_k=0.094,C_e=1,\sigma_q=1\) for our restricted examples, not as a universal package of implementation defaults. The resolved velocity advects q. Its initial and boundary conditions must be supplied in addition to the velocity data; a static viscosity model did not need this transported state.</p>
+<p>Multiplying a length by sqrtq gives viscosity units. The modeled destruction has dimensions \((\mathrm{m^2/s^2})^{3/2}/\mathrm m=\mathrm{m^2/s^3}\), the same as the qtime derivative. Diffusion, production and destruction remain closures; adding a transport equation does not make qexact. In particular, an evolved qmodel is an alternative viscosity construction, not a requirement that every algebraic Smagorinsky implementation simultaneously solve an independent qequation and also keep its original strain formula.</p>
+<p>The <a href="https://cpp.openfoam.org/v4/kEqn_8C_source.html">actual Foundation4.1 kEqn implementation</a> updates viscosity with CkDelta sqrtk, constructs modeled destruction with Ce k sqrtk/Delta, and evolves production, diffusion and destruction. Its Ckdefault is0.094; inherited coefficients and extra compressible or source terms are not all identified with our incompressible illustrative equation. We inspected those functions, rather than running the CFD implementation. They establish the named architecture, not empirical accuracy for this channel.</p>
+
+<h2 id="transfer" data-video="d4OENIPqf08" data-start="750" data-end="1101">21.4 Transfer into q is not the final molecular loss <a class="timestamp" href="https://www.youtube.com/watch?v=d4OENIPqf08&amp;t=750">L70 · 12:30</a></h2>
+<p>Use the same stress in resolved momentum and qproduction. With \(\tau^d=-2\nu_s\bar S\) and incompressibility, set \(P_s=-\tau:\bar S=2\nu_s\bar S : \bar S=\nu_s|\bar S|^2\). This is exactly the modeled Pi appearing as a loss in the resolved-energy budget. Matching these terms gives inter-budget energy cancellation without requiring a Kolmogorov equilibrium hypothesis. It follows from using the same modeled stress consistently.</p>
+<p>In a homogeneous budget with spatial transport removed, write \(\dot K_r=-P_s-\epsilon_r+\mathcal W\) and \(\dot q=P_s-D_s\), where \(\epsilon_r\) is resolved molecular loss and \(\mathcal W\) is specified input. Then \(\dot K_r+\dot q=\mathcal W-\epsilon_r-D_s\). Transfer cancels; destruction does not. With the code's positive q0.0001state, \(P_s=0.0188\) and \(D_s=0.0005\) in \(\mathrm{m^2/s^3}\). Their sum-of-budgets contribution is−0.0005, not−0.0188. Deleting energy once from the resolved equation and again as an unrelated extra transfer sink would double count it.</p>
+<p>At adequate LES scale separation, unresolved destruction may dominate molecular losses. That useful approximation does not make \(D_s\) identically the entire physical dissipation at every resolution. The resolved viscous term remains present. In an exact filtered energy budget, subfilter transport and a residual molecular-loss contribution appear as well. Equation(21.1) models those effects rather than reproducing all exact terms. Local equilibrium \(P_s\approx D_s\) is another approximation, valid only when qstorage and net transport can be neglected. The lecture's use of the word epsilon at both the cutoff and the final viscous range must be read with these distinct roles in mind.</p>
+<p>For fixed strain magnitude \(G=|\bar S|\), constant Delta and no transport, positive equilibrium gives \(C_k\Delta_g\sqrt q\,G^2=C_eq^{3/2}/\Delta_g\). Dividing by sqrtq yields \(q_{\rm eq}=(C_k/C_e)\Delta_g^2G^2\). Substitution into viscosity gives
+\(\nu_{s,\rm eq}=C_k^{3/2}C_e^{-1/2}\Delta_g^2G\).
+It matches static Smagorinsky only if \(C_s=C_k^{3/4}C_e^{-1/4}\). For our coefficients this is0.16976411. Off equilibrium the transported model has memory, so this algebraic equivalence does not persist.</p>
+
+<h2 id="ode-check" data-video="d4OENIPqf08" data-start="502" data-end="1101">21.5 A complete homogeneous check of that memory <a class="timestamp" href="https://www.youtube.com/watch?v=d4OENIPqf08&amp;t=502">L70 · 08:22</a></h2>
+<p>Keep G100/s and Delta0.002m externally prescribed, start with q0.0001, and solve
+\(\dot q=C_k\Delta_gG^2\sqrt q-(C_e/\Delta_g)q^{3/2}\).
+For qpositive, put \(r=\sqrt q\), so \(2r\dot r=C_k\Delta_gG^2r-(C_e/\Delta_g)r^3\). Dividing by2r gives a Riccati equation \(\dot r=(a-br^2)/2\), with \(a=C_k\Delta_gG^2\), \(b=C_e/\Delta_g\). If \(0&lt;r_0&lt;r_{\rm eq}=\sqrt{a/b}\), its exact solution is</p>
+<div class="equation">\[
+r(t)=r_{\rm eq}\tanh\left[
+\frac{\sqrt{ab}}2t+\operatorname{atanh}(r_0/r_{\rm eq})\right],
+\qquad q(t)=r(t)^2.
+\tag{21.2}
+\]</div>
+<p>The exact positive equilibrium is q0.00376. At t0.1s, RK4with20and40steps gives0.0032877443and0.0032877768. Errors against(21.2) decrease by13.4914in this finite-step comparison, approaching fourth-order behavior under refinement. This is a source-ODE check at fixed supplied strain, not an independently evolving channel momentum solution or a general positivity theorem for RK4. At q0the square-root source is not Lipschitz; the positive-initial-value derivation should not be used to assert unique spontaneous generation from a zero state.</p>
+<p>If strain is switched off, the positive equation becomes \(\dot q=-C_eq^{3/2}/\Delta_g\). Integrating \(d(q^{-1/2})/dt=C_e/(2\Delta_g)\) yields
+\(q(t)=[q(0)^{-1/2}+C_et/(2\Delta_g)]^{-2}\).
+Starting at the prior equilibrium, after0.05s qremains0.0012049463and viscosity \(6.52592\times10^{-6}\,\mathrm{m^2/s}\). The instantaneous static strain formula gives zero viscosity when G0. This is energy memory. A frozen explicit destruction update instead requires step \(\Delta t\le\Delta_g/(C_e\sqrt q)\) for nonnegative q; continuity of the exact solution does not remove numerical restrictions.</p>
+
+<h2 id="test-filter" data-video="ofYq3-Ls_-o" data-start="14" data-end="370">21.6 A second filter supplies a measurable stress <a class="timestamp" href="https://www.youtube.com/watch?v=ofYq3-Ls_-o&amp;t=14">L71 · 00:14</a></h2>
+<p>Lesson71now turns to dynamically inferring a coefficient. Let Fbe the grid-level operator and Hthe additional test filter; write \(v_i=Fu_i\) and \(\widehat v_i=Hv_i=HFu_i\). A hat means the test operation, not a Fourier transform in this chapter. These symbols name operations in sequence. Choosing a nominal test width around twice the grid width is common in the lecture; it is a design choice, not part of the algebraic identity.</p>
+<p>Composing filters requires the family convention in chapter20. If grid and additional Gaussian widths are Delta and2Delta, the combined width is sqrt5Delta, not2Delta. Nested sharp spectral projectors can instead produce precisely the coarser retained set. A dynamic implementation must specify whether its quoted test scale describes the additional operation or the composite level. Boundary truncation, interpolation and nonuniform mesh treatment are also part of H.</p>
+<p>Dynamic means a coefficient is estimated from evolving resolved information rather than assigned one fixed flow-wide value. It does not mean the turbulence model is fully known or has no user choices: the test filter, averaging, regularization and clipping still matter. The lecture also mentions WALEand VMS. These names do not imply every such model uses a dynamically fitted coefficient. The <a href="https://cpp.openfoam.org/v4/WALE_8H_source.html">versioned WALE declaration</a> supplies fixed model coefficients, and its <a href="https://cpp.openfoam.org/v4/WALE_8C_source.html">actual implementation</a> uses a local velocity-gradient construction. That is a bounded distinction, not a full WALEderivation or VMSsurvey.</p>
+
+<h2 id="identity" data-video="ofYq3-Ls_-o" data-start="370" data-end="990">21.7 Derive the identity before modeling either stress <a class="timestamp" href="https://www.youtube.com/watch?v=ofYq3-Ls_-o&amp;t=370">L71 · 06:10</a></h2>
+<p>The grid-level stress is \(\tau_{ij}=F(u_i u_j)-v_i v_j\). Define the stress at the composite level as
+\(T_{ij}=HF(u_i u_j)-\widehat v_i\widehat v_j\).
+Both involve the unavailable unfiltered product. Apply the linear operator Hto tau:
+\(H\tau_{ij}=HF(u_i u_j)-H(v_i v_j)\).
+Subtract it from T. The unavailable term cancels exactly, giving</p>
+<div class="equation">\[
+L_{ij}=T_{ij}-H\tau_{ij}
+=H(v_i v_j)-(Hv_i)(Hv_j).
+\tag{21.3}
+\]</div>
+<p>This is the two-level Germano identity. Its right side is computable from the resolved field and the specified test filter. No isotropy, eddy viscosity, equilibrium or equality of model coefficients was required. For this algebra one does not even need Fand Hto commute with each other; keep the composite order HFconsistent. Deriving standard evolution equations at both levels separately does require the relevant differentiation-commutation assumptions. Mixing the two questions hides an unnecessary restriction in the identity and a necessary one in the PDEs.</p>
+<p>For ideal nested sharp cutoffs, Lcan be interpreted through the newly removed band. For general smooth filters its central-moment content is not a literal stress of one clean disjoint interval of eddy sizes. It remains symmetric, and if Hhas nonnegative normalized weights then \(a_iL_{ij}a_j\ge0\) at each point by the same variance argument applied to v. Signed test kernels do not guarantee that property. Its dimension is squared velocity, not pressure until multiplied by density.</p>
+<p>The <a href="https://www.ams.jhu.edu/~eyink/Turbulence/classics/Germano92.pdf">inspected two-level discussion, printed329–330</a>, introduces the generalized stresses and exactly this relation between levels. We use the identity as a constraint that a proposed model should approximately reproduce. It does not imply \(T=\tau\), does not solve six unknown stress components uniquely, and does not guarantee that a single scalar coefficient fits all tensor directions.</p>
+
+<h2 id="identity-check" data-video="ofYq3-Ls_-o" data-start="990" data-end="1363">21.8 What the resolved identity can and cannot determine <a class="timestamp" href="https://www.youtube.com/watch?v=ofYq3-Ls_-o&amp;t=990">L71 · 16:30</a></h2>
+<p>The program constructs32periodic three-component velocity samples, applies two specified normalized three-point filters componentwise, and forms all nine stress entries. The maximum residual of \(T-H\tau-L\) is \(4.718\times10^{-16}\), consistent with floating-point roundoff. This validates an exact finite-array identity under those operators. It supplies no evidence that an SGS viscosity has the correct value, that these samples are a Navier–Stokes solution, or that the chosen filters correspond to a particular commercial solver.</p>
+<p>To infer a dynamic coefficient, one next inserts model forms for tau and Tinto(21.3), makes assumptions about variation of the coefficient under H, and chooses a way to fit the generally overdetermined tensor relation. Those are closure choices added after the identity. The next chapter develops the least-squares contraction, vanishing-denominator cases and the implications of negative coefficients. The exact cancellation here is the reason that procedure can use resolved data.</p>
+<pre data-run="code/ch21_energy_and_test_filter.py"><code>&quot;&quot;&quot;Wall variants, homogeneous SGS energy and exact two-filter identity.&quot;&quot;&quot;
+from math import atanh, exp, sin, cos, pi, sqrt, tanh
+
+nu, ut, y, delta, cs, shear, kappa = 1.5e-5, .5, .0001, .002, .1, 100., .41
+yp = ut*y/nu
+f = 1-exp(-yp/26)
+base = (cs*delta)**2*shear
+print(f&quot;wall coordinate and damping factor: {yp:.8f}, {f:.8f}&quot;)
+print(f&quot;nu_s variants direct damping, length damping: {f*base:.10e}, {f*f*base:.10e}&quot;)
+lecture_l = cs*min(delta,kappa*y)
+mixing_l = min(cs*delta,kappa*y)
+print(f&quot;wall-limited lengths lecture-Delta and mixing-length m: {lecture_l:.10e}, {mixing_l:.10e}&quot;)
+print(f&quot;corresponding nu_s: {lecture_l**2*shear:.10e}, {mixing_l**2*shear:.10e}&quot;)
+
+ck, ce, q0, end = .094, 1., .0001, .1
+qeq = ck/ce*delta**2*shear**2
+req = sqrt(qeq)
+rate = sqrt(ck*ce)*abs(shear)/2
+exact = (req*tanh(rate*end+atanh(sqrt(q0)/req)))**2
+print(f&quot;fixed-shear SGS energy equilibrium: {qeq:.10f}&quot;)
+print(f&quot;equivalent equilibrium Cs: {ck**.75/ce**.25:.8f}&quot;)
+def rhs(q):
+    return ck*delta*sqrt(q)*shear**2-ce*q**1.5/delta
+errors=[]
+for steps in (20,40):
+    q, h = q0,end/steps
+    for _ in range(steps):
+        a=rhs(q); b=rhs(q+h*a/2); c=rhs(q+h*b/2); d=rhs(q+h*c)
+        q+=h*(a+2*b+2*c+d)/6
+    errors.append(abs(q-exact))
+    print(f&quot;SGS energy RK4 steps={steps}: q={q:.10f}, error={errors[-1]:.8e}&quot;)
+print(f&quot;SGS energy RK4 refinement ratio: {errors[0]/errors[1]:.8f}&quot;)
+assert errors[0]/errors[1] &gt; 12
+
+tdecay=.05
+qdecay = (qeq**-.5+ce*tdecay/(2*delta))**-2
+print(f&quot;energy after shear-off .05s: {qdecay:.10f}; retained nu_s={ck*delta*sqrt(qdecay):.10e}&quot;)
+production=ck*delta*sqrt(q0)*shear**2
+destruction=ce*q0**1.5/delta
+print(f&quot;instantaneous Pi, modeled destruction, sum-of-budgets sink: {production:.8f}, {destruction:.8f}, {-destruction:.8f}&quot;)
+
+# Component-wise periodic linear filters with normalized positive weights.
+n=32
+u=[[sin(2*pi*j/n)+.2*cos(6*pi*j/n), cos(4*pi*j/n), .3*sin(8*pi*j/n)] for j in range(n)]
+def filt(values, weights):
+    return [weights[0]*values[(j-1)%n]+weights[1]*values[j]+weights[2]*values[(j+1)%n] for j in range(n)]
+F=lambda a:filt(a,(.25,.5,.25))
+H=lambda a:filt(a,(.125,.75,.125))
+v=[F([row[i] for row in u]) for i in range(3)]
+hv=[H(v[i]) for i in range(3)]
+maximum=0.
+for i in range(3):
+    for j in range(3):
+        fprod=F([row[i]*row[j] for row in u])
+        tau=[fprod[m]-v[i][m]*v[j][m] for m in range(n)]
+        htau=H(tau)
+        hprod=H(fprod)
+        hvprod=H([v[i][m]*v[j][m] for m in range(n)])
+        for m in range(n):
+            total=hprod[m]-hv[i][m]*hv[j][m]
+            leonard=hvprod[m]-hv[i][m]*hv[j][m]
+            maximum=max(maximum,abs(total-htau[m]-leonard))
+print(f&quot;all-component Germano identity maximum residual: {maximum:.3e}&quot;)
+assert maximum &lt; 1e-12
+</code></pre>
+<pre class="output">wall coordinate and damping factor: 3.33333333, 0.12032709
+nu_s variants direct damping, length damping: 4.8130834036e-07, 5.7914429625e-08
+wall-limited lengths lecture-Delta and mixing-length m: 4.1000000000e-06, 4.1000000000e-05
+corresponding nu_s: 1.6810000000e-09, 1.6810000000e-07
+fixed-shear SGS energy equilibrium: 0.0037600000
+equivalent equilibrium Cs: 0.16976411
+SGS energy RK4 steps=20: q=0.0032877443, error=3.51230208e-08
+SGS energy RK4 steps=40: q=0.0032877768, error=2.60336555e-09
+SGS energy RK4 refinement ratio: 13.49139034
+energy after shear-off .05s: 0.0012049463; retained nu_s=6.5259192897e-06
+instantaneous Pi, modeled destruction, sum-of-budgets sink: 0.01880000, 0.00050000, -0.00050000
+all-component Germano identity maximum residual: 4.718e-16
+</pre>
+
+<h2 id="exercises">21.9 Exercises with complete solutions</h2>
+<details><summary>1. Compare viscosity damping with length damping asymptotically.</summary><p>With fixed Delta and finite nonzero G, the undamped viscosity has a finite nonzero leading value. Expanding f=1−exp(−yplus/26) gives f=yplus/26+O(yplus²). Direct multiplication therefore gives viscosity ordery, while multiplication of the length before squaring gives ordery². These statements assume fixed friction velocity/nu and specified filter geometry. They do not prove the exact SGS tensor's physical wall power or determine a unique damping convention from a standalone function.</p></details>
+<details><summary>2. Quantify the two length-limit conventions.</summary><p>In the wall branch, \(\ell_a=C_s\kappa y\) and \(\ell_b=\kappa y\). Thus \(\ell_a/\ell_b=C_s\), and their viscosity ratio at the same strain is Cs². For Cs0.1this is0.01. At y1e−4m,kappa0.41, lengths are4.1e−6and4.1e−5m. Their squared lengths times G100give1.681e−9and1.681e−7m²/s. Comparing a volume directly with kappay would be dimensionally invalid.</p></details>
+<details><summary>3. Derive the equilibrium coefficient relation.</summary><p>Set production \(C_k\Delta\sqrt q G²\) equal destruction \(C_eq^{3/2}/\Delta\) at positive q. Cancel sqrtqto obtain qeq=(Ck/Ce)Delta²G². Then nu_s=CkDelta sqrtqeq=Ck^1.5Ce^−.5Delta²G. Comparing with Cs²Delta²Ggives Cs=Ck^.75Ce^−.25for nonnegative Cs. This is a positive fixed-strain local-equilibrium result, not an identity for a transported non-equilibrium solution.</p></details>
+<details><summary>4. Prove the homogeneous positive-energy solution.</summary><p>For q&gt;0put r=sqrtq. The equation becomes r'=(a−br²)/2. Let z=r/reqwith req=sqrt(a/b). Then z'=(sqrt(ab)/2)(1−z²). Integrating gives atanhz=atanhz0+sqrt(ab)t/2when0&lt;z0&lt;1, hence(21.2). Initial values above equilibrium use the corresponding coth branch, while equilibrium stays constant. The zero initial state is outside the division step and needs separate treatment; no unique growing branch from zero has been proved.</p></details>
+<details><summary>5. Distinguish energy transfer, destruction and time-step positivity.</summary><p>The resolved equation loses Psand qgains Ps, so their sum cancels exactly if the same modeled stress is used. The modeled destruction Dsremains a loss from the total represented energy. A frozen explicit source-only qstep gives qnew=q[1−dt Ce sqrtq/Delta], nonnegative for dt≤Delta/(Ce sqrtq). The exact positive decay instead follows the inverse-square law and never crosses zero at finite time. This restricted step bound says nothing sufficient about advection, diffusion or coupled momentum stability.</p></details>
+<details><summary>6. Derive the Germano identity with ordered operators.</summary><p>Write T=HF(uiuj)−H(Fui)H(Fuj) and Htau=HF(uiuj)−H[(Fui)(Fuj)]. Subtracting cancels the identical first terms. What remains is L=H[(Fui)(Fuj)]−H(Fui)H(Fuj). Linearity of Hwas used; no replacement of HFby FHwas made, so inter-filter commutation is unnecessary. Evolution equations still need their separate derivative assumptions. Changing the filter order in only one term destroys this exact cancellation.</p></details>
+<details><summary>7. Is the test-level width always twice the grid width?</summary><p>No. A chosen additional test operator of Gaussian width2Delta combines with a grid Gaussian of widthDelta to give sqrt5Delta. To target a composite Gaussian width2Delta, choose the additional widthsqrt3Delta. For nested cutoff projectors, the composite is the coarser projection. For repeated boxes, the composite is not an identical box at any simply renamed width. The identity uses actual operators and remains true; only an approximate modeled scale relation needs consistent effective widths.</p></details>
+<details><summary>8. Does computing L remove all modeling choices?</summary><p>Lcan be obtained directly from resolved data and H, but T and Htauare still unknown individually in an LES. Choosing a scalar eddy-viscosity model imposes a particular tensor structure and scale dependence; moving its coefficient through Hadds another approximation. A fit needs a norm or contraction, may have an ill-conditioned denominator, and can yield a negative coefficient. Averaging and limiting are further choices. Thus the exact identity supplies information, not a universal closure or a proof that every model labeled wall-adapting is dynamic.</p></details>
+<p class="closing">Energy transport and test filtering add different kinds of information: one carries a modeled state through time, the other compares the resolved field across spatial representations. Keeping their exact identities separate from their constitutive assumptions makes the dynamic model's next algebra assessable.</p>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn"><a rel="prev" href="chapter-20-filter-families-and-subgrid-viscosity.html">Previous chapter</a><a href="index.html">Index</a><a rel="next" href="chapter-22-dynamic-fitting-and-scale-similarity.html">Next chapter</a></nav></main></div><footer class="site-footer">Independent study edition. Original exposition follows Prof. Vagesh D. Narasimhamurthy's course. Source and review limitations are recorded separately.</footer></body></html>

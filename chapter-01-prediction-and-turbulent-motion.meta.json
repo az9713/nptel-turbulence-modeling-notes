@@ -1,0 +1,156 @@
+{
+  "chapter": 1,
+  "title": "1. Prediction, uncertainty, and turbulent motion",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "3d50593553155bf87cd9a9ce79128c469aed2b2fd8fb34790907f1ede582861d",
+  "recordings": [
+    {
+      "playlist_position": 63,
+      "video_id": "X1ntzXAuX80",
+      "title": "1. Introduction to turbulence",
+      "lesson": 1,
+      "duration_seconds": 1869,
+      "url": "https://www.youtube.com/watch?v=X1ntzXAuX80",
+      "chapter": 1,
+      "disposition": "Included in chapter 01; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 1,
+        "video_id": "X1ntzXAuX80",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec01.vtt",
+        "path": "lecture-01.vtt",
+        "sha256": "b45180a9af68a8a2692e7b4b7b9679d4af987281ed69559be8dab1e09d2c8d08",
+        "segments": 294,
+        "last_cue_seconds": 1868.6,
+        "recording_duration": 1869,
+        "coverage_ratio": 0.9997859818084537,
+        "status": "acquired"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "prediction",
+      "lesson": 1,
+      "start": 15,
+      "end": 268,
+      "lecture_material": "Instructor, applications, prerequisites, reference families and course scope",
+      "extension": "Engineering quantity and mechanical power contract",
+      "construction": "Pressure-driven air-channel design target"
+    },
+    {
+      "anchor": "uncertainty",
+      "lesson": 1,
+      "start": 270,
+      "end": 602,
+      "lecture_material": "Prediction uncertainty, model disagreement and solver disagreement",
+      "extension": "NASA verification-versus-validation distinction",
+      "construction": "Synthetic mesh-error and closure-error separation"
+    },
+    {
+      "anchor": "resolution",
+      "lesson": 1,
+      "start": 602,
+      "end": 738,
+      "lecture_material": "DNS, LES, hybrid and RANS cost/accuracy discussion; no universal model",
+      "extension": "Separate resolved degrees of freedom, statistical estimation and modeling assumptions",
+      "construction": "Task-based comparison table and limits"
+    },
+    {
+      "anchor": "wellposedness",
+      "lesson": 1,
+      "start": 738,
+      "end": 1138,
+      "lecture_material": "Historical perspectives, scale cascade, computation and Clay problem",
+      "extension": "Fefferman pp.1–3: global smoothness problem and distinction from sensitivity",
+      "construction": "Deterministic sensitivity example; historical humor omitted without claiming quotation verification"
+    },
+    {
+      "anchor": "characteristics",
+      "lesson": 1,
+      "start": 1138,
+      "end": 1501,
+      "lecture_material": "Irregular signals versus physical turbulence, eddies, diffusion, dissipation, anisotropy and vorticity",
+      "extension": "Local definitions and restrictions; isotropy not excluded, vorticity not sufficient",
+      "construction": "Covariance-direction and scalar-mixing examples"
+    },
+    {
+      "anchor": "repetition",
+      "lesson": 1,
+      "start": 1501,
+      "end": 1869,
+      "lecture_material": "Two dye drops, differing preparations, repeated simulations with distinct initial conditions",
+      "extension": "Distinguish same-data uniqueness from preparation variation and ensemble reproducibility",
+      "construction": "Energy-decay toy model, sensitivity and sampling checks"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://www.grc.nasa.gov/www/wind/valid/tutorial/verassess.html",
+      "title": "NASA NPARC: Verification Assessment",
+      "supports": "Numerical implementation/solution assessment distinguished from model validation",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://www.grc.nasa.gov/www/wind/valid/tutorial/valassess.html",
+      "title": "NASA NPARC: Validation Assessment",
+      "supports": "Physical comparison and validation scope",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf",
+      "title": "Fefferman: Existence and Smoothness of the Navier–Stokes Equation",
+      "supports": "Pages 1–3: exact three-dimensional domains, smooth data and global alternatives; not a demand for an elementary explicit formula",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://tmbwg.github.io/turbmodels/",
+      "title": "NASA/TMBWG Turbulence Modeling Resource",
+      "supports": "Purpose and limitations of verification and fundamental validation cases",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "article_words_including_math_code": 3420,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "worked_solutions": 5,
+  "executable_listings": 1,
+  "source_reading": "Complete normalized caption text read sequentially before drafting",
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "3d50593553155bf87cd9a9ce79128c469aed2b2fd8fb34790907f1ede582861d",
+    "rounds": [
+      {
+        "round": 1,
+        "report_identifier": "ch01-r1.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "3d50593553155bf87cd9a9ce79128c469aed2b2fd8fb34790907f1ede582861d",
+        "reviewer_id": "independent-course-peer",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      },
+      {
+        "round": 2,
+        "report_identifier": "ch01-r2.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "3d50593553155bf87cd9a9ce79128c469aed2b2fd8fb34790907f1ede582861d",
+        "reviewer_id": "lead-coordinator",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      }
+    ],
+    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+  },
+  "limitations": [
+    "No numeric graph values inferred from speech",
+    "No independent verification of historical quotations; nontechnical humor omitted",
+    "No comprehensive audiovisual inspection",
+    "Physical model adequacy not inferred from manufactured numerical checks"
+  ]
+}

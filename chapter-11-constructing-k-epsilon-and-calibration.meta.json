@@ -1,0 +1,237 @@
+{
+  "chapter": 11,
+  "title": "11. Constructing \\(k\\)–\\(\\epsilon\\) and testing calibration",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "b82749ed8fcc96a38c14a93458e9e99cc36999c9ba9e95058c32ae58a7440321",
+  "recordings": [
+    {
+      "playlist_position": 11,
+      "video_id": "-deakDp5mFg",
+      "title": "35. Standard k-ε model and the model constants - II",
+      "lesson": 35,
+      "duration_seconds": 1068,
+      "url": "https://www.youtube.com/watch?v=-deakDp5mFg",
+      "chapter": 11,
+      "disposition": "Included in chapter 11; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 35,
+        "video_id": "-deakDp5mFg",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec35.vtt",
+        "path": "lecture-35.vtt",
+        "sha256": "25bbe73ff606f8deb1e038d88b4c12d66a85895dc67ae194ab648040bcbfa2ba",
+        "segments": 105,
+        "last_cue_seconds": 1067.72,
+        "recording_duration": 1068,
+        "coverage_ratio": 0.9997378277153558,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 12,
+      "video_id": "beHBzwsCsEs",
+      "title": "34. Standard k-ε model and the model constants - I",
+      "lesson": 34,
+      "duration_seconds": 1581,
+      "url": "https://www.youtube.com/watch?v=beHBzwsCsEs",
+      "chapter": 11,
+      "disposition": "Included in chapter 11; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 34,
+        "video_id": "beHBzwsCsEs",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec34.vtt",
+        "path": "lecture-34.vtt",
+        "sha256": "e1caacbca760b3b1667d6229bdef52c8ad9e5d27e1e3fef139412c2909a68339",
+        "segments": 169,
+        "last_cue_seconds": 1580.84,
+        "recording_duration": 1581,
+        "coverage_ratio": 0.999898798228969,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 13,
+      "video_id": "eDc4zMbstRo",
+      "title": "33. Modelling of turbulent kinetic energy (k): production, destruction, and dissipation rate - II",
+      "lesson": 33,
+      "duration_seconds": 1093,
+      "url": "https://www.youtube.com/watch?v=eDc4zMbstRo",
+      "chapter": 11,
+      "disposition": "Included in chapter 11; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 33,
+        "video_id": "eDc4zMbstRo",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec33.vtt",
+        "path": "lecture-33.vtt",
+        "sha256": "43412a763111378fd693919f7c25c1a843136180f549add166e060d3ced87431",
+        "segments": 137,
+        "last_cue_seconds": 1092.76,
+        "recording_duration": 1093,
+        "coverage_ratio": 0.9997804208600183,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 14,
+      "video_id": "4pUWCyjOEGc",
+      "title": "32. Modelling of turbulent kinetic energy (k): production, destruction, and dissipation rate - I",
+      "lesson": 32,
+      "duration_seconds": 1593,
+      "url": "https://www.youtube.com/watch?v=4pUWCyjOEGc",
+      "chapter": 11,
+      "disposition": "Included in chapter 11; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 32,
+        "video_id": "4pUWCyjOEGc",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec32.vtt",
+        "path": "lecture-32.vtt",
+        "sha256": "802daac6797c0c6bcac0922332a2f91c2790a76c7718e52a62a3f22d13854d9b",
+        "segments": 190,
+        "last_cue_seconds": 1588.24,
+        "recording_duration": 1593,
+        "coverage_ratio": 0.9970119271814187,
+        "status": "acquired"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "modeled-energy",
+      "lesson": 32,
+      "start": 15,
+      "end": 517,
+      "lecture_material": "Exact k equation, Boussinesq modeled production and its consequences",
+      "extension": "Consistent per-mass convention and positive production restriction",
+      "construction": "Exact/model term ledger"
+    },
+    {
+      "anchor": "modeled-transport",
+      "lesson": 32,
+      "start": 517,
+      "end": 1589,
+      "lecture_material": "Pressure transport omission in selected smooth-wall examples, rough-rib counterexample, gradient diffusion and k coupling",
+      "extension": "Omission versus lumping, countergradient possibility, conservative variable diffusivity",
+      "construction": "Two-cell flux and local versus integrated error"
+    },
+    {
+      "anchor": "exact-epsilon",
+      "lesson": 33,
+      "start": 14,
+      "end": 249,
+      "lecture_material": "Exact epsilon budget reference and four production terms; complexity motivating model",
+      "extension": "Compact independent gradient-equation derivation, primary NASA related-report equation23 checked visually, scalar epsilon count",
+      "construction": "Four contractions, transport and nonnegative high-gradient destruction"
+    },
+    {
+      "anchor": "epsilon-model",
+      "lesson": 33,
+      "start": 249,
+      "end": 1093,
+      "lecture_material": "Construct epsilon equation by analogy, gradient diffusion, epsilon/k time factor and two source coefficients; numerical ratios",
+      "extension": "Model equation not exact-termwise reduction or imposed local equilibrium; scale-aware positive regularization",
+      "construction": "Coupled baseline system with coefficient set identified"
+    },
+    {
+      "anchor": "cmu",
+      "lesson": 34,
+      "start": 14,
+      "end": 1581,
+      "lecture_material": "Local equilibrium example, log-region reduction and shear/energy ratio giving C_mu0.09",
+      "extension": "Retain P/epsilon correction when not equilibrium; calibration not proof of universality",
+      "construction": "Explicit conditional algebra and error sensitivity"
+    },
+    {
+      "anchor": "decay-calibration",
+      "lesson": 35,
+      "start": 14,
+      "end": 1068,
+      "lecture_material": "Far-downstream grid decay, constant mean convection, neglect diffusion and production, power-law energy and C_epsilon2 relation",
+      "extension": "Virtual origin, distinguish stationary downstream decay from blower-off temporal decay; correct m1.25 implies1.8, not1.92",
+      "construction": "Analytic homogeneous model solution and quantified caption arithmetic discrepancy"
+    },
+    {
+      "anchor": "execution",
+      "lesson": 35,
+      "start": 553,
+      "end": 1068,
+      "lecture_material": "Reduced k and epsilon decay equations and power matching",
+      "extension": "Actually integrated RK4 subproblem against exact solution with refinement and conserved two-cell flux",
+      "construction": "Original standard-library numerical execution"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://ntrs.nasa.gov/api/citations/19880005792/downloads/19880005792.pdf",
+      "title": "Mansour, Kim and Moin: Reynolds-stress and dissipation-rate budgets, NASA TM89451 (1987)",
+      "supports": "Sections2.1–2.2 and visually inspected printed8 equation23 on exact dissipation budget; related primary report to lecture's1988 journal citation, not all40pages read",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v4/classFoam_1_1RASModels_1_1kEpsilon.html",
+      "title": "OpenFOAM Foundation4.1 source guide: kEpsilon detailed description",
+      "supports": "Versioned documented baseline coefficients C_mu0.09,C1 1.44,C2 1.92,sigma_k1,sigma_epsilon1.3; no OpenFOAM solver execution claimed",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://tmbwg.github.io/turbmodels/ke-chien.html",
+      "title": "TMBWG: Chien k-epsilon definition",
+      "supports": "Explicit distinct low-Re variant coefficients, damping and wall source terms; not adopted as the baseline system",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "article_words_including_math_code": 3402,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "worked_solutions": 8,
+  "executable_listings": 1,
+  "source_reading": "Complete normalized caption text read sequentially before drafting",
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "b82749ed8fcc96a38c14a93458e9e99cc36999c9ba9e95058c32ae58a7440321",
+    "rounds": [
+      {
+        "round": 1,
+        "report_identifier": "ch11-r1.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "b82749ed8fcc96a38c14a93458e9e99cc36999c9ba9e95058c32ae58a7440321",
+        "reviewer_id": "independent-course-peer",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      },
+      {
+        "round": 2,
+        "report_identifier": "ch11-r2.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "b82749ed8fcc96a38c14a93458e9e99cc36999c9ba9e95058c32ae58a7440321",
+        "reviewer_id": "lead-coordinator",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      }
+    ],
+    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+  },
+  "limitations": [
+    "Full captions32–35 read; no full audiovisual or instructor-graph digitization",
+    "Exact epsilon identity rederived and compared to NASA TM89451 printed8; related report is not asserted identical to journal pagination",
+    "Baseline high-Re coefficient set kept distinct from Chien low-Re model and other variants",
+    "Grid exponent quoted in captions is not independently recovered from experimental data; arithmetic mismatch and explicit succeeding-recording correction both retained",
+    "Executed homogeneous ODE and two-cell flux are restricted model checks, not a complete spatial RANS solver or empirical validation",
+    "Near-wall boundary treatment and calibration of remaining coefficients follow later recordings"
+  ],
+  "cross_recording_notes": [
+    {
+      "lesson": 36,
+      "video_id": "VOP1Q02qJhw",
+      "start": 120,
+      "end": 240,
+      "scope": "Forward correction to the preceding recording decay-coefficient discrepancy; full36 read, its remaining construction belongs to chapter12",
+      "read_in_full": true
+    }
+  ]
+}

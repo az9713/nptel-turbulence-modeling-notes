@@ -1,0 +1,179 @@
+{
+  "chapter": 5,
+  "title": "5. Exact Reynolds-stress transport",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "593c5b9deda629c0f558bcd40136785be4b065527ffed20a0ce475a13fa48287",
+  "recordings": [
+    {
+      "playlist_position": 69,
+      "video_id": "BggxvBLypoA",
+      "title": "13. Reynold's stress: governing equations - II",
+      "lesson": 13,
+      "duration_seconds": 1266,
+      "url": "https://www.youtube.com/watch?v=BggxvBLypoA",
+      "chapter": 5,
+      "disposition": "Included in chapter 05; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 13,
+        "video_id": "BggxvBLypoA",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec13.vtt",
+        "path": "lecture-13.vtt",
+        "sha256": "0455a1a4c8f9a354373f35a13cf4607504167f9a666946d07e66fc0f8dcae439",
+        "segments": 167,
+        "last_cue_seconds": 1258.44,
+        "recording_duration": 1266,
+        "coverage_ratio": 0.9940284360189574,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 70,
+      "video_id": "U7eY7EN03nM",
+      "title": "12. Reynold's stress: governing equations - I",
+      "lesson": 12,
+      "duration_seconds": 1490,
+      "url": "https://www.youtube.com/watch?v=U7eY7EN03nM",
+      "chapter": 5,
+      "disposition": "Included in chapter 05; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 12,
+        "video_id": "U7eY7EN03nM",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec12.vtt",
+        "path": "lecture-12.vtt",
+        "sha256": "b95bd6e5a892e21cdddbaf7b9c35a3e31be98da79fc96a54d2de3795aa842d65",
+        "segments": 153,
+        "last_cue_seconds": 1489.72,
+        "recording_duration": 1490,
+        "coverage_ratio": 0.9998120805369127,
+        "status": "acquired"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "starting",
+      "lesson": 12,
+      "start": 15,
+      "end": 124,
+      "lecture_material": "Recap of raw second-moment equation and product-rule transport left side",
+      "extension": "Consistent renaming of free and dummy indices; explicit constant-property assumptions",
+      "construction": "Local formal budget spine"
+    },
+    {
+      "anchor": "pressure",
+      "lesson": 12,
+      "start": 124,
+      "end": 228,
+      "lecture_material": "Pressure product expansion into pressure transport and pressure-strain",
+      "extension": "Units, delta contraction and explicit sign/density convention",
+      "construction": "Boundary-flux interpretation"
+    },
+    {
+      "anchor": "viscous",
+      "lesson": 12,
+      "start": 228,
+      "end": 426,
+      "lecture_material": "Viscous product expansion, covariance diffusion and gradient correlation",
+      "extension": "Positive semidefinite gradient-covariance proof",
+      "construction": "Signed off-diagonal dissipation exercise"
+    },
+    {
+      "anchor": "triple",
+      "lesson": 12,
+      "start": 426,
+      "end": 1490,
+      "lecture_material": "Unchanged production, third-moment product rule using zero continuity term; collect divergence terms with deltas",
+      "extension": "Full conservative flux with all units",
+      "construction": "Exact budget presentation"
+    },
+    {
+      "anchor": "transport",
+      "lesson": 13,
+      "start": 15,
+      "end": 225,
+      "lecture_material": "Turbulent, viscous and pressure transport terminology",
+      "extension": "Divergence is not automatically gradient diffusion",
+      "construction": "Integrated periodic/control-volume check"
+    },
+    {
+      "anchor": "redistribution",
+      "lesson": 13,
+      "start": 225,
+      "end": 313,
+      "lecture_material": "Pressure-strain as redistribution",
+      "extension": "Trace-free proof under instantaneous incompressibility",
+      "construction": "Finite-time trace/realizability bookkeeping example"
+    },
+    {
+      "anchor": "production",
+      "lesson": 13,
+      "start": 313,
+      "end": 500,
+      "lecture_material": "Production, dissipation and mean-gradient dependence",
+      "extension": "Half-trace energy budget, strain contraction, forcing/decay qualification",
+      "construction": "Channel production tensor"
+    },
+    {
+      "anchor": "closure",
+      "lesson": 13,
+      "start": 500,
+      "end": 1266,
+      "lecture_material": "Unknown fields in pressure transport, triple moments, pressure-strain and dissipation; alternate viscous grouping and RSM closure",
+      "extension": "Independent component counts; physical versus pseudo-dissipation identity",
+      "construction": "Equal second moments/different third moments; analytic four-phase dissipation contrast"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://tmbwg.github.io/turbmodels/rsm-ssglrr.html",
+      "title": "NASA/TMBWG: SSG/LRR Full Reynolds Stress Model",
+      "supports": "Positive transported covariance, exact production, modeled pressure-strain/dissipation/diffusion; no model coefficients adopted",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "article_words_including_math_code": 3375,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "worked_solutions": 7,
+  "executable_listings": 1,
+  "source_reading": "Complete normalized caption text read sequentially before drafting",
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "593c5b9deda629c0f558bcd40136785be4b065527ffed20a0ce475a13fa48287",
+    "rounds": [
+      {
+        "round": 1,
+        "report_identifier": "ch05-r1.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "593c5b9deda629c0f558bcd40136785be4b065527ffed20a0ce475a13fa48287",
+        "reviewer_id": "independent-course-peer",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      },
+      {
+        "round": 2,
+        "report_identifier": "ch05-r2.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "593c5b9deda629c0f558bcd40136785be4b065527ffed20a0ce475a13fa48287",
+        "reviewer_id": "lead-coordinator",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      }
+    ],
+    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+  },
+  "limitations": [
+    "No full audiovisual/board verification",
+    "Exact incompressible constant-property budget, with no fluctuating body forcing",
+    "Kinematic phase field not claimed to solve full Navier–Stokes dynamics",
+    "Bookkeeping redistribution example is not a proposed pressure closure",
+    "No RSM coefficient calibration, model implementation or empirical validation"
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "chapter": 7,
+  "title": "7. Turbulent and mean energy budgets",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "66aaaada380347ea5b0f54d471ad261900af0b5f5f1513b17c4d67551bfa5a3d",
+  "recordings": [
+    {
+      "playlist_position": 72,
+      "video_id": "qzu9QxbONn0",
+      "title": "20. Production rate of TKE and Mean TKE - I",
+      "lesson": 20,
+      "duration_seconds": 1981,
+      "url": "https://www.youtube.com/watch?v=qzu9QxbONn0",
+      "chapter": 7,
+      "disposition": "Included in chapter 07; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 20,
+        "video_id": "qzu9QxbONn0",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec20.vtt",
+        "path": "lecture-20.vtt",
+        "sha256": "558ba5893dfb7e14a3755b1b382294a5f3ea362374e207a02b49a683b335631e",
+        "segments": 200,
+        "last_cue_seconds": 1977.84,
+        "recording_duration": 1981,
+        "coverage_ratio": 0.9984048460373548,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 73,
+      "video_id": "gtTLEvvnO10",
+      "title": "19. Turbulence Kinetic Energy and it’s dissipation rate - II",
+      "lesson": 19,
+      "duration_seconds": 1161,
+      "url": "https://www.youtube.com/watch?v=gtTLEvvnO10",
+      "chapter": 7,
+      "disposition": "Included in chapter 07; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 19,
+        "video_id": "gtTLEvvnO10",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec19.vtt",
+        "path": "lecture-19.vtt",
+        "sha256": "aa202b7fd797bca8bafc7b35df18e7ea86ba98a2e17fe896d068b8c44315387a",
+        "segments": 123,
+        "last_cue_seconds": 1160.88,
+        "recording_duration": 1161,
+        "coverage_ratio": 0.9998966408268735,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 74,
+      "video_id": "VZfgkXgBUwY",
+      "title": "18.Turbulence Kinetic Energy and it’s dissipation rate - I",
+      "lesson": 18,
+      "duration_seconds": 1470,
+      "url": "https://www.youtube.com/watch?v=VZfgkXgBUwY",
+      "chapter": 7,
+      "disposition": "Included in chapter 07; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 18,
+        "video_id": "VZfgkXgBUwY",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec18.vtt",
+        "path": "lecture-18.vtt",
+        "sha256": "6e631a5690ac4b612b61fe612e51373c0aef386d19977dd09fe597d583226ef0",
+        "segments": 146,
+        "last_cue_seconds": 1468.36,
+        "recording_duration": 1470,
+        "coverage_ratio": 0.9988843537414965,
+        "status": "acquired"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "two-viscous-groupings",
+      "lesson": 18,
+      "start": 15,
+      "end": 489,
+      "lecture_material": "Alternative derivation retaining the full viscous stress, producing extra displayed diffusion/destruction correlations",
+      "extension": "Exact flux identity shows equivalent groupings rather than additional independent physics",
+      "construction": "Physical versus pseudo-dissipation cancellation"
+    },
+    {
+      "anchor": "energy-and-contraction",
+      "lesson": 18,
+      "start": 489,
+      "end": 1468,
+      "lecture_material": "Define k as half-trace, derive its exact transport equation by contraction and factor one-half; pressure-strain disappears from trace",
+      "extension": "All index contractions, units and explicit flux convention",
+      "construction": "Trace-free information loss check"
+    },
+    {
+      "anchor": "closure-and-destruction",
+      "lesson": 19,
+      "start": 15,
+      "end": 501,
+      "lecture_material": "Closure persists for k, identify pressure and turbulent transport, stresses and destruction; nonnegative destruction",
+      "extension": "Correct fully contracted scalar destruction count and distinguish equation counting from closure proof",
+      "construction": "Same k/different shear covariance"
+    },
+    {
+      "anchor": "transport-integral",
+      "lesson": 19,
+      "start": 501,
+      "end": 1161,
+      "lecture_material": "Bounded-box divergence theorem, no-slip/no-penetration and zero net transport; transport versus creation/destruction",
+      "extension": "Explicit smoothness condition for normal derivative of k, open-volume and periodic qualifications",
+      "construction": "Flux-through-volume audit"
+    },
+    {
+      "anchor": "mean-total-split",
+      "lesson": 20,
+      "start": 15,
+      "end": 537,
+      "lecture_material": "Total mean instantaneous kinetic energy decomposes into mean-motion and fluctuating parts",
+      "extension": "Expectation/derivative and frame conventions",
+      "construction": "Anisotropy not recoverable from scalar k"
+    },
+    {
+      "anchor": "mean-energy-derivation",
+      "lesson": 20,
+      "start": 537,
+      "end": 1469,
+      "lecture_material": "Multiply RANS by mean velocity, product-rule pressure/viscous/Reynolds terms, derive K equation",
+      "extension": "Explicit exchange sign and total kinetic-energy flux",
+      "construction": "Derivative-by-derivative derivation"
+    },
+    {
+      "anchor": "exchange-and-forcing",
+      "lesson": 20,
+      "start": 1469,
+      "end": 1978,
+      "lecture_material": "Opposite production signs in K and k equations; sustaining supply and governing-equation recap",
+      "extension": "Production need not be positive; zero mean strain does not prohibit decaying or forced turbulence; body forcing term",
+      "construction": "Positive covariances with reversed transfer and primary-source periodic counterexample"
+    },
+    {
+      "anchor": "executed-energy",
+      "lesson": 18,
+      "start": 489,
+      "end": 1468,
+      "lecture_material": "Scalar kinetic-energy balance from contracted stress equation",
+      "extension": "Closed-form periodic unforced Navier-Stokes solution and independently evaluated gradients/pressure",
+      "construction": "Original exact two-dimensional decay check, explicitly not turbulent DNS"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://tmbwg.github.io/turbmodels/rsm-ssglrr.html",
+      "title": "NASA/TMBWG: SSG/LRR Full Reynolds Stress Model",
+      "supports": "Positive covariance and exact production compared with model closure; no closure coefficients adopted",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://flow.pha.jhu.edu/docs/README-isotropic.pdf",
+      "title": "Johns Hopkins Turbulence Databases: forced isotropic turbulence dataset description",
+      "supports": "Page1 states periodic domain and large-scale energy injection; all four pages read as text, no dataset downloaded or analyzed",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "article_words_including_math_code": 3746,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "worked_solutions": 8,
+  "executable_listings": 1,
+  "source_reading": "Complete normalized caption text read sequentially before drafting",
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "66aaaada380347ea5b0f54d471ad261900af0b5f5f1513b17c4d67551bfa5a3d",
+    "rounds": [
+      {
+        "round": 1,
+        "report_identifier": "ch07-r1.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "66aaaada380347ea5b0f54d471ad261900af0b5f5f1513b17c4d67551bfa5a3d",
+        "reviewer_id": "independent-course-peer",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      },
+      {
+        "round": 2,
+        "report_identifier": "ch07-r2.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "66aaaada380347ea5b0f54d471ad261900af0b5f5f1513b17c4d67551bfa5a3d",
+        "reviewer_id": "lead-coordinator",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      }
+    ],
+    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+  },
+  "limitations": [
+    "Full captions read; no complete audiovisual or board review",
+    "Exact constant-property incompressible equations; compressible energy and thermal feedback omitted",
+    "Executed periodic flow is a two-dimensional analytic solution, not turbulent DNS",
+    "Primary dataset description used only to establish a forced periodic counterexample, not to validate this chapter's calculations",
+    "No closure calibration or predictive turbulent energy simulation"
+  ]
+}

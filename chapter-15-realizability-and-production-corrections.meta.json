@@ -1,0 +1,227 @@
+{
+  "chapter": 15,
+  "title": "15. Realizability and production corrections",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "0bac19cf7521c8ddcd4d9f785dea766c855c4a88122072448ee25d345975f27a",
+  "recordings": [
+    {
+      "playlist_position": 25,
+      "video_id": "P_mIo20_rnA",
+      "title": "51. Correctors for eddy-viscoscity models - II",
+      "lesson": 51,
+      "duration_seconds": 1509,
+      "url": "https://www.youtube.com/watch?v=P_mIo20_rnA",
+      "chapter": 15,
+      "disposition": "Included in chapter 15; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 51,
+        "video_id": "P_mIo20_rnA",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec51.vtt",
+        "path": "lecture-51.vtt",
+        "sha256": "818195b456fcf2be1b2227ceb46ee3f8e97b8b5223b99ebd2729072b27be898e",
+        "segments": 156,
+        "last_cue_seconds": 1508.04,
+        "recording_duration": 1509,
+        "coverage_ratio": 0.9993638170974155,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 26,
+      "video_id": "4jo90Pil6jY",
+      "title": "50. Correctors for eddy-viscoscity models - I",
+      "lesson": 50,
+      "duration_seconds": 1315,
+      "url": "https://www.youtube.com/watch?v=4jo90Pil6jY",
+      "chapter": 15,
+      "disposition": "Included in chapter 15; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 50,
+        "video_id": "4jo90Pil6jY",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec50.vtt",
+        "path": "lecture-50.vtt",
+        "sha256": "39579d37b16837c80bac038620629a02f9f190f8ddb33588de476dc7dd236811",
+        "segments": 123,
+        "last_cue_seconds": 1314.84,
+        "recording_duration": 1315,
+        "coverage_ratio": 0.9998783269961976,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 27,
+      "video_id": "8vA99S_QbJ8",
+      "title": "49. Realizability constraints in eddy-viscoscity models - II",
+      "lesson": 49,
+      "duration_seconds": 1010,
+      "url": "https://www.youtube.com/watch?v=8vA99S_QbJ8",
+      "chapter": 15,
+      "disposition": "Included in chapter 15; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 49,
+        "video_id": "8vA99S_QbJ8",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec49.vtt",
+        "path": "lecture-49.vtt",
+        "sha256": "67f6a2bb928c2522ffbea58bb69d45c504f12dc8510694da8093a4e88e9cc373",
+        "segments": 90,
+        "last_cue_seconds": 1009.56,
+        "recording_duration": 1010,
+        "coverage_ratio": 0.9995643564356436,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 28,
+      "video_id": "Fff1PE0-JI8",
+      "title": "48. Realizability constraints in eddy-viscoscity models - I",
+      "lesson": 48,
+      "duration_seconds": 1213,
+      "url": "https://www.youtube.com/watch?v=Fff1PE0-JI8",
+      "chapter": 15,
+      "disposition": "Included in chapter 15; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 48,
+        "video_id": "Fff1PE0-JI8",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec48.vtt",
+        "path": "lecture-48.vtt",
+        "sha256": "4aed50ec70cc353db74b0b9277c6a2edf6aa09047044fb1bef3a4425b1431dc9",
+        "segments": 148,
+        "last_cue_seconds": 1212.04,
+        "recording_duration": 1213,
+        "coverage_ratio": 0.9992085737840065,
+        "status": "acquired"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "scale-meaning",
+      "lesson": 48,
+      "start": 15,
+      "end": 813,
+      "lecture_material": "Initial-condition sensitivity, geometry length guesses, rib-channel k/epsilon length and viscosity comparisons, von Karman/SAS length",
+      "extension": "Closure scales can have interpreted physical meaning without resolving all eddies; zero Laplacian singularity and full SAS regularization",
+      "construction": "Error propagation and log-profile versus linear-flow scale checks"
+    },
+    {
+      "anchor": "covariance",
+      "lesson": 48,
+      "start": 813,
+      "end": 1212,
+      "lecture_material": "Normal variance positivity, energy positivity and shear correlation Schwarz condition",
+      "extension": "Nonnegative not strictly positive; all-direction PSD and pairwise constraints insufficient in3D",
+      "construction": "Three-variable correlation counterexample and constructive eigen decomposition"
+    },
+    {
+      "anchor": "stagnation",
+      "lesson": 49,
+      "start": 16,
+      "end": 1009,
+      "lecture_material": "Boussinesq negative normal stress for extension and transverse-sum violation under compression, stagnation/impingement motivation",
+      "extension": "Incompressible normal extension not volumetric strain; off-diagonal gradients not synonymous with rotation",
+      "construction": "Trace-free irrotational planar strain exact threshold and rotated failure"
+    },
+    {
+      "anchor": "viscosity-cap",
+      "lesson": 50,
+      "start": 15,
+      "end": 691,
+      "lecture_material": "Durbin attributed viscosity cap min(model,k/(3lambda)), time-scale restriction",
+      "extension": "Principal eigenvalue versus incorrect component row norm; derive invariant bound and scope of covariance guarantee",
+      "construction": "Independent primary1994report comparison and rotated row-norm counterexample"
+    },
+    {
+      "anchor": "isotropic-production",
+      "lesson": 50,
+      "start": 691,
+      "end": 1315,
+      "lecture_material": "Exact production in assumed locally isotropic stagnation zone approximately zero",
+      "extension": "Isotropy an explicit conditional state, not universal stagnation property; P zero not proof of low k",
+      "construction": "Isotropic covariance contraction and rapid-distortion normal-stress onset"
+    },
+    {
+      "anchor": "source-corrections",
+      "lesson": 51,
+      "start": 15,
+      "end": 1130,
+      "lecture_material": "Large modeled strain production; scalar cap, SST10beta_star*k*omega, Kato–Launder strain-rotation product and time limiter",
+      "extension": "Distinguish SST1993/94 factor20 from2003 factor10/both-equation version; source caps do not enforce PSD or conserve mean/turbulent transfer automatically",
+      "construction": "Pure strain/simple shear/rotation checks and transfer imbalance"
+    },
+    {
+      "anchor": "accuracy",
+      "lesson": 51,
+      "start": 1130,
+      "end": 1509,
+      "lecture_material": "Wake unsteadiness example and dense CO2/chlorine dispersion errors motivate higher closures/cost tradeoff",
+      "extension": "Qualitative reported examples not digitized benchmarks; no exposure thresholds or clinical recommendations; admissibility versus accuracy and model ensemble spread",
+      "construction": "Decision logic for independent physical validation"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://web.stanford.edu/group/ctr/ResBriefs/1994/08_DURBIN.pdf",
+      "title": "Durbin1994, Turbulence modeling for separated flow, section2.4",
+      "supports": "Principal-axis covariance constraint, trace-free strain eigenvalue bound and turbulent time limit; printed103equations visually inspected, surrounding section read; not the uninspected1996 paper",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://tmbwg.github.io/turbmodels/sst.html",
+      "title": "TMBWG SST model variants and source corrections",
+      "supports": "Original factor20 versus SST2003factor10/both-equation limiter; Kato–Launder S*Omega versus vorticity squared variants; actual definitions read",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v4/kOmegaSSTSAS_8C_source.html",
+      "title": "OpenFOAM Foundation4.1 SST-SAS implementation",
+      "supports": "Qsas raw von Karman derivative ratio and grid lower bound/regularization and source limiter, not full model derivation or execution",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "article_words_including_math_code": 3372,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "worked_solutions": 8,
+  "executable_listings": 1,
+  "source_reading": "Complete normalized caption text read sequentially before drafting",
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "0bac19cf7521c8ddcd4d9f785dea766c855c4a88122072448ee25d345975f27a",
+    "rounds": [
+      {
+        "round": 1,
+        "report_identifier": "ch15-r1.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "0bac19cf7521c8ddcd4d9f785dea766c855c4a88122072448ee25d345975f27a",
+        "reviewer_id": "independent-course-peer",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      },
+      {
+        "round": 2,
+        "report_identifier": "ch15-r2.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "0bac19cf7521c8ddcd4d9f785dea766c855c4a88122072448ee25d345975f27a",
+        "reviewer_id": "lead-coordinator",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      }
+    ],
+    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+  },
+  "limitations": [
+    "Full captions48–51 read; plotted DNS/experiment/wake examples retained qualitatively without digitization or invented solver reproduction",
+    "Primary Durbin1994intro and section2.4 inspected, printed103equations visually checked; lecture's1996citation not claimed independently read",
+    "Correct invariant/principal-eigenvalue cap differs from caption row-norm expression; guarantee only stated pointwise incompressible linear-covariance positivity under nonnegative k/viscosity",
+    "SAS primary implementation inspected only for raw von Karman ratio plus regularization/source-limit context; no full SAS derivation or simulation",
+    "Named SST variants distinguished; no full SST solver assembled or validated; scalar production limit changes exact inter-budget transfer unless modeled consistently",
+    "Gas dispersion discussion concerns model-evidence limitations only; no concentration threshold, exposure guidance or new empirical assessment"
+  ]
+}

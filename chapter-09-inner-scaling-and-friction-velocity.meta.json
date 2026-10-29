@@ -1,0 +1,214 @@
+{
+  "chapter": 9,
+  "title": "9. Inner scaling and friction velocity",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "1b30386fdb984eac569460c14a4f95baa62cd43c84c919ba41f19e213d620377",
+  "recordings": [
+    {
+      "playlist_position": 2,
+      "video_id": "LP-lhdKIsFw",
+      "title": "27. Inner layer equation, constant stress layer, and inner velocity scaling - II",
+      "lesson": 27,
+      "duration_seconds": 1166,
+      "url": "https://www.youtube.com/watch?v=LP-lhdKIsFw",
+      "chapter": 9,
+      "disposition": "Included in chapter 09; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 27,
+        "video_id": "LP-lhdKIsFw",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec27.vtt",
+        "path": "lecture-27.vtt",
+        "sha256": "061d7bf5148c44ec5a78184949f5881d29cd121d739272382aebf9fb0b2d0a0c",
+        "segments": 148,
+        "last_cue_seconds": 1158.68,
+        "recording_duration": 1166,
+        "coverage_ratio": 0.9937221269296741,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 3,
+      "video_id": "wpKCHT2OH5w",
+      "title": "26. Inner layer equation, constant stress layer, and inner velocity scaling - I",
+      "lesson": 26,
+      "duration_seconds": 1514,
+      "url": "https://www.youtube.com/watch?v=wpKCHT2OH5w",
+      "chapter": 9,
+      "disposition": "Included in chapter 09; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 26,
+        "video_id": "wpKCHT2OH5w",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec26.vtt",
+        "path": "lecture-26.vtt",
+        "sha256": "2065f14719caaeb3f9b63f7d73213388da96c2b13e871c7476a6fc2d85a498b3",
+        "segments": 181,
+        "last_cue_seconds": 1513.4,
+        "recording_duration": 1514,
+        "coverage_ratio": 0.9996036988110965,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 4,
+      "video_id": "agH9hSyRCYE",
+      "title": "25. Inner and Outer TBL: Order of magnitude analysis - II",
+      "lesson": 25,
+      "duration_seconds": 1263,
+      "url": "https://www.youtube.com/watch?v=agH9hSyRCYE",
+      "chapter": 9,
+      "disposition": "Included in chapter 09; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 25,
+        "video_id": "agH9hSyRCYE",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec25.vtt",
+        "path": "lecture-25.vtt",
+        "sha256": "13471804325299ffa782075dc34203dc8c0cf44ab163d1c8f0ddd5ba10ea253a",
+        "segments": 118,
+        "last_cue_seconds": 1258.6,
+        "recording_duration": 1263,
+        "coverage_ratio": 0.9965162311955661,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 5,
+      "video_id": "ykq6yV2_myA",
+      "title": "24. Inner and Outer TBL: Order of magnitude analysis - I",
+      "lesson": 24,
+      "duration_seconds": 1521,
+      "url": "https://www.youtube.com/watch?v=ykq6yV2_myA",
+      "chapter": 9,
+      "disposition": "Included in chapter 09; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 24,
+        "video_id": "ykq6yV2_myA",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec24.vtt",
+        "path": "lecture-24.vtt",
+        "sha256": "81cdb59e9490d054d1a1f60c0bb5719aadda5ec0d877ff49a5c0e72a0136404b",
+        "segments": 160,
+        "last_cue_seconds": 1520.32,
+        "recording_duration": 1521,
+        "coverage_ratio": 0.9995529257067718,
+        "status": "acquired"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "inner-need",
+      "lesson": 24,
+      "start": 17,
+      "end": 1521,
+      "lecture_material": "Outer molecular terms fail near no-slip; introduce eta_w and u_w; shared inner velocity scale supported by described mean/rms data",
+      "extension": "Pressure can coexist with turbulence at leading order; common scale not uniform instantaneous wall asymptotics",
+      "construction": "Match inner region purpose to boundary conditions"
+    },
+    {
+      "anchor": "inner-ledger",
+      "lesson": 25,
+      "start": 14,
+      "end": 1259,
+      "lecture_material": "Continuity normal velocity, two equal-order advective terms, normalize by normal viscosity, inner Reynolds order1",
+      "extension": "Retain inner Reynolds factor before selecting balance; equality1 is unit convention, not exact flow theorem",
+      "construction": "Complete normalized inner term table"
+    },
+    {
+      "anchor": "total-stress",
+      "lesson": 26,
+      "start": 15,
+      "end": 1019,
+      "lecture_material": "Integrate leading inner equation from wall to y; total molecular plus turbulent stress; approximate finite-Re interpretation",
+      "extension": "Exact residual integral at finite Re; approximate equations can be integrated; Couette exact finite-Re contrast and channel correction",
+      "construction": "General remainder bound and recurring pressure-driven channel"
+    },
+    {
+      "anchor": "measurement",
+      "lesson": 26,
+      "start": 1019,
+      "end": 1514,
+      "lecture_material": "Constant-stress layer and wall-shear inference away from wall, measurement/grid motivation",
+      "extension": "Inference error from molecular share and total-stress variation; near-wall information not recoverable without closure",
+      "construction": "Numerical wall-stress bias calculation"
+    },
+    {
+      "anchor": "friction-units",
+      "lesson": 27,
+      "start": 16,
+      "end": 495,
+      "lecture_material": "Define friction velocity, viscous length, U+ and y+, multiple Reynolds definitions",
+      "extension": "Positive shear convention, absolute magnitude for signed wall traction, separation degeneracy, y+ based on actual distance not viscous length fixed1",
+      "construction": "Air wall-unit conversion and resolution sensitivity"
+    },
+    {
+      "anchor": "layers-interface",
+      "lesson": 27,
+      "start": 495,
+      "end": 823,
+      "lecture_material": "Outer flow versus outer layer, turbulent/non-turbulent interface, inner/outer overlap and rough boundaries",
+      "extension": "Finite-thickness smooth viscous interface versus discontinuity idealization; defined heuristic overlap requires adequate Re_tau",
+      "construction": "Primary opening-summary comparison and empty-overlap test"
+    },
+    {
+      "anchor": "sublayer-buffer",
+      "lesson": 27,
+      "start": 823,
+      "end": 1159,
+      "lecture_material": "Linear sublayer, buffer, approximate3–5/30 wall-unit bounds and production in buffer; stress partition",
+      "extension": "Taylor expansion with R12 of order y³, derive linear law and conditional quarter-production bound",
+      "construction": "Original smooth stress-partition function with explicit validity limits"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://ntrs.nasa.gov/api/citations/19930092246/downloads/19930092246.pdf",
+      "title": "Corrsin and Kistler: Free-stream boundaries of turbulent flows, NACA Report1244",
+      "supports": "Opening summary on sharp irregular front, thin viscous superlayer and intermittent boundary signals; PDF page4 summary/opening introduction read, remaining scientific pages not used",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "article_words_including_math_code": 3709,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "worked_solutions": 8,
+  "executable_listings": 1,
+  "source_reading": "Complete normalized caption text read sequentially before drafting",
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "1b30386fdb984eac569460c14a4f95baa62cd43c84c919ba41f19e213d620377",
+    "rounds": [
+      {
+        "round": 1,
+        "report_identifier": "ch09-r1.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "1b30386fdb984eac569460c14a4f95baa62cd43c84c919ba41f19e213d620377",
+        "reviewer_id": "independent-course-peer",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      },
+      {
+        "round": 2,
+        "report_identifier": "ch09-r2.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "1b30386fdb984eac569460c14a4f95baa62cd43c84c919ba41f19e213d620377",
+        "reviewer_id": "lead-coordinator",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      }
+    ],
+    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+  },
+  "limitations": [
+    "Full captions24–27 read; no full audiovisual/board inspection or graph digitization",
+    "Smooth deterministic no-slip wall, incompressible constant properties and attached positive-shear convention",
+    "Layer cutoffs are rough source heuristics, not universal thresholds or accepted mesh recommendations",
+    "Manufactured stress partition is an illustrative local algebraic construction, not an empirical wall law or complete RANS solution",
+    "No calibrated wall function, interface thickness prediction, or experimental uncertainty analysis"
+  ]
+}

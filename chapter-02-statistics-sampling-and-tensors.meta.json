@@ -1,0 +1,253 @@
+{
+  "chapter": 2,
+  "title": "2. Statistics, sampling, and Cartesian tensors",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "96af444952a4cab3ad4d12eed4487df800ef5f97a5f7dee8615ae4286a7b63ba",
+  "recordings": [
+    {
+      "playlist_position": 59,
+      "video_id": "D9B9eA3zIRU",
+      "title": "5. Statistical Analysis and Cartesian tensors - II",
+      "lesson": 5,
+      "duration_seconds": 1778,
+      "url": "https://www.youtube.com/watch?v=D9B9eA3zIRU",
+      "chapter": 2,
+      "disposition": "Included in chapter 02; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 5,
+        "video_id": "D9B9eA3zIRU",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec05.vtt",
+        "path": "lecture-05.vtt",
+        "sha256": "c4f312f0158f0176133a8c91c4da5cfde8a8753db826776abbd9879ec6957b8f",
+        "segments": 182,
+        "last_cue_seconds": 1777.2,
+        "recording_duration": 1778,
+        "coverage_ratio": 0.9995500562429697,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 60,
+      "video_id": "-_q1seALm9k",
+      "title": "4. Statistical Analysis and Cartesian tensors - I",
+      "lesson": 4,
+      "duration_seconds": 1344,
+      "url": "https://www.youtube.com/watch?v=-_q1seALm9k",
+      "chapter": 2,
+      "disposition": "Included in chapter 02; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 4,
+        "video_id": "-_q1seALm9k",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec04.vtt",
+        "path": "lecture-04.vtt",
+        "sha256": "6131eb494713a13121463b840041f0ebc3f61a9cc1aad92553079248a6f9c598",
+        "segments": 161,
+        "last_cue_seconds": 1343.2,
+        "recording_duration": 1344,
+        "coverage_ratio": 0.9994047619047619,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 61,
+      "video_id": "0wW6FpNKvlo",
+      "title": "3. Statistical Analysis: an approach of modelling turbulence - II",
+      "lesson": 3,
+      "duration_seconds": 1316,
+      "url": "https://www.youtube.com/watch?v=0wW6FpNKvlo",
+      "chapter": 2,
+      "disposition": "Included in chapter 02; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 3,
+        "video_id": "0wW6FpNKvlo",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec03.vtt",
+        "path": "lecture-03.vtt",
+        "sha256": "ae514930e93c6b0b5787e7b68fc4bb45dfdd4906a81ddc4c8b6c0c5e36bc05bc",
+        "segments": 136,
+        "last_cue_seconds": 1314.96,
+        "recording_duration": 1316,
+        "coverage_ratio": 0.999209726443769,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 62,
+      "video_id": "721ewrmyNDQ",
+      "title": "2. Statistical Analysis: an approach of modelling turbulence - I",
+      "lesson": 2,
+      "duration_seconds": 1240,
+      "url": "https://www.youtube.com/watch?v=721ewrmyNDQ",
+      "chapter": 2,
+      "disposition": "Included in chapter 02; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 2,
+        "video_id": "721ewrmyNDQ",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec02.vtt",
+        "path": "lecture-02.vtt",
+        "sha256": "95c04245b7d9b81d8c44e07cd775137dca67d897ef66c1c616c23bf433c8ae64",
+        "segments": 134,
+        "last_cue_seconds": 1239.4,
+        "recording_duration": 1240,
+        "coverage_ratio": 0.9995161290322582,
+        "status": "acquired"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "samples",
+      "lesson": 2,
+      "start": 15,
+      "end": 846,
+      "lecture_material": "Engineering means, finite sample count and classroom dice rows",
+      "extension": "Probability-law expectation and variance of independent sample mean",
+      "construction": "Fair-die uncertainty, using one arithmetically recoverable caption row"
+    },
+    {
+      "anchor": "expectation",
+      "lesson": 2,
+      "start": 846,
+      "end": 1240,
+      "lecture_material": "True mean, sample dependence and infinite-sample idealization",
+      "extension": "Correct finite-sample residual identity and Chebyshev convergence under explicit assumptions",
+      "construction": "Quantitative conservative sample requirement"
+    },
+    {
+      "anchor": "time",
+      "lesson": 3,
+      "start": 15,
+      "end": 489,
+      "lecture_material": "Ensemble space/time dependence; time average; stationary and periodic examples",
+      "extension": "Stationarity separated from ergodicity",
+      "construction": "Fixed random sign and phase-dependent cosine counterexamples"
+    },
+    {
+      "anchor": "fluctuations",
+      "lesson": 3,
+      "start": 489,
+      "end": 1055,
+      "lecture_material": "Notation, mean/fluctuation split and zero ensemble mean",
+      "extension": "Full RMS versus fluctuation RMS",
+      "construction": "Periodic-mean contamination of variance"
+    },
+    {
+      "anchor": "moments",
+      "lesson": 3,
+      "start": 1055,
+      "end": 1316,
+      "lecture_material": "Variance, RMS, higher moments, skewness and flatness",
+      "extension": "Normalized dimensionless definitions and integrability requirements",
+      "construction": "Equal-mean/equal-variance distributions with distinct tails"
+    },
+    {
+      "anchor": "practice",
+      "lesson": 4,
+      "start": 15,
+      "end": 856,
+      "lecture_material": "Practical convergence, sampling and eddy passage",
+      "extension": "Exact centering versus unbiased population variance; retaining correlated records",
+      "construction": "Finite-sample variance bias derivation"
+    },
+    {
+      "anchor": "covariance",
+      "lesson": 4,
+      "start": 856,
+      "end": 1344,
+      "lecture_material": "Single-point covariance, signed correlation and coefficient",
+      "extension": "PSD, covariance bound, zero-variance domain and dependence distinction",
+      "construction": "Channel correlation ensemble and X versus X squared example"
+    },
+    {
+      "anchor": "correlations",
+      "lesson": 5,
+      "start": 15,
+      "end": 570,
+      "lecture_material": "Temporal and spatial two-point statistics; sample separation and computational box size",
+      "extension": "Finite-N mean variance with lag weights; NIST estimator; Oliver et al. sampling scope",
+      "construction": "Prescribed geometric correlation, mixed normalization counterexample and exponential box criterion"
+    },
+    {
+      "anchor": "tensors",
+      "lesson": 5,
+      "start": 570,
+      "end": 1363,
+      "lecture_material": "Tensor orders, component counts, free and summed indices, delta and Levi-Civita",
+      "extension": "Transformation laws, order versus matrix rank, orientation and symmetric counts",
+      "construction": "Rotated channel covariance"
+    },
+    {
+      "anchor": "operators",
+      "lesson": 5,
+      "start": 1363,
+      "end": 1778,
+      "lecture_material": "Gradient, divergence, curl and Laplacian",
+      "extension": "Unit and contraction checks",
+      "construction": "Linear velocity-gradient matrix and exact curl"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda35c.htm",
+      "title": "NIST/SEMATECH: Autocorrelation",
+      "supports": "Finite equally spaced sample autocorrelation normalization",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/autocopl.htm",
+      "title": "NIST/SEMATECH: Autocorrelation Plot",
+      "supports": "Estimator conventions and limits of the dependence diagnostic",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://arxiv.org/pdf/1311.0828",
+      "title": "Oliver, Malaya, Ulerich and Moser: Estimating Uncertainties in Statistics Computed from DNS",
+      "supports": "Section II.A, printed pp.6–8 of arXiv manuscript: correlated sampling estimation; only methodological sections used",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "article_words_including_math_code": 4780,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "worked_solutions": 8,
+  "executable_listings": 1,
+  "source_reading": "Complete normalized caption text read sequentially before drafting",
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "96af444952a4cab3ad4d12eed4487df800ef5f97a5f7dee8615ae4286a7b63ba",
+    "rounds": [
+      {
+        "round": 1,
+        "report_identifier": "ch02-r1.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "96af444952a4cab3ad4d12eed4487df800ef5f97a5f7dee8615ae4286a7b63ba",
+        "reviewer_id": "independent-course-peer",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      },
+      {
+        "round": 2,
+        "report_identifier": "ch02-r2.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "96af444952a4cab3ad4d12eed4487df800ef5f97a5f7dee8615ae4286a7b63ba",
+        "reviewer_id": "lead-coordinator",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      }
+    ],
+    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+  },
+  "limitations": [
+    "No full audiovisual or board review",
+    "One captioned dice row has a spoken-mean mismatch and is not repaired by invention",
+    "Exact population correlation supplied for code; no fitted turbulent probe dataset",
+    "Finite examples do not establish ergodicity or general sample adequacy",
+    "Only stated sections of primary methodological sources used"
+  ]
+}

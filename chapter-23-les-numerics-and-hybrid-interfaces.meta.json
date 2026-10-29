@@ -1,0 +1,189 @@
+{
+  "chapter": 23,
+  "title": "23. LES numerics and hybrid interfaces",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "7803dbdf62c22f242e34e1ee2919c47f727d32c81b62a24cca9efbc772ce30ef",
+  "recordings": [
+    {
+      "playlist_position": 47,
+      "video_id": "A-fvO636nUs",
+      "title": "74. Numerics in LES and Hybrid models",
+      "lesson": 74,
+      "duration_seconds": 1896,
+      "url": "https://www.youtube.com/watch?v=A-fvO636nUs",
+      "chapter": 23,
+      "disposition": "Included in chapter 23; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 74,
+        "video_id": "A-fvO636nUs",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec74.vtt",
+        "path": "lecture-74.vtt",
+        "sha256": "261f4b9c25497dccffbf9c2b4be6b98812f1bdefdde24a69841896560f5d5fad",
+        "segments": 268,
+        "last_cue_seconds": 1887.92,
+        "recording_duration": 1896,
+        "coverage_ratio": 0.9957383966244726,
+        "status": "acquired"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "statistics",
+      "lesson": 74,
+      "start": 14,
+      "end": 210,
+      "lecture_material": "Resolved LES fluctuations, ensemble means, stresses and resolved/model energy postprocessing",
+      "extension": "General filter covariance partition retains mean-filter correction and filtered target; modeled equality is additional approximation",
+      "construction": "Exact derivation and linear-mean/random-constant counterexample"
+    },
+    {
+      "anchor": "numerics",
+      "lesson": 74,
+      "start": 210,
+      "end": 420,
+      "lecture_material": "Central schemes, numerical diffusion and MILES idea",
+      "extension": "Time stability/dispersion matters, no universal scheme rule or all-upwind SGS equivalence; MILES caption contradiction resolved contextually",
+      "construction": "Exact Euler-centered/upwind and Crank-Nicolson mode gains, modified-equation viscosity"
+    },
+    {
+      "anchor": "wall-resolution",
+      "lesson": 74,
+      "start": 420,
+      "end": 820,
+      "lecture_material": "Domain/startup/resolution, eta comparison, wall units, wall-resolved and wall-modeled choices",
+      "extension": "No universal two-eddy, eta multiplier, first-yplus sufficiency or obligatory wall resolution for every drag/thermal prediction",
+      "construction": "Observable/closure/mesh distinctions and boundary compatibility"
+    },
+    {
+      "anchor": "cost",
+      "lesson": 74,
+      "start": 820,
+      "end": 990,
+      "lecture_material": "WM approximate Re and WR1.85point scaling versus DNS expense",
+      "extension": "Primary Reynolds definition, inlet scaling and nested-grid hypotheses retained; later revision bounded to abstract/introduction, no current hardware/performance guarantee",
+      "construction": "Wall point-density and delta^-2 integral exponents with alternative inlet families"
+    },
+    {
+      "anchor": "hybrid",
+      "lesson": 74,
+      "start": 990,
+      "end": 1415,
+      "lecture_material": "RANS/LES equation similarities, zonal/embedded versus unified approaches, URANS and interface challenge",
+      "extension": "Separate grids not universal taxonomy, changing viscosity alone insufficient, unsteady mean differs from filtered realization",
+      "construction": "Represented-field and coupling inventory"
+    },
+    {
+      "anchor": "interfaces",
+      "lesson": 74,
+      "start": 1415,
+      "end": 1605,
+      "lecture_material": "Synthetic RANS-to-LES fluctuations and LES-to-RANS energy feedback",
+      "extension": "One-point covariance not full divergence-free inflow or spectrum; scalar feedback factor not universal",
+      "construction": "Exact eight-sign covariance and conditional1.58333energy multiplier"
+    },
+    {
+      "anchor": "des",
+      "lesson": 74,
+      "start": 1605,
+      "end": 1770,
+      "lecture_material": "DESintended attached-RANS/separated-LES role, common mesh and illustrative economy",
+      "extension": "Actual length mechanism as bounded primary extension, not all-above-layer LES or fixed cost ratio; no DECIDER validation claim",
+      "construction": "Grid-dependent minimum and premature stress-depletion mechanism"
+    },
+    {
+      "anchor": "shielding",
+      "lesson": 74,
+      "start": 1770,
+      "end": 1896,
+      "lecture_material": "Undesired boundary-layer switching and delayed DES introduction/course close",
+      "extension": "Version-specific actual shielding functions and positive floor, no full SA/DDES solver or universal successful shielding",
+      "construction": "Limiting lengths, rd/fd values and required total-stress validation"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://www.ams.jhu.edu/~eyink/Turbulence/classics/Germano92.pdf",
+      "title": "Germano1992 two-level statistical/filter moments",
+      "supports": "Previously read printed329–330 relation between filtered central moment and ensemble/resolved stress; general mean correction derived independently",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://ntrs.nasa.gov/api/citations/20010080473/downloads/20010080473.pdf",
+      "title": "Spalart2001 Young-Person's Guide to DES Grids",
+      "supports": "Actual opening/background printed1–3 read, numerical/model dissipation interaction and grid/statistical caution; not full guide or present-day limits",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://gibbs.science/teaching/les/handouts/choi_and_moin_2011.pdf",
+      "title": "Choi and Moin2011 CTR grid-point requirements report",
+      "supports": "Actual printed31–34 read, specified ReLx, WM/WRpoint-count assumptions,13/7 and37/14 estimates and omitted DNS nested/stretched mesh caveat",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://arxiv.org/html/2010.15307",
+      "title": "Yang and Griffin2021 revised DNS/LES requirements",
+      "supports": "Actual abstract/introduction only: changing local grid/nesting hypotheses revises point estimates; no full analysis claimed",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v4/SpalartAllmarasDES_8C_source.html",
+      "title": "OpenFOAM Foundation4.1 SA-DES length mechanism",
+      "supports": "Actual dTilda function uses min(CDES configuredDelta,wallDistance); surrounding strain/viscosity functions inspected but not complete solver executed",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v4/SpalartAllmarasDDES_8C_source.html",
+      "title": "OpenFOAM Foundation4.1 SA-DDES shielding",
+      "supports": "Actual rd/fd/dTilda functions read, effective-viscosity ratio,1-tanh((8rd)^3),shielded length and positive floor",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "article_words_including_math_code": 3029,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "worked_solutions": 8,
+  "executable_listings": 1,
+  "source_reading": "Complete normalized caption text read sequentially before drafting",
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "7803dbdf62c22f242e34e1ee2919c47f727d32c81b62a24cca9efbc772ce30ef",
+    "rounds": [
+      {
+        "round": 1,
+        "report_identifier": "ch23-r1.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "7803dbdf62c22f242e34e1ee2919c47f727d32c81b62a24cca9efbc772ce30ef",
+        "reviewer_id": "independent-course-peer",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      },
+      {
+        "round": 2,
+        "report_identifier": "ch23-r2.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "7803dbdf62c22f242e34e1ee2919c47f727d32c81b62a24cca9efbc772ce30ef",
+        "reviewer_id": "lead-coordinator",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      }
+    ],
+    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+  },
+  "limitations": [
+    "Complete74caption read; no comprehensive audiovisual/source plot audit",
+    "Spalart2001 guide opening/background printed1–3 inspected, not full23-page validation or present-day hardware claim",
+    "Choi/Moin2011 report actual printed31–34 read, distinct from full2012journal audit; cost exponents conditional on Reynolds and grid/inlet family",
+    "Yang/Griffin2021 abstract/introduction inspected only to document revised grid assumptions, not full later analysis",
+    "Actual Foundation4.1 DES dTilda and DDES rd/fd/dTilda functions inspected; complete SAtransport/grid-scale choices and solver execution not claimed",
+    "Executed linear advection, filtered moment, synthetic one-point covariance and length-switch checks are not turbulent LES/DES, complete inflow or physical validation",
+    "DECIDER project/full model validation reports not inspected; favorable lecture anecdotes and fixed wall-clock ratios are not endorsed as evidence"
+  ]
+}

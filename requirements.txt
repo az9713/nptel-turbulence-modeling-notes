@@ -1,0 +1,5 @@
+beautifulsoup4==4.15.0
+# Headless reader verification additionally uses Playwright and installed Chromium.
+playwright==1.57.0
+# Optional regeneration of scientific plot assets:
+matplotlib==3.11.2

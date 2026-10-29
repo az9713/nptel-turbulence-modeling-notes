@@ -1,0 +1,495 @@
+{
+  "checked": true,
+  "passed": true,
+  "scope": "Actual current HTTP reference-link probes; restricted/timeout responses remain unresolved, not silently accepted",
+  "records": [
+    {
+      "url": "https://arxiv.org/abs/1311.0828",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/1311.0828"
+    },
+    {
+      "url": "https://arxiv.org/html/2010.15307",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2010.15307"
+    },
+    {
+      "url": "https://arxiv.org/pdf/1311.0828",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://arxiv.org/pdf/1311.0828"
+    },
+    {
+      "url": "https://courses.physics.ucsd.edu/2019/Spring/physics235/Kolmogorov%2062-Enter%20Intermittency.pdf",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://courses.physics.ucsd.edu/2019/Spring/physics235/Kolmogorov%2062-Enter%20Intermittency.pdf"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v4/LRR_8C_source.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://cpp.openfoam.org/v4/LRR_8C_source.html"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v4/LaunderSharmaKE_8C_source.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://cpp.openfoam.org/v4/LaunderSharmaKE_8C_source.html"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v4/RNGkEpsilon_8C_source.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://cpp.openfoam.org/v4/RNGkEpsilon_8C_source.html"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v4/SpalartAllmarasDDES_8C_source.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://cpp.openfoam.org/v4/SpalartAllmarasDDES_8C_source.html"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v4/SpalartAllmarasDES_8C_source.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://cpp.openfoam.org/v4/SpalartAllmarasDES_8C_source.html"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v4/WALE_8C_source.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://cpp.openfoam.org/v4/WALE_8C_source.html"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v4/WALE_8H_source.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://cpp.openfoam.org/v4/WALE_8H_source.html"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v4/classFoam_1_1RASModels_1_1RNGkEpsilon.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://cpp.openfoam.org/v4/classFoam_1_1RASModels_1_1RNGkEpsilon.html"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v4/classFoam_1_1RASModels_1_1kEpsilon.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://cpp.openfoam.org/v4/classFoam_1_1RASModels_1_1kEpsilon.html"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v4/classFoam_1_1turbulentIntensityKineticEnergyInletFvPatchScalarField.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://cpp.openfoam.org/v4/classFoam_1_1turbulentIntensityKineticEnergyInletFvPatchScalarField.html"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v4/dnsFoam_8C_source.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://cpp.openfoam.org/v4/dnsFoam_8C_source.html"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v4/kEqn_8C_source.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://cpp.openfoam.org/v4/kEqn_8C_source.html"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v4/kOmegaSSTSAS_8C_source.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://cpp.openfoam.org/v4/kOmegaSSTSAS_8C_source.html"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v4/nutUWallFunctionFvPatchScalarField_8C_source.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://cpp.openfoam.org/v4/nutUWallFunctionFvPatchScalarField_8C_source.html"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v5/v2f_8H_source.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://cpp.openfoam.org/v5/v2f_8H_source.html"
+    },
+    {
+      "url": "https://cpp.openfoam.org/v6/classFoam_1_1turbulentMixingLengthDissipationRateInletFvPatchScalarField.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://cpp.openfoam.org/v6/classFoam_1_1turbulentMixingLengthDissipationRateInletFvPatchScalarField.html"
+    },
+    {
+      "url": "https://flow.pha.jhu.edu/docs/README-isotropic.pdf",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://flow.pha.jhu.edu/docs/README-isotropic.pdf"
+    },
+    {
+      "url": "https://gibbs.science/teaching/les/handouts/choi_and_moin_2011.pdf",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://gibbs.science/teaching/les/handouts/choi_and_moin_2011.pdf"
+    },
+    {
+      "url": "https://gibbs.science/teaching/les/handouts/lilly_1992.pdf",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://gibbs.science/teaching/les/handouts/lilly_1992.pdf"
+    },
+    {
+      "url": "https://ntrs.nasa.gov/api/citations/19880005792/downloads/19880005792.pdf",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://ntrs.nasa.gov/api/citations/19880005792/downloads/19880005792.pdf"
+    },
+    {
+      "url": "https://ntrs.nasa.gov/api/citations/19930090813/downloads/19930090813.pdf",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://ntrs.nasa.gov/api/citations/19930090813/downloads/19930090813.pdf"
+    },
+    {
+      "url": "https://ntrs.nasa.gov/api/citations/19930092246/downloads/19930092246.pdf",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://ntrs.nasa.gov/api/citations/19930092246/downloads/19930092246.pdf"
+    },
+    {
+      "url": "https://ntrs.nasa.gov/api/citations/19940019675/downloads/19940019675.pdf",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://ntrs.nasa.gov/api/citations/19940019675/downloads/19940019675.pdf"
+    },
+    {
+      "url": "https://ntrs.nasa.gov/api/citations/20010080473/downloads/20010080473.pdf",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://ntrs.nasa.gov/api/citations/20010080473/downloads/20010080473.pdf"
+    },
+    {
+      "url": "https://pure.nitech.ac.jp/en/publications/fully-conservative-higher-order-finite-difference-schemes-for-inc/",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://pure.nitech.ac.jp/en/publications/fully-conservative-higher-order-finite-difference-schemes-for-inc/"
+    },
+    {
+      "url": "https://rainbow.ldeo.columbia.edu/~alexeyk/Papers/Kolmogorov1941.pdf",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://rainbow.ldeo.columbia.edu/~alexeyk/Papers/Kolmogorov1941.pdf"
+    },
+    {
+      "url": "https://solidmechanics.org/Text/Chapter2_4/Chapter2_4.php",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://solidmechanics.org/Text/Chapter2_4/Chapter2_4.php"
+    },
+    {
+      "url": "https://tmbwg.github.io/turbmodels/",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://tmbwg.github.io/turbmodels/"
+    },
+    {
+      "url": "https://tmbwg.github.io/turbmodels/easmko.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://tmbwg.github.io/turbmodels/easmko.html"
+    },
+    {
+      "url": "https://tmbwg.github.io/turbmodels/implementrans.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://tmbwg.github.io/turbmodels/implementrans.html"
+    },
+    {
+      "url": "https://tmbwg.github.io/turbmodels/ke-chien.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://tmbwg.github.io/turbmodels/ke-chien.html"
+    },
+    {
+      "url": "https://tmbwg.github.io/turbmodels/rsm-ssglrr.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://tmbwg.github.io/turbmodels/rsm-ssglrr.html"
+    },
+    {
+      "url": "https://tmbwg.github.io/turbmodels/sst.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://tmbwg.github.io/turbmodels/sst.html"
+    },
+    {
+      "url": "https://tmbwg.github.io/turbmodels/wilcox.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://tmbwg.github.io/turbmodels/wilcox.html"
+    },
+    {
+      "url": "https://web.stanford.edu/class/math220b/handouts/greensfcns.pdf",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://web.stanford.edu/class/math220b/handouts/greensfcns.pdf"
+    },
+    {
+      "url": "https://web.stanford.edu/group/ctr/ResBriefs/1994/08_DURBIN.pdf",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://web.stanford.edu/group/ctr/ResBriefs/1994/08_DURBIN.pdf"
+    },
+    {
+      "url": "https://www.ams.jhu.edu/~eyink/Turbulence/classics/Germano92.pdf",
+      "method": "HEAD with bounded GET fallback",
+      "status": 403,
+      "final_url": "https://www.ams.jhu.edu/~eyink/Turbulence/classics/Germano92.pdf"
+    },
+    {
+      "url": "https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf"
+    },
+    {
+      "url": "https://www.grc.nasa.gov/www/wind/valid/tutorial/iterconv.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://www.grc.nasa.gov/www/wind/valid/tutorial/iterconv.html"
+    },
+    {
+      "url": "https://www.grc.nasa.gov/www/wind/valid/tutorial/valassess.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://www.grc.nasa.gov/www/wind/valid/tutorial/valassess.html"
+    },
+    {
+      "url": "https://www.grc.nasa.gov/www/wind/valid/tutorial/verassess.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://www.grc.nasa.gov/www/wind/valid/tutorial/verassess.html"
+    },
+    {
+      "url": "https://www.grc.nasa.gov/www/winddocs/user/keywords/turbulence.html",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://www.grc.nasa.gov/www/winddocs/user/keywords/turbulence.html"
+    },
+    {
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/autocopl.htm",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://www.itl.nist.gov/div898/handbook/eda/section3/autocopl.htm"
+    },
+    {
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda35c.htm",
+      "method": "HEAD with bounded GET fallback",
+      "status": 200,
+      "final_url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda35c.htm"
+    }
+  ],
+  "definite_missing": [],
+  "unresolved": [
+    {
+      "url": "https://www.ams.jhu.edu/~eyink/Turbulence/classics/Germano92.pdf",
+      "method": "HEAD with bounded GET fallback",
+      "status": 403,
+      "final_url": "https://www.ams.jhu.edu/~eyink/Turbulence/classics/Germano92.pdf"
+    }
+  ],
+  "youtube_identity_links": [
+    "https://www.youtube.com/watch?v=-8ak1-qZgBw&t=15",
+    "https://www.youtube.com/watch?v=-8ak1-qZgBw&t=304",
+    "https://www.youtube.com/watch?v=-8ak1-qZgBw&t=798",
+    "https://www.youtube.com/watch?v=-Zjqp29rD_k&t=15",
+    "https://www.youtube.com/watch?v=-Zjqp29rD_k&t=779",
+    "https://www.youtube.com/watch?v=-_q1seALm9k&t=15",
+    "https://www.youtube.com/watch?v=-_q1seALm9k&t=856",
+    "https://www.youtube.com/watch?v=-deakDp5mFg&t=14",
+    "https://www.youtube.com/watch?v=-deakDp5mFg&t=553",
+    "https://www.youtube.com/watch?v=0wW6FpNKvlo&t=1055",
+    "https://www.youtube.com/watch?v=0wW6FpNKvlo&t=15",
+    "https://www.youtube.com/watch?v=0wW6FpNKvlo&t=489",
+    "https://www.youtube.com/watch?v=1QiEdf7WWts&t=1084",
+    "https://www.youtube.com/watch?v=1QiEdf7WWts&t=14",
+    "https://www.youtube.com/watch?v=1m1MPVYo9WI&t=14",
+    "https://www.youtube.com/watch?v=48WTLUsrm7k&t=19",
+    "https://www.youtube.com/watch?v=48WTLUsrm7k&t=610",
+    "https://www.youtube.com/watch?v=4jo90Pil6jY&t=15",
+    "https://www.youtube.com/watch?v=4jo90Pil6jY&t=691",
+    "https://www.youtube.com/watch?v=4pUWCyjOEGc&t=15",
+    "https://www.youtube.com/watch?v=4pUWCyjOEGc&t=517",
+    "https://www.youtube.com/watch?v=721ewrmyNDQ&t=15",
+    "https://www.youtube.com/watch?v=721ewrmyNDQ&t=846",
+    "https://www.youtube.com/watch?v=7pG4d3958xI&t=1111",
+    "https://www.youtube.com/watch?v=7pG4d3958xI&t=15",
+    "https://www.youtube.com/watch?v=8-P7fKRl7gw&t=14",
+    "https://www.youtube.com/watch?v=8-P7fKRl7gw&t=631",
+    "https://www.youtube.com/watch?v=8vA99S_QbJ8&t=16",
+    "https://www.youtube.com/watch?v=A-fvO636nUs&t=14",
+    "https://www.youtube.com/watch?v=A-fvO636nUs&t=1415",
+    "https://www.youtube.com/watch?v=A-fvO636nUs&t=1605",
+    "https://www.youtube.com/watch?v=A-fvO636nUs&t=1770",
+    "https://www.youtube.com/watch?v=A-fvO636nUs&t=210",
+    "https://www.youtube.com/watch?v=A-fvO636nUs&t=420",
+    "https://www.youtube.com/watch?v=A-fvO636nUs&t=820",
+    "https://www.youtube.com/watch?v=A-fvO636nUs&t=990",
+    "https://www.youtube.com/watch?v=BggxvBLypoA&t=15",
+    "https://www.youtube.com/watch?v=BggxvBLypoA&t=225",
+    "https://www.youtube.com/watch?v=BggxvBLypoA&t=313",
+    "https://www.youtube.com/watch?v=BggxvBLypoA&t=500",
+    "https://www.youtube.com/watch?v=D9B9eA3zIRU&t=1363",
+    "https://www.youtube.com/watch?v=D9B9eA3zIRU&t=15",
+    "https://www.youtube.com/watch?v=D9B9eA3zIRU&t=570",
+    "https://www.youtube.com/watch?v=Fff1PE0-JI8&t=15",
+    "https://www.youtube.com/watch?v=Fff1PE0-JI8&t=813",
+    "https://www.youtube.com/watch?v=GfpVSUCwfcc&t=15",
+    "https://www.youtube.com/watch?v=GfpVSUCwfcc&t=858",
+    "https://www.youtube.com/watch?v=Hm9Kcbvm2I8&t=16",
+    "https://www.youtube.com/watch?v=Hm9Kcbvm2I8&t=349",
+    "https://www.youtube.com/watch?v=Hm9Kcbvm2I8&t=782",
+    "https://www.youtube.com/watch?v=KcEhq28Gdmc&t=1169",
+    "https://www.youtube.com/watch?v=KcEhq28Gdmc&t=15",
+    "https://www.youtube.com/watch?v=L3BhgC7cSd8&t=15",
+    "https://www.youtube.com/watch?v=LP-lhdKIsFw&t=16",
+    "https://www.youtube.com/watch?v=LP-lhdKIsFw&t=495",
+    "https://www.youtube.com/watch?v=LP-lhdKIsFw&t=823",
+    "https://www.youtube.com/watch?v=MEhzjByC6tY&t=15",
+    "https://www.youtube.com/watch?v=MEhzjByC6tY&t=766",
+    "https://www.youtube.com/watch?v=MT4rrrUSa9k&t=15",
+    "https://www.youtube.com/watch?v=MT4rrrUSa9k&t=666",
+    "https://www.youtube.com/watch?v=MT4rrrUSa9k&t=903",
+    "https://www.youtube.com/watch?v=MY0s2GPlPbM&t=14",
+    "https://www.youtube.com/watch?v=NIBaAQnSCko&t=15",
+    "https://www.youtube.com/watch?v=O_ev3ObrSYw&t=1200",
+    "https://www.youtube.com/watch?v=O_ev3ObrSYw&t=1330",
+    "https://www.youtube.com/watch?v=O_ev3ObrSYw&t=15",
+    "https://www.youtube.com/watch?v=O_ev3ObrSYw&t=1600",
+    "https://www.youtube.com/watch?v=O_ev3ObrSYw&t=470",
+    "https://www.youtube.com/watch?v=P_mIo20_rnA&t=1130",
+    "https://www.youtube.com/watch?v=P_mIo20_rnA&t=15",
+    "https://www.youtube.com/watch?v=QT2MUxDJj0c&t=1020",
+    "https://www.youtube.com/watch?v=QT2MUxDJj0c&t=14",
+    "https://www.youtube.com/watch?v=R9-DtHqmMtk&t=1112",
+    "https://www.youtube.com/watch?v=R9-DtHqmMtk&t=15",
+    "https://www.youtube.com/watch?v=R9-DtHqmMtk&t=634",
+    "https://www.youtube.com/watch?v=RsyYpKwXq74&t=16",
+    "https://www.youtube.com/watch?v=RsyYpKwXq74&t=650",
+    "https://www.youtube.com/watch?v=RsyYpKwXq74&t=920",
+    "https://www.youtube.com/watch?v=S-eNqdqB1qE&t=15",
+    "https://www.youtube.com/watch?v=SR342U2LDpc&t=15",
+    "https://www.youtube.com/watch?v=SR342U2LDpc&t=800",
+    "https://www.youtube.com/watch?v=TP3OSk-Jb3Y&t=15",
+    "https://www.youtube.com/watch?v=TRdmk-IIzSE&t=16",
+    "https://www.youtube.com/watch?v=TyiCSg5YWnQ&t=15",
+    "https://www.youtube.com/watch?v=TyiCSg5YWnQ&t=707",
+    "https://www.youtube.com/watch?v=U7eY7EN03nM&t=124",
+    "https://www.youtube.com/watch?v=U7eY7EN03nM&t=15",
+    "https://www.youtube.com/watch?v=U7eY7EN03nM&t=228",
+    "https://www.youtube.com/watch?v=U7eY7EN03nM&t=426",
+    "https://www.youtube.com/watch?v=VOP1Q02qJhw&t=120",
+    "https://www.youtube.com/watch?v=VOP1Q02qJhw&t=17",
+    "https://www.youtube.com/watch?v=VZfgkXgBUwY&t=15",
+    "https://www.youtube.com/watch?v=VZfgkXgBUwY&t=489",
+    "https://www.youtube.com/watch?v=Vd0nUc48P3E&t=16",
+    "https://www.youtube.com/watch?v=Vd0nUc48P3E&t=778",
+    "https://www.youtube.com/watch?v=X1ntzXAuX80&t=1138",
+    "https://www.youtube.com/watch?v=X1ntzXAuX80&t=15",
+    "https://www.youtube.com/watch?v=X1ntzXAuX80&t=1501",
+    "https://www.youtube.com/watch?v=X1ntzXAuX80&t=270",
+    "https://www.youtube.com/watch?v=X1ntzXAuX80&t=602",
+    "https://www.youtube.com/watch?v=X1ntzXAuX80&t=738",
+    "https://www.youtube.com/watch?v=Zhi8CJfB_sU&t=0",
+    "https://www.youtube.com/watch?v=Zhi8CJfB_sU&t=220",
+    "https://www.youtube.com/watch?v=Zhi8CJfB_sU&t=401",
+    "https://www.youtube.com/watch?v=_Xiut0RTLxE&t=14",
+    "https://www.youtube.com/watch?v=agH9hSyRCYE&t=14",
+    "https://www.youtube.com/watch?v=aisGVWPWfEw&t=14",
+    "https://www.youtube.com/watch?v=aisGVWPWfEw&t=570",
+    "https://www.youtube.com/watch?v=aomx9FDFxZ4&t=15",
+    "https://www.youtube.com/watch?v=beHBzwsCsEs&t=14",
+    "https://www.youtube.com/watch?v=d4OENIPqf08&t=15",
+    "https://www.youtube.com/watch?v=d4OENIPqf08&t=270",
+    "https://www.youtube.com/watch?v=d4OENIPqf08&t=502",
+    "https://www.youtube.com/watch?v=d4OENIPqf08&t=750",
+    "https://www.youtube.com/watch?v=dIHh__sgHy8&t=17",
+    "https://www.youtube.com/watch?v=dIHh__sgHy8&t=749",
+    "https://www.youtube.com/watch?v=dUKbHiTyJUo&t=15",
+    "https://www.youtube.com/watch?v=dUKbHiTyJUo&t=1660",
+    "https://www.youtube.com/watch?v=dbX_2K8Hh44&t=14",
+    "https://www.youtube.com/watch?v=dbX_2K8Hh44&t=890",
+    "https://www.youtube.com/watch?v=dfZksw50wkE&t=1685",
+    "https://www.youtube.com/watch?v=dfZksw50wkE&t=23",
+    "https://www.youtube.com/watch?v=doZF5y4vmkk&t=14",
+    "https://www.youtube.com/watch?v=doZF5y4vmkk&t=560",
+    "https://www.youtube.com/watch?v=e5p-14epW4Y&t=15",
+    "https://www.youtube.com/watch?v=e5p-14epW4Y&t=300",
+    "https://www.youtube.com/watch?v=e5p-14epW4Y&t=625",
+    "https://www.youtube.com/watch?v=eDc4zMbstRo&t=14",
+    "https://www.youtube.com/watch?v=eDc4zMbstRo&t=249",
+    "https://www.youtube.com/watch?v=eFuUWqgqxHg&t=14",
+    "https://www.youtube.com/watch?v=eFuUWqgqxHg&t=510",
+    "https://www.youtube.com/watch?v=fZe2bxvPeh0&t=174",
+    "https://www.youtube.com/watch?v=fZe2bxvPeh0&t=1819",
+    "https://www.youtube.com/watch?v=fZe2bxvPeh0&t=2633",
+    "https://www.youtube.com/watch?v=fZe2bxvPeh0&t=395",
+    "https://www.youtube.com/watch?v=fZe2bxvPeh0&t=950",
+    "https://www.youtube.com/watch?v=gtTLEvvnO10&t=15",
+    "https://www.youtube.com/watch?v=gtTLEvvnO10&t=501",
+    "https://www.youtube.com/watch?v=hCqiblHm_to&t=14",
+    "https://www.youtube.com/watch?v=hCqiblHm_to&t=555",
+    "https://www.youtube.com/watch?v=iA9RwHTNH6U&t=15",
+    "https://www.youtube.com/watch?v=iA9RwHTNH6U&t=450",
+    "https://www.youtube.com/watch?v=jcqo4BTsONU&t=14",
+    "https://www.youtube.com/watch?v=jcqo4BTsONU&t=630",
+    "https://www.youtube.com/watch?v=njmZhrtFbHc&t=1198",
+    "https://www.youtube.com/watch?v=njmZhrtFbHc&t=15",
+    "https://www.youtube.com/watch?v=o16cML-Pq_Y&t=14",
+    "https://www.youtube.com/watch?v=ofYq3-Ls_-o&t=14",
+    "https://www.youtube.com/watch?v=ofYq3-Ls_-o&t=370",
+    "https://www.youtube.com/watch?v=ofYq3-Ls_-o&t=990",
+    "https://www.youtube.com/watch?v=pT5HYliyue4&t=1300",
+    "https://www.youtube.com/watch?v=pT5HYliyue4&t=17",
+    "https://www.youtube.com/watch?v=pm9YvDBLZaA&t=1438",
+    "https://www.youtube.com/watch?v=pm9YvDBLZaA&t=179",
+    "https://www.youtube.com/watch?v=pm9YvDBLZaA&t=2396",
+    "https://www.youtube.com/watch?v=pm9YvDBLZaA&t=268",
+    "https://www.youtube.com/watch?v=pm9YvDBLZaA&t=2740",
+    "https://www.youtube.com/watch?v=pm9YvDBLZaA&t=2916",
+    "https://www.youtube.com/watch?v=pm9YvDBLZaA&t=590",
+    "https://www.youtube.com/watch?v=pm9YvDBLZaA&t=847",
+    "https://www.youtube.com/watch?v=qzu9QxbONn0&t=1469",
+    "https://www.youtube.com/watch?v=qzu9QxbONn0&t=15",
+    "https://www.youtube.com/watch?v=qzu9QxbONn0&t=537",
+    "https://www.youtube.com/watch?v=rUowvkj7SVc&t=14",
+    "https://www.youtube.com/watch?v=rUowvkj7SVc&t=1410",
+    "https://www.youtube.com/watch?v=rUowvkj7SVc&t=448",
+    "https://www.youtube.com/watch?v=rUowvkj7SVc&t=675",
+    "https://www.youtube.com/watch?v=uQAfzoov-dQ&t=14",
+    "https://www.youtube.com/watch?v=uQAfzoov-dQ&t=900",
+    "https://www.youtube.com/watch?v=v4kmgnHYXNE&t=1120",
+    "https://www.youtube.com/watch?v=v4kmgnHYXNE&t=15",
+    "https://www.youtube.com/watch?v=w2h56nQ81xc&t=16",
+    "https://www.youtube.com/watch?v=wpKCHT2OH5w&t=1019",
+    "https://www.youtube.com/watch?v=wpKCHT2OH5w&t=15",
+    "https://www.youtube.com/watch?v=xxaoOg9I9Lw&t=1204",
+    "https://www.youtube.com/watch?v=xxaoOg9I9Lw&t=14",
+    "https://www.youtube.com/watch?v=xxaoOg9I9Lw&t=158",
+    "https://www.youtube.com/watch?v=yaMG1ifG6XI&t=25",
+    "https://www.youtube.com/watch?v=yaMG1ifG6XI&t=896",
+    "https://www.youtube.com/watch?v=ykq6yV2_myA&t=17",
+    "https://www.youtube.com/watch?v=z0XOWaoRHJg&t=15",
+    "https://www.youtube.com/watch?v=z0XOWaoRHJg&t=420",
+    "https://www.youtube.com/watch?v=z0XOWaoRHJg&t=488",
+    "https://www.youtube.com/watch?v=z0XOWaoRHJg&t=859"
+  ],
+  "youtube_method": "Recording identity and original playlist positions verified in full acquired playlist/official outline; no claim automated YouTube HTTP success",
+  "limitations": [
+    "Access restrictions, redirects and network availability are distinct from scientific source validity",
+    "No comprehensive link availability guarantee over time"
+  ]
+}

@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="8d3788c61e44eeb4f9c2415a9e596897687cf5719cc36f20ea01371240647138">
+<title>3. Conservation laws and Newtonian closure · Turbulence Modeling</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{pageReady:()=>MathJax.startup.defaultPageReady().then(()=>{document.documentElement.dataset.mathReady='true';})}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Turbulence Modeling · NPTEL IIT Madras</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="book-overview.html">Study route</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc"><h2>On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>3. Conservation laws and Newtonian closure</h1>
+<p class="lead">A fluid is sheared between two plates. Momentum balance constrains its stress, but does not say how much force is needed to move the upper plate. That relation depends on the material. Before confronting turbulent closure, it is useful to solve this simpler closure problem: connect a fluid's molecular stress to its velocity gradient, and test the result against force and power balances. The same distinction between a conservation identity and a constitutive assumption will recur after averaging.</p>
+<p class="source-note">Lessons 6–7 supply the vorticity-index expansion, mass and momentum balances, constant-density specialization, equation counting, Newtonian viscosity, pressure coupling, and mean/fluctuating continuity. The control-volume derivations, torque argument, power checks, Couette and Poiseuille calculations, and exercises are independent expansions. The equations use force-component-first stress indices throughout.</p>
+
+<h2 id="kinematics" data-video="MT4rrrUSa9k" data-start="15" data-end="666">3.1 Follow a particle through a field <a class="timestamp" href="https://www.youtube.com/watch?v=MT4rrrUSa9k&amp;t=15">L6 · 00:15</a></h2>
+<p>Let \(u_i(\mathbf x,t)\) denote instantaneous velocity, in m/s, in fixed Cartesian coordinates \(x_i\), in metres. Repeated indices are summed from 1 to 3. A fluid particle has path \(\mathbf X(t)\) satisfying \(dX_i/dt=u_i(\mathbf X(t),t)\). For any smooth scalar field \(f(\mathbf x,t)\), the chain rule along that path gives</p>
+\[
+ {d\over dt}f(\mathbf X(t),t)
+ =\partial_tf+u_j\partial_jf
+ \equiv {Df\over Dt}. \tag{3.1}
+\]
+<p>The material derivative \(D/Dt\) follows a particle. A partial time derivative follows a fixed location. Applying (3.1) to velocity gives material acceleration \(a_i=\partial_tu_i+u_j\partial_ju_i\), in m/s². A steady field can accelerate a particle through spatial variation even when \(\partial_tu_i=0\).</p>
+<p>For the linear field \(u_i=B_{ij}x_j\), where constant \(B\) has units s⁻¹, acceleration is \(B_{ij}B_{jk}x_k\). A steady simple shear \(u_1=Sy,u_2=u_3=0\) has zero acceleration because particles retain their wall-normal coordinate. Its nonzero gradient does not by itself create an advective acceleration. In contrast, solid-body rotation \(u_1=-\Omega y,u_2=\Omega x,u_3=0\) has acceleration \(-\Omega^2(x,y,0)\).</p>
+<p>The source explicitly expands curl using the Levi-Civita symbol. With \(\omega_i=\epsilon_{ijk}\partial_ju_k\), setting \(i=1\) leaves only \(\epsilon_{123}\partial_2u_3+\epsilon_{132}\partial_3u_2=\partial_2u_3-\partial_3u_2\). Repeated labels inside \(\epsilon\) vanish. This expansion illustrates the discipline needed below: keep a free component index fixed while summing only the repeated directions.</p>
+
+<h2 id="mass" data-video="MT4rrrUSa9k" data-start="666" data-end="903">3.2 Mass balance and the meaning of incompressibility <a class="timestamp" href="https://www.youtube.com/watch?v=MT4rrrUSa9k&amp;t=666">L6 · 11:06</a></h2>
+<p>Take an arbitrary fixed control volume \(V\), with outward unit normal \(n_j\) on boundary \(\partial V\). Density \(\rho(\mathbf x,t)\) is mass per current volume, in kg/m³. Assuming no mass sources, mass accumulates inside only through inward flux:</p>
+\[
+ {d\over dt}\int_V\rho\,dV
+ =-\int_{\partial V}\rho u_jn_j\,dA.
+\]
+<p>The boundary integral is outward mass flow, in kg/s. For a fixed volume and sufficiently regular fields, move the time derivative inside and apply the divergence theorem. The resulting integral of \(\partial_t\rho+\partial_j(\rho u_j)\) vanishes for every \(V\). A continuous residual nonzero at a point would keep one sign in a small surrounding region and could not have zero integral there. Thus</p>
+\[
+ \partial_t\rho+\partial_j(\rho u_j)=0,\qquad
+ {D\rho\over Dt}+\rho\,\partial_ju_j=0. \tag{3.2}
+\]
+<p>The second form follows by the product rule. For positive density, material incompressibility, \(D\rho/Dt=0\), implies \(\partial_ju_j=0\). A globally constant density is a stronger assumption and also implies this constraint. In a materially incompressible mixture with density varying between parcels, density may still vary spatially while being transported without change along each parcel. This edition's core development uses constant \(\rho\), matching the course specialization.</p>
+<p>Zero divergence does not require every velocity component to be constant. The field \(\mathbf u=(Sx,-Sy,0)\) has divergence \(S-S=0\), although a small material element stretches in one direction and contracts in another. Incompressibility constrains volume change, rather than banning deformation. Conservation across a channel also fixes integral flow: impermeable sidewalls and steady density make inlet and outlet volume rates equal, even for a highly nonuniform profile.</p>
+
+<h2 id="momentum" data-video="MT4rrrUSa9k" data-start="903" data-end="1210">3.3 Momentum balance introduces stress <a class="timestamp" href="https://www.youtube.com/watch?v=MT4rrrUSa9k&amp;t=903">L6 · 15:03</a></h2>
+<p>Surface traction \(t_i(\mathbf n)\) is force component \(i\) per current area on an oriented surface with unit normal \(\mathbf n\). In a classical Cauchy continuum it is represented by \(t_i=\sigma_{ij}n_j\), where \(\sigma_{ij}\), in Pa, is the total stress tensor. The first index labels force, the second the normal direction. Let \(b_i\) be body force per unit mass, in m/s², such as gravitational acceleration. The volume force density is \(\rho b_i\), not \(b_i\) alone.</p>
+<p>For the fixed control volume, rate of change of momentum plus outward advective momentum flux equals external force:</p>
+\[
+ {d\over dt}\int_V\rho u_i\,dV
+ +\int_{\partial V}\rho u_iu_jn_j\,dA
+ =\int_{\partial V}\sigma_{ij}n_j\,dA+\int_V\rho b_i\,dV.
+\]
+<p>Apply the divergence theorem and localize as in mass balance. This gives the conservative momentum equation</p>
+\[
+ \partial_t(\rho u_i)+\partial_j(\rho u_iu_j)
+ =\partial_j\sigma_{ij}+\rho b_i. \tag{3.3}
+\]
+<p>Each term is force per volume, in N/m³. Expanding the left side separates \(\rho(\partial_tu_i+u_j\partial_ju_i)\) from \(u_i[\partial_t\rho+\partial_j(\rho u_j)]\). The bracket vanishes by (3.2), leaving \(\rho a_i=\partial_j\sigma_{ij}+\rho b_i\). Conservative and material forms therefore agree for smooth mass-conserving fields. A discrete approximation need not preserve that product identity automatically.</p>
+<p><a href="https://solidmechanics.org/Text/Chapter2_4/Chapter2_4.php">Bower, §2.4.1–2.4.2</a>, gives mass and linear-momentum balances in current coordinates. His stress definition places the normal index first. Translating \(\sigma^{B}_{ji}=\sigma_{ij}\) gives the contraction used here before symmetry is invoked. The stress law is separate from these balances: fluids and solids obey the same local momentum principle while responding differently to deformation.</p>
+
+<h2 id="symmetry" data-video="z0XOWaoRHJg" data-start="15" data-end="420">3.4 Why molecular stress is symmetric in this model <a class="timestamp" href="https://www.youtube.com/watch?v=z0XOWaoRHJg&amp;t=15">L7 · 00:15</a></h2>
+<p>The source's component expansion uses a symmetric stress. State the physical assumption that licenses it. A classical nonpolar continuum has no independent body couples, surface couples, or intrinsic spin angular momentum. Its angular momentum is orbital momentum \(\int\mathbf x\times\mathbf u\,dm\), where \(dm\) is particle mass. For a material region, its rate of change is \(\int\mathbf x\times\mathbf a\,dm\), because the extra derivative term is \(\mathbf u\times\mathbf u=0\).</p>
+<p>The surface moment has component \(\epsilon_{ikl}x_k\sigma_{lj}n_j\). Convert it to a volume integral and differentiate:</p>
+\[
+ \partial_j(\epsilon_{ikl}x_k\sigma_{lj})
+ =\epsilon_{ikl}\sigma_{lk}
+  +\epsilon_{ikl}x_k\partial_j\sigma_{lj}. \tag{3.4}
+\]
+<p>After adding body-force moment and subtracting orbital acceleration, the last term cancels with linear momentum. Localization leaves \(\epsilon_{ikl}\sigma_{lk}=0\). Its three components are \(\sigma_{32}-\sigma_{23}=0\), \(\sigma_{13}-\sigma_{31}=0\), and \(\sigma_{21}-\sigma_{12}=0\). Hence \(\sigma\) is symmetric. <a href="https://solidmechanics.org/Text/Chapter2_4/Chapter2_4.php">Bower, §2.4.3</a>, develops the corresponding moment argument with his transposed index convention.</p>
+<p>Symmetry is not a property of every square array or every second-order tensor. Models with independent couples need a different moment balance. Within the present model there are six independent total-stress components. Continuity and three momentum equations still do not determine those components and three velocities without a constitutive relation. Splitting an isotropic part from a deviatoric part changes the representation, not the independent physical information. Equation counting is a diagnostic of missing relations, not a proof of solvability.</p>
+
+<p>Pressure also has to be coupled to the velocity constraint. Taking a divergence of momentum supplies a pressure Poisson relation, rather than a new material law. Its explicit constant-property form will follow after the stress law is specified.</p>
+<h2 id="newtonian" data-video="z0XOWaoRHJg" data-start="488" data-end="859">3.5 A constitutive assumption closes molecular stress <a class="timestamp" href="https://www.youtube.com/watch?v=z0XOWaoRHJg&amp;t=488">L7 · 08:08</a></h2>
+<p>Define instantaneous strain rate \(s_{ij}=(\partial_ju_i+\partial_iu_j)/2\) and antisymmetric spin \(w_{ij}=(\partial_ju_i-\partial_iu_j)/2\), both in s⁻¹. The gradient is their sum. A locally isotropic Newtonian constitutive law for incompressible motion is</p>
+\[
+ \sigma_{ij}=-p\delta_{ij}+2\mu s_{ij},\qquad \mu\gt0. \tag{3.5}
+\]
+<p>Here \(p\) is pressure, positive in isotropic compression, and \(\mu\) is dynamic molecular viscosity in Pa s. The extra viscous stress is \(\tau_{ij}=2\mu s_{ij}\). This is a material assumption: stress responds locally and linearly to strain rate, with isotropic coefficient \(\mu\). A rigid rotation has nonzero \(w\) but zero \(s\); it produces no additional Newtonian viscous stress. A polymer with memory or a shear-dependent viscosity generally needs a different constitutive law.</p>
+<p>Under incompressibility, \(s_{ii}=\partial_iu_i=0\), so the viscous stress is traceless and \(p=-\sigma_{ii}/3\). Pressure is a field enforcing the velocity constraint and boundary balance; it is not prescribed by a compressible equation of state in this reduced model. Velocity gradients need not be known in advance: they remain unknowns solved with pressure, while the constitutive law eliminates independent stress fields.</p>
+<p>For compressible isotropic Newtonian motion, an additional scalar coefficient can multiply the volumetric rate. Writing \(\tau_{ij}=2\mu s_{ij}+\lambda(\partial_ku_k)\delta_{ij}\) introduces a second viscosity coefficient \(\lambda\). The special choice \(\lambda=-2\mu/3\) is Stokes's hypothesis, not a consequence of momentum conservation. In the present incompressible specialization, the volumetric term vanishes whatever that coefficient is. The <a href="https://tmbwg.github.io/turbmodels/implementrans.html">Turbulence Modeling Resource stress specification</a> uses a trace-subtracted compressible expression; its zero-divergence, constant-property limit agrees with (3.5).</p>
+<p>Take \(\rho,\mu\) constant and set \(\nu=\mu/\rho\). Then</p>
+\[
+ {1\over\rho}\partial_j(2\mu s_{ij})
+ =\nu\partial_j\partial_ju_i
+  +\nu\partial_i(\partial_ju_j)
+ =\nu\partial_j\partial_ju_i.
+\]
+<p>The second derivative term disappears through continuity, not through small viscosity. Momentum becomes</p>
+\[
+ \partial_tu_i+u_j\partial_ju_i
+ =-{1\over\rho}\partial_ip+\nu\partial_j\partial_ju_i+b_i,
+ \qquad \partial_ju_j=0. \tag{3.6}
+\]
+<p>Three velocities and pressure now form a closed instantaneous mechanical model with appropriate data and a pressure reference. This does not prove global existence, uniqueness, numerical convergence, or physical adequacy of every solution. Temperature is taken to leave the material properties fixed. If heating changes viscosity or density materially, a thermal model must be added or the approximation justified.</p>
+
+<h2 id="couette">3.6 A moving-wall force and power check</h2>
+<p>Put a Newtonian fluid between plates at \(y=0\) and \(y=H\), where \(H\gt0\) is the gap. The lower plate is stationary and the upper moves in the \(x\)-direction at speed \(V_p\). Assume a steady parallel solution \(\mathbf u=(U(y),0,0)\), zero pressure gradient, no body force, and no slip at both plates. Continuity holds. Advection vanishes because \(U\) has no streamwise dependence and wall-normal velocity is zero.</p>
+<p>Equation (3.6) reduces to \(\mu U''=0\). Integrating twice gives \(U=Ay+B\); boundary values \(U(0)=0,U(H)=V_p\) give \(B=0,A=V_p/H\). Thus \(U=V_p y/H\) and \(\tau_{12}=\mu V_p/H\). Although the stress is nonzero, its divergence is zero: equal traction is transmitted across the gap without local momentum accumulation. The upper plate must supply this shear force per area.</p>
+<p>To check mechanical power, define kinetic energy per unit mass \(q=u_iu_i/2\). Multiply material momentum by \(u_i\), use mass conservation, and apply the product rule to \(u_i\partial_j\sigma_{ij}\). The result is</p>
+\[
+ \partial_t(\rho q)+\partial_j(\rho u_jq)
+ =\partial_j(u_i\sigma_{ij})-\sigma_{ij}\partial_ju_i
+  +\rho b_iu_i. \tag{3.7}
+\]
+<p>For (3.5) under incompressibility, pressure contributes no local work \(p\,\partial_iu_i\). The contraction between symmetric \(s\) and antisymmetric \(w\) is zero: exchanging the summed indices changes its sign while leaving its value unchanged. The mechanical energy converted to internal energy per volume per time is therefore \(\Phi=2\mu s_{ij}s_{ij}\ge0\), in W/m³. It is not a loss of total energy.</p>
+<p>In this shear, \(s_{12}=s_{21}=V_p/(2H)\), so \(\Phi=\mu(V_p/H)^2\). Integrating across the gap gives dissipation per wall area \(\mu V_p^2/H\), exactly equal to upper-wall power \(\tau_{12}V_p\). For \(\mu=1.8\times10^{-5}\) Pa s, \(H=0.002\) m, and \(V_p=2\) m/s, shear is \(0.018\) Pa, local dissipation is \(18\) W/m³, and both power expressions give \(0.036\) W/m². A factor-of-two error in strain definition would fail this comparison.</p>
+
+<h2 id="poiseuille">3.7 A pressure-driven branch and its limits</h2>
+<p>Return to the channel of half-height \(h=0.02\) m and width one metre. Let its walls be stationary at \(y=0,2h\), and impose pressure decrease \(G=-dp/dx\gt0\), with no body force. A steady parallel instantaneous solution obeys \(0=G+\mu U''\). Integrating and applying both no-slip conditions gives</p>
+\[
+ U(y)={G\over2\mu}y(2h-y),\qquad
+ U_b={1\over2h}\int_0^{2h}U(y)\,dy
+ ={Gh^2\over3\mu}. \tag{3.8}
+\]
+<p>The maximum is \(Gh^2/(2\mu)\) at the center, and the wall shear magnitude is \(Gh\). For \(G=10\) Pa/m and the same \(\mu\), this branch has \(U_b=74.0741\) m/s and center speed \(111.1111\) m/s. Conversely, its pressure gradient for the chapter-1 target \(U_b=10\) m/s is \(1.35\) Pa/m, or \(13.5\) Pa over ten metres. These are exact values for the stipulated laminar parallel branch, not measured channel performance.</p>
+<p>Equation (3.8) can remain a mathematical steady solution without describing the statistically realized turbulent state. Its existence does not establish stability to disturbances, selection by an experiment, or validity of substituting it for a turbulent mean. An instantaneous Navier–Stokes calculation can represent fluctuations through time-dependent solutions; applying its laminar branch directly to a turbulent mean omits fluctuation momentum transport. The next chapter derives exactly where that transport appears.</p>
+<p>Force balance is independent of that branch's profile shape. A length \(L\) and width \(W\) have pressure force \(GL(2hW)\). Both walls together resist with \(2(Gh)LW\), the same force. Thus matching overall force is a necessary consistency condition but does not prove a velocity profile or turbulence closure correct.</p>
+
+<h2 id="pressure" data-video="z0XOWaoRHJg" data-start="420" data-end="488">3.8 Pressure couples the velocity components <a class="timestamp" href="https://www.youtube.com/watch?v=z0XOWaoRHJg&amp;t=420">L7 · 07:00</a></h2>
+<p>Pressure is not an extra freely selectable force field once velocity, boundaries, and incompressibility are prescribed. With constant properties and zero body force, take the divergence of (3.6). Time and viscous terms vanish by continuity. Expanding the advective divergence leaves \((\partial_iu_j)(\partial_ju_i)\), because \(u_j\partial_j(\partial_iu_i)=0\). Consequently</p>
+\[
+ \partial_i\partial_ip
+ =-\rho(\partial_iu_j)(\partial_ju_i). \tag{3.9}
+\]
+<p>This pressure Poisson relation is derived from continuity and momentum; it is not an independent constitutive closure. It needs boundary conditions consistent with momentum and determines pressure only up to a spatially constant reference where all conditions are of Neumann type. More generally, adding a function of time to pressure leaves its spatial gradient unchanged.</p>
+<p>Solid-body rotation checks its sign. For \(\mathbf u=(-\Omega y,\Omega x,0)\), the velocity-gradient contraction is \(-2\Omega^2\), so (3.9) gives \(\nabla^2p=2\rho\Omega^2\). The pressure \(p=p_0+\rho\Omega^2(x^2+y^2)/2\) satisfies this and supplies the centripetal acceleration \(-\nabla p/\rho=-\Omega^2(x,y,0)\). Its strain rate and viscous stress vanish, despite nonzero rotation. This separates pressure acceleration from viscous deformation.</p>
+<p>For variable viscosity, the compact Laplacian expression cannot be retained without product terms. Even under incompressibility, \(\partial_j[\mu(\partial_ju_i+\partial_iu_j)]\) contains \((\partial_j\mu)(\partial_ju_i+\partial_iu_j)\). A solver or analytical derivation must keep the divergence form or expand it correctly. Constancy of density alone does not remove those terms.</p>
+
+<h2 id="averaging" data-video="z0XOWaoRHJg" data-start="859" data-end="1450">3.9 Mean and fluctuating continuity <a class="timestamp" href="https://www.youtube.com/watch?v=z0XOWaoRHJg&amp;t=859">L7 · 14:19</a></h2>
+<p>Use the ensemble decomposition from chapter 2, \(u_i=U_i+u'_i\), with \(U_i=\mathbb E[u_i]\). Assume required moments and derivatives exist and that expectation commutes with the spatial derivatives. Averaging the instantaneous continuity equation gives \(\partial_jU_j=0\). Subtracting it from \(\partial_ju_j=0\) gives \(\partial_ju'_j=0\).</p>
+<p>All three continuity equations have the same algebraic form because the operator is linear. This does not mean averaged momentum has the same closure as instantaneous momentum. Its advective term multiplies unknown velocities, and averaging a product retains covariance. Molecular Newtonian closure supplies no rule for that covariance. The distinction can now be derived rather than introduced as a new empirical term.</p>
+
+<h2 id="implementation">3.10 Execute force, power, and profile checks</h2>
+<p>The Python program evaluates the constructed Couette and Poiseuille solutions. It compares wall input with integrated mechanical dissipation, verifies the parabolic momentum residual, integrates bulk speed by Simpson quadrature, and checks both-wall force balance. Simpson's rule is exact for this quadratic profile; it would be an approximation for a general function. The program uses only the standard library, reads no files, and prints its results. See <a href="code/ch03_conservation.py">code/ch03_conservation.py</a>.</p>
+<pre data-run="code/ch03_conservation.py"><code>&quot;&quot;&quot;Force, power, and profile checks for explicit Newtonian branches.&quot;&quot;&quot;
+from math import isclose
+
+mu, rho = 1.8e-5, 1.2
+gap, plate_speed = .002, 2.
+shear = mu * plate_speed / gap
+strain = plate_speed / (2 * gap)
+dissipation = 2 * mu * (strain**2 + strain**2)
+wall_power = shear * plate_speed
+integrated_loss = dissipation * gap
+assert isclose(wall_power, integrated_loss)
+half_height, pressure_gradient, length, width = .02, 10., 10., 1.
+
+
+def profile(y):
+    return pressure_gradient * y * (2 * half_height - y) / (2 * mu)
+
+
+spacing = 2 * half_height / 4
+points = [profile(i * spacing) for i in range(5)]
+integral = spacing / 3 * (points[0] + 4 * points[1] + 2 * points[2]
+                          + 4 * points[3] + points[4])
+bulk = integral / (2 * half_height)
+exact_bulk = pressure_gradient * half_height**2 / (3 * mu)
+assert isclose(bulk, exact_bulk)
+curvature = -pressure_gradient / mu
+assert isclose(pressure_gradient + mu * curvature, 0., abs_tol=1e-12)
+wall_shear = pressure_gradient * half_height
+pressure_force = pressure_gradient * length * 2 * half_height * width
+wall_force = 2 * wall_shear * length * width
+assert isclose(pressure_force, wall_force)
+gradient_for_target = 3 * mu * 10 / half_height**2
+print(f&#x27;Couette shear Pa: {shear:.6f}&#x27;)
+print(f&#x27;Couette dissipation W/m3: {dissipation:.6f}&#x27;)
+print(f&#x27;wall input, integrated loss W/m2: {wall_power:.6f}, &#x27;
+      f&#x27;{integrated_loss:.6f}&#x27;)
+print(f&#x27;Poiseuille bulk speed m/s: {bulk:.6f}&#x27;)
+print(f&#x27;Poiseuille center speed m/s: {profile(half_height):.6f}&#x27;)
+print(f&#x27;pressure force, wall force N: {pressure_force:.6f}, &#x27;
+      f&#x27;{wall_force:.6f}&#x27;)
+print(f&#x27;laminar pressure gradient for target Pa/m: &#x27;
+      f&#x27;{gradient_for_target:.6f}&#x27;)
+</code></pre>
+<pre class="output">Couette shear Pa: 0.018000
+Couette dissipation W/m3: 18.000000
+wall input, integrated loss W/m2: 0.036000, 0.036000
+Poiseuille bulk speed m/s: 74.074074
+Poiseuille center speed m/s: 111.111111
+pressure force, wall force N: 4.000000, 4.000000
+laminar pressure gradient for target Pa/m: 1.350000
+</pre>
+<p>These checks establish arithmetic consistency of explicit smooth branches, not transition thresholds, turbulent resistance, solver convergence, or general Navier–Stokes well-posedness. Their value is that each tests a different mechanism: the constitutive factor, energy conversion, pressure-gradient sign, integration, and global force.</p>
+
+<h2 id="exercises">3.11 Problems and worked solutions</h2>
+<p><strong>1. Density transported without volume change.</strong> Let \(\mathbf u=(U,0,0)\) with constant speed \(U\), and \(\rho(x,t)=\rho_0+\alpha\sin[k(x-Ut)]\), where \(\rho_0\gt|\alpha|\) and \(k\) is a wavenumber. Check mass balance and explain why incompressibility need not mean globally uniform density.</p>
+<details><summary>Solution</summary><p>The velocity divergence is zero. Differentiation gives \(\partial_t\rho=-\alpha kU\cos[k(x-Ut)]\) and \(U\partial_x\rho=\alpha kU\cos[k(x-Ut)]\), so \(D\rho/Dt=0\). Thus (3.2) holds with nonuniform density. Each particle retains its density while the pattern translates. This is a mass-transport example, not a complete variable-density momentum solution. The core course's globally constant density is a further specialization.</p></details>
+<p><strong>2. Trace and shear.</strong> For the Couette solution, calculate all nonzero strain components, their trace, and viscous shear. Why would writing \(s_{12}=V_p/H\) be wrong?</p>
+<details><summary>Solution</summary><p>Only \(\partial_2u_1=V_p/H\) is nonzero. Symmetrization gives \(s_{12}=s_{21}=V_p/(2H)\), while every diagonal is zero and the trace vanishes. Newtonian stress gives \(\tau_{12}=2\mu s_{12}=\mu V_p/H\). Omitting the half in strain would double the shear and alter the mechanical power comparison. The two off-diagonal strain entries both enter \(s_{ij}s_{ij}\), which is why dissipation remains \(\mu(V_p/H)^2\).</p></details>
+<p><strong>3. Two viscosity layers.</strong> In the moving-wall problem, let viscosity be \(\mu_1\) in the lower half and \(\mu_2\) in the upper half, with continuous velocity and traction at their interface. Derive the common shear. Evaluate it for \(\mu_2=2\mu_1\), and compare using the arithmetic-mean viscosity in a single linear profile.</p>
+<details><summary>Solution</summary><p>Momentum requires constant \(\tau=\mu U'\) in each layer, with the same value by traction continuity. The velocity increase is \(V_p=\tau H/(2\mu_1)+\tau H/(2\mu_2)\), so \(\tau=V_p/[H/(2\mu_1)+H/(2\mu_2)]\). For \(\mu_2=2\mu_1\), it is \(4\mu_1 V_p/(3H)\). Using arithmetic mean \(1.5\mu_1\) would predict \(1.5\mu_1 V_p/H\), larger by a factor \(9/8\), or 12.5%. The exact profile is piecewise linear, with a larger gradient in the less viscous layer. At the interface use continuity conditions and divergence-form balance rather than a globally smooth constant-viscosity Laplacian.</p></details>
+<p><strong>4. A pressure-free rotation?</strong> A proposed solid-body rotation has constant pressure, zero body force, and the positive constant viscosity used above. Does it satisfy momentum? Supply a pressure that repairs it.</p>
+<details><summary>Solution</summary><p>The rotation has acceleration \(-\Omega^2(x,y,0)\) and zero strain, so viscous stress supplies no force. Constant pressure and zero body force give zero right-hand acceleration and fail momentum except on the rotation axis. Taking \(p=p_0+\rho\Omega^2(x^2+y^2)/2\) supplies exactly the needed centripetal acceleration. This illustrates that nonzero rotation need not create molecular viscous stress, but curved particle paths still need force.</p></details>
+<p><strong>5. A force check that cannot select a profile.</strong> For the pressure-driven channel, why do total pressure force and wall force agree independently of whether a mean profile is laminar or turbulent? What missing information prevents using that equality to predict flow rate?</p>
+<details><summary>Solution</summary><p>Integrating steady fully developed streamwise momentum fixes the total shear slope and wall magnitude \(Gh\). The pressure force \(GL(2hW)\) equals both-wall force \(2GhLW\). In a turbulent mean, total shear includes both molecular and fluctuating momentum transport. Its known sum does not specify the gradient \(dU/dy\) until that fluctuating contribution is known. Flow rate requires integrating the resulting velocity profile, so global balance alone cannot select it.</p></details>
+
+<h2 id="limits">3.12 Conservation does not supply every relation</h2>
+<p>Mass and momentum balances constrain any admissible motion, while the Newtonian law supplies a particular local molecular response. Constant density and viscosity simplify the operators; they do not make the flow necessarily steady, laminar, or stable. The exact parallel-flow branches provide force and power checks without deciding which statistical state a disturbed experiment realizes.</p>
+<p>Surface couples, non-Newtonian memory, thermal property variation, and interfaces require changes to the stated model or its regularity assumptions. Pressure coupling and a consistent initial/boundary specification remain essential even after algebraic closure. The reader can now derive the instantaneous mechanical equations, check their stress convention, and see why repeating those steps after statistical averaging will introduce a new kind of missing information.</p>
+<h2 id="sources">Sources and provenance</h2>
+<ul><li>NPTEL, Vagesh D. Narasimhamurthy, IIT Madras, lessons 6–7. The section map records source sequence and original expansions.</li>
+<li><a href="https://solidmechanics.org/Text/Chapter2_4/Chapter2_4.php">A. F. Bower, Applied Mechanics of Solids, §2.4.1–2.4.3</a>: current-coordinate mass, linear momentum and angular momentum; normal-first stress convention translated explicitly.</li>
+<li><a href="https://tmbwg.github.io/turbmodels/implementrans.html">NASA/TMBWG, Implementing Turbulence Models into the Compressible RANS Equations</a>: molecular stress expression and its incompressible specialization. The present chapter does not adopt compressible thermal closures.</li></ul>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn"><a rel="prev" href="chapter-02-statistics-sampling-and-tensors.html">Previous chapter</a><a href="index.html">Index</a><a rel="next" href="chapter-04-mean-momentum-and-closure.html">Next chapter</a></nav></main></div><footer class="site-footer">Independent study edition. Original exposition follows Prof. Vagesh D. Narasimhamurthy's course. Source and review limitations are recorded separately.</footer></body></html>

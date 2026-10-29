@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="00480a9d4c4d9020aaf99674e14f6fbd677e132927c3729f95281befa6d609d5">
+<title>Mean momentum and the turbulence closure problem · Turbulence Modeling</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{pageReady:()=>MathJax.startup.defaultPageReady().then(()=>{document.documentElement.dataset.mathReady='true';})}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Turbulence Modeling · NPTEL IIT Madras</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="book-overview.html">Study route</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc"><h2>On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>4. Mean momentum and the turbulence closure problem</h1>
+<p class="lead">A pressure gradient drives air through a channel. The required pumping power depends on the mean flow rate, yet a calculation using only molecular viscosity predicts the wrong pressure–velocity relation in a turbulent channel. The missing mechanism is momentum carried across the channel by correlated velocity fluctuations. Averaging removes instantaneous detail from the answer we seek, but its momentum flux remains in the equation. The problem is to identify that flux without resolving every fluctuation.</p>
+<p class="source-note">Lessons 8–11 supply the sequence: average momentum, identify the covariance and closure problem, subtract the mean equation, examine linearization, and begin covariance transport. The channel case, numerical data, counterexamples, expanded derivations, and code are original teaching constructions. Official hosted captions supply the spoken topic spine, with fallible equation recognition. All equations below are independently derived under explicit assumptions.</p>
+
+<h2 id="averaging" data-video="xxaoOg9I9Lw" data-start="14" data-end="158">4.1 What survives an average <a class="timestamp" href="https://www.youtube.com/watch?v=xxaoOg9I9Lw&amp;t=14">L8 · 00:14</a></h2>
+<p>Let \(x_1=x\) point along a straight channel, \(x_2=y\) measure distance from its lower wall, and \(x_3=z\) point across its span. Time \(t\) is measured in seconds and position in metres. The instantaneous velocity component \(u_i(\mathbf x,t,\omega)\), in m/s, depends on the realization \(\omega\): one possible outcome of repeated preparations of the same statistical experiment. Cartesian indices range from 1 to 3. A repeated index in a term is summed; a free index identifies a component equation.</p>
+<p>The ensemble average \(\mathbb E[f]\) integrates a random quantity \(f\) over realizations at fixed position and time. Define \(U_i=\mathbb E[u_i]\) and \(u'_i=u_i-U_i\). For pressure \(p\), in pascals, define \(P=\mathbb E[p]\) and \(p'=p-P\). Thus \(u_i=U_i+u'_i\), \(p=P+p'\), and \(\mathbb E[u'_i]=\mathbb E[p']=0\). Mean fields may depend on position and time. Being deterministic with respect to \(\omega\) does not make them spatially constant.</p>
+<p>Assume the required expectations exist, the fields are sufficiently differentiable, and differentiation commutes with expectation. An integrable bound on the relevant random derivatives is a sufficient local condition for the last assumption. Then \(\mathbb E[\partial_jf]=\partial_j\mathbb E[f]\), where \(\partial_j=\partial/\partial x_j\). A deterministic factor comes outside: \(\mathbb E[U_jf]=U_j\mathbb E[f]\). A product of random factors generally cannot be replaced by the product of their means.</p>
+<p>For constant-density incompressible flow, continuity is \(\partial_ju_j=0\) in each realization. Average it, then subtract that mean equation from the instantaneous one:</p>
+\[
+ \partial_jU_j=0,\qquad \partial_ju'_j=0. \tag{4.1}
+\]
+<p>Both fields are divergence free because continuity is linear in velocity. This does not establish that momentum has the same form after averaging. Two velocities multiply in momentum, and their joint statistics survive.</p>
+<p>A finite sample mean estimates an ensemble mean. For a fixed finite collection, averaging derivatives of those same sampled fields also commutes wherever their derivatives exist. Finite-time averaging of one evolving realization requires additional care with endpoints, time dependence, and convergence. Stationarity means that the statistical law is invariant under a time shift. Ergodicity supplies additional conditions under which an appropriate long-time average recovers an ensemble quantity. Neither is required for this ensemble derivation. A long signal is an estimation tool, not an automatic justification for every averaging identity.</p>
+
+<h2 id="momentum" data-video="xxaoOg9I9Lw" data-start="158" data-end="1204">4.2 The nonlinear term produces a new field <a class="timestamp" href="https://www.youtube.com/watch?v=xxaoOg9I9Lw&amp;t=158">L8 · 02:38</a></h2>
+<p>Assume a Newtonian fluid of constant density \(\rho\), in kg/m³, and constant dynamic viscosity \(\mu\), in Pa s. Define kinematic viscosity \(\nu=\mu/\rho\), in m²/s. Omit body forces; a known deterministic body acceleration could be retained without changing the covariance argument. The instantaneous strain-rate tensor is \(s_{ij}=(\partial_ju_i+\partial_iu_j)/2\), in s⁻¹. Under incompressibility, molecular deviatoric stress is \(2\mu s_{ij}\).</p>
+<p>Its divergence simplifies for a specific reason. Constant viscosity and commuting spatial derivatives give</p>
+\[
+ {1\over\rho}\partial_j(2\mu s_{ij})
+ =\nu\partial_j\partial_ju_i+\nu\partial_i(\partial_ju_j)
+ =\nu\partial_j\partial_ju_i.
+\]
+<p>The last term vanishes by continuity. A viscosity varying with temperature would generate additional product-rule terms; constant density alone would not remove them. The instantaneous Navier–Stokes momentum equation becomes</p>
+\[
+ \partial_tu_i+u_j\partial_ju_i
+ =-{1\over\rho}\partial_ip+\nu\partial_j\partial_ju_i. \tag{4.2}
+\]
+<p>Every term is an acceleration in m/s². Advection, the second term, changes a particle's velocity as it moves through a spatially varying field, even if that field is steady. It multiplies velocity by a velocity gradient and is nonlinear in the unknown velocity.</p>
+<p>Insert the decomposition before averaging. Four terms appear:</p>
+\[
+ u_j\partial_ju_i
+ =U_j\partial_jU_i+U_j\partial_ju'_i
+  +u'_j\partial_jU_i+u'_j\partial_ju'_i. \tag{4.3}
+\]
+<p>The first is deterministic. The second averages to \(U_j\partial_j\mathbb E[u'_i]=0\), and the third to \(\mathbb E[u'_j]\partial_jU_i=0\). The fourth contains two fluctuating factors. Their separate zero means do not force their product mean to vanish. A random variable taking \(1\) and \(-1\) with equal probabilities has zero mean and mean square one.</p>
+<p>Pressure and molecular diffusion are linear under the stated constant-property assumptions, so their averages involve only \(P\) and \(U_i\). Define \(N_i=u'_j\partial_ju'_i\), the instantaneous nonlinear fluctuating acceleration. The mean equation is</p>
+\[
+ \partial_tU_i+U_j\partial_jU_i
+ =-{1\over\rho}\partial_iP+\nu\partial_j\partial_jU_i
+  -\mathbb E[N_i]. \tag{4.4}
+\]
+<p>The minus sign comes from moving the remaining advective contribution to the right. No turbulence model has been introduced. This equation follows exactly from (4.2) and the averaging assumptions, but it requires information beyond mean velocity and pressure.</p>
+<p>If every fluctuation vanishes, \(N_i=0\), and the deterministic equation returns. The converse is weaker: \(\mathbb E[N_i]\) can vanish locally while the velocity fluctuates. Homogeneous fluctuations may have nonzero covariance and zero covariance divergence. Thus absence of this mean-force contribution does not prove laminar motion. A linearized equation can also describe disturbance amplification. Nonlinearity is essential for finite-amplitude fluctuation interactions; it is not the only feature relevant to stability.</p>
+
+<h2 id="flux" data-video="xxaoOg9I9Lw" data-start="1204" data-end="1379">4.3 Continuity exposes momentum flux <a class="timestamp" href="https://www.youtube.com/watch?v=xxaoOg9I9Lw&amp;t=1204">L8 · 20:04</a></h2>
+<p>Multiply fluctuating continuity by \(u'_i\). The result is zero, exactly. Adding it to \(N_i\) gives the product-rule hinge:</p>
+\[
+ u'_j\partial_ju'_i
+ =u'_j\partial_ju'_i+u'_i\partial_ju'_j
+ =\partial_j(u'_iu'_j).
+\]
+<p>Define the velocity covariance \(R_{ij}=\mathbb E[u'_iu'_j]\), in m²/s². Commuting expectation and differentiation gives \(\mathbb E[N_i]=\partial_jR_{ij}\). The Reynolds-averaged Navier–Stokes, or RANS, equations are therefore</p>
+\[
+ \boxed{\partial_jU_j=0,\qquad
+ \partial_tU_i+U_j\partial_jU_i
+ =-{1\over\rho}\partial_iP+\nu\partial_j\partial_jU_i
+ -\partial_jR_{ij}.} \tag{4.5}
+\]
+<p>The conservative advective momentum flux is \(\rho(U_iU_j+R_{ij})\). The first part carries mean momentum with mean velocity; the second carries fluctuating momentum with fluctuating velocity. A parcel crosses a fixed wall-normal plane even if the average wall-normal velocity is zero. If its streamwise fluctuation depends on its direction of crossing, its streamwise momentum flux need not cancel.</p>
+<p>Write \(u'=u'_1\), \(v'=u'_2\). Near the lower channel wall, an upward-moving parcel can be slower than the local streamwise mean, giving \(v'\gt0\), \(u'\lt0\). A faster downward-moving parcel has \(u'\gt0\), \(v'\lt0\). Both products \(u'v'\) are negative. This illustrates down-gradient momentum transport when mean speed increases away from that wall. Individual events may have other signs; covariance averages all of them and their frequencies.</p>
+<p>Local mean acceleration depends on the divergence. Integrating its turbulent part across a slab \(a\le y\le b\) gives \(-\rho[R_{12}(b)-R_{12}(a)]\) per unit wall-parallel area. A constant flux carries momentum through the slab without accumulating it there. Nonzero flux and nonzero local force are distinct statements.</p>
+
+<h2 id="covariance" data-video="Hm9Kcbvm2I8" data-start="16" data-end="349">4.4 Covariance is a constrained tensor <a class="timestamp" href="https://www.youtube.com/watch?v=Hm9Kcbvm2I8&amp;t=16">L9 · 00:16</a></h2>
+<p>Scalar multiplication commutes, so \(R_{ij}=R_{ji}\). Nine displayed entries contain six independent components. A diagonal entry such as \(R_{11}=\mathbb E[(u'_1)^2]\) is a variance; \(R_{12}\) is a cross covariance. Covariance is not the dimensionless correlation coefficient. When both variances are positive, define \(c_{12}=R_{12}/\sqrt{R_{11}R_{22}}\).</p>
+<p>The tensor law follows from velocity transformation. Under an orthogonal change of Cartesian basis \(Q\), \(\mathbf u'_{\rm new}=Q\mathbf u'\), and consequently \(R_{\rm new}=QRQ^{\mathsf T}\). Expectation acts entry by entry and \(Q\) is deterministic. Merely arranging nine numbers in a square would not establish this transformation rule.</p>
+<p>For any deterministic vector \(\mathbf a\),</p>
+\[
+ a_iR_{ij}a_j=\mathbb E[(a_iu'_i)^2]\ge0. \tag{4.6}
+\]
+<p>A symmetric tensor with this property is positive semidefinite. Choosing a coordinate direction proves \(R_{ii}\ge0\), with no sum on \(i\). One variance may vanish while other components fluctuate. If \(R_{22}=0\), the nonnegative square \((u'_2)^2\) has zero expectation, so \(u'_2=0\) with probability one and all covariances involving that component vanish. Strict positivity requires a nondegeneracy assumption.</p>
+<p>For \(R_{22}\gt0\), consider the variance of \(u'_1-\lambda u'_2\): \(R_{11}-2\lambda R_{12}+\lambda^2R_{22}\). Its minimum occurs at \(\lambda=R_{12}/R_{22}\). Nonnegativity gives \(R_{12}^2\le R_{11}R_{22}\), hence \(|c_{12}|\le1\). This is a useful model check, but all pairwise bounds alone do not guarantee positive semidefiniteness of a three-component covariance. Every direction in (4.6) matters.</p>
+<p>Construct four equally likely velocity fluctuations, in m/s: \((2,-1,1/2)\), \((0,1,-1/2)\), \((-2,1,1/2)\), and \((0,-1,-1/2)\). All component means vanish. Averaging their outer products gives</p>
+\[
+ R=\begin{bmatrix}2&-1&0\\-1&1&0\\0&0&1/4\end{bmatrix}\ {\rm m^2/s^2},
+ \qquad c_{12}=-{1\over\sqrt2}. \tag{4.7}
+\]
+<p>The four streamwise-wall-normal products are \(-2,0,-2,0\), with mean \(-1\). Reversing every wall-normal component changes this covariance to \(+1\), retaining the same velocity means and variances. A mean field and three fluctuation intensities do not determine the momentum flux.</p>
+
+<h2 id="closure" data-video="Hm9Kcbvm2I8" data-start="349" data-end="782">4.5 Exact equations can still be unclosed <a class="timestamp" href="https://www.youtube.com/watch?v=Hm9Kcbvm2I8&amp;t=349">L9 · 05:49</a></h2>
+<p>A closed model provides sufficient relations for its chosen unknown fields once appropriate initial and boundary data are supplied. Equation (4.5) gives three momentum equations and one continuity equation for three mean velocities, mean pressure, and six covariance components. The four-equations/ten-fields count exposes missing statistical relations at this chosen level. It is a closure diagnostic, not an existence or uniqueness proof for the resulting differential equations.</p>
+<p>The equal-mean ensembles associated with (4.7) show the information loss directly. They have identical means and diagonal variances but opposite cross-plane fluxes. No rule using only that mean at a point can distinguish them without further assumptions. Gradients, flow history, geometry, and additional transported statistics may help, but their relation to covariance then belongs to the model.</p>
+<p>Taking a divergence does not add six independent statistical laws. Under smoothness and incompressibility, mean momentum implies</p>
+\[
+ {1\over\rho}\partial_i\partial_iP
+ =-(\partial_iU_j)(\partial_jU_i)-\partial_i\partial_jR_{ij}. \tag{4.8}
+\]
+<p>Expand \(\partial_i(U_j\partial_jU_i)\): the term \(U_j\partial_j(\partial_iU_i)\) vanishes by continuity, leaving the gradient product. The divergence of unsteadiness and molecular diffusion also vanishes. This pressure Poisson equation retains covariance and needs pressure boundary information. A derived consequence of the same mean system does not remove its missing statistics.</p>
+<p>Molecular viscosity closes instantaneous Newtonian stress through a resolved strain and a fluid property. Turbulent viscosity, usually called eddy viscosity, represents aspects of a fluctuating flow and can differ between flows of the same fluid. Assigning viscosity units neither determines its value nor guarantees alignment of the covariance with mean strain. Later chapters construct and test such relations.</p>
+<p>Alternatively, transport all six components of \(R\). That retains more statistical information, but introduces pressure and higher-order correlations. The <a href="https://tmbwg.github.io/turbmodels/rsm-ssglrr.html">Turbulence Modeling Resource SSG/LRR specification</a> illustrates this separation: it transports six stresses and a scale variable while modeling terms within those equations. Transporting stresses organizes closure; it does not eliminate modeling.</p>
+
+<h2 id="stress" data-video="Hm9Kcbvm2I8" data-start="782" data-end="1226">4.6 Stress conventions and a channel budget <a class="timestamp" href="https://www.youtube.com/watch?v=Hm9Kcbvm2I8&amp;t=782">L9 · 13:02</a></h2>
+<p>Two objects have different units. Reserve \(R_{ij}\) for velocity covariance and define \(T^R_{ij}=-\rho R_{ij}\), in Pa, for its effective stress contribution. Let \(S_{ij}=(\partial_jU_i+\partial_iU_j)/2\) be the mean strain rate, and let \(\delta_{ij}\) be the identity tensor, equal to one when \(i=j\) and zero otherwise. Multiplying (4.5) by density gives</p>
+\[
+ \rho(\partial_tU_i+U_j\partial_jU_i)
+ =\partial_j[-P\delta_{ij}+2\mu S_{ij}+T^R_{ij}]. \tag{4.9}
+\]
+<p>Molecular stress is a constitutive contact stress. The additional term originates as advective momentum flux, moved to the stress side of the mean balance. Combining their divergences is useful without assigning them the same microscopic origin. The name “Reynolds stress” is used for \(R\), \(\rho R\), and \(-\rho R\) in different references; declare the sign and units before comparing equations.</p>
+<p>The <a href="https://tmbwg.github.io/turbmodels/implementrans.html">Turbulence Modeling Resource RANS implementation page</a> uses a negative density-weighted correlation and warns about sign and density conventions. At constant density its density-weighted mean reduces to the ordinary mean, and its stress becomes our \(T^R\). Its compressible energy and heat-flux relations are outside the present model.</p>
+<p>Assume a statistically stationary channel with walls \(y=0\) and \(y=2h\). Fully developed statistics are independent of \(x,z\), apart from an imposed linear mean pressure. Let \(U_i=(U(y),0,0)\), and define \(G=-dP/dx\gt0\), the pressure decrease per length in Pa/m. Streamwise momentum gives \(0=G+d(\mu\,dU/dy-\rho R_{12})/dy\). Define \(\tau(y)=\mu\,dU/dy-\rho R_{12}(y)\). Centerplane symmetry gives \(\tau(h)=0\). Integration yields</p>
+\[
+ {d\tau\over dy}=-G,\qquad
+ \tau(y)=G(h-y),\qquad \tau_w=\tau(0)=Gh. \tag{4.10}
+\]
+<p>The subscript \(w\) denotes the lower wall. At a stationary impermeable no-slip wall, velocity is zero in every realization, so all fluctuations and covariances vanish there. Wall shear is entirely molecular. Away from the wall, turbulent flux may carry most of the required total shear. It is not an extra external driving force: pressure drop fixes the integrated balance.</p>
+<figure><svg viewBox="0 0 740 260" role="img" aria-labelledby="channel-title channel-desc"><title id="channel-title">Constructed channel momentum budget</title><desc id="channel-desc">A channel has lower wall at y zero and center at y equals h. At h over two, total shear of 0.1 pascal splits into 0.0018 pascal molecular and 0.0982 pascal turbulent contributions.</desc><rect x="50" y="35" width="330" height="170" fill="none" stroke="currentColor"/><path d="M50 205H380 M50 35H380" stroke="currentColor" stroke-width="5"/><path d="M95 165H310 M95 75H310 M300 157L310 165L300 173 M300 67L310 75L300 83" fill="none" stroke="#8cdbce" stroke-width="3"/><path d="M50 120H380" stroke="currentColor" stroke-dasharray="5 6"/><text x="65" y="112" fill="currentColor" font-size="16">center y = h</text><text x="65" y="232" fill="currentColor" font-size="16">lower wall y = 0</text><text x="110" y="193" fill="currentColor" font-size="16">sample plane y = h/2</text><text x="420" y="70" fill="currentColor" font-size="18">τ(h/2) = 0.1000 Pa</text><text x="420" y="111" fill="currentColor" font-size="18">μ dU/dy = 0.0018 Pa</text><text x="420" y="152" fill="currentColor" font-size="18">−ρ R₁₂ = 0.0982 Pa</text><text x="420" y="200" fill="currentColor" font-size="16">Pressure decreases along x →</text></svg><figcaption>Figure 4.1. Constructed local stress budget in a symmetric plane channel. The half-channel balance fixes the sum. Specifying a local gradient determines the turbulent contribution there. This is not experimental or simulation data.</figcaption></figure>
+<p>Take \(h=0.020\) m, \(\rho=1.2\) kg/m³, \(\nu=1.5\times10^{-5}\) m²/s, and \(G=10\) Pa/m. Then \(\mu=1.8\times10^{-5}\) Pa s, \(\tau_w=0.20\) Pa, and \(\tau(h/2)=0.10\) Pa. Stipulate a local mean gradient \(dU/dy=100\) s⁻¹. Its molecular contribution is \(0.0018\) Pa. Therefore</p>
+\[
+ R_{12}(h/2)=-{0.1000-0.0018\over1.2}
+ =-0.0818333\ {\rm m^2/s^2}. \tag{4.11}
+\]
+<p>Turbulent transport carries 98.2% of the total local shear in this stipulated budget. This is not a measured fraction, and no complete \(U(y)\) is asserted. Setting \(R_{12}=0\) at that plane would require \(dU/dy=0.10/\mu=5555.56\) s⁻¹, about 55.6 times the specified gradient. Grid refinement cannot repair this omitted flux in a mean-only calculation; a closure must determine it.</p>
+
+<h2 id="fluctuation" data-video="TRdmk-IIzSE" data-start="16" data-end="1157">4.7 Subtraction determines the fluctuation equation <a class="timestamp" href="https://www.youtube.com/watch?v=TRdmk-IIzSE&amp;t=16">L10 · 00:16</a></h2>
+<p>Subtract (4.4) from the instantaneous equation expanded through (4.3). Mean unsteadiness, mean advection, mean pressure, and mean molecular diffusion cancel. What remains is</p>
+\[
+ (\partial_t+U_j\partial_j)u'_i
+ =-{1\over\rho}\partial_ip'+\nu\partial_j\partial_ju'_i
+ -u'_j\partial_jU_i-[N_i-\mathbb E[N_i]]. \tag{4.12}
+\]
+<p>The operator on the left follows the mean velocity. The term \(-u'_j\partial_jU_i\) couples fluctuations to the mean gradient. The bracket is the centered nonlinear acceleration: its instantaneous value minus its mean. The positive mean term is required by subtraction; it is not an optional model correction.</p>
+<p>Average this entire equation. The left side differentiates zero mean fluctuations and vanishes. Pressure and diffusion average to zero, and \(-\mathbb E[u'_j]\partial_jU_i=0\). The bracket gives \(\mathbb E[N_i]-\mathbb E[N_i]=0\). Omitting the positive mean term would leave the unintended condition \(\mathbb E[N_i]=0\). This is a useful consistency check, although special fields with zero covariance divergence could conceal the omission.</p>
+<p>This identity does not determine realizations from their mean statistics. It would also be wrong to count \(N_i\) as an additional independent velocity field in a resolved problem: it is a differential function of the resolved fluctuations. Once a realization is known, its products \(u'_iu'_j\) are calculable. The statistical difficulty is determining expectations over an unknown distribution while retaining only some moments. Resolving all relevant realizations and averaging them returns to the much larger instantaneous problem.</p>
+<p>Given exactly known \(U,R\), (4.12), fluctuation initial and boundary data, and incompressibility can formulate a realization problem. A RANS solver instead seeks means and a small number of statistics without resolving those realizations. Deriving the fluctuation equation does not by itself supply that solver with the covariance. Nonlinear structure and statistical information loss are separate issues.</p>
+
+<h2 id="linearization" data-video="Vd0nUc48P3E" data-start="16" data-end="778">4.8 Small amplitude needs a scale assumption <a class="timestamp" href="https://www.youtube.com/watch?v=Vd0nUc48P3E&amp;t=16">L11 · 00:16</a></h2>
+<p>Linear stability studies sufficiently small disturbances about a specified base solution. Let \(\mathbf U_b,P_b\) solve the deterministic instantaneous equations. Write \(\mathbf u=\mathbf U_b+\epsilon\mathbf q\), \(p=P_b+\epsilon\pi\), with dimensionless amplitude parameter \(\epsilon\). The perturbation velocity \(\mathbf q\), pressure \(\pi\), and relevant derivatives are assumed bounded independently of \(\epsilon\) in fixed nondimensional coordinates. The notation \(U_{b,j}\) below means component \(j\) of the base velocity. A deterministic perturbation need not be an ensemble fluctuation with zero mean.</p>
+<p>Subtract the base equation and divide by \(\epsilon\). Linear perturbation terms are order one; self-advection is \(\epsilon q_j\partial_jq_i\). Letting \(\epsilon\to0\) under the derivative bounds gives</p>
+\[
+ (\partial_t+U_{b,j}\partial_j)q_i+q_j\partial_jU_{b,i}
+ =-{1\over\rho}\partial_i\pi+\nu\partial_j\partial_jq_i,\qquad
+ \partial_jq_j=0. \tag{4.13}
+\]
+<p>The product is higher order only in a controlled family of fields. In a nondimensional coordinate \(X\), take \(f_\epsilon(X)=\epsilon\sin(X/\epsilon)\). Its amplitude tends to zero but its derivative is \(\cos(X/\epsilon)\), of order one. The product \(f_\epsilon f'_\epsilon\) is order \(\epsilon\), rather than the \(\epsilon^2\) expected at fixed spatial scales. An even shorter wavelength can increase it further. This scalar counterexample diagnoses a scale assumption; it is not a divergence-free channel perturbation. Moving a product inside a derivative does not remove the derivative's scale.</p>
+<p>Linear dynamics can amplify disturbances through mean shear. In a local nondimensional illustration, neglect spatial transport, pressure, and diffusion, retaining two amplitudes \(a(t),b(t)\) with \(\dot a=-Sb\), \(\dot b=0\). Here \(S\) is a prescribed shear rate. Starting from \(a(0)=0,b(0)=b_0\), integration gives \(a=-Sb_0t,b=b_0\). The amplitude energy \((a^2+b^2)/2\) grows by a factor \(1+S^2t^2\). At \(S=2,t=3\), that factor is 37 even though both matrix eigenvalues are zero. Positive exponential eigenvalues are not necessary for finite-time amplification. This reduced illustration does not predict a bounded-channel transition threshold.</p>
+<p>A neutral linear threshold marks where an infinitesimal mode changes from exponential decay to growth in a particular base-flow and boundary-value problem. It is not a universal turbulent-onset threshold. A Reynolds number compares inertia and viscosity and requires a declared velocity and length scale. Finite disturbances, environmental forcing, transient growth, and nonlinear interactions can affect observed transition. Linear evolution about a prescribed base does not describe saturated turbulence.</p>
+<p>The source distinguishes initially quiet boundary layers undergoing small-disturbance growth from bypass transition under appreciable environmental disturbances. It also sketches intermittency: alternating laminar and turbulent patches during transition. Dropping self-interaction terms does not predict the complete patch evolution. Linear response calculations can still illuminate forced or transient behavior. Their defensible limitation is the small-perturbation assumption about a prescribed base, rather than a blanket exclusion of disturbed environments.</p>
+
+<h2 id="hierarchy" data-video="Vd0nUc48P3E" data-start="778" data-end="1645">4.9 Covariance transport opens the next closure level <a class="timestamp" href="https://www.youtube.com/watch?v=Vd0nUc48P3E&amp;t=778">L11 · 12:58</a></h2>
+<p>Multiply (4.12) by \(u'_k\) and average. Write the corresponding equation with free indices \(i,k\) exchanged, then add. The summed index \(j\) remains a transport direction in both. The left side combines by the product rule: \(\mathbb E[u'_k\partial_tu'_i+u'_i\partial_tu'_k]=\partial_tR_{ik}\), with an analogous mean-advection identity. Define \(D_U=\partial_t+U_j\partial_j\), the derivative following mean motion. The unrearranged result is</p>
+\[
+ \begin{aligned}
+ D_UR_{ik}={}&-R_{kj}\partial_jU_i-R_{ij}\partial_jU_k\\
+ &-{1\over\rho}\mathbb E[u'_k\partial_ip'+u'_i\partial_kp']\\
+ &+\nu\mathbb E[u'_k\partial_j\partial_ju'_i
+                  +u'_i\partial_j\partial_ju'_k]\\
+ &-\mathbb E[u'_ku'_j\partial_ju'_i
+                  +u'_iu'_j\partial_ju'_k].
+ \end{aligned} \tag{4.14}
+\]
+<p>The centered mean acceleration disappears because \(\mathbb E[u'_k\mathbb E[N_i]]=\mathbb E[u'_k]\mathbb E[N_i]=0\). Covariance remains on the left and in the first two terms on the right. Those terms couple covariance to mean gradients. Define the production tensor \(P_{ik}=-R_{kj}\partial_jU_i-R_{ij}\partial_jU_k\), in m²/s³. Its two-index notation distinguishes it from scalar mean pressure \(P\).</p>
+<p>In the channel, only \(\partial_2U_1=dU/dy\) is nonzero, so \(P_{11}=-2R_{12}\,dU/dy\). At the constructed plane it is \(16.3667\) m²/s³. Define turbulent kinetic energy per unit mass as \(k=R_{ii}/2\), half the covariance trace, in m²/s². The production of \(k\) is half the production trace, \(P_k=-R_{ij}\partial_jU_i=-R_{12}\,dU/dy=8.18333\) m²/s³. Positive production transfers mean-flow energy to fluctuations; it does not create total mechanical energy without a source.</p>
+<p>Fluctuating continuity turns the final line of (4.14) into \(-\partial_j\mathbb E[u'_iu'_ku'_j]\). A third velocity moment has appeared. The pressure term involves velocity-pressure correlations. Rearranging molecular diffusion separates covariance diffusion from velocity-gradient correlations. None is specified by the mean velocity and covariance alone. The next chapter develops this full budget; here the derivation reaches the symmetrization hinge at the end of lesson 11.</p>
+<p>The <a href="https://tmbwg.github.io/turbmodels/rsm-ssglrr.html">SSG/LRR specification</a> labels production exact, while specifying models for dissipation, pressure redistribution, and diffusion. The transport identity and its closure are separate objects. Translate their conventions before comparing implementations. Six additional equations represent more physics, but do not provide all statistical information without assumptions.</p>
+
+<h2 id="implementation">4.10 Execute covariance and momentum checks</h2>
+<p>The standard-library Python program takes the four-state ensemble and channel parameters explicitly in its source. It computes covariance, tests symmetry and the cross-covariance bound, checks the local shear split, and calculates kinetic-energy production. A separate phase ensemble tests \(\mathbb E[N_i]=\partial_jR_{ij}\) and the zero mean of the centered nonlinear acceleration. It reads no files, makes no network requests, and prints its results. Assertions stop execution when a check fails. The same program is available as <a href="code/ch04_closure.py">code/ch04_closure.py</a>.</p>
+<p>For that last check, let \(a\) be a velocity amplitude in m/s, \(\kappa\) a wavenumber in m⁻¹, and \(\phi\) a phase angle in radians. Define \(u'=a\sin(\kappa x+\phi)\cos(\kappa y)\), \(v'=-a\cos(\kappa x+\phi)\sin(\kappa y)\), \(w'=0\). Direct differentiation gives \(\partial_xu'+\partial_yv'=0\). Four equally weighted phases separated by \(\pi/2\) have zero velocity means, \(R_{22}=a^2\sin^2(\kappa y)/2\), and \(\partial_yR_{22}=a^2\kappa\sin(\kappa y)\cos(\kappa y)\). This is a kinematic identity check, not an asserted complete Navier–Stokes solution.</p>
+<pre data-run="code/ch04_closure.py"><code>&quot;&quot;&quot;Finite covariance, momentum-flux, and centering checks; no external inputs.&quot;&quot;&quot;
+from math import cos, isclose, pi, sin, sqrt
+
+states = [(2., -1., .5), (0., 1., -.5),
+          (-2., 1., .5), (0., -1., -.5)]
+mean = [sum(row[i] for row in states) / 4 for i in range(3)]
+assert all(isclose(value, 0., abs_tol=1e-14) for value in mean)
+cov = [[sum(row[i] * row[j] for row in states) / 4
+        for j in range(3)] for i in range(3)]
+assert all(cov[i][j] == cov[j][i] for i in range(3) for j in range(3))
+assert cov[0][1]**2 &lt;= cov[0][0] * cov[1][1]
+rho, nu, half_height, gradient = 1.2, 1.5e-5, .02, 10.
+mu = rho * nu
+y = half_height / 2
+shear = 100.
+total = gradient * (half_height - y)
+molecular = mu * shear
+r12 = -(total - molecular) / rho
+assert isclose(molecular - rho * r12, total, abs_tol=1e-14)
+production = -r12 * shear
+
+amp, wave, x, pos_y = 1.3, 2., .21, .37
+nonlinear = []
+for phase in [0., pi / 2, pi, 3 * pi / 2]:
+    angle_x, angle_y = wave * x + phase, wave * pos_y
+    u = amp * sin(angle_x) * cos(angle_y)
+    v = -amp * cos(angle_x) * sin(angle_y)
+    ux = amp * wave * cos(angle_x) * cos(angle_y)
+    uy = -amp * wave * sin(angle_x) * sin(angle_y)
+    vx = amp * wave * sin(angle_x) * sin(angle_y)
+    vy = -amp * wave * cos(angle_x) * cos(angle_y)
+    assert isclose(ux + vy, 0., abs_tol=1e-14)
+    nonlinear.append([u * ux + v * uy, u * vx + v * vy])
+avg_n = [sum(row[i] for row in nonlinear) / 4 for i in range(2)]
+div_r = [0., amp**2 * wave * sin(wave * pos_y) * cos(wave * pos_y)]
+assert all(isclose(a, b, abs_tol=1e-14) for a, b in zip(avg_n, div_r))
+centered = [sum(row[i] - avg_n[i] for row in nonlinear) / 4
+            for i in range(2)]
+assert all(isclose(value, 0., abs_tol=1e-14) for value in centered)
+print(&#x27;mean velocity:&#x27;, mean)
+print(&#x27;covariance:&#x27;, cov)
+print(f&#x27;correlation c12: {cov[0][1] / sqrt(cov[0][0]*cov[1][1]):.6f}&#x27;)
+print(f&#x27;wall shear Pa: {gradient * half_height:.6f}&#x27;)
+print(f&#x27;local total, molecular Pa: {total:.6f}, {molecular:.6f}&#x27;)
+print(f&#x27;required R12 m2/s2: {r12:.8f}&#x27;)
+print(f&#x27;local TKE production m2/s3: {production:.6f}&#x27;)
+print(&#x27;mean nonlinear acceleration:&#x27;, [round(value, 8) for value in avg_n])
+print(&#x27;covariance divergence:&#x27;, [round(value, 8) for value in div_r])
+print(&#x27;centered mean:&#x27;, [round(value, 8) + 0. for value in centered])
+</code></pre>
+<pre class="output">mean velocity: [0.0, 0.0, 0.0]
+covariance: [[2.0, -1.0, 0.0], [-1.0, 1.0, 0.0], [0.0, 0.0, 0.25]]
+correlation c12: -0.707107
+wall shear Pa: 0.200000
+local total, molecular Pa: 0.100000, 0.001800
+required R12 m2/s2: -0.08183333
+local TKE production m2/s3: 8.183333
+mean nonlinear acceleration: [0.0, 1.68303863]
+covariance divergence: [0.0, 1.68303863]
+centered mean: [0.0, 0.0]
+</pre>
+<p>The four-state covariance is separate from the channel's stipulated local covariance. The phase field has a nonzero mean nonlinear acceleration, making omission of the centering term detectable. These finite checks neither validate a closure against measurements nor prove solver convergence.</p>
+
+<h2 id="exercises">4.11 Problems and worked solutions</h2>
+<p><strong>1. Flux without a mean.</strong> Two equally likely states have fluctuations \((u',v')=(A,-B)\) and \((-A,B)\), with positive velocities \(A,B\). Find means, variances, covariance, correlation, and effective shear. What changes when both wall-normal velocities reverse?</p>
+<details><summary>Solution</summary><p>Both means vanish. Squaring gives \(R_{11}=A^2,R_{22}=B^2\); each product is \(-AB\), so \(R_{12}=-AB,c_{12}=-1\). The effective shear is \(T^R_{12}=\rho AB\gt0\). Reversing \(v'\) retains variances and changes covariance to \(+AB\), correlation to \(+1\), and effective shear to \(-\rho AB\). Perfect anticorrelation is realizable; negative covariance does not mean negative variance. Identical velocity means and variances leave the flux sign undetermined.</p></details>
+<p><strong>2. Zero divergence with nonzero fluctuations.</strong> A nonzero covariance is spatially constant. What does it contribute directly to mean momentum? Does that prove laminar motion? Construct an illustrative ensemble.</p>
+<details><summary>Solution</summary><p>Its derivative \(\partial_jR_{ij}\) vanishes, so its direct local mean acceleration contribution is zero. Spatially uniform random velocities \((A,0,0)\) and \((-A,0,0)\), equally likely, have nonzero constant \(R_{11}=A^2\), and each realization is divergence free. This proves that fluctuating velocity can coexist with zero covariance divergence. It does not establish a sustained three-dimensional turbulent cascade. Consequently the vanishing force term alone classifies neither laminar nor turbulent dynamics; additional information is needed.</p></details>
+<p><strong>3. Recover the wall force.</strong> For the constructed channel, calculate shear at \(y=h/4\), the lower-wall mean gradient, and pressure force per unit span over length \(L\). Check both wall forces.</p>
+<details><summary>Solution</summary><p>Equation (4.10) gives \(\tau(h/4)=3Gh/4=0.15\) Pa. At the wall \(R_{12}=0\), so \(dU/dy|_0=0.2/(1.8\times10^{-5})=11111.1\) s⁻¹. Pressure difference is \(GL\); multiplying by height \(2h\) gives force per unit span \(2hGL\), in N/m. Each wall resists with \(\tau_wL=GhL\) N/m. Together they balance \(2GhL\). A one-metre span has the corresponding force in newtons. This determines wall gradient, not the turbulent mean profile or flow rate.</p></details>
+<p><strong>4. Reject an impossible covariance.</strong> A symmetric matrix has all diagonal entries \(1\) and all off-diagonal entries \(-0.9\), in m²/s². It passes every pairwise covariance bound. Can it be a covariance?</p>
+<details><summary>Solution</summary><p>For \(\mathbf a=(1,1,1)\), its quadratic form is the sum of every entry: \(3+6(-0.9)=-2.4\) m²/s². This would be the variance of \(u'_1+u'_2+u'_3\), which cannot be negative. Thus the matrix is not positive semidefinite. Pairwise checks constrain two-component subspaces, but not every three-component combination. A full check can examine all eigenvalues of the symmetric matrix, which must be nonnegative.</p></details>
+<p><strong>5. Diagnose missing centering.</strong> Replace the final bracket in (4.12) by \(N_i\) alone. Derive the mean residual. When could this error escape an average-zero check?</p>
+<details><summary>Solution</summary><p>Every linear term averages to zero. The proposed right side leaves \(-\mathbb E[N_i]=-\partial_jR_{ij}\), imposing an unintended zero covariance divergence. The error escapes this check when that divergence happens to vanish, for example for constant covariance. Passing a mean check is therefore necessary, not sufficient, for the derivation. The code deliberately uses a phase field with nonzero \(\mathbb E[N_2]\). Restore \(-N_i+\mathbb E[N_i]\) to repair the equation.</p></details>
+<p><strong>6. Track a shrinking length scale.</strong> For \(f_\epsilon(X)=\epsilon\sin(X/\epsilon^\alpha)\), \(\alpha\gt0\), find amplitude orders of its derivative and of \(f_\epsilon f'_\epsilon\). When is the product smaller than an order-\(\epsilon\) term?</p>
+<details><summary>Solution</summary><p>The derivative is \(\epsilon^{1-\alpha}\cos(X/\epsilon^\alpha)\). The product has maximum amplitude \(\epsilon^{2-\alpha}/2\). Relative to an order-\(\epsilon\) contribution its size scales as \(\epsilon^{1-\alpha}\). This tends to zero for \(\alpha\lt1\), stays order one for \(\alpha=1\), and grows for \(\alpha\gt1\). The comparison uses that specified reference term. Other derivatives in a complete equation may scale differently too; a consistent approximation compares all terms.</p></details>
+<p><strong>7. Trace production.</strong> At a channel point let \(dU/dy=S\), \(R_{12}=C\). Calculate all potentially nonzero components of production \(P_{ik}\), then its half trace. Interpret \(S\gt0,C\lt0\).</p>
+<details><summary>Solution</summary><p>Only \(\partial_2U_1=S\) survives, so \(P_{ik}=-S(R_{k2}\delta_{i1}+R_{i2}\delta_{k1})\). Thus \(P_{11}=-2SC\), \(P_{12}=P_{21}=-SR_{22}\), and \(P_{13}=P_{31}=-SR_{23}\). All others vanish. Half the trace is \(P_k=-SC\gt0\), representing local transfer from mean energy to fluctuation energy. Individual components need not be positive; for \(S\gt0\), \(P_{12}\le0\). Production is not itself a covariance and need not be positive semidefinite.</p></details>
+
+<h2 id="limits">4.12 What is determined</h2>
+<p>Averaging determines the location, sign, and form of the additional momentum flux. It does not determine that flux from mean velocity alone. The channel balance fixes total shear for prescribed pressure gradient and symmetry. Splitting that shear between molecular and fluctuating transport still needs statistics. An exact equation and a consistent numerical budget do not supply a validated model of those statistics.</p>
+<p>The assumptions matter: constant density, Newtonian constant viscosity, incompressibility, sufficient regularity, and a compatible ensemble average. Compressible flow needs density-velocity correlations. Singular fields, interfaces, and finite sampling require further care. Linear perturbation theory needs controlled derivative scales and remains applicable only while neglected terms are small. Caption reading does not establish complete board-equation or audiovisual fidelity.</p>
+<p>The reader can now derive RANS, translate stress conventions, test covariance examples, recover a channel stress budget, and locate the higher correlations entering covariance transport. The next task is to rearrange that transport equation into production, redistribution, diffusion, and dissipation before choosing a closure.</p>
+<h2 id="sources">Sources and provenance</h2>
+<ul>
+<li>NPTEL, Vagesh D. Narasimhamurthy, IIT Madras, Turbulence Modeling, lessons 8–11. Timestamped headings locate related source topics; the sidecar distinguishes original extensions.</li>
+<li><a href="https://tmbwg.github.io/turbmodels/implementrans.html">NASA/TMBWG, Implementing Turbulence Models into the Compressible RANS Equations</a>: stress sign, density convention, and constant-density reduction. This chapter does not adopt its compressible energy closure.</li>
+<li><a href="https://tmbwg.github.io/turbmodels/rsm-ssglrr.html">NASA/TMBWG, SSG/LRR Full Reynolds Stress Model</a>: six transported stresses, exact production, and modeled unclosed contributions. This chapter does not implement that model.</li>
+</ul>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn"><a rel="prev" href="chapter-03-conservation-and-newtonian-closure.html">Previous chapter</a><a href="index.html">Index</a><a rel="next" href="chapter-05-exact-reynolds-stress-transport.html">Next chapter</a></nav></main></div><footer class="site-footer">Independent study edition. Original exposition follows Prof. Vagesh D. Narasimhamurthy's course. Source and review limitations are recorded separately.</footer></body></html>

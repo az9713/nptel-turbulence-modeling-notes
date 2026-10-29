@@ -1,0 +1,1102 @@
+{
+  "scope": "Exact scientific manuscript acceptances; package and live publication evidence are tracked separately",
+  "chapters": [
+    {
+      "chapter": 1,
+      "file": "chapter-01-prediction-and-turbulent-motion.html",
+      "body_sha256": "3d50593553155bf87cd9a9ce79128c469aed2b2fd8fb34790907f1ede582861d",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch01-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "3d50593553155bf87cd9a9ce79128c469aed2b2fd8fb34790907f1ede582861d",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch01-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "3d50593553155bf87cd9a9ce79128c469aed2b2fd8fb34790907f1ede582861d",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "limitations": [
+        "No numeric graph values inferred from speech",
+        "No independent verification of historical quotations; nontechnical humor omitted",
+        "No comprehensive audiovisual inspection",
+        "Physical model adequacy not inferred from manufactured numerical checks"
+      ]
+    },
+    {
+      "chapter": 2,
+      "file": "chapter-02-statistics-sampling-and-tensors.html",
+      "body_sha256": "96af444952a4cab3ad4d12eed4487df800ef5f97a5f7dee8615ae4286a7b63ba",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch02-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "96af444952a4cab3ad4d12eed4487df800ef5f97a5f7dee8615ae4286a7b63ba",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch02-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "96af444952a4cab3ad4d12eed4487df800ef5f97a5f7dee8615ae4286a7b63ba",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "limitations": [
+        "No full audiovisual or board review",
+        "One captioned dice row has a spoken-mean mismatch and is not repaired by invention",
+        "Exact population correlation supplied for code; no fitted turbulent probe dataset",
+        "Finite examples do not establish ergodicity or general sample adequacy",
+        "Only stated sections of primary methodological sources used"
+      ]
+    },
+    {
+      "chapter": 3,
+      "file": "chapter-03-conservation-and-newtonian-closure.html",
+      "body_sha256": "8d3788c61e44eeb4f9c2415a9e596897687cf5719cc36f20ea01371240647138",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch03-r1.md",
+          "independent_of_author": true,
+          "kind": "Independent AI scientific review",
+          "reviewer_role": "Coordinating reviewer",
+          "body_sha256": "7846a344fe7e0bbe28fbcc58c71f364a717912b3bc421eb40b2fbfeb96057440",
+          "blocking": 0,
+          "major": 0,
+          "minor": 1,
+          "verdict": "Notation repair required",
+          "repair": "M1: preserve V_p consistently in three expressions",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": false
+        },
+        {
+          "round": 1,
+          "report_identifier": "ch03-r1-closure.md",
+          "independent_of_author": true,
+          "kind": "Original R1 reviewer repair closure",
+          "body_sha256": "8d3788c61e44eeb4f9c2415a9e596897687cf5719cc36f20ea01371240647138",
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "verdict": "R1 repair closed at current digest",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch03-r2.md",
+          "independent_of_author": true,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "8d3788c61e44eeb4f9c2415a9e596897687cf5719cc36f20ea01371240647138",
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "verdict": "Accepted current digest",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "limitations": [
+        "Complete caption reading but no full audiovisual/board inspection",
+        "Constitutive model is incompressible Newtonian with constant properties",
+        "Exact parallel solutions are not transition or turbulence predictions",
+        "Pressure Poisson topic is introduced in source order, with its formal derivation deferred until the required closure is available",
+        "Thermal closure, independent couple stresses and non-Newtonian memory are outside this chapter"
+      ]
+    },
+    {
+      "chapter": 4,
+      "file": "chapter-04-mean-momentum-and-closure.html",
+      "body_sha256": "00480a9d4c4d9020aaf99674e14f6fbd677e132927c3729f95281befa6d609d5",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "reviewer": "Independent thermodynamics course worker",
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "report": "pilot-r1.md",
+          "body_sha256": "00480a9d4c4d9020aaf99674e14f6fbd677e132927c3729f95281befa6d609d5",
+          "report_identifier": "pilot-r1.md",
+          "independent_of_author": true,
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "reviewer": "Independent lead coordinator",
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "report": "pilot-r2.md",
+          "body_sha256": "00480a9d4c4d9020aaf99674e14f6fbd677e132927c3729f95281befa6d609d5",
+          "report_identifier": "pilot-r2.md",
+          "independent_of_author": true,
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "limitations": [
+        "No comprehensive audiovisual or board-equation inspection",
+        "Official hosted captions are not assumed human-authored",
+        "Equations are independently derived under stated incompressible constant-property assumptions",
+        "Full Reynolds-stress budget rearrangement belongs to subsequent lessons 12–13"
+      ]
+    },
+    {
+      "chapter": 5,
+      "file": "chapter-05-exact-reynolds-stress-transport.html",
+      "body_sha256": "593c5b9deda629c0f558bcd40136785be4b065527ffed20a0ce475a13fa48287",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch05-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "593c5b9deda629c0f558bcd40136785be4b065527ffed20a0ce475a13fa48287",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch05-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "593c5b9deda629c0f558bcd40136785be4b065527ffed20a0ce475a13fa48287",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "limitations": [
+        "No full audiovisual/board verification",
+        "Exact incompressible constant-property budget, with no fluctuating body forcing",
+        "Kinematic phase field not claimed to solve full Navier–Stokes dynamics",
+        "Bookkeeping redistribution example is not a proposed pressure closure",
+        "No RSM coefficient calibration, model implementation or empirical validation"
+      ]
+    },
+    {
+      "chapter": 6,
+      "file": "chapter-06-stationarity-homogeneity-and-redistribution.html",
+      "body_sha256": "115f5eb6953defa6abd75b866f9cf39b76c61e0941bb154add9a228ee255887e",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch06-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "115f5eb6953defa6abd75b866f9cf39b76c61e0941bb154add9a228ee255887e",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch06-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "115f5eb6953defa6abd75b866f9cf39b76c61e0941bb154add9a228ee255887e",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "limitations": [
+        "Full captions read; no full audiovisual or board verification",
+        "Coordinate permutation resolved algebraically; instructor DNS plots are described through captions without numerical digitization",
+        "Constructed local budgets are bookkeeping checks, not a realizable DNS trajectory or measured Couette dataset",
+        "Finite block agreement is evidence, not proof of stationarity",
+        "No calibrated pressure-strain closure or empirical model validation"
+      ]
+    },
+    {
+      "chapter": 7,
+      "file": "chapter-07-turbulent-and-mean-energy-budgets.html",
+      "body_sha256": "66aaaada380347ea5b0f54d471ad261900af0b5f5f1513b17c4d67551bfa5a3d",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch07-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "66aaaada380347ea5b0f54d471ad261900af0b5f5f1513b17c4d67551bfa5a3d",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch07-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "66aaaada380347ea5b0f54d471ad261900af0b5f5f1513b17c4d67551bfa5a3d",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "limitations": [
+        "Full captions read; no complete audiovisual or board review",
+        "Exact constant-property incompressible equations; compressible energy and thermal feedback omitted",
+        "Executed periodic flow is a two-dimensional analytic solution, not turbulent DNS",
+        "Primary dataset description used only to establish a forced periodic counterexample, not to validate this chapter's calculations",
+        "No closure calibration or predictive turbulent energy simulation"
+      ]
+    },
+    {
+      "chapter": 8,
+      "file": "chapter-08-thin-boundary-layers-and-outer-scaling.html",
+      "body_sha256": "6cb5e3ec8eb3be86de075ff24d44a6c8c8fc54f6400f42041f5d676cef5a8a65",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch08-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "6cb5e3ec8eb3be86de075ff24d44a6c8c8fc54f6400f42041f5d676cef5a8a65",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch08-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "6cb5e3ec8eb3be86de075ff24d44a6c8c8fc54f6400f42041f5d676cef5a8a65",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "limitations": [
+        "Complete captions21–23 read; no full audiovisual or board verification",
+        "Steady statistical planar attached thin-layer scaling, constant properties; no solution or transition/separation prediction",
+        "Weak velocity-deficit hierarchy applies to a selected outer region, not uniformly to a full no-slip profile",
+        "Pressure gradient and shear correlation must be separately assessed before claiming a dominant balance",
+        "Computed scales and plotted crossover are conditional estimates with no empirical boundary-layer validation"
+      ]
+    },
+    {
+      "chapter": 9,
+      "file": "chapter-09-inner-scaling-and-friction-velocity.html",
+      "body_sha256": "1b30386fdb984eac569460c14a4f95baa62cd43c84c919ba41f19e213d620377",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch09-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "1b30386fdb984eac569460c14a4f95baa62cd43c84c919ba41f19e213d620377",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch09-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "1b30386fdb984eac569460c14a4f95baa62cd43c84c919ba41f19e213d620377",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "limitations": [
+        "Full captions24–27 read; no full audiovisual/board inspection or graph digitization",
+        "Smooth deterministic no-slip wall, incompressible constant properties and attached positive-shear convention",
+        "Layer cutoffs are rough source heuristics, not universal thresholds or accepted mesh recommendations",
+        "Manufactured stress partition is an illustrative local algebraic construction, not an empirical wall law or complete RANS solution",
+        "No calibrated wall function, interface thickness prediction, or experimental uncertainty analysis"
+      ]
+    },
+    {
+      "chapter": 10,
+      "file": "chapter-10-eddy-viscosity-and-mixing-length.html",
+      "body_sha256": "8e6544cde15544af235e04d8a06c4efe799e7eee294b442a805e6e8ea0ecfbe6",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch10-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "8e6544cde15544af235e04d8a06c4efe799e7eee294b442a805e6e8ea0ecfbe6",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch10-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "8e6544cde15544af235e04d8a06c4efe799e7eee294b442a805e6e8ea0ecfbe6",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "limitations": [
+        "Complete captions28–31 read; no full audiovisual or board inspection",
+        "Constant-property incompressible Boussinesq relation; compressible form only compared through official definition",
+        "Log constants are lecture example values, not universally calibrated parameters",
+        "Bare mixing-length integration is a conditional constant-stress model calculation, not a validated wall function",
+        "Stipulated tensor tests are local constitutive checks, not empirical or complete RANS predictions",
+        "No k/epsilon transport equations solved in this chapter"
+      ]
+    },
+    {
+      "chapter": 11,
+      "file": "chapter-11-constructing-k-epsilon-and-calibration.html",
+      "body_sha256": "b82749ed8fcc96a38c14a93458e9e99cc36999c9ba9e95058c32ae58a7440321",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch11-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "b82749ed8fcc96a38c14a93458e9e99cc36999c9ba9e95058c32ae58a7440321",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch11-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "b82749ed8fcc96a38c14a93458e9e99cc36999c9ba9e95058c32ae58a7440321",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "limitations": [
+        "Full captions32–35 read; no full audiovisual or instructor-graph digitization",
+        "Exact epsilon identity rederived and compared to NASA TM89451 printed8; related report is not asserted identical to journal pagination",
+        "Baseline high-Re coefficient set kept distinct from Chien low-Re model and other variants",
+        "Grid exponent quoted in captions is not independently recovered from experimental data; arithmetic mismatch and explicit succeeding-recording correction both retained",
+        "Executed homogeneous ODE and two-cell flux are restricted model checks, not a complete spatial RANS solver or empirical validation",
+        "Near-wall boundary treatment and calibration of remaining coefficients follow later recordings"
+      ]
+    },
+    {
+      "chapter": 12,
+      "file": "chapter-12-calibration-and-alternative-time-scales.html",
+      "body_sha256": "852ad756c402e55984ca8caf772c8ba6419e9699d4f89505de43c844621e69bb",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch12-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "852ad756c402e55984ca8caf772c8ba6419e9699d4f89505de43c844621e69bb",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch12-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "852ad756c402e55984ca8caf772c8ba6419e9699d4f89505de43c844621e69bb",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "limitations": [
+        "Complete captions36–39 read; no full audiovisual or instructor-data digitization",
+        "Calibration relations depend on declared log/constant-stress/local-equilibrium assumptions, not universal coefficient proofs",
+        "Versioned RNG implementation and lecture illustrative coefficients distinguished; no RNG derivation or solver execution claimed",
+        "One-equation length sensitivity is a prescribed-shear model problem, not arbitrary-flow monotonicity or empirical prediction",
+        "Quotient transformation derived where k and epsilon are positive; singular wall handled by separate limiting/model considerations",
+        "Wilcox1988 kept separate from1998/2006/SST and LRN variants; no full wall-resolved turbulent simulation performed"
+      ],
+      "repair_history": [
+        {
+          "body_sha256": "c9fc0636ccaf93c01121beb535852fb30c3fab6f00f722008417959c53886d4e",
+          "round": 1,
+          "reviewer_id": "independent-course-peer",
+          "major": 1,
+          "blocking": 0,
+          "finding": "Incorrect large-eta RNG asymptote",
+          "closure": "Two exact prose repairs; original report contains focused acceptance of current digest"
+        },
+        {
+          "body_sha256": "c9fc0636ccaf93c01121beb535852fb30c3fab6f00f722008417959c53886d4e",
+          "round": 2,
+          "reviewer_id": "lead-coordinator",
+          "minor": 1,
+          "blocking": 0,
+          "finding": "Same large-eta RNG asymptote",
+          "closure": "Exact-diff/current-digest closure appended to original report"
+        }
+      ]
+    },
+    {
+      "chapter": 13,
+      "file": "chapter-13-wall-functions-and-smooth-wall-limits.html",
+      "body_sha256": "acd18ac235ad0243f67fd8df4ed09085c77d2e91c8dc8578ef32988eb8e5e365",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch13-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "acd18ac235ad0243f67fd8df4ed09085c77d2e91c8dc8578ef32988eb8e5e365",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch13-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "acd18ac235ad0243f67fd8df4ed09085c77d2e91c8dc8578ef32988eb8e5e365",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "limitations": [
+        "Full captions40–43 read; no numerical values digitized from instructor DNS graphs and no comprehensive board/video audit",
+        "Wall law calculations assume positive shear, smooth attached equilibrium layer and a declared fit; no generic roughness or separated-flow guarantee",
+        "Illustrative mesh ranges are guidance to check against actual model/flow, not sufficient convergence criteria",
+        "Near-wall expansions require a smooth impermeable no-slip wall, incompressibility and suitable derivative/moment regularity; degenerate leading coefficients can vanish",
+        "Manufactured random field is a kinematic check, not an unforced Navier–Stokes solution or turbulent DNS",
+        "No spatial RANS solver or accuracy benchmark performed; numerical tests cover declared restricted relations"
+      ]
+    },
+    {
+      "chapter": 14,
+      "file": "chapter-14-near-wall-corrections-and-boundary-data.html",
+      "body_sha256": "4f39e7f497fbcb2e83cb3e9c5f75fecfdc73f542a93e4749e22d8c4ade91a13f",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch14-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "4f39e7f497fbcb2e83cb3e9c5f75fecfdc73f542a93e4749e22d8c4ade91a13f",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch14-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "4f39e7f497fbcb2e83cb3e9c5f75fecfdc73f542a93e4749e22d8c4ade91a13f",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "limitations": [
+        "Full captions44–47 read, including instructor correction of isotropic3/2 factor; no comprehensive audiovisual equation audit",
+        "Source exponential example does not mathematically support its asserted inverse-distance limit; discrepancy retained explicitly",
+        "Versioned Launder–Sharma implementation inspected for f_mu and extra source terms, not executed or represented as a full derivation of original1974 paper",
+        "Wall epsilon identities require smooth regular no-slip incompressible limit; estimates are asymptotic and boundary implementation is solver-specific",
+        "Pressure normal derivative is derived for a fixed flat wall and physical pressure; other variables/body forces/curved geometry require their own balance",
+        "Inflow inputs in examples are sensitivity scenarios rather than measured wind-tunnel or industrial data; no spatial solver validation"
+      ]
+    },
+    {
+      "chapter": 15,
+      "file": "chapter-15-realizability-and-production-corrections.html",
+      "body_sha256": "0bac19cf7521c8ddcd4d9f785dea766c855c4a88122072448ee25d345975f27a",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch15-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "0bac19cf7521c8ddcd4d9f785dea766c855c4a88122072448ee25d345975f27a",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch15-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "0bac19cf7521c8ddcd4d9f785dea766c855c4a88122072448ee25d345975f27a",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "limitations": [
+        "Full captions48–51 read; plotted DNS/experiment/wake examples retained qualitatively without digitization or invented solver reproduction",
+        "Primary Durbin1994intro and section2.4 inspected, printed103equations visually checked; lecture's1996citation not claimed independently read",
+        "Correct invariant/principal-eigenvalue cap differs from caption row-norm expression; guarantee only stated pointwise incompressible linear-covariance positivity under nonnegative k/viscosity",
+        "SAS primary implementation inspected only for raw von Karman ratio plus regularization/source-limit context; no full SAS derivation or simulation",
+        "Named SST variants distinguished; no full SST solver assembled or validated; scalar production limit changes exact inter-budget transfer unless modeled consistently",
+        "Gas dispersion discussion concerns model-evidence limitations only; no concentration threshold, exposure guidance or new empirical assessment"
+      ]
+    },
+    {
+      "chapter": 16,
+      "file": "chapter-16-reynolds-stress-transport-closure.html",
+      "body_sha256": "a6113c2262ec8b81db1080982a82850502221917f0d85396748ed3ea4d6054c3",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch16-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "a6113c2262ec8b81db1080982a82850502221917f0d85396748ed3ea4d6054c3",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch16-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "a6113c2262ec8b81db1080982a82850502221917f0d85396748ed3ea4d6054c3",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "limitations": [
+        "Complete captions52–54 read; mathematical caption slips repaired with consistent indices, not a full board/video audit",
+        "Chapter16group refined to52–54 because55begins pressure-Poisson derivation;55will be covered with56–59in chapter17",
+        "Pressure diffusion omission is a declared closure assumption; no claim that pressure–velocity measurements are universally impossible",
+        "Generic anisotropic diffusion example CD0.2 is illustrative, not an adopted SSG/LRR coefficient set or empirical fit",
+        "Production-only and two-cell frozen-diffusivity examples are reduced mathematical checks, not complete RSM turbulence simulations",
+        "Isotropic destruction is a model approximation away from strong small-scale anisotropy; it alone does not preserve covariance PSD at singular states",
+        "No fully closed RSM or spatial validation claimed before pressure-strain modeling is specified"
+      ]
+    },
+    {
+      "chapter": 17,
+      "file": "chapter-17-pressure-redistribution-and-wall-models.html",
+      "body_sha256": "7457dcb0e5b0b5550d9e6cb515a762e8f9cf695f79b8e42963b4baafa7f16bcf",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch17-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "7457dcb0e5b0b5550d9e6cb515a762e8f9cf695f79b8e42963b4baafa7f16bcf",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch17-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "7457dcb0e5b0b5550d9e6cb515a762e8f9cf695f79b8e42963b4baafa7f16bcf",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "limitations": [
+        "All captions55–59 read in full; no complete audiovisual audit or digitization of hidden board formulas",
+        "Whole-space Green integral requires suitable decay; bounded/periodic domains have different kernels/boundary terms and pressure gauge constraints",
+        "Homogeneous/constant-gradient route motivates local pressure models but does not determine nonlocal two-point correlations uniquely from one-point R",
+        "Rotta/IP equations are an illustrative closure family with source coefficient values, not every RSM or exact pressure response",
+        "Wall factor2.55 retained as lecture-specific; actual Foundation4.1 LRR wall normalization differs and is not silently mixed",
+        "Trace-free wall correction and PSD wall-function input do not prove full viscous-wall asymptotic consistency or global solution accuracy",
+        "Analytic periodic ensemble and homogeneous closure ODE are restricted executed tests, not new turbulent DNS, full spatial RSM or empirical validation"
+      ]
+    },
+    {
+      "chapter": 18,
+      "file": "chapter-18-scales-cascades-and-direct-simulation.html",
+      "body_sha256": "90c6376ae2fdff85566c9f640f65de6efd3adc8a94d76ce810b58aecf406cdf0",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch18-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "90c6376ae2fdff85566c9f640f65de6efd3adc8a94d76ce810b58aecf406cdf0",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch18-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "90c6376ae2fdff85566c9f640f65de6efd3adc8a94d76ce810b58aecf406cdf0",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "limitations": [
+        "Complete60–63 captions read; no comprehensive audiovisual or numerical digitization of source Couette/domain/startup plots",
+        "K41 translation and K62 paper read as primary scope; no proof of universal isotropy or full inverse-cascade theory is asserted",
+        "Grötzbach expression retained explicitly as lecture diagnostic; original criterion paper not inspected and no universal sufficiency claimed",
+        "Grid cost estimates are conditional homogeneous-cube scalings, not current hardware benchmarks or general wall-DNS cost laws",
+        "Executed diffusion, scale, constructed covariance and exact sampling checks are not a turbulent DNS or analyzed JHTDB dataset",
+        "No actual DNS/measurement pipeline is run; reference data still require independent numerical, sampling and physical uncertainty assessment"
+      ]
+    },
+    {
+      "chapter": 19,
+      "file": "chapter-19-filtered-equations-and-the-les-closure.html",
+      "body_sha256": "ea22bd6488c53c6a5798ff012f436700ca1d381779fa259ac6aaa40642477d44",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch19-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "ea22bd6488c53c6a5798ff012f436700ca1d381779fa259ac6aaa40642477d44",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch19-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "ea22bd6488c53c6a5798ff012f436700ca1d381779fa259ac6aaa40642477d44",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "limitations": [
+        "Complete64–67 captions read; official65–66 include apparent editorial-response contamination; raw captions preserved and no full audiovisual audit claimed",
+        "Derivations are exact under smooth constant-property incompressible commuting-filter assumptions; nonzero commutators are additional terms",
+        "Ghosal1993 report introduction and nonuniform/commutation construction inspected, not a silent claim to have read the separately cited1995 journal paper",
+        "Germano1992 opening printed325–328 generalized-moment construction inspected; later full dynamic modeling not yet cited as inspected here",
+        "Polynomial, affine shear, Fourier and discrete quadrature examples are restricted original checks, not a spatial LES or reproduced filtered-DNS dataset",
+        "No universal grid independence, local isotropy, positivity of signed filters, complete residual reconstruction or monotone RANS refinement claimed"
+      ]
+    },
+    {
+      "chapter": 20,
+      "file": "chapter-20-filter-families-and-subgrid-viscosity.html",
+      "body_sha256": "e4aa1c157ea0ebb996d40f763da61e6c85ac171b6dbb46ad01c2e9be17de2b50",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch20-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "e4aa1c157ea0ebb996d40f763da61e6c85ac171b6dbb46ad01c2e9be17de2b50",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch20-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "e4aa1c157ea0ebb996d40f763da61e6c85ac171b6dbb46ad01c2e9be17de2b50",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "limitations": [
+        "Complete68–69 captions read; no comprehensive audiovisual or source-spectrum digitization",
+        "Generic Leonard1974 and original Smagorinsky1963 papers not inspected; bounded Germano1992 passages support operator/model architecture",
+        "Gaussian family and positivity/alias counterexamples are explicit original pedagogical extensions, not falsely attributed lecture derivations",
+        "Static Cs examples0.065/0.25 are attributed lecture examples, not universal calibrated recommendations",
+        "Exact infinite-line versus periodic cutoff kernels distinguished; width conventions and moment matching do not identify every discrete filter",
+        "Executed local algebra/filter examples and original analytic figure are not a turbulent LES or empirical calibration"
+      ]
+    },
+    {
+      "chapter": 21,
+      "file": "chapter-21-wall-limits-energy-memory-and-test-filtering.html",
+      "body_sha256": "dc16ad13bbd91b78fd1518f10cc2ea3494acf4e6ab23b0aa41cb6f9210282003",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch21-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "dc16ad13bbd91b78fd1518f10cc2ea3494acf4e6ab23b0aa41cb6f9210282003",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch21-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "dc16ad13bbd91b78fd1518f10cc2ea3494acf4e6ab23b0aa41cb6f9210282003",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "limitations": [
+        "Complete70–71 captions read, no comprehensive audiovisual audit or reproduction of source flow images",
+        "Wall damping placement and length-limit variants explicitly specified; none claimed full physical-wall asymptotic or empirical validation",
+        "One-equation incompressible illustrative coefficient set distinguished from all actual Foundation4.1 inherited defaults/source options",
+        "Fixed-strain and shear-off ODE are restricted positive-initial-state checks, not coupled channel LES or general discrete positivity proof",
+        "Germano identity exact for declared ordered linear filters; model coefficient fit remains additional closure work",
+        "WALE declaration/local gradient implementation inspected only for fixed-coefficient architecture distinction; no full WALE/VMS derivation claimed"
+      ]
+    },
+    {
+      "chapter": 22,
+      "file": "chapter-22-dynamic-fitting-and-scale-similarity.html",
+      "body_sha256": "65986a55be6795f9a03641429209fc2648f492ba79e7dfbfc14a1e95041ee704",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch22-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "65986a55be6795f9a03641429209fc2648f492ba79e7dfbfc14a1e95041ee704",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch22-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "65986a55be6795f9a03641429209fc2648f492ba79e7dfbfc14a1e95041ee704",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "limitations": [
+        "Complete72–73 captions read; no comprehensive audiovisual or source flow/spectrum digitization",
+        "Lilly1992 complete3-page text read; own derivation converts its opposite stress convention; no comprehensive image-equation audit claimed",
+        "Bardina/Speziale formulas retained as lecture-specific variants; original full papers not inspected, Speziale download attempt timed out",
+        "Exact identity does not make scalar dynamic fit, coefficient filtering or similarity cross closure exact",
+        "Constructed tensor fit, scalar boost and local affine filter examples are original restricted checks, not turbulent LES or empirical calibration",
+        "Clipping/averaging/regularization and positive frozen total diffusivity do not imply unconditional full numerical stability or complete wall accuracy"
+      ]
+    },
+    {
+      "chapter": 23,
+      "file": "chapter-23-les-numerics-and-hybrid-interfaces.html",
+      "body_sha256": "7803dbdf62c22f242e34e1ee2919c47f727d32c81b62a24cca9efbc772ce30ef",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch23-r1.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "7803dbdf62c22f242e34e1ee2919c47f727d32c81b62a24cca9efbc772ce30ef",
+          "reviewer_id": "independent-course-peer",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch23-r2.md",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "7803dbdf62c22f242e34e1ee2919c47f727d32c81b62a24cca9efbc772ce30ef",
+          "reviewer_id": "lead-coordinator",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+          "accepted": true
+        }
+      ],
+      "limitations": [
+        "Complete74caption read; no comprehensive audiovisual/source plot audit",
+        "Spalart2001 guide opening/background printed1–3 inspected, not full23-page validation or present-day hardware claim",
+        "Choi/Moin2011 report actual printed31–34 read, distinct from full2012journal audit; cost exponents conditional on Reynolds and grid/inlet family",
+        "Yang/Griffin2021 abstract/introduction inspected only to document revised grid assumptions, not full later analysis",
+        "Actual Foundation4.1 DES dTilda and DDES rd/fd/dTilda functions inspected; complete SAtransport/grid-scale choices and solver execution not claimed",
+        "Executed linear advection, filtered moment, synthetic one-point covariance and length-switch checks are not turbulent LES/DES, complete inflow or physical validation",
+        "DECIDER project/full model validation reports not inspected; favorable lecture anecdotes and fixed wall-clock ratios are not endorsed as evidence"
+      ]
+    },
+    {
+      "chapter": 24,
+      "file": "chapter-24-live-session-model-choice-and-evidence.html",
+      "body_sha256": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch24-r1.md",
+          "accepted": true,
+          "reviewer_id": "independent-course-peer",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript"
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch24-r2.md",
+          "accepted": true,
+          "reviewer_id": "lead-coordinator",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript"
+        }
+      ],
+      "limitations": [
+        "Complete local small.en machine ASR read including overlaps/outages/tail; not publisher captions or comprehensive audio/board verification",
+        "Names, uncertain commercial-product wording and numeric conversational estimates not treated as exact quotations or validated inputs",
+        "Density/Favre and nonlinear-basis developments are original explanatory extensions of live questions, not claimed board derivations",
+        "Local nonlinear tensor fit is not a calibrated EASM, global realizability guarantee, reacting-flow simulation or clinical recommendation",
+        "Shared implementation plots/source code unavailable for direct audit; anecdote retained without inventing diagnosis or reproduced data",
+        "No full Panton, original nonlinear-model or combustion validation paper audit; historical popularity, cost, exam and future-course comments not current factual recommendations"
+      ],
+      "repair_history": [
+        {
+          "body_sha256": "4c083d812ce37df361ac0b81ac1ad34bffca904698d397d8d662159434eb0659",
+          "round": 1,
+          "reviewer_id": "independent-course-peer",
+          "blocking": 0,
+          "major": 0,
+          "minor": 1,
+          "finding": "Linear strain term requires explicit incompressible mean/traceS=0",
+          "repair": "Exactly three prose paragraphs; code/output unchanged",
+          "closure_body_sha256": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
+          "closure": "Focused R1 closure appended to original report; full revised R2 also accepts"
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "file": "chapter-25-live-session-from-equation-to-evidence.html",
+      "body_sha256": "d68729670d0967b50f516c94a3d7726ff2044e71118082335d2a014e3740b188",
+      "accepted": true,
+      "rounds": [
+        {
+          "round": 1,
+          "report_identifier": "ch25-r1.md",
+          "accepted": true,
+          "reviewer_id": "independent-course-peer",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "d68729670d0967b50f516c94a3d7726ff2044e71118082335d2a014e3740b188",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript"
+        },
+        {
+          "round": 2,
+          "report_identifier": "ch25-r2.md",
+          "accepted": true,
+          "reviewer_id": "lead-coordinator",
+          "independent_of_author": true,
+          "blocking": 0,
+          "major": 0,
+          "minor": 0,
+          "kind": "Independent AI scientific review",
+          "body_sha256": "d68729670d0967b50f516c94a3d7726ff2044e71118082335d2a014e3740b188",
+          "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript"
+        }
+      ],
+      "limitations": [
+        "Complete local small.en machine ASR read, including overlapping chunks; not publisher captions or full audio/board verification",
+        "Original numerical examples illustrate source questions without reconstructing unavailable reacting cases or diagnosing commercial solvers",
+        "Executed scalar diffusion code is not a full turbulence, reacting-flow or OpenFOAM simulation",
+        "Actual Foundation4.1 dnsFoam source inspected as a bounded historical counterexample, not current universal software recommendation or executed DNS",
+        "No experimental physical validation performed; analytic and manufactured verification plus synthetic iteration checks only",
+        "Historical administration, personal details, future plans and uncertain ASR names excluded or explicitly contextualized"
+      ]
+    }
+  ],
+  "reviewer_identity_note": "Role labels distinguish the actual lead coordinator from a separate nonauthor course peer. No human expert certification claimed."
+}

@@ -1,0 +1,221 @@
+{
+  "chapter": 10,
+  "title": "10. Eddy viscosity and mixing length",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "8e6544cde15544af235e04d8a06c4efe799e7eee294b442a805e6e8ea0ecfbe6",
+  "recordings": [
+    {
+      "playlist_position": 1,
+      "video_id": "dIHh__sgHy8",
+      "title": "28. Reynold's Averaged Navier-Stokes (RANS) models - I",
+      "lesson": 28,
+      "duration_seconds": 1601,
+      "url": "https://www.youtube.com/watch?v=dIHh__sgHy8",
+      "chapter": 10,
+      "disposition": "Included in chapter 10; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 28,
+        "video_id": "dIHh__sgHy8",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec28.vtt",
+        "path": "lecture-28.vtt",
+        "sha256": "877964c4cfab7a56b4504f6f66786e52be27d7b24b4bb5e75d7f0a3b4c7acc48",
+        "segments": 178,
+        "last_cue_seconds": 1600.56,
+        "recording_duration": 1601,
+        "coverage_ratio": 0.9997251717676452,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 8,
+      "video_id": "yaMG1ifG6XI",
+      "title": "31. Different approaches to solve turbulence closure problem - II",
+      "lesson": 31,
+      "duration_seconds": 1387,
+      "url": "https://www.youtube.com/watch?v=yaMG1ifG6XI",
+      "chapter": 10,
+      "disposition": "Included in chapter 10; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 31,
+        "video_id": "yaMG1ifG6XI",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec31.vtt",
+        "path": "lecture-31.vtt",
+        "sha256": "2740c54d44d531443a8b978b5fed83aac9f44e04174738a7a63f100821958afa",
+        "segments": 157,
+        "last_cue_seconds": 1386.48,
+        "recording_duration": 1387,
+        "coverage_ratio": 0.9996250901225667,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 9,
+      "video_id": "aisGVWPWfEw",
+      "title": "30. Different approaches to solve turbulence closure problem - I",
+      "lesson": 30,
+      "duration_seconds": 1031,
+      "url": "https://www.youtube.com/watch?v=aisGVWPWfEw",
+      "chapter": 10,
+      "disposition": "Included in chapter 10; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 30,
+        "video_id": "aisGVWPWfEw",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec30.vtt",
+        "path": "lecture-30.vtt",
+        "sha256": "64771cabe4685b2071d01754aaaf7f3dc0ff0d191055f9b63e2be68ec2ac433c",
+        "segments": 119,
+        "last_cue_seconds": 1030.72,
+        "recording_duration": 1031,
+        "coverage_ratio": 0.9997284190106693,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 10,
+      "video_id": "w2h56nQ81xc",
+      "title": "29. Reynold's Averaged Navier-Stokes (RANS) models - II",
+      "lesson": 29,
+      "duration_seconds": 1081,
+      "url": "https://www.youtube.com/watch?v=w2h56nQ81xc",
+      "chapter": 10,
+      "disposition": "Included in chapter 10; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 29,
+        "video_id": "w2h56nQ81xc",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec29.vtt",
+        "path": "lecture-29.vtt",
+        "sha256": "a4130b65ffb670fdb59fcc5a0650e6251dc87ab2fb1a200d6a7e6e60f1680a30",
+        "segments": 121,
+        "last_cue_seconds": 1078.84,
+        "recording_duration": 1081,
+        "coverage_ratio": 0.9980018501387603,
+        "status": "acquired"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "wall-law-transition",
+      "lesson": 28,
+      "start": 17,
+      "end": 749,
+      "lecture_material": "Near-wall dissipation matters even if wall shear inferred outside; empirical logarithmic profile, constants0.41/5.2 and roughness caveats",
+      "extension": "Constant-stress correction from prior chapter retained; log law not universal at every smooth wall or wall distance",
+      "construction": "Velocity-gradient implication and fit versus derivation"
+    },
+    {
+      "anchor": "boussinesq",
+      "lesson": 28,
+      "start": 749,
+      "end": 1601,
+      "lecture_material": "RANS versus eddy-resolved approach; eddy viscosity and Boussinesq stress model; isotropic k term question",
+      "extension": "Correct symmetric-gradient factor, variable viscosity derivatives and modified pressure",
+      "construction": "Nonzero curl of omitted transverse force"
+    },
+    {
+      "anchor": "trace-and-couette",
+      "lesson": 29,
+      "start": 16,
+      "end": 1079,
+      "lecture_material": "Couette normal-stress failure without k term, trace consistency, statistical isotropic relation and compressible extension remarks",
+      "extension": "Trace determines2/3 without assuming actual isotropy; correct Kronecker trace; compressible/Favre limit distinct",
+      "construction": "Fit shear while missing normal anisotropy"
+    },
+    {
+      "anchor": "anisotropy-realizability",
+      "lesson": 30,
+      "start": 14,
+      "end": 570,
+      "lecture_material": "Pressure relevance in sublayer and correction of misconception that EVM is fully isotropic",
+      "extension": "Pressure balances curvature not shear; tensor alignment, nonnegative production and PSD eigenvalue restriction",
+      "construction": "Positive viscosity with negative predicted covariance eigenvalue"
+    },
+    {
+      "anchor": "scales-and-equation-count",
+      "lesson": 30,
+      "start": 570,
+      "end": 1031,
+      "lecture_material": "Viscosity dimensions, velocity/length/time scales, multi-scale statistical interpretation and zero-equation introduction",
+      "extension": "RANS mean structure not automatically largest turbulent eddy; dimensional consistency not closure validation",
+      "construction": "Equation count refers to added turbulence transport"
+    },
+    {
+      "anchor": "mixing-length",
+      "lesson": 31,
+      "start": 25,
+      "end": 896,
+      "lecture_material": "Algebraic Prandtl mixing length kappa*y, mean gradient, uses/limitations, near-wall/freestream behavior",
+      "extension": "Absolute shear and inverse-time units; exact composite integration, wrong wall power and log intercept; geometry limitations are model-specific",
+      "construction": "Stable quadratic gradient and analytical velocity"
+    },
+    {
+      "anchor": "two-equation-scales",
+      "lesson": 31,
+      "start": 896,
+      "end": 1387,
+      "lecture_material": "Turbulent velocity sqrt(k), time k/epsilon and dimensional exponents yielding C_mu*k²/epsilon",
+      "extension": "Positive domain, missing closure equations/coefficient, not an eddy identity",
+      "construction": "Executed scale conversion with coefficient left symbolic"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://tmbwg.github.io/turbmodels/implementrans.html",
+      "title": "TMBWG: Implementing turbulence models into compressible RANS",
+      "supports": "Negative density-weighted effective stress convention, symmetric strain, isotropic k contribution and Favre/dilatation distinctions; incompressible limit translated explicitly",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://www.grc.nasa.gov/www/winddocs/user/keywords/turbulence.html",
+      "title": "NASA Wind-US User's Guide: turbulence model selection",
+      "supports": "Model Selection section documents algebraic, one-equation, two-equation and URANS options; not evidence of current usage prevalence or model validation",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "article_words_including_math_code": 3756,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "worked_solutions": 8,
+  "executable_listings": 1,
+  "source_reading": "Complete normalized caption text read sequentially before drafting",
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "8e6544cde15544af235e04d8a06c4efe799e7eee294b442a805e6e8ea0ecfbe6",
+    "rounds": [
+      {
+        "round": 1,
+        "report_identifier": "ch10-r1.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "8e6544cde15544af235e04d8a06c4efe799e7eee294b442a805e6e8ea0ecfbe6",
+        "reviewer_id": "independent-course-peer",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      },
+      {
+        "round": 2,
+        "report_identifier": "ch10-r2.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "8e6544cde15544af235e04d8a06c4efe799e7eee294b442a805e6e8ea0ecfbe6",
+        "reviewer_id": "lead-coordinator",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      }
+    ],
+    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+  },
+  "limitations": [
+    "Complete captions28–31 read; no full audiovisual or board inspection",
+    "Constant-property incompressible Boussinesq relation; compressible form only compared through official definition",
+    "Log constants are lecture example values, not universally calibrated parameters",
+    "Bare mixing-length integration is a conditional constant-stress model calculation, not a validated wall function",
+    "Stipulated tensor tests are local constitutive checks, not empirical or complete RANS predictions",
+    "No k/epsilon transport equations solved in this chapter"
+  ]
+}

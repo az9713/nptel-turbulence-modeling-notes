@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="7457dcb0e5b0b5550d9e6cb515a762e8f9cf695f79b8e42963b4baafa7f16bcf">
+<title>17. Pressure redistribution and wall models · Turbulence Modeling</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{pageReady:()=>MathJax.startup.defaultPageReady().then(()=>{document.documentElement.dataset.mathReady='true';})}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Turbulence Modeling · NPTEL IIT Madras</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="book-overview.html">Study route</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc"><h2>On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>17. Pressure redistribution and wall models</h1>
+<p class="lead">Pressure redistribution is local in the Reynolds-stress equation but depends on a pressure field determined by the surrounding flow and its boundaries. Deriving a pressure-Poisson equation exposes that dependence; it does not close the pressure–strain correlation. The rapid and slow models make additional approximations. We will keep the exact derivation, the nonlocal representation and the local closure decisions separate, then test their trace, relaxation and wall limits.</p>
+<div class="learning-map"><strong>From a nonlocal equation to a usable closure.</strong> Start with incompressible momentum, subtract its mean pressure equation, and identify two fluctuation sources. A Green representation shows why two-point statistics appear. Isotropization of production and return to isotropy then provide explicit local models. Their consequences can be checked in a shear ledger, an analytic pressure ensemble and a homogeneous decay experiment before addressing wall corrections.</div>
+<p class="source-note">Lessons 55–59 form one sustained construction: pressure-Poisson derivation, rapid/slow splitting, Green functions, local IP and Rotta models, wall reflection and an algebraic-stress alternative. Complete captions were read. The rewritten derivation repairs density factors, derivative-coordinate notation, the distinction between a Green kernel and a delta distribution, and a tangential rapid-wall expression that would violate the stated redistribution balance.</p>
+
+<h2 id="poisson" data-video="o16cML-Pq_Y" data-start="14" data-end="982">17.1 Pressure enforces the incompressible momentum constraint <a class="timestamp" href="https://www.youtube.com/watch?v=o16cML-Pq_Y&amp;t=14">L55 · 00:14</a></h2>
+<p>Assume constant density \(\rho&gt;0\), constant kinematic viscosity \(\nu&gt;0\), incompressible smooth velocity, and no body force with nonzero divergence. Let \(u_i=U_i+u_i'\), \(p=P+p'\), \(R_{ij}=\mathbb E[u_i'u_j']\), with mean-zero fluctuations and commuting derivatives and expectation. Both instantaneous and mean velocity are divergence-free. Define \(q=p'/\rho\), which has units \(\mathrm{m^2\,s^{-2}}\). Pressure–strain per mass is \(\Pi_{ij}=\mathbb E[q(\partial_j u_i'+\partial_i u_j')]\).</p>
+<p>Take the divergence of instantaneous momentum. The time derivative gives \(\partial_t(\partial_i u_i)=0\), and molecular diffusion gives \(\nu\nabla^2(\partial_i u_i)=0\). Using incompressibility to write advection in conservative form yields</p>
+<div class="equation">\[
+\nabla^2(p/\rho)=-\partial_i\partial_j(u_i u_j)
+=-(\partial_j u_i)(\partial_i u_j).
+\tag{17.1}
+\]</div>
+<p>The mean equation similarly gives \(\nabla^2(P/\rho)=-\partial_i\partial_j(U_iU_j+R_{ij})\). The plus covariance inside this source follows from the negative stress-divergence term in mean momentum after rearrangement. It is a useful sign check: averaging (17.1) must recover the same mean pressure equation.</p>
+<p>For a supplied instantaneous velocity field, the Poisson equation is linear in pressure with a known, generally nonlinear-in-velocity source. Nonlinear pressure–velocity coupling reappears when the flow is evolved. These are different uses of “nonlinear.” Pressure solves can dominate some incompressible algorithms, but the lecture's example iteration counts are not universal cost ratios. Discretization, preconditioning, parallel communication, boundary conditions and tolerance determine actual performance.</p>
+<p>Pressure is determined up to a compatible gauge and boundary specification. The equation of state in a compressible flow does not remove the need to solve the coupled compressible dynamics; it is a different formulation. Our discussion stays within the incompressible assumptions and does not treat the Poisson equation as a standalone substitute for momentum and continuity.</p>
+
+<h2 id="rapid-slow" data-video="njmZhrtFbHc" data-start="15" data-end="1198">17.2 Subtraction exposes a mean-gradient source and a fluctuation source <a class="timestamp" href="https://www.youtube.com/watch?v=njmZhrtFbHc&amp;t=15">L56 · 00:15</a></h2>
+<p>Expand \(u_i u_j=U_iU_j+U_i u_j'+u_i'U_j+u_i'u_j'\), then subtract the mean equation. The centered fluctuation equation is</p>
+<div class="equation">\[
+\nabla^2q=
+-\partial_i\partial_j(U_i u_j'+u_i'U_j)
+-\partial_i\partial_j(u_i'u_j'-R_{ij}).
+\]</div>
+<p>Two product-rule steps simplify the mixed terms. For example, \(\partial_j(U_i u_j')=(\partial_jU_i)u_j'\), because \(\partial_j u_j'=0\). A further \(\partial_i\) gives \((\partial_jU_i)(\partial_i u_j')\); its other term is \(u_j'\partial_j(\partial_iU_i)=0\). The second mixed product gives the same contraction after renaming dummy indices. Consequently</p>
+<div class="equation">\[
+\nabla^2q=F_R+F_S,\qquad
+F_R=-2(\partial_jU_i)(\partial_i u_j'),\qquad
+F_S=-\partial_i\partial_j(u_i'u_j'-R_{ij}).
+\tag{17.2}
+\]</div>
+<p>Every index in each scalar source is summed. The factor 2 and density normalization are essential. Averaging gives \(\mathbb E[F_R]=\mathbb E[F_S]=0\), consistent with \(\mathbb E[q]=0\) after a compatible gauge choice. Statistical homogeneity would remove derivatives of \(R_{ij}\), but it does not remove the instantaneous product derivatives. A field with homogeneous statistics still has fluctuating spatial gradients.</p>
+<p>The labels “rapid” and “slow” distinguish the mean-gradient interaction and fluctuation self-interaction, respectively. They do not imply two propagation speeds in the incompressible elliptic pressure equation. If a mean-deformation rate is much larger than a characteristic fluctuation-gradient rate, the mixed source can dominate the quadratic one over a rapid-distortion interval. Dominance requires a scale comparison, not merely the existence of mean strain.</p>
+<p>The exact coefficient in \(F_R\) is the full mean velocity gradient. Calling every \(\partial_jU_i\) a strain component is shorthand that can obscure its symmetric and antisymmetric parts. A later closure may be organized using strain and rotation invariants. Equation (17.2) itself has not replaced the full gradient by only its symmetric part.</p>
+
+<h2 id="green" data-video="njmZhrtFbHc" data-start="1198" data-end="1574">17.3 The Green kernel carries the boundary assumptions <a class="timestamp" href="https://www.youtube.com/watch?v=njmZhrtFbHc&amp;t=1198">L56 · 19:58</a></h2>
+<p>Let \(\boldsymbol x\) be an observation point and \(\boldsymbol y\) a source location. In unbounded three-dimensional space, the fundamental solution for our positive-Laplacian convention is \(G_0(\boldsymbol x,\boldsymbol y)=-1/(4\pi|\boldsymbol x-\boldsymbol y|)\), satisfying \(\nabla_y^2G_0=\delta(\boldsymbol y-\boldsymbol x)\) in the distributional sense. The kernel is not itself the delta distribution. Away from its pole it is harmonic; the unit source appears through the singular flux at the pole.</p>
+<p>For sufficiently decaying compatible sources and solution, a whole-space representation is \(q(\boldsymbol x)=\int_{\mathbb R^3}G_0(\boldsymbol x,\boldsymbol y)[F_R(\boldsymbol y)+F_S(\boldsymbol y)]\,dV_y\). Its units check: \(G_0\) has units \(\mathrm{m^{-1}}\), \(F\) has units \(\mathrm{s^{-2}}\), and volume supplies \(\mathrm{m^3}\), giving the required \(\mathrm{m^2\,s^{-2}}\). This integral samples the surrounding source, not just its value at \(\boldsymbol x\).</p>
+<p>In a bounded domain, Green's second identity gives, using the fundamental kernel and outward normal derivatives in the source coordinate,</p>
+<div class="equation">\[
+q(\boldsymbol x)=
+\int_\Omega G_0 F\,dV_y+
+\int_{\partial\Omega}
+\left(q\,\partial_nG_0-G_0\,\partial_nq\right)dS_y,
+\qquad F=F_R+F_S.
+\tag{17.3}
+\]</div>
+<p>The <a href="https://web.stanford.edu/class/math220b/handouts/greensfcns.pdf">Stanford Green-function notes, opening representation and boundary-corrector construction</a>, explicitly distinguish a fundamental solution from a domain Green function. Their operator is \(-\nabla^2\); our kernel and source convention have the corresponding opposite sign. A domain Green function can incorporate chosen homogeneous boundary conditions, but a bare whole-space kernel cannot silently eliminate wall effects.</p>
+<p>A periodic domain uses a periodic kernel and an appropriate zero-mean compatibility condition instead of (17.3)'s ordinary boundary integral. A pure Neumann problem requires \(\int_\Omega F\,dV=\int_{\partial\Omega}\partial_nq\,dS\) and an additive pressure reference. These qualifications matter directly to wall redistribution. They also show why a formal volume integral alone is not a general complete pressure solution in a bounded turbulent flow.</p>
+
+<h2 id="nonlocal-to-local" data-video="dfZksw50wkE" data-start="23" data-end="1685">17.4 Two-point statistics do not reduce automatically to a local covariance <a class="timestamp" href="https://www.youtube.com/watch?v=dfZksw50wkE&amp;t=23">L57 · 00:23</a></h2>
+<p>Multiply the pressure representation by \(h_{ij}(\boldsymbol x)=\partial_{x_j}u_i'(\boldsymbol x)+\partial_{x_i}u_j'(\boldsymbol x)\), then average, assuming the needed integrability and exchanges of operations. The volume contribution is \(\Pi_{ij}(\boldsymbol x)=\int G_0\,\mathbb E[(F_R+F_S)(\boldsymbol y)h_{ij}(\boldsymbol x)]\,dV_y\), plus the corresponding boundary contribution in a bounded domain.</p>
+<p>For the rapid term, write its summed source indices as \(k,\ell\) to avoid colliding with the free stress indices \(i,j\). Its integrand involves \((\partial_{y_\ell}U_k)(\boldsymbol y)\mathbb E[(\partial_{y_k}u_\ell')(\boldsymbol y)h_{ij}(\boldsymbol x)]\). If the mean gradient varies little over the important correlation region, a local approximation replaces it by its value at \(\boldsymbol x\) outside the integral. This is a spatial scale-separation approximation. It does not follow solely from calling the mean field smooth.</p>
+<p>Define a two-point covariance \(C_{\ell j}(\boldsymbol y,\boldsymbol x)=\mathbb E[u_\ell'(\boldsymbol y)u_j'(\boldsymbol x)]\). One rapid correlation becomes</p>
+<div class="equation">\[
+\mathbb E[(\partial_{y_k}u_\ell')(\boldsymbol y)
+(\partial_{x_i}u_j')(\boldsymbol x)]
+=\partial_{y_k}\partial_{x_i}
+C_{\ell j}(\boldsymbol y,\boldsymbol x).
+\]</div>
+<p>The two derivative coordinates, rather than the letters used for component indices, explain the product rule. A field evaluated at \(\boldsymbol x\) has zero derivative with respect to an independently varied \(\boldsymbol y\), while it can have nonzero derivative in any component of \(\boldsymbol x\). Renaming a component index does not make a spatial derivative zero.</p>
+<p>At coincident points, \(C_{\ell j}(\boldsymbol x,\boldsymbol x)=R_{\ell j}(\boldsymbol x)\). But the integral depends on nonzero separations too. Even homogeneous statistics make \(C\) a function of separation, not a matrix known from its single zero-separation value. Different correlation shapes can have the same local covariance. The slow contribution additionally contains correlations of two fluctuating velocities at the source with a gradient at the observation point. The exact pressure model has therefore not been closed by the algebra.</p>
+<p>The lecture's derivation is best read as a motivation for choosing available local tensors, rather than an exact recovery of the nonlocal integral from \(R\) and mean strain alone. Wall geometry, gradients or other transported variables can provide additional modeling information. A local closure discards some of this dependence and should be tested in regimes where that loss matters.</p>
+<div class="worked"><h3>An analytic ensemble with nonzero pressure redistribution</h3>
+<p>Use the periodic Taylor–Green family with reference speed \(U_0=1\ \mathrm{m\,s^{-1}}\) and inverse reference length \(\kappa_0=1\ \mathrm{m^{-1}}\). In coordinates scaled by that length, \(u=A(t)\sin x\cos y\), \(v=-A(t)\cos x\sin y\), \(w=0\), \(p/\rho=A(t)^2(\cos2x+\cos2y)/4\), with dimensional amplitude \(A(t)=a e^{-2\nu\kappa_0^2 t}\). The factor \(\nu\kappa_0^2 t\) is dimensionless. Each member solves the unforced incompressible equations as in chapter 7.</p>
+<p>Choose \(a=-1\) with probability \(2/3\) and \(a=2\) with probability \(1/3\). At \(t=0\), \(\mathbb E[a]=0\), \(\mathbb E[a^2]=2\), \(\mathbb E[a^3]=2\). Hence mean velocity is zero, but pressure fluctuations are \(q=(a^2-2)(\cos2x+\cos2y)/4\). They have zero ensemble mean and satisfy \(\nabla^2q=-(a^2-2)(\cos2x+\cos2y)\), the centered quadratic source in (17.2). The rapid source is zero here because the mean gradient is zero.</p>
+<p>At \(x=0.4,y=0.7\), explicit ensemble averaging gives \(\Pi_{11}=0.61054253\), \(\Pi_{22}=-0.61054253\), \(\Pi_{33}=0\), in the corresponding reference rate units. The trace is zero. A periodic five-point Laplacian on 32 and 64 points per direction has maximum source residuals \(0.0511406769\) and \(0.0128345438\), with refinement ratio \(3.98461197\). These are checks of an analytic ensemble and second-order operator, not turbulent DNS data or validation of a local pressure closure.</p></div>
+
+<h2 id="ip" data-video="dfZksw50wkE" data-start="1685" data-end="2008">17.5 Isotropization of production cancels a trace-free part <a class="timestamp" href="https://www.youtube.com/watch?v=dfZksw50wkE&amp;t=1685">L57 · 28:05</a></h2>
+<p>Let \(P_{ij}=-R_{i\ell}A_{j\ell}-R_{j\ell}A_{i\ell}\) and \(\mathcal P=P_{ii}/2\). A simple rapid model is</p>
+<div class="equation">\[
+\Pi_{ij}^{R}=-C_R\left(P_{ij}-\frac23\mathcal P\,\delta_{ij}\right),
+\qquad C_R&gt;0.
+\tag{17.4}
+\]</div>
+<p>This is isotropization of production, abbreviated IP. It contains no extra density because our \(\Pi,P\) are per mass; density-weighted equations multiply both sides by \(\rho\). The bracket has trace \(P_{ii}-2\mathcal P=0\). Consequently the model redistributes directional production without directly adding scalar energy.</p>
+<p>Adding (17.4) to production gives \(P+\Pi^R=(1-C_R)P+(2C_R/3)\mathcal P I\). At \(C_R=1\) it removes the trace-free production, leaving an isotropic contribution. If \(\mathcal P=0\) as well, the sum is zero. The sign is important: then \(\Pi^R=-P\), not \(+P\). It does not cancel nonzero scalar production, since its own trace is zero.</p>
+<div class="worked"><h3>Redistribution in the recurring shear state</h3>
+<p>For \(R_{11}=0.25,R_{22}=0.09,R_{33}=0.04,R_{12}=-0.08\), \(S=100\), production has \(P_{11}=16,P_{12}=-9\), other diagonal production zero, and \(\mathcal P=8\). With the lecture's \(C_R=0.6\), the modeled rapid diagonal is \((-6.4,3.2,3.2)\), while \(\Pi_{12}^R=5.4\), in SI rate units. Production plus rapid redistribution has diagonal \((9.6,3.2,3.2)\); half its trace is still 8.</p>
+<p>The streamwise source is reduced and the other diagonal sources gain energy, consistent with this model's intent. That outcome in this case is not a theorem that exact pressure–strain always reduces every measure of anisotropy in every strained flow. The approximation should be distinguished from the exact trace-free identity.</p></div>
+
+<h2 id="rotta" data-video="_Xiut0RTLxE" data-start="14" data-end="1255">17.6 Return to isotropy is a specified relaxation law <a class="timestamp" href="https://www.youtube.com/watch?v=_Xiut0RTLxE&amp;t=14">L58 · 00:14</a></h2>
+<p>The source motivates slow redistribution with converging fluctuating fluid motion and pressure work. This is a physical analogy, not a molecular-collision derivation of a turbulent coefficient. Incompressibility constrains the sum of three normal gradients; if one is negative, the sum of the other two is positive, but it does not force each to be positive. Nor does the sign of a local pressure fluctuation by itself determine the sign of an averaged pressure–gradient correlation.</p>
+<p>A linear return-to-isotropy model, usually associated with Rotta, makes the intended effect precise:</p>
+<div class="equation">\[
+\Pi_{ij}^{S}=-C_S\frac{\epsilon}{k}
+\left(R_{ij}-\frac23 k\delta_{ij}\right),
+\qquad C_S&gt;0,\quad k,\epsilon&gt;0.
+\tag{17.5}
+\]</div>
+<p>The factor \(\epsilon/k\) is an inverse time, and the bracket is the deviatoric covariance. It has zero trace. This model removes a positive diagonal excess above \(2k/3\), adds to a deficit, and damps off-diagonal covariances. Those are consequences of (17.5), rather than universal signs inferred from the exact pressure term. The inspected <a href="https://cpp.openfoam.org/v4/LRR_8C_source.html">Foundation 4.1 LRR source</a> includes the linear return term and deviatoric production correction, with constants 1.8 and 0.6 in this convention. Other model families and anisotropy normalizations use different forms.</p>
+<p>If (17.5) acts alone with fixed \(k,\epsilon\), let \(\gamma=C_S\epsilon/k\). Then \(R(t)=2kI/3+[R(0)-2kI/3]e^{-\gamma t}\). This is a convex combination of the initial PSD covariance and an isotropic PSD matrix, so the isolated exact relaxation preserves PSD and its trace. Its deviator norm decays exponentially. An arbitrary explicit discretization need not preserve this convex structure for a large step.</p>
+<p>When destruction acts too, normalized anisotropy has another rate. Define \(b=R/(2k)-I/3\). In homogeneous zero-mean-gradient flow, neglecting spatial transport and using \(E=2\epsilon I/3\), the scalar balance gives \(k'=-\epsilon\). Substituting \(R=2k(b+I/3)\) into the matrix equation yields</p>
+<div class="equation">\[
+\frac{db}{dt}=-(C_S-1)\frac{\epsilon}{k}b.
+\tag{17.6}
+\]</div>
+<p>The subtraction of 1 comes from the changing energy normalization. A positive \(C_S\) relaxes the unnormalized deviator in the isolated law, but normalized anisotropy in this decaying system decreases only when \(C_S&gt;1\). This distinction is consequential when comparing component energies in decaying turbulence.</p>
+<div class="worked"><h3>A closed homogeneous limit with an exact solution</h3>
+<p>Add the modeled scale equation \(\epsilon'=-C_{\epsilon2}\epsilon^2/k\), with \(C_{\epsilon2}&gt;1\). Let \(\theta=1+(C_{\epsilon2}-1)(\epsilon_0/k_0)t\). The chapter 11 solution gives \(k=k_0\theta^{-1/(C_{\epsilon2}-1)}\), \(\epsilon=\epsilon_0\theta^{-C_{\epsilon2}/(C_{\epsilon2}-1)}\). Integrating (17.6) gives \(b=b_0\alpha\), where \(\alpha=\theta^{-(C_S-1)/(C_{\epsilon2}-1)}\).</p>
+<p>For \(C_S\geq1\) and \(t\geq0\), \(0&lt;\alpha\leq1\), and \(R=2k[(1-\alpha)I/3+\alpha R_0/(2k_0)]\) remains PSD for PSD \(R_0\). At \(k_0=0.19,\epsilon_0=0.5,C_S=1.8,C_{\epsilon2}=1.92,t=0.2\ \mathrm s\), \(\alpha=0.70937107\), \(R_{11}=0.13941889\), \(R_{12}=-0.03694497\). The executed coupled RK4 calculation approaches this exact solution, with maximum errors \(1.82062705\times10^{-8}\) and \(1.11122742\times10^{-9}\) for 20 and 40 steps. The observed ratio is \(16.38392852\).</p>
+<p>This checks a homogeneous closure limit and its normalization. It does not validate a spatial wall model, prove general RK4 positivity, or establish that the exact analytic periodic ensemble above obeys Rotta's local approximation. The two examples test different levels of the construction.</p></div>
+<figure><img src="assets/ch17-pressure-and-return.svg" alt="Left: periodic analytic pressure fluctuation for one ensemble member, with alternating positive and negative regions. Right: normal covariance fractions in a homogeneous Rotta decay model move toward one third at different rates of change."><figcaption>Original analytic diagnostics. Left: the \(a=2\) member has \(q'=(\cos2x+\cos2y)/2\) in reference units. Right: normal fractions of the declared homogeneous closure solution, not the periodic ensemble, approach an isotropic value while total energy decays. Generated by <a href="code/plot_ch17.py">plot_ch17.py</a>.</figcaption></figure>
+
+<h2 id="wall-reflection" data-video="1QiEdf7WWts" data-start="14" data-end="1084">17.7 Wall redistribution must preserve the trace and use a consistent distance limit <a class="timestamp" href="https://www.youtube.com/watch?v=1QiEdf7WWts&amp;t=14">L59 · 00:14</a></h2>
+<p>Let \(n\) be a unit normal to a locally selected wall and \(s_1,s_2\) orthogonal tangential directions. For any symmetric tensor \(T\), define the trace-free wall map</p>
+<div class="equation">\[
+\mathcal W(T)=T_{nn}I-\frac32
+\left[(Tn)\otimes n+n\otimes(Tn)\right],
+\qquad T_{nn}=n^TTn.
+\tag{17.7}
+\]</div>
+<p>Its trace is \(3T_{nn}-3T_{nn}=0\). In wall axes, \(\mathcal W(T)_{nn}=-2T_{nn}\), each tangential diagonal is \(+T_{nn}\), and \(\mathcal W(T)_{sn}=-3T_{sn}/2\). These give the lecture's “remove two parts, give one to each” construction without assigning different total energy to the wall term.</p>
+<p>An illustrative slow correction is \(\Pi^{S,w}=C_{S,w}f(\epsilon/k)\mathcal W(R)\), and a rapid correction is \(\Pi^{R,w}=C_{R,w}f\mathcal W(\Pi^R)\). The source gives \(C_{S,w}=0.5,C_{R,w}=0.3\), together with \(C_S=1.8,C_R=0.6\). In the rapid tangential diagonal, the quantity to redistribute is \(\Pi^R_{nn}\) for both tangential directions. Replacing it by each direction's own \(\Pi^R_{ss}\), as one caption passage suggests, would generally break the stated zero-trace transfer. Equation (17.7) makes this check explicit.</p>
+<p>The lecture-specific distance factor is \(f=k^{3/2}/(2.55\,d\,\epsilon)\), where \(d&gt;0\) is wall distance. It is dimensionless, but its complete limit depends on \(k,\epsilon\), not merely its visible \(1/d\). Under the physical smooth-wall limits \(k\sim A d^2,\epsilon\to\epsilon_w&gt;0\), \(f\sim A^{3/2}d^2/(2.55\epsilon_w)\to0\). With \(A=0.7,\nu=1.5\times10^{-5},\epsilon_w=2\nu A\), distances 2 and 1 mm give \(f=0.04374693\) and \(0.01093673\). It decreases by four on halving distance; it does not automatically diverge or activate more strongly all the way to the wall.</p>
+<p>In an assumed logarithmic region, by contrast, \(k=u_\tau^2/\sqrt{C_\mu}\), \(\epsilon=u_\tau^3/(\kappa d)\), so \(f=\kappa/(2.55 C_\mu^{3/4})\), approximately unity for the lecture constants. A classical wall-reflection construction and a fully viscous-wall-consistent closure are therefore not interchangeable. The required local balance, variable definition and range must be inspected together. A nominal influence range around \(y^+=1\)–200 does not prove the displayed factor has that behavior.</p>
+<p>The versioned LRR implementation cited above forms a deviatoric wall term using the wall normal and a different normalization, equivalent here to a factor proportional to \((C_\mu^{3/4}/\kappa)k^{3/2}/(d\epsilon)\). We do not silently combine its normalization with the source's 2.55. Trace-free construction is necessary for incompressible redistribution, but does not by itself guarantee correct wall powers, PSD or accurate separated flow.</p>
+<p>Boundary data remain model-specific. At a smooth resolved no-slip wall, actual \(R_{ij}=0\); destruction and scale conditions need the appropriate continuous limit and discrete treatment. A wall function instead supplies a covariance in an assumed outer part of the near-wall layer. In local streamwise/normal/spanwise axes, lesson 59 gives \(R_{11}=3.67u_\tau^2,R_{22}=0.83u_\tau^2,R_{33}=2.17u_\tau^2,R_{12}=-u_\tau^2\), with the other shears zero under the stated canonical-flow symmetry.</p>
+<p>These numbers give \(k/u_\tau^2=3.335\), close to the equilibrium \(1/\sqrt{0.09}=3.333\ldots\), and a positive planar determinant \((3.67\times0.83-1)u_\tau^4=2.0461u_\tau^4\). Together with positive diagonal entries and the independent positive spanwise block, the stipulated covariance is PSD. The zero secondary shears follow a chosen symmetry for this example; they are not generic boundary values for any curved three-dimensional wall. Rotate the tensor into the solver coordinates when needed, and pair it with a compatible traction and scale treatment.</p>
+
+<h2 id="algebraic-stress" data-video="1QiEdf7WWts" data-start="1084" data-end="1493">17.8 An algebraic stress relation approximates normalized transport <a class="timestamp" href="https://www.youtube.com/watch?v=1QiEdf7WWts&amp;t=1084">L59 · 18:04</a></h2>
+<p>The final source topic asks whether a stress-transport equation can be reduced to an algebraic relation. Let \(C_{ij}=D_U R_{ij}\) and let \(D_{ij}\) denote the chosen diffusion contribution on its right side; similarly \(C_k=D_Uk,D_k\) for the trace energy equation. The proposed approximation is</p>
+<div class="equation">\[
+C_{ij}-D_{ij}\approx\frac{R_{ij}}{k}(C_k-D_k).
+\]</div>
+<p>Its convective part is motivated by \(D_U R_{ij}=(R_{ij}/k)D_Uk+kD_U(R_{ij}/k)\): slowly varying normalized covariance makes the last term small. Extending the proportionality to diffusion is another assumption; variable normalized stresses generate additional gradient terms. It is not a consequence of stationarity alone and does not imply that all transport vanishes.</p>
+<p>Substitute the modeled balances on both sides to obtain</p>
+<div class="equation">\[
+P_{ij}+\Pi_{ij}-E_{ij}
+\approx\frac{R_{ij}}{k}(\mathcal P-\epsilon).
+\tag{17.8}
+\]</div>
+<p>Half the trace agrees identically if \(\Pi_{ii}=0,E_{ii}=2\epsilon,R_{ii}=2k\). The remaining equations can supply an implicit or explicitly reduced algebraic stress relation after the closures are specified. They may still be nonlinear in the covariance, because production and redistribution depend on it. The model can retain transport equations for \(k\) and a scale variable; “algebraic stress” does not mean no turbulence transport equations anywhere.</p>
+<p>The <a href="https://tmbwg.github.io/turbmodels/easmko.html">official explicit algebraic stress-model definitions</a> distinguish variants with nonlinear stress contributions beyond a scalar viscosity and retain scale equations. Their documented existence does not establish present prevalence in every commercial solver. We use (17.8) to explain the approximation, rather than claim to implement every such variant.</p>
+<p>The tradeoff is now concrete. Full stress transport retains directional convection and relaxation history at greater coupling cost. Algebraic reduction replaces some of that history with a local relation under a normalized-transport approximation. Neither gives the instantaneous eddy field. The next course block changes the modeling target to resolving time-dependent turbulent scales, with a corresponding resolution and computational cost.</p>
+
+<h2 id="reproduce">17.9 Reproduce pressure and redistribution checks</h2>
+<p>Run <a href="code/ch17_pressure_and_redistribution.py">ch17_pressure_and_redistribution.py</a> with standard Python 3. It averages an explicit analytic ensemble, checks a periodic pressure operator, integrates a declared homogeneous closure and tests the wall map's trace. The observed output is checked against the listing. The code neither evaluates the unbounded Green integral on a periodic domain nor claims a complete spatial RSM simulation.</p>
+<pre data-run="code/ch17_pressure_and_redistribution.py"><code>&quot;&quot;&quot;Analytic pressure ensemble and restricted redistribution checks.&quot;&quot;&quot;
+from math import cos, sin, pi, sqrt
+
+# Taylor-Green family in units U0=1 m/s, inverse length=1/m, at t=0.
+# Random amplitude -1 with probability2/3 and +2 with probability1/3.
+# Mean velocity0, mean amplitude squared2, mean amplitude cubed2.
+states=[(-1.,2/3),(2.,1/3)]
+x,y=.4,.7
+shape=cos(2*x)+cos(2*y)
+qmean=sum(w*a*a*shape/4 for a,w in states)
+pistrain=[0.,0.]
+fluct_mean=0.
+for amplitude,weight in states:
+    qprime=amplitude**2*shape/4-qmean
+    fluct_mean+=weight*qprime
+    g11=amplitude*cos(x)*cos(y)
+    pistrain[0]+=weight*qprime*2*g11
+    pistrain[1]-=weight*qprime*2*g11
+print(f&quot;pressure-fluctuation ensemble mean: {fluct_mean:.3e}&quot;)
+print(f&quot;analytic pressure-strain diagonal: {pistrain[0]:.8f}, {pistrain[1]:.8f}, {0.:.8f}&quot;)
+print(f&quot;analytic pressure-strain trace: {sum(pistrain):.3e}&quot;)
+
+# Periodic five-point Laplacian convergence, sample amplitude+2.
+errors=[]
+for count in (32,64):
+    h=2*pi/count
+    def q(i,j):
+        return (4-2)*(cos(2*i*h)+cos(2*j*h))/4
+    maximum=0.
+    source_mean=0.
+    for i in range(count):
+        for j in range(count):
+            source=-(4-2)*(cos(2*i*h)+cos(2*j*h))
+            source_mean+=source/count**2
+            lap=(q(i+1,j)+q(i-1,j)+q(i,j+1)+q(i,j-1)-4*q(i,j))/h**2
+            maximum=max(maximum,abs(lap-source))
+    errors.append(maximum)
+    print(f&quot;periodic pressure N={count}: max Poisson residual={maximum:.8e}, source mean={source_mean:.3e}&quot;)
+print(f&quot;Poisson residual refinement ratio: {errors[0]/errors[1]:.8f}&quot;)
+assert 3.9&lt;errors[0]/errors[1]&lt;4.1
+
+R0=[.25,.09,.04,-.08,0.,0.]
+k0,eps0,CS,CE2=.19,.5,1.8,1.92
+def rhs(state):
+    r=state[:6]
+    e=state[6]
+    k=sum(r[:3])/2
+    result=[-CS*e/k*(r[i]-(2*k/3 if i&lt;3 else 0.))
+            -(2*e/3 if i&lt;3 else 0.) for i in range(6)]
+    return result+[-CE2*e*e/k]
+
+def exact(t):
+    theta=1+(CE2-1)*eps0/k0*t
+    k=k0*theta**(-1/(CE2-1))
+    e=eps0*theta**(-CE2/(CE2-1))
+    alpha=theta**(-(CS-1)/(CE2-1))
+    r=[2*k*((1-alpha)/3*(i&lt;3)+alpha*R0[i]/(2*k0)) for i in range(6)]
+    return r+[e],alpha
+
+def rk4(steps,tfinal):
+    state=R0+[eps0]
+    dt=tfinal/steps
+    for _ in range(steps):
+        f1=rhs(state)
+        f2=rhs([v+dt*f/2 for v,f in zip(state,f1)])
+        f3=rhs([v+dt*f/2 for v,f in zip(state,f2)])
+        f4=rhs([v+dt*f for v,f in zip(state,f3)])
+        state=[v+dt*(a+2*b+2*c+d)/6 for v,a,b,c,d in zip(state,f1,f2,f3,f4)]
+    return state
+target,alpha=exact(.2)
+errors=[]
+for steps in (20,40):
+    result=rk4(steps,.2)
+    error=max(abs(a-b) for a,b in zip(result,target))
+    errors.append(error)
+    print(f&quot;homogeneous Rotta decay steps={steps}: R11={result[0]:.8f}, R12={result[3]:.8f}, max error={error:.8e}&quot;)
+print(f&quot;Rotta decay refinement ratio: {errors[0]/errors[1]:.8f}&quot;)
+print(f&quot;normalized anisotropy multiplier t=.2: {alpha:.8f}&quot;)
+assert 0&lt;alpha&lt;1 and errors[1]&lt;errors[0]
+
+# Trace-preserving wall map for normal y, on any symmetric tensor.
+def wall_map(T):
+    nn=T[1][1]
+    n=[0.,1.,0.]
+    tn=[T[i][1] for i in range(3)]
+    return [[nn*(i==j)-1.5*(tn[i]*n[j]+n[i]*tn[j]) for j in range(3)] for i in range(3)]
+T=[[1.,.2,.1],[.2,2.,-.3],[.1,-.3,3.]]
+W=wall_map(T)
+print(f&quot;wall-map normal/parallel/shear: {W[1][1]:.8f}, {W[0][0]:.8f}, {W[0][1]:.8f}&quot;)
+print(f&quot;wall-map trace: {sum(W[i][i] for i in range(3)):.3e}&quot;)
+for d in (.002,.001):
+    k=.7*d*d
+    eps=2*1.5e-5*.7
+    f=k**1.5/(2.55*d*eps)
+    print(f&quot;physical-wall illustrative factor d={d:.3f}: {f:.8f}&quot;)
+wall_values=[3.67,.83,2.17]
+print(f&quot;lecture wall-function k/u_tau²: {sum(wall_values)/2:.8f}&quot;)
+print(f&quot;lecture wall-function planar covariance determinant/u_tau4: {3.67*.83-1:.8f}&quot;)
+</code></pre>
+<pre class="output">pressure-fluctuation ensemble mean: 5.551e-17
+analytic pressure-strain diagonal: 0.61054253, -0.61054253, 0.00000000
+analytic pressure-strain trace: 0.000e+00
+periodic pressure N=32: max Poisson residual=5.11406769e-02, source mean=9.498e-17
+periodic pressure N=64: max Poisson residual=1.28345438e-02, source mean=6.278e-17
+Poisson residual refinement ratio: 3.98461197
+homogeneous Rotta decay steps=20: R11=0.13941889, R12=-0.03694497, max error=1.82062705e-08
+homogeneous Rotta decay steps=40: R11=0.13941889, R12=-0.03694497, max error=1.11122742e-09
+Rotta decay refinement ratio: 16.38392852
+normalized anisotropy multiplier t=.2: 0.70937107
+wall-map normal/parallel/shear: -4.00000000, 2.00000000, -0.30000000
+wall-map trace: 0.000e+00
+physical-wall illustrative factor d=0.002: 0.04374693
+physical-wall illustrative factor d=0.001: 0.01093673
+lecture wall-function k/u_tau²: 3.33500000
+lecture wall-function planar covariance determinant/u_tau4: 2.04610000
+</pre>
+
+<h2 id="exercises">17.10 Exercises with complete solutions</h2>
+<details><summary>1. Derive the rapid-source factor two and check its mean.</summary>
+<p>The mixed product \(\partial_i\partial_j(U_i u_j')\) reduces to \((\partial_jU_i)(\partial_i u_j')\) after using both divergence constraints. The other mixed product is identical after exchanging summed \(i,j\). Both carry a negative sign from instantaneous pressure Poisson, giving \(F_R=-2(\partial_jU_i)(\partial_i u_j')\). Since the fluctuating derivative has zero expectation, its mean is zero. The centered quadratic source also has zero mean, because \(\mathbb E[u_i'u_j'-R_{ij}]=0\).</p></details>
+<details><summary>2. Identify the Green-kernel sign and the missing wall information.</summary>
+<p>In three dimensions, \(\nabla^2[-1/(4\pi r)]=\delta\); for the operator \(-\nabla^2\), the fundamental solution has the opposite sign. Green's second identity gives (17.3), whose surface terms contain pressure and its normal derivative. A chosen domain Green function can eliminate one term through its boundary condition, but the fundamental kernel alone does not satisfy an arbitrary wall condition. Periodic or pure Neumann problems additionally need source compatibility and a pressure gauge.</p></details>
+<details><summary>3. Why does a homogeneous two-point covariance remain unknown?</summary>
+<p>Homogeneity makes \(C_{\ell j}(\boldsymbol y,\boldsymbol x)\) depend on separation \(\boldsymbol y-\boldsymbol x\), while its coincident value is only \(R_{\ell j}\). A function's value at zero does not determine its values and derivatives at every separation. The rapid pressure integral samples those separations, and the slow term involves higher correlations. Replacing that information by local \(R\), gradients and a time scale is a closure decision, not an exact consequence of homogeneity.</p></details>
+<details><summary>4. Check the IP trace and its complete-cancellation case.</summary>
+<p>Since \(P_{ii}=2\mathcal P\), the trace of \(-C_R(P_{ij}-2\mathcal P\delta_{ij}/3)\) is zero. At \(C_R=1\), \(P+\Pi^R=2\mathcal P I/3\). Only if \(\mathcal P=0\) does this vanish completely. For the shear example and \(C_R=0.6\), the rapid diagonal is \((-6.4,3.2,3.2)\), whose sum is zero. It redistributes directional production while preserving scalar production.</p></details>
+<details><summary>5. Derive the normalized Rotta rate in a decaying homogeneous flow.</summary>
+<p>Write \(R=2k(b+I/3)\) and \(k'=-\epsilon\). Then \(R'=-2\epsilon b-2\epsilon I/3+2kb'\). The modeled right side is \(-2C_S\epsilon b-2\epsilon I/3\). Equating gives \(b'=-(C_S-1)(\epsilon/k)b\). With the stated power-law scale evolution, integrate \(\epsilon/k=(\epsilon_0/k_0)/\theta\) to obtain \(b/b_0=\theta^{-(C_S-1)/(C_{\epsilon2}-1)}\). Thus normalized return requires \(C_S&gt;1\) in this reduced decaying system.</p></details>
+<details><summary>6. Complete a wall redistribution without changing scalar energy.</summary>
+<p>For a symmetric \(T\), (17.7) has trace \(3T_{nn}-3T_{nn}=0\). In wall axes it gives normal \(-2T_{nn}\), each tangential diagonal \(+T_{nn}\), and shear \(-3T_{sn}/2\). The rapid map must therefore give both tangential diagonals from the same \(\Pi^R_{nn}\), not from each one's own diagonal. These identities check conservation of redistribution, without proving the full correction's accuracy or PSD preservation.</p></details>
+<details><summary>7. Test the distance factor in physical and log-region limits.</summary>
+<p>For physical \(k\sim Ad^2\), finite \(\epsilon_w&gt;0\), \(f=k^{3/2}/(2.55d\epsilon)\sim A^{3/2}d^2/(2.55\epsilon_w)\to0\). Under log assumptions \(k=u_\tau^2/\sqrt{C_\mu}\), \(\epsilon=u_\tau^3/(\kappa d)\), it instead tends to the constant \(\kappa/(2.55C_\mu^{3/4})\). Holding \(k,\epsilon\) fixed while shrinking \(d\) is a third, different sequence. A visible denominator alone cannot establish a physical wall limit.</p></details>
+<details><summary>8. Recover the algebraic-stress relation and its trace consistency.</summary>
+<p>Use \(C_{ij}-D_{ij}\approx(R_{ij}/k)(C_k-D_k)\), substitute \(C_{ij}-D_{ij}=P_{ij}+\Pi_{ij}-E_{ij}\) and \(C_k-D_k=\mathcal P-\epsilon\), giving (17.8). Half tracing its right side yields \((R_{ii}/(2k))(\mathcal P-\epsilon)=\mathcal P-\epsilon\), matching its left side when redistribution is trace-free and destruction has trace \(2\epsilon\). This consistency does not derive the normalized-transport approximation or guarantee that its local algebraic solution is PSD.</p></details>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn"><a rel="prev" href="chapter-16-reynolds-stress-transport-closure.html">Previous chapter</a><a href="index.html">Index</a><a rel="next" href="chapter-18-scales-cascades-and-direct-simulation.html">Next chapter</a></nav></main></div><footer class="site-footer">Independent study edition. Original exposition follows Prof. Vagesh D. Narasimhamurthy's course. Source and review limitations are recorded separately.</footer></body></html>

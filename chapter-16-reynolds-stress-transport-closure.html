@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="a6113c2262ec8b81db1080982a82850502221917f0d85396748ed3ea4d6054c3">
+<title>16. Closing the Reynolds-stress transport system · Turbulence Modeling</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{pageReady:()=>MathJax.startup.defaultPageReady().then(()=>{document.documentElement.dataset.mathReady='true';})}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Turbulence Modeling · NPTEL IIT Madras</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="book-overview.html">Study route</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc"><h2>On this page</h2></aside><main id="main"><div class="reading-tools"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>16. Closing the Reynolds-stress transport system</h1>
+<p class="lead">A Reynolds-stress model transports directional second moments instead of reconstructing all of them from one scalar viscosity. This removes the Boussinesq assumption from the momentum-stress relation, but creates new closure obligations. Production can be evaluated directly from transported covariances and mean gradients; pressure correlations, third moments and destruction still need models. We will assemble that inventory, examine anisotropic diffusion and derive the factor in an isotropic destruction tensor.</p>
+<div class="learning-map"><strong>Retain the covariance as a matrix.</strong> The recurring shear case now evolves \(R_{11}\), \(R_{12}\) and the other components together. A reduced production-only problem has an exact solution that preserves covariance positivity. A matrix diffusion example then shows why a cross-direction flux need not be unphysical, while a destruction example shows why a plausible isolated source is not a full realizability guarantee.</div>
+<p class="source-note">Lessons 52–54 introduce stress-transport modeling, compare scalar and tensor diffusion, and construct isotropic small-scale destruction with a seventh scale equation. Lesson 55 starts the pressure-Poisson derivation and is grouped with its continuation in chapter 17. Complete captions were read before this grouping. Numerical stability statements below are limited to the specified operators and updates.</p>
+
+<h2 id="second-moment-system" data-video="8-P7fKRl7gw" data-start="14" data-end="631">16.1 Transporting six stresses moves the closure boundary <a class="timestamp" href="https://www.youtube.com/watch?v=8-P7fKRl7gw&amp;t=14">L52 · 00:14</a></h2>
+<p>Consider constant-density incompressible Newtonian flow with molecular kinematic viscosity \(\nu&gt;0\), without fluctuating body forcing. Write instantaneous velocity \(u_i=U_i+u_i'\), pressure \(p=P+p'\), and covariance \(R_{ij}=\mathbb E[u_i'u_j']\). The expectation commutes with required derivatives and \(\partial_iU_i=\partial_i u_i'=0\). Define the mean material derivative \(D_U=\partial_t+U_\ell\partial_\ell\) and mean velocity gradient \(A_{ij}=\partial_jU_i\). Repeated dummy indices are summed; the free stress indices \(i,j\) remain on both sides.</p>
+<p>The exact stress transport equation derived earlier can be written</p>
+<div class="equation">\[
+\begin{aligned}
+D_U R_{ij}={}&P_{ij}+\Pi_{ij}-E_{ij}
+ +\nu\partial_\ell\partial_\ell R_{ij}
+ -\partial_\ell(T_{ij\ell}+Q_{ij\ell}),\\
+P_{ij}={}&-R_{i\ell}A_{j\ell}-R_{j\ell}A_{i\ell},\\
+\Pi_{ij}={}&\frac1\rho\mathbb E[p'(\partial_j u_i'+\partial_i u_j')],\\
+E_{ij}={}&2\nu\mathbb E[(\partial_\ell u_i')(\partial_\ell u_j')],\\
+T_{ij\ell}={}&\mathbb E[u_i'u_j'u_\ell'],\\
+Q_{ij\ell}={}&\frac1\rho\left(\delta_{i\ell}\mathbb E[p'u_j']
+ +\delta_{j\ell}\mathbb E[p'u_i']\right).
+\end{aligned}
+\tag{16.1}
+\]</div>
+<p>All rates have units \(\mathrm{m^2\,s^{-3}}\); the fluxes \(T,Q\) have units \(\mathrm{m^3\,s^{-3}}\). Symmetry leaves six independent \(R_{ij}\). A fully symmetric third velocity moment has 27 ordered entries but only ten independent entries in three dimensions; ordered terms should not be counted as 27 independent unknowns. Its divergence nonetheless introduces information beyond \(R\).</p>
+<p>In a Reynolds-stress transport model, abbreviated RSM or RSTM, the mean momentum equations use the transported \(R_{ij}\) directly in \(-\partial_jR_{ij}\). No Boussinesq constitutive relation is needed to reconstruct this momentum stress. “Second-moment closure” describes the level at which the hierarchy is modeled; it does not mean the system contains only second moments before closure. Pressure–velocity-gradient and gradient-product correlations in (16.1) remain unknown.</p>
+<p>The closure inventory is specific. Mean advection and molecular covariance diffusion need no new turbulence constitutive hypothesis once \(U,R\) are supplied. Production has the exact algebraic form above. The third-moment and pressure fluxes, pressure–strain correlation and destruction tensor still need treatment. Their modeled evolution makes the transported covariance approximate, so evaluating an exact-form production from it does not yield exact physical production automatically.</p>
+<p>The primary <a href="https://tmbwg.github.io/turbmodels/rsm-ssglrr.html">SSG/LRR stress-model definition</a> uses a positive transported covariance and an exact-form production, with a separate seventh scale variable. Its density-weighted compressible notation reduces to our covariance per mass at constant density. This establishes the model architecture and sign conversion; the generic construction here is not a complete adoption of its blended coefficient set.</p>
+
+<h2 id="production-coupling" data-video="8-P7fKRl7gw" data-start="631" data-end="1366">16.2 Exact-form production couples the stress equations <a class="timestamp" href="https://www.youtube.com/watch?v=8-P7fKRl7gw&amp;t=631">L52 · 10:31</a></h2>
+<p>In matrix notation \(P=-AR-RA^T\). For a general mean gradient,</p>
+<div class="equation">\[
+P_{11}=-2(A_{11}R_{11}+A_{12}R_{12}+A_{13}R_{13}),
+\]</div>
+<p>and \(P_{12}=-(A_{11}+A_{22})R_{12}-A_{12}R_{22}-A_{13}R_{23}-A_{21}R_{11}-A_{23}R_{13}\). Thus the \(R_{12}\) production can involve five distinct covariances. A term appearing twice in an expansion is not an additional independent unknown. The mean gradients themselves depend on the coupled momentum solution.</p>
+<p>In parallel shear \(U=(S y,0,0)\), with constant shear rate \(S\), these formulas simplify to \(P_{11}=-2S R_{12}\), \(P_{12}=-S R_{22}\), \(P_{13}=-S R_{23}\), and \(P_{22}=P_{23}=P_{33}=0\). This is a sparse special case of the general coupling. A negative shear covariance feeds positive streamwise production for \(S&gt;0\); its own source depends on the wall-normal variance. Pressure–strain will later redistribute component energies.</p>
+<div class="worked"><h3>The same shear ledger, now with a directional evolution</h3>
+<p>Use \(R_{11}=0.25,R_{22}=0.09,R_{33}=0.04,R_{12}=-0.08\), with remaining off-diagonals zero, in \(\mathrm{m^2\,s^{-2}}\), and \(S=100\ \mathrm{s^{-1}}\). Then \(P_{11}=16\), \(P_{12}=-9\), and scalar production \(\mathcal P=P_{ii}/2=-R_{12}S=8\ \mathrm{m^2\,s^{-3}}\). The diagonal production is twice the corresponding contribution to scalar energy because \(k=R_{ii}/2\).</p>
+<p>Temporarily retain production alone: \(dR/dt=-AR-RA^T\). This is a deliberately incomplete homogeneous moment equation, not a full turbulent shear-flow model. For constant \(A\), \(R(t)=F(t)R(0)F(t)^T\), where \(F=\exp(-At)\). Since \(a^TR(t)a=(F^Ta)^TR(0)(F^Ta)\geq0\), the exact reduced evolution preserves PSD for any initially PSD covariance.</p>
+<p>Here \(A^2=0\), so \(F=I-At\). With \(b=St\), \(R_{22}(t)=R_{22}(0)\), \(R_{12}(t)=R_{12}(0)-bR_{22}(0)\), \(R_{11}(t)=R_{11}(0)-2bR_{12}(0)+b^2R_{22}(0)\). At \(t=0.01\ \mathrm s\), these give \(R_{11}=0.5\), \(R_{12}=-0.17\). The planar determinant remains \(0.0161\), an exact algebraic check of this shear transformation.</p></div>
+<p>Numerical preservation is a separate issue. Starting from unit covariance in nondimensional variables and taking a single forward-Euler shear step with \(b=2\) gives the planar block \(\left(\begin{smallmatrix}1&-2\\-2&1\end{smallmatrix}\right)\), with minimum eigenvalue \(-1\). The exact step gives \(\left(\begin{smallmatrix}5&-2\\-2&1\end{smallmatrix}\right)\), with minimum eigenvalue \(3-2\sqrt2=0.17157288\). A continuously admissible reduced equation can therefore have an inadmissible discrete update.</p>
+<p>The lecture recommends under-relaxation for the strongly coupled numerical system. It can be useful, but a relaxation parameter alone cannot guarantee convergence of every nonlinear discretization or repair an incorrect closure. A common convex blend of two PSD covariance matrices remains PSD; separately clipping component updates or using unrelated component relaxation factors need not have that property. Report the solution method and test the resulting tensor, rather than equating a small residual with realizability.</p>
+
+<h2 id="diffusion-choices" data-video="GfpVSUCwfcc" data-start="15" data-end="858">16.3 Tensor diffusivity can represent directional transport <a class="timestamp" href="https://www.youtube.com/watch?v=GfpVSUCwfcc&amp;t=15">L53 · 00:15</a></h2>
+<p>The source omits \(Q_{ij\ell}\), motivated by selected canonical budgets and measurement difficulty. This is an approximation, not an identity. Pressure–velocity correlations are challenging measurements, but difficulty does not establish universal impossibility or smallness. Roughness, separation and geometry can change the transport. Molecular diffusion \(\nu\nabla^2R_{ij}\) remains a known operator on the transported fields.</p>
+<p>A scalar gradient model for the third-moment flux is \(T_{ij\ell}^m=-d_t\partial_\ell R_{ij}\), where \(d_t&gt;0\) has diffusivity units. One common construction is \(d_t=C_\mu k^2/(\sigma_R\epsilon)\), \(\sigma_R&gt;0\). This scalar can be used for stress transport without using a Boussinesq relation to reconstruct \(R\) in momentum. It remains a constitutive transport approximation even though \(k\) is obtained directly from the covariance trace.</p>
+<p>A generalized gradient-diffusion construction uses</p>
+<div class="equation">\[
+T_{ij\ell}^m=-D_{\ell m}\partial_mR_{ij},
+\qquad
+D_{\ell m}=C_D\frac{k}{\epsilon}R_{\ell m},
+\quad C_D&gt;0.
+\tag{16.2}
+\]</div>
+<p>The time \(k/\epsilon\) supplies the missing dimension: \(D_{\ell m}\) has units \(\mathrm{m^2\,s^{-1}}\). The divergence is \(\partial_\ell(D_{\ell m}\partial_mR_{ij})\). Each dummy index appears twice, and \(i,j\) remain free. The source corrects an initially repeated-three-times index; retaining that correction is essential to obtain a defined tensor equation.</p>
+<p>The <a href="https://tmbwg.github.io/turbmodels/rsm-ssglrr.html">documented SSG/LRR model and its simple-diffusion variant</a> distinguish generalized covariance-based diffusion from a scalar alternative. They also distinguish their coefficients; one should not transfer a coefficient unchanged merely because both formulas have diffusivity units. We use \(C_D=0.2\) below only as a declared illustrative constant, not as a named model's fitted value.</p>
+<p>For PSD \(R\), positive \(k/\epsilon\) and positive \(C_D\), the turbulent matrix \(D\) is PSD. Adding molecular diffusivity gives \(H=\nu I+D\), which is positive definite. For any scalar component field \(f\), integration by parts with periodic or zero-flux boundary conditions gives</p>
+<div class="equation">\[
+\int f\,\partial_\ell(H_{\ell m}\partial_mf)\,dV
+=-\int(\partial_\ell f)H_{\ell m}(\partial_mf)\,dV\leq0.
+\]</div>
+<p>This is a continuous energy estimate for the frozen or instantaneous diffusion operator; variable \(H\) stays inside the divergence and creates no extra volume term in this integration. It does not prove unconditional stability of an explicit time step or every unstructured discretization. If computed \(R\) loses PSD, the turbulent diffusivity can become indefinite. Cross derivatives, nonlinear coefficient feedback, boundary treatment and discrete tensor positivity deserve attention. Anisotropic diffusion is not intrinsically unstable simply because it is anisotropic, and scalar diffusion is not unconditionally stable simply because it is scalar.</p>
+
+<h2 id="cross-direction-flux" data-video="GfpVSUCwfcc" data-start="858" data-end="1524">16.4 A cross-direction flux is different from an up-gradient total flux <a class="timestamp" href="https://www.youtube.com/watch?v=GfpVSUCwfcc&amp;t=858">L53 · 14:18</a></h2>
+<p>Half the trace of (16.2) gives an energy flux \(J_\ell=-D_{\ell m}\partial_m k\), because \(R_{ii}/2=k\). Its first component is \(J_1=-D_{11}\partial_1k-D_{12}\partial_2k-D_{13}\partial_3k\). A zero \(\partial_1k\) therefore does not force \(J_1=0\) if an off-diagonal coefficient and another gradient are nonzero. It may still vanish if those coefficients are zero or the contributions cancel; anisotropy does not guarantee a nonzero flux.</p>
+<div class="worked"><h3>Transport across a surface with zero normal energy gradient</h3>
+<p>For the shear covariance above, \(k=0.19\), \(\epsilon=0.5\), \(C_D=0.2\), (16.2) gives \(D_{11}=0.019\), \(D_{12}=-0.00608\), \(D_{22}=0.00684\), \(D_{33}=0.00304\), in \(\mathrm{m^2\,s^{-1}}\). Let \(\nabla k=(0,10,0)\ \mathrm{m\,s^{-2}}\) at the point. Then \(\boldsymbol J=(0.0608,-0.0684,0)\ \mathrm{m^3\,s^{-3}}\). A scalar \(d_t=0.006498\) instead gives \((0,-0.06498,0)\).</p>
+<p>The generalized flux has a nonzero \(x\) component despite zero \(x\) gradient. Its full dot product \(\nabla k\cdot\boldsymbol J=-0.684\leq0\), consistent with PSD diffusion. A cross-direction component is not evidence of an up-gradient flux relative to the full gradient. The actual third moment can have behaviors beyond this model, including countergradient transport; the PSD gradient model still imposes a restriction.</p></div>
+<p>Flux and diffusion rate must again be separated. Even in a scalar model, a zero gradient at one point only makes that point's corresponding flux zero; its derivative may be nonzero. For \(f(x)=f_0+x^2\) and constant diffusivity \(d&gt;0\), the flux \(-df'\) is zero at \(x=0\), but the diffusion contribution \(df''=2d\) is nonzero. If a gradient vanishes throughout a neighborhood, its associated scalar directional divergence vanishes there. This is the qualified version of the source's zero-gradient argument.</p>
+<p>A simple conservative matrix diffusion step gives another useful check. Take two equal cells with covariances \(R_L,R_R\), a common frozen positive face diffusivity \(d_f\), width \(\Delta x\), and no outer flux. Forward Euler gives \(R_L^+=(1-\theta)R_L+\theta R_R\), \(R_R^+=\theta R_L+(1-\theta)R_R\), where \(\theta=\Delta t\,d_f/\Delta x^2\). For \(0\leq\theta\leq1\), each is a convex combination of PSD matrices, so each remains PSD, and their sum is unchanged.</p>
+<p>The executed example uses \(d_f=0.003\), \(\Delta x=0.1\), \(\Delta t=0.5\), giving \(\theta=0.15\). It preserves the total trace \(0.68\) and every summed component to roundoff. This two-cell, one-face positivity range is not the usual \(1/2\) bound for a uniform interior cell with two neighbors. A full grid must count all outgoing weights. The calculation illustrates how a shared conservative update can preserve tensor properties; it does not verify an entire nonlinear RSM discretization.</p>
+
+<h2 id="destruction-tensor" data-video="dUKbHiTyJUo" data-start="15" data-end="1660">16.5 Isotropic destruction is an approximation about gradients <a class="timestamp" href="https://www.youtube.com/watch?v=dUKbHiTyJUo&amp;t=15">L54 · 00:15</a></h2>
+<p>The exact \(E_{ij}\) in (16.1) is symmetric PSD: for any vector \(a_i\), \(a_iE_{ij}a_j=2\nu\mathbb E[\sum_\ell(a_i\partial_\ell u_i')^2]\geq0\). Its diagonal entries are nonnegative, but its off-diagonals need not vanish and need not be positive. Taking its trace gives</p>
+<div class="equation">\[
+E_{ii}=2\nu\mathbb E[(\partial_\ell u_i')(\partial_\ell u_i')]
+=2\epsilon.
+\]</div>
+<p>If the gradient statistics responsible for destruction are approximated as locally isotropic, the rank-two tensor is proportional to the identity. The trace fixes its coefficient:</p>
+<div class="equation">\[
+E_{ij}^{m}=\frac23\epsilon\,\delta_{ij}.
+\tag{16.3}
+\]</div>
+<p>The factor \(2/3\) follows from the chosen pseudo-dissipation definition and the stress-equation factor 2; replacing it by \(1/3\) would halve the scalar energy destruction after taking half the trace. Small-scale gradient isotropy is a modeling premise, not a conclusion from anisotropic large-scale covariances. It does not require all three full velocity variances to be equal. Conversely equality of three variances alone would not prove isotropy of the derivative correlations.</p>
+<p>Near a smooth wall the exact leading tensor instead retains \(E_{11}=2\nu\mathbb E[a_1^2]\), \(E_{33}=2\nu\mathbb E[c_1^2]\), while \(E_{22}\to0\); an \(E_{13}\) term may also survive. Thus (16.3) does not automatically have the correct physical wall component structure. Strong strain, insufficient scale separation, rotation or other effects also require examining the gradient-isotropy premise rather than using a universal assertion that all small scales are exactly isotropic.</p>
+<div class="worked"><h3>A nonnegative destruction tensor need not preserve a covariance by itself</h3>
+<p>Suppose \(R=\mathrm{diag}(0,0.5,0.5)\) at an instant, with positive scalar \(\epsilon=0.5\) in consistent units. Retaining only \(dR/dt=-(2/3)\epsilon I\) makes the initially zero first variance negative immediately; a \(0.01\)-second step gives \(-0.00333333\). The exact reduced source itself points out of the PSD set.</p>
+<p>This is not a claimed physically admissible isolated turbulent evolution. It shows that a source's own PSD is not the same as preservation of PSD after subtracting it from another matrix. Pressure–strain, production, transport and model constraints must act consistently at the boundary of the realizable set. Adding six transport equations is not enough to guarantee that result.</p></div>
+
+<h2 id="seventh-equation" data-video="dUKbHiTyJUo" data-start="1660" data-end="1918">16.6 A scalar scale equation remains necessary <a class="timestamp" href="https://www.youtube.com/watch?v=dUKbHiTyJUo&amp;t=1660">L54 · 27:40</a></h2>
+<p>Formula (16.3) reduces the tensor unknown to one scalar \(\epsilon\), but does not determine that scalar. The lecture adds an \(\epsilon\) transport equation of the familiar modeled form</p>
+<div class="equation">\[
+D_U\epsilon=
+\partial_\ell\left[\left(\nu+\frac{\nu_t^{\,d}}{\sigma_\epsilon}\right)
+ \partial_\ell\epsilon\right]
+ +C_{\epsilon1}\frac{\epsilon}{k}\mathcal P
+ -C_{\epsilon2}\frac{\epsilon^2}{k},
+\qquad
+k=\frac12R_{ii},\quad
+\mathcal P=-R_{ij}A_{ij}.
+\]</div>
+<p>Here \(\nu_t^{\,d}\) labels an auxiliary modeled diffusivity scale, for example \(C_\mu k^2/\epsilon\), rather than a Boussinesq reconstruction of the momentum covariance. Its definition and coefficient set must be supplied by a selected model. The \(\epsilon\) equation is still modeled, even though it uses the exact-form production contraction and computed trace. It can be more coupled than a two-scalar closure without being automatically more accurate in every flow.</p>
+<p>This architecture has seven turbulence transport equations: six covariance components and one scale variable. It does not need an additional independent \(k\) equation, since that would duplicate a trace unless explicitly designed and constrained otherwise. Some named RSMs use \(\omega\) rather than \(\epsilon\) as the seventh variable; the SSG/LRR definition cited above is such a case. The mean velocity, pressure and incompressibility equations remain in addition to these seven.</p>
+<p>Take half the trace of the modeled stress equations using one common diffusion operator. Production becomes \(\mathcal P\), destruction becomes \(\epsilon\), and the diffusion becomes the corresponding operator on \(k\). To recover the incompressible scalar energy structure, the pressure–strain closure must have zero trace. Trace consistency is therefore a useful test of a proposed model and its implementation. It is not a substitute for directional accuracy or realizability.</p>
+<p>We have not yet supplied a pressure–strain closure. The current assembly is intentionally incomplete at that identified term, rather than a claimed ready-to-run full RSM. The next chapter derives the pressure-fluctuation equation and examines what its nonlocal structure permits a local approximation to represent.</p>
+
+<h2 id="reproduce">16.7 Reproduce the reduced stress checks</h2>
+<p>Run <a href="code/ch16_stress_transport.py">ch16_stress_transport.py</a> with standard Python 3. The program evaluates exact-form production, an analytically solved production-only covariance evolution, a cross-direction flux and a conservative two-cell matrix update. Observed outputs below are checked against the listing. Their deliberately limited scope is part of the experiment.</p>
+<pre data-run="code/ch16_stress_transport.py"><code>&quot;&quot;&quot;Restricted second-moment evolution, diffusion and trace checks.&quot;&quot;&quot;
+from math import sqrt
+
+R=[[.25,-.08,0.],[-.08,.09,0.],[0.,0.,.04]]
+shear=100.
+A=[[0.,shear,0.],[0.,0.,0.],[0.,0.,0.]]
+P=[[-sum(A[i][l]*R[l][j]+R[i][l]*A[j][l] for l in range(3))
+    for j in range(3)] for i in range(3)]
+k=sum(R[i][i] for i in range(3))/2
+scalar=-sum(R[i][j]*A[i][j] for i in range(3) for j in range(3))
+print(&quot;production matrix:&quot;,P)
+print(f&quot;half production trace and scalar contraction: &quot;
+      f&quot;{sum(P[i][i] for i in range(3))/2:.8f}, {scalar:.8f}&quot;)
+
+# Exact production-only evolution R(t)=F R(0) F^T for nilpotent A.
+t=.01
+b=shear*t
+R11=R[0][0]-2*b*R[0][1]+b*b*R[1][1]
+R12=R[0][1]-b*R[1][1]
+det0=R[0][0]*R[1][1]-R[0][1]**2
+det1=R11*R[1][1]-R12**2
+print(f&quot;exact shear production t=.01: R11={R11:.8f}, R12={R12:.8f}&quot;)
+print(f&quot;planar covariance determinant initial and final: {det0:.8f}, {det1:.8f}&quot;)
+assert abs(det0-det1)&lt;1e-14
+
+# A large single Euler step can violate PSD even for this PSD-preserving ODE.
+b=2.
+exact_min=(2+b*b-sqrt((b*b)**2+4*b*b))/2
+euler_min=1-b
+print(f&quot;unit-covariance shear-step minimum eigenvalues: exact={exact_min:.8f}, Euler={euler_min:.8f}&quot;)
+assert exact_min&gt;0&gt;euler_min
+
+epsilon,CD,Cmu,sigma=.5,.2,.09,1.
+D=[[CD*k/epsilon*entry for entry in row] for row in R]
+gradient=[0.,10.,0.]
+flux=[-sum(D[i][j]*gradient[j] for j in range(3)) for i in range(3)]
+dot=sum(gradient[i]*flux[i] for i in range(3))
+isotropic=Cmu*k*k/epsilon/sigma
+print(&quot;anisotropic diffusivity matrix:&quot;,D)
+print(&quot;energy flux with zero x-gradient:&quot;,flux)
+print(f&quot;gradient dot anisotropic flux: {dot:.8f}&quot;)
+print(f&quot;isotropic x and y flux: {0.:.8f}, {-isotropic*gradient[1]:.8f}&quot;)
+assert dot&lt;=0 and flux[0]!=0
+
+# Freeze one common positive face diffusivity and diffuse all matrix components.
+left=R
+right=[[.16,.02,0.],[.02,.08,0.],[0.,0.,.06]]
+face_diff=.003
+dx,dt=.1,.5
+theta=dt*face_diff/dx**2
+updated=[[[(1-theta)*left[i][j]+theta*right[i][j] for j in range(3)]
+          for i in range(3)],
+         [[theta*left[i][j]+(1-theta)*right[i][j] for j in range(3)]
+          for i in range(3)]]
+error=max(abs(updated[0][i][j]+updated[1][i][j]-left[i][j]-right[i][j])
+          for i in range(3) for j in range(3))
+print(f&quot;two-cell common diffusion weight: {theta:.8f}; conservation error: {error:.3e}&quot;)
+print(f&quot;initial and final total trace: &quot;
+      f&quot;{sum(left[i][i]+right[i][i] for i in range(3)):.8f}, &quot;
+      f&quot;{sum(updated[0][i][i]+updated[1][i][i] for i in range(3)):.8f}&quot;)
+assert 0&lt;=theta&lt;=1 and error&lt;1e-14
+
+# Tensor destruction trace convention and a deliberately incomplete reduced source.
+e_tensor=[2*epsilon/3]*3
+print(f&quot;isotropic destruction half trace: {sum(e_tensor)/2:.8f}&quot;)
+dt=.01
+print(f&quot;zero initial directional variance under isolated isotropic sink: {-dt*e_tensor[0]:.8f}&quot;)
+</code></pre>
+<pre class="output">production matrix: [[16.0, -9.0, -0.0], [-9.0, -0.0, -0.0], [-0.0, -0.0, -0.0]]
+half production trace and scalar contraction: 8.00000000, 8.00000000
+exact shear production t=.01: R11=0.50000000, R12=-0.17000000
+planar covariance determinant initial and final: 0.01610000, 0.01610000
+unit-covariance shear-step minimum eigenvalues: exact=0.17157288, Euler=-1.00000000
+anisotropic diffusivity matrix: [[0.019000000000000003, -0.006080000000000001, 0.0], [-0.006080000000000001, 0.006840000000000001, 0.0], [0.0, 0.0, 0.0030400000000000006]]
+energy flux with zero x-gradient: [0.060800000000000014, -0.0684, -0.0]
+gradient dot anisotropic flux: -0.68400000
+isotropic x and y flux: 0.00000000, -0.06498000
+two-cell common diffusion weight: 0.15000000; conservation error: 2.776e-17
+initial and final total trace: 0.68000000, 0.68000000
+isotropic destruction half trace: 0.50000000
+zero initial directional variance under isolated isotropic sink: -0.00333333
+</pre>
+
+<h2 id="exercises">16.8 Exercises with complete solutions</h2>
+<details><summary>1. Recover scalar production by taking half the trace.</summary>
+<p>Set \(j=i\) and sum in \(P_{ij}=-R_{i\ell}A_{j\ell}-R_{j\ell}A_{i\ell}\). Then \(P_{ii}=-2R_{i\ell}A_{i\ell}\), so \(P_{ii}/2=-R_{i\ell}\partial_\ell U_i=\mathcal P\). In the shear example only \(A_{12}=S\) is nonzero, hence \(\mathcal P=-R_{12}S=8\). Using \(P_{11}=16\) as the scalar energy source would miss the factor one-half.</p></details>
+<details><summary>2. Show why the production-only exact evolution remains PSD.</summary>
+<p>For constant \(A\), \(F'=-AF\). Differentiating \(R=FR_0F^T\) yields \(R'=-AR-RA^T\). For any \(a\), \(a^TRa=(F^Ta)^TR_0(F^Ta)\geq0\). This is a congruence transformation, not an assertion that the eigenvalues remain individually constant. For nilpotent shear \(F=I-At\), the determinant of the planar block remains constant because \(\det F=1\), though its trace can grow. Pressure and destruction omitted from this reduced problem would alter the full evolution.</p></details>
+<details><summary>3. Explain the numerical failure of one Euler shear step.</summary>
+<p>From unit covariance and \(A_{12}t=b\), first-order Euler gives planar entries \(R_{11}=1,R_{22}=1,R_{12}=-b\), with eigenvalues \(1\pm b\). At \(b=2\), one is \(-1\). The exact evolution retains the additional \(b^2\) in \(R_{11}\), giving determinant 1 and eigenvalues \(3\pm2\sqrt2\). The missing quadratic term makes this large discrete step inadmissible even though the continuous reduced equation preserves PSD.</p></details>
+<details><summary>4. Derive the sign of a tensor gradient flux relative to the full gradient.</summary>
+<p>With \(J=-D\nabla k\), the dot product is \(\nabla k\cdot J=-(\nabla k)^TD\nabla k\leq0\) for PSD \(D\). Individual coordinate components need not oppose their corresponding zero or small gradient because off-diagonal entries couple other directions. In the worked case \(J_1=-D_{12}(10)=0.0608\), \(J_2=-D_{22}(10)=-0.0684\), and the dot product is \(-0.684\). This property is still a restriction of the model, not a theorem for every exact third moment.</p></details>
+<details><summary>5. Can zero scalar flux at a point imply zero diffusion rate?</summary>
+<p>No. For \(k=k_0+x^2\), constant \(d&gt;0\), \(J=-2dx\), so \(J(0)=0\) but \(-J'(0)=2d\). Flux is a transported quantity per area; its divergence measures local net inflow or outflow. If the gradient vanishes throughout a neighborhood and \(d\) is regular, that scalar flux and its divergence vanish there. The pointwise and neighborhood statements are different.</p></details>
+<details><summary>6. Prove conservation and PSD preservation for the two-cell diffusion step.</summary>
+<p>Adding \(R_L^+=(1-\theta)R_L+\theta R_R\) and \(R_R^+=\theta R_L+(1-\theta)R_R\) gives \(R_L+R_R\), so all components and the total trace are conserved. For \(0\leq\theta\leq1\), \(a^TR_L^+a=(1-\theta)a^TR_La+\theta a^TR_Ra\geq0\), and similarly for the right cell. This proof uses a common scalar weight for every component and two cells with one internal face. It does not supply a universal full-grid explicit stability bound.</p></details>
+<details><summary>7. Derive the destruction coefficient and separate its isotropy premise.</summary>
+<p>The exact trace is \(E_{ii}=2\epsilon\). If isotropic gradient statistics justify \(E_{ij}=c\,\delta_{ij}\), tracing gives \(3c=2\epsilon\), hence \(c=2\epsilon/3\). This premise concerns the derivative correlations entering destruction, not equality of all full velocity variances. At a smooth wall the normal fluctuation derivative vanishes while tangential normal derivatives can survive, so the physical limiting tensor is generally not isotropic.</p></details>
+<details><summary>8. Why are seven turbulence equations not yet a full closure in this chapter?</summary>
+<p>Six stress equations and one modeled scale equation determine seven transported turbulence fields only after every source and flux is specified. The pressure–strain tensor in (16.1) remains unknown here. A proposed closure must define it, maintain the desired incompressible zero trace, supply boundary/initial data and be checked for admissibility and accuracy. Production can be evaluated without an additional constitutive ansatz once \(R,U\) are supplied; that does not remove the other unknown correlations or make their transported solution exact.</p></details>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn"><a rel="prev" href="chapter-15-realizability-and-production-corrections.html">Previous chapter</a><a href="index.html">Index</a><a rel="next" href="chapter-17-pressure-redistribution-and-wall-models.html">Next chapter</a></nav></main></div><footer class="site-footer">Independent study edition. Original exposition follows Prof. Vagesh D. Narasimhamurthy's course. Source and review limitations are recorded separately.</footer></body></html>

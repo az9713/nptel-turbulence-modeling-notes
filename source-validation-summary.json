@@ -1,0 +1,4167 @@
+{
+  "passed": true,
+  "complete": true,
+  "scope": "Complete acquired source text reading, identity and substantive chapter mapping; not comprehensive audiovisual or empirical validation",
+  "recordings": [
+    {
+      "video_id": "dIHh__sgHy8",
+      "playlist_position": 1,
+      "lesson": 28,
+      "title": "28. Reynold's Averaged Navier-Stokes (RANS) models - I",
+      "duration_seconds": 1601,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-10-eddy-viscosity-and-mixing-length.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "877964c4cfab7a56b4504f6f66786e52be27d7b24b4bb5e75d7f0a3b4c7acc48",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec28.vtt",
+        "segments": 178,
+        "last_cue_seconds": 1600.56,
+        "coverage_ratio": 0.9997251717676452
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "wall-law-transition",
+          "lesson": 28,
+          "start": 17,
+          "end": 749,
+          "lecture_material": "Near-wall dissipation matters even if wall shear inferred outside; empirical logarithmic profile, constants0.41/5.2 and roughness caveats",
+          "extension": "Constant-stress correction from prior chapter retained; log law not universal at every smooth wall or wall distance",
+          "construction": "Velocity-gradient implication and fit versus derivation",
+          "page": "chapter-10-eddy-viscosity-and-mixing-length.html"
+        },
+        {
+          "anchor": "boussinesq",
+          "lesson": 28,
+          "start": 749,
+          "end": 1601,
+          "lecture_material": "RANS versus eddy-resolved approach; eddy viscosity and Boussinesq stress model; isotropic k term question",
+          "extension": "Correct symmetric-gradient factor, variable viscosity derivatives and modified pressure",
+          "construction": "Nonzero curl of omitted transverse force",
+          "page": "chapter-10-eddy-viscosity-and-mixing-length.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "LP-lhdKIsFw",
+      "playlist_position": 2,
+      "lesson": 27,
+      "title": "27. Inner layer equation, constant stress layer, and inner velocity scaling - II",
+      "duration_seconds": 1166,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-09-inner-scaling-and-friction-velocity.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "061d7bf5148c44ec5a78184949f5881d29cd121d739272382aebf9fb0b2d0a0c",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec27.vtt",
+        "segments": 148,
+        "last_cue_seconds": 1158.68,
+        "coverage_ratio": 0.9937221269296741
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "friction-units",
+          "lesson": 27,
+          "start": 16,
+          "end": 495,
+          "lecture_material": "Define friction velocity, viscous length, U+ and y+, multiple Reynolds definitions",
+          "extension": "Positive shear convention, absolute magnitude for signed wall traction, separation degeneracy, y+ based on actual distance not viscous length fixed1",
+          "construction": "Air wall-unit conversion and resolution sensitivity",
+          "page": "chapter-09-inner-scaling-and-friction-velocity.html"
+        },
+        {
+          "anchor": "layers-interface",
+          "lesson": 27,
+          "start": 495,
+          "end": 823,
+          "lecture_material": "Outer flow versus outer layer, turbulent/non-turbulent interface, inner/outer overlap and rough boundaries",
+          "extension": "Finite-thickness smooth viscous interface versus discontinuity idealization; defined heuristic overlap requires adequate Re_tau",
+          "construction": "Primary opening-summary comparison and empty-overlap test",
+          "page": "chapter-09-inner-scaling-and-friction-velocity.html"
+        },
+        {
+          "anchor": "sublayer-buffer",
+          "lesson": 27,
+          "start": 823,
+          "end": 1159,
+          "lecture_material": "Linear sublayer, buffer, approximate3–5/30 wall-unit bounds and production in buffer; stress partition",
+          "extension": "Taylor expansion with R12 of order y³, derive linear law and conditional quarter-production bound",
+          "construction": "Original smooth stress-partition function with explicit validity limits",
+          "page": "chapter-09-inner-scaling-and-friction-velocity.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "wpKCHT2OH5w",
+      "playlist_position": 3,
+      "lesson": 26,
+      "title": "26. Inner layer equation, constant stress layer, and inner velocity scaling - I",
+      "duration_seconds": 1514,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-09-inner-scaling-and-friction-velocity.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "2065f14719caaeb3f9b63f7d73213388da96c2b13e871c7476a6fc2d85a498b3",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec26.vtt",
+        "segments": 181,
+        "last_cue_seconds": 1513.4,
+        "coverage_ratio": 0.9996036988110965
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "total-stress",
+          "lesson": 26,
+          "start": 15,
+          "end": 1019,
+          "lecture_material": "Integrate leading inner equation from wall to y; total molecular plus turbulent stress; approximate finite-Re interpretation",
+          "extension": "Exact residual integral at finite Re; approximate equations can be integrated; Couette exact finite-Re contrast and channel correction",
+          "construction": "General remainder bound and recurring pressure-driven channel",
+          "page": "chapter-09-inner-scaling-and-friction-velocity.html"
+        },
+        {
+          "anchor": "measurement",
+          "lesson": 26,
+          "start": 1019,
+          "end": 1514,
+          "lecture_material": "Constant-stress layer and wall-shear inference away from wall, measurement/grid motivation",
+          "extension": "Inference error from molecular share and total-stress variation; near-wall information not recoverable without closure",
+          "construction": "Numerical wall-stress bias calculation",
+          "page": "chapter-09-inner-scaling-and-friction-velocity.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "agH9hSyRCYE",
+      "playlist_position": 4,
+      "lesson": 25,
+      "title": "25. Inner and Outer TBL: Order of magnitude analysis - II",
+      "duration_seconds": 1263,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-09-inner-scaling-and-friction-velocity.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "13471804325299ffa782075dc34203dc8c0cf44ab163d1c8f0ddd5ba10ea253a",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec25.vtt",
+        "segments": 118,
+        "last_cue_seconds": 1258.6,
+        "coverage_ratio": 0.9965162311955661
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "inner-ledger",
+          "lesson": 25,
+          "start": 14,
+          "end": 1259,
+          "lecture_material": "Continuity normal velocity, two equal-order advective terms, normalize by normal viscosity, inner Reynolds order1",
+          "extension": "Retain inner Reynolds factor before selecting balance; equality1 is unit convention, not exact flow theorem",
+          "construction": "Complete normalized inner term table",
+          "page": "chapter-09-inner-scaling-and-friction-velocity.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "ykq6yV2_myA",
+      "playlist_position": 5,
+      "lesson": 24,
+      "title": "24. Inner and Outer TBL: Order of magnitude analysis - I",
+      "duration_seconds": 1521,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-09-inner-scaling-and-friction-velocity.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "81cdb59e9490d054d1a1f60c0bb5719aadda5ec0d877ff49a5c0e72a0136404b",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec24.vtt",
+        "segments": 160,
+        "last_cue_seconds": 1520.32,
+        "coverage_ratio": 0.9995529257067718
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "inner-need",
+          "lesson": 24,
+          "start": 17,
+          "end": 1521,
+          "lecture_material": "Outer molecular terms fail near no-slip; introduce eta_w and u_w; shared inner velocity scale supported by described mean/rms data",
+          "extension": "Pressure can coexist with turbulence at leading order; common scale not uniform instantaneous wall asymptotics",
+          "construction": "Match inner region purpose to boundary conditions",
+          "page": "chapter-09-inner-scaling-and-friction-velocity.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "MEhzjByC6tY",
+      "playlist_position": 6,
+      "lesson": 23,
+      "title": "23. Turbulent Boundary Layer: Order of Magnitude analysis - II",
+      "duration_seconds": 1180,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-08-thin-boundary-layers-and-outer-scaling.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "5ccac7777fb319f0af6e2a111a9c9989be3edd121c3e74a579eb2557b67e3d2a",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec23.vtt",
+        "segments": 117,
+        "last_cue_seconds": 1172.72,
+        "coverage_ratio": 0.9938305084745763
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "term-ledger",
+          "lesson": 23,
+          "start": 15,
+          "end": 766,
+          "lecture_material": "Normalize both advective, viscous and stress-gradient terms by U_s delta U_s/L; dominant normal derivatives",
+          "extension": "Explicit six ratios and independent thin/high-Re conditions",
+          "construction": "Computed scale table for beta0.1 and1",
+          "page": "chapter-08-thin-boundary-layers-and-outer-scaling.html"
+        },
+        {
+          "anchor": "conditional-balance",
+          "lesson": 23,
+          "start": 766,
+          "end": 1173,
+          "lecture_material": "Conditional shear-stress balance and delta/L versus u²/(U_s delta U_s); turbulence intensity interpretation",
+          "extension": "Aspect ratio is not general growth derivative; q/Us versus squared intensity/deficit; pressure and correlation caveats",
+          "construction": "Correlation sensitivity and manufactured thickness derivative",
+          "page": "chapter-08-thin-boundary-layers-and-outer-scaling.html"
+        },
+        {
+          "anchor": "code",
+          "lesson": 23,
+          "start": 15,
+          "end": 1173,
+          "lecture_material": "Order estimates assembled from assumed scales",
+          "extension": "Actual executable ledger and laminar-versus-outer viscous crossover",
+          "construction": "Standard-library arithmetic checks and original regime figure",
+          "page": "chapter-08-thin-boundary-layers-and-outer-scaling.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "TyiCSg5YWnQ",
+      "playlist_position": 7,
+      "lesson": 22,
+      "title": "22. Turbulent Boundary Layer: Order of Magnitude analysis - I",
+      "duration_seconds": 1560,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-08-thin-boundary-layers-and-outer-scaling.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "ed1a6c22b65b09643bb84985e983790f5e5a3b42471967ea0efd97fa60b075d5",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec22.vtt",
+        "segments": 165,
+        "last_cue_seconds": 1558.24,
+        "coverage_ratio": 0.9988717948717949
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "planar-rans",
+          "lesson": 22,
+          "start": 15,
+          "end": 707,
+          "lecture_material": "Thin layer geometry, stationary/spanwise homogeneous RANS expansion and mean continuity",
+          "extension": "Constant density does not imply isothermal; retain both normal and shear stress gradients",
+          "construction": "Full two-component equation pair with declared scope",
+          "page": "chapter-08-thin-boundary-layers-and-outer-scaling.html"
+        },
+        {
+          "anchor": "choose-scales",
+          "lesson": 22,
+          "start": 707,
+          "end": 1559,
+          "lecture_material": "Separate U_s and velocity-change delta U_s, streamwise/wall-normal lengths, turbulent scale and continuity normal velocity",
+          "extension": "Distinguish dimensional increments from derivatives; small-deficit regime versus whole no-slip layer; correlation assumption",
+          "construction": "Dimensionless aspect/deficit/intensity parameters",
+          "page": "chapter-08-thin-boundary-layers-and-outer-scaling.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "yaMG1ifG6XI",
+      "playlist_position": 8,
+      "lesson": 31,
+      "title": "31. Different approaches to solve turbulence closure problem - II",
+      "duration_seconds": 1387,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-10-eddy-viscosity-and-mixing-length.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "2740c54d44d531443a8b978b5fed83aac9f44e04174738a7a63f100821958afa",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec31.vtt",
+        "segments": 157,
+        "last_cue_seconds": 1386.48,
+        "coverage_ratio": 0.9996250901225667
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "mixing-length",
+          "lesson": 31,
+          "start": 25,
+          "end": 896,
+          "lecture_material": "Algebraic Prandtl mixing length kappa*y, mean gradient, uses/limitations, near-wall/freestream behavior",
+          "extension": "Absolute shear and inverse-time units; exact composite integration, wrong wall power and log intercept; geometry limitations are model-specific",
+          "construction": "Stable quadratic gradient and analytical velocity",
+          "page": "chapter-10-eddy-viscosity-and-mixing-length.html"
+        },
+        {
+          "anchor": "two-equation-scales",
+          "lesson": 31,
+          "start": 896,
+          "end": 1387,
+          "lecture_material": "Turbulent velocity sqrt(k), time k/epsilon and dimensional exponents yielding C_mu*k²/epsilon",
+          "extension": "Positive domain, missing closure equations/coefficient, not an eddy identity",
+          "construction": "Executed scale conversion with coefficient left symbolic",
+          "page": "chapter-10-eddy-viscosity-and-mixing-length.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "aisGVWPWfEw",
+      "playlist_position": 9,
+      "lesson": 30,
+      "title": "30. Different approaches to solve turbulence closure problem - I",
+      "duration_seconds": 1031,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-10-eddy-viscosity-and-mixing-length.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "64771cabe4685b2071d01754aaaf7f3dc0ff0d191055f9b63e2be68ec2ac433c",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec30.vtt",
+        "segments": 119,
+        "last_cue_seconds": 1030.72,
+        "coverage_ratio": 0.9997284190106693
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "anisotropy-realizability",
+          "lesson": 30,
+          "start": 14,
+          "end": 570,
+          "lecture_material": "Pressure relevance in sublayer and correction of misconception that EVM is fully isotropic",
+          "extension": "Pressure balances curvature not shear; tensor alignment, nonnegative production and PSD eigenvalue restriction",
+          "construction": "Positive viscosity with negative predicted covariance eigenvalue",
+          "page": "chapter-10-eddy-viscosity-and-mixing-length.html"
+        },
+        {
+          "anchor": "scales-and-equation-count",
+          "lesson": 30,
+          "start": 570,
+          "end": 1031,
+          "lecture_material": "Viscosity dimensions, velocity/length/time scales, multi-scale statistical interpretation and zero-equation introduction",
+          "extension": "RANS mean structure not automatically largest turbulent eddy; dimensional consistency not closure validation",
+          "construction": "Equation count refers to added turbulence transport",
+          "page": "chapter-10-eddy-viscosity-and-mixing-length.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "w2h56nQ81xc",
+      "playlist_position": 10,
+      "lesson": 29,
+      "title": "29. Reynold's Averaged Navier-Stokes (RANS) models - II",
+      "duration_seconds": 1081,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-10-eddy-viscosity-and-mixing-length.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "a4130b65ffb670fdb59fcc5a0650e6251dc87ab2fb1a200d6a7e6e60f1680a30",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec29.vtt",
+        "segments": 121,
+        "last_cue_seconds": 1078.84,
+        "coverage_ratio": 0.9980018501387603
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "trace-and-couette",
+          "lesson": 29,
+          "start": 16,
+          "end": 1079,
+          "lecture_material": "Couette normal-stress failure without k term, trace consistency, statistical isotropic relation and compressible extension remarks",
+          "extension": "Trace determines2/3 without assuming actual isotropy; correct Kronecker trace; compressible/Favre limit distinct",
+          "construction": "Fit shear while missing normal anisotropy",
+          "page": "chapter-10-eddy-viscosity-and-mixing-length.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "-deakDp5mFg",
+      "playlist_position": 11,
+      "lesson": 35,
+      "title": "35. Standard k-ε model and the model constants - II",
+      "duration_seconds": 1068,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-11-constructing-k-epsilon-and-calibration.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "25bbe73ff606f8deb1e038d88b4c12d66a85895dc67ae194ab648040bcbfa2ba",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec35.vtt",
+        "segments": 105,
+        "last_cue_seconds": 1067.72,
+        "coverage_ratio": 0.9997378277153558
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "decay-calibration",
+          "lesson": 35,
+          "start": 14,
+          "end": 1068,
+          "lecture_material": "Far-downstream grid decay, constant mean convection, neglect diffusion and production, power-law energy and C_epsilon2 relation",
+          "extension": "Virtual origin, distinguish stationary downstream decay from blower-off temporal decay; correct m1.25 implies1.8, not1.92",
+          "construction": "Analytic homogeneous model solution and quantified caption arithmetic discrepancy",
+          "page": "chapter-11-constructing-k-epsilon-and-calibration.html"
+        },
+        {
+          "anchor": "execution",
+          "lesson": 35,
+          "start": 553,
+          "end": 1068,
+          "lecture_material": "Reduced k and epsilon decay equations and power matching",
+          "extension": "Actually integrated RK4 subproblem against exact solution with refinement and conserved two-cell flux",
+          "construction": "Original standard-library numerical execution",
+          "page": "chapter-11-constructing-k-epsilon-and-calibration.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "beHBzwsCsEs",
+      "playlist_position": 12,
+      "lesson": 34,
+      "title": "34. Standard k-ε model and the model constants - I",
+      "duration_seconds": 1581,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-11-constructing-k-epsilon-and-calibration.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "e1caacbca760b3b1667d6229bdef52c8ad9e5d27e1e3fef139412c2909a68339",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec34.vtt",
+        "segments": 169,
+        "last_cue_seconds": 1580.84,
+        "coverage_ratio": 0.999898798228969
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "cmu",
+          "lesson": 34,
+          "start": 14,
+          "end": 1581,
+          "lecture_material": "Local equilibrium example, log-region reduction and shear/energy ratio giving C_mu0.09",
+          "extension": "Retain P/epsilon correction when not equilibrium; calibration not proof of universality",
+          "construction": "Explicit conditional algebra and error sensitivity",
+          "page": "chapter-11-constructing-k-epsilon-and-calibration.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "eDc4zMbstRo",
+      "playlist_position": 13,
+      "lesson": 33,
+      "title": "33. Modelling of turbulent kinetic energy (k): production, destruction, and dissipation rate - II",
+      "duration_seconds": 1093,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-11-constructing-k-epsilon-and-calibration.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "43412a763111378fd693919f7c25c1a843136180f549add166e060d3ced87431",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec33.vtt",
+        "segments": 137,
+        "last_cue_seconds": 1092.76,
+        "coverage_ratio": 0.9997804208600183
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "exact-epsilon",
+          "lesson": 33,
+          "start": 14,
+          "end": 249,
+          "lecture_material": "Exact epsilon budget reference and four production terms; complexity motivating model",
+          "extension": "Compact independent gradient-equation derivation, primary NASA related-report equation23 checked visually, scalar epsilon count",
+          "construction": "Four contractions, transport and nonnegative high-gradient destruction",
+          "page": "chapter-11-constructing-k-epsilon-and-calibration.html"
+        },
+        {
+          "anchor": "epsilon-model",
+          "lesson": 33,
+          "start": 249,
+          "end": 1093,
+          "lecture_material": "Construct epsilon equation by analogy, gradient diffusion, epsilon/k time factor and two source coefficients; numerical ratios",
+          "extension": "Model equation not exact-termwise reduction or imposed local equilibrium; scale-aware positive regularization",
+          "construction": "Coupled baseline system with coefficient set identified",
+          "page": "chapter-11-constructing-k-epsilon-and-calibration.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "4pUWCyjOEGc",
+      "playlist_position": 14,
+      "lesson": 32,
+      "title": "32. Modelling of turbulent kinetic energy (k): production, destruction, and dissipation rate - I",
+      "duration_seconds": 1593,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-11-constructing-k-epsilon-and-calibration.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "802daac6797c0c6bcac0922332a2f91c2790a76c7718e52a62a3f22d13854d9b",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec32.vtt",
+        "segments": 190,
+        "last_cue_seconds": 1588.24,
+        "coverage_ratio": 0.9970119271814187
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "modeled-energy",
+          "lesson": 32,
+          "start": 15,
+          "end": 517,
+          "lecture_material": "Exact k equation, Boussinesq modeled production and its consequences",
+          "extension": "Consistent per-mass convention and positive production restriction",
+          "construction": "Exact/model term ledger",
+          "page": "chapter-11-constructing-k-epsilon-and-calibration.html"
+        },
+        {
+          "anchor": "modeled-transport",
+          "lesson": 32,
+          "start": 517,
+          "end": 1589,
+          "lecture_material": "Pressure transport omission in selected smooth-wall examples, rough-rib counterexample, gradient diffusion and k coupling",
+          "extension": "Omission versus lumping, countergradient possibility, conservative variable diffusivity",
+          "construction": "Two-cell flux and local versus integrated error",
+          "page": "chapter-11-constructing-k-epsilon-and-calibration.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "MY0s2GPlPbM",
+      "playlist_position": 15,
+      "lesson": 40,
+      "title": "40. Introduciton to wall-functions - I",
+      "duration_seconds": 1037,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-13-wall-functions-and-smooth-wall-limits.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "95a1be35d5cf77b6024b8f0a0f56781c00301a2046d7b95ad53464cb80a68c46",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec40.vtt",
+        "segments": 113,
+        "last_cue_seconds": 1036.76,
+        "coverage_ratio": 0.9997685631629701
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "two-wall-problems",
+          "lesson": 40,
+          "start": 14,
+          "end": 1037,
+          "lecture_material": "Smooth-wall linear/log profiles, local versus global Reynolds number, wall-function motivation, cell position and scope",
+          "extension": "Distinguish cell-centre location from cell thickness and mathematical wall from numerical wall flux",
+          "construction": "Fixed physical mesh y-plus depends on unknown traction",
+          "page": "chapter-13-wall-functions-and-smooth-wall-limits.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "VOP1Q02qJhw",
+      "playlist_position": 16,
+      "lesson": 36,
+      "title": "36. Standard k-ε model, RNG k-ε model, and Prandlt’s one equation model - I",
+      "duration_seconds": 1153,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-12-calibration-and-alternative-time-scales.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "180ce1c5dc9abf7086c779bcda686ea1533ebd4b8f9307a63623dcadaff5a584",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec36.vtt",
+        "segments": 108,
+        "last_cue_seconds": 1146.32,
+        "coverage_ratio": 0.9942064180398958
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "finish-calibration",
+          "lesson": 36,
+          "start": 17,
+          "end": 1147,
+          "lecture_material": "Explicit decay-coefficient correction, broader calibration, diffusion coefficients and log-zone epsilon balance setup",
+          "extension": "Differentiate assumed profiles rather than treat dimensional equality as exact; derive full coefficient compatibility",
+          "construction": "Baseline coefficients imply a different kappa from0.41",
+          "page": "chapter-12-calibration-and-alternative-time-scales.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "-Zjqp29rD_k",
+      "playlist_position": 17,
+      "lesson": 41,
+      "title": "41. Introduciton to wall-functions -II",
+      "duration_seconds": 1110,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-13-wall-functions-and-smooth-wall-limits.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "0809c48888704cfbe427da3836348c3015c5a5828708a1747e00d06d4129d5e2",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec41.vtt",
+        "segments": 110,
+        "last_cue_seconds": 1108.76,
+        "coverage_ratio": 0.9988828828828828
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "wall-law-inference",
+          "lesson": 41,
+          "start": 15,
+          "end": 779,
+          "lecture_material": "Log law, iterative friction velocity and equilibrium k at first point",
+          "extension": "E=exp(kappa B) exact relation; wall law is one relation not independent prescriptions of U and traction",
+          "construction": "Bracketed monotone root and deliberately invalid viscous-region inference",
+          "page": "chapter-13-wall-functions-and-smooth-wall-limits.html"
+        },
+        {
+          "anchor": "turbulence-wall-data",
+          "lesson": 41,
+          "start": 779,
+          "end": 1109,
+          "lecture_material": "Equilibrium epsilon and omega wall-function formulas, coefficient convention cautions",
+          "extension": "Retain beta_star and distinguish epsilon/k variable from rescaled omega with corresponding equations",
+          "construction": "Full numerical closure-state and effective wall-face viscosity ledger",
+          "page": "chapter-13-wall-functions-and-smooth-wall-limits.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "TP3OSk-Jb3Y",
+      "playlist_position": 18,
+      "lesson": 42,
+      "title": "42. Introduction to wall-resolved simulations - I",
+      "duration_seconds": 1307,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-13-wall-functions-and-smooth-wall-limits.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "a4a85cd291778dc5da01e2a4d025fc66cf42a48866c984c8a30e916006d31915",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec42.vtt",
+        "segments": 137,
+        "last_cue_seconds": 1298.96,
+        "coverage_ratio": 0.9938485080336649
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "two-component",
+          "lesson": 42,
+          "start": 15,
+          "end": 1299,
+          "lecture_material": "Preferential suppression of normal fluctuations, two-component limit, pressure/viscous effects and RANS alternatives",
+          "extension": "Normalized covariance limit rather than nonzero wall energy; kinematic limit persists under regular no-slip incompressible assumptions even with rotation/stratification; elliptic f equation distinction",
+          "construction": "Explicit divergence-free random near-wall field",
+          "page": "chapter-13-wall-functions-and-smooth-wall-limits.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "v4kmgnHYXNE",
+      "playlist_position": 19,
+      "lesson": 43,
+      "title": "43. Introduction to wall-resolved simulations - II",
+      "duration_seconds": 1447,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-13-wall-functions-and-smooth-wall-limits.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "8281ee0845ba4b9b1e5319cebc8dcd881157b7eb74efe0936d48ac833541c38d",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec43.vtt",
+        "segments": 152,
+        "last_cue_seconds": 1439.24,
+        "coverage_ratio": 0.9946371803731859
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "taylor",
+          "lesson": 43,
+          "start": 15,
+          "end": 1120,
+          "lecture_material": "LRN mesh guidance, term consistency and Taylor expansions, boundary/continuity coefficient constraints and stress orders",
+          "extension": "Factorials absorbed into coefficients; leading coefficient may vanish; rms versus covariance orders",
+          "construction": "Covariance order table and model normal-stress obstruction",
+          "page": "chapter-13-wall-functions-and-smooth-wall-limits.html"
+        },
+        {
+          "anchor": "budget-limits",
+          "lesson": 43,
+          "start": 1120,
+          "end": 1440,
+          "lecture_material": "Gradient, epsilon, k flux and triple-product near-wall orders leading to next lecture comparisons",
+          "extension": "Include both tangential normal derivatives in finite dissipation; pressure flux not discarded as an identity",
+          "construction": "Wall epsilon=nu*k_second_derivative and bare-viscosity quartic versus generic cubic shear",
+          "page": "chapter-13-wall-functions-and-smooth-wall-limits.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "aomx9FDFxZ4",
+      "playlist_position": 20,
+      "lesson": 39,
+      "title": "39. New model k- ε and model constants - II",
+      "duration_seconds": 1032,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-12-calibration-and-alternative-time-scales.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "5be28ae0dbf48079eaa30c3b6e529cd5a451187130c004de8b87b572e4ef30a3",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec39.vtt",
+        "segments": 101,
+        "last_cue_seconds": 1031.755,
+        "coverage_ratio": 0.9997625968992249
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "wilcox1988",
+          "lesson": 39,
+          "start": 15,
+          "end": 1032,
+          "lecture_material": "k sink beta_star*k*omega, Wilcox-type coefficients and source cancellation/partial decoupling discussion",
+          "extension": "Specify exact1988 variant and reciprocal diffusion convention; full system remains coupled; omega singular wall asymptote",
+          "construction": "Named-model comparison and deliberately unstable isolated Euler step",
+          "page": "chapter-12-calibration-and-alternative-time-scales.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "7pG4d3958xI",
+      "playlist_position": 21,
+      "lesson": 38,
+      "title": "38. New model k- ε and model constants - I",
+      "duration_seconds": 1879,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-12-calibration-and-alternative-time-scales.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "b248a3f069b37b58d2af5ee695978de48277a34b69e608dd74e3f7eeff760421",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec38.vtt",
+        "segments": 201,
+        "last_cue_seconds": 1871.36,
+        "coverage_ratio": 0.9959340074507717
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "near-wall-ratios",
+          "lesson": 38,
+          "start": 15,
+          "end": 1111,
+          "lecture_material": "Near-wall k–epsilon term inspection, cancellation in epsilon production and singular destruction; motivation for omega",
+          "extension": "Finite source limit not a numerical stability proof; derivatives can be stiff; epsilon wall value not universal maximum",
+          "construction": "Explicit diffusion/sink stability scales",
+          "page": "chapter-12-calibration-and-alternative-time-scales.html"
+        },
+        {
+          "anchor": "quotient",
+          "lesson": 38,
+          "start": 1111,
+          "end": 1872,
+          "lecture_material": "Define omega=epsilon/(beta_star*k), warn that naive division through derivatives is not valid; introduce modeled omega and k/omega viscosity",
+          "extension": "Actual quotient/product derivation with cross diffusion and coefficient changes",
+          "construction": "Pointwise source transformation execution",
+          "page": "chapter-12-calibration-and-alternative-time-scales.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "pT5HYliyue4",
+      "playlist_position": 22,
+      "lesson": 37,
+      "title": "37. Standard k-ε model, RNG k-ε model, and Prandlt’s one equation model - II",
+      "duration_seconds": 1652,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-12-calibration-and-alternative-time-scales.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "50d47d4aad9e5211b082a639df8276d8a2351c57b8b686007df9179b3a1c9f97",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec37.vtt",
+        "segments": 172,
+        "last_cue_seconds": 1648.16,
+        "coverage_ratio": 0.997675544794189
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "rng",
+          "lesson": 37,
+          "start": 17,
+          "end": 1300,
+          "lecture_material": "Finish C_epsilon1 derivation and broader-fit caveat, RNG variable source coefficient based on strain/turbulent time ratio",
+          "extension": "Separate multiplier/divisor conventions and lecture/example versus versioned RNG coefficients",
+          "construction": "Source-correction sweep and algebraic equivalence to extra destruction term",
+          "page": "chapter-12-calibration-and-alternative-time-scales.html"
+        },
+        {
+          "anchor": "one-equation",
+          "lesson": 37,
+          "start": 1300,
+          "end": 1649,
+          "lecture_material": "Prandtl one-equation example with algebraic epsilon and supplied turbulent length; length sensitivity",
+          "extension": "Use separate C_D and C_nu, identify notation-dependent absorption of coefficient",
+          "construction": "Prescribed-shear equilibrium energy quadratic in length",
+          "page": "chapter-12-calibration-and-alternative-time-scales.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "GfpVSUCwfcc",
+      "playlist_position": 23,
+      "lesson": 53,
+      "title": "53. Reynold’s Stress Modelling (RSM): governing equations - II",
+      "duration_seconds": 1524,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-16-reynolds-stress-transport-closure.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "34bee542486e34d806636b172f36e7c62536521e1ad6314f7a5cd2291d0cc295",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec53.vtt",
+        "segments": 142,
+        "last_cue_seconds": 1523.04,
+        "coverage_ratio": 0.9993700787401575
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "diffusion-choices",
+          "lesson": 53,
+          "start": 15,
+          "end": 858,
+          "lecture_material": "Pressure diffusion omitted, molecular diffusion direct, scalar gradient flux versus Daly–Harlow tensor diffusion with time factor",
+          "extension": "Pressure measurement difficulty not impossibility or smallness proof; derived diffusivity positive for PSD R, not inherently unstable",
+          "construction": "Primary named anisotropic and simple variants",
+          "page": "chapter-16-reynolds-stress-transport-closure.html"
+        },
+        {
+          "anchor": "cross-direction-flux",
+          "lesson": 53,
+          "start": 858,
+          "end": 1524,
+          "lecture_material": "Expansion of tensor diffusion indices, nonzero directional flux from other gradients, simpler scalar diffusion option",
+          "extension": "Zero gradient at a point does not imply zero divergence; nonzero cross coefficient needed; kcomputed but scalar diffusivity still a closure",
+          "construction": "Explicit gradient/flux ledger and conservative matrix diffusion",
+          "page": "chapter-16-reynolds-stress-transport-closure.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "8-P7fKRl7gw",
+      "playlist_position": 24,
+      "lesson": 52,
+      "title": "52. Reynold’s Stress Modelling (RSM): governing equations - I",
+      "duration_seconds": 1366,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-16-reynolds-stress-transport-closure.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "fa7db1e790066c7ca0f838edcc5977fdf36dc6eae957e3c727eb35add123a84c",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec52.vtt",
+        "segments": 120,
+        "last_cue_seconds": 1365.16,
+        "coverage_ratio": 0.999385065885798
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "second-moment-system",
+          "lesson": 52,
+          "start": 14,
+          "end": 631,
+          "lecture_material": "RSM terminology, six covariance equations, exact pressure/turbulent/molecular diffusion, pressure strain, production and destruction",
+          "extension": "Third moment27ordered entries but10independent; ktrace; pressure convention and exact form not exact numerical result",
+          "construction": "Complete unclosed system and closure inventory",
+          "page": "chapter-16-reynolds-stress-transport-closure.html"
+        },
+        {
+          "anchor": "production-coupling",
+          "lesson": 52,
+          "start": 631,
+          "end": 1366,
+          "lecture_material": "Production directly from transported R and mean gradients, R11/R12 couplings and under-relaxation guidance",
+          "extension": "Generic coupling versus simple shear and exact congruence evolution; numerical relaxation not universal guarantee",
+          "construction": "PSD-preserving continuous production-only shear with Euler counterexample",
+          "page": "chapter-16-reynolds-stress-transport-closure.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "P_mIo20_rnA",
+      "playlist_position": 25,
+      "lesson": 51,
+      "title": "51. Correctors for eddy-viscoscity models - II",
+      "duration_seconds": 1509,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-15-realizability-and-production-corrections.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "818195b456fcf2be1b2227ceb46ee3f8e97b8b5223b99ebd2729072b27be898e",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec51.vtt",
+        "segments": 156,
+        "last_cue_seconds": 1508.04,
+        "coverage_ratio": 0.9993638170974155
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "source-corrections",
+          "lesson": 51,
+          "start": 15,
+          "end": 1130,
+          "lecture_material": "Large modeled strain production; scalar cap, SST10beta_star*k*omega, Kato–Launder strain-rotation product and time limiter",
+          "extension": "Distinguish SST1993/94 factor20 from2003 factor10/both-equation version; source caps do not enforce PSD or conserve mean/turbulent transfer automatically",
+          "construction": "Pure strain/simple shear/rotation checks and transfer imbalance",
+          "page": "chapter-15-realizability-and-production-corrections.html"
+        },
+        {
+          "anchor": "accuracy",
+          "lesson": 51,
+          "start": 1130,
+          "end": 1509,
+          "lecture_material": "Wake unsteadiness example and dense CO2/chlorine dispersion errors motivate higher closures/cost tradeoff",
+          "extension": "Qualitative reported examples not digitized benchmarks; no exposure thresholds or clinical recommendations; admissibility versus accuracy and model ensemble spread",
+          "construction": "Decision logic for independent physical validation",
+          "page": "chapter-15-realizability-and-production-corrections.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "4jo90Pil6jY",
+      "playlist_position": 26,
+      "lesson": 50,
+      "title": "50. Correctors for eddy-viscoscity models - I",
+      "duration_seconds": 1315,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-15-realizability-and-production-corrections.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "39579d37b16837c80bac038620629a02f9f190f8ddb33588de476dc7dd236811",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec50.vtt",
+        "segments": 123,
+        "last_cue_seconds": 1314.84,
+        "coverage_ratio": 0.9998783269961976
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "viscosity-cap",
+          "lesson": 50,
+          "start": 15,
+          "end": 691,
+          "lecture_material": "Durbin attributed viscosity cap min(model,k/(3lambda)), time-scale restriction",
+          "extension": "Principal eigenvalue versus incorrect component row norm; derive invariant bound and scope of covariance guarantee",
+          "construction": "Independent primary1994report comparison and rotated row-norm counterexample",
+          "page": "chapter-15-realizability-and-production-corrections.html"
+        },
+        {
+          "anchor": "isotropic-production",
+          "lesson": 50,
+          "start": 691,
+          "end": 1315,
+          "lecture_material": "Exact production in assumed locally isotropic stagnation zone approximately zero",
+          "extension": "Isotropy an explicit conditional state, not universal stagnation property; P zero not proof of low k",
+          "construction": "Isotropic covariance contraction and rapid-distortion normal-stress onset",
+          "page": "chapter-15-realizability-and-production-corrections.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "8vA99S_QbJ8",
+      "playlist_position": 27,
+      "lesson": 49,
+      "title": "49. Realizability constraints in eddy-viscoscity models - II",
+      "duration_seconds": 1010,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-15-realizability-and-production-corrections.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "67f6a2bb928c2522ffbea58bb69d45c504f12dc8510694da8093a4e88e9cc373",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec49.vtt",
+        "segments": 90,
+        "last_cue_seconds": 1009.56,
+        "coverage_ratio": 0.9995643564356436
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "stagnation",
+          "lesson": 49,
+          "start": 16,
+          "end": 1009,
+          "lecture_material": "Boussinesq negative normal stress for extension and transverse-sum violation under compression, stagnation/impingement motivation",
+          "extension": "Incompressible normal extension not volumetric strain; off-diagonal gradients not synonymous with rotation",
+          "construction": "Trace-free irrotational planar strain exact threshold and rotated failure",
+          "page": "chapter-15-realizability-and-production-corrections.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "Fff1PE0-JI8",
+      "playlist_position": 28,
+      "lesson": 48,
+      "title": "48. Realizability constraints in eddy-viscoscity models - I",
+      "duration_seconds": 1213,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-15-realizability-and-production-corrections.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "4aed50ec70cc353db74b0b9277c6a2edf6aa09047044fb1bef3a4425b1431dc9",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec48.vtt",
+        "segments": 148,
+        "last_cue_seconds": 1212.04,
+        "coverage_ratio": 0.9992085737840065
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "scale-meaning",
+          "lesson": 48,
+          "start": 15,
+          "end": 813,
+          "lecture_material": "Initial-condition sensitivity, geometry length guesses, rib-channel k/epsilon length and viscosity comparisons, von Karman/SAS length",
+          "extension": "Closure scales can have interpreted physical meaning without resolving all eddies; zero Laplacian singularity and full SAS regularization",
+          "construction": "Error propagation and log-profile versus linear-flow scale checks",
+          "page": "chapter-15-realizability-and-production-corrections.html"
+        },
+        {
+          "anchor": "covariance",
+          "lesson": 48,
+          "start": 813,
+          "end": 1212,
+          "lecture_material": "Normal variance positivity, energy positivity and shear correlation Schwarz condition",
+          "extension": "Nonnegative not strictly positive; all-direction PSD and pairwise constraints insufficient in3D",
+          "construction": "Three-variable correlation counterexample and constructive eigen decomposition",
+          "page": "chapter-15-realizability-and-production-corrections.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "hCqiblHm_to",
+      "playlist_position": 29,
+      "lesson": 47,
+      "title": "47. Boundary and Initial conditions for RANS simulations - II",
+      "duration_seconds": 1273,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-14-near-wall-corrections-and-boundary-data.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "12b96aa45706bec936475f8deb5a022903ccaba05a71f1b4ca4ecbf2c3f40242",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec47.vtt",
+        "segments": 124,
+        "last_cue_seconds": 1272.4,
+        "coverage_ratio": 0.9995286724273371
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "sqrt-boundary",
+          "lesson": 47,
+          "start": 14,
+          "end": 555,
+          "lecture_material": "Derivative-of-square-root epsilon option, omega inverse-square near-wall expression and model qualification",
+          "extension": "Full identity includes sqrt(k)*second derivative; finite wall one-sided derivative can exist; k–omega variant not universal exact asymptote",
+          "construction": "Compare three finite-distance estimates and distinguish epsilon from omega singularity",
+          "page": "chapter-14-near-wall-corrections-and-boundary-data.html"
+        },
+        {
+          "anchor": "inflow",
+          "lesson": 47,
+          "start": 555,
+          "end": 1273,
+          "lecture_material": "Initial/inlet k from isotropy and turbulence intensity; supplied length for epsilon and coefficient variations",
+          "extension": "Input uncertainty not arbitrary physical truth; coefficient arithmetic not equality; length can represent measured integral or closure scale; initial guesses versus persistent inlet data",
+          "construction": "Executed I and length sensitivity ledger",
+          "page": "chapter-14-near-wall-corrections-and-boundary-data.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "QT2MUxDJj0c",
+      "playlist_position": 30,
+      "lesson": 46,
+      "title": "46. Boundary and Initial conditions for RANS simulations - I",
+      "duration_seconds": 1774,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-14-near-wall-corrections-and-boundary-data.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "1c1080c4cad9688b13ecd46c7b20400cea848070463963cd5a4f34f7cb91d7e4",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec46.vtt",
+        "segments": 172,
+        "last_cue_seconds": 1768.04,
+        "coverage_ratio": 0.9966403607666291
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "wall-boundaries",
+          "lesson": 46,
+          "start": 14,
+          "end": 1020,
+          "lecture_material": "No-slip, pressure Neumann, k zero, wall epsilon from molecular k diffusion; numerical concern about second derivative",
+          "extension": "Zero pressure gradient conditional; second derivative alone not instability proof; finite epsilon not universal maximum",
+          "construction": "Normal momentum boundary relation and hydrostatic counterexample",
+          "page": "chapter-14-near-wall-corrections-and-boundary-data.html"
+        },
+        {
+          "anchor": "epsilon-limits",
+          "lesson": 46,
+          "start": 1020,
+          "end": 1773,
+          "lecture_material": "Two surviving tangential fluctuation gradients and epsilon approximation2nu*k/y² at first near-wall point",
+          "extension": "Numerator k vanishes quadratically so no inverse-square epsilon divergence; limiting boundary relation versus implementation",
+          "construction": "Manufactured finite-distance convergence with cubic k correction",
+          "page": "chapter-14-near-wall-corrections-and-boundary-data.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "iA9RwHTNH6U",
+      "playlist_position": 31,
+      "lesson": 45,
+      "title": "45. Damping functions for LRN - II",
+      "duration_seconds": 1142,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-14-near-wall-corrections-and-boundary-data.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "74286ab7d342f77af889066dc44b21a1886ac04a7b37fb81e9c31582b0f95d49",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec45.vtt",
+        "segments": 109,
+        "last_cue_seconds": 1132.44,
+        "coverage_ratio": 0.9916287215411559
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "damping-test",
+          "lesson": 45,
+          "start": 15,
+          "end": 450,
+          "lecture_material": "Proposed inverse-distance correction and Launder–Sharma exponential example based on turbulent Reynolds number",
+          "extension": "Exponential bounded limit cannot have inverse-distance power; named implementation contains additional model terms",
+          "construction": "Actual f_mu limit and halving-distance quartic test",
+          "page": "chapter-14-near-wall-corrections-and-boundary-data.html"
+        },
+        {
+          "anchor": "production-order",
+          "lesson": 45,
+          "start": 450,
+          "end": 1140,
+          "lecture_material": "Exact production cubic and modeled quartic, grid refinement does not correct constitutive mismatch",
+          "extension": "Scalar near-wall correction not tensor anisotropy repair and no guarantee from dimension alone",
+          "construction": "Order matching necessary not sufficient",
+          "page": "chapter-14-near-wall-corrections-and-boundary-data.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "L3BhgC7cSd8",
+      "playlist_position": 32,
+      "lesson": 44,
+      "title": "44. Damping functions for LRN - I",
+      "duration_seconds": 1289,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-14-near-wall-corrections-and-boundary-data.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "55b16f80a86aa3fb224a67ca0a0d248672e2a1dccfed2d560ee557ebd6d76bc3",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec44.vtt",
+        "segments": 125,
+        "last_cue_seconds": 1287.96,
+        "coverage_ratio": 0.9991931730023275
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "compare-like-terms",
+          "lesson": 44,
+          "start": 15,
+          "end": 1288,
+          "lecture_material": "Exact/model energy equations, homogeneous stationary parallel reduction, triple flux quartic versus baseline modeled quintic",
+          "extension": "Distinguish flux order from divergence order; epsilon exact definition versus modeled evolution",
+          "construction": "Term-order table with pressure omission and leading balance",
+          "page": "chapter-14-near-wall-corrections-and-boundary-data.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "1m1MPVYo9WI",
+      "playlist_position": 33,
+      "lesson": 61,
+      "title": "61. Introduction to Eddy Resolved Models - II",
+      "duration_seconds": 1239,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-18-scales-cascades-and-direct-simulation.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "3c0ca6eceaf2b533ebcb4ae0d1330553a973c119826d196a2816747e10aa107f",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec61.vtt",
+        "segments": 166,
+        "last_cue_seconds": 1237.92,
+        "coverage_ratio": 0.9991283292978209
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "cascade",
+          "lesson": 61,
+          "start": 14,
+          "end": 1239,
+          "lecture_material": "Integral ratios, intermittency, inverse transfer, -5/3 spectrum, viscous weighting and resolution use",
+          "extension": "K62 date1962; external intermittency distinct; transfer budget and non-equilibrium qualifications; no universal conservative estimate",
+          "construction": "Spectrum normalization, integrated flux balance and original spectral-weight illustration",
+          "page": "chapter-18-scales-cascades-and-direct-simulation.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "uQAfzoov-dQ",
+      "playlist_position": 34,
+      "lesson": 60,
+      "title": "60. Introduction to Eddy Resolved Models - I",
+      "duration_seconds": 1423,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-18-scales-cascades-and-direct-simulation.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "fd545f558571f1b11ade1a9ab3f2d5f33cd1ad93935ab6bd7fbb853ee83015f7",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec60.vtt",
+        "segments": 199,
+        "last_cue_seconds": 1422.08,
+        "coverage_ratio": 0.999353478566409
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "similarity",
+          "lesson": 60,
+          "start": 14,
+          "end": 900,
+          "lecture_material": "K41 local isotropy, wall component budgets and energy-cascade interpretation",
+          "extension": "Spatial component budgets are not scale-resolved evidence; increment statistics and hypothesis scope",
+          "construction": "Precise variables, conditional universality and physical-space versus scale-space distinctions",
+          "page": "chapter-18-scales-cascades-and-direct-simulation.html"
+        },
+        {
+          "anchor": "microscales",
+          "lesson": 60,
+          "start": 900,
+          "end": 1423,
+          "lecture_material": "Viscosity/dissipation scales and intermediate-range second similarity hypothesis",
+          "extension": "Dimensional exponent derivation, molecular continuum limit is a distinct scale, retain Cepsilon in integral ratios",
+          "construction": "Three microscale identities and executed dimensional/ratio check",
+          "page": "chapter-18-scales-cascades-and-direct-simulation.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "1QiEdf7WWts",
+      "playlist_position": 35,
+      "lesson": 59,
+      "title": "59. Pressure-Strain rate modelling and wall corrections for RSM - II",
+      "duration_seconds": 1493,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-17-pressure-redistribution-and-wall-models.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "b4f9528cc814585964b5aa3d7881a1d58601d07c541517d25c70141c0c4c5069",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec59.vtt",
+        "segments": 144,
+        "last_cue_seconds": 1492.56,
+        "coverage_ratio": 0.9997052913596784
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "wall-reflection",
+          "lesson": 59,
+          "start": 14,
+          "end": 1084,
+          "lecture_material": "Slow/rapid normal, parallel and shear wall corrections, distance factor, coefficient set and resolved/wall-function boundary data",
+          "extension": "Trace-preserving tensor completion repairs rapid tangential transcription; factor includes k/epsilon so no unconditional inverse-distance growth; model-specific normalization",
+          "construction": "Wall map, physical-wall factor limit and realizable log-region covariance",
+          "page": "chapter-17-pressure-redistribution-and-wall-models.html"
+        },
+        {
+          "anchor": "algebraic-stress",
+          "lesson": 59,
+          "start": 1084,
+          "end": 1493,
+          "lecture_material": "Algebraic stress approximation relates stress transport to energy transport; complete statistical-modeling transition to eddy-resolved methods",
+          "extension": "Normalized stress slow-variation hypothesis and diffusion assumption distinguished; algebraic stress still may need scale transport; no unverified prevalence claims",
+          "construction": "Trace-consistent algebraic relation and limitations",
+          "page": "chapter-17-pressure-redistribution-and-wall-models.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "_Xiut0RTLxE",
+      "playlist_position": 36,
+      "lesson": 58,
+      "title": "58. Pressure-Strain rate modelling and wall corrections for RSM - I",
+      "duration_seconds": 1255,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-17-pressure-redistribution-and-wall-models.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "bcf2d5fa5d78c1b302f1b610b5a8f869e17a778882695245fd5edd9fbf68944b",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec58.vtt",
+        "segments": 121,
+        "last_cue_seconds": 1254.2,
+        "coverage_ratio": 0.9993625498007969
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "rotta",
+          "lesson": 58,
+          "start": 14,
+          "end": 1255,
+          "lecture_material": "Physical return-to-isotropy argument, component differences, epsilon/k time, Rotta slow model and wall correction motivation",
+          "extension": "Collision image heuristic; continuity only constrains sum of other normal strains; pressure-strain not always a universal isotropizer",
+          "construction": "Isolated convex relaxation and full homogeneous normalized-anisotropy decay plus executed RK4",
+          "page": "chapter-17-pressure-redistribution-and-wall-models.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "dfZksw50wkE",
+      "playlist_position": 37,
+      "lesson": 57,
+      "title": "57. Pressure-Strain rate modelling for RSM - II",
+      "duration_seconds": 2008,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-17-pressure-redistribution-and-wall-models.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "340e60942bbe187881de221b1059c53179c95ffe1cf8d4cf854d43b462caaab8",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec57.vtt",
+        "segments": 175,
+        "last_cue_seconds": 2007.72,
+        "coverage_ratio": 0.9998605577689244
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "nonlocal-to-local",
+          "lesson": 57,
+          "start": 23,
+          "end": 1685,
+          "lecture_material": "Pressure integral, statistical homogeneity and slowly varying mean-gradient approximations, two-point derivative correlation and route toward IP model",
+          "extension": "Two-point covariance not determined by one-point R; distinguish derivative coordinate from component index; approximation not exact closure",
+          "construction": "Exact analytic periodic random-amplitude solution and pressure-strain trace check",
+          "page": "chapter-17-pressure-redistribution-and-wall-models.html"
+        },
+        {
+          "anchor": "ip",
+          "lesson": 57,
+          "start": 1685,
+          "end": 2008,
+          "lecture_material": "Isotropization-of-production model and partial counteraction of production tensor",
+          "extension": "Per-mass versus density-weighted form, trace-free part, CR1 cancellation only traceless production",
+          "construction": "Channel component ledger and exact trace tests",
+          "page": "chapter-17-pressure-redistribution-and-wall-models.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "njmZhrtFbHc",
+      "playlist_position": 38,
+      "lesson": 56,
+      "title": "56. Pressure-Strain rate modelling for RSM - I",
+      "duration_seconds": 1574,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-17-pressure-redistribution-and-wall-models.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "f67a50bfe9de1a77eb419517b231e9dc89a98884468ecbe1f7359b7d79e2825e",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec56.vtt",
+        "segments": 147,
+        "last_cue_seconds": 1573.2,
+        "coverage_ratio": 0.9994917407878018
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "rapid-slow",
+          "lesson": 56,
+          "start": 15,
+          "end": 1198,
+          "lecture_material": "Subtract mean Poisson, product rules give factor2 mean-gradient interaction and centered quadratic slow source",
+          "extension": "Dummy indices not free; full gradient not automatically symmetric strain; rapid/slow not propagation-speed statement",
+          "construction": "Ensemble mean-zero source and rapid-distortion scaling",
+          "page": "chapter-17-pressure-redistribution-and-wall-models.html"
+        },
+        {
+          "anchor": "green",
+          "lesson": 56,
+          "start": 1198,
+          "end": 1574,
+          "lecture_material": "Green function point observation/source representation for pressure fluctuations",
+          "extension": "Fundamental kernel not Dirac delta; whole-space assumption and bounded-domain surface contribution/Neumann compatibility",
+          "construction": "Units, sign and boundary representation",
+          "page": "chapter-17-pressure-redistribution-and-wall-models.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "o16cML-Pq_Y",
+      "playlist_position": 39,
+      "lesson": 55,
+      "title": "55. Dissipation rate and Pressure-Strain rate modelling for RSM - II",
+      "duration_seconds": 982,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-17-pressure-redistribution-and-wall-models.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "4c7cdd34437095963e64b75de15ff0f82d48e1cfe0958c58b5a97690fdd45629",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec55.vtt",
+        "segments": 98,
+        "last_cue_seconds": 981.12,
+        "coverage_ratio": 0.9991038696537679
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "poisson",
+          "lesson": 55,
+          "start": 14,
+          "end": 982,
+          "lecture_material": "Pressure-strain unknown, instantaneous and mean pressure-Poisson derivation by divergence and continuity",
+          "extension": "Pressure equation linear for supplied velocity source, no universal iteration-cost ratio; density and sign conventions explicit",
+          "construction": "Both Poisson equations and centered fluctuation source",
+          "page": "chapter-17-pressure-redistribution-and-wall-models.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "dUKbHiTyJUo",
+      "playlist_position": 40,
+      "lesson": 54,
+      "title": "54. Dissipation rate and Pressure-Strain rate modelling for RSM - I",
+      "duration_seconds": 1923,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-16-reynolds-stress-transport-closure.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "b3ffddd3e87d09ebcbb3e9ca0a1f5883d578a0dd89b32685c78f03adbc0ddd16",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec54.vtt",
+        "segments": 185,
+        "last_cue_seconds": 1917.84,
+        "coverage_ratio": 0.9973166926677066
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "destruction-tensor",
+          "lesson": 54,
+          "start": 15,
+          "end": 1660,
+          "lecture_material": "Clarify diffusion expansion and small-scale local isotropy leading to epsilon_ij=2epsilon/3delta_ij",
+          "extension": "Dissipative-scale gradient isotropy does not impose large-scale covariance isotropy; tensor PSD and wall mismatch",
+          "construction": "Trace derivation and singular covariance sink counterexample",
+          "page": "chapter-16-reynolds-stress-transport-closure.html"
+        },
+        {
+          "anchor": "seventh-equation",
+          "lesson": 54,
+          "start": 1660,
+          "end": 1918,
+          "lecture_material": "Additional epsilon equation, direct production/k from transported stresses, seven-equation count and pressure-strain transition",
+          "extension": "Epsilon transport remains modeled; no automatic accuracy claim, complete pressure closure follows next chapter",
+          "construction": "Trace-consistent partially assembled model",
+          "page": "chapter-16-reynolds-stress-transport-closure.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "doZF5y4vmkk",
+      "playlist_position": 41,
+      "lesson": 67,
+      "title": "67. Large Eddy Simulations: Filtered Navier-Stokes Equations - II",
+      "duration_seconds": 1177,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-19-filtered-equations-and-the-les-closure.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "cbfa8860e94e4e81f94e8032d7238112c3f26989089027e5fbc0bdc22cdde4d0",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec67.vtt",
+        "segments": 111,
+        "last_cue_seconds": 1168.72,
+        "coverage_ratio": 0.9929651656754461
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "energy-grid",
+          "lesson": 67,
+          "start": 14,
+          "end": 560,
+          "lecture_material": "Mesh changes resolved versus modeled partition, LES grid-convergence and finite modeled contribution on DNS-like mesh",
+          "extension": "Fixed physical filter separates discretization refinement; no theorem forbids convergence or guarantees RANS monotonicity/laptop cost",
+          "construction": "Resolved-energy transfer budget, affine shear stress example and numerical filter/gain comparisons",
+          "page": "chapter-19-filtered-equations-and-the-les-closure.html"
+        },
+        {
+          "anchor": "repeat-discrete",
+          "lesson": 67,
+          "start": 560,
+          "end": 1177,
+          "lecture_material": "Repeated filtering numerical illustration via trapezoidal/interpolation approximation",
+          "extension": "Discrete stencil exact under its definition but not universal continuum proof; special fixed fields retained",
+          "construction": "Impulse, sum preservation and Fourier-symbol proof",
+          "page": "chapter-19-filtered-equations-and-the-les-closure.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "dbX_2K8Hh44",
+      "playlist_position": 42,
+      "lesson": 66,
+      "title": "66. Large Eddy Simulations: Filtered Navier-Stokes Equations - I",
+      "duration_seconds": 1505,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-19-filtered-equations-and-the-les-closure.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "eb02f72fbdeb234f663cadf3b9ec0ab650549fa560ddd0fa7b1e45c262b54fc5",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec66.vtt",
+        "segments": 149,
+        "last_cue_seconds": 1497.56,
+        "coverage_ratio": 0.9950564784053155
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy",
+        "Preserved publisher VTT contains apparent grammar/LLM editorial-response contamination; no physics inferred from that text"
+      ],
+      "source_spans": [
+        {
+          "anchor": "commutation",
+          "lesson": 66,
+          "start": 14,
+          "end": 890,
+          "lecture_material": "Time and spatial derivative commutation, homogeneous filter exception, nonuniform commutation error and Ghosal/Moin result",
+          "extension": "Operator rather than grid definition; variable/time-dependent widths and conditional second-order family",
+          "construction": "Exact variable-width identity, asymptotic derivation and quadratic commutator refinement",
+          "page": "chapter-19-filtered-equations-and-the-les-closure.html"
+        },
+        {
+          "anchor": "momentum",
+          "lesson": 66,
+          "start": 890,
+          "end": 1505,
+          "lecture_material": "Filtered flux, add/subtract resolved convection, six SGS unknowns and stress units",
+          "extension": "Original filtered convection exists, resolved decomposition not new physics; sign/density/trace absorbed pressure; positive-kernel PSD scope",
+          "construction": "Full commuting-filter continuity/momentum equations and unknown product",
+          "page": "chapter-19-filtered-equations-and-the-les-closure.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "jcqo4BTsONU",
+      "playlist_position": 43,
+      "lesson": 65,
+      "title": "65. Introduction to Large Eddy Simulations (LES) Filtering operation and SGS stresses - II",
+      "duration_seconds": 1205,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-19-filtered-equations-and-the-les-closure.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "d90cca2b2f986b3308cc0a513c8dfead45c7760204a44ed3f999254496eca942",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec65.vtt",
+        "segments": 157,
+        "last_cue_seconds": 1199.392,
+        "coverage_ratio": 0.9953460580912864
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy",
+        "Preserved publisher VTT contains apparent grammar/LLM editorial-response contamination; no physics inferred from that text"
+      ],
+      "source_spans": [
+        {
+          "anchor": "box",
+          "lesson": 65,
+          "start": 14,
+          "end": 630,
+          "lecture_material": "Filtered DNS illustrations,1D volume averaging and mean/fluctuation filtering",
+          "extension": "Exact normalized top-hat operator; Fourier gains, reference uncertainty and no invented picture data",
+          "construction": "Polynomial and Fourier non-idempotence examples",
+          "page": "chapter-19-filtered-equations-and-the-les-closure.html"
+        },
+        {
+          "anchor": "residual-products",
+          "lesson": 65,
+          "start": 630,
+          "end": 1205,
+          "lecture_material": "Filtered residual generally nonzero, filtering differs from ensemble averaging and LES statistics require postprocessing",
+          "extension": "Explicit central moment versus residual covariance with cross/resolved-product terms; filtered mean need not equal original mean",
+          "construction": "Exact quadratic central moment0.01992 versus residual-square0.0009",
+          "page": "chapter-19-filtered-equations-and-the-les-closure.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "eFuUWqgqxHg",
+      "playlist_position": 44,
+      "lesson": 64,
+      "title": "64. Introduction to Large Eddy Simulations (LES) Filtering operation and SGS stresses - I",
+      "duration_seconds": 1250,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-19-filtered-equations-and-the-les-closure.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "0d6e9fea0abe644d7f3e15f485d2a9975ee9926b5779f8f58db72cca9b8f65ac",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec64.vtt",
+        "segments": 128,
+        "last_cue_seconds": 1248.92,
+        "coverage_ratio": 0.999136
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "resolved",
+          "lesson": 64,
+          "start": 14,
+          "end": 510,
+          "lecture_material": "LES cascade motivation and distinction from DNS/RANS",
+          "extension": "Filtering defined without requiring universal local isotropy; subfilter cutoff can lie in inertial range; spatial scale not automatically temporal frequency",
+          "construction": "Separate ensemble mean, exact spatial filter and residual",
+          "page": "chapter-19-filtered-equations-and-the-les-closure.html"
+        },
+        {
+          "anchor": "reference",
+          "lesson": 64,
+          "start": 510,
+          "end": 1250,
+          "lecture_material": "Exact filtering of DNS versus LES-resolved field and modeled SGS influence",
+          "extension": "Model predicts stress influence not full unique fine velocity; no visual smoothing attribution to one isolated error",
+          "construction": "A priori reference-filter comparison and numerical approximation distinction",
+          "page": "chapter-19-filtered-equations-and-the-les-closure.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "KcEhq28Gdmc",
+      "playlist_position": 45,
+      "lesson": 63,
+      "title": "63. Introduction to Direct Numerical Simulations (DNS) - II",
+      "duration_seconds": 1512,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-18-scales-cascades-and-direct-simulation.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "11eb73c84395ff6d5e61a922e3b7de882863f595f83168c386cec7d74ed360c6",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec63.vtt",
+        "segments": 206,
+        "last_cue_seconds": 1511.76,
+        "coverage_ratio": 0.9998412698412699
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "domain-startup",
+          "lesson": 63,
+          "start": 15,
+          "end": 1169,
+          "lecture_material": "Streamwise/spanwise correlations and box size, startup perturbations, reduced-viscosity initialization, synthetic and precursor alternatives",
+          "extension": "Periodic half-box warning not universal two-eddy rule; controlled continuation not near-crash validation; initial conditions can change attractor",
+          "construction": "Positive-definite periodized covariance and divergence-free explicit perturbation",
+          "page": "chapter-18-scales-cascades-and-direct-simulation.html"
+        },
+        {
+          "anchor": "sampling",
+          "lesson": 63,
+          "start": 1169,
+          "end": 1512,
+          "lecture_material": "Statistical stationarity, sample/time correlation, long regime changes and DNS reference for PIV",
+          "extension": "Dense correlated sampling usable with uncertainty; nested means insufficient; unconditional mean can differ from individual states",
+          "construction": "Exact finite sample covariance sum and effective count",
+          "page": "chapter-18-scales-cascades-and-direct-simulation.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "SR342U2LDpc",
+      "playlist_position": 46,
+      "lesson": 62,
+      "title": "62. Introduction to Direct Numerical Simulations (DNS) - I",
+      "duration_seconds": 2008,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-18-scales-cascades-and-direct-simulation.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "1a0f7295fac2458027e6ade2872f3a6ecac7aa8c4b17884d25c401945e66871a",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec62.vtt",
+        "segments": 286,
+        "last_cue_seconds": 2007.16,
+        "coverage_ratio": 0.9995816733067729
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "dns",
+          "lesson": 62,
+          "start": 15,
+          "end": 800,
+          "lecture_material": "DNS definition, no turbulence closure, instantaneous three-dimensional resolution, scale separation and expense",
+          "extension": "Physical constitutive assumptions remain; multiphysics requires further equations; repair 10^6 grid arithmetic and distinguish air viscosity",
+          "construction": "Grid and two alternative temporal cost scalings, explicit minimum field storage",
+          "page": "chapter-18-scales-cascades-and-direct-simulation.html"
+        },
+        {
+          "anchor": "resolution",
+          "lesson": 62,
+          "start": 800,
+          "end": 2008,
+          "lecture_material": "Discrete methods/central schemes, pressure/parallel resources, grid/eta and wall units, geometric criterion",
+          "extension": "Numerical instability is not a desired perturbation source, schemes and time integrators matter, geometric criterion not universal sufficiency",
+          "construction": "Exact diffusing Fourier-mode spatial refinement, anisotropic-grid and biased-epsilon counterexamples",
+          "page": "chapter-18-scales-cascades-and-direct-simulation.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "A-fvO636nUs",
+      "playlist_position": 47,
+      "lesson": 74,
+      "title": "74. Numerics in LES and Hybrid models",
+      "duration_seconds": 1896,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-23-les-numerics-and-hybrid-interfaces.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "261f4b9c25497dccffbf9c2b4be6b98812f1bdefdde24a69841896560f5d5fad",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec74.vtt",
+        "segments": 268,
+        "last_cue_seconds": 1887.92,
+        "coverage_ratio": 0.9957383966244726
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "statistics",
+          "lesson": 74,
+          "start": 14,
+          "end": 210,
+          "lecture_material": "Resolved LES fluctuations, ensemble means, stresses and resolved/model energy postprocessing",
+          "extension": "General filter covariance partition retains mean-filter correction and filtered target; modeled equality is additional approximation",
+          "construction": "Exact derivation and linear-mean/random-constant counterexample",
+          "page": "chapter-23-les-numerics-and-hybrid-interfaces.html"
+        },
+        {
+          "anchor": "numerics",
+          "lesson": 74,
+          "start": 210,
+          "end": 420,
+          "lecture_material": "Central schemes, numerical diffusion and MILES idea",
+          "extension": "Time stability/dispersion matters, no universal scheme rule or all-upwind SGS equivalence; MILES caption contradiction resolved contextually",
+          "construction": "Exact Euler-centered/upwind and Crank-Nicolson mode gains, modified-equation viscosity",
+          "page": "chapter-23-les-numerics-and-hybrid-interfaces.html"
+        },
+        {
+          "anchor": "wall-resolution",
+          "lesson": 74,
+          "start": 420,
+          "end": 820,
+          "lecture_material": "Domain/startup/resolution, eta comparison, wall units, wall-resolved and wall-modeled choices",
+          "extension": "No universal two-eddy, eta multiplier, first-yplus sufficiency or obligatory wall resolution for every drag/thermal prediction",
+          "construction": "Observable/closure/mesh distinctions and boundary compatibility",
+          "page": "chapter-23-les-numerics-and-hybrid-interfaces.html"
+        },
+        {
+          "anchor": "cost",
+          "lesson": 74,
+          "start": 820,
+          "end": 990,
+          "lecture_material": "WM approximate Re and WR1.85point scaling versus DNS expense",
+          "extension": "Primary Reynolds definition, inlet scaling and nested-grid hypotheses retained; later revision bounded to abstract/introduction, no current hardware/performance guarantee",
+          "construction": "Wall point-density and delta^-2 integral exponents with alternative inlet families",
+          "page": "chapter-23-les-numerics-and-hybrid-interfaces.html"
+        },
+        {
+          "anchor": "hybrid",
+          "lesson": 74,
+          "start": 990,
+          "end": 1415,
+          "lecture_material": "RANS/LES equation similarities, zonal/embedded versus unified approaches, URANS and interface challenge",
+          "extension": "Separate grids not universal taxonomy, changing viscosity alone insufficient, unsteady mean differs from filtered realization",
+          "construction": "Represented-field and coupling inventory",
+          "page": "chapter-23-les-numerics-and-hybrid-interfaces.html"
+        },
+        {
+          "anchor": "interfaces",
+          "lesson": 74,
+          "start": 1415,
+          "end": 1605,
+          "lecture_material": "Synthetic RANS-to-LES fluctuations and LES-to-RANS energy feedback",
+          "extension": "One-point covariance not full divergence-free inflow or spectrum; scalar feedback factor not universal",
+          "construction": "Exact eight-sign covariance and conditional1.58333energy multiplier",
+          "page": "chapter-23-les-numerics-and-hybrid-interfaces.html"
+        },
+        {
+          "anchor": "des",
+          "lesson": 74,
+          "start": 1605,
+          "end": 1770,
+          "lecture_material": "DESintended attached-RANS/separated-LES role, common mesh and illustrative economy",
+          "extension": "Actual length mechanism as bounded primary extension, not all-above-layer LES or fixed cost ratio; no DECIDER validation claim",
+          "construction": "Grid-dependent minimum and premature stress-depletion mechanism",
+          "page": "chapter-23-les-numerics-and-hybrid-interfaces.html"
+        },
+        {
+          "anchor": "shielding",
+          "lesson": 74,
+          "start": 1770,
+          "end": 1896,
+          "lecture_material": "Undesired boundary-layer switching and delayed DES introduction/course close",
+          "extension": "Version-specific actual shielding functions and positive floor, no full SA/DDES solver or universal successful shielding",
+          "construction": "Limiting lengths, rd/fd values and required total-stress validation",
+          "page": "chapter-23-les-numerics-and-hybrid-interfaces.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "RsyYpKwXq74",
+      "playlist_position": 48,
+      "lesson": 73,
+      "title": "73.LES: Dynamic Smagorinsky model and Scale similarity models - II",
+      "duration_seconds": 1217,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-22-dynamic-fitting-and-scale-similarity.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "fac41a0c2aba69e370ab591eb45e7aa97be41a3a2dd1e26263b0b8dc1c50db87",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec73.vtt",
+        "segments": 109,
+        "last_cue_seconds": 1216.84,
+        "coverage_ratio": 0.9998685291700903
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "decomposition",
+          "lesson": 73,
+          "start": 16,
+          "end": 650,
+          "lecture_material": "Scale similarity motivation and Leonard/cross/Reynolds-SGS decomposition",
+          "extension": "Computable expression versus closure hypothesis, naming/symbol distinctions and no full original-model equivalence assertion",
+          "construction": "Exact expanded total stress and lecture-specific cross ansatz",
+          "page": "chapter-22-dynamic-fitting-and-scale-similarity.html"
+        },
+        {
+          "anchor": "invariance",
+          "lesson": 73,
+          "start": 650,
+          "end": 920,
+          "lecture_material": "Bardina-labeled Cr1.1 omission and Speziale-labeled Cr1 mixed construction",
+          "extension": "Original boost derivation shows coefficient-one cancellation; modeled cross stress not exact simply because computable",
+          "construction": "Galilean central-moment proof and finite boost counterexample",
+          "page": "chapter-22-dynamic-fitting-and-scale-similarity.html"
+        },
+        {
+          "anchor": "mixed-energy",
+          "lesson": 73,
+          "start": 920,
+          "end": 1217,
+          "lecture_material": "Mixed viscosity contribution, cancellation and similarity/Smagorinsky comparison",
+          "extension": "PSD does not enforce forward transfer; mixed transfer may remain negative; no universal omission-only instability cause",
+          "construction": "Affine incompressible strain with signed similarity transfer and code",
+          "page": "chapter-22-dynamic-fitting-and-scale-similarity.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "O_ev3ObrSYw",
+      "playlist_position": 49,
+      "lesson": 72,
+      "title": "72. LES: Dynamic Smagorinsky model and Scale similarity models - I",
+      "duration_seconds": 1711,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-22-dynamic-fitting-and-scale-similarity.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "53f5a2058c52269a405cc43adb67daa4027595843ec3aa034a9593e4a6009025",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec72.vtt",
+        "segments": 166,
+        "last_cue_seconds": 1708.12,
+        "coverage_ratio": 0.9983167738164815
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "two-level-model",
+          "lesson": 72,
+          "start": 15,
+          "end": 470,
+          "lecture_material": "Dynamic coefficient motivation and resolved/test scale comparison",
+          "extension": "Scale-invariance and movement of coefficient through test filter are explicit modeling assumptions",
+          "construction": "Two-level deviatoric model and signed C convention",
+          "page": "chapter-22-dynamic-fitting-and-scale-similarity.html"
+        },
+        {
+          "anchor": "M-tensor",
+          "lesson": 72,
+          "start": 470,
+          "end": 1200,
+          "lecture_material": "Smagorinsky model at both levels, M tensor and trace subtraction",
+          "extension": "Composite width, nonlinearity, trace and five-equations/one-scalar distinction; no componentwise tensor division",
+          "construction": "Correctly signed Ld=-2CM and model-error geometry",
+          "page": "chapter-22-dynamic-fitting-and-scale-similarity.html"
+        },
+        {
+          "anchor": "least-squares",
+          "lesson": 72,
+          "start": 1200,
+          "end": 1330,
+          "lecture_material": "Lilly modification via contraction and disappearance of isotropic term",
+          "extension": "Derive minimization rather than unexplained multiplication/division; explicit zero and cancellation cases",
+          "construction": "Frobenius objective, exact fitted coefficient and nonzero orthogonal residual",
+          "page": "chapter-22-dynamic-fitting-and-scale-similarity.html"
+        },
+        {
+          "anchor": "averaging",
+          "lesson": 72,
+          "start": 1330,
+          "end": 1600,
+          "lecture_material": "Fluctuating coefficient, homogeneous-direction and local smoothing",
+          "extension": "Average contractions differs from average coefficient; regularization/constraint choices change estimator",
+          "construction": "Weighted joint fit counterexample and dimensional penalty",
+          "page": "chapter-22-dynamic-fitting-and-scale-similarity.html"
+        },
+        {
+          "anchor": "backscatter",
+          "lesson": 72,
+          "start": 1600,
+          "end": 1711,
+          "lecture_material": "Viscosity positivity limiter and broad resolution/SGS sensitivity comments",
+          "extension": "Negative C is signed transfer, not negative geometric length; positive total diffusivity only restricted stability evidence; no universal resolved-fraction sufficiency",
+          "construction": "Numerical signed viscosity/transfer and frozen-strain lower bound",
+          "page": "chapter-22-dynamic-fitting-and-scale-similarity.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "d4OENIPqf08",
+      "playlist_position": 50,
+      "lesson": 70,
+      "title": "70. Large Eddy Simulations: Smagorinsky model - I",
+      "duration_seconds": 1101,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-21-wall-limits-energy-memory-and-test-filtering.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "4910a397e3bd804690fde66b31cc301e96cb9fcb62f8b6a0c1bcd8e5394ef8a2",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec70.vtt",
+        "segments": 110,
+        "last_cue_seconds": 1100.04,
+        "coverage_ratio": 0.9991280653950954
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "wall",
+          "lesson": 70,
+          "start": 15,
+          "end": 270,
+          "lecture_material": "Near-wall static SGS viscosity and large resolved strain",
+          "extension": "Finite smooth gradients need not diverge; wall filter definitions and resolved versus modeled wall regions",
+          "construction": "Grid scale, wall distance and physical kinematic distinction",
+          "page": "chapter-21-wall-limits-energy-memory-and-test-filtering.html"
+        },
+        {
+          "anchor": "damping",
+          "lesson": 70,
+          "start": 270,
+          "end": 502,
+          "lecture_material": "Van-Driest-type damping and minimum grid/wall length option",
+          "extension": "Viscosity versus length placement and Cs versus Delta cap conventions distinct; dimensional volume correction",
+          "construction": "Executed numerical values, small-y powers and no full wall-asymptotic guarantee",
+          "page": "chapter-21-wall-limits-energy-memory-and-test-filtering.html"
+        },
+        {
+          "anchor": "energy-model",
+          "lesson": 70,
+          "start": 502,
+          "end": 750,
+          "lecture_material": "One-equation SGS-energy advection/diffusion and Ck Delta sqrtq viscosity",
+          "extension": "Alternative transported viscosity, explicit coefficients/boundary variables; actual versioned architecture comparison",
+          "construction": "Complete modeled q equation and dimensions",
+          "page": "chapter-21-wall-limits-energy-memory-and-test-filtering.html"
+        },
+        {
+          "anchor": "transfer",
+          "lesson": 70,
+          "start": 750,
+          "end": 1101,
+          "lecture_material": "Resolved-to-SGS production, destruction estimate Ce q^1.5/Delta and dynamic coefficient motivation",
+          "extension": "Transfer matching requires consistent stress, not equilibrium; final molecular loss and resolved viscosity remain distinct",
+          "construction": "Two-budget cancellation and equilibrium Cs conversion",
+          "page": "chapter-21-wall-limits-energy-memory-and-test-filtering.html"
+        },
+        {
+          "anchor": "ode-check",
+          "lesson": 70,
+          "start": 502,
+          "end": 1101,
+          "lecture_material": "Energy transport supplies a state rather than purely instantaneous algebraic viscosity",
+          "extension": "Original analytic fixed-strain and shear-off reductions; positive initial state and explicit-step restrictions",
+          "construction": "Riccati exact solution, RK4 refinement and memory decay",
+          "page": "chapter-21-wall-limits-energy-memory-and-test-filtering.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "rUowvkj7SVc",
+      "playlist_position": 51,
+      "lesson": 69,
+      "title": "69. Large Eddy Simulations: Filters and its types - II",
+      "duration_seconds": 1932,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-20-filter-families-and-subgrid-viscosity.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "d69ba3f03a5da2e3d11f1a5b94f839d92b736c910dd29bbc9052ac57be6a775f",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec69.vtt",
+        "segments": 192,
+        "last_cue_seconds": 1931.68,
+        "coverage_ratio": 0.9998343685300207
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "gaussian",
+          "lesson": 69,
+          "start": 14,
+          "end": 448,
+          "lecture_material": "Mathematical revisit of repeated box versus spectral filtering",
+          "extension": "Rebuild incomplete nested-integral proof with correct shifted convolution/multiplication; Gaussian named in68 developed as comparative extension",
+          "construction": "Kernel moments, Gaussian composition and property comparison",
+          "page": "chapter-20-filter-families-and-subgrid-viscosity.html"
+        },
+        {
+          "anchor": "implicit",
+          "lesson": 69,
+          "start": 448,
+          "end": 675,
+          "lecture_material": "Finite-volume implicit filtering and nominal mesh/filter identity",
+          "extension": "Cell average differs from complete discrete operator, other methods can implicit-filter; no universal scheme/closure/alias guarantee",
+          "construction": "Exact discrete alias identity and explicit versus implicit choices",
+          "page": "chapter-20-filter-families-and-subgrid-viscosity.html"
+        },
+        {
+          "anchor": "sgs-model",
+          "lesson": 69,
+          "start": 675,
+          "end": 1410,
+          "lecture_material": "SGS purpose, Boussinesq analogy, positive stress sign, trace/ksgs and nu_sgs unknowns",
+          "extension": "Trace not known from resolved data; factor2/3 retained; static dissipation strategy not every SGS definition",
+          "construction": "Deviatoric closure, pressure-trace role and Pi sign",
+          "page": "chapter-20-filter-families-and-subgrid-viscosity.html"
+        },
+        {
+          "anchor": "coefficients",
+          "lesson": 69,
+          "start": 1410,
+          "end": 1932,
+          "lecture_material": "Mixing-length Smagorinsky viscosity, cube-root grid volume, constant selection examples and dependence",
+          "extension": "Cs versus Cs², no theoretical universal below-one bound or flow-specific prescriptions; no current solver/historical priority claims",
+          "construction": "Executed shear, extension, rotation and coefficient-sensitivity tests",
+          "page": "chapter-20-filter-families-and-subgrid-viscosity.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "ofYq3-Ls_-o",
+      "playlist_position": 52,
+      "lesson": 71,
+      "title": "71. Large Eddy Simulations: Smagorinsky model - II",
+      "duration_seconds": 1363,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-21-wall-limits-energy-memory-and-test-filtering.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "c1f74d0812f6d0f72e7d96eeb0c7257377e029f75bef40cd3de1980e2e280ca5",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec71.vtt",
+        "segments": 125,
+        "last_cue_seconds": 1362.6,
+        "coverage_ratio": 0.9997065297138664
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "test-filter",
+          "lesson": 71,
+          "start": 14,
+          "end": 370,
+          "lecture_material": "Dynamic coefficient, additional test filter and nominal twice-grid scale",
+          "extension": "Additional/composite widths differ; WALE/VMS names do not imply dynamic coefficient; user design choices remain",
+          "construction": "Two operator notation, scale-composition and bounded actual WALE source check",
+          "page": "chapter-21-wall-limits-energy-memory-and-test-filtering.html"
+        },
+        {
+          "anchor": "identity",
+          "lesson": 71,
+          "start": 370,
+          "end": 990,
+          "lecture_material": "Grid then test filtered equations and total stress substitution",
+          "extension": "Ordered operators suffice for algebra; standard PDEs need derivative conditions; no automatic spectral band interpretation",
+          "construction": "Exact cancellation T-Htau=L",
+          "page": "chapter-21-wall-limits-energy-memory-and-test-filtering.html"
+        },
+        {
+          "anchor": "identity-check",
+          "lesson": 71,
+          "start": 990,
+          "end": 1363,
+          "lecture_material": "Dynamic Leonard stress computable from resolved data and route to coefficient estimation",
+          "extension": "Identity alone not unique closure or guaranteed tensor fit",
+          "construction": "All-component finite-array identity execution and next coefficient assumptions",
+          "page": "chapter-21-wall-limits-energy-memory-and-test-filtering.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "e5p-14epW4Y",
+      "playlist_position": 53,
+      "lesson": 68,
+      "title": "68. Large Eddy Simulations: Filters and its types - I",
+      "duration_seconds": 1129,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-20-filter-families-and-subgrid-viscosity.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "99d58c2e975ce3b6c092283f7192de7d9da5839c56c3e62bdebc6396760a8095",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec68.vtt",
+        "segments": 116,
+        "last_cue_seconds": 1128.68,
+        "coverage_ratio": 0.999716563330381
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "kernel",
+          "lesson": 68,
+          "start": 15,
+          "end": 300,
+          "lecture_material": "Filter type, size and SGS choice; generic Leonard convolution definition",
+          "extension": "Fourier convention and units explicit, normalization and signed weights; original Leonard1974 paper not inspected",
+          "construction": "Convolution theorem with independent source/observation variables",
+          "page": "chapter-20-filter-families-and-subgrid-viscosity.html"
+        },
+        {
+          "anchor": "box-filter",
+          "lesson": 68,
+          "start": 300,
+          "end": 625,
+          "lecture_material": "Box kernel and support, filter width versus grid size, physical versus spectral localization",
+          "extension": "Absolute support, sinc transfer and amplitude/energy distinction, no disjoint spectral bands",
+          "construction": "Exact top-hat Fourier transform and triangular repeated convolution",
+          "page": "chapter-20-filter-families-and-subgrid-viscosity.html"
+        },
+        {
+          "anchor": "spectral",
+          "lesson": 68,
+          "start": 625,
+          "end": 1129,
+          "lecture_material": "Spectral cutoff, wavenumber/length interpretation, cascade and SGS-energy transfer motivation",
+          "extension": "Cutoff inverse kernel, signed tails, global orthogonality differs from pointwise positivity; transfer versus final dissipation",
+          "construction": "Projection proof and exact positive-field/stress counterexamples",
+          "page": "chapter-20-filter-families-and-subgrid-viscosity.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "TRdmk-IIzSE",
+      "playlist_position": 54,
+      "lesson": 10,
+      "title": "10. RANS equations II (I)",
+      "duration_seconds": 1157,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-04-mean-momentum-and-closure.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "e472efc9cdeb31a05542a5c7bc1655f1f1894ae2bf618e0cc11fcba763270d35",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec10.vtt",
+        "segments": 118,
+        "last_cue_seconds": 1156.8,
+        "coverage_ratio": 0.9998271391529818
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "fluctuation",
+          "lesson": 10,
+          "start": 16,
+          "end": 1157,
+          "lecture_material": "Model-versus-transport choices; instantaneous-minus-mean derivation; average-zero test",
+          "extension": "Do not count nonlinear functions of resolved velocity as independent unknowns",
+          "construction": "Missing-centering-term diagnostic",
+          "page": "chapter-04-mean-momentum-and-closure.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "Hm9Kcbvm2I8",
+      "playlist_position": 55,
+      "lesson": 9,
+      "title": "9. RANS equations I (II)",
+      "duration_seconds": 1226,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-04-mean-momentum-and-closure.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "a60744d75f3a5536ea68a305e71a1b681eae34c8b41d95054f52696e5c747679",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec09.vtt",
+        "segments": 127,
+        "last_cue_seconds": 1225.56,
+        "coverage_ratio": 0.9996411092985318
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "covariance",
+          "lesson": 9,
+          "start": 16,
+          "end": 349,
+          "lecture_material": "Product rule, symmetric second-order tensor, variances and signed covariances",
+          "extension": "Positive semidefinite proof and zero-variance boundary",
+          "construction": "Four-state covariance and anticorrelation example",
+          "page": "chapter-04-mean-momentum-and-closure.html"
+        },
+        {
+          "anchor": "closure",
+          "lesson": 9,
+          "start": 349,
+          "end": 782,
+          "lecture_material": "Four equations/ten mean-level unknowns; fluid versus flow property; limitations of viscosity analogy",
+          "extension": "Pressure Poisson equation not independent closure",
+          "construction": "Two equal-mean ensembles with distinct fluxes",
+          "page": "chapter-04-mean-momentum-and-closure.html"
+        },
+        {
+          "anchor": "stress",
+          "lesson": 9,
+          "start": 782,
+          "end": 1226,
+          "lecture_material": "Correlation origin, stress dimensions after multiplication by density",
+          "extension": "NASA TMR sign/density convention translation",
+          "construction": "Local channel stress budget and no-slip wall limits",
+          "page": "chapter-04-mean-momentum-and-closure.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "xxaoOg9I9Lw",
+      "playlist_position": 56,
+      "lesson": 8,
+      "title": "8. RANS equations I (I)",
+      "duration_seconds": 1384,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-04-mean-momentum-and-closure.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "a9caee4eea9c84aa6d91ac5315ffe5de4ba6c3bfdd45e468783db0d7740e0035",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec08.vtt",
+        "segments": 139,
+        "last_cue_seconds": 1378.44,
+        "coverage_ratio": 0.9959826589595376
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "averaging",
+          "lesson": 8,
+          "start": 14,
+          "end": 158,
+          "lecture_material": "Instantaneous, mean and fluctuating incompressible continuity",
+          "extension": "Explicit ensemble operator and regularity conditions",
+          "construction": "Channel coordinates and model assumptions",
+          "page": "chapter-04-mean-momentum-and-closure.html"
+        },
+        {
+          "anchor": "momentum",
+          "lesson": 8,
+          "start": 158,
+          "end": 1204,
+          "lecture_material": "Newtonian viscous simplification; decomposition; four advective products; two mixed averages vanish; residual covariance",
+          "extension": "Constant viscosity qualification and correction of absolute instability claims",
+          "construction": "Dimension and deterministic-limit checks",
+          "page": "chapter-04-mean-momentum-and-closure.html"
+        },
+        {
+          "anchor": "flux",
+          "lesson": 8,
+          "start": 1204,
+          "end": 1379,
+          "lecture_material": "Multiply fluctuating continuity by another fluctuation",
+          "extension": "Explicit conservative momentum flux",
+          "construction": "Channel cross-plane exchange interpretation",
+          "page": "chapter-04-mean-momentum-and-closure.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "z0XOWaoRHJg",
+      "playlist_position": 57,
+      "lesson": 7,
+      "title": "7. Navier Stokes: the governing equations - 2",
+      "duration_seconds": 1450,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-03-conservation-and-newtonian-closure.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "343ce344552377d475ab44d7856b4c8bdd8a24ab6d141e39e9268c3a0ec0f065",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec07.vtt",
+        "segments": 134,
+        "last_cue_seconds": 1449.32,
+        "coverage_ratio": 0.9995310344827586
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "symmetry",
+          "lesson": 7,
+          "start": 15,
+          "end": 420,
+          "lecture_material": "Three component equations, symmetric stress and equation counting",
+          "extension": "Nonpolar angular momentum supplies symmetry; count independent total stress rather than double-counting an isotropic split",
+          "construction": "Explicit epsilon/product-rule torque cancellation",
+          "page": "chapter-03-conservation-and-newtonian-closure.html"
+        },
+        {
+          "anchor": "pressure",
+          "lesson": 7,
+          "start": 420,
+          "end": 488,
+          "lecture_material": "Pressure coupling through continuity/momentum and Poisson equation",
+          "extension": "Formal derivation placed after Newtonian closure because it needs that specified operator",
+          "construction": "Rigid rotation pressure and variable-viscosity limitation",
+          "page": "chapter-03-conservation-and-newtonian-closure.html"
+        },
+        {
+          "anchor": "newtonian",
+          "lesson": 7,
+          "start": 488,
+          "end": 859,
+          "lecture_material": "Closure problem, Newtonian viscosity, strain rate and incompressible reduction",
+          "extension": "Constitutive versus balance assumptions; Stokes hypothesis separated from incompressible law",
+          "construction": "Exact Couette force/power and Poiseuille branch; kinetic-energy identity",
+          "page": "chapter-03-conservation-and-newtonian-closure.html"
+        },
+        {
+          "anchor": "averaging",
+          "lesson": 7,
+          "start": 859,
+          "end": 1450,
+          "lecture_material": "Reynolds decomposition, ensemble average and fluctuating continuity",
+          "extension": "Explicit derivative interchange and exact finite-sample qualification inherited from chapter2",
+          "construction": "Bridge from molecular closure to statistical closure",
+          "page": "chapter-03-conservation-and-newtonian-closure.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "MT4rrrUSa9k",
+      "playlist_position": 58,
+      "lesson": 6,
+      "title": "6. Navier Stokes: the governing equations - 1",
+      "duration_seconds": 1210,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-03-conservation-and-newtonian-closure.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "45aeb4b6a303f21b03dc8221a879c8f372bdf69dde15a8720be17068753621e7",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec06.vtt",
+        "segments": 120,
+        "last_cue_seconds": 1202.2,
+        "coverage_ratio": 0.9935537190082645
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "kinematics",
+          "lesson": 6,
+          "start": 15,
+          "end": 666,
+          "lecture_material": "Expanded curl/index practice; governing-equation orientation and mass/momentum/energy system",
+          "extension": "Particle chain rule and material acceleration",
+          "construction": "Linear shear and rigid-rotation comparison",
+          "page": "chapter-03-conservation-and-newtonian-closure.html"
+        },
+        {
+          "anchor": "mass",
+          "lesson": 6,
+          "start": 666,
+          "end": 903,
+          "lecture_material": "Mass conservation, product expansion, constant density and incompressibility",
+          "extension": "Control-volume localization and material versus globally constant density",
+          "construction": "Translating density pattern and divergence-free deformation",
+          "page": "chapter-03-conservation-and-newtonian-closure.html"
+        },
+        {
+          "anchor": "momentum",
+          "lesson": 6,
+          "start": 903,
+          "end": 1210,
+          "lecture_material": "Conservative momentum, product expansion and continuity cancellation",
+          "extension": "Current-area traction convention and control-volume derivation",
+          "construction": "Units and conservative/material-form identity",
+          "page": "chapter-03-conservation-and-newtonian-closure.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "D9B9eA3zIRU",
+      "playlist_position": 59,
+      "lesson": 5,
+      "title": "5. Statistical Analysis and Cartesian tensors - II",
+      "duration_seconds": 1778,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-02-statistics-sampling-and-tensors.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "c4f312f0158f0176133a8c91c4da5cfde8a8753db826776abbd9879ec6957b8f",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec05.vtt",
+        "segments": 182,
+        "last_cue_seconds": 1777.2,
+        "coverage_ratio": 0.9995500562429697
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "correlations",
+          "lesson": 5,
+          "start": 15,
+          "end": 570,
+          "lecture_material": "Temporal and spatial two-point statistics; sample separation and computational box size",
+          "extension": "Finite-N mean variance with lag weights; NIST estimator; Oliver et al. sampling scope",
+          "construction": "Prescribed geometric correlation, mixed normalization counterexample and exponential box criterion",
+          "page": "chapter-02-statistics-sampling-and-tensors.html"
+        },
+        {
+          "anchor": "tensors",
+          "lesson": 5,
+          "start": 570,
+          "end": 1363,
+          "lecture_material": "Tensor orders, component counts, free and summed indices, delta and Levi-Civita",
+          "extension": "Transformation laws, order versus matrix rank, orientation and symmetric counts",
+          "construction": "Rotated channel covariance",
+          "page": "chapter-02-statistics-sampling-and-tensors.html"
+        },
+        {
+          "anchor": "operators",
+          "lesson": 5,
+          "start": 1363,
+          "end": 1778,
+          "lecture_material": "Gradient, divergence, curl and Laplacian",
+          "extension": "Unit and contraction checks",
+          "construction": "Linear velocity-gradient matrix and exact curl",
+          "page": "chapter-02-statistics-sampling-and-tensors.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "-_q1seALm9k",
+      "playlist_position": 60,
+      "lesson": 4,
+      "title": "4. Statistical Analysis and Cartesian tensors - I",
+      "duration_seconds": 1344,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-02-statistics-sampling-and-tensors.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "6131eb494713a13121463b840041f0ebc3f61a9cc1aad92553079248a6f9c598",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec04.vtt",
+        "segments": 161,
+        "last_cue_seconds": 1343.2,
+        "coverage_ratio": 0.9994047619047619
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "practice",
+          "lesson": 4,
+          "start": 15,
+          "end": 856,
+          "lecture_material": "Practical convergence, sampling and eddy passage",
+          "extension": "Exact centering versus unbiased population variance; retaining correlated records",
+          "construction": "Finite-sample variance bias derivation",
+          "page": "chapter-02-statistics-sampling-and-tensors.html"
+        },
+        {
+          "anchor": "covariance",
+          "lesson": 4,
+          "start": 856,
+          "end": 1344,
+          "lecture_material": "Single-point covariance, signed correlation and coefficient",
+          "extension": "PSD, covariance bound, zero-variance domain and dependence distinction",
+          "construction": "Channel correlation ensemble and X versus X squared example",
+          "page": "chapter-02-statistics-sampling-and-tensors.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "0wW6FpNKvlo",
+      "playlist_position": 61,
+      "lesson": 3,
+      "title": "3. Statistical Analysis: an approach of modelling turbulence - II",
+      "duration_seconds": 1316,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-02-statistics-sampling-and-tensors.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "ae514930e93c6b0b5787e7b68fc4bb45dfdd4906a81ddc4c8b6c0c5e36bc05bc",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec03.vtt",
+        "segments": 136,
+        "last_cue_seconds": 1314.96,
+        "coverage_ratio": 0.999209726443769
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "time",
+          "lesson": 3,
+          "start": 15,
+          "end": 489,
+          "lecture_material": "Ensemble space/time dependence; time average; stationary and periodic examples",
+          "extension": "Stationarity separated from ergodicity",
+          "construction": "Fixed random sign and phase-dependent cosine counterexamples",
+          "page": "chapter-02-statistics-sampling-and-tensors.html"
+        },
+        {
+          "anchor": "fluctuations",
+          "lesson": 3,
+          "start": 489,
+          "end": 1055,
+          "lecture_material": "Notation, mean/fluctuation split and zero ensemble mean",
+          "extension": "Full RMS versus fluctuation RMS",
+          "construction": "Periodic-mean contamination of variance",
+          "page": "chapter-02-statistics-sampling-and-tensors.html"
+        },
+        {
+          "anchor": "moments",
+          "lesson": 3,
+          "start": 1055,
+          "end": 1316,
+          "lecture_material": "Variance, RMS, higher moments, skewness and flatness",
+          "extension": "Normalized dimensionless definitions and integrability requirements",
+          "construction": "Equal-mean/equal-variance distributions with distinct tails",
+          "page": "chapter-02-statistics-sampling-and-tensors.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "721ewrmyNDQ",
+      "playlist_position": 62,
+      "lesson": 2,
+      "title": "2. Statistical Analysis: an approach of modelling turbulence - I",
+      "duration_seconds": 1240,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-02-statistics-sampling-and-tensors.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "95c04245b7d9b81d8c44e07cd775137dca67d897ef66c1c616c23bf433c8ae64",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec02.vtt",
+        "segments": 134,
+        "last_cue_seconds": 1239.4,
+        "coverage_ratio": 0.9995161290322582
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "samples",
+          "lesson": 2,
+          "start": 15,
+          "end": 846,
+          "lecture_material": "Engineering means, finite sample count and classroom dice rows",
+          "extension": "Probability-law expectation and variance of independent sample mean",
+          "construction": "Fair-die uncertainty, using one arithmetically recoverable caption row",
+          "page": "chapter-02-statistics-sampling-and-tensors.html"
+        },
+        {
+          "anchor": "expectation",
+          "lesson": 2,
+          "start": 846,
+          "end": 1240,
+          "lecture_material": "True mean, sample dependence and infinite-sample idealization",
+          "extension": "Correct finite-sample residual identity and Chebyshev convergence under explicit assumptions",
+          "construction": "Quantitative conservative sample requirement",
+          "page": "chapter-02-statistics-sampling-and-tensors.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "X1ntzXAuX80",
+      "playlist_position": 63,
+      "lesson": 1,
+      "title": "1. Introduction to turbulence",
+      "duration_seconds": 1869,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-01-prediction-and-turbulent-motion.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "b45180a9af68a8a2692e7b4b7b9679d4af987281ed69559be8dab1e09d2c8d08",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec01.vtt",
+        "segments": 294,
+        "last_cue_seconds": 1868.6,
+        "coverage_ratio": 0.9997859818084537
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "prediction",
+          "lesson": 1,
+          "start": 15,
+          "end": 268,
+          "lecture_material": "Instructor, applications, prerequisites, reference families and course scope",
+          "extension": "Engineering quantity and mechanical power contract",
+          "construction": "Pressure-driven air-channel design target",
+          "page": "chapter-01-prediction-and-turbulent-motion.html"
+        },
+        {
+          "anchor": "uncertainty",
+          "lesson": 1,
+          "start": 270,
+          "end": 602,
+          "lecture_material": "Prediction uncertainty, model disagreement and solver disagreement",
+          "extension": "NASA verification-versus-validation distinction",
+          "construction": "Synthetic mesh-error and closure-error separation",
+          "page": "chapter-01-prediction-and-turbulent-motion.html"
+        },
+        {
+          "anchor": "resolution",
+          "lesson": 1,
+          "start": 602,
+          "end": 738,
+          "lecture_material": "DNS, LES, hybrid and RANS cost/accuracy discussion; no universal model",
+          "extension": "Separate resolved degrees of freedom, statistical estimation and modeling assumptions",
+          "construction": "Task-based comparison table and limits",
+          "page": "chapter-01-prediction-and-turbulent-motion.html"
+        },
+        {
+          "anchor": "wellposedness",
+          "lesson": 1,
+          "start": 738,
+          "end": 1138,
+          "lecture_material": "Historical perspectives, scale cascade, computation and Clay problem",
+          "extension": "Fefferman pp.1–3: global smoothness problem and distinction from sensitivity",
+          "construction": "Deterministic sensitivity example; historical humor omitted without claiming quotation verification",
+          "page": "chapter-01-prediction-and-turbulent-motion.html"
+        },
+        {
+          "anchor": "characteristics",
+          "lesson": 1,
+          "start": 1138,
+          "end": 1501,
+          "lecture_material": "Irregular signals versus physical turbulence, eddies, diffusion, dissipation, anisotropy and vorticity",
+          "extension": "Local definitions and restrictions; isotropy not excluded, vorticity not sufficient",
+          "construction": "Covariance-direction and scalar-mixing examples",
+          "page": "chapter-01-prediction-and-turbulent-motion.html"
+        },
+        {
+          "anchor": "repetition",
+          "lesson": 1,
+          "start": 1501,
+          "end": 1869,
+          "lecture_material": "Two dye drops, differing preparations, repeated simulations with distinct initial conditions",
+          "extension": "Distinguish same-data uniqueness from preparation variation and ensemble reproducibility",
+          "construction": "Energy-decay toy model, sensitivity and sampling checks",
+          "page": "chapter-01-prediction-and-turbulent-motion.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "Vd0nUc48P3E",
+      "playlist_position": 64,
+      "lesson": 11,
+      "title": "11. RANS equations II (II)",
+      "duration_seconds": 1645,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-04-mean-momentum-and-closure.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "83c46385c7022ed9f65ddf10c9d21399e4d8bd8d5164bbd1538183ebdbf393c3",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec11.vtt",
+        "segments": 170,
+        "last_cue_seconds": 1644.32,
+        "coverage_ratio": 0.9995866261398176
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "linearization",
+          "lesson": 11,
+          "start": 16,
+          "end": 778,
+          "lecture_material": "Infinitesimal fluctuations; student gradient question; laminar base; transition/intermittency and bypass distinction; correction to unknown counting",
+          "extension": "Controlled-gradient scaling and neutral-versus-transition distinction",
+          "construction": "High-frequency counterexample and lift-up ODE",
+          "page": "chapter-04-mean-momentum-and-closure.html"
+        },
+        {
+          "anchor": "hierarchy",
+          "lesson": 11,
+          "start": 778,
+          "end": 1645,
+          "lecture_material": "Multiply fluctuation equation, exchange free indices, add, recover material derivative of covariance; pressure and triple correlations appear",
+          "extension": "Compact raw second-moment equation; NASA modeled-versus-exact distinction",
+          "construction": "Index audit and production check",
+          "page": "chapter-04-mean-momentum-and-closure.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "NIBaAQnSCko",
+      "playlist_position": 65,
+      "lesson": 16,
+      "title": "16. Pressure-strain-rate and redistribution of turbulence in flows - I",
+      "duration_seconds": 1263,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-06-stationarity-homogeneity-and-redistribution.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "41279a3e645fddf02a6879d38e35686836b82ed47da43a912e45c5ba51aa2538",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec16.vtt",
+        "segments": 143,
+        "last_cue_seconds": 1255.56,
+        "coverage_ratio": 0.9941092636579572
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "data-and-anisotropy",
+          "lesson": 16,
+          "start": 15,
+          "end": 1256,
+          "lecture_material": "Instructor DNS views, means and fluctuations, streaks, nonzero unequal rms components, pressure-strain definitions",
+          "extension": "Explicit coordinate permutation and corrected sample-centering distinction; no extraction of unread numerical graph values",
+          "construction": "RMS versus variance and tensor transformation check",
+          "page": "chapter-06-stationarity-homogeneity-and-redistribution.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "-8ak1-qZgBw",
+      "playlist_position": 66,
+      "lesson": 17,
+      "title": "17. Pressure-strain-rate and redistribution of turbulence in flows - II",
+      "duration_seconds": 1210,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-06-stationarity-homogeneity-and-redistribution.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "af6daf0de10387d5bac8a7c013b09589ce59b2879a7a4cf0bfde5a70055b9b00",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec17.vtt",
+        "segments": 121,
+        "last_cue_seconds": 1202.4,
+        "coverage_ratio": 0.9937190082644629
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "redistribution",
+          "lesson": 17,
+          "start": 15,
+          "end": 304,
+          "lecture_material": "Continuity gives phi11=-phi22-phi33; redistribution interpretation",
+          "extension": "Trace identity alone gives no sign or equal-sharing theorem",
+          "construction": "Trace-free matrices with different allocations and integrated component argument",
+          "page": "chapter-06-stationarity-homogeneity-and-redistribution.html"
+        },
+        {
+          "anchor": "budget-audit",
+          "lesson": 17,
+          "start": 304,
+          "end": 798,
+          "lecture_material": "DNS budget residual, typical pressure redistribution signs and near-wall change balanced by diffusion",
+          "extension": "Residual error taxonomy; local versus wall-integrated transport; pressure term sign exceptions",
+          "construction": "Transport-assisted negative redistribution case and cancelling-error diagnostic",
+          "page": "chapter-06-stationarity-homogeneity-and-redistribution.html"
+        },
+        {
+          "anchor": "shear-and-code",
+          "lesson": 17,
+          "start": 798,
+          "end": 1202,
+          "lecture_material": "Off-diagonal equation expansion and signed pressure/gradient correlations; coordinate correction in lecture",
+          "extension": "Explicit fixed-convention P12=-R22 S and matrix execution",
+          "construction": "Runnable analytic phase ensemble and complete local tensor ledger",
+          "page": "chapter-06-stationarity-homogeneity-and-redistribution.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "S-eNqdqB1qE",
+      "playlist_position": 67,
+      "lesson": 15,
+      "title": "15. Statistical Stationarity and Homogenity in Plane Couttee Flows - II",
+      "duration_seconds": 1236,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-06-stationarity-homogeneity-and-redistribution.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "054194b8ad4caf9895ad38dbb13317c9d37c103e1107736f93398e5fe85abd14",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec15.vtt",
+        "segments": 127,
+        "last_cue_seconds": 1235.44,
+        "coverage_ratio": 0.9995469255663431
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "normal-budgets",
+          "lesson": 15,
+          "start": 15,
+          "end": 1235,
+          "lecture_material": "Expand three normal stress equations; only streamwise direct production survives; pressure-gradient correlations do not vanish",
+          "extension": "All six production components, exact stationary component balances, signed off-diagonal dissipation",
+          "construction": "Positive covariance and a closed numerical budget ledger",
+          "page": "chapter-06-stationarity-homogeneity-and-redistribution.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "R9-DtHqmMtk",
+      "playlist_position": 68,
+      "lesson": 14,
+      "title": "14. Statistical Stationarity and Homogenity in Plane Couttee Flows - I",
+      "duration_seconds": 1396,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-06-stationarity-homogeneity-and-redistribution.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "0c375a880d8f022c100b931c3003edb543c4a31476d3274284e4739f7b04ebd3",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec14.vtt",
+        "segments": 160,
+        "last_cue_seconds": 1388.64,
+        "coverage_ratio": 0.9947277936962752
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "stationarity",
+          "lesson": 14,
+          "start": 15,
+          "end": 634,
+          "lecture_material": "Why stationarity must be checked before sampling; two time blocks in Couette flow; exclude startup",
+          "extension": "Distributional definition, finite-block uncertainty and stationarity versus ergodicity",
+          "construction": "Repeated manufactured phase ensemble and sampling decision",
+          "page": "chapter-06-stationarity-homogeneity-and-redistribution.html"
+        },
+        {
+          "anchor": "homogeneity",
+          "lesson": 14,
+          "start": 634,
+          "end": 1112,
+          "lecture_material": "Statistical homogeneity in selected directions; derivatives apply to averages, not instantaneous fields",
+          "extension": "Joint-law definition and explicit random-phase counterexample",
+          "construction": "Nonzero mean-square instantaneous gradient with constant statistics",
+          "page": "chapter-06-stationarity-homogeneity-and-redistribution.html"
+        },
+        {
+          "anchor": "geometry",
+          "lesson": 14,
+          "start": 1112,
+          "end": 1389,
+          "lecture_material": "Fully developed plane turbulent Couette setup and unidirectional mean",
+          "extension": "Continuity proof of zero mean normal velocity and symmetry condition for zero spanwise velocity",
+          "construction": "One fixed coordinate dictionary throughout",
+          "page": "chapter-06-stationarity-homogeneity-and-redistribution.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "BggxvBLypoA",
+      "playlist_position": 69,
+      "lesson": 13,
+      "title": "13. Reynold's stress: governing equations - II",
+      "duration_seconds": 1266,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-05-exact-reynolds-stress-transport.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "0455a1a4c8f9a354373f35a13cf4607504167f9a666946d07e66fc0f8dcae439",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec13.vtt",
+        "segments": 167,
+        "last_cue_seconds": 1258.44,
+        "coverage_ratio": 0.9940284360189574
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "transport",
+          "lesson": 13,
+          "start": 15,
+          "end": 225,
+          "lecture_material": "Turbulent, viscous and pressure transport terminology",
+          "extension": "Divergence is not automatically gradient diffusion",
+          "construction": "Integrated periodic/control-volume check",
+          "page": "chapter-05-exact-reynolds-stress-transport.html"
+        },
+        {
+          "anchor": "redistribution",
+          "lesson": 13,
+          "start": 225,
+          "end": 313,
+          "lecture_material": "Pressure-strain as redistribution",
+          "extension": "Trace-free proof under instantaneous incompressibility",
+          "construction": "Finite-time trace/realizability bookkeeping example",
+          "page": "chapter-05-exact-reynolds-stress-transport.html"
+        },
+        {
+          "anchor": "production",
+          "lesson": 13,
+          "start": 313,
+          "end": 500,
+          "lecture_material": "Production, dissipation and mean-gradient dependence",
+          "extension": "Half-trace energy budget, strain contraction, forcing/decay qualification",
+          "construction": "Channel production tensor",
+          "page": "chapter-05-exact-reynolds-stress-transport.html"
+        },
+        {
+          "anchor": "closure",
+          "lesson": 13,
+          "start": 500,
+          "end": 1266,
+          "lecture_material": "Unknown fields in pressure transport, triple moments, pressure-strain and dissipation; alternate viscous grouping and RSM closure",
+          "extension": "Independent component counts; physical versus pseudo-dissipation identity",
+          "construction": "Equal second moments/different third moments; analytic four-phase dissipation contrast",
+          "page": "chapter-05-exact-reynolds-stress-transport.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "U7eY7EN03nM",
+      "playlist_position": 70,
+      "lesson": 12,
+      "title": "12. Reynold's stress: governing equations - I",
+      "duration_seconds": 1490,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-05-exact-reynolds-stress-transport.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "b95bd6e5a892e21cdddbaf7b9c35a3e31be98da79fc96a54d2de3795aa842d65",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec12.vtt",
+        "segments": 153,
+        "last_cue_seconds": 1489.72,
+        "coverage_ratio": 0.9998120805369127
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "starting",
+          "lesson": 12,
+          "start": 15,
+          "end": 124,
+          "lecture_material": "Recap of raw second-moment equation and product-rule transport left side",
+          "extension": "Consistent renaming of free and dummy indices; explicit constant-property assumptions",
+          "construction": "Local formal budget spine",
+          "page": "chapter-05-exact-reynolds-stress-transport.html"
+        },
+        {
+          "anchor": "pressure",
+          "lesson": 12,
+          "start": 124,
+          "end": 228,
+          "lecture_material": "Pressure product expansion into pressure transport and pressure-strain",
+          "extension": "Units, delta contraction and explicit sign/density convention",
+          "construction": "Boundary-flux interpretation",
+          "page": "chapter-05-exact-reynolds-stress-transport.html"
+        },
+        {
+          "anchor": "viscous",
+          "lesson": 12,
+          "start": 228,
+          "end": 426,
+          "lecture_material": "Viscous product expansion, covariance diffusion and gradient correlation",
+          "extension": "Positive semidefinite gradient-covariance proof",
+          "construction": "Signed off-diagonal dissipation exercise",
+          "page": "chapter-05-exact-reynolds-stress-transport.html"
+        },
+        {
+          "anchor": "triple",
+          "lesson": 12,
+          "start": 426,
+          "end": 1490,
+          "lecture_material": "Unchanged production, third-moment product rule using zero continuity term; collect divergence terms with deltas",
+          "extension": "Full conservative flux with all units",
+          "construction": "Exact budget presentation",
+          "page": "chapter-05-exact-reynolds-stress-transport.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "48WTLUsrm7k",
+      "playlist_position": 71,
+      "lesson": 21,
+      "title": "21. Production rate of TKE and Mean TKE - II",
+      "duration_seconds": 1252,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-08-thin-boundary-layers-and-outer-scaling.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "c860692b855ce18a4eba7953125adf3ccfe947a5f4198028d3aafeb2dce29ed3",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec21.vtt",
+        "segments": 149,
+        "last_cue_seconds": 1251.16,
+        "coverage_ratio": 0.9993290734824282
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "wall-and-vorticity",
+          "lesson": 21,
+          "start": 19,
+          "end": 610,
+          "lecture_material": "Wall vorticity and free-shear examples; distinguish turbulence from arbitrary random signals",
+          "extension": "Walls/stratification and nonzero 3D vorticity are not universal necessary/sufficient turbulence tests; periodic forced counterexample",
+          "construction": "Vorticity equation and scope correction",
+          "page": "chapter-08-thin-boundary-layers-and-outer-scaling.html"
+        },
+        {
+          "anchor": "singular-limit",
+          "lesson": 21,
+          "start": 610,
+          "end": 1251,
+          "lecture_material": "No-slip/no-penetration, nondimensional Navier–Stokes, small viscosity and Prandtl's thin region",
+          "extension": "Complete pressure/time scales; distinguish gradient and curvature; derive laminar thickness order",
+          "construction": "Large derivative compensates small coefficient",
+          "page": "chapter-08-thin-boundary-layers-and-outer-scaling.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "qzu9QxbONn0",
+      "playlist_position": 72,
+      "lesson": 20,
+      "title": "20. Production rate of TKE and Mean TKE - I",
+      "duration_seconds": 1981,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-07-turbulent-and-mean-energy-budgets.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "558ba5893dfb7e14a3755b1b382294a5f3ea362374e207a02b49a683b335631e",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec20.vtt",
+        "segments": 200,
+        "last_cue_seconds": 1977.84,
+        "coverage_ratio": 0.9984048460373548
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "mean-total-split",
+          "lesson": 20,
+          "start": 15,
+          "end": 537,
+          "lecture_material": "Total mean instantaneous kinetic energy decomposes into mean-motion and fluctuating parts",
+          "extension": "Expectation/derivative and frame conventions",
+          "construction": "Anisotropy not recoverable from scalar k",
+          "page": "chapter-07-turbulent-and-mean-energy-budgets.html"
+        },
+        {
+          "anchor": "mean-energy-derivation",
+          "lesson": 20,
+          "start": 537,
+          "end": 1469,
+          "lecture_material": "Multiply RANS by mean velocity, product-rule pressure/viscous/Reynolds terms, derive K equation",
+          "extension": "Explicit exchange sign and total kinetic-energy flux",
+          "construction": "Derivative-by-derivative derivation",
+          "page": "chapter-07-turbulent-and-mean-energy-budgets.html"
+        },
+        {
+          "anchor": "exchange-and-forcing",
+          "lesson": 20,
+          "start": 1469,
+          "end": 1978,
+          "lecture_material": "Opposite production signs in K and k equations; sustaining supply and governing-equation recap",
+          "extension": "Production need not be positive; zero mean strain does not prohibit decaying or forced turbulence; body forcing term",
+          "construction": "Positive covariances with reversed transfer and primary-source periodic counterexample",
+          "page": "chapter-07-turbulent-and-mean-energy-budgets.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "gtTLEvvnO10",
+      "playlist_position": 73,
+      "lesson": 19,
+      "title": "19. Turbulence Kinetic Energy and it’s dissipation rate - II",
+      "duration_seconds": 1161,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-07-turbulent-and-mean-energy-budgets.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "aa202b7fd797bca8bafc7b35df18e7ea86ba98a2e17fe896d068b8c44315387a",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec19.vtt",
+        "segments": 123,
+        "last_cue_seconds": 1160.88,
+        "coverage_ratio": 0.9998966408268735
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "closure-and-destruction",
+          "lesson": 19,
+          "start": 15,
+          "end": 501,
+          "lecture_material": "Closure persists for k, identify pressure and turbulent transport, stresses and destruction; nonnegative destruction",
+          "extension": "Correct fully contracted scalar destruction count and distinguish equation counting from closure proof",
+          "construction": "Same k/different shear covariance",
+          "page": "chapter-07-turbulent-and-mean-energy-budgets.html"
+        },
+        {
+          "anchor": "transport-integral",
+          "lesson": 19,
+          "start": 501,
+          "end": 1161,
+          "lecture_material": "Bounded-box divergence theorem, no-slip/no-penetration and zero net transport; transport versus creation/destruction",
+          "extension": "Explicit smoothness condition for normal derivative of k, open-volume and periodic qualifications",
+          "construction": "Flux-through-volume audit",
+          "page": "chapter-07-turbulent-and-mean-energy-budgets.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "VZfgkXgBUwY",
+      "playlist_position": 74,
+      "lesson": 18,
+      "title": "18.Turbulence Kinetic Energy and it’s dissipation rate - I",
+      "duration_seconds": 1470,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-07-turbulent-and-mean-energy-budgets.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Official hosted English VTT",
+      "preserved_source_sha256": "6e631a5690ac4b612b61fe612e51373c0aef386d19977dd09fe597d583226ef0",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec18.vtt",
+        "segments": 146,
+        "last_cue_seconds": 1468.36,
+        "coverage_ratio": 0.9988843537414965
+      },
+      "limitations": [
+        "Fallible hosted recognition; endpoint ratio is not semantic or equation accuracy"
+      ],
+      "source_spans": [
+        {
+          "anchor": "two-viscous-groupings",
+          "lesson": 18,
+          "start": 15,
+          "end": 489,
+          "lecture_material": "Alternative derivation retaining the full viscous stress, producing extra displayed diffusion/destruction correlations",
+          "extension": "Exact flux identity shows equivalent groupings rather than additional independent physics",
+          "construction": "Physical versus pseudo-dissipation cancellation",
+          "page": "chapter-07-turbulent-and-mean-energy-budgets.html"
+        },
+        {
+          "anchor": "energy-and-contraction",
+          "lesson": 18,
+          "start": 489,
+          "end": 1468,
+          "lecture_material": "Define k as half-trace, derive its exact transport equation by contraction and factor one-half; pressure-strain disappears from trace",
+          "extension": "All index contractions, units and explicit flux convention",
+          "construction": "Trace-free information loss check",
+          "page": "chapter-07-turbulent-and-mean-energy-budgets.html"
+        },
+        {
+          "anchor": "executed-energy",
+          "lesson": 18,
+          "start": 489,
+          "end": 1468,
+          "lecture_material": "Scalar kinetic-energy balance from contracted stress equation",
+          "extension": "Closed-form periodic unforced Navier-Stokes solution and independently evaluated gradients/pressure",
+          "construction": "Original exact two-dimensional decay check, explicitly not turbulent DNS",
+          "page": "chapter-07-turbulent-and-mean-energy-budgets.html"
+        }
+      ],
+      "explicit_dispositions": []
+    },
+    {
+      "video_id": "pm9YvDBLZaA",
+      "playlist_position": 75,
+      "lesson": null,
+      "title": "Turbulence Modeling   Prof.  Vagesh D Narasimhamurthy",
+      "duration_seconds": 3851,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-24-live-session-model-choice-and-evidence.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Local small.en machine ASR,90s cores with2s overlaps",
+      "preserved_source_sha256": "8a47ad6372f917f7d66de8507088d13ec813723093e388a57e2712432959cd7f",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "decoded_duration": 3850.0078125,
+        "segments": 730,
+        "last_end": 3840.06,
+        "contiguous_core_coverage": true
+      },
+      "limitations": [
+        "Machine ASR with overlaps, uncertain names and silence-like repetitions; no full board/video verification"
+      ],
+      "source_spans": [
+        {
+          "anchor": "case",
+          "lesson": null,
+          "video_id": "pm9YvDBLZaA",
+          "start": 179,
+          "end": 439,
+          "lecture_material": "Bluff-body/cavity reacting and nonreacting wake question, flow regime and hybrid alternative",
+          "extension": "Observable-specific choices, no case-specific accuracy/cost verdict; correct illustrative Mach arithmetic",
+          "construction": "Separate prediction target and physical regime",
+          "page": "chapter-24-live-session-model-choice-and-evidence.html"
+        },
+        {
+          "anchor": "density",
+          "lesson": null,
+          "video_id": "pm9YvDBLZaA",
+          "start": 268,
+          "end": 326,
+          "lecture_material": "Instructor bounds course incompressible scope and comments on subsonic versus higher-speed applications",
+          "extension": "Original correction: low Mach need not mean constant density under heat/composition change; Favre and thermal closure distinctions",
+          "construction": "Perfect-gas continuity identity and executed density-weighted two-state statistics",
+          "page": "chapter-24-live-session-model-choice-and-evidence.html"
+        },
+        {
+          "anchor": "sensitivity",
+          "lesson": null,
+          "video_id": "pm9YvDBLZaA",
+          "start": 590,
+          "end": 666,
+          "lecture_material": "After interruption, compare models without validation data and avoid arbitrary constant changes",
+          "extension": "Model spread does not bound common bias; nonreacting evidence not full reacting validation; hybrid suggestion conditional",
+          "construction": "Constructed shared-bias example and calibration/assessment separation",
+          "page": "chapter-24-live-session-model-choice-and-evidence.html"
+        },
+        {
+          "anchor": "calibration",
+          "lesson": null,
+          "video_id": "pm9YvDBLZaA",
+          "start": 847,
+          "end": 1438,
+          "lecture_material": "How experimental data calibrate constants, course purpose, machine-learning suggestion and broad robustness comments",
+          "extension": "No universal robustness/prevalence claims or confidence interpretation from recalled exponent spread",
+          "construction": "Full homogeneous decay coefficient relation and interval/sensitivity check",
+          "page": "chapter-24-live-session-model-choice-and-evidence.html"
+        },
+        {
+          "anchor": "transition",
+          "lesson": null,
+          "video_id": "pm9YvDBLZaA",
+          "start": 1438,
+          "end": 1960,
+          "lecture_material": "SST blending, transition versus impingement, shear-layer regimes and eddy-resolved cost discussion",
+          "extension": "Realizability cap not transition model; shear not guaranteed turbulent; no universal workstation/weather-model endorsement",
+          "construction": "Separate blending, physical regime and covariance-admissibility questions",
+          "page": "chapter-24-live-session-model-choice-and-evidence.html"
+        },
+        {
+          "anchor": "tensor-limit",
+          "lesson": null,
+          "video_id": "pm9YvDBLZaA",
+          "start": 2396,
+          "end": 2740,
+          "lecture_material": "Injector model choice cannot be answered from broad application name; steady/unsteady RANS terminology",
+          "extension": "Scalar stress structural limitation quantified and unsteady mean distinct from filtered realization",
+          "construction": "Shear-matched covariance irreducible normal-stress error",
+          "page": "chapter-24-live-session-model-choice-and-evidence.html"
+        },
+        {
+          "anchor": "nonlinear",
+          "lesson": null,
+          "video_id": "pm9YvDBLZaA",
+          "start": 2916,
+          "end": 3234,
+          "lecture_material": "Audience asks why no higher powers of strain, dimensional/numerical concerns and nonlinear-model mention",
+          "extension": "Constitutive linearity differs from PDE nonlinearity; original invariant tensor basis, no claim nonlinear models abandoned",
+          "construction": "Dimensionally consistent symmetric traceless quadratic basis and exact one-point fit",
+          "page": "chapter-24-live-session-model-choice-and-evidence.html"
+        },
+        {
+          "anchor": "implementation",
+          "lesson": null,
+          "video_id": "pm9YvDBLZaA",
+          "start": 2740,
+          "end": 2916,
+          "lecture_material": "Discretization method/conservation question, later implementation anecdote and tensor-reading pointer",
+          "extension": "Conservative differences/elements possible; incomplete shared plot not diagnosed; Panton only attributed pointer not read",
+          "construction": "Shared-flux and exact baseline epsilon-production cancellation with variant limits",
+          "page": "chapter-24-live-session-model-choice-and-evidence.html"
+        }
+      ],
+      "explicit_dispositions": [
+        {
+          "video_id": "pm9YvDBLZaA",
+          "start": 0,
+          "end": 179,
+          "disposition": "Connection checks, welcome and course feedback; contextualized, no mathematical chapter claimed"
+        },
+        {
+          "video_id": "pm9YvDBLZaA",
+          "start": 439,
+          "end": 590,
+          "disposition": "Connection outage and reconnection; explicit noninstructional exclusion"
+        },
+        {
+          "video_id": "pm9YvDBLZaA",
+          "start": 666,
+          "end": 847,
+          "disposition": "Pauses, connection tests and historical exam-format discussion; administrative context only"
+        },
+        {
+          "video_id": "pm9YvDBLZaA",
+          "start": 1960,
+          "end": 2200,
+          "disposition": "Connection loss and repeated ASR silence-like fragments; explicit noninstructional exclusion"
+        },
+        {
+          "video_id": "pm9YvDBLZaA",
+          "start": 2200,
+          "end": 2396,
+          "disposition": "Realizability and wall-model questions mainly deferred to future numbered lessons; contextualized in transition section and cross references"
+        },
+        {
+          "video_id": "pm9YvDBLZaA",
+          "start": 3234,
+          "end": 3418,
+          "disposition": "Implementation anecdote discussed in section24.8; personal/admission and screen-sharing logistics excluded, underlying plot not audited"
+        },
+        {
+          "video_id": "pm9YvDBLZaA",
+          "start": 3418,
+          "end": 3548,
+          "disposition": "Closing schedule, attributed Panton tensor-reading pointer and thanks; contextualized without current administrative-policy claim"
+        },
+        {
+          "video_id": "pm9YvDBLZaA",
+          "start": 3548,
+          "end": 3851,
+          "disposition": "Trailing silence-like periodic ASR you/You fragments and recording tail; no substantive instruction inferred"
+        }
+      ]
+    },
+    {
+      "video_id": "fZe2bxvPeh0",
+      "playlist_position": 76,
+      "lesson": null,
+      "title": "Turbulence Modeling   Prof  Vagesh D Narasimhamurthy 1",
+      "duration_seconds": 2991,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "chapter-25-live-session-from-equation-to-evidence.html"
+      ],
+      "disposition": "Substantive material developed in listed chapters; noninstructional/historical material contextualized or explicitly excluded",
+      "source_kind": "Local small.en machine ASR,90s cores with2s overlaps",
+      "preserved_source_sha256": "49dd354c3a8cb3491a41aa0c1ba29157a694cbbc7607a5206c7fcbd20b4101cf",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "decoded_duration": 2990.0335625,
+        "segments": 652,
+        "last_end": 2979.96,
+        "contiguous_core_coverage": true
+      },
+      "limitations": [
+        "Machine ASR with overlaps, uncertain names and silence-like repetitions; no full board/video verification"
+      ],
+      "source_spans": [
+        {
+          "anchor": "failed-case",
+          "lesson": null,
+          "video_id": "fZe2bxvPeh0",
+          "start": 174,
+          "end": 395,
+          "lecture_material": "Rich reacting case, convergence, underrelaxation and time-step questions; instructor bounds diagnosis",
+          "extension": "Separate possible failure mechanisms and physical versus algebraic time",
+          "construction": "Define relaxed fixed-point update and local linearization",
+          "page": "chapter-25-live-session-from-equation-to-evidence.html"
+        },
+        {
+          "anchor": "iteration",
+          "lesson": null,
+          "video_id": "fZe2bxvPeh0",
+          "start": 174,
+          "end": 395,
+          "lecture_material": "Same convergence discussion",
+          "extension": "Original scalar contraction and fully converged implicit-step example; no diagnosis of actual case",
+          "construction": "Exact error factors, residual versus update, continuous versus discrete solution",
+          "page": "chapter-25-live-session-from-equation-to-evidence.html"
+        },
+        {
+          "anchor": "learning-ladder",
+          "lesson": null,
+          "video_id": "fZe2bxvPeh0",
+          "start": 395,
+          "end": 950,
+          "lecture_material": "Existing OpenFOAM versus own code, projects and canonical flows",
+          "extension": "Correct broad DNS impossibility claim with actually inspected version4.1 dnsFoam source",
+          "construction": "Bounded solver capability versus adequate computation and reduced mean equation",
+          "page": "chapter-25-live-session-from-equation-to-evidence.html"
+        },
+        {
+          "anchor": "channel",
+          "lesson": null,
+          "video_id": "fZe2bxvPeh0",
+          "start": 950,
+          "end": 1429,
+          "lecture_material": "Start laminar fully developed channel, advance to closures and transport equations",
+          "extension": "Original complete conservative diffusion discretization and executed solution",
+          "construction": "Analytic channel, shared face fluxes, Thomas elimination and boundary half-cell balance",
+          "page": "chapter-25-live-session-from-equation-to-evidence.html"
+        },
+        {
+          "anchor": "verification",
+          "lesson": null,
+          "video_id": "fZe2bxvPeh0",
+          "start": 2633,
+          "end": 2905,
+          "lecture_material": "Final airfoil project, verification versus validation discussion",
+          "extension": "Correct overly broad exclusions of investigator-collected measurement and distinguish model sensitivity",
+          "construction": "Manufactured sine solution, actual second-order refinement and algebraic error separation",
+          "page": "chapter-25-live-session-from-equation-to-evidence.html"
+        },
+        {
+          "anchor": "coupling",
+          "lesson": null,
+          "video_id": "fZe2bxvPeh0",
+          "start": 950,
+          "end": 1429,
+          "lecture_material": "Mixing length to two-equation to stress models, shared transport structure and coupling",
+          "extension": "Conservative variable face coefficient and new source/admissibility obligations",
+          "construction": "Explicit hierarchy, no claim code implements full RANS",
+          "page": "chapter-25-live-session-from-equation-to-evidence.html"
+        },
+        {
+          "anchor": "guards",
+          "lesson": null,
+          "video_id": "fZe2bxvPeh0",
+          "start": 1819,
+          "end": 2007,
+          "lecture_material": "Negative-property anecdote and AI-assisted input checking question; later validation discussion",
+          "extension": "Molecular versus modeled viscosity and deterministic checks versus physical evidence",
+          "construction": "Input/error/provenance boundaries and own measurement versus own simulated reference",
+          "page": "chapter-25-live-session-from-equation-to-evidence.html"
+        }
+      ],
+      "explicit_dispositions": [
+        {
+          "video_id": "fZe2bxvPeh0",
+          "start": 0,
+          "end": 174,
+          "disposition": "Welcome, connection/feedback and discussion context; no technical coverage claimed"
+        },
+        {
+          "video_id": "fZe2bxvPeh0",
+          "start": 655,
+          "end": 950,
+          "disposition": "Substantive canonical-project advice included; historical evaluation/future-course administration contextualized only"
+        },
+        {
+          "video_id": "fZe2bxvPeh0",
+          "start": 1429,
+          "end": 1819,
+          "disposition": "Historical hands-on curriculum, software licensing, visits, board/classroom format and personal coding history; contextualized learning route, no current institutional or software recommendation"
+        },
+        {
+          "video_id": "fZe2bxvPeh0",
+          "start": 2007,
+          "end": 2633,
+          "disposition": "Historical future-course, workshop, email, examination and grade discussion; explicit administrative exclusion, no current policy or contact details published"
+        },
+        {
+          "video_id": "fZe2bxvPeh0",
+          "start": 2633,
+          "end": 2905,
+          "disposition": "Full final technical verification/validation discussion developed in sections25.5 and25.7"
+        },
+        {
+          "video_id": "fZe2bxvPeh0",
+          "start": 2905,
+          "end": 2991,
+          "disposition": "Closing pauses, thanks and recording tail; no substantive instruction inferred"
+        }
+      ]
+    },
+    {
+      "video_id": "Zhi8CJfB_sU",
+      "playlist_position": 77,
+      "lesson": null,
+      "title": "Introduction to Turbulence Modeling",
+      "duration_seconds": 535,
+      "reading_complete": true,
+      "included": true,
+      "chapters": [
+        "book-overview.html"
+      ],
+      "disposition": "Introduction fully read and independently paraphrased in study overview; no substantive mathematical lecture claimed",
+      "source_kind": "Local small.en machine ASR,90s cores with2s overlaps",
+      "preserved_source_sha256": "6508a707ad2c1a19ea37af82bf89f920135921e142ea096791cd9f578fb64d0a",
+      "audiovisual_audit": false,
+      "acquisition": {
+        "decoded_duration": 534.7555625,
+        "segments": 124,
+        "last_end": 534.94,
+        "contiguous_core_coverage": true
+      },
+      "limitations": [
+        "Machine ASR with overlaps, uncertain names and silence-like repetitions; no full board/video verification"
+      ],
+      "source_spans": [
+        {
+          "anchor": "applications",
+          "video_id": "Zhi8CJfB_sU",
+          "start": 0,
+          "end": 220,
+          "lecture_material": "Applications, theory/modeling and complementary role of experiments",
+          "extension": "Application-specific physical scope",
+          "construction": "Independent orientation prose",
+          "page": "book-overview.html"
+        },
+        {
+          "anchor": "prerequisites",
+          "video_id": "Zhi8CJfB_sU",
+          "start": 220,
+          "end": 401,
+          "lecture_material": "Audience, prerequisites, statistical models, walls, resolved eddies and hybrids",
+          "extension": "Book dependency links",
+          "construction": "Study route",
+          "page": "book-overview.html"
+        },
+        {
+          "anchor": "outcomes",
+          "video_id": "Zhi8CJfB_sU",
+          "start": 401,
+          "end": 489,
+          "lecture_material": "Reference families and three intended outcomes",
+          "extension": "Verification/statistical/physical evidence distinctions",
+          "construction": "Independent learning guidance",
+          "page": "book-overview.html"
+        },
+        {
+          "anchor": "source-scope",
+          "video_id": "Zhi8CJfB_sU",
+          "start": 489,
+          "end": 535,
+          "lecture_material": "Closing teacher acknowledgment and welcome",
+          "extension": "Honest ASR and attribution limits",
+          "construction": "Nontechnical names/verse not quoted without verification",
+          "page": "book-overview.html"
+        }
+      ],
+      "explicit_dispositions": []
+    }
+  ],
+  "numbered_lessons": 74,
+  "live_sessions": 2,
+  "introduction_items": 1,
+  "ordering": "All original77 positions retained; numbered teaching order with live sessions developed separately",
+  "coverage_meaning": "Every complete transcript read before drafting. Selected section spans locate major constructions; no claim every second is technical prose or error-free recognition.",
+  "limitations": [
+    "No comprehensive video/board audit",
+    "Official65–66 captions contain disclosed editorial contamination",
+    "Local ASR extras retain recognition errors/overlaps",
+    "Raw captions/audio/private prompts and review reports are excluded from public payload"
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "chapter": 6,
+  "title": "6. Stationarity, homogeneity and pressure redistribution",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "115f5eb6953defa6abd75b866f9cf39b76c61e0941bb154add9a228ee255887e",
+  "recordings": [
+    {
+      "playlist_position": 65,
+      "video_id": "NIBaAQnSCko",
+      "title": "16. Pressure-strain-rate and redistribution of turbulence in flows - I",
+      "lesson": 16,
+      "duration_seconds": 1263,
+      "url": "https://www.youtube.com/watch?v=NIBaAQnSCko",
+      "chapter": 6,
+      "disposition": "Included in chapter 06; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 16,
+        "video_id": "NIBaAQnSCko",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec16.vtt",
+        "path": "lecture-16.vtt",
+        "sha256": "41279a3e645fddf02a6879d38e35686836b82ed47da43a912e45c5ba51aa2538",
+        "segments": 143,
+        "last_cue_seconds": 1255.56,
+        "recording_duration": 1263,
+        "coverage_ratio": 0.9941092636579572,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 66,
+      "video_id": "-8ak1-qZgBw",
+      "title": "17. Pressure-strain-rate and redistribution of turbulence in flows - II",
+      "lesson": 17,
+      "duration_seconds": 1210,
+      "url": "https://www.youtube.com/watch?v=-8ak1-qZgBw",
+      "chapter": 6,
+      "disposition": "Included in chapter 06; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 17,
+        "video_id": "-8ak1-qZgBw",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec17.vtt",
+        "path": "lecture-17.vtt",
+        "sha256": "af6daf0de10387d5bac8a7c013b09589ce59b2879a7a4cf0bfde5a70055b9b00",
+        "segments": 121,
+        "last_cue_seconds": 1202.4,
+        "recording_duration": 1210,
+        "coverage_ratio": 0.9937190082644629,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 67,
+      "video_id": "S-eNqdqB1qE",
+      "title": "15. Statistical Stationarity and Homogenity in Plane Couttee Flows - II",
+      "lesson": 15,
+      "duration_seconds": 1236,
+      "url": "https://www.youtube.com/watch?v=S-eNqdqB1qE",
+      "chapter": 6,
+      "disposition": "Included in chapter 06; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 15,
+        "video_id": "S-eNqdqB1qE",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec15.vtt",
+        "path": "lecture-15.vtt",
+        "sha256": "054194b8ad4caf9895ad38dbb13317c9d37c103e1107736f93398e5fe85abd14",
+        "segments": 127,
+        "last_cue_seconds": 1235.44,
+        "recording_duration": 1236,
+        "coverage_ratio": 0.9995469255663431,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 68,
+      "video_id": "R9-DtHqmMtk",
+      "title": "14. Statistical Stationarity and Homogenity in Plane Couttee Flows - I",
+      "lesson": 14,
+      "duration_seconds": 1396,
+      "url": "https://www.youtube.com/watch?v=R9-DtHqmMtk",
+      "chapter": 6,
+      "disposition": "Included in chapter 06; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 14,
+        "video_id": "R9-DtHqmMtk",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec14.vtt",
+        "path": "lecture-14.vtt",
+        "sha256": "0c375a880d8f022c100b931c3003edb543c4a31476d3274284e4739f7b04ebd3",
+        "segments": 160,
+        "last_cue_seconds": 1388.64,
+        "recording_duration": 1396,
+        "coverage_ratio": 0.9947277936962752,
+        "status": "acquired"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "stationarity",
+      "lesson": 14,
+      "start": 15,
+      "end": 634,
+      "lecture_material": "Why stationarity must be checked before sampling; two time blocks in Couette flow; exclude startup",
+      "extension": "Distributional definition, finite-block uncertainty and stationarity versus ergodicity",
+      "construction": "Repeated manufactured phase ensemble and sampling decision"
+    },
+    {
+      "anchor": "homogeneity",
+      "lesson": 14,
+      "start": 634,
+      "end": 1112,
+      "lecture_material": "Statistical homogeneity in selected directions; derivatives apply to averages, not instantaneous fields",
+      "extension": "Joint-law definition and explicit random-phase counterexample",
+      "construction": "Nonzero mean-square instantaneous gradient with constant statistics"
+    },
+    {
+      "anchor": "geometry",
+      "lesson": 14,
+      "start": 1112,
+      "end": 1389,
+      "lecture_material": "Fully developed plane turbulent Couette setup and unidirectional mean",
+      "extension": "Continuity proof of zero mean normal velocity and symmetry condition for zero spanwise velocity",
+      "construction": "One fixed coordinate dictionary throughout"
+    },
+    {
+      "anchor": "normal-budgets",
+      "lesson": 15,
+      "start": 15,
+      "end": 1235,
+      "lecture_material": "Expand three normal stress equations; only streamwise direct production survives; pressure-gradient correlations do not vanish",
+      "extension": "All six production components, exact stationary component balances, signed off-diagonal dissipation",
+      "construction": "Positive covariance and a closed numerical budget ledger"
+    },
+    {
+      "anchor": "data-and-anisotropy",
+      "lesson": 16,
+      "start": 15,
+      "end": 1256,
+      "lecture_material": "Instructor DNS views, means and fluctuations, streaks, nonzero unequal rms components, pressure-strain definitions",
+      "extension": "Explicit coordinate permutation and corrected sample-centering distinction; no extraction of unread numerical graph values",
+      "construction": "RMS versus variance and tensor transformation check"
+    },
+    {
+      "anchor": "redistribution",
+      "lesson": 17,
+      "start": 15,
+      "end": 304,
+      "lecture_material": "Continuity gives phi11=-phi22-phi33; redistribution interpretation",
+      "extension": "Trace identity alone gives no sign or equal-sharing theorem",
+      "construction": "Trace-free matrices with different allocations and integrated component argument"
+    },
+    {
+      "anchor": "budget-audit",
+      "lesson": 17,
+      "start": 304,
+      "end": 798,
+      "lecture_material": "DNS budget residual, typical pressure redistribution signs and near-wall change balanced by diffusion",
+      "extension": "Residual error taxonomy; local versus wall-integrated transport; pressure term sign exceptions",
+      "construction": "Transport-assisted negative redistribution case and cancelling-error diagnostic"
+    },
+    {
+      "anchor": "shear-and-code",
+      "lesson": 17,
+      "start": 798,
+      "end": 1202,
+      "lecture_material": "Off-diagonal equation expansion and signed pressure/gradient correlations; coordinate correction in lecture",
+      "extension": "Explicit fixed-convention P12=-R22 S and matrix execution",
+      "construction": "Runnable analytic phase ensemble and complete local tensor ledger"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://tmbwg.github.io/turbmodels/rsm-ssglrr.html",
+      "title": "NASA/TMBWG: SSG/LRR Full Reynolds Stress Model",
+      "supports": "Positive covariance transport, exact production and the distinction between pressure-strain redistribution and its model closure; no coefficients or model predictions used",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://arxiv.org/abs/1311.0828",
+      "title": "Oliver, Malaya, Ulerich and Moser: Estimating uncertainties in statistics computed from direct numerical simulation",
+      "supports": "Introduction and section II.A on finite sampling, correlated observations and uncertainty in computed statistics; not a stationarity certification test",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "article_words_including_math_code": 4316,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "worked_solutions": 8,
+  "executable_listings": 1,
+  "source_reading": "Complete normalized caption text read sequentially before drafting",
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "115f5eb6953defa6abd75b866f9cf39b76c61e0941bb154add9a228ee255887e",
+    "rounds": [
+      {
+        "round": 1,
+        "report_identifier": "ch06-r1.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "115f5eb6953defa6abd75b866f9cf39b76c61e0941bb154add9a228ee255887e",
+        "reviewer_id": "independent-course-peer",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      },
+      {
+        "round": 2,
+        "report_identifier": "ch06-r2.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "115f5eb6953defa6abd75b866f9cf39b76c61e0941bb154add9a228ee255887e",
+        "reviewer_id": "lead-coordinator",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      }
+    ],
+    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+  },
+  "limitations": [
+    "Full captions read; no full audiovisual or board verification",
+    "Coordinate permutation resolved algebraically; instructor DNS plots are described through captions without numerical digitization",
+    "Constructed local budgets are bookkeeping checks, not a realizable DNS trajectory or measured Couette dataset",
+    "Finite block agreement is evidence, not proof of stationarity",
+    "No calibrated pressure-strain closure or empirical model validation"
+  ]
+}

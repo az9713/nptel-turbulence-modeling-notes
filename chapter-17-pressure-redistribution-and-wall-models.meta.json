@@ -1,0 +1,265 @@
+{
+  "chapter": 17,
+  "title": "17. Pressure redistribution and wall models",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "7457dcb0e5b0b5550d9e6cb515a762e8f9cf695f79b8e42963b4baafa7f16bcf",
+  "recordings": [
+    {
+      "playlist_position": 35,
+      "video_id": "1QiEdf7WWts",
+      "title": "59. Pressure-Strain rate modelling and wall corrections for RSM - II",
+      "lesson": 59,
+      "duration_seconds": 1493,
+      "url": "https://www.youtube.com/watch?v=1QiEdf7WWts",
+      "chapter": 17,
+      "disposition": "Included in chapter 17; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 59,
+        "video_id": "1QiEdf7WWts",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec59.vtt",
+        "path": "lecture-59.vtt",
+        "sha256": "b4f9528cc814585964b5aa3d7881a1d58601d07c541517d25c70141c0c4c5069",
+        "segments": 144,
+        "last_cue_seconds": 1492.56,
+        "recording_duration": 1493,
+        "coverage_ratio": 0.9997052913596784,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 36,
+      "video_id": "_Xiut0RTLxE",
+      "title": "58. Pressure-Strain rate modelling and wall corrections for RSM - I",
+      "lesson": 58,
+      "duration_seconds": 1255,
+      "url": "https://www.youtube.com/watch?v=_Xiut0RTLxE",
+      "chapter": 17,
+      "disposition": "Included in chapter 17; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 58,
+        "video_id": "_Xiut0RTLxE",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec58.vtt",
+        "path": "lecture-58.vtt",
+        "sha256": "bcf2d5fa5d78c1b302f1b610b5a8f869e17a778882695245fd5edd9fbf68944b",
+        "segments": 121,
+        "last_cue_seconds": 1254.2,
+        "recording_duration": 1255,
+        "coverage_ratio": 0.9993625498007969,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 37,
+      "video_id": "dfZksw50wkE",
+      "title": "57. Pressure-Strain rate modelling for RSM - II",
+      "lesson": 57,
+      "duration_seconds": 2008,
+      "url": "https://www.youtube.com/watch?v=dfZksw50wkE",
+      "chapter": 17,
+      "disposition": "Included in chapter 17; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 57,
+        "video_id": "dfZksw50wkE",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec57.vtt",
+        "path": "lecture-57.vtt",
+        "sha256": "340e60942bbe187881de221b1059c53179c95ffe1cf8d4cf854d43b462caaab8",
+        "segments": 175,
+        "last_cue_seconds": 2007.72,
+        "recording_duration": 2008,
+        "coverage_ratio": 0.9998605577689244,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 38,
+      "video_id": "njmZhrtFbHc",
+      "title": "56. Pressure-Strain rate modelling for RSM - I",
+      "lesson": 56,
+      "duration_seconds": 1574,
+      "url": "https://www.youtube.com/watch?v=njmZhrtFbHc",
+      "chapter": 17,
+      "disposition": "Included in chapter 17; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 56,
+        "video_id": "njmZhrtFbHc",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec56.vtt",
+        "path": "lecture-56.vtt",
+        "sha256": "f67a50bfe9de1a77eb419517b231e9dc89a98884468ecbe1f7359b7d79e2825e",
+        "segments": 147,
+        "last_cue_seconds": 1573.2,
+        "recording_duration": 1574,
+        "coverage_ratio": 0.9994917407878018,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 39,
+      "video_id": "o16cML-Pq_Y",
+      "title": "55. Dissipation rate and Pressure-Strain rate modelling for RSM - II",
+      "lesson": 55,
+      "duration_seconds": 982,
+      "url": "https://www.youtube.com/watch?v=o16cML-Pq_Y",
+      "chapter": 17,
+      "disposition": "Included in chapter 17; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 55,
+        "video_id": "o16cML-Pq_Y",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec55.vtt",
+        "path": "lecture-55.vtt",
+        "sha256": "4c7cdd34437095963e64b75de15ff0f82d48e1cfe0958c58b5a97690fdd45629",
+        "segments": 98,
+        "last_cue_seconds": 981.12,
+        "recording_duration": 982,
+        "coverage_ratio": 0.9991038696537679,
+        "status": "acquired"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "poisson",
+      "lesson": 55,
+      "start": 14,
+      "end": 982,
+      "lecture_material": "Pressure-strain unknown, instantaneous and mean pressure-Poisson derivation by divergence and continuity",
+      "extension": "Pressure equation linear for supplied velocity source, no universal iteration-cost ratio; density and sign conventions explicit",
+      "construction": "Both Poisson equations and centered fluctuation source"
+    },
+    {
+      "anchor": "rapid-slow",
+      "lesson": 56,
+      "start": 15,
+      "end": 1198,
+      "lecture_material": "Subtract mean Poisson, product rules give factor2 mean-gradient interaction and centered quadratic slow source",
+      "extension": "Dummy indices not free; full gradient not automatically symmetric strain; rapid/slow not propagation-speed statement",
+      "construction": "Ensemble mean-zero source and rapid-distortion scaling"
+    },
+    {
+      "anchor": "green",
+      "lesson": 56,
+      "start": 1198,
+      "end": 1574,
+      "lecture_material": "Green function point observation/source representation for pressure fluctuations",
+      "extension": "Fundamental kernel not Dirac delta; whole-space assumption and bounded-domain surface contribution/Neumann compatibility",
+      "construction": "Units, sign and boundary representation"
+    },
+    {
+      "anchor": "nonlocal-to-local",
+      "lesson": 57,
+      "start": 23,
+      "end": 1685,
+      "lecture_material": "Pressure integral, statistical homogeneity and slowly varying mean-gradient approximations, two-point derivative correlation and route toward IP model",
+      "extension": "Two-point covariance not determined by one-point R; distinguish derivative coordinate from component index; approximation not exact closure",
+      "construction": "Exact analytic periodic random-amplitude solution and pressure-strain trace check"
+    },
+    {
+      "anchor": "ip",
+      "lesson": 57,
+      "start": 1685,
+      "end": 2008,
+      "lecture_material": "Isotropization-of-production model and partial counteraction of production tensor",
+      "extension": "Per-mass versus density-weighted form, trace-free part, CR1 cancellation only traceless production",
+      "construction": "Channel component ledger and exact trace tests"
+    },
+    {
+      "anchor": "rotta",
+      "lesson": 58,
+      "start": 14,
+      "end": 1255,
+      "lecture_material": "Physical return-to-isotropy argument, component differences, epsilon/k time, Rotta slow model and wall correction motivation",
+      "extension": "Collision image heuristic; continuity only constrains sum of other normal strains; pressure-strain not always a universal isotropizer",
+      "construction": "Isolated convex relaxation and full homogeneous normalized-anisotropy decay plus executed RK4"
+    },
+    {
+      "anchor": "wall-reflection",
+      "lesson": 59,
+      "start": 14,
+      "end": 1084,
+      "lecture_material": "Slow/rapid normal, parallel and shear wall corrections, distance factor, coefficient set and resolved/wall-function boundary data",
+      "extension": "Trace-preserving tensor completion repairs rapid tangential transcription; factor includes k/epsilon so no unconditional inverse-distance growth; model-specific normalization",
+      "construction": "Wall map, physical-wall factor limit and realizable log-region covariance"
+    },
+    {
+      "anchor": "algebraic-stress",
+      "lesson": 59,
+      "start": 1084,
+      "end": 1493,
+      "lecture_material": "Algebraic stress approximation relates stress transport to energy transport; complete statistical-modeling transition to eddy-resolved methods",
+      "extension": "Normalized stress slow-variation hypothesis and diffusion assumption distinguished; algebraic stress still may need scale transport; no unverified prevalence claims",
+      "construction": "Trace-consistent algebraic relation and limitations"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://cpp.openfoam.org/v4/LRR_8C_source.html",
+      "title": "OpenFOAM Foundation4.1 LRR implementation",
+      "supports": "Actual C1/C2/Cref blocks, modeled dev(P), linear return term and trace-free wall-reflection construction; versioned wall normalization differs from lecture2.55",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://tmbwg.github.io/turbmodels/easmko.html",
+      "title": "TMBWG explicit algebraic stress model definitions",
+      "supports": "Actual introduction and nonlinear stress relation/two scale equations; algebraic stress is not merely a changed scalar viscosity and variants differ",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://web.stanford.edu/class/math220b/handouts/greensfcns.pdf",
+      "title": "Stanford Math220B Green functions notes",
+      "supports": "Fundamental solution plus boundary correction and Green representation; author uses positive-Laplacian convention explicitly opposite to negative-Laplacian note convention",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://tmbwg.github.io/turbmodels/rsm-ssglrr.html",
+      "title": "TMBWG SSG/LRR model definition",
+      "supports": "Previously read exact-form pressure-strain tensor architecture, anisotropy normalization variants and pressure redistribution distinct from scalar trace",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "article_words_including_math_code": 3890,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "worked_solutions": 8,
+  "executable_listings": 1,
+  "source_reading": "Complete normalized caption text read sequentially before drafting",
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "7457dcb0e5b0b5550d9e6cb515a762e8f9cf695f79b8e42963b4baafa7f16bcf",
+    "rounds": [
+      {
+        "round": 1,
+        "report_identifier": "ch17-r1.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "7457dcb0e5b0b5550d9e6cb515a762e8f9cf695f79b8e42963b4baafa7f16bcf",
+        "reviewer_id": "independent-course-peer",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      },
+      {
+        "round": 2,
+        "report_identifier": "ch17-r2.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "7457dcb0e5b0b5550d9e6cb515a762e8f9cf695f79b8e42963b4baafa7f16bcf",
+        "reviewer_id": "lead-coordinator",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      }
+    ],
+    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+  },
+  "limitations": [
+    "All captions55–59 read in full; no complete audiovisual audit or digitization of hidden board formulas",
+    "Whole-space Green integral requires suitable decay; bounded/periodic domains have different kernels/boundary terms and pressure gauge constraints",
+    "Homogeneous/constant-gradient route motivates local pressure models but does not determine nonlocal two-point correlations uniquely from one-point R",
+    "Rotta/IP equations are an illustrative closure family with source coefficient values, not every RSM or exact pressure response",
+    "Wall factor2.55 retained as lecture-specific; actual Foundation4.1 LRR wall normalization differs and is not silently mixed",
+    "Trace-free wall correction and PSD wall-function input do not prove full viscous-wall asymptotic consistency or global solution accuracy",
+    "Analytic periodic ensemble and homogeneous closure ODE are restricted executed tests, not new turbulent DNS, full spatial RSM or empirical validation"
+  ]
+}

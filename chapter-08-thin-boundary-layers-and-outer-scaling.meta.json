@@ -1,0 +1,198 @@
+{
+  "chapter": 8,
+  "title": "8. Thin boundary layers and outer scaling",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "6cb5e3ec8eb3be86de075ff24d44a6c8c8fc54f6400f42041f5d676cef5a8a65",
+  "recordings": [
+    {
+      "playlist_position": 6,
+      "video_id": "MEhzjByC6tY",
+      "title": "23. Turbulent Boundary Layer: Order of Magnitude analysis - II",
+      "lesson": 23,
+      "duration_seconds": 1180,
+      "url": "https://www.youtube.com/watch?v=MEhzjByC6tY",
+      "chapter": 8,
+      "disposition": "Included in chapter 08; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 23,
+        "video_id": "MEhzjByC6tY",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec23.vtt",
+        "path": "lecture-23.vtt",
+        "sha256": "5ccac7777fb319f0af6e2a111a9c9989be3edd121c3e74a579eb2557b67e3d2a",
+        "segments": 117,
+        "last_cue_seconds": 1172.72,
+        "recording_duration": 1180,
+        "coverage_ratio": 0.9938305084745763,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 7,
+      "video_id": "TyiCSg5YWnQ",
+      "title": "22. Turbulent Boundary Layer: Order of Magnitude analysis - I",
+      "lesson": 22,
+      "duration_seconds": 1560,
+      "url": "https://www.youtube.com/watch?v=TyiCSg5YWnQ",
+      "chapter": 8,
+      "disposition": "Included in chapter 08; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 22,
+        "video_id": "TyiCSg5YWnQ",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec22.vtt",
+        "path": "lecture-22.vtt",
+        "sha256": "ed1a6c22b65b09643bb84985e983790f5e5a3b42471967ea0efd97fa60b075d5",
+        "segments": 165,
+        "last_cue_seconds": 1558.24,
+        "recording_duration": 1560,
+        "coverage_ratio": 0.9988717948717949,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 71,
+      "video_id": "48WTLUsrm7k",
+      "title": "21. Production rate of TKE and Mean TKE - II",
+      "lesson": 21,
+      "duration_seconds": 1252,
+      "url": "https://www.youtube.com/watch?v=48WTLUsrm7k",
+      "chapter": 8,
+      "disposition": "Included in chapter 08; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 21,
+        "video_id": "48WTLUsrm7k",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec21.vtt",
+        "path": "lecture-21.vtt",
+        "sha256": "c860692b855ce18a4eba7953125adf3ccfe947a5f4198028d3aafeb2dce29ed3",
+        "segments": 149,
+        "last_cue_seconds": 1251.16,
+        "recording_duration": 1252,
+        "coverage_ratio": 0.9993290734824282,
+        "status": "acquired"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "wall-and-vorticity",
+      "lesson": 21,
+      "start": 19,
+      "end": 610,
+      "lecture_material": "Wall vorticity and free-shear examples; distinguish turbulence from arbitrary random signals",
+      "extension": "Walls/stratification and nonzero 3D vorticity are not universal necessary/sufficient turbulence tests; periodic forced counterexample",
+      "construction": "Vorticity equation and scope correction"
+    },
+    {
+      "anchor": "singular-limit",
+      "lesson": 21,
+      "start": 610,
+      "end": 1251,
+      "lecture_material": "No-slip/no-penetration, nondimensional Navier–Stokes, small viscosity and Prandtl's thin region",
+      "extension": "Complete pressure/time scales; distinguish gradient and curvature; derive laminar thickness order",
+      "construction": "Large derivative compensates small coefficient"
+    },
+    {
+      "anchor": "planar-rans",
+      "lesson": 22,
+      "start": 15,
+      "end": 707,
+      "lecture_material": "Thin layer geometry, stationary/spanwise homogeneous RANS expansion and mean continuity",
+      "extension": "Constant density does not imply isothermal; retain both normal and shear stress gradients",
+      "construction": "Full two-component equation pair with declared scope"
+    },
+    {
+      "anchor": "choose-scales",
+      "lesson": 22,
+      "start": 707,
+      "end": 1559,
+      "lecture_material": "Separate U_s and velocity-change delta U_s, streamwise/wall-normal lengths, turbulent scale and continuity normal velocity",
+      "extension": "Distinguish dimensional increments from derivatives; small-deficit regime versus whole no-slip layer; correlation assumption",
+      "construction": "Dimensionless aspect/deficit/intensity parameters"
+    },
+    {
+      "anchor": "term-ledger",
+      "lesson": 23,
+      "start": 15,
+      "end": 766,
+      "lecture_material": "Normalize both advective, viscous and stress-gradient terms by U_s delta U_s/L; dominant normal derivatives",
+      "extension": "Explicit six ratios and independent thin/high-Re conditions",
+      "construction": "Computed scale table for beta0.1 and1"
+    },
+    {
+      "anchor": "conditional-balance",
+      "lesson": 23,
+      "start": 766,
+      "end": 1173,
+      "lecture_material": "Conditional shear-stress balance and delta/L versus u²/(U_s delta U_s); turbulence intensity interpretation",
+      "extension": "Aspect ratio is not general growth derivative; q/Us versus squared intensity/deficit; pressure and correlation caveats",
+      "construction": "Correlation sensitivity and manufactured thickness derivative"
+    },
+    {
+      "anchor": "code",
+      "lesson": 23,
+      "start": 15,
+      "end": 1173,
+      "lecture_material": "Order estimates assembled from assumed scales",
+      "extension": "Actual executable ledger and laminar-versus-outer viscous crossover",
+      "construction": "Standard-library arithmetic checks and original regime figure"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://ntrs.nasa.gov/api/citations/19930090813/downloads/19930090813.pdf",
+      "title": "Prandtl: Motion of fluids with very little viscosity, NACA TM452",
+      "supports": "Printed pp4–5 (PDF pages6–7) on no-slip transition layer, large velocity differences despite small viscosity and reduced equations; text inspected, scanned historical formulas not adopted verbatim",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://flow.pha.jhu.edu/docs/README-isotropic.pdf",
+      "title": "Johns Hopkins Turbulence Databases: forced isotropic dataset",
+      "supports": "Page1 documents a periodic forced turbulent system as counterexample to universal wall/stratification requirement; no dataset analysis",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "article_words_including_math_code": 3672,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "worked_solutions": 8,
+  "executable_listings": 1,
+  "source_reading": "Complete normalized caption text read sequentially before drafting",
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "6cb5e3ec8eb3be86de075ff24d44a6c8c8fc54f6400f42041f5d676cef5a8a65",
+    "rounds": [
+      {
+        "round": 1,
+        "report_identifier": "ch08-r1.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "6cb5e3ec8eb3be86de075ff24d44a6c8c8fc54f6400f42041f5d676cef5a8a65",
+        "reviewer_id": "independent-course-peer",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      },
+      {
+        "round": 2,
+        "report_identifier": "ch08-r2.md",
+        "independent_of_author": true,
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "6cb5e3ec8eb3be86de075ff24d44a6c8c8fc54f6400f42041f5d676cef5a8a65",
+        "reviewer_id": "lead-coordinator",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      }
+    ],
+    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+  },
+  "limitations": [
+    "Complete captions21–23 read; no full audiovisual or board verification",
+    "Steady statistical planar attached thin-layer scaling, constant properties; no solution or transition/separation prediction",
+    "Weak velocity-deficit hierarchy applies to a selected outer region, not uniformly to a full no-slip profile",
+    "Pressure gradient and shear correlation must be separately assessed before claiming a dominant balance",
+    "Computed scales and plotted crossover are conditional estimates with no empirical boundary-layer validation"
+  ]
+}

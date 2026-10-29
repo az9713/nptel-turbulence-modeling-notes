@@ -1,0 +1,194 @@
+{
+  "chapter": 3,
+  "title": "3. Conservation laws and Newtonian closure",
+  "status": "Accepted in two independent scientific reviews",
+  "authored_body_sha256": "8d3788c61e44eeb4f9c2415a9e596897687cf5719cc36f20ea01371240647138",
+  "recordings": [
+    {
+      "playlist_position": 57,
+      "video_id": "z0XOWaoRHJg",
+      "title": "7. Navier Stokes: the governing equations - 2",
+      "lesson": 7,
+      "duration_seconds": 1450,
+      "url": "https://www.youtube.com/watch?v=z0XOWaoRHJg",
+      "chapter": 3,
+      "disposition": "Included in chapter 03; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 7,
+        "video_id": "z0XOWaoRHJg",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec07.vtt",
+        "path": "lecture-07.vtt",
+        "sha256": "343ce344552377d475ab44d7856b4c8bdd8a24ab6d141e39e9268c3a0ec0f065",
+        "segments": 134,
+        "last_cue_seconds": 1449.32,
+        "recording_duration": 1450,
+        "coverage_ratio": 0.9995310344827586,
+        "status": "acquired"
+      }
+    },
+    {
+      "playlist_position": 58,
+      "video_id": "MT4rrrUSa9k",
+      "title": "6. Navier Stokes: the governing equations - 1",
+      "lesson": 6,
+      "duration_seconds": 1210,
+      "url": "https://www.youtube.com/watch?v=MT4rrrUSa9k",
+      "chapter": 3,
+      "disposition": "Included in chapter 03; exact current body accepted in two independent scientific reviews",
+      "caption_evidence": {
+        "lesson": 6,
+        "video_id": "MT4rrrUSa9k",
+        "source_url": "https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/vtt/noc25_me96/112106453/Lec06.vtt",
+        "path": "lecture-06.vtt",
+        "sha256": "45aeb4b6a303f21b03dc8221a879c8f372bdf69dde15a8720be17068753621e7",
+        "segments": 120,
+        "last_cue_seconds": 1202.2,
+        "recording_duration": 1210,
+        "coverage_ratio": 0.9935537190082645,
+        "status": "acquired"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "anchor": "kinematics",
+      "lesson": 6,
+      "start": 15,
+      "end": 666,
+      "lecture_material": "Expanded curl/index practice; governing-equation orientation and mass/momentum/energy system",
+      "extension": "Particle chain rule and material acceleration",
+      "construction": "Linear shear and rigid-rotation comparison"
+    },
+    {
+      "anchor": "mass",
+      "lesson": 6,
+      "start": 666,
+      "end": 903,
+      "lecture_material": "Mass conservation, product expansion, constant density and incompressibility",
+      "extension": "Control-volume localization and material versus globally constant density",
+      "construction": "Translating density pattern and divergence-free deformation"
+    },
+    {
+      "anchor": "momentum",
+      "lesson": 6,
+      "start": 903,
+      "end": 1210,
+      "lecture_material": "Conservative momentum, product expansion and continuity cancellation",
+      "extension": "Current-area traction convention and control-volume derivation",
+      "construction": "Units and conservative/material-form identity"
+    },
+    {
+      "anchor": "symmetry",
+      "lesson": 7,
+      "start": 15,
+      "end": 420,
+      "lecture_material": "Three component equations, symmetric stress and equation counting",
+      "extension": "Nonpolar angular momentum supplies symmetry; count independent total stress rather than double-counting an isotropic split",
+      "construction": "Explicit epsilon/product-rule torque cancellation"
+    },
+    {
+      "anchor": "pressure",
+      "lesson": 7,
+      "start": 420,
+      "end": 488,
+      "lecture_material": "Pressure coupling through continuity/momentum and Poisson equation",
+      "extension": "Formal derivation placed after Newtonian closure because it needs that specified operator",
+      "construction": "Rigid rotation pressure and variable-viscosity limitation"
+    },
+    {
+      "anchor": "newtonian",
+      "lesson": 7,
+      "start": 488,
+      "end": 859,
+      "lecture_material": "Closure problem, Newtonian viscosity, strain rate and incompressible reduction",
+      "extension": "Constitutive versus balance assumptions; Stokes hypothesis separated from incompressible law",
+      "construction": "Exact Couette force/power and Poiseuille branch; kinetic-energy identity"
+    },
+    {
+      "anchor": "averaging",
+      "lesson": 7,
+      "start": 859,
+      "end": 1450,
+      "lecture_material": "Reynolds decomposition, ensemble average and fluctuating continuity",
+      "extension": "Explicit derivative interchange and exact finite-sample qualification inherited from chapter2",
+      "construction": "Bridge from molecular closure to statistical closure"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://solidmechanics.org/Text/Chapter2_4/Chapter2_4.php",
+      "title": "A. F. Bower: Applied Mechanics of Solids, section2.4",
+      "supports": "Sections2.4.1–2.4.3: current-coordinate mass, linear and angular momentum; normal-first stress indices translated before symmetry",
+      "accessed": "2026-10-28"
+    },
+    {
+      "url": "https://tmbwg.github.io/turbmodels/implementrans.html",
+      "title": "NASA/TMBWG: Implementing Turbulence Models into the Compressible RANS Equations",
+      "supports": "Molecular stress expression and explicitly stated incompressible reduction only",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "article_words_including_math_code": 3286,
+  "counting_method": "Whitespace tokens in exact authored article text, including math/code, excluding reader chrome",
+  "worked_solutions": 5,
+  "executable_listings": 1,
+  "source_reading": "Complete normalized caption text read sequentially before drafting",
+  "independent_review": {
+    "status": "accepted",
+    "accepted_body_sha256": "8d3788c61e44eeb4f9c2415a9e596897687cf5719cc36f20ea01371240647138",
+    "rounds": [
+      {
+        "round": 1,
+        "report_identifier": "ch03-r1.md",
+        "independent_of_author": true,
+        "kind": "Independent AI scientific review",
+        "reviewer_role": "Coordinating reviewer",
+        "body_sha256": "7846a344fe7e0bbe28fbcc58c71f364a717912b3bc421eb40b2fbfeb96057440",
+        "blocking": 0,
+        "major": 0,
+        "minor": 1,
+        "verdict": "Notation repair required",
+        "repair": "M1: preserve V_p consistently in three expressions",
+        "reviewer_id": "lead-coordinator",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": false
+      },
+      {
+        "round": 1,
+        "report_identifier": "ch03-r1-closure.md",
+        "independent_of_author": true,
+        "kind": "Original R1 reviewer repair closure",
+        "body_sha256": "8d3788c61e44eeb4f9c2415a9e596897687cf5719cc36f20ea01371240647138",
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "verdict": "R1 repair closed at current digest",
+        "reviewer_id": "lead-coordinator",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      },
+      {
+        "round": 2,
+        "report_identifier": "ch03-r2.md",
+        "independent_of_author": true,
+        "kind": "Independent AI scientific review",
+        "body_sha256": "8d3788c61e44eeb4f9c2415a9e596897687cf5719cc36f20ea01371240647138",
+        "blocking": 0,
+        "major": 0,
+        "minor": 0,
+        "verdict": "Accepted current digest",
+        "reviewer_id": "independent-course-peer",
+        "reviewer_identity_scope": "Actual coordinating reviewer versus separate course peer; neither authored this manuscript",
+        "accepted": true
+      }
+    ],
+    "scope": "Scientific manuscript only; no human expert certification, formal verification, full audiovisual review or publication acceptance"
+  },
+  "limitations": [
+    "Complete caption reading but no full audiovisual/board inspection",
+    "Constitutive model is incompressible Newtonian with constant properties",
+    "Exact parallel solutions are not transition or turbulence predictions",
+    "Pressure Poisson topic is introduced in source order, with its formal derivation deferred until the required closure is available",
+    "Thermal closure, independent couple stresses and non-Newtonian memory are outside this chapter"
+  ]
+}
