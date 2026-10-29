@@ -13,7 +13,7 @@ Exact scientific acceptance and release status are recorded in
 [the completion record](completion.json). Publication is complete only when the
 served completion and publication records pass the documented final checks.
 
-![Actual offline reader preview](assets/reader-preview.png)
+[![Actual offline reader preview](assets/reader-preview.png)](https://az9713.github.io/nptel-turbulence-modeling-notes/)
 
 - [Open the offline reader](index.html)
 - [Read the study route](book-overview.html)
