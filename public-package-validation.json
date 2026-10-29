@@ -491,7 +491,7 @@
     },
     {
       "path": "completion.json",
-      "sha256": "c09d26cca9fc3449ac8abdecd19c66072e59f934bffa62a707054c765b5b68c1"
+      "sha256": "f8a4f5af6e348c1dad61f67152acaa6375a74aefd5d471b418231bb1eaf450b9"
     },
     {
       "path": "content-inventory.json",
@@ -523,7 +523,7 @@
     },
     {
       "path": "publication-validation.json",
-      "sha256": "1362b091cb1f32842b4f14e85c16004000b9bd86c540d55e0c6788515c6a2c1c"
+      "sha256": "6398dce92b8002fe3bdead806421e9da5fea8184ef7cc15380aa17b9192af56a"
     },
     {
       "path": "reader-validation.json",
@@ -599,6 +599,6 @@
     }
   ],
   "self_hash_exclusion": "Only this audit report is excluded from its own inventory hashes",
-  "checked_at_utc": "2026-10-29T01:54:11.942976+00:00",
-  "record_snapshot_note": "Point-in-time prepublication audit. Validation-record hashes in this snapshot may advance during live proof; final publication report binds every final served payload except itself. Core inputs remain bound by source-free evidence."
+  "checked_at_utc": "2026-10-29T02:02:45.173512+00:00",
+  "record_snapshot_note": "Point-in-time local/prepublication audit. Live-proof records can subsequently advance; final publication report binds every final served payload except itself. Core inputs stay bound by committed source-free proof."
 }

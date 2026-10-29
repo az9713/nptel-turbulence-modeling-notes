@@ -1,10 +1,1655 @@
 {
-  "passed": false,
+  "passed": true,
   "final": false,
-  "status": "pending",
+  "status": "passed",
+  "checked_at_utc": "2026-10-29T01:58:04.095851+00:00",
   "base_url": "https://az9713.github.io/nptel-turbulence-modeling-notes/",
   "repository": "az9713/nptel-turbulence-modeling-notes",
-  "scope": "Bootstrap placeholder; no deployed files or reader behavior verified",
-  "payload_sha256": {},
-  "self_hash_exclusion": "publication-validation.json only; served presence still required"
+  "issues": [],
+  "self_hash_exclusion": "publication-validation.json only",
+  "scope": "All other payload bytes are compared exactly; own report HTTP/JSON is checked separately. A written report must be deployed and verified again.",
+  "payload_sha256": {
+    ".gitattributes": "4577d7019d082b6d1389e5a63ec9ab722216cedecdb01a9b9e31c8120fd87535",
+    ".gitignore": "fb7cacfc1761130a20e88e5c0e0bbba48f005e35b15c46f69b554ab01a46c8f6",
+    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "LICENSE": "3f7eddc476e04771f20e70bd0219aa13b0f6a4828bf20523826fa358aae92fea",
+    "README.md": "f03a174462aa0547671bc0763aa0bf62e5dad74a4918d3205cfcc0b8d5723813",
+    "THIRD-PARTY.md": "c6d54392169a53881df8b62c5dd621b7a216c289486e5f53024e435f14d9db53",
+    "WORKFLOW.md": "ba5fd587096de48b48514beeef546083f1aafffc3f03758d960d904f7da48642",
+    "assets/book.css": "e77f3e838f0cdca7e733a6ec1808105b0c6c9a983b046594138c5ac2752182bb",
+    "assets/book.js": "e31d522b88712b15eddb3323de2c325a4e1ff1bf77bf0cde74f021809d2bae4f",
+    "assets/ch05-dissipation.svg": "a22437678858d53f28c188e2aaf56fac4a84f19a86ecfb3145cd3637a2232641",
+    "assets/ch07-energy-decay.svg": "5d0910d863ba3c8a7cb4aefc1d32cdc91c3d05085d0d0d86ee2f382a2181d34a",
+    "assets/ch08-viscous-crossover.svg": "82ee62d9ecc8cf992fada6e46656611ab9b2b6387a6dab540a00541008abd7c6",
+    "assets/ch09-stress-partition.svg": "b27d7a7f98a484b5f61053c0655451d8451103557bd93acce067afe432faa013",
+    "assets/ch10-covariance-diagnostics.svg": "072bf91de20c53c2fdd63d908057343eee3d1d475d69ef9593b8fc523ec2da64",
+    "assets/ch11-decay-calibration.svg": "b7d387c561c3c65743895ac898d6919d210de0e49171c1cbe5ffcfde91f4d629",
+    "assets/ch12-response-and-wall-time.svg": "601cfcca42abf244994ac9819b9e1b91fd78bb32a3d7f8e8b0d7c769fa74bd8c",
+    "assets/ch15-covariance-and-source.svg": "05db8eab2f5216756cf9736433eb9fa090ae0f2cd2876efea85ee6733111252b",
+    "assets/ch17-pressure-and-return.svg": "5b3bd1d8b0a732a80c8fa09b072c5a77138139296261e91759a660701fb62dd4",
+    "assets/ch18-scales-and-domain.svg": "d6ab280ad2729a7a712b1d4b27de6a6e91083971a3c2da55df27f643cdbf01a9",
+    "assets/ch20-filter-families.svg": "8208d79a813b641f6147dfa8bfdd8f173d64337494b9f8215636df25b3e23ef4",
+    "assets/input/tex/extensions/boldsymbol.js": "d6771fee0772db2657796c8d0e20e1878bb3237f6d3ed1e828e1834a4ff743ca",
+    "assets/input/tex/extensions/cancel.js": "0d263ecf2671d1cc13135b8b4afcdca4d40151a9aea51b69402e68adde4cf8c9",
+    "assets/input/tex/extensions/mathtools.js": "04272d69a0b64783cd5b66820d6f8220ee510409d0b12c38626404be9ed9689c",
+    "assets/lab.js": "2b235a68f41da2b9055347461250306fb0df580db629565d5d5cc5ec38a76900",
+    "assets/mathjax-LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "assets/mathjax-tex-svg.js": "d4295dc33744836935c1399feece5159577b34c5c8ffb9f1c6324cd82e03a882",
+    "assets/reader-preview.png": "c4ccd5de1896db6034a2ec2ad9d372ed61dc16dc2eeef448ad231c50b0351d55",
+    "book-overview.html": "b61a330cde53063335fc818a2e1d54671652a1ef59b021f522faa1c78744e943",
+    "book-overview.meta.json": "7d399b5cf995beee42449dd378aa9e314caada2073fc3b26a1df6e91bf037659",
+    "chapter-01-prediction-and-turbulent-motion.html": "fcb8121590e250ce247decdfb2763cd4460bfbd609424de0603cc0fcbc7d6d85",
+    "chapter-01-prediction-and-turbulent-motion.meta.json": "845f6e4a94ad1b83c5738884c7cd42633d7e667540125303ab19a1cb931eee49",
+    "chapter-02-statistics-sampling-and-tensors.html": "e235c93f1c7db359061fd38c1f67513e9c221ed4a12e9d2f91b2f3bf9146c8d7",
+    "chapter-02-statistics-sampling-and-tensors.meta.json": "06015ab65fca0c9c88e393e763ba3795c0a747c6df384a7935227740f6b0446d",
+    "chapter-03-conservation-and-newtonian-closure.html": "e1fb406237ed7943b4a06e5f696ef782c67aa05a645ec021f5a0ec799cec6fd7",
+    "chapter-03-conservation-and-newtonian-closure.meta.json": "fc95f97394506e6351b42418eeaab6addde8c4b7d631c85b9ba198e735d1818a",
+    "chapter-04-mean-momentum-and-closure.html": "e4ac98851e00f6e1dae26e709370fdfa787d5723397c695fbc0b1d02143243cb",
+    "chapter-04-mean-momentum-and-closure.meta.json": "6a95bd5bf6b0fda2f8d35ffb6280ee01d684eeb49aa057fd45f00dd6bddee5ac",
+    "chapter-05-exact-reynolds-stress-transport.html": "89585f465e5420b9bf3a9be42ff29d47d6759010c54c1aa4d80da7c11e767c59",
+    "chapter-05-exact-reynolds-stress-transport.meta.json": "528ef3c1dc99378ed6750c4a8ab463d4b381ad12d3db6bea225bef99ffa476e0",
+    "chapter-06-stationarity-homogeneity-and-redistribution.html": "8f38629aec81ffdd79c222c2b548ee0281d45a57822a3c9f7d14943560cdc640",
+    "chapter-06-stationarity-homogeneity-and-redistribution.meta.json": "6b300075c6f3fbb45e9aed6692638230f7e82216f86f56f7a9db3b6da9992a0e",
+    "chapter-07-turbulent-and-mean-energy-budgets.html": "67036409a739cd4d3336546a5099151ca8fa1e44407caa765f5660a73c9e201a",
+    "chapter-07-turbulent-and-mean-energy-budgets.meta.json": "99a2c962a1b75f6cd90f8e664da101fe76ae3deb52bdeb84cd367c9d7058c2f2",
+    "chapter-08-thin-boundary-layers-and-outer-scaling.html": "641cddaa7436e8f42c3f2e232533e504cded84b3345b286acfe0d4eebc25de97",
+    "chapter-08-thin-boundary-layers-and-outer-scaling.meta.json": "b13dde6be86fe14d6319cb8f29ee80af168ae37c4c00e75dd1ccc73d8c52d465",
+    "chapter-09-inner-scaling-and-friction-velocity.html": "50ef4f15b314044366f3f2273d9d275f000ff6c3d7512048d4b1a6c296e74834",
+    "chapter-09-inner-scaling-and-friction-velocity.meta.json": "66d4e3465de3bf8e94ac207ff1b11444398284b9dbd74df7ec3eaee6e39dad93",
+    "chapter-10-eddy-viscosity-and-mixing-length.html": "cf40e1de9bd22248ffcd558c853832a130700151910f39bd13f31332c420eaab",
+    "chapter-10-eddy-viscosity-and-mixing-length.meta.json": "a828b92b00592794d56206bb74b127ff4fcec88c8d386cc2f98c6368cac49605",
+    "chapter-11-constructing-k-epsilon-and-calibration.html": "0eaae1e6d9dc5ef3e9819e6b43f1db2ac03c125281a947a109ccd39594ec12f2",
+    "chapter-11-constructing-k-epsilon-and-calibration.meta.json": "050474ed5961a6ed79421107c1ada85c9475d027d79f7d53744a4ee7a174918e",
+    "chapter-12-calibration-and-alternative-time-scales.html": "4a0113cec293396be0d0ea96470ab68cad3c385fbfa66e3791d707b199137d15",
+    "chapter-12-calibration-and-alternative-time-scales.meta.json": "063b8ecef74424c07a43945d1369aa284c250b8cf1f7bd2a7aa8322765bfab9f",
+    "chapter-13-wall-functions-and-smooth-wall-limits.html": "cc128b7763d8d113367412bf4320bbc9f41a5dffd5bcf48d659c6cd467c01806",
+    "chapter-13-wall-functions-and-smooth-wall-limits.meta.json": "7f0e1466d169e60323222df010ad5d8aaddfd95dca670d975e72c88b11c37691",
+    "chapter-14-near-wall-corrections-and-boundary-data.html": "4c105290c5f13b07ffb97d0b8dd738148fc4ce74b2e9a1d8886f52846c782354",
+    "chapter-14-near-wall-corrections-and-boundary-data.meta.json": "34362bb6f84331d5cc52a356fd7cd0c12f116d61bef6f737056b9a34f9408561",
+    "chapter-15-realizability-and-production-corrections.html": "61f4a5945bc56f039378a861c681f36c103a5cbc222fe958766e3c5cb10e13b7",
+    "chapter-15-realizability-and-production-corrections.meta.json": "4b3df05bec85b66e49262c8168a9eab5b2f0e47402ccb269f3629a9812a14dc6",
+    "chapter-16-reynolds-stress-transport-closure.html": "e92347226a6d33fa0f1bd8cf02d7cd9fb9432c1ac92135bad44e1fcb3bd71f84",
+    "chapter-16-reynolds-stress-transport-closure.meta.json": "933f676b69ad40319f520a9ffaf9174dc5c86405d9a0f548c36b6a4b939eebb8",
+    "chapter-17-pressure-redistribution-and-wall-models.html": "a08138791795950d32062644c4357aca4e73c6b7889503c64467f7416f284a42",
+    "chapter-17-pressure-redistribution-and-wall-models.meta.json": "e57a887e57a13406d5a9c15663ea3f2af5123171ed81a7cdc7a03cfdf63385bd",
+    "chapter-18-scales-cascades-and-direct-simulation.html": "a58a6af86dc1421e4839dfd36821159c5fabb28946c0e9ac202520ffe8125067",
+    "chapter-18-scales-cascades-and-direct-simulation.meta.json": "02db3bc968a37b895dd22e6cf7040568d638aa08b4d908a23a28fca2a7d7906e",
+    "chapter-19-filtered-equations-and-the-les-closure.html": "4490d8740f47409824f7799adce9f3fc1b571df2a6c4ae93c4938cfb019335c0",
+    "chapter-19-filtered-equations-and-the-les-closure.meta.json": "9b81134e8fe0b0b04e66387f445028c98d316fe2fb51bdf1c3ea21b394b4e420",
+    "chapter-20-filter-families-and-subgrid-viscosity.html": "c455b4ea2b33e739d8a750ee1191d2b81efca3896a31221e9b2e7b6aead7be95",
+    "chapter-20-filter-families-and-subgrid-viscosity.meta.json": "5a1317ebe5f4705c9e87580806973426fd6f79bb47a516232f744ae9d793abdc",
+    "chapter-21-wall-limits-energy-memory-and-test-filtering.html": "84c8c32bfc5ed7f6b45f15e484ce3566120fa51203df35791edf215ce74803b8",
+    "chapter-21-wall-limits-energy-memory-and-test-filtering.meta.json": "b01cd755f156f1a71243dfc069a474a5b89596d07f408a1da56825a4c98103e7",
+    "chapter-22-dynamic-fitting-and-scale-similarity.html": "7b51e189c1c7d39134ff86d90e343bb81e5f4f3202d49c41c183456f8a2bd9e6",
+    "chapter-22-dynamic-fitting-and-scale-similarity.meta.json": "03d790a9a6b5d325b29e79636300a4a3f11fb0820eab16d8449010bf13d95dd3",
+    "chapter-23-les-numerics-and-hybrid-interfaces.html": "dad4b241d54f13fa594eb3c178bc50f88f3e01b478b5054fb1562a58004f1349",
+    "chapter-23-les-numerics-and-hybrid-interfaces.meta.json": "944286ee24572d12bba669f86193fe2aa45651b1d5e8679b241e6a5d41cc2cf9",
+    "chapter-24-live-session-model-choice-and-evidence.html": "b25d48d94332077760f8f20e15e11a3ec7291e8d4f99febcc8797510f0855bf9",
+    "chapter-24-live-session-model-choice-and-evidence.meta.json": "ec98008a6290e979b290985fa12535f9516c16f47fd0e0ddf18745a0f5bae589",
+    "chapter-25-live-session-from-equation-to-evidence.html": "62e0024e8167c6dcf9d6ad02a7248a928afe1ad03cf7ddeb54b19ec8463c046f",
+    "chapter-25-live-session-from-equation-to-evidence.meta.json": "b68ed082f5cf9bec2d2c7cfb58e78fb2bd0220a6b57fd22e7806dcad437fda96",
+    "chapter-code-validation.json": "928bd7eecbe438e41ee824dfc2bd5c5ad67692e610f6aeb754f108b7bd78cc07",
+    "code/ch01_prediction.py": "f116c88aeb8e18ddcf8d67ce455fd91456d2b09a095f1f65c636351c69ffb731",
+    "code/ch02_statistics.py": "666ffcea207091d9c18cafc68006482a98babec50453dba1a25cd967d69c0a91",
+    "code/ch03_conservation.py": "9de279130bec71aa2da93c3c2617f1a419831506d1b2f86dc37ae3a5d2f18cd3",
+    "code/ch04_closure.py": "5673210454c1dfd74d03c05220c504e1ace900230d46532c8d04d29a561a9ba6",
+    "code/ch05_stress_budget.py": "7a4632ebe5696066b2f30934e8031363bea876a58580bed49f58f224ee9a4a9e",
+    "code/ch06_redistribution.py": "51ff8c59c49e389f25c69258de513a6f66faf64b1b06e7e003c6fb45b0763fe4",
+    "code/ch07_energy.py": "a33977c2900c642f800fab3d62ff71cc6c22cfe3f1519e1afdd32f4d8b21e850",
+    "code/ch08_scaling.py": "fab16d947dd9926b5c2f0437c2f176816234e205c69e039290d3f5a0da53c549",
+    "code/ch09_wall_units.py": "083c86aa60c37e853d351750e3799cdaa7e33a64b8d8f6152ec7e2b6719732bf",
+    "code/ch10_eddy_viscosity.py": "e403b1c27a1cf90f02fa6fc881141f139643a3af492eac5b9bf4e35f22994842",
+    "code/ch11_kepsilon.py": "8a7114c423d0e07c3d4d35ad0e4058beedbe1c0635be39e481e228c29fd501f4",
+    "code/ch12_alternative_scales.py": "b60a59f5329c91a7cf6f712590806ee967b1b7051ca2a76f3a77fe06c2509aea",
+    "code/ch13_wall_treatment.py": "7c6961f842ea4005553ba6414449c18b6621a709f9b33b812c473a195c66d79d",
+    "code/ch14_boundary_and_inflow.py": "bcfb3f3c3ece096e8a3707bb00aec6bc60c40a79bdec249e47d29d52ca58d3f0",
+    "code/ch15_realizability.py": "891f0a0d2e889fbca5c403027eb07979e49ad70edf473f0f61f39352532df880",
+    "code/ch16_stress_transport.py": "1c5b108b1e754d94f7dcd8b633800e20ed2ed19bedd49c9064213c355618ffa2",
+    "code/ch17_pressure_and_redistribution.py": "371120550883557dee02697cf6f1d5ebfeb463139e253aa99aa7ed59115bb791",
+    "code/ch18_scales_and_dns.py": "55317ea24e5876b57f26613a6265db9a80d4b56ab25194cd2221b868ff4b7b03",
+    "code/ch19_filtering.py": "4a7925bb7475559f97e76faa7801e14e98fd5e58db2cbe01df5767117dbadaa8",
+    "code/ch20_filters_and_smagorinsky.py": "b52e8427828c586d031e8723ae20f206917da5ef37453a4690b82973c8a98b99",
+    "code/ch21_energy_and_test_filter.py": "9107e33995a97843e9f74688fede21636f7458a463cd6fc0a7d51ef6741b2be1",
+    "code/ch22_dynamic_and_similarity.py": "00001926bfdf40365c12837f6f8ee224216f823845954f2394b91747740b4668",
+    "code/ch23_numerics_and_hybrid.py": "7a5eed68820afaf7471ff00a595baecb9427e9f54f10d2a33b0fdee95b5125bd",
+    "code/ch24_model_choice.py": "f692bb44a5d2e1f21fe228569f2ae1e74e28a5edd2b3e0c1b465caf507198711",
+    "code/ch25_from_equation_to_solver.py": "f36edca1a81a7b22c890262108df6190e7fd2a1caffc7af3a7d156aa5615af44",
+    "code/plot_ch05.py": "58b787fcd0a0fbe740be1508987ea13f5d1486337432d8607cc80b1d313deaa2",
+    "code/plot_ch07.py": "659aa7f686d147fafc3870d2a0bca290323dabc43eec692b9bc1f0415aa902e7",
+    "code/plot_ch08.py": "227b121ff85290f9360d04e0a05e913461666362fac5d577d7f1b7145b6164f9",
+    "code/plot_ch09.py": "70990bea6ec42a39c6f969b532b4a0464f2d1ccc791719999ab0f9dc16be865d",
+    "code/plot_ch10.py": "76b90990a49041232a2cde22a2c271aeeb2743e2b5a939d5eeacf22a8124647d",
+    "code/plot_ch11.py": "65d22ca8bd8a6c6c619b5c1f019ff89151e7e47407d04d47c34875a75bda8948",
+    "code/plot_ch12.py": "fb170483d54a3b87f213a7273adb361ecc678d1a3a21fafa10f7f721711385ce",
+    "code/plot_ch15.py": "6028bd85ff2a3de595e7c830b643e65431a27dbb799df66dec9f33bd6dec5a02",
+    "code/plot_ch17.py": "0581328967bcfa522e6944f70d764d190a86526fa408c9269671d156f60502f2",
+    "completion.json": "d52c70d240a16d97524744b5251385aaf3959013e710cac177f514dbdb1cf289",
+    "content-inventory.json": "40110160e3ce802289d7ec2096381553b72c449226d97013d19f91fc28268824",
+    "course-review.json": "7cdf8f579227d2992a3db6fded960cb39edb9db231246b8591886dd4734cb17b",
+    "editorial-review-summary.json": "01609ba3d36bdb94dcdb850d3f6009a52b1c0b3e45cd1f57ff26ec1a147aea40",
+    "external-link-validation.json": "2f0bd8efefce2f044f81107080e7db3d2172418f125f89f437bc0ef0389bb7b2",
+    "index.html": "53bea04770e9bb061cc2611eb672f8a7efaaa6ead590051838edf2f0cb0e3976",
+    "numerical-lab.html": "4e4519fa489e12202ff8866506f077b149133f8452505e66e6b5ffe70ed11dc1",
+    "package-validation.json": "88bb69f17d03489b8bebac09229a879e412b5293c29f1f726b4da37050a6952f",
+    "public-package-validation.json": "811f865b0add217cb1f5cb87d7f0f3f93507cbab22100f65504d94fa8b4f486e",
+    "reader-validation.json": "d45a049f85f32abfcf271aa02daaf98750e29410a928aa3c7941fc8afe3c004f",
+    "references.html": "90a9c8085a9cf011c1cd424b6cd6580aa069f31671b848ae253e93f51c6debdd",
+    "requirements.txt": "d44188079c812ab1da909bdfa1bb332bfd9a4a3de35932256a9945d3002795ea",
+    "source-free-validation.json": "da79046dc343501cab663ca0997e4cff8dca6077c6e073ef4f74124955922dc0",
+    "source-manifest.json": "31e8c8d484423cde38a089a2701887f96f8c979eed1da431de31fd4d026f43ec",
+    "source-map.html": "e155d37ce2d78ada2693fd2fc3392c938beefc3e9561410fc399dc0c84658377",
+    "source-map.json": "859e185548a2269aadd2af8d5b87198591c40c7c494bcc8afc641c74f71878cb",
+    "source-validation-summary.json": "712cb5585a29b308e5c97abb0606492d38b14090ab7488bba2b3a600a33bbca1",
+    "tools/audit_public.py": "7fb8c7329ab010b896de0758cbf8c09bc6a7ceea4e1ce4bdef95d5cfb29f4e1c",
+    "tools/browser_check.py": "00e28a93e6cbd069015052c366f7c81367163e782e686ae0dbc5fe1cd2d070c5",
+    "tools/build_book.py": "8a585381f152c50899645a3b9d0e9de103b6e2f05a77cd24918444a21e55021c",
+    "tools/check_code.py": "96e1d666ac4ab38555e86d3715916dea19e288aa0777267347260c34dc401ee4",
+    "tools/check_package.py": "5c597b2f4a4c16b936fe5ad691b7fb0b5c7aafbf4f3731b5177d971b4eedeb68",
+    "tools/inspect_sources.py": "c9e6ab8232d033648c0c5f5297e8bd775c87a58db083e145ce3d0b7eb2604bae",
+    "tools/public_files.py": "c3db791ec91fbda3fa5e50337149fa8bb2519d88dbaaff3f2065abf9295dd1c2",
+    "tools/validate_book.py": "f8ed147c09dcbaf3a3fd938c95c5909284e9cb5069b549628df9729365e6c65e",
+    "tools/verify_publication.py": "f1cfdbc9b099afdeb4b2656c8022a7b401d7e33feced3d08b44704778ea25942",
+    "tools/verify_source_free.py": "e27e63c355432665d7a4dfb940ce901bf0f6d063f4ed6dafcf7d7e2e9fb48106"
+  },
+  "chapter_hashes": {
+    "chapter-01-prediction-and-turbulent-motion.html": "3d50593553155bf87cd9a9ce79128c469aed2b2fd8fb34790907f1ede582861d",
+    "chapter-02-statistics-sampling-and-tensors.html": "96af444952a4cab3ad4d12eed4487df800ef5f97a5f7dee8615ae4286a7b63ba",
+    "chapter-03-conservation-and-newtonian-closure.html": "8d3788c61e44eeb4f9c2415a9e596897687cf5719cc36f20ea01371240647138",
+    "chapter-04-mean-momentum-and-closure.html": "00480a9d4c4d9020aaf99674e14f6fbd677e132927c3729f95281befa6d609d5",
+    "chapter-05-exact-reynolds-stress-transport.html": "593c5b9deda629c0f558bcd40136785be4b065527ffed20a0ce475a13fa48287",
+    "chapter-06-stationarity-homogeneity-and-redistribution.html": "115f5eb6953defa6abd75b866f9cf39b76c61e0941bb154add9a228ee255887e",
+    "chapter-07-turbulent-and-mean-energy-budgets.html": "66aaaada380347ea5b0f54d471ad261900af0b5f5f1513b17c4d67551bfa5a3d",
+    "chapter-08-thin-boundary-layers-and-outer-scaling.html": "6cb5e3ec8eb3be86de075ff24d44a6c8c8fc54f6400f42041f5d676cef5a8a65",
+    "chapter-09-inner-scaling-and-friction-velocity.html": "1b30386fdb984eac569460c14a4f95baa62cd43c84c919ba41f19e213d620377",
+    "chapter-10-eddy-viscosity-and-mixing-length.html": "8e6544cde15544af235e04d8a06c4efe799e7eee294b442a805e6e8ea0ecfbe6",
+    "chapter-11-constructing-k-epsilon-and-calibration.html": "b82749ed8fcc96a38c14a93458e9e99cc36999c9ba9e95058c32ae58a7440321",
+    "chapter-12-calibration-and-alternative-time-scales.html": "852ad756c402e55984ca8caf772c8ba6419e9699d4f89505de43c844621e69bb",
+    "chapter-13-wall-functions-and-smooth-wall-limits.html": "acd18ac235ad0243f67fd8df4ed09085c77d2e91c8dc8578ef32988eb8e5e365",
+    "chapter-14-near-wall-corrections-and-boundary-data.html": "4f39e7f497fbcb2e83cb3e9c5f75fecfdc73f542a93e4749e22d8c4ade91a13f",
+    "chapter-15-realizability-and-production-corrections.html": "0bac19cf7521c8ddcd4d9f785dea766c855c4a88122072448ee25d345975f27a",
+    "chapter-16-reynolds-stress-transport-closure.html": "a6113c2262ec8b81db1080982a82850502221917f0d85396748ed3ea4d6054c3",
+    "chapter-17-pressure-redistribution-and-wall-models.html": "7457dcb0e5b0b5550d9e6cb515a762e8f9cf695f79b8e42963b4baafa7f16bcf",
+    "chapter-18-scales-cascades-and-direct-simulation.html": "90c6376ae2fdff85566c9f640f65de6efd3adc8a94d76ce810b58aecf406cdf0",
+    "chapter-19-filtered-equations-and-the-les-closure.html": "ea22bd6488c53c6a5798ff012f436700ca1d381779fa259ac6aaa40642477d44",
+    "chapter-20-filter-families-and-subgrid-viscosity.html": "e4aa1c157ea0ebb996d40f763da61e6c85ac171b6dbb46ad01c2e9be17de2b50",
+    "chapter-21-wall-limits-energy-memory-and-test-filtering.html": "dc16ad13bbd91b78fd1518f10cc2ea3494acf4e6ab23b0aa41cb6f9210282003",
+    "chapter-22-dynamic-fitting-and-scale-similarity.html": "65986a55be6795f9a03641429209fc2648f492ba79e7dfbfc14a1e95041ee704",
+    "chapter-23-les-numerics-and-hybrid-interfaces.html": "7803dbdf62c22f242e34e1ee2919c47f727d32c81b62a24cca9efbc772ce30ef",
+    "chapter-24-live-session-model-choice-and-evidence.html": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
+    "chapter-25-live-session-from-equation-to-evidence.html": "d68729670d0967b50f516c94a3d7726ff2044e71118082335d2a014e3740b188"
+  },
+  "payload_checks": [
+    {
+      "path": ".gitattributes",
+      "http_status": 200,
+      "bytes": 55,
+      "matches": true
+    },
+    {
+      "path": ".gitignore",
+      "http_status": 200,
+      "bytes": 89,
+      "matches": true
+    },
+    {
+      "path": ".nojekyll",
+      "http_status": 200,
+      "bytes": 0,
+      "matches": true
+    },
+    {
+      "path": "LICENSE",
+      "http_status": 200,
+      "bytes": 1063,
+      "matches": true
+    },
+    {
+      "path": "README.md",
+      "http_status": 200,
+      "bytes": 3325,
+      "matches": true
+    },
+    {
+      "path": "THIRD-PARTY.md",
+      "http_status": 200,
+      "bytes": 675,
+      "matches": true
+    },
+    {
+      "path": "WORKFLOW.md",
+      "http_status": 200,
+      "bytes": 5713,
+      "matches": true
+    },
+    {
+      "path": "assets/book.css",
+      "http_status": 200,
+      "bytes": 6230,
+      "matches": true
+    },
+    {
+      "path": "assets/book.js",
+      "http_status": 200,
+      "bytes": 4250,
+      "matches": true
+    },
+    {
+      "path": "assets/ch05-dissipation.svg",
+      "http_status": 200,
+      "bytes": 37407,
+      "matches": true
+    },
+    {
+      "path": "assets/ch07-energy-decay.svg",
+      "http_status": 200,
+      "bytes": 40424,
+      "matches": true
+    },
+    {
+      "path": "assets/ch08-viscous-crossover.svg",
+      "http_status": 200,
+      "bytes": 80719,
+      "matches": true
+    },
+    {
+      "path": "assets/ch09-stress-partition.svg",
+      "http_status": 200,
+      "bytes": 53408,
+      "matches": true
+    },
+    {
+      "path": "assets/ch10-covariance-diagnostics.svg",
+      "http_status": 200,
+      "bytes": 47812,
+      "matches": true
+    },
+    {
+      "path": "assets/ch11-decay-calibration.svg",
+      "http_status": 200,
+      "bytes": 42751,
+      "matches": true
+    },
+    {
+      "path": "assets/ch12-response-and-wall-time.svg",
+      "http_status": 200,
+      "bytes": 31493,
+      "matches": true
+    },
+    {
+      "path": "assets/ch15-covariance-and-source.svg",
+      "http_status": 200,
+      "bytes": 33906,
+      "matches": true
+    },
+    {
+      "path": "assets/ch17-pressure-and-return.svg",
+      "http_status": 200,
+      "bytes": 2819201,
+      "matches": true
+    },
+    {
+      "path": "assets/ch18-scales-and-domain.svg",
+      "http_status": 200,
+      "bytes": 40512,
+      "matches": true
+    },
+    {
+      "path": "assets/ch20-filter-families.svg",
+      "http_status": 200,
+      "bytes": 41964,
+      "matches": true
+    },
+    {
+      "path": "assets/input/tex/extensions/boldsymbol.js",
+      "http_status": 200,
+      "bytes": 4056,
+      "matches": true
+    },
+    {
+      "path": "assets/input/tex/extensions/cancel.js",
+      "http_status": 200,
+      "bytes": 3326,
+      "matches": true
+    },
+    {
+      "path": "assets/input/tex/extensions/mathtools.js",
+      "http_status": 200,
+      "bytes": 31845,
+      "matches": true
+    },
+    {
+      "path": "assets/lab.js",
+      "http_status": 200,
+      "bytes": 2638,
+      "matches": true
+    },
+    {
+      "path": "assets/mathjax-LICENSE",
+      "http_status": 200,
+      "bytes": 11358,
+      "matches": true
+    },
+    {
+      "path": "assets/mathjax-tex-svg.js",
+      "http_status": 200,
+      "bytes": 2108580,
+      "matches": true
+    },
+    {
+      "path": "assets/reader-preview.png",
+      "http_status": 200,
+      "bytes": 160634,
+      "matches": true
+    },
+    {
+      "path": "book-overview.html",
+      "http_status": 200,
+      "bytes": 7137,
+      "matches": true
+    },
+    {
+      "path": "book-overview.meta.json",
+      "http_status": 200,
+      "bytes": 1825,
+      "matches": true
+    },
+    {
+      "path": "chapter-01-prediction-and-turbulent-motion.html",
+      "http_status": 200,
+      "bytes": 30027,
+      "matches": true
+    },
+    {
+      "path": "chapter-01-prediction-and-turbulent-motion.meta.json",
+      "http_status": 200,
+      "bytes": 6605,
+      "matches": true
+    },
+    {
+      "path": "chapter-02-statistics-sampling-and-tensors.html",
+      "http_status": 200,
+      "bytes": 42157,
+      "matches": true
+    },
+    {
+      "path": "chapter-02-statistics-sampling-and-tensors.meta.json",
+      "http_status": 200,
+      "bytes": 10459,
+      "matches": true
+    },
+    {
+      "path": "chapter-03-conservation-and-newtonian-closure.html",
+      "http_status": 200,
+      "bytes": 30166,
+      "matches": true
+    },
+    {
+      "path": "chapter-03-conservation-and-newtonian-closure.meta.json",
+      "http_status": 200,
+      "bytes": 8431,
+      "matches": true
+    },
+    {
+      "path": "chapter-04-mean-momentum-and-closure.html",
+      "http_status": 200,
+      "bytes": 41906,
+      "matches": true
+    },
+    {
+      "path": "chapter-04-mean-momentum-and-closure.meta.json",
+      "http_status": 200,
+      "bytes": 10013,
+      "matches": true
+    },
+    {
+      "path": "chapter-05-exact-reynolds-stress-transport.html",
+      "http_status": 200,
+      "bytes": 32319,
+      "matches": true
+    },
+    {
+      "path": "chapter-05-exact-reynolds-stress-transport.meta.json",
+      "http_status": 200,
+      "bytes": 7317,
+      "matches": true
+    },
+    {
+      "path": "chapter-06-stationarity-homogeneity-and-redistribution.html",
+      "http_status": 200,
+      "bytes": 39086,
+      "matches": true
+    },
+    {
+      "path": "chapter-06-stationarity-homogeneity-and-redistribution.meta.json",
+      "http_status": 200,
+      "bytes": 10388,
+      "matches": true
+    },
+    {
+      "path": "chapter-07-turbulent-and-mean-energy-budgets.html",
+      "http_status": 200,
+      "bytes": 35794,
+      "matches": true
+    },
+    {
+      "path": "chapter-07-turbulent-and-mean-energy-budgets.meta.json",
+      "http_status": 200,
+      "bytes": 9232,
+      "matches": true
+    },
+    {
+      "path": "chapter-08-thin-boundary-layers-and-outer-scaling.html",
+      "http_status": 200,
+      "bytes": 34200,
+      "matches": true
+    },
+    {
+      "path": "chapter-08-thin-boundary-layers-and-outer-scaling.meta.json",
+      "http_status": 200,
+      "bytes": 9046,
+      "matches": true
+    },
+    {
+      "path": "chapter-09-inner-scaling-and-friction-velocity.html",
+      "http_status": 200,
+      "bytes": 33941,
+      "matches": true
+    },
+    {
+      "path": "chapter-09-inner-scaling-and-friction-velocity.meta.json",
+      "http_status": 200,
+      "bytes": 9931,
+      "matches": true
+    },
+    {
+      "path": "chapter-10-eddy-viscosity-and-mixing-length.html",
+      "http_status": 200,
+      "bytes": 35131,
+      "matches": true
+    },
+    {
+      "path": "chapter-10-eddy-viscosity-and-mixing-length.meta.json",
+      "http_status": 200,
+      "bytes": 10212,
+      "matches": true
+    },
+    {
+      "path": "chapter-11-constructing-k-epsilon-and-calibration.html",
+      "http_status": 200,
+      "bytes": 33920,
+      "matches": true
+    },
+    {
+      "path": "chapter-11-constructing-k-epsilon-and-calibration.meta.json",
+      "http_status": 200,
+      "bytes": 10928,
+      "matches": true
+    },
+    {
+      "path": "chapter-12-calibration-and-alternative-time-scales.html",
+      "http_status": 200,
+      "bytes": 38635,
+      "matches": true
+    },
+    {
+      "path": "chapter-12-calibration-and-alternative-time-scales.meta.json",
+      "http_status": 200,
+      "bytes": 10953,
+      "matches": true
+    },
+    {
+      "path": "chapter-13-wall-functions-and-smooth-wall-limits.html",
+      "http_status": 200,
+      "bytes": 34356,
+      "matches": true
+    },
+    {
+      "path": "chapter-13-wall-functions-and-smooth-wall-limits.meta.json",
+      "http_status": 200,
+      "bytes": 10281,
+      "matches": true
+    },
+    {
+      "path": "chapter-14-near-wall-corrections-and-boundary-data.html",
+      "http_status": 200,
+      "bytes": 33010,
+      "matches": true
+    },
+    {
+      "path": "chapter-14-near-wall-corrections-and-boundary-data.meta.json",
+      "http_status": 200,
+      "bytes": 11261,
+      "matches": true
+    },
+    {
+      "path": "chapter-15-realizability-and-production-corrections.html",
+      "http_status": 200,
+      "bytes": 32663,
+      "matches": true
+    },
+    {
+      "path": "chapter-15-realizability-and-production-corrections.meta.json",
+      "http_status": 200,
+      "bytes": 11076,
+      "matches": true
+    },
+    {
+      "path": "chapter-16-reynolds-stress-transport-closure.html",
+      "http_status": 200,
+      "bytes": 30997,
+      "matches": true
+    },
+    {
+      "path": "chapter-16-reynolds-stress-transport-closure.meta.json",
+      "http_status": 200,
+      "bytes": 9324,
+      "matches": true
+    },
+    {
+      "path": "chapter-17-pressure-redistribution-and-wall-models.html",
+      "http_status": 200,
+      "bytes": 38591,
+      "matches": true
+    },
+    {
+      "path": "chapter-17-pressure-redistribution-and-wall-models.meta.json",
+      "http_status": 200,
+      "bytes": 12909,
+      "matches": true
+    },
+    {
+      "path": "chapter-18-scales-cascades-and-direct-simulation.html",
+      "http_status": 200,
+      "bytes": 38030,
+      "matches": true
+    },
+    {
+      "path": "chapter-18-scales-cascades-and-direct-simulation.meta.json",
+      "http_status": 200,
+      "bytes": 11169,
+      "matches": true
+    },
+    {
+      "path": "chapter-19-filtered-equations-and-the-les-closure.html",
+      "http_status": 200,
+      "bytes": 31712,
+      "matches": true
+    },
+    {
+      "path": "chapter-19-filtered-equations-and-the-les-closure.meta.json",
+      "http_status": 200,
+      "bytes": 11141,
+      "matches": true
+    },
+    {
+      "path": "chapter-20-filter-families-and-subgrid-viscosity.html",
+      "http_status": 200,
+      "bytes": 28769,
+      "matches": true
+    },
+    {
+      "path": "chapter-20-filter-families-and-subgrid-viscosity.meta.json",
+      "http_status": 200,
+      "bytes": 8168,
+      "matches": true
+    },
+    {
+      "path": "chapter-21-wall-limits-energy-memory-and-test-filtering.html",
+      "http_status": 200,
+      "bytes": 28303,
+      "matches": true
+    },
+    {
+      "path": "chapter-21-wall-limits-energy-memory-and-test-filtering.meta.json",
+      "http_status": 200,
+      "bytes": 9382,
+      "matches": true
+    },
+    {
+      "path": "chapter-22-dynamic-fitting-and-scale-similarity.html",
+      "http_status": 200,
+      "bytes": 26822,
+      "matches": true
+    },
+    {
+      "path": "chapter-22-dynamic-fitting-and-scale-similarity.meta.json",
+      "http_status": 200,
+      "bytes": 8878,
+      "matches": true
+    },
+    {
+      "path": "chapter-23-les-numerics-and-hybrid-interfaces.html",
+      "http_status": 200,
+      "bytes": 29738,
+      "matches": true
+    },
+    {
+      "path": "chapter-23-les-numerics-and-hybrid-interfaces.meta.json",
+      "http_status": 200,
+      "bytes": 9549,
+      "matches": true
+    },
+    {
+      "path": "chapter-24-live-session-model-choice-and-evidence.html",
+      "http_status": 200,
+      "bytes": 29120,
+      "matches": true
+    },
+    {
+      "path": "chapter-24-live-session-model-choice-and-evidence.meta.json",
+      "http_status": 200,
+      "bytes": 11569,
+      "matches": true
+    },
+    {
+      "path": "chapter-25-live-session-from-equation-to-evidence.html",
+      "http_status": 200,
+      "bytes": 28459,
+      "matches": true
+    },
+    {
+      "path": "chapter-25-live-session-from-equation-to-evidence.meta.json",
+      "http_status": 200,
+      "bytes": 9816,
+      "matches": true
+    },
+    {
+      "path": "chapter-code-validation.json",
+      "http_status": 200,
+      "bytes": 46344,
+      "matches": true
+    },
+    {
+      "path": "code/ch01_prediction.py",
+      "http_status": 200,
+      "bytes": 1213,
+      "matches": true
+    },
+    {
+      "path": "code/ch02_statistics.py",
+      "http_status": 200,
+      "bytes": 2092,
+      "matches": true
+    },
+    {
+      "path": "code/ch03_conservation.py",
+      "http_status": 200,
+      "bytes": 1697,
+      "matches": true
+    },
+    {
+      "path": "code/ch04_closure.py",
+      "http_status": 200,
+      "bytes": 2293,
+      "matches": true
+    },
+    {
+      "path": "code/ch05_stress_budget.py",
+      "http_status": 200,
+      "bytes": 2102,
+      "matches": true
+    },
+    {
+      "path": "code/ch06_redistribution.py",
+      "http_status": 200,
+      "bytes": 1906,
+      "matches": true
+    },
+    {
+      "path": "code/ch07_energy.py",
+      "http_status": 200,
+      "bytes": 2004,
+      "matches": true
+    },
+    {
+      "path": "code/ch08_scaling.py",
+      "http_status": 200,
+      "bytes": 1446,
+      "matches": true
+    },
+    {
+      "path": "code/ch09_wall_units.py",
+      "http_status": 200,
+      "bytes": 1724,
+      "matches": true
+    },
+    {
+      "path": "code/ch10_eddy_viscosity.py",
+      "http_status": 200,
+      "bytes": 1486,
+      "matches": true
+    },
+    {
+      "path": "code/ch11_kepsilon.py",
+      "http_status": 200,
+      "bytes": 1913,
+      "matches": true
+    },
+    {
+      "path": "code/ch12_alternative_scales.py",
+      "http_status": 200,
+      "bytes": 2984,
+      "matches": true
+    },
+    {
+      "path": "code/ch13_wall_treatment.py",
+      "http_status": 200,
+      "bytes": 2599,
+      "matches": true
+    },
+    {
+      "path": "code/ch14_boundary_and_inflow.py",
+      "http_status": 200,
+      "bytes": 2018,
+      "matches": true
+    },
+    {
+      "path": "code/ch15_realizability.py",
+      "http_status": 200,
+      "bytes": 2290,
+      "matches": true
+    },
+    {
+      "path": "code/ch16_stress_transport.py",
+      "http_status": 200,
+      "bytes": 2775,
+      "matches": true
+    },
+    {
+      "path": "code/ch17_pressure_and_redistribution.py",
+      "http_status": 200,
+      "bytes": 3667,
+      "matches": true
+    },
+    {
+      "path": "code/ch18_scales_and_dns.py",
+      "http_status": 200,
+      "bytes": 2581,
+      "matches": true
+    },
+    {
+      "path": "code/ch19_filtering.py",
+      "http_status": 200,
+      "bytes": 2652,
+      "matches": true
+    },
+    {
+      "path": "code/ch20_filters_and_smagorinsky.py",
+      "http_status": 200,
+      "bytes": 1921,
+      "matches": true
+    },
+    {
+      "path": "code/ch21_energy_and_test_filter.py",
+      "http_status": 200,
+      "bytes": 2723,
+      "matches": true
+    },
+    {
+      "path": "code/ch22_dynamic_and_similarity.py",
+      "http_status": 200,
+      "bytes": 2334,
+      "matches": true
+    },
+    {
+      "path": "code/ch23_numerics_and_hybrid.py",
+      "http_status": 200,
+      "bytes": 2194,
+      "matches": true
+    },
+    {
+      "path": "code/ch24_model_choice.py",
+      "http_status": 200,
+      "bytes": 2231,
+      "matches": true
+    },
+    {
+      "path": "code/ch25_from_equation_to_solver.py",
+      "http_status": 200,
+      "bytes": 2781,
+      "matches": true
+    },
+    {
+      "path": "code/plot_ch05.py",
+      "http_status": 200,
+      "bytes": 1978,
+      "matches": true
+    },
+    {
+      "path": "code/plot_ch07.py",
+      "http_status": 200,
+      "bytes": 1469,
+      "matches": true
+    },
+    {
+      "path": "code/plot_ch08.py",
+      "http_status": 200,
+      "bytes": 1798,
+      "matches": true
+    },
+    {
+      "path": "code/plot_ch09.py",
+      "http_status": 200,
+      "bytes": 1860,
+      "matches": true
+    },
+    {
+      "path": "code/plot_ch10.py",
+      "http_status": 200,
+      "bytes": 1830,
+      "matches": true
+    },
+    {
+      "path": "code/plot_ch11.py",
+      "http_status": 200,
+      "bytes": 1611,
+      "matches": true
+    },
+    {
+      "path": "code/plot_ch12.py",
+      "http_status": 200,
+      "bytes": 1555,
+      "matches": true
+    },
+    {
+      "path": "code/plot_ch15.py",
+      "http_status": 200,
+      "bytes": 1529,
+      "matches": true
+    },
+    {
+      "path": "code/plot_ch17.py",
+      "http_status": 200,
+      "bytes": 1523,
+      "matches": true
+    },
+    {
+      "path": "completion.json",
+      "http_status": 200,
+      "bytes": 974,
+      "matches": true
+    },
+    {
+      "path": "content-inventory.json",
+      "http_status": 200,
+      "bytes": 16987,
+      "matches": true
+    },
+    {
+      "path": "course-review.json",
+      "http_status": 200,
+      "bytes": 4076,
+      "matches": true
+    },
+    {
+      "path": "editorial-review-summary.json",
+      "http_status": 200,
+      "bytes": 54922,
+      "matches": true
+    },
+    {
+      "path": "external-link-validation.json",
+      "http_status": 200,
+      "bytes": 23066,
+      "matches": true
+    },
+    {
+      "path": "index.html",
+      "http_status": 200,
+      "bytes": 7532,
+      "matches": true
+    },
+    {
+      "path": "numerical-lab.html",
+      "http_status": 200,
+      "bytes": 7177,
+      "matches": true
+    },
+    {
+      "path": "package-validation.json",
+      "http_status": 200,
+      "bytes": 11063,
+      "matches": true
+    },
+    {
+      "path": "public-package-validation.json",
+      "http_status": 200,
+      "bytes": 24806,
+      "matches": true
+    },
+    {
+      "path": "reader-validation.json",
+      "http_status": 200,
+      "bytes": 17296,
+      "matches": true
+    },
+    {
+      "path": "references.html",
+      "http_status": 200,
+      "bytes": 15449,
+      "matches": true
+    },
+    {
+      "path": "requirements.txt",
+      "http_status": 200,
+      "bytes": 196,
+      "matches": true
+    },
+    {
+      "path": "source-free-validation.json",
+      "http_status": 200,
+      "bytes": 94337,
+      "matches": true
+    },
+    {
+      "path": "source-manifest.json",
+      "http_status": 200,
+      "bytes": 80552,
+      "matches": true
+    },
+    {
+      "path": "source-map.html",
+      "http_status": 200,
+      "bytes": 92204,
+      "matches": true
+    },
+    {
+      "path": "source-map.json",
+      "http_status": 200,
+      "bytes": 95751,
+      "matches": true
+    },
+    {
+      "path": "source-validation-summary.json",
+      "http_status": 200,
+      "bytes": 195717,
+      "matches": true
+    },
+    {
+      "path": "tools/audit_public.py",
+      "http_status": 200,
+      "bytes": 21775,
+      "matches": true
+    },
+    {
+      "path": "tools/browser_check.py",
+      "http_status": 200,
+      "bytes": 9484,
+      "matches": true
+    },
+    {
+      "path": "tools/build_book.py",
+      "http_status": 200,
+      "bytes": 10229,
+      "matches": true
+    },
+    {
+      "path": "tools/check_code.py",
+      "http_status": 200,
+      "bytes": 7025,
+      "matches": true
+    },
+    {
+      "path": "tools/check_package.py",
+      "http_status": 200,
+      "bytes": 1688,
+      "matches": true
+    },
+    {
+      "path": "tools/inspect_sources.py",
+      "http_status": 200,
+      "bytes": 3703,
+      "matches": true
+    },
+    {
+      "path": "tools/public_files.py",
+      "http_status": 200,
+      "bytes": 375,
+      "matches": true
+    },
+    {
+      "path": "tools/validate_book.py",
+      "http_status": 200,
+      "bytes": 6059,
+      "matches": true
+    },
+    {
+      "path": "tools/verify_publication.py",
+      "http_status": 200,
+      "bytes": 11691,
+      "matches": true
+    },
+    {
+      "path": "tools/verify_source_free.py",
+      "http_status": 200,
+      "bytes": 17271,
+      "matches": true
+    }
+  ],
+  "served_selfreport": {
+    "http_status": 200,
+    "valid_json": true,
+    "passed": false,
+    "final": false
+  },
+  "served_completion": {
+    "complete": false,
+    "publication": false
+  },
+  "browser_checks": {
+    "passed": true,
+    "issues": [],
+    "pages_checked": [
+      "book-overview.html",
+      "chapter-01-prediction-and-turbulent-motion.html",
+      "chapter-02-statistics-sampling-and-tensors.html",
+      "chapter-03-conservation-and-newtonian-closure.html",
+      "chapter-04-mean-momentum-and-closure.html",
+      "chapter-05-exact-reynolds-stress-transport.html",
+      "chapter-06-stationarity-homogeneity-and-redistribution.html",
+      "chapter-07-turbulent-and-mean-energy-budgets.html",
+      "chapter-08-thin-boundary-layers-and-outer-scaling.html",
+      "chapter-09-inner-scaling-and-friction-velocity.html",
+      "chapter-10-eddy-viscosity-and-mixing-length.html",
+      "chapter-11-constructing-k-epsilon-and-calibration.html",
+      "chapter-12-calibration-and-alternative-time-scales.html",
+      "chapter-13-wall-functions-and-smooth-wall-limits.html",
+      "chapter-14-near-wall-corrections-and-boundary-data.html",
+      "chapter-15-realizability-and-production-corrections.html",
+      "chapter-16-reynolds-stress-transport-closure.html",
+      "chapter-17-pressure-redistribution-and-wall-models.html",
+      "chapter-18-scales-cascades-and-direct-simulation.html",
+      "chapter-19-filtered-equations-and-the-les-closure.html",
+      "chapter-20-filter-families-and-subgrid-viscosity.html",
+      "chapter-21-wall-limits-energy-memory-and-test-filtering.html",
+      "chapter-22-dynamic-fitting-and-scale-similarity.html",
+      "chapter-23-les-numerics-and-hybrid-interfaces.html",
+      "chapter-24-live-session-model-choice-and-evidence.html",
+      "chapter-25-live-session-from-equation-to-evidence.html",
+      "index.html",
+      "numerical-lab.html",
+      "references.html",
+      "source-map.html"
+    ],
+    "widths": [
+      390,
+      1440
+    ],
+    "records": [
+      {
+        "page": "book-overview.html",
+        "width": 1440,
+        "rendered_math": 0,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-01-prediction-and-turbulent-motion.html",
+        "width": 1440,
+        "rendered_math": 108,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-02-statistics-sampling-and-tensors.html",
+        "width": 1440,
+        "rendered_math": 261,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-03-conservation-and-newtonian-closure.html",
+        "width": 1440,
+        "rendered_math": 170,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-04-mean-momentum-and-closure.html",
+        "width": 1440,
+        "rendered_math": 242,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-05-exact-reynolds-stress-transport.html",
+        "width": 1440,
+        "rendered_math": 140,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-06-stationarity-homogeneity-and-redistribution.html",
+        "width": 1440,
+        "rendered_math": 196,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-07-turbulent-and-mean-energy-budgets.html",
+        "width": 1440,
+        "rendered_math": 229,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-08-thin-boundary-layers-and-outer-scaling.html",
+        "width": 1440,
+        "rendered_math": 220,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-09-inner-scaling-and-friction-velocity.html",
+        "width": 1440,
+        "rendered_math": 216,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-10-eddy-viscosity-and-mixing-length.html",
+        "width": 1440,
+        "rendered_math": 220,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-11-constructing-k-epsilon-and-calibration.html",
+        "width": 1440,
+        "rendered_math": 184,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-12-calibration-and-alternative-time-scales.html",
+        "width": 1440,
+        "rendered_math": 285,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-13-wall-functions-and-smooth-wall-limits.html",
+        "width": 1440,
+        "rendered_math": 236,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-14-near-wall-corrections-and-boundary-data.html",
+        "width": 1440,
+        "rendered_math": 234,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-15-realizability-and-production-corrections.html",
+        "width": 1440,
+        "rendered_math": 197,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-16-reynolds-stress-transport-closure.html",
+        "width": 1440,
+        "rendered_math": 192,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-17-pressure-redistribution-and-wall-models.html",
+        "width": 1440,
+        "rendered_math": 218,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-18-scales-cascades-and-direct-simulation.html",
+        "width": 1440,
+        "rendered_math": 173,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-19-filtered-equations-and-the-les-closure.html",
+        "width": 1440,
+        "rendered_math": 115,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-20-filter-families-and-subgrid-viscosity.html",
+        "width": 1440,
+        "rendered_math": 84,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-21-wall-limits-energy-memory-and-test-filtering.html",
+        "width": 1440,
+        "rendered_math": 80,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-22-dynamic-fitting-and-scale-similarity.html",
+        "width": 1440,
+        "rendered_math": 56,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-23-les-numerics-and-hybrid-interfaces.html",
+        "width": 1440,
+        "rendered_math": 50,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-24-live-session-model-choice-and-evidence.html",
+        "width": 1440,
+        "rendered_math": 40,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-25-live-session-from-equation-to-evidence.html",
+        "width": 1440,
+        "rendered_math": 94,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "index.html",
+        "width": 1440,
+        "rendered_math": 2,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "numerical-lab.html",
+        "width": 1440,
+        "rendered_math": 24,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "references.html",
+        "width": 1440,
+        "rendered_math": 0,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "source-map.html",
+        "width": 1440,
+        "rendered_math": 0,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "book-overview.html",
+        "width": 390,
+        "rendered_math": 0,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-01-prediction-and-turbulent-motion.html",
+        "width": 390,
+        "rendered_math": 108,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-02-statistics-sampling-and-tensors.html",
+        "width": 390,
+        "rendered_math": 261,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-03-conservation-and-newtonian-closure.html",
+        "width": 390,
+        "rendered_math": 170,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-04-mean-momentum-and-closure.html",
+        "width": 390,
+        "rendered_math": 242,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-05-exact-reynolds-stress-transport.html",
+        "width": 390,
+        "rendered_math": 140,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-06-stationarity-homogeneity-and-redistribution.html",
+        "width": 390,
+        "rendered_math": 196,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-07-turbulent-and-mean-energy-budgets.html",
+        "width": 390,
+        "rendered_math": 229,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-08-thin-boundary-layers-and-outer-scaling.html",
+        "width": 390,
+        "rendered_math": 220,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-09-inner-scaling-and-friction-velocity.html",
+        "width": 390,
+        "rendered_math": 216,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-10-eddy-viscosity-and-mixing-length.html",
+        "width": 390,
+        "rendered_math": 220,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-11-constructing-k-epsilon-and-calibration.html",
+        "width": 390,
+        "rendered_math": 184,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-12-calibration-and-alternative-time-scales.html",
+        "width": 390,
+        "rendered_math": 285,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-13-wall-functions-and-smooth-wall-limits.html",
+        "width": 390,
+        "rendered_math": 236,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-14-near-wall-corrections-and-boundary-data.html",
+        "width": 390,
+        "rendered_math": 234,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-15-realizability-and-production-corrections.html",
+        "width": 390,
+        "rendered_math": 197,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-16-reynolds-stress-transport-closure.html",
+        "width": 390,
+        "rendered_math": 192,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-17-pressure-redistribution-and-wall-models.html",
+        "width": 390,
+        "rendered_math": 218,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-18-scales-cascades-and-direct-simulation.html",
+        "width": 390,
+        "rendered_math": 173,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-19-filtered-equations-and-the-les-closure.html",
+        "width": 390,
+        "rendered_math": 115,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-20-filter-families-and-subgrid-viscosity.html",
+        "width": 390,
+        "rendered_math": 84,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-21-wall-limits-energy-memory-and-test-filtering.html",
+        "width": 390,
+        "rendered_math": 80,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-22-dynamic-fitting-and-scale-similarity.html",
+        "width": 390,
+        "rendered_math": 56,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-23-les-numerics-and-hybrid-interfaces.html",
+        "width": 390,
+        "rendered_math": 50,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-24-live-session-model-choice-and-evidence.html",
+        "width": 390,
+        "rendered_math": 40,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "chapter-25-live-session-from-equation-to-evidence.html",
+        "width": 390,
+        "rendered_math": 94,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "index.html",
+        "width": 390,
+        "rendered_math": 2,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "numerical-lab.html",
+        "width": 390,
+        "rendered_math": 24,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "references.html",
+        "width": 390,
+        "rendered_math": 0,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      },
+      {
+        "page": "source-map.html",
+        "width": 390,
+        "rendered_math": 0,
+        "math_errors": 0,
+        "broken_images": [],
+        "overflow": false
+      }
+    ],
+    "browser_executable": "chrome-headless-shell.exe",
+    "browser_version": "151.0.7922.34",
+    "chapter_hashes": {
+      "chapter-01-prediction-and-turbulent-motion.html": "3d50593553155bf87cd9a9ce79128c469aed2b2fd8fb34790907f1ede582861d",
+      "chapter-02-statistics-sampling-and-tensors.html": "96af444952a4cab3ad4d12eed4487df800ef5f97a5f7dee8615ae4286a7b63ba",
+      "chapter-03-conservation-and-newtonian-closure.html": "8d3788c61e44eeb4f9c2415a9e596897687cf5719cc36f20ea01371240647138",
+      "chapter-04-mean-momentum-and-closure.html": "00480a9d4c4d9020aaf99674e14f6fbd677e132927c3729f95281befa6d609d5",
+      "chapter-05-exact-reynolds-stress-transport.html": "593c5b9deda629c0f558bcd40136785be4b065527ffed20a0ce475a13fa48287",
+      "chapter-06-stationarity-homogeneity-and-redistribution.html": "115f5eb6953defa6abd75b866f9cf39b76c61e0941bb154add9a228ee255887e",
+      "chapter-07-turbulent-and-mean-energy-budgets.html": "66aaaada380347ea5b0f54d471ad261900af0b5f5f1513b17c4d67551bfa5a3d",
+      "chapter-08-thin-boundary-layers-and-outer-scaling.html": "6cb5e3ec8eb3be86de075ff24d44a6c8c8fc54f6400f42041f5d676cef5a8a65",
+      "chapter-09-inner-scaling-and-friction-velocity.html": "1b30386fdb984eac569460c14a4f95baa62cd43c84c919ba41f19e213d620377",
+      "chapter-10-eddy-viscosity-and-mixing-length.html": "8e6544cde15544af235e04d8a06c4efe799e7eee294b442a805e6e8ea0ecfbe6",
+      "chapter-11-constructing-k-epsilon-and-calibration.html": "b82749ed8fcc96a38c14a93458e9e99cc36999c9ba9e95058c32ae58a7440321",
+      "chapter-12-calibration-and-alternative-time-scales.html": "852ad756c402e55984ca8caf772c8ba6419e9699d4f89505de43c844621e69bb",
+      "chapter-13-wall-functions-and-smooth-wall-limits.html": "acd18ac235ad0243f67fd8df4ed09085c77d2e91c8dc8578ef32988eb8e5e365",
+      "chapter-14-near-wall-corrections-and-boundary-data.html": "4f39e7f497fbcb2e83cb3e9c5f75fecfdc73f542a93e4749e22d8c4ade91a13f",
+      "chapter-15-realizability-and-production-corrections.html": "0bac19cf7521c8ddcd4d9f785dea766c855c4a88122072448ee25d345975f27a",
+      "chapter-16-reynolds-stress-transport-closure.html": "a6113c2262ec8b81db1080982a82850502221917f0d85396748ed3ea4d6054c3",
+      "chapter-17-pressure-redistribution-and-wall-models.html": "7457dcb0e5b0b5550d9e6cb515a762e8f9cf695f79b8e42963b4baafa7f16bcf",
+      "chapter-18-scales-cascades-and-direct-simulation.html": "90c6376ae2fdff85566c9f640f65de6efd3adc8a94d76ce810b58aecf406cdf0",
+      "chapter-19-filtered-equations-and-the-les-closure.html": "ea22bd6488c53c6a5798ff012f436700ca1d381779fa259ac6aaa40642477d44",
+      "chapter-20-filter-families-and-subgrid-viscosity.html": "e4aa1c157ea0ebb996d40f763da61e6c85ac171b6dbb46ad01c2e9be17de2b50",
+      "chapter-21-wall-limits-energy-memory-and-test-filtering.html": "dc16ad13bbd91b78fd1518f10cc2ea3494acf4e6ab23b0aa41cb6f9210282003",
+      "chapter-22-dynamic-fitting-and-scale-similarity.html": "65986a55be6795f9a03641429209fc2648f492ba79e7dfbfc14a1e95041ee704",
+      "chapter-23-les-numerics-and-hybrid-interfaces.html": "7803dbdf62c22f242e34e1ee2919c47f727d32c81b62a24cca9efbc772ce30ef",
+      "chapter-24-live-session-model-choice-and-evidence.html": "52b2ec521d096670861d7ebb7ac3a088ec1b1e4c594387f3cb9075a1b174c9da",
+      "chapter-25-live-session-from-equation-to-evidence.html": "d68729670d0967b50f516c94a3d7726ff2044e71118082335d2a014e3740b188"
+    },
+    "web_input_sha256": {
+      "assets/book.css": "e77f3e838f0cdca7e733a6ec1808105b0c6c9a983b046594138c5ac2752182bb",
+      "assets/book.js": "e31d522b88712b15eddb3323de2c325a4e1ff1bf77bf0cde74f021809d2bae4f",
+      "assets/ch05-dissipation.svg": "a22437678858d53f28c188e2aaf56fac4a84f19a86ecfb3145cd3637a2232641",
+      "assets/ch07-energy-decay.svg": "5d0910d863ba3c8a7cb4aefc1d32cdc91c3d05085d0d0d86ee2f382a2181d34a",
+      "assets/ch08-viscous-crossover.svg": "82ee62d9ecc8cf992fada6e46656611ab9b2b6387a6dab540a00541008abd7c6",
+      "assets/ch09-stress-partition.svg": "b27d7a7f98a484b5f61053c0655451d8451103557bd93acce067afe432faa013",
+      "assets/ch10-covariance-diagnostics.svg": "072bf91de20c53c2fdd63d908057343eee3d1d475d69ef9593b8fc523ec2da64",
+      "assets/ch11-decay-calibration.svg": "b7d387c561c3c65743895ac898d6919d210de0e49171c1cbe5ffcfde91f4d629",
+      "assets/ch12-response-and-wall-time.svg": "601cfcca42abf244994ac9819b9e1b91fd78bb32a3d7f8e8b0d7c769fa74bd8c",
+      "assets/ch15-covariance-and-source.svg": "05db8eab2f5216756cf9736433eb9fa090ae0f2cd2876efea85ee6733111252b",
+      "assets/ch17-pressure-and-return.svg": "5b3bd1d8b0a732a80c8fa09b072c5a77138139296261e91759a660701fb62dd4",
+      "assets/ch18-scales-and-domain.svg": "d6ab280ad2729a7a712b1d4b27de6a6e91083971a3c2da55df27f643cdbf01a9",
+      "assets/ch20-filter-families.svg": "8208d79a813b641f6147dfa8bfdd8f173d64337494b9f8215636df25b3e23ef4",
+      "assets/input/tex/extensions/boldsymbol.js": "d6771fee0772db2657796c8d0e20e1878bb3237f6d3ed1e828e1834a4ff743ca",
+      "assets/input/tex/extensions/cancel.js": "0d263ecf2671d1cc13135b8b4afcdca4d40151a9aea51b69402e68adde4cf8c9",
+      "assets/input/tex/extensions/mathtools.js": "04272d69a0b64783cd5b66820d6f8220ee510409d0b12c38626404be9ed9689c",
+      "assets/lab.js": "2b235a68f41da2b9055347461250306fb0df580db629565d5d5cc5ec38a76900",
+      "assets/mathjax-tex-svg.js": "d4295dc33744836935c1399feece5159577b34c5c8ffb9f1c6324cd82e03a882",
+      "assets/reader-preview.png": "c4ccd5de1896db6034a2ec2ad9d372ed61dc16dc2eeef448ad231c50b0351d55",
+      "book-overview.html": "b61a330cde53063335fc818a2e1d54671652a1ef59b021f522faa1c78744e943",
+      "chapter-01-prediction-and-turbulent-motion.html": "fcb8121590e250ce247decdfb2763cd4460bfbd609424de0603cc0fcbc7d6d85",
+      "chapter-02-statistics-sampling-and-tensors.html": "e235c93f1c7db359061fd38c1f67513e9c221ed4a12e9d2f91b2f3bf9146c8d7",
+      "chapter-03-conservation-and-newtonian-closure.html": "e1fb406237ed7943b4a06e5f696ef782c67aa05a645ec021f5a0ec799cec6fd7",
+      "chapter-04-mean-momentum-and-closure.html": "e4ac98851e00f6e1dae26e709370fdfa787d5723397c695fbc0b1d02143243cb",
+      "chapter-05-exact-reynolds-stress-transport.html": "89585f465e5420b9bf3a9be42ff29d47d6759010c54c1aa4d80da7c11e767c59",
+      "chapter-06-stationarity-homogeneity-and-redistribution.html": "8f38629aec81ffdd79c222c2b548ee0281d45a57822a3c9f7d14943560cdc640",
+      "chapter-07-turbulent-and-mean-energy-budgets.html": "67036409a739cd4d3336546a5099151ca8fa1e44407caa765f5660a73c9e201a",
+      "chapter-08-thin-boundary-layers-and-outer-scaling.html": "641cddaa7436e8f42c3f2e232533e504cded84b3345b286acfe0d4eebc25de97",
+      "chapter-09-inner-scaling-and-friction-velocity.html": "50ef4f15b314044366f3f2273d9d275f000ff6c3d7512048d4b1a6c296e74834",
+      "chapter-10-eddy-viscosity-and-mixing-length.html": "cf40e1de9bd22248ffcd558c853832a130700151910f39bd13f31332c420eaab",
+      "chapter-11-constructing-k-epsilon-and-calibration.html": "0eaae1e6d9dc5ef3e9819e6b43f1db2ac03c125281a947a109ccd39594ec12f2",
+      "chapter-12-calibration-and-alternative-time-scales.html": "4a0113cec293396be0d0ea96470ab68cad3c385fbfa66e3791d707b199137d15",
+      "chapter-13-wall-functions-and-smooth-wall-limits.html": "cc128b7763d8d113367412bf4320bbc9f41a5dffd5bcf48d659c6cd467c01806",
+      "chapter-14-near-wall-corrections-and-boundary-data.html": "4c105290c5f13b07ffb97d0b8dd738148fc4ce74b2e9a1d8886f52846c782354",
+      "chapter-15-realizability-and-production-corrections.html": "61f4a5945bc56f039378a861c681f36c103a5cbc222fe958766e3c5cb10e13b7",
+      "chapter-16-reynolds-stress-transport-closure.html": "e92347226a6d33fa0f1bd8cf02d7cd9fb9432c1ac92135bad44e1fcb3bd71f84",
+      "chapter-17-pressure-redistribution-and-wall-models.html": "a08138791795950d32062644c4357aca4e73c6b7889503c64467f7416f284a42",
+      "chapter-18-scales-cascades-and-direct-simulation.html": "a58a6af86dc1421e4839dfd36821159c5fabb28946c0e9ac202520ffe8125067",
+      "chapter-19-filtered-equations-and-the-les-closure.html": "4490d8740f47409824f7799adce9f3fc1b571df2a6c4ae93c4938cfb019335c0",
+      "chapter-20-filter-families-and-subgrid-viscosity.html": "c455b4ea2b33e739d8a750ee1191d2b81efca3896a31221e9b2e7b6aead7be95",
+      "chapter-21-wall-limits-energy-memory-and-test-filtering.html": "84c8c32bfc5ed7f6b45f15e484ce3566120fa51203df35791edf215ce74803b8",
+      "chapter-22-dynamic-fitting-and-scale-similarity.html": "7b51e189c1c7d39134ff86d90e343bb81e5f4f3202d49c41c183456f8a2bd9e6",
+      "chapter-23-les-numerics-and-hybrid-interfaces.html": "dad4b241d54f13fa594eb3c178bc50f88f3e01b478b5054fb1562a58004f1349",
+      "chapter-24-live-session-model-choice-and-evidence.html": "b25d48d94332077760f8f20e15e11a3ec7291e8d4f99febcc8797510f0855bf9",
+      "chapter-25-live-session-from-equation-to-evidence.html": "62e0024e8167c6dcf9d6ad02a7248a928afe1ad03cf7ddeb54b19ec8463c046f",
+      "index.html": "53bea04770e9bb061cc2611eb672f8a7efaaa6ead590051838edf2f0cb0e3976",
+      "numerical-lab.html": "4e4519fa489e12202ff8866506f077b149133f8452505e66e6b5ffe70ed11dc1",
+      "references.html": "90a9c8085a9cf011c1cd424b6cd6580aa069f31671b848ae253e93f51c6debdd",
+      "source-map.html": "e155d37ce2d78ada2693fd2fc3392c938beefc3e9561410fc399dc0c84658377"
+    },
+    "scope": "Actual headless reader checks; no scientific or human visual certification"
+  },
+  "readme_preview": {
+    "passed": true,
+    "raw_readme_matches": true,
+    "rendered_preview_present": true,
+    "rendered_preview_links_to_book": true,
+    "pages_preview_bytes_match": true,
+    "repository_preview_bytes_match": true,
+    "preview": "assets/reader-preview.png",
+    "preview_checked": true,
+    "issues": []
+  },
+  "local_commit": "cf1dc7adea5af6611a93815f0bf3235d883a70e3",
+  "remote_commit": "cf1dc7adea5af6611a93815f0bf3235d883a70e3"
 }

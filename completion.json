@@ -1,9 +1,9 @@
 {
   "passed": false,
-  "complete": false,
-  "stage": "Public repository created; initial Pages deployment pending live verification",
+  "complete": true,
+  "stage": "Complete reviewed textbook published; final served-proof records verified separately",
   "scope": "Truthful bootstrap placeholder; presence is not acceptance",
-  "publication": false,
+  "publication": true,
   "local_release_checks": true,
   "source_reading_complete": true,
   "chapter_drafting_complete": true,
@@ -18,5 +18,13 @@
   "target_pages": "https://az9713.github.io/nptel-turbulence-modeling-notes/",
   "repository_creation_pending": false,
   "repository_url": "https://github.com/az9713/nptel-turbulence-modeling-notes",
-  "pages_url": "https://az9713.github.io/nptel-turbulence-modeling-notes/"
+  "pages_url": "https://az9713.github.io/nptel-turbulence-modeling-notes/",
+  "preliminary_live_checked_at_utc": "2026-10-29T01:58:04.095851+00:00",
+  "remaining_limitations": [
+    "Hosted captions and local small.en ASR are fallible; apparent editorial contamination in lessons65–66 is preserved and disclosed",
+    "No comprehensive audiovisual/board audit or formal proof verification",
+    "Independent AI scientific reviews are not human expert certification",
+    "Numerical checks use explicit analytic/synthetic problems; no empirical validation of an industrial turbulence solver",
+    "One inspected Germano primary-PDF host returned403 during release link probing; cached bounded primary reading is distinguished from current access"
+  ]
 }
