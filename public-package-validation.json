@@ -491,7 +491,7 @@
     },
     {
       "path": "completion.json",
-      "sha256": "f8a4f5af6e348c1dad61f67152acaa6375a74aefd5d471b418231bb1eaf450b9"
+      "sha256": "cff32317a4970a83abb02425f852802d6b9812a51795b0fc7946533399e6363a"
     },
     {
       "path": "content-inventory.json",
@@ -523,7 +523,7 @@
     },
     {
       "path": "publication-validation.json",
-      "sha256": "6398dce92b8002fe3bdead806421e9da5fea8184ef7cc15380aa17b9192af56a"
+      "sha256": "7eed34b1f789f7baa49a0fe4d947deadf4355342f58ef673f429cf0d2d345c52"
     },
     {
       "path": "reader-validation.json",
@@ -599,6 +599,7 @@
     }
   ],
   "self_hash_exclusion": "Only this audit report is excluded from its own inventory hashes",
-  "checked_at_utc": "2026-10-29T02:02:45.173512+00:00",
-  "record_snapshot_note": "Point-in-time local/prepublication audit. Live-proof records can subsequently advance; final publication report binds every final served payload except itself. Core inputs stay bound by committed source-free proof."
+  "checked_at_utc": "2026-10-29T02:16:52.135390+00:00",
+  "record_snapshot_note": "Postrepair point-in-time local evidence audit. Later publication-proof records can advance; the final publication report binds final served payload bytes except itself. Core source-free inputs remain unchanged.",
+  "completion_record_consistency_checked": true
 }

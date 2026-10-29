@@ -1,8 +1,8 @@
 {
-  "passed": false,
+  "passed": true,
   "complete": true,
-  "stage": "Complete reviewed textbook published; final served-proof records verified separately",
-  "scope": "Truthful bootstrap placeholder; presence is not acceptance",
+  "stage": "Complete reviewed textbook published; final release records checked against actual evidence",
+  "scope": "Completed original textbook and publication: all77 complete source texts read and mapped; all25 exact chapter bodies accepted in two independent AI scientific reviews; code and figure generators executed; full offline/live reader and strict public inventory checked; isolated committed source-free reproduction and served-byte/HEAD verification performed. Stated limitations apply.",
   "publication": true,
   "local_release_checks": true,
   "source_reading_complete": true,
@@ -26,5 +26,22 @@
     "Independent AI scientific reviews are not human expert certification",
     "Numerical checks use explicit analytic/synthetic problems; no empirical validation of an industrial turbulence solver",
     "One inspected Germano primary-PDF host returned403 during release link probing; cached bounded primary reading is distinguished from current access"
+  ],
+  "evidence_records": [
+    "source-validation-summary.json",
+    "editorial-review-summary.json",
+    "course-review.json",
+    "chapter-code-validation.json",
+    "reader-validation.json",
+    "package-validation.json",
+    "public-package-validation.json",
+    "source-free-validation.json",
+    "publication-validation.json"
+  ],
+  "release_record_repairs": [
+    {
+      "finding": "Independent coordinator found an obsolete passed:false and bootstrap scope retained beside final complete/publication flags",
+      "repair": "Set passed:true from actual completed checks and replace obsolete scope; preserve every core byte; rebind and reverify final served payload"
+    }
   ]
 }
