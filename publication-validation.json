@@ -2,7 +2,7 @@
   "passed": true,
   "final": true,
   "status": "passed",
-  "checked_at_utc": "2026-10-29T02:05:44.455253+00:00",
+  "checked_at_utc": "2026-10-29T02:20:27.444309+00:00",
   "base_url": "https://az9713.github.io/nptel-turbulence-modeling-notes/",
   "repository": "az9713/nptel-turbulence-modeling-notes",
   "issues": [],
@@ -123,7 +123,7 @@
     "code/plot_ch12.py": "fb170483d54a3b87f213a7273adb361ecc678d1a3a21fafa10f7f721711385ce",
     "code/plot_ch15.py": "6028bd85ff2a3de595e7c830b643e65431a27dbb799df66dec9f33bd6dec5a02",
     "code/plot_ch17.py": "0581328967bcfa522e6944f70d764d190a86526fa408c9269671d156f60502f2",
-    "completion.json": "f8a4f5af6e348c1dad61f67152acaa6375a74aefd5d471b418231bb1eaf450b9",
+    "completion.json": "cff32317a4970a83abb02425f852802d6b9812a51795b0fc7946533399e6363a",
     "content-inventory.json": "40110160e3ce802289d7ec2096381553b72c449226d97013d19f91fc28268824",
     "course-review.json": "7cdf8f579227d2992a3db6fded960cb39edb9db231246b8591886dd4734cb17b",
     "editorial-review-summary.json": "01609ba3d36bdb94dcdb850d3f6009a52b1c0b3e45cd1f57ff26ec1a147aea40",
@@ -131,7 +131,7 @@
     "index.html": "53bea04770e9bb061cc2611eb672f8a7efaaa6ead590051838edf2f0cb0e3976",
     "numerical-lab.html": "4e4519fa489e12202ff8866506f077b149133f8452505e66e6b5ffe70ed11dc1",
     "package-validation.json": "88bb69f17d03489b8bebac09229a879e412b5293c29f1f726b4da37050a6952f",
-    "public-package-validation.json": "7a188bf38597acd56615f0950fbf1d1bd3d2e61944cac15407f8037dd30d138a",
+    "public-package-validation.json": "e9b189f987a2c8c58013c1654c5169be4ffdbed8a1f788583224c269d4b5debc",
     "reader-validation.json": "d45a049f85f32abfcf271aa02daaf98750e29410a928aa3c7941fc8afe3c004f",
     "references.html": "90a9c8085a9cf011c1cd424b6cd6580aa069f31671b848ae253e93f51c6debdd",
     "requirements.txt": "d44188079c812ab1da909bdfa1bb332bfd9a4a3de35932256a9945d3002795ea",
@@ -866,7 +866,7 @@
     {
       "path": "completion.json",
       "http_status": 200,
-      "bytes": 1656,
+      "bytes": 2668,
       "matches": true
     },
     {
@@ -914,7 +914,7 @@
     {
       "path": "public-package-validation.json",
       "http_status": 200,
-      "bytes": 24789,
+      "bytes": 24834,
       "matches": true
     },
     {
@@ -1030,7 +1030,7 @@
     "http_status": 200,
     "valid_json": true,
     "passed": true,
-    "final": false
+    "final": true
   },
   "served_completion": {
     "complete": true,
@@ -1650,6 +1650,6 @@
     "preview_checked": true,
     "issues": []
   },
-  "local_commit": "033b4606db83b6ce4d6967a9d1a79c00d7968d5c",
-  "remote_commit": "033b4606db83b6ce4d6967a9d1a79c00d7968d5c"
+  "local_commit": "0830d201fcca2f1d47737317bd97909a46f4e626",
+  "remote_commit": "0830d201fcca2f1d47737317bd97909a46f4e626"
 }
