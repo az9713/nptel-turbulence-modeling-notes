@@ -3,6 +3,9 @@
 Substantial original textbook notes following Prof. Vagesh D.
 Narasimhamurthy's NPTEL course at IIT Madras.
 
+[Read the online textbook](https://az9713.github.io/nptel-turbulence-modeling-notes/)
+· [Repository](https://github.com/az9713/nptel-turbulence-modeling-notes)
+
 The edition contains 25 chapters covering all 74 numbered lessons and the two
 substantive live sessions, with the introduction developed in the study route.
 Exact scientific acceptance and release status are recorded in
